@@ -1,1 +1,14 @@
-Ottimizzare main e mstyle.
+Per il momento, nell'ordine:
+preliminari;
+teorema WD per varietà taut con visibilità;
+esempi.
+Poi:
+domini di tipo finito;
+domini illimitati.
+Forse:
+estensioni al bordo.
+Alla fine:
+introduzione;
+ringraziamenti.
+
+Non scordarti, via via che scrivi, di mantenere una bibliografia adeguata.

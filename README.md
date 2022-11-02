@@ -1,2 +1,2 @@
-# TemplateTesto
-Template per un file di testo in LaTeX.
+# TesiMagistrale
+Tesi di laurea magistrale.

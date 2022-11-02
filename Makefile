@@ -1,8 +1,8 @@
 SECS := $(wildcard secs/*.tex)
 
-all: TemplateTesto.pdf
+all: TesiMagistrale.pdf
 
-TemplateTesto.pdf: main.tex $(SECS) mstyle.sty
+TesiMagistrale.pdf: main.tex $(SECS) mstyle.sty
 	pdflatex main.tex
 	pdflatex main.tex
 	mkdir -p build
@@ -10,5 +10,5 @@ TemplateTesto.pdf: main.tex $(SECS) mstyle.sty
 	mv *.aux build
 	mv *.log build
 	mv *.out build
-	mv main.pdf TemplateTesto.pdf
+	mv main.pdf TesiMagistrale.pdf
 	rm -rf build
