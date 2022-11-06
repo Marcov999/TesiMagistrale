@@ -1,4 +1,51 @@
-Vediamo ora alcuni risultati noti della teoria che si saranno utili nelle nostre dimostrazioni. \\
+Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con l'espressione esplicita per $k_X$ in un paio di casi espliciti, dalla quale discende un'importante conseguenza.
+
+\begin{prop}
+    (METTERE UNA CIT) Si ha che:
+    \begin{nlist}
+        \item la distanza di Poincaré e la pseudodistanza di Kobayashi coincidono per $\mathbb{D}$;
+        \item dati $z=(z_1,\dots,z_n)$ e $w=(w_1,\dots,w_n)$ in $\mathbb{D}^n$, si ha
+        $$k_{\mathbb{D}^n}(z,w)=\max_{j=1,\dots,n}\{k_{\mathbb{D}}(z_j,w_j)\};$$
+        \item L'ESPRESSIONE ESPLICITA PER LA PALLA METTILA SOLO SE SERVE.
+    \end{nlist}
+\end{prop}
+\begin{proof}
+    \begin{nlist}
+        \item Che la pseudodistanza di Kobayashi sia almeno la distanza di Poincaré segue dal lemma di Schwarz-Pick e dalla disuguaglianza triangolare per la distanza di Poincaré; per avere l'uguaglianza, basta notare che il minimo nella definizione della pseudodistanza di Kobayashi è effettivamente raggiunto usando l'identità.
+        \item Siano $\varphi_1,\dots,\varphi_m \in \text{Hol}(\mathbb{D},\mathbb{D}^n)$ e $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ tali che $\varphi_1(\zeta_0)=z$ e $\varphi_m(\zeta_m)=w$. Allora, chiamando $\pi_j$ la proiezione sulla $j$-esima coordinata, si ha
+        \begin{align*}
+            \sum_{h=1}^m k_{\mathbb{D}}(\zeta_{j-1},\zeta_j) &\ge \sum_{h=1}^m k_{\mathbb{D}}\big((\pi_j\circ \varphi_h)(\zeta_{j-1}),(\pi_j\circ \varphi_h)(\zeta_j)\big)\\
+            & \ge k_{\mathbb{D}}\big((\pi_j\circ \varphi_1)(\zeta_0),(\pi_j\circ \varphi_m)(\zeta_m)\big)=k_{\mathbb{D}}(z_j,w_j),
+        \end{align*}
+        dove nella prima disuguaglianza abbiamo usato il lemma di Schwarz-Pick e nella seconda la disuguaglianza triangolare per $k_{\mathbb{D}}$. Segue dunque che $k_{\mathbb{D}^n}(z,w)\ge\max_{j=1,\dots,n}\{k_{\mathbb{D}}(z_j,w_j)\}$.
+        Per mostrare che il minimo è effettivamente raggiunto, ricordiamo dall'Osservazione \ref{k_lip} che $k_{\mathbb{D}^n}$ è una semicontrazione rispetto alle funzioni olomorfe, in particolare è invariante per biolomorfismo, così come lo è $k_{\mathbb{D}}$ dal lemma di Schwarz-Pick. Componendo quindi con $f_1\times\dots\times f_n$ dove $f_j \in \text{Aut}(\mathbb{D})$ è tale che $f_j(z_j)=0$, abbiamo che sia $k_{\mathbb{D}^n}(z,w)$ che $\max_{j=1,\dots,n}\{k_{\mathbb{D}}(z_j,w_j)\}$ rimangono invariati. Allora, detto $j_0$ l'indice per cui $k_{\mathbb{D}}(0,w_{j_0})$ è massimo, possiamo considerare $\varphi=g_1\times\dots\times g_n$ dove $g_j \in\text{Hol}(\mathbb{D},\mathbb{D})$ è l'identità per $j=j_0$ e un'opportuna composizione di una rotazione e una contrazione per $j\not=j_0$, di modo che $g_j(w_{j_0})=w_j$. In tal modo, $\varphi(z_{j_0})=\varphi(0)=0=z$ e $\varphi(w_{j_0})=w$.
+    \end{nlist}
+\end{proof}
+
+\begin{cor}
+    La pseudodistanza di Kobayashi è effettivamente una distanza per i domini limitati.
+\end{cor}
+\begin{proof}
+    Discende tutto dalla Proposizione precedente e dall'Osservazione \ref{k_lip}. Innanzitutto, dalla Proposizione abbiamo che $k_{\mathbb{D}^n}$ è effettivamente una distanza; poiché dall'Osservazione sappiamo che $k_X$ è invariante per biolomorfismi, segue che $k_{\mathbb{D}_r^n}$ è una distanza per ogni $r>0$. Se $\Omega\subseteq\mathbb{C}^n$ è un dominio limitato, esiste $r>0$ tale che $\Omega\subseteq\mathbb{D}_r^n$. In tal caso, l'inclusione è una funzione olomorfa. Allora, sempre dall'Osservazione, si ha che se $x,y \in \Omega$ con $x\not=y$ allora $0<k_{\mathbb{D}_r^n}(x,y) \le k_{\Omega}(x,y)$. Segue dunque che $k_\Omega$ è una distanza, come voluto.
+\end{proof}
+
+\begin{oss}
+    Con la stessa dimostrazione, si ottiene anche che le sottovarietà di varietà Kobayashi-iperboliche sono Kobayashi-iperboliche.
+\end{oss}
+
+Citiamo ora, senza dimostrarlo, un risultato che lega pseudometrica e pseudodistanza di Kobayashi. (PER LE CIT, VEDI L'ARTICOLO DI CHANDEL-MAITRA-SARKAR)
+
+\begin{thm}
+    Sia $X$ una sottovarietà complessa connessa embeddata in $\mathbb{C}^d$. Per ogni $z,w \in X$, abbiamo
+    \begin{nlist}
+        \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è $C^1$ a tratti, }\gamma(a)=z,\gamma(b)=w\}$;
+        \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è assolutamente continua,}$\\
+        $\text{    }\qquad\qquad\,\,\,\,\gamma(a)=z,\gamma(b)=w\}$;
+    \end{nlist}
+    qui, $l_X(\gamma)=\displaystyle\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t$ è ben definito in entrambi i casi.
+\end{thm}
+
+SE SERVONO DA METTERE QUI, MA NON SO SE SERVONO: COSE SULLE VARIETÀ IPERBOLICHE COMPLETE? (IN CASO, LA DEF NELLA SOTTOSEZIONE PRECEDENTE)
 
 DA FARE QUI:\\
 UN SACCO DI RISULTATI, DA DIMOSTRARE E NON, SU PSEUDOMETRICA E PSEUDODISTANZA\\
