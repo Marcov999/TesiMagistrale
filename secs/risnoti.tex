@@ -1,4 +1,12 @@
-Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con l'espressione esplicita per $k_X$ in un paio di casi espliciti, dalla quale discende un'importante conseguenza.
+Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con alcuni teoremi noti dell'analisi complessa in più variabili.
+
+\begin{thm}
+    (Montel, INSERIRE CIT) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Una famiglia $\mathcal{F}$ è relativamente compatta in $\mathcal{O}(\Omega)$ se e solo se è uniformemente limitata sui compatti.
+\end{thm}
+
+WEIERSTRASS SERVE? INOLTRE, SE ASCOLI-ARZELÀ È INEVITABILE CAMBIA LA FRASE SOPRA\\
+
+Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi espliciti, dalla quale discende un'importante conseguenza.
 
 \begin{prop}
     (METTERE UNA CIT) Si ha che:
@@ -45,10 +53,38 @@ Citiamo ora, senza dimostrarlo, un risultato che lega pseudometrica e pseudodist
     qui, $l_X(\gamma)=\displaystyle\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t$ è ben definito in entrambi i casi.
 \end{thm}
 
-SE SERVONO DA METTERE QUI, MA NON SO SE SERVONO: COSE SULLE VARIETÀ IPERBOLICHE COMPLETE? (IN CASO, LA DEF NELLA SOTTOSEZIONE PRECEDENTE)
+Il seguente è il risultato sulle varietà taut che ci permetterà di ottenere la dicotomia sulle iterate. SAREBBE BELLO FARE LA DIM, MA RICHIEDE UN PO' DI LAVORO EXTRA; VALUTARE IN SEGUITO, E IN CASO METTERE TUTTE LE COSE EQUIVALENTI
 
-DA FARE QUI:\\
-UN SACCO DI RISULTATI, DA DIMOSTRARE E NON, SU PSEUDOMETRICA E PSEUDODISTANZA\\
-UN SACCO DI RISULTATI, DA DIMOSTRARE E NON, SULLE VARIETÀ TAUT\\
-ALTRE COSE CHE TI VENGONO IN MENTE VIA VIA CHE SCRIVI E CHE SONO TROPPO DI BASE PER TROVARE POSTO ALTROVE\\
-NON TI SCORDARE IL TEOREMA DI MONTEL (E FORSE SERVIRÀ ANCHE WEIERSTRASS); SERVIRÀ ANCHE ASCOLI ARZELÀ? SPERIAMO DI NO
+\begin{thm}
+    (INSERIRE CIT) Sia $X$ una varietà taut e $f \in \text{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
+    \begin{nlist}
+        \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non è compattamente divergente;
+        \item l'orbita di $z$ è relativamente compatta in $X$ per ogni $z \in X$.
+    \end{nlist}
+\end{thm}
+
+Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente pseudoconvessi (quindi con bordo $C^2$), in particolare faremo riferimento a una dimostrazione che sfrutta fatti geometrici quali la Gromov-iperbolicità. Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
+
+\begin{thm} \label{abate_wd}
+    (Abate, INSERIRE CIT) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso e $f \in \text{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite di $f$ sono relativamente compatte in $\Omega$;
+        \item esiste un unico punto di $\partial\Omega$ tale che le orbite di $f$ convergono tutte, uniformemente sui compatti, a quel punto.
+    \end{itemize}
+\end{thm}
+
+Per dimostrarlo usando la Gromov-iperbolicità, è prima necessario mostrare che $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Citiamo l'articolo di Balogh e Bonk in cui si trova la dimostrazione.
+
+\begin{thm} \label{balogh_bonk}
+    (Balogh, Bonk INSERIRE CIT) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso. Allora $(\Omega,k_{\Omega})$ è Gromov-iperbolico. FORSE CI VUOLE IL RISULTATO SUL BORDO
+\end{thm}
+
+Infine, un Teorema dovuto a Karlsson.
+
+\begin{thm} \label{karlsson}
+    (Karlsson, INSERIRE CIT) CAPIRE QUAL È IL TEOREMA GIUSTO DA APPLICARE A SPAZI GROMOV IPERBOLICI.
+\end{thm}
+
+Poiché le ipotesi del Teoerema \ref{karlsson} sono soddisfatte dagli spazi Gromov-iperbolici (??? VERIFICARE, TROVA IL TEOREMA GIUSTO!), insieme al Teorema \ref{balogh_bonk} ci dà il Teorema \ref{abate_wd}. \\
+
+Come già anticipato nell'introduzione, qui non vedremo questa dimostrazione, ma un risultato che vale anche per domini con bordo non necessariamente regolare. L'ipotesi di tipo geometrico che andremo ad utilizzare è il concetto di visibilità, di cui discuteremo anche il rapporto con la Gromov-iperbolicità.
