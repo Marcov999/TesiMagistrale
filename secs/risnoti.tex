@@ -76,15 +76,24 @@ Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente ps
 Per dimostrarlo usando la Gromov-iperbolicità, è prima necessario mostrare che $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Citiamo l'articolo di Balogh e Bonk in cui si trova la dimostrazione.
 
 \begin{thm} \label{balogh_bonk}
-    (Balogh, Bonk \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso. Allora $(\Omega,k_{\Omega})$ è Gromov-iperbolico. FORSE CI VUOLE IL RISULTATO SUL BORDO
+    (Balogh, Bonk \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso. Allora $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Inoltre, il bordo iperbolico $\partial_G\Omega$ è identificato con il bordo euclideo $\partial\Omega$.
 \end{thm}
 
-Infine, un Teorema dovuto a Karlsson.
+Serve anche un Teorema dovuto a Karlsson.
 
 \begin{thm} \label{karlsson}
-    (Karlsson, \cite[Proposition 5.1]{Ka}) Sia $(X,d)$ uno spazio metrico Gromov-iperbolico e $\phi:X \longrightarrow X$ una semicontrazione. Se per un certo $x \in X$ si ha $\displaystyle\lim_{n\longrightarrow+\infty}d\big(x,\phi^n(x)\big)=+\infty$, allora l'orbita $\phi^n(x)$ converge a un punto $\gamma$ del bordo iperbolico di $X$.
+    (Karlsson, \cite[Corollary 3.7]{Ka}) Sia $(X,d)$ uno spazio metrico proprio tale che
+    \begin{nlist}
+        \item è un aperto denso di uno spazio topologico $\overline{X}$ compatto e di Hausdorff la cui topologia di sottospazio coincide con la topologia di spazio metrico. Inoltre, dati $x \in X$ e $x_n$ una successione in $X$ che converge a un punto di $\overline{X}\setminus X$, si ha $\displaystyle\lim_{n\longrightarrow+\infty}d(x,x_n)=+\infty$;
+        \item date $x_n$ e $y_n$ due successioni convergenti a due punti distinti di $\overline{X}\setminus X$ e $z \in X$, si ha $\displaystyle\lim_{n\longrightarrow+\infty} d(x_n,y_n)-\max\{d(x_n,z),d(y_n,z)\}=+\infty$.
+    \end{nlist}
+    Sia $\phi:X \longrightarrow X$ una semicontrazione. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite di $\phi$ sono limitate;
+        \item esiste un unico punto di $\overline{X}\setminus X$ a cui convergono tutte le orbite.
+    \end{itemize}
 \end{thm}
 
-Usando il Teoerema \ref{karlsson}, il Teorema \ref{balogh_bonk} e il teorema di Montel è possibile ottenere Teorema \ref{abate_wd}. La dimostrazione non è difficile, richiede solo un po' di manualità con le definizioni degli spazi Gromov-iperbolici e tecniche topologiche standard.
+L'ipotesi (ii) del Teoerema \ref{karlsson} è sempre verificata dagli spazi Gromov-iperbolici, mentre segue dal Teorema \ref{balogh_bonk} che la (i) è vera per i domini limitati e strettamente pseudoconvessi. Usando anche il teorema di Montel, si ottiene così il Teorema \ref{abate_wd}.
 
 Tuttavia, come già anticipato nell'introduzione, quello che noi andremo a vedere è un risultato che vale anche per domini con bordo non necessariamente regolare. L'ipotesi di tipo geometrico che andremo ad utilizzare è il concetto di visibilità, di cui discuteremo anche il rapporto con la Gromov-iperbolicità.
