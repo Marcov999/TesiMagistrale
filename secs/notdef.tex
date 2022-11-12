@@ -3,7 +3,8 @@ Introduciamo la notazione che useremo:
     \item scriviamo $\Omega$ per indicare un \textit{dominio} di $\mathbb{C}^n$, vale a dire un aperto connesso;
     \item con \textit{varietà complessa} s'intende una varietà differenziabile reale di dimensione pari con i cambi di carta olomorfi se visti come fra aperti di $\mathbb{C}^n$;
     \item data $X$ varietà complessa e $x \in X$, indichiamo con $T_xX$ lo spazio tangente a $X$ in $x$, che nel caso dei domini è canonicamente identificato con $\mathbb{C}^n$;
-    \item dati $X,Y$ spazi topologici, quando parliamo di convergenza nell'insieme $C^0(X,Y)$ delle funzioni continue da $X$ a $Y$ sottintendiamo sempre che si parla della topologia compatta-aperta, che nel caso in cui $Y$ sia uno spazio metrico coincide con la topologia della convergenza uniforme sui compatti (potrebbe capitare che commetteremo abusi di notazione in merito);
+    \item dati $X,Y$ spazi topologici, quando parliamo di convergenza nell'insieme $C^0(X,Y)$ delle funzioni continue da $X$ a $Y$ sottintendiamo sempre che si parla della topologia compatta-aperta, che nel caso in cui $Y$ sia uno spazio metrico coincide con la topologia della convergenza uniforme sui compatti (potrebbe capitare che commetteremo abusi di terminologia in merito);
+    \item dato $X$ spazio topologico e data $f \in C^0(X,X)$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$;
     \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme delle funzioni biolomorfe da $X$ in sé;
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $Df(x)$ il differenziale di $f$ in $x \in X$;
     \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$, mentre $\mathbb{D}^n$ è il polidisco in $\mathbb{C}^n$ e $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$ è il disco di raggio $r>0$;
@@ -126,12 +127,12 @@ Nella prossima sottosezione citeremo alcuni risultati sulla geometria dei domini
 
 Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per i teoremi che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi del teorema. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica.
 
-\begin{prop}
+\begin{prop} \label{alex}
     (INSERIRE CIT) Sia $X$ una varietà complessa connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\text{\normalfont{Hol}}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$. In tal caso, $\text{\normalfont{Hol}}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$.
 \end{prop}
 
 \begin{defn}
-    Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni mappa nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la mappa costante a $\infty$.
+    Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante a $\infty$.
 \end{defn}
 
 Per finire, diamo delle definizioni che ci serviranno per parlare del comportamente delle iterate di funzioni olomorfe.
@@ -140,4 +141,12 @@ Per finire, diamo delle definizioni che ci serviranno per parlare del comportame
     Siano $X$ e $Y$ due spazi topologici. Diciamo che una successione $\{f_{\nu}\}_{\nu \in \mathbb{N}} \subset C^0(X,Y)$ è \textit{compattamente divergente} se per ogni coppia di compatti $H\subseteq X$ e $K\subseteq Y$ esiste $\nu_0 \in \mathbb{N}$ tale che $f(H)\cap K=\emptyset$ per ogni $\nu \ge \nu_0$.
 
     Una famiglia $\mathcal{F} \subseteq C^0(X,Y)$ è detta \textit{normale} se ogni successione in $\mathcal{F}$ ammette una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente.
+\end{defn}
+
+\begin{defn}
+    Sia $f\in C^0(X,X)$. Diciamo che $g\in C^0(X,X)$ è una \textit{funzione limite} di $f$ se esiste una sottosuccessione delle iterate di $f$ che converge a $g$ uniformemente sui compatti. Denotiamo con $\Gamma(f)$ l'insieme di tutte le funzioni limite di $f$.
+\end{defn}
+
+\begin{defn}
+    Una \textit{retrazione olomorfa} di una varietà complessa $X$ è una funzione $\rho\in\text{Hol}(X,X)$ tale che $\rho^2=\rho$. L'immagine di una retrazione olomorfa è detta \textit{retratto olomorfo}.
 \end{defn}
