@@ -55,7 +55,7 @@ Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi; p
 
 Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la dicotomia sul comportamento delle iterate delle funzioni olomorfe. Per farlo, ci servono prima alcuni risultati.
 
-\begin{lm}
+\begin{lm} \label{ballball}
     Siano $X$ una varietà Kobayashi-iperbolica, $z_0 \in X$ e $r_1,r_2>0$. Allora $B_X\big(B_X(z_0,r_1),r_2\big)=B_X(z_0,r_1+r_2)$, dove $B_X(x,r)$ è la palla di centro $x \in X$ e raggio $r>0$ rispetto alla distanza di Kobayashi e, dato $A\subseteq X$, poniamo $B_X(A,r)=\displaystyle\bigcup_{x \in A}B_X(x,r)$.
 \end{lm}
 \begin{proof}
@@ -119,8 +119,8 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
     Allora letta in questa carta $\rho$ diventa lineare, perciò $M$ è una sottovarietà vicino a $z_0$. Per arbitrarietà di $z_0$, segue che $M$ è una varietà. È chiusa perché $\rho(X)=\text{Fix}(\rho)$.
 \end{proof}
 
-\begin{thm}
-    (INSERIRE CIT) Siano $X$ una varietà taut e $f\in\text{Hol}(X,X)$. Supponiamo che la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non sia compattamente divergente. Allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$.
+\begin{thm} \label{retraiii}
+    (INSERIRE CIT) Siano $X$ una varietà taut e $f\in\text{Hol}(X,X)$. Supponiamo che la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non sia compattamente divergente. Allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
 
     Inoltre, $\varphi=f\restrict{M}\in\text{Aut}(M)$ e $\Gamma(f)$ è isomorfo al sottogruppo di $\text{Aut}(M)$ dato dalla chiusura di $\{\varphi^k\}_{k \in\mathbb{N}}$.
 \end{thm}
@@ -149,18 +149,60 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
         \gamma_4\circ\gamma_2\circ\rho_2=\gamma_2\circ\gamma_4\circ\rho_4=\gamma_1\circ\rho_1,\\
         \gamma_3\circ\gamma_4\circ\rho_4=\gamma_4\circ\gamma_3\circ\rho_3.
     \end{split}\end{equation}
-    Usando la prima equazione in \eqref{gammaro} scriviamo $\rho_2$ in funzione di $\rho_1$, e sostituendo nella seconda troviamo $\gamma_3=\gamma_1^{-1}\circ\gamma_2$.
+    Usando la prima equazione in \eqref{gammaro} scriviamo $\rho_2$ in funzione di $\rho_1$, e sostituendo nella seconda troviamo $\gamma_3=\gamma_1^{-1}\circ\gamma_2$. Similmente, usando la prima equazione scriviamo $\rho_1$ in funzione di $\rho_2$ e sostituendo nella terza troviamo $\gamma_4=\gamma_2^{-1}\circ\gamma_1$. Allora $\gamma_3=\gamma_4^{-1}$ e la quarta equazione ci dà $\rho_3=\rho_4$. Usando la seconda e la terza equazione abbiamo quindi
+    $$\rho_2=\gamma_2^{-1}\circ\gamma_1\circ\gamma_3\circ\rho_3=\rho_3=\rho_4=\gamma_1^{-1}\circ\gamma_2\circ\gamma_4\circ\rho_4=\rho_1,$$
+    come voluto.
+
+    Adesso, dal fatto che $f\circ\rho=\rho\circ f$ segue che $f(M)\subseteq M$. Ponendo $\varphi=f\restrict{M}$, se $f^{p_\nu}\longrightarrow\rho$ si ha che $f^{p_\nu+1}\longrightarrow\varphi\circ\rho$, quindi per quanto visto finora segue che $\varphi\in\text{Aut}(M)$.
+
+    Infine, data $h=\gamma\circ\rho\in\Gamma(f)$, prendiamo due sottosuccessioni $\{f^{p_\nu}\}_{\nu\in\mathbb{N}}$ e $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ convergenti rispettivamente a $\rho$ e a $h$. Come prima, possiamo supporre che $p_\nu-k_\nu \longrightarrow+\infty$ e che $f^{p_\nu-k_\nu} \longrightarrow h_1=\gamma_1\circ\rho$ per $\nu\longrightarrow+\infty$. Allora $h\circ h_1=h_1\circ h=\rho$, da cui $\gamma_1=\gamma^{-1}$. Dunque l'applicazione $h=\gamma\circ\rho\longmapsto\gamma$ è l'isomorfismo cercato fra $\Gamma(f)$ e la chiusura di $\{\varphi^k\}_{k\in\mathbb{N}}$ in $\text{Aut}(M)$, e così concludiamo.
 \end{proof}
 
-SAREBBE BELLO FARE LA DIM, MA RICHIEDE UN PO' DI LAVORO EXTRA; VALUTARE IN SEGUITO, E IN CASO METTERE TUTTE LE COSE EQUIVALENTI
+Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma di cinque asserzioni equivalenti.
 
 \begin{thm}
     (INSERIRE CIT) Sia $X$ una varietà taut e $f \in \text{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
     \begin{nlist}
         \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non è compattamente divergente;
-        \item l'orbita di $z$ è relativamente compatta in $X$ per ogni $z \in X$.
+        \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non contiene alcuna sottosuccessione compattamente divergente;
+        \item $\{f^k\}_{k \in \mathbb{N}}$ è relativamente compatta in $\text{Hol}(X,X)$;
+        \item l'orbita di $z$ è relativamente compatta in $X$ per ogni $z \in X$;
+        \item esiste $z_0 \in X$ la cui orbita è relativamente compatta in $X$.
     \end{nlist}
 \end{thm}
+
+\begin{proof}
+    (v) $\implies$ (ii). Consideriamo $H=\{z_0\}$ e $K=\overline{\{f^k(z_0)\mid k\in\mathbb{N}\}}$; ovviamente $H$ è compatto, e $K$ lo è per l'ipotesi (v). Allora $f^k(H)\cap K\not=\emptyset$ per ogni $k\in\mathbb{N}$, dunque $\{f^k\}_{k \in \mathbb{N}}$ non può contenere sottosuccessioni compattamente divergenti.
+
+    (ii) $\implies$ (iii). Poiché $(X,k_X)$ è uno spazio metrico, $\text{Hol}(X,X)$ è metrizzabile, prendendo ad esempio la distanza del $\sup$ (così facendo, la topologia coincide con quella di sottospazio di $C^0(X,X)$, che è quella che vogliamo). Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatto, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è tesa, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
+
+    (iii) $\implies$ (iv). Fissiamo $z\in X$ e consideriamo la funzione $\text{Hol}(X,X)\longrightarrow X$ tale che $f\longmapsto f(z)$. Questa funzione è continua rispetto alla topologia su $\text{Hol}(X,X)$, dunque l'immagine della chiusura di $\{f^k\mid k\in\mathbb{N}\}$ è compatta perché immagine di un compatto, chiusa perché compatta in uno spazio Hausdorff, e contiene $\{f^k(z)\mid k\in\mathbb{N}\}$. Perciò l'orbita di $z$ è contenuta in un compatto chiuso, quindi è relativamente compatta, come voluto.
+
+    (iv) $\implies$ (i). Ovvio.
+
+    (i) $\implies$ (v). Sia $M$ la varietà limite di $f$ e poniamo $\varphi=f\restrict{M}$. Sappiamo dal Teorema \ref{retraiii} che $\varphi\in\text{Aut}(M)$ e che $\id_M\in\Gamma(\varphi)$. Prendiamo $z_0 \in M$; vogliamo mostrare che $C=\{\varphi^k(z_0)\}_{k\in\mathbb{N}}$ è relativamente compatto in $M$, dunque anche in $X$ dato che $M$ è chiusa. Scegliamo $\epsilon_0>0$ tale che $B_M(z_0,\epsilon_0)$ è relativamente compatta in $M$; notiamo che $\varphi\in\text{Aut}(M)$ implica che $B_M\big(\varphi^k(z_0),\epsilon_0\big)=\varphi^k\big(B_M(z_0,\epsilon_0)\big)$ è relativamente compatta in $M$ per ogni $k \in \mathbb{N}$. Dal Lemma \ref{ballball} abbiamo che
+    $$\overline{B_M(z_0,\epsilon_0)} \subseteq B_M\big(B_M(z_0,7\epsilon_0/8),\epsilon_0/4\big);$$
+    per compattezza esistono quindi $w_1,\dots,w_r \in B_M(z_0,7\epsilon_0/8)$ tali che
+    $$\overline{B_M(z_0,\epsilon_0)}\cap C\subseteq \bigcup_{j=1}^r B_M(w_j,\epsilon_0/4)\cap C,$$
+    e possiamo assumere che $B_M(w_j,\epsilon_0/4)\cap C\not=\emptyset$ per $j=1,\dots,r$.
+    Per ogni $j=1,\dots, r$ scegliamo $k_j\in\mathbb{N}$ tale che $\varphi^{k_j}(z_0)\in B_M(w_j,\epsilon_0/4)$; allora
+    \begin{equation}\label{capci}
+        B_M(z_0,\epsilon_0)\cap C \subseteq \bigcup_{j=1}^r \left[B_M\big(\varphi^{k_j}(z_0),\epsilon_0/2\big)\cap C\right].
+    \end{equation}
+    Dato che $\id_M\in\Gamma(\varphi)$, l'insieme $I=\{k\in\mathbb{N}\mid k_M\big(\varphi^k(z_0),z_0\big)<\epsilon_0/2\}$ è infinito; dunque possiamo trovare un $k_0 \in I$ tale che $k_0 \ge \max\{1,k_1,\dots,k_r\}$. Poniamo $\displaystyle K=\bigcup_{k=1}^{k_0}\overline{B_M\big(\varphi^k(z_0),\epsilon_0\big)}$; per costruzione, $K$ è compatto, dunque ci basta mostrare che $C \subseteq K$. Prendiamo $h \in I$; dato che l'insieme $I$ è infinito, è sufficiente mostrare che $\varphi^k(z_0) \in K$ per ogni $0 \le k \le h$.
+
+    Supponiamo, per assurdo, che esista un minimo $h_0 \in I$ tale che l'insieme $\{\varphi^k(z_0)\mid 0\le k\le k_0\}$ non è contenuto in $K$. Ovviamente $h_0>k_0$. Poiché $h_0,k_0 \in I$, abbiamo anche che $k_M\big(\varphi^{k_0}(z_0),\varphi^{h_0}(z_0)\big)<\epsilon_0$. Dunque
+    $$k_M\big(\varphi^{k_0-j}(z_0),\varphi^{h_0-j}(z_0)\big)=k_M\big(\varphi^{k_0}(z_0),\varphi^{h_0}(z_0)\big)<\epsilon_0$$
+    per ogni $0 \le j \le k_0$. In particolare,
+    \begin{equation} \label{inKappa}
+        \varphi^j(z_0) \in K
+    \end{equation}
+    per ogni $j=h_0-k_0,\dots,h_0$ e $\varphi^{h_0-k_0}(z_0)\in B_M(z_0,\epsilon_0)\cap C$. Per la \eqref{capci} possiamo trovare $1 \le l \le r$ tale che $k_M\big(\varphi^{k_l}(z_0),\varphi^{h_0-k_0}(z_0)\big)<\epsilon_0/2$, quindi
+    \begin{equation} \label{accamenocappa}
+        k_M\big(\varphi^{k_l-j}(z_0),\varphi^{h_0-k_0-j}(z_0)\big)<\epsilon_0/2
+    \end{equation}
+    per ogni $0 \le j \le \min\{k_l,h_0-k_0\}$. Adesso, se $k_l \ge h_0-k_0$ allora, per la \eqref{inKappa}, la \eqref{accamenocappa} e la definizione di $K$, abbiamo $\varphi^j(z_0) \in K$ per ogni $0 \le j \le h_0$, in contraddizione con la scelta di $h_0$. Perciò dev'essere $k_l<h_0-k_0$; poniamo $h_1=h_0-k_0-k_l$. Per la \eqref{accamenocappa} si ha $h_1 \in I$; dunque, essendo $h_1<h_0$, dev'essere $\varphi^j(z_0) \in K$ per ogni $0 \le j \le h_1$. Ma la \eqref{inKappa}, la \eqref{accamenocappa} e la definizione di $K$ implicano che $\varphi^j(z_0) \in K$ per ogni $h_1 \le j \le h_0$, dunque anche in questo caso troviamo una contraddizione.
+\end{proof}
 
 Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente pseudoconvessi (quindi con bordo $C^2$), in particolare faremo riferimento a una dimostrazione che sfrutta fatti geometrici quali la Gromov-iperbolicità. Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
 
