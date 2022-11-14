@@ -5,6 +5,7 @@ Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre
 \end{thm}
 
 WEIERSTRASS SERVE? INOLTRE, SE ASCOLI-ARZELÀ È INEVITABILE CAMBIA LA FRASE SOPRA\\
+POTREBBE SERVIRE ANCHE HARTOGS; SENTI, FAI CHE LA FRASE SOPRA COMUNQUE LA RISCRIVI, ALLA FINE\\
 
 Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi espliciti, dalla quale discende un'importante conseguenza.
 
@@ -160,7 +161,7 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 
 Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma di cinque asserzioni equivalenti.
 
-\begin{thm}
+\begin{thm} \label{dicotomia}
     (INSERIRE CIT) Sia $X$ una varietà taut e $f \in \text{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
     \begin{nlist}
         \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non è compattamente divergente;
@@ -174,7 +175,7 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
 \begin{proof}
     (v) $\implies$ (ii). Consideriamo $H=\{z_0\}$ e $K=\overline{\{f^k(z_0)\mid k\in\mathbb{N}\}}$; ovviamente $H$ è compatto, e $K$ lo è per l'ipotesi (v). Allora $f^k(H)\cap K\not=\emptyset$ per ogni $k\in\mathbb{N}$, dunque $\{f^k\}_{k \in \mathbb{N}}$ non può contenere sottosuccessioni compattamente divergenti.
 
-    (ii) $\implies$ (iii). Poiché $(X,k_X)$ è uno spazio metrico, $\text{Hol}(X,X)$ è metrizzabile, prendendo ad esempio la distanza del $\sup$ (così facendo, la topologia coincide con quella di sottospazio di $C^0(X,X)$, che è quella che vogliamo). Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatto, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è tesa, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
+    (ii) $\implies$ (iii). Poiché $(X,k_X)$ è uno spazio metrico, $\text{Hol}(X,X)$ è metrizzabile, prendendo ad esempio la distanza del $\sup$ (così facendo, la topologia coincide con quella di sottospazio di $C^0(X,X)$, che è quella che vogliamo). Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatta, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è tesa, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
 
     (iii) $\implies$ (iv). Fissiamo $z\in X$ e consideriamo la funzione $\text{Hol}(X,X)\longrightarrow X$ tale che $f\longmapsto f(z)$. Questa funzione è continua rispetto alla topologia su $\text{Hol}(X,X)$, dunque l'immagine della chiusura di $\{f^k\mid k\in\mathbb{N}\}$ è compatta perché immagine di un compatto, chiusa perché compatta in uno spazio Hausdorff, e contiene $\{f^k(z)\mid k\in\mathbb{N}\}$. Perciò l'orbita di $z$ è contenuta in un compatto chiuso, quindi è relativamente compatta, come voluto.
 
@@ -203,6 +204,16 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
     \end{equation}
     per ogni $0 \le j \le \min\{k_l,h_0-k_0\}$. Adesso, se $k_l \ge h_0-k_0$ allora, per la \eqref{inKappa}, la \eqref{accamenocappa} e la definizione di $K$, abbiamo $\varphi^j(z_0) \in K$ per ogni $0 \le j \le h_0$, in contraddizione con la scelta di $h_0$. Perciò dev'essere $k_l<h_0-k_0$; poniamo $h_1=h_0-k_0-k_l$. Per la \eqref{accamenocappa} si ha $h_1 \in I$; dunque, essendo $h_1<h_0$, dev'essere $\varphi^j(z_0) \in K$ per ogni $0 \le j \le h_1$. Ma la \eqref{inKappa}, la \eqref{accamenocappa} e la definizione di $K$ implicano che $\varphi^j(z_0) \in K$ per ogni $h_1 \le j \le h_0$, dunque anche in questo caso troviamo una contraddizione.
 \end{proof}
+
+Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ottenere la dicotomia, anche in un caso piuttosto regolare. In realtà, dalla Proposizione \ref{alex} sappiamo che l'essere Kobayashi-iperbolica implica una proprietà di compattezza per le funzioni olomorfe da $X$ in sé; per definizione, l'essere taut impone che le funzioni limite in $\text{Hol}(X,X)$ siano ancora in $\text{Hol}(X,X)$ oppure siano la costante a infinito. Ciò ci dà appunto la dicotomia (orbite relativamente compatte oppure iterate comapttamente divergenti) che ci esclude i casi misti nel Teorema \ref{dicotomia}.
+
+\begin{ex}
+    Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$ la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per Hartogs, non è un dominio di olomorfia), e i domini taut sono sempre pseudoconvessi (si veda INSERIRE CIT).
+
+    Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque, orbite relativamente compatte coesistono con orbite che tendono al bordo, quindi $f$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
+    
+    In particolare, le funzioni limite di $f$ non sono né costanti né in $\text{Hol}(\Omega,\Omega)$, e questo è un controesempio, senza l'ipotesi taut, per il risultato di tipo Wolff-Denjoy che vedremo nella prossima sezione. BISOGNEREBBE CAPIRE SE SODDISFA O NO L'IPOTESI DI VISIBILITÀ
+\end{ex}
 
 Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente pseudoconvessi (quindi con bordo $C^2$), in particolare faremo riferimento a una dimostrazione che sfrutta fatti geometrici quali la Gromov-iperbolicità. Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
 

@@ -1,5 +1,4 @@
 Per il momento, nell'ordine:
-preliminari;
 teorema WD per varietà taut con visibilità;
 esempi.
 Poi:
