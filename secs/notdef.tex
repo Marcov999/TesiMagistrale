@@ -18,7 +18,7 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
 \begin{defn}
     La \textit{metrica di Poincaré} (o \textit{iperbolica}) su $\mathbb{D}$ è data da
     \begin{equation}
-        K_{\mathbb{D}}(z;v)=\frac{1}{1-|z|^2}|v|
+        \lambda_{\mathbb{D}}(z;v)=\frac{1}{1-|z|^2}|v|
     \end{equation}
     per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z^{\mathbb{C}}\mathbb{D}$. La metrica $K_{\mathbb{D}}$ è hermitiana completa con curvatura gaussiana costante uguale a $-4$.
 \end{defn}
@@ -26,7 +26,7 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
 \begin{defn}
     La \textit{distanza di Poincaré} (o \textit{iperbolica}) $k_{\mathbb{D}}$ su $\mathbb{D}$ è la forma integrata della metrica di Poincaré. Per fatti noti di geometria iperbolica, è una distanza completa la cui espressione è data da
     \begin{equation}
-        k_{\mathbb{D}}(z_1,z_2)=\frac{1}{2}\log{\frac{1+\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}{1-\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}}
+        \omega(z_1,z_2)=\frac{1}{2}\log{\frac{1+\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}{1-\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}}
     \end{equation}
     per ogni $z_1,z_2 \in \mathbb{D}$.
 \end{defn}
@@ -53,10 +53,10 @@ Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è co
 \begin{defn}
     Sia $X$ una varietà complessa connessa; la \textit{pseudodistanza di Kobayashi} su $X$ è data da
     \begin{equation}\begin{split}
-        k_X(z,w)=&\inf\Bigg\{\sum_{j=1}^m k_{\mathbb{D}}(z_{j-1},z_j) \mid m \in \mathbb{N}, z_j \in \mathbb{D}\text{ per }j=0,\dots,m\text{ tali che}\\
+        k_X(z,w)=&\inf\Bigg\{\sum_{j=1}^m \omega(z_{j-1},z_j) \mid m \in \mathbb{N}, z_j \in \mathbb{D}\text{ per }j=0,\dots,m\text{ tali che}\\
         &\text{esistono }\varphi_j\in \text{Hol}(\mathbb{D},X) \text{ con } \varphi_1(z_0)=z,\varphi_m(z_m)=w\Bigg\}
     \end{split}\end{equation}
-    per $z,w \in X$, dove $k_{\mathbb{D}}$ è la distanza di Poincaré.
+    per $z,w \in X$.
 \end{defn}
 
 \begin{oss} \label{k_lip}
