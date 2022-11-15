@@ -2,16 +2,16 @@ Nella sezione precedente abbiamo visto come l'ipotesi di varietà taut ci permet
 
 Per ottenere un risultato di tipo Wolff-Denjoy, nel caso in cui le iterate siano compattamente divergenti dobbiamo dire due cose: che le iterate convergono uniformemente sui compatti a una funzione a valori nel bordo euclideo, e che in realtà tale funzione è una costante.
 
-Per ottenere la convergenza uniforme al bordo ci basterà supporre che la varietà sia embeddata in un qualche $\mathbb{C}^d$ e limitata, dopodiché si applica il teorema di Montel. Per dire che la funzione è costante, invece, ci serviranno delle ipotesi aggiuntive di tipo geometrico: la condizione di visibilità per le circa-geodetiche (CHE NOME ORRIBILE, CHIEDERE AD ABATE COSA SI PUÒ FARE). \\
+Per ottenere la convergenza uniforme al bordo ci basterà supporre che la varietà sia embeddata in un qualche $\mathbb{C}^d$ e limitata, dopodiché si applica il teorema di Montel. Per dire che la funzione è costante, invece, ci serviranno delle ipotesi aggiuntive di tipo geometrico: la condizione di visibilità per le simil-geodetiche. \\
 
 Nel caso di un dominio con bordo regolare, l'ipotesi di essere strettamente pseudoconvesso permetteva di concludere la condizione geometrica di Gromov-iperbolicità; sotto l'ipotesi di Gromov-iperbolicità, si può dimsotrare che il dominio soddisfa una condizione di visibilità per le geodetiche.
 
-Tuttavia, nella prossima sezione vedremo esempi di domini che soddisfano la condizione di visibilità per le circa-geodetiche ma che non sono Gromov-iperbolici. (CONTROLLARE LA VERIDICITÀ DELLA SEGUENTE FRASE) Inoltre, non vale neanche l'altra implicazione: esistono domini Gromov-iperbolici per i quali non vale la condizione di visibilità per le circa geodetiche.
+Tuttavia, nella prossima sezione vedremo esempi di domini che soddisfano la condizione di visibilità per le simil-geodetiche ma che non sono Gromov-iperbolici. (CONTROLLARE LA VERIDICITÀ DELLA SEGUENTE FRASE) Inoltre, non vale neanche l'altra implicazione: esistono domini Gromov-iperbolici per i quali non vale la condizione di visibilità per le circa geodetiche.
 
-Dunque non c'è implicazione né in un senso né nell'altro, e il risultato che otteniamo è indipendente da quello per domini Gromov-iperbolici. Prima di enunciarlo, ci serviranno alcune definizioni, partendo da quella di circa-geodetica.
+Dunque non c'è implicazione né in un senso né nell'altro, e il risultato che otteniamo è indipendente da quello per domini Gromov-iperbolici. Prima di enunciarlo, ci serviranno alcune definizioni, partendo da quella di simil-geodetica.
 
 \begin{defn}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Sia $I\subseteq \mathbb{R}$ un intervallo; una curva $\sigma:I \longrightarrow X$ è detta una \textit{$(\lambda,\kappa)$-circa-geodetica} se
+    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Sia $I\subseteq \mathbb{R}$ un intervallo; una curva $\sigma:I \longrightarrow X$ è detta una \textit{$(\lambda,\kappa)$-simil-geodetica} se
     \begin{enumerate}
         \item per ogni $s,t \in I$ si ha
         $$\frac{1}{\lambda}|t-s|-\kappa \le k_X\big(\sigma(s),\sigma(t)\big)\le\lambda|t-s|+\kappa;$$
@@ -23,13 +23,13 @@ Dunque non c'è implicazione né in un senso né nell'altro, e il risultato che 
 Diamo adesso la definizione di condizione di visibilità.
 
 \begin{defn} \label{visibility}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Diciamo che $X$ ha la \textit{condizione di visibilità rispetto alle $(\lambda,\kappa)$-circa-geodetiche} se
+    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Diciamo che $X$ ha la \textit{condizione di visibilità rispetto alle $(\lambda,\kappa)$-simil-geodetiche} se
     \begin{enumerate}
-        \item ogni due punti distinti di $X$ possono essere collegati da una $(\lambda,\kappa)$-circa-geodetica;
-        \item per ogni coppia di punti $p,q\in\partial X$ con $p\not=q$, esistono in $\mathbb{C}^d$ due intorni $V$ e $W$ di $p$ e $q$ rispettivamente e un compatto $K$ di $X$ tali che: $\overline{V}\cap\overline{W}=\emptyset$; ogni $(\lambda,\kappa)$-circa-geodetica in $X$ che collega un punto di $V$ a un punto di $W$ interseca $K$.
+        \item ogni due punti distinti di $X$ possono essere collegati da una $(\lambda,\kappa)$-simil-geodetica;
+        \item per ogni coppia di punti $p,q\in\partial X$ con $p\not=q$, esistono in $\mathbb{C}^d$ due intorni $V$ e $W$ di $p$ e $q$ rispettivamente e un compatto $K$ di $X$ tali che: $\overline{V}\cap\overline{W}=\emptyset$; ogni $(\lambda,\kappa)$-simil-geodetica in $X$ che collega un punto di $V$ a un punto di $W$ interseca $K$.
     \end{enumerate}
 \end{defn}
 
-Le circa-geodetiche sono delle curve che, a meno di costanti moltiplicative e additive, si comportano come le geodetiche, cioè le curve che minimizzano la lunghezza.
+Le simil-geodetiche sono delle curve che, a meno di costanti moltiplicative e additive, si comportano come le geodetiche, cioè le curve che minimizzano la lunghezza.
 
 Quello che chiediamo nella Definizione \ref{visibility} è che, per andare da un punto a un altro del bordo con tali curve, allora non possiamo stare arbitrariamente vicini al bordo, ma siamo costretti a ``piegarci'' verso l'interno; in pratica, stiamo chiedendo che ci sia una sorta di curvatura negativa. QUA CI VA UN BEL DISEGNINO IN INKSCAPE, SIA DEL CASO VIETATO CHE DEL CASO PREVISTO DALLA DEFINIZIONE

@@ -1,21 +1,21 @@
-Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con alcuni teoremi noti dell'analisi complessa in più variabili.
+Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con un paio di teoremi noti dell'analisi complessa in più variabili.
 
 \begin{thm}
-    (Montel, INSERIRE CIT) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Una famiglia $\mathcal{F}$ è relativamente compatta in $\mathcal{O}(\Omega)$ se e solo se è uniformemente limitata sui compatti.
+    (\cite[Chapter 1, Proposition 6]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\mathcal{F}$ una famiglia uniformemente limitata sui compatti; allora è relativamente compatta in $\mathcal{O}(\Omega)$.
 \end{thm}
 
-WEIERSTRASS SERVE? INOLTRE, SE ASCOLI-ARZELÀ È INEVITABILE CAMBIA LA FRASE SOPRA\\
-POTREBBE SERVIRE ANCHE HARTOGS; SENTI, FAI CHE LA FRASE SOPRA COMUNQUE LA RISCRIVI, ALLA FINE\\
+\begin{thm} \label{hartogs_fen}
+    (Serre, Ehrenpreis \cite[Chapter 1, Paragraph 1.2, Theorem 1.2.6]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato, con $n>1$. Sia $K$ un sottoinsieme compatto di $\Omega$ tale che $\Omega\setminus K$ è connesso. Se $f\in\mathcal{O}(\Omega\setminus K)$, allora esiste $F\in\mathcal{O}(\Omega)$ tale che $F\restrict{\Omega\setminus K}=f$.
+\end{thm}
 
 Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi espliciti, dalla quale discende un'importante conseguenza.
 
 \begin{prop}
-    (METTERE UNA CIT) Si ha che:
+    (\cite[Chapter 2.3, Proposition 2.3.4 and Corollary 2.3.7]{A1}) Si ha che:
     \begin{nlist}
         \item la distanza di Poincaré e la pseudodistanza di Kobayashi coincidono per $\mathbb{D}$;
         \item dati $z=(z_1,\dots,z_n)$ e $w=(w_1,\dots,w_n)$ in $\mathbb{D}^n$, si ha
-        $$k_{\mathbb{D}^n}(z,w)=\max_{j=1,\dots,n}\{k_{\mathbb{D}}(z_j,w_j)\};$$
-        \item L'ESPRESSIONE ESPLICITA PER LA PALLA METTILA SOLO SE SERVE.
+        $$k_{\mathbb{D}^n}(z,w)=\max_{j=1,\dots,n}\{k_{\mathbb{D}}(z_j,w_j)\}.$$
     \end{nlist}
 \end{prop}
 \begin{proof}
@@ -84,7 +84,7 @@ Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la di
 Vogliamo dare una caratterizzazione equivalente all'essere taut per una varietà.
 
 \begin{oss} \label{c0yx}
-    Dalla definizione della compattificazione di Alexandroff, una successione in $C^0(Y,X)$ converge in $C^0(Y,X^*)$ alla funzione costante a $\infty$ se e solo se è compattamente divergente. Inoltre, se $X$ e $Y$ sono varietà (ma in realtà bastano ipotesi meno stringenti) un sottoinsieme di $C^0(Y,X^*)$ è compatto se e solo se è compatto per successioni.
+    Dalla definizione della compattificazione di Alexandroff, una successione in $C^0(Y,X)$ converge in $C^0(Y,X^*)$ alla funzione costante a $\infty$ se e solo se è compattamente divergente. Inoltre, se $X$ e $Y$ sono varietà (ma in realtà bastano ipotesi meno stringenti), un sottoinsieme di $C^0(Y,X^*)$ è compatto se e solo se è compatto per successioni.
 \end{oss}
 
 \begin{cor}
@@ -99,7 +99,7 @@ Vogliamo dare una caratterizzazione equivalente all'essere taut per una varietà
 Si può dimostrare qualcosa di più.
 
 \begin{prop}
-    (INSERIRE CIT) Sia $X$ una varietà taut. Allora $\text{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
+    (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\text{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
 \end{prop}
 
 Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia che cerchiamo per il comportamento delle iterate delle funzioni olomorfe, dobbiamo studiarne alcune proprietà.
@@ -121,7 +121,7 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 \end{proof}
 
 \begin{thm} \label{retraiii}
-    (INSERIRE CIT) Siano $X$ una varietà taut e $f\in\text{Hol}(X,X)$. Supponiamo che la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non sia compattamente divergente. Allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
+    (\cite[Theorem 2.1.5]{A4}) Siano $X$ una varietà taut e $f\in\text{Hol}(X,X)$. Supponiamo che la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non sia compattamente divergente. Allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
 
     Inoltre, $\varphi=f\restrict{M}\in\text{Aut}(M)$ e $\Gamma(f)$ è isomorfo al sottogruppo di $\text{Aut}(M)$ dato dalla chiusura di $\{\varphi^k\}_{k \in\mathbb{N}}$.
 \end{thm}
@@ -162,7 +162,7 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma di cinque asserzioni equivalenti.
 
 \begin{thm} \label{dicotomia}
-    (INSERIRE CIT) Sia $X$ una varietà taut e $f \in \text{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
+    (\cite[Theorem 1.1]{A2}) Sia $X$ una varietà taut e $f \in \text{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
     \begin{nlist}
         \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non è compattamente divergente;
         \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non contiene alcuna sottosuccessione compattamente divergente;
@@ -208,17 +208,17 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
 Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ottenere la dicotomia, anche in un caso piuttosto regolare. In realtà, dalla Proposizione \ref{alex} sappiamo che l'essere Kobayashi-iperbolica implica una proprietà di compattezza per le funzioni olomorfe da $X$ in sé; per definizione, l'essere taut impone che le funzioni limite in $\text{Hol}(X,X)$ siano ancora in $\text{Hol}(X,X)$ oppure siano la costante a infinito. Ciò ci dà appunto la dicotomia (orbite relativamente compatte oppure iterate comapttamente divergenti) che ci esclude i casi misti nel Teorema \ref{dicotomia}.
 
 \begin{ex}
-    Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$ la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per Hartogs, non è un dominio di olomorfia), e i domini taut sono sempre pseudoconvessi (si veda INSERIRE CIT).
+    Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$ la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per il Teorema \ref{hartogs_fen}, non è un dominio di olomorfia), e i domini taut diversi da $\mathbb{C}^n$ sono sempre pseudoconvessi (si veda \cite[Theorem F]{W}).
 
     Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque, orbite relativamente compatte coesistono con orbite che tendono al bordo, quindi $f$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
     
-    In particolare, le funzioni limite di $f$ non sono né costanti né in $\text{Hol}(\Omega,\Omega)$, e questo è un controesempio, senza l'ipotesi taut, per il risultato di tipo Wolff-Denjoy che vedremo nella prossima sezione. BISOGNEREBBE CAPIRE SE SODDISFA O NO L'IPOTESI DI VISIBILITÀ
+    In particolare, le funzioni limite di $f$ non sono né costanti né in $\text{Hol}(\Omega,\Omega)$, e questo è un controesempio, senza l'ipotesi taut, per il risultato di tipo Wolff-Denjoy che vedremo nella prossima sezione. BISOGNA ANCHE DIRE CHE SODDISFA LA CONDIZIONE DI VISIBILITÀ
 \end{ex}
 
 Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente pseudoconvessi (quindi con bordo $C^2$), in particolare faremo riferimento a una dimostrazione che sfrutta fatti geometrici quali la Gromov-iperbolicità. Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
 
 \begin{thm} \label{abate_wd}
-    (Abate, \cite[Theorem 0.5]{A}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso e $f \in \text{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
+    (Abate, \cite[Theorem 0.5]{A2}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso e $f \in \text{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
         \item le orbite di $f$ sono relativamente compatte in $\Omega$;
         \item esiste un unico punto di $\partial\Omega$ tale che le orbite di $f$ convergono tutte, uniformemente sui compatti, a quel punto.

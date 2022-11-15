@@ -31,9 +31,9 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     per ogni $z_1,z_2 \in \mathbb{D}$.
 \end{defn}
 
-Oltre alla curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse (lemma di Schwarz-Pick, si veda ad esempio \cite[Chapter I, paragraph 1, Theorem 1.1]{K1}).
+Oltre alla curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse (lemma di Schwarz-Pick, si veda ad esempio \cite[Chapter I, paragraph 1, Theorem 1.1]{K2}).
 
-Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poincaré ad una qualsiasi varietà complessa mantenendo queste proprietà, in particolare quella di rendere le funzioni olomorfe delle semicontrazioni. Ci sono vari modi per farlo, noi nello specifico vedremo la (pseudo)metrica e la (pseudo)distanza di Kobayashi, introdotte nel 1967 in \cite{K2}.
+Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poincaré ad una qualsiasi varietà complessa mantenendo queste proprietà, in particolare quella di rendere le funzioni olomorfe delle semicontrazioni. Ci sono vari modi per farlo, noi nello specifico vedremo la (pseudo)metrica e la (pseudo)distanza di Kobayashi, introdotte nel 1967 in \cite{K1}.
 
 \begin{defn}
     Sia $X$ una varietà complessa; la \textit{pseudometrica di Kobayashi} su $X$ è
@@ -48,7 +48,7 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
     Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$; vedremo però tra poco che per i domini limitati è effettivamente una metrica. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$.
 \end{oss}
 
-Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo (SOLO CIT DEL RISULTATO ORIGINALE O ANCHE DIM?) com'è collegata alla pseudometrica di Kobayashi.
+Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.
 
 \begin{defn}
     Sia $X$ una varietà complessa connessa; la \textit{pseudodistanza di Kobayashi} su $X$ è data da
@@ -70,7 +70,7 @@ Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo (SOLO CIT
 Il seguente risultato per le varietà Kobayashi-iperboliche verrà spesso usato implicitamente.
 
 \begin{prop}
-    (INSERIRE CIT) Una varietà complessa connessa $X$ è Kobayashi-iperbolica se e solo se $k_X$ induce su $X$ la topologia di varietà.
+    (Barth, \cite{B}) Una varietà complessa connessa $X$ è Kobayashi-iperbolica se e solo se $k_X$ induce su $X$ la topologia di varietà.
 \end{prop}
 
 Diamo ora delle definizioni che ci serviranno per enunciare i risultati già noti nel caso dei domini regolari.
@@ -94,10 +94,10 @@ Diamo ora delle definizioni che ci serviranno per enunciare i risultati già not
     Un dominio $\Omega \subseteq \mathbb{C}^n$ si dice \textit{(Hartogs) pseudoconvesso} se esiste un funzionale di Minkowski $\mu$ tale che $-\log\mu_{\Omega}$ è plurisubarmonica in $\Omega$.
 \end{defn}
 
- Ci servirà il seguente risultato per un controesempio. (ANCHE QUI, COME SOTTO: FATTO O TEOREMA? INSERIRE CIT)
- \begin{ftt}
-    Ogni dominio pseudoconvesso è un dominio di olomorfia.
- \end{ftt}
+ Ci servirà il seguente risultato per un controesempio.
+ \begin{thm}
+    (\cite[Chapter 5, Paragraph 5.1, Theorem 5.1.2]{Kr}) Ogni dominio pseudoconvesso è un dominio di olomorfia.
+ \end{thm}
 
 Nel caso di domini regolari, si può dare una definizione di pseudoconvessità più operativa equivalente.
 
@@ -115,10 +115,10 @@ Nel caso di domini regolari, si può dare una definizione di pseudoconvessità p
       è semidefinita positiva in $H_p\partial\Omega$ per ogni $p \in \partial\Omega$. Diciamo che è \textit{strettamente pseudoconvesso} se la forma di Levi è definita positiva.
 \end{defn}
 
-Vale il seguente risultato. (INSERIRE CIT, POI: MEGLIO CITARLO COME FATTO O COME TEOREMA?)
-\begin{ftt}
-    Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ è Levi pseudoconvesso se e solo se è Hartogs pseudoconvesso.
-\end{ftt}
+Vale il seguente risultato.
+\begin{thm}
+    (\cite[Chapter 3, Paragraph 3.3, Theorem 3.3.5]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ è Levi pseudoconvesso se e solo se è Hartogs pseudoconvesso.
+\end{thm}
 
 Nella prossima sottosezione citeremo alcuni risultati sulla geometria dei domini limitati strettamente pseudoconvessi dotati della distanza di Kobayashi. In particolare, vedremo che sono Gromov-iperbolici, il che permette di derivare un teorema di tipo Wolff-Denjoy per questi domini.
 
@@ -133,7 +133,7 @@ Nella prossima sottosezione citeremo alcuni risultati sulla geometria dei domini
 Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per i teoremi che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi del teorema. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica.
 
 \begin{prop} \label{alex}
-    (INSERIRE CIT) Sia $X$ una varietà complessa connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\text{\normalfont{Hol}}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$. In tal caso, $\text{\normalfont{Hol}}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$.
+    (\cite[Theorem 1.3]{A3}) Sia $X$ una varietà complessa connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\text{\normalfont{Hol}}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
 \end{prop}
 
 \begin{defn}
