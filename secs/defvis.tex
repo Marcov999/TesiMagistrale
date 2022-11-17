@@ -7,10 +7,10 @@ Per ottenere la convergenza uniforme al bordo ci basterà supporre che la variet
 Nel caso di un dominio con bordo regolare, l'ipotesi di essere strettamente pseudoconvesso permetteva di concludere la condizione geometrica di Gromov-iperbolicità; \marginpar{Capire se torna}sotto l'ipotesi di Gromov-iperbolicità, si può dimsotrare che il dominio soddisfa una condizione di visibilità per le geodetiche (si veda la discussione che precede il Theorem 1.4 in \cite{BZ1} per delle reference più approfondite).
 
 Tuttavia, nella prossima sezione vedremo esempi di domini che soddisfano la condizione di visibilità per le simil-geodetiche ma che non sono Gromov-iperbolici.
-\marginpar{Capire se è davvero questo il tipo di controesempio che ci serve}
-Inoltre, non vale neanche l'altra implicazione: esistono domini Gromov-iperbolici per i quali non vale la condizione di visibilità per le circa geodetiche.
+\marginpar{Capire che controesempio ci serve davvero e trovarlo}
+Inoltre, non vale neanche l'altra implicazione: esistono domini Gromov-iperbolici per i quali non vale la condizione di visibilità per le simil-geodetiche. Dunque non c'è implicazione né in un verso né nell'altro. \\
 
-Dunque non c'è implicazione né in un senso né nell'altro, e il risultato che otteniamo è indipendente da quello per domini Gromov-iperbolici. Prima di enunciarlo, ci serviranno alcune definizioni, partendo da quella di simil-geodetica.
+Prima di enunciare il risultato di tipo Wolff-Denjoy che andremo a dimostrare, ci serviranno alcune definizioni, partendo da quella di simil-geodetica.
 
 \begin{defn}
     Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Sia $I\subseteq \mathbb{R}$ un intervallo; una curva $\sigma:I \longrightarrow X$ è detta una \textit{$(\lambda,\kappa)$-simil-geodetica} se
@@ -35,12 +35,13 @@ Diamo adesso la definizione di condizione di visibilità.
 Le simil-geodetiche sono delle curve che, a meno di costanti moltiplicative e additive, si comportano come le geodetiche, cioè le curve che minimizzano la lunghezza.
 
 \marginpar{Qua ci va un bel disegnino in inkscape, sia del caso vietato che del caso previsto dalla definizione}
-Quello che chiediamo nella Definizione \ref{visibility} è che, per andare da un punto a un altro del bordo con tali curve, allora non possiamo stare arbitrariamente vicini al bordo, ma siamo costretti a ``piegarci'' verso l'interno; in pratica, stiamo chiedendo che ci sia una sorta di curvatura negativa.
+Quello che chiediamo, euristicamente, nella Definizione \ref{visibility} è che, se vogliamo andare da un punto a un altro del bordo con tali curve, allora non possiamo stare arbitrariamente vicini al bordo, ma siamo costretti a ``piegarci'' verso l'interno; in pratica, stiamo chiedendo che ci sia una sorta di curvatura negativa.
 
 \begin{ftt}
     Il dominio $\Omega$ definito nell'Esempio \ref{servetaut} soddisfa la condizione di visibilità per le simil-geodetiche. Per vederlo, consideriamo due casi:
     \begin{nlist}
         \item uno dei due punti è l'origine. Allora basta prendere come compatto un qualsiasi insieme della forma $\{r \le |z| \le R\}$ con $0<r<R<1$ e i due intorni aperti sufficientemente piccoli;
-        \item i due punti sono entrambi sulla sfera unitaria. Per \cite[Proposition 6]{NTT}, è facile vedere che, se la palla unitaria soddisfa la condizione di visibilità per simil-geodetiche, allora $\Omega$ la soddisfa in questo caso. Adesso, la palla unitaria è Gromov-iperbolica (è facile verificare, ad esempio, che è strettamente pseudoconvessa), dunque soddisfa la condizione di visibilità rispetto alle geodetiche. Usando \cite[Part III, Chapter H, Paragraph 1, Theorem 1.7]{BH} e il fatto che è uno spazio metrico proprio, possiamo facilmente concludere che soddisfa anche la condizione di visibilità per le simil-geodetiche.
+        \item i due punti sono entrambi sulla sfera unitaria. Per \cite[Proposition 6]{NTT}, è facile vedere che, se la palla unitaria soddisfa la condizione di visibilità per simil-geodetiche, allora $\Omega$ la soddisfa in questo caso. Adesso, la palla unitaria è Gromov-iperbolica (è facile verificare, ad esempio, che è strettamente pseudoconvessa), \marginpar{Forse qui è più pulito citare BZ e dire che è Goldilock}dunque soddisfa la condizione di visibilità rispetto alle geodetiche. Usando \cite[Part III, Chapter H, Paragraph 1, Theorem 1.7]{BH} e il fatto che è uno spazio metrico proprio, possiamo facilmente concludere che soddisfa anche la condizione di visibilità per le simil-geodetiche.
     \end{nlist}
+    Perciò, l'ipotesi che la varietà sia taut è necessaria per ottenere il risultato di tipo Wolff-Denjoy, anche con la condizione di visibilità.
 \end{ftt}

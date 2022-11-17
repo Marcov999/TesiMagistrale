@@ -1,7 +1,7 @@
 Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con un paio di teoremi noti dell'analisi complessa in più variabili.
 
 \begin{thm}
-    (\cite[Chapter 1, Proposition 6]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\mathcal{F}$ una famiglia uniformemente limitata sui compatti; allora è relativamente compatta in $\mathcal{O}(\Omega)$.
+    (Montel, \cite[Chapter 1, Proposition 6]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\mathcal{F}$ una famiglia uniformemente limitata sui compatti; allora è relativamente compatta in $\mathcal{O}(\Omega)$.
 \end{thm}
 
 \begin{thm} \label{hartogs_fen}
@@ -121,7 +121,7 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 \end{proof}
 
 \begin{thm} \label{retraiii}
-    (\cite[Theorem 2.1.5]{A4}) Siano $X$ una varietà taut e $f\in\text{Hol}(X,X)$. Supponiamo che la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non sia compattamente divergente. Allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
+    (\cite[Theorem 2.1.5]{A4}) Sia $X$ una varietà taut e consideriamo $f\in\text{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
 
     Inoltre, $\varphi=f\restrict{M}\in\text{Aut}(M)$ e $\Gamma(f)$ è isomorfo al sottogruppo di $\text{Aut}(M)$ dato dalla chiusura di $\{\varphi^k\}_{k \in\mathbb{N}}$.
 \end{thm}
@@ -205,12 +205,12 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
     per ogni $0 \le j \le \min\{k_l,h_0-k_0\}$. Adesso, se $k_l \ge h_0-k_0$ allora, per la \eqref{inKappa}, la \eqref{accamenocappa} e la definizione di $K$, abbiamo $\varphi^j(z_0) \in K$ per ogni $0 \le j \le h_0$, in contraddizione con la scelta di $h_0$. Perciò dev'essere $k_l<h_0-k_0$; poniamo $h_1=h_0-k_0-k_l$. Per la \eqref{accamenocappa} si ha $h_1 \in I$; dunque, essendo $h_1<h_0$, dev'essere $\varphi^j(z_0) \in K$ per ogni $0 \le j \le h_1$. Ma la \eqref{inKappa}, la \eqref{accamenocappa} e la definizione di $K$ implicano che $\varphi^j(z_0) \in K$ per ogni $h_1 \le j \le h_0$, dunque anche in questo caso troviamo una contraddizione.
 \end{proof}
 
-Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ottenere la dicotomia, anche in un caso piuttosto regolare. In realtà, dalla Proposizione \ref{alex} sappiamo che l'essere Kobayashi-iperbolica implica una proprietà di compattezza per le funzioni olomorfe da $X$ in sé; per definizione, l'essere taut impone che le funzioni limite in $\text{Hol}(X,X)$ siano ancora in $\text{Hol}(X,X)$ oppure siano la costante a infinito. Ciò ci dà appunto la dicotomia (orbite relativamente compatte oppure iterate comapttamente divergenti) che ci esclude i casi misti nel Teorema \ref{dicotomia}.
+Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ottenere la dicotomia, anche in un caso piuttosto regolare. In realtà, dalla Proposizione \ref{alex} sappiamo che l'essere Kobayashi-iperbolica implica una proprietà di compattezza per le funzioni olomorfe da $X$ in sé. Per definizione, l'essere taut impone che le funzioni limite in $\text{Hol}(X,X)$ siano ancora in $\text{Hol}(X,X)$ oppure siano la costante a infinito; ciò ci dà appunto la dicotomia (orbite relativamente compatte oppure iterate comapttamente divergenti) che esclude i casi misti nel Teorema \ref{dicotomia}.
 
 \begin{ex} \label{servetaut}
     Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$ la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per il Teorema \ref{hartogs_fen}, non è un dominio di olomorfia), e i domini taut diversi da $\mathbb{C}^n$ sono sempre pseudoconvessi (si veda \cite[Theorem F]{W}).
 
-    Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque, orbite relativamente compatte coesistono con orbite che tendono al bordo, quindi $f$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
+    Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque orbite relativamente compatte coesistono con orbite che tendono al bordo, quindi $f$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
     
     In particolare, le funzioni limite di $f$ non sono né costanti né in $\text{Hol}(\Omega,\Omega)$, e questo è un controesempio, senza l'ipotesi taut, per il risultato di tipo Wolff-Denjoy che vedremo nella prossima sezione.
 \end{ex}

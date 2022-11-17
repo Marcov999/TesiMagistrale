@@ -7,7 +7,7 @@ Introduciamo la notazione che useremo:
     \item dato $X$ spazio topologico e data $f \in C^0(X,X)$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$;
     \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme delle funzioni biolomorfe da $X$ in sé;
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $Df(x)$ il differenziale di $f$ in $x \in X$;
-    \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$, mentre $\mathbb{D}^n$ è il polidisco in $\mathbb{C}^n$ e $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$ è il disco di raggio $r>0$;
+    \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$, mentre $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$ è il polidisco in $\mathbb{C}^n$ e $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$ è il disco di raggio $r>0$;
     \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di raggio $r>0$;
     \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $x \in \mathbb{C}^n$, scriviamo $\delta(x)=\displaystyle\inf_{w \in \partial\Omega}\|x-w\|$ per indicare la distanza euclidea di $x$ dal bordo di $\Omega$;
     \item ALTRO?
@@ -45,7 +45,7 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
 \end{defn}
 
 \begin{oss}
-    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$; vedremo però tra poco che per i domini limitati è effettivamente una metrica. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$.
+    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$; \marginpar{Ma lo vediamo davvero questo?}vedremo però tra poco che per i domini limitati è effettivamente una metrica. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$.
 \end{oss}
 
 Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.
@@ -130,7 +130,7 @@ Nella prossima sottosezione citeremo alcuni risultati sulla geometria dei domini
     Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è costruito come classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow \infty}(x_i,x_j)_w=\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow \infty}(x_i,y_i)_w=\infty$. Questa costruzione è indipendente dalla scelta di $w$.
 \end{defn}
 
-Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per i teoremi che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi del teorema. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica.
+Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per i teoremi che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi del teorema. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe dal disco in una varietà Kobayashi-iperbolica.
 
 \begin{prop} \label{alex}
     (\cite[Theorem 1.3]{A3}) Sia $X$ una varietà complessa connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\text{\normalfont{Hol}}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
