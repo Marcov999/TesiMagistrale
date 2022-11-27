@@ -44,15 +44,19 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi espliciti, d
 
 Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi; per una dimostrazione si rimanda a \cite{R}.
 
-\begin{thm}
+\begin{thm} \label{lung_int}
     \cite[Result 2.1]{CMS} Sia $X$ una sottovarietà complessa connessa embeddata in $\mathbb{C}^d$. Per ogni $z,w \in X$, abbiamo
     \begin{nlist}
         \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è $C^1$ a tratti, }\gamma(a)=z,\gamma(b)=w\}$;
         \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è assolutamente continua,}$\\
-        $\text{    }\qquad\qquad\,\,\,\,\gamma(a)=z,\gamma(b)=w\}$;
+        $\text{    }\qquad\qquad\,\,\,\,\gamma(a)=z,\gamma(b)=w\}$.
     \end{nlist}
-    qui, $l_X(\gamma)=\displaystyle\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t$ è ben definito in entrambi i casi.
+    Qui, $l_X(\gamma)=\displaystyle\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t$ è ben definito in entrambi i casi.
 \end{thm}
+
+\begin{oss}
+    Non è difficile vedere che dal Teorema \ref{lung_int} segue che ogni varietà $X$ con quelle ipotesi è uno \textit{spazio di lunghezze} nel senso di \cite[Part I, Paragraph 3]{BH}.
+\end{oss}
 
 Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la dicotomia sul comportamento delle iterate delle funzioni olomorfe. Per farlo, ci servono prima alcuni risultati.
 
