@@ -1,0 +1,23 @@
+Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema di tipo Wolff-Denjoy per varietà Kobayashi-iperboliche. Riportiamo la dimostrazione data in \cite{CMS}, ma notiamo che la strategia e le tecniche impiegate sono sostanzialmente riprese da \cite{BZ1} e \cite{BM}. Ognuno di questi articoli ha generalizzato il risultato ottenuto nel precedente.
+
+\begin{thm}
+    (\cite[Theorem 1.15]{CMS}) Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche.
+    
+    Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite di $F$ sono relativamente compatte in $X$;
+        \item esiste un unico punto di $\partial X$ tale che le iterate di $F$ convergono tutte, uniformemente sui compatti, a quel punto.
+    \end{itemize}
+\end{thm}
+
+\begin{proof}
+    Poiché $X$ è taut, per il Teorema \ref{dicotomia} o l'orbita di $z$ tramite $F$ è relativamente compatta per ogni $z \in X$, oppure la successione delle iterate $\{F^\nu\}_{\nu\in\mathbb{N}}$ è compattamente divergente. Supponiamo che le orbite di $F$ non siano relativamente compatte in $X$; allora la successione delle iterate di $F$ è compattamente divergente.
+
+    Consideriamo una sottosuccessione qualsiasi di $\{F^\nu\}_{\nu\in\mathbb{N}}$. Usando il teorema di Montel, possiamo trovare una sottosuccessione che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \overline{X}$. Infatti, poiché $X$ è limitata allora la successione è uniformemente limitata sui compatti; possiamo dunque fissare una base numerabile fatta di carte di $X$ ed estrarre, con un procedimento diagonale, una sottosuccessione che converga uniformemente sui compatti di ogni carta. Prendendo un'esaustione in compatti di $X$ (ad esempio, le palle chiuse rispetto a $k_X$) si può concludere facilmente che la convergenza è uniforme su tutti i compatti di $X$.
+
+    Poiché le iterate di $F$ sono compattamente divergenti, si ha che $\tilde{F}\in\mathcal{O}(X,\partial X)$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Possiamo quindi identificare
+    $$\Gamma:=\overline{\{F^\nu\}}_{\nu\in\mathbb{N}}\setminus\{F^\nu\}_{\nu\in\mathbb{N}}$$
+    come un insieme di punti di $\partial X$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti.
+
+    CONTINUA DA QUI.
+\end{proof}

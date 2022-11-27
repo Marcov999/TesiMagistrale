@@ -1,0 +1,27 @@
+\begin{thm} \label{similgeo_conn}
+    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata. Per ogni $z,w \in X$ e ogni $\kappa>0$ esiste una $(1,\kappa)$-simil-geodetica $\sigma:[a,b]\longrightarrow X$ tale che $\sigma(a)=z$ e $\sigma(b)=w$.
+\end{thm}
+
+\begin{proof}
+    DA SCRIVERE.
+\end{proof}
+
+\begin{thm} \label{lim_is_const}
+    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Sia $\{F_\nu\}_{\nu\in\mathbb{N}} \subseteq \mathcal{O}(X,X)$  una successione che converge uniformemente sui compatti di $X$ a una $\psi\in\mathcal{O}(X,\partial X)$. Allora $\psi$ è costante.
+\end{thm}
+
+\begin{proof}
+    Supponiamo, per assurdo, che $\psi$ non sia costante. Allora, dati $x \in X$ e $\epsilon>0$, la restrizione di $\psi$ alla palla aperta rispetto alla distanza di Kobayashi di centro $x$ e raggio $\epsilon$, $B_{k_X}(x,\epsilon)$, non è costante. Infatti, tale palla è un aperto di $X$, e se $\psi$ fosse costante su di essa lo sarebbe su tutta $X$ per il principio di identità delle funzioni olomorfe, poiché $X$ è connessa. Questa, però, sarebbe una contraddizione alla nostra assunzione.
+
+    Fissiamo $x_0 \in X$ e poniamo $\epsilon_0=\kappa_0/3$. Per quanto detto, deve esistere un $x_1 \in B_{k_X}(x_0,\epsilon_0)$ tale che $\{F_\nu(x_0)\}_{\nu\in\mathbb{N}}$ e $\{F_\nu(x_1)\}_{\nu\in\mathbb{N}}$ convergono rispettivamente a $\xi$ e $\eta$, con $\xi,\eta \in \partial X$ e $\xi\not=\eta$. Consideriamo adesso una $(1,\kappa_0/3)$-simil-geodetica $\gamma:[a,b]\longrightarrow X$ tale che $\gamma(a)=x_0$ e $\gamma(b)=x_1$, che esiste per il Teorema \ref{similgeo_conn}. Per definizione si ha che
+    $$|a-b|-\kappa_0/3 \le k_X(x_0,x_1) \implies |a-b| \le k_X(x_0,x_1)+\kappa_0/3 \le 2\kappa_0/3.$$
+    Per ogni $\nu\in\mathbb{N}$ definiamo $\sigma_\nu:[a,b]\longrightarrow X$ come $\sigma_\nu=F_\nu\circ\gamma$. Mostriamo che $\sigma_\nu$ è una $(1,\kappa_0)$-simil-geodetica per ogni $\nu\in\mathbb{N}$. Per ogni $s,t \in [a,b]$ si ha
+    \begin{align*}k_X\big(\sigma_\nu(s),\sigma_\nu(t)\big)&=k_X\Big(F_\nu\big(\gamma(s)\big),F_\nu\big(\gamma(t)\big)\Big)\\
+        &\le k_X\big(\gamma(s),\gamma(t)\big) \le |s-t|+\kappa_0/3 \le |s-t|+\kappa_0,
+    \end{align*}
+    dove abbiamo usato che le funzioni olomorfe sono delle semicontrazioni rispetto alla distanza di Kobayashi e che $\gamma$ è una $(1,\kappa_0/3)$-simil-geodetica. Inoltre, si ha che $|s-t|-\kappa_0 \le |a-b|-\kappa_0 <0$ per ogni $s,t \in [a,b]$, dunque
+    $$|s-t|-\kappa_0 \le k_X\big(\sigma_\nu(s),\sigma_\nu(t)\big) \le |s-t|+\kappa_0.$$
+    Infine, per ogni $t$ si ha
+    $$K_X\big(\sigma_\nu(t);\sigma_\nu'(t)\big)=K_X\Big(F_\nu\big(\gamma(s)\big);DF_\nu\big(\gamma(t)\big)\gamma'(t)\Big) \le K_X\big(\gamma(t);\gamma'(t)\big) \le 1,$$
+    dove abbiamo usato che le funzioni olomorfe non aumentano la metrica di Kobayashi e che $\gamma$ è una $(1,\kappa_0/3)$-simil-geodetica. Adesso, poiché $\{F_\nu\}_{\nu\in\mathbb{N}}$ converge uniformemente sui compatti di $X$ a una funzione olomorfa $\psi$ a valori in $\partial X$, ne consegue che per ogni compatto $K\subseteq X$ esiste un $\nu(K)\in\mathbb{N}$ tale che per ogni $\nu\ge\nu(K)$ si ha $\sigma_\nu([a,b])\cap K=\emptyset$. Anche in questo caso troviamo una contraddizione, poiché $X$ soddisfa la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche.
+\end{proof}
