@@ -44,8 +44,8 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
     per ogni $x \in X$ e $Z \in T_xX$.
 \end{defn}
 
-\begin{oss}
-    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$.
+\begin{oss} \label{metr_noncr}
+    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica.
 \end{oss}
 
 Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.
@@ -66,6 +66,10 @@ Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è co
 \begin{defn}
     Sia $X$ una varietà complessa connessa. Se $k_X$ è una distanza, diremo che $X$ è \textit{Kobayashi-iperbolica}.
 \end{defn}
+
+\begin{oss}
+    Dalla definizione di $k_X$ segue che ogni varietà Kobayashi-iperbolica è uno \textit{spazio di lunghezze} nel senso di \cite[Part I, Paragraph 3, Definition 3.1]{BH}.
+\end{oss}
 
 Il seguente risultato per le varietà Kobayashi-iperboliche verrà spesso usato implicitamente.
 
