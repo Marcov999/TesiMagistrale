@@ -5,7 +5,7 @@
 \begin{proof}
     Sia $n=\dim{X}$ e $D=\mathbb{D}_{r_1}\times\dots\times\mathbb{D}_{r_n}$ il polidisco che contiene $K$. Applicando l'Osservazione \ref{metr_noncr} all'inclusione e passando in coordinate, per ogni $z \in K$ e $Z \in T_zX$ si ha che
     $$K_X(z;Z) \le K_D(z;Z) \le \max_{j=1,\dots,n} \frac{r_j|Z_j|}{r_j^2-|z_j|^2}.$$
-    Per ottenere la seconda disuguaglianza, ragioniamo al seguente modo: a meno di riscalare tutto per una costante, possiamo supporre che il membro destro sia minore o uguale a $1$. Consideriamo adesso la funzione $f\in\text{Hol}(\mathbb{D},D)$ che manda $\zeta\in\mathbb{D}$ nell'elemento di $D$ che ha come $j$-esima coordinata $\dfrac{r_j\alpha_j\zeta+z_j}{1+\bar{z}_j\alpha_j\zeta/r_j}$, dove $\alpha_j=\dfrac{r_jZ_j}{r_j^2-|z_j|^2}$; allora si ha che $Df(0)\cdot 1=Z$ e la disuguaglianza discende dalla definizione di $K_D$.
+    Per ottenere la seconda disuguaglianza, ragioniamo al seguente modo: a meno di riscalare tutto per una costante, possiamo supporre che il membro destro sia uguale a $1$ (se fosse $0$, avremmo $Z=0$ e la tesi sarebbe immediata). Consideriamo adesso la funzione $f\in\text{Hol}(\mathbb{D},D)$ che manda $\zeta\in\mathbb{D}$ nell'elemento di $D$ che ha come $j$-esima coordinata $\dfrac{r_j\alpha_j\zeta+z_j}{1+\bar{z}_j\alpha_j\zeta/r_j}$, dove $\alpha_j=\dfrac{r_jZ_j}{r_j^2-|z_j|^2}$; allora si ha che $Df(0)\cdot 1=Z$ e la disuguaglianza discende dalla definizione di $K_D$.
     
     Poiché, per compattezza di $K$, la quantità $r_j^2-|z_j|^2$ è limitata dal basso da una costante positiva per $j=1,\dots,n$, la tesi segue facilmente.
 \end{proof}
