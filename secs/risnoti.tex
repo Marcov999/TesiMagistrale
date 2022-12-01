@@ -11,7 +11,7 @@ Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre
 All'inizio abbiamo nominato il lemma di Schwarz-Pick. Nel seguito ci servirà un caso particolare di tale lemma.
 
 \begin{lm}
-    (lemma di Schwarz) Sia $f\in\text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z\in\mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$.
+    (lemma di Schwarz) Sia $f\in\textnormal{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z\in\mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$.
 \end{lm}
 
 Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi espliciti, dalla quale discende un'importante conseguenza.
@@ -94,7 +94,7 @@ Vogliamo dare una caratterizzazione equivalente all'essere taut per una varietà
 \end{oss}
 
 \begin{cor}
-    Una varietà complessa connessa $X$ è taut se e solo se la famiglia $\text{Hol}(\mathbb{D},X)$ è normale.
+    Una varietà complessa connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
 \end{cor}
 \begin{proof}
     Supponiamo che $X$ sia taut e prendiamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$, e per l'Osservazione \ref{c0yx} è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante a $\infty$. Ma, per l'Osservazione \label{c0yx}, questo significa che $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
@@ -105,13 +105,13 @@ Vogliamo dare una caratterizzazione equivalente all'essere taut per una varietà
 Si può dimostrare qualcosa di più.
 
 \begin{prop}
-    (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\text{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
+    (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
 \end{prop}
 
 Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia che cerchiamo per il comportamento delle iterate delle funzioni olomorfe, dobbiamo studiarne alcune proprietà.
 
 \begin{lm}
-    Sia $X$ una varietà complessa e $\rho\in\text{Hol}(X,X)$ una retrazione olomorfa di $X$. Allora l'immagine di $\rho$ è una sottovarietà chiusa di $X$.
+    Sia $X$ una varietà complessa e $\rho\in\textnormal{Hol}(X,X)$ una retrazione olomorfa di $X$. Allora l'immagine di $\rho$ è una sottovarietà chiusa di $X$.
 \end{lm}
 \begin{proof}
     Sia $M=\rho(X)$ e consideriamo $z_0 \in M$. Prendiamo un intorno aperto $U$ di $z_0$ in $X$ che sia contenuto in una carta locale di $X$ in $z_0$. Allora $V=\rho^{-1}(U)\cap U$ è un intorno aperto di $z_0$ tale che $\rho(V) \subseteq V$. Possiamo dunque supporre senza perdita di generalità che $X$ sia un dominio limitato $\Omega\subseteq\mathbb{C}^n$.
@@ -127,9 +127,9 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 \end{proof}
 
 \begin{thm} \label{retraiii}
-    (\cite[Theorem 2.1.5]{A4}) Sia $X$ una varietà taut e consideriamo $f\in\text{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
+    (\cite[Theorem 2.1.5]{A4}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
 
-    Inoltre, $\varphi=f\restrict{M}\in\text{Aut}(M)$ e $\Gamma(f)$ è isomorfo al sottogruppo di $\text{Aut}(M)$ dato dalla chiusura di $\{\varphi^k\}_{k \in\mathbb{N}}$.
+    Inoltre, $\varphi=f\restrict{M}\in\textnormal{Aut}(M)$ e $\Gamma(f)$ è isomorfo al sottogruppo di $\textnormal{Aut}(M)$ dato dalla chiusura di $\{\varphi^k\}_{k \in\mathbb{N}}$.
 \end{thm}
 
 \begin{proof}
@@ -168,11 +168,11 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma di cinque asserzioni equivalenti.
 
 \begin{thm} \label{dicotomia}
-    (\cite[Theorem 1.1]{A2}) Sia $X$ una varietà taut e $f \in \text{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
+    (\cite[Theorem 1.1]{A2}) Sia $X$ una varietà taut e $f \in \textnormal{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
     \begin{nlist}
         \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non è compattamente divergente;
         \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non contiene alcuna sottosuccessione compattamente divergente;
-        \item $\{f^k\}_{k \in \mathbb{N}}$ è relativamente compatta in $\text{Hol}(X,X)$;
+        \item $\{f^k\}_{k \in \mathbb{N}}$ è relativamente compatta in $\textnormal{Hol}(X,X)$;
         \item l'orbita di $z$ è relativamente compatta in $X$ per ogni $z \in X$;
         \item esiste $z_0 \in X$ la cui orbita è relativamente compatta in $X$.
     \end{nlist}
@@ -224,7 +224,7 @@ Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ott
 Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente pseudoconvessi (quindi con bordo $C^2$), in particolare faremo riferimento a una dimostrazione che sfrutta fatti geometrici quali la Gromov-iperbolicità. Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
 
 \begin{thm} \label{abate_wd}
-    (Abate, \cite[Theorem 0.5]{A2}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso e $f \in \text{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
+    (Abate, \cite[Theorem 0.5]{A2}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso e $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
         \item le orbite di $f$ sono relativamente compatte in $\Omega$;
         \item esiste un unico punto di $\partial\Omega$ tale che le iterate di $f$ convergono tutte, uniformemente sui compatti, a quel punto.
