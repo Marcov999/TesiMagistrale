@@ -5,7 +5,7 @@ Per ottenere un risultato di tipo Wolff-Denjoy, nel caso in cui le iterate siano
 Per ottenere la convergenza uniforme al bordo ci basterà supporre che la varietà sia embeddata in un qualche $\mathbb{C}^d$ e limitata, dopodiché si applica il teorema di Montel. Per dire che la funzione è costante, invece, ci serviranno delle ipotesi aggiuntive di tipo geometrico: la condizione di visibilità per le simil-geodetiche.
 
 \begin{defn}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Sia $I\subseteq \mathbb{R}$ un intervallo; una curva $\sigma:I \longrightarrow X$ è detta una \textit{$(\lambda,\kappa)$-simil-geodetica} se
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Sia $I\subseteq \mathbb{R}$ un intervallo; una curva $\sigma:I \longrightarrow X$ è detta una \textit{$(\lambda,\kappa)$-simil-geodetica} se
     \begin{enumerate}
         \item per ogni $s,t \in I$ si ha
         $$\frac{1}{\lambda}|t-s|-\kappa \le k_X\big(\sigma(s),\sigma(t)\big)\le\lambda|t-s|+\kappa;$$
@@ -15,14 +15,14 @@ Per ottenere la convergenza uniforme al bordo ci basterà supporre che la variet
 \end{defn}
 
 \begin{defn} \label{visibility}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Diciamo che $X$ ha la \textit{condizione di visibilità rispetto alle $(\lambda,\kappa)$-simil-geodetiche} se
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Diciamo che $X$ ha la \textit{condizione di visibilità rispetto alle $(\lambda,\kappa)$-simil-geodetiche} se
     \begin{enumerate}
         \item ogni due punti distinti di $X$ possono essere collegati da una $(\lambda,\kappa)$-simil-geodetica;
         \item per ogni coppia di punti $p,q\in\partial X$ con $p\not=q$, esistono in $\mathbb{C}^d$ due intorni $V$ e $W$ di $p$ e $q$ rispettivamente e un compatto $K$ di $X$ tali che: $\overline{V}\cap\overline{W}=\emptyset$; ogni $(\lambda,\kappa)$-simil-geodetica in $X$ che collega un punto di $V$ a un punto di $W$ interseca $K$.
     \end{enumerate}
 \end{defn}
 
-Nel caso di un dominio limitato con bordo regolare, l'ipotesi di essere strettamente pseudoconvesso permetteva di concludere la condizione geometrica di Gromov-iperbolicità. Inoltre, in tal caso il dominio è proprio e completo (si veda \cite[Paragraph 3.3]{G}); dunque per il teorema di Hopf-Rinow (\cite[Part I, Paragraph 3, Proposition 3.7]{BH}) è uno spazio geodetico, ovvero ogni coppia di punti è collegata da una geodetica. Si può dimostrare che gli spazi Gromov-iperbolici, propri e geodetici soddisfano la condizione di visibilità sia per le geodetiche che per le simil-geodetiche: per la prima si può ragionare come in \cite[Proposition 2.5]{BNT} usando il fatto che per ogni coppia di punti distinti di $\partial_G X$ esistono due loro intorni disgiunti in $X\cup\partial_GX$ (si veda \cite[Part III, Chapter H, Paragraph 3, Lemma 3.6]{BH}); la seconda segue da \cite[Part III, Chapter H, Paragraph 1, Theorem 1.7]{BH}.
+Nel caso di un dominio limitato con bordo regolare, l'ipotesi di essere strettamente pseudoconvesso permetteva di concludere la condizione geometrica di Gromov-iperbolicità. Inoltre, in tal caso il dominio è proprio e completo (si veda \cite[Paragraph 3.3]{G}); dunque per il teorema di Hopf-Rinow (\cite[Part I, Paragraph 3, Proposition 3.7]{BH}) è uno spazio geodetico, cioè ogni coppia di punti è collegata da una geodetica. Si può dimostrare che gli spazi Gromov-iperbolici, propri e geodetici soddisfano la condizione di visibilità sia per le geodetiche che per le simil-geodetiche: per la prima si può ragionare come in \cite[Proposition 2.5]{BNT} usando il fatto che per ogni coppia di punti distinti di $\partial_G X$ esistono due loro intorni disgiunti in $X\cup\partial_GX$ (si veda \cite[Part III, Chapter H, Paragraph 3, Lemma 3.6]{BH}); la seconda segue da \cite[Part III, Chapter H, Paragraph 1, Theorem 1.7]{BH}.
 
 Tuttavia, nella prossima sezione vedremo esempi di domini che soddisfano la condizione di visibilità per le simil-geodetiche ma che non sono Gromov-iperbolici. Segue dunque che i risultati che andremo a dimostrare sono, in un certo senso, più generali. In particolare, il Teorema \ref{abate_wd} sarà un corollario del teorema che dimostreremo. \\
 

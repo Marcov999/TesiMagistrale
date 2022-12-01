@@ -1,7 +1,7 @@
 Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema di tipo Wolff-Denjoy per varietà Kobayashi-iperboliche. Riportiamo la dimostrazione data in \cite{CMS}, ma notiamo che la strategia e le tecniche impiegate sono sostanzialmente riprese da \cite{BZ1} e \cite{BM}. Ognuno di questi articoli ha generalizzato il risultato ottenuto nel precedente.
 
 \begin{thm}
-    (\cite[Theorem 1.15]{CMS}) Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche.
+    (\cite[Theorem 1.15]{CMS}) Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche.
     
     Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
@@ -13,11 +13,20 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
 \begin{proof}
     Poiché $X$ è taut, per il Teorema \ref{dicotomia} o l'orbita di $z$ tramite $F$ è relativamente compatta per ogni $z \in X$, oppure la successione delle iterate $\{F^\nu\}_{\nu\in\mathbb{N}}$ è compattamente divergente. Supponiamo che le orbite di $F$ non siano relativamente compatte in $X$; allora la successione delle iterate di $F$ è compattamente divergente.
 
-    Consideriamo una sottosuccessione qualsiasi di $\{F^\nu\}_{\nu\in\mathbb{N}}$. Usando il teorema di Montel, possiamo trovare una sottosuccessione che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \overline{X}$. Infatti, poiché $X$ è limitata allora la successione è uniformemente limitata sui compatti; possiamo dunque fissare una base numerabile fatta di carte di $X$ ed estrarre, con un procedimento diagonale, una sottosuccessione che converga uniformemente sui compatti di ogni carta. Prendendo un'esaustione in compatti di $X$ (ad esempio, le palle chiuse rispetto a $k_X$) si può concludere facilmente che la convergenza è uniforme su tutti i compatti di $X$.
+    Consideriamo una sottosuccessione qualsiasi di $\{F^\nu\}_{\nu\in\mathbb{N}}$. Usando il teorema di Montel, possiamo trovare una sottosottosuccessione che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \overline{X}$. Infatti, poiché $X$ è limitata allora la sottosuccessione è uniformemente limitata sui compatti; possiamo dunque fissare un ricoprimento numerabile fatto di aperti relativamente compatti contenuti in carte di $X$ ed estrarre, con un procedimento diagonale nel quale si applica il teorema di Montel ad ogni tale carta, una sottosottosuccessione che converga uniformemente sui compatti di ogni carta, in particolare sugli aperti del ricoprimento. Prendendo un'esaustione in compatti di $X$ (ad esempio, le palle chiuse rispetto a $k_X$) si può concludere facilmente che la convergenza è uniforme su tutti i compatti di $X$.
 
-    Poiché le iterate di $F$ sono compattamente divergenti, si ha che $\tilde{F}\in\mathcal{O}(X,\partial X)$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Possiamo quindi identificare
+    Poiché le iterate di $F$ sono compattamente divergenti, si ha che $\tilde{F}\in\text{Hol}(X,\partial X)$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
     $$\Gamma:=\overline{\{F^\nu\}}_{\nu\in\mathbb{N}}\setminus\{F^\nu\}_{\nu\in\mathbb{N}}$$
-    come un insieme di punti di $\partial X$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti.
+    come un insieme di punti di $\partial X$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti. \\
 
-    CONTINUA DA QUI.
+    Caso 1: esiste (e quindi per ogni) $o \in X$ tale che
+    $$\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)=+\infty.$$
+    Possiamo dunque scegliere una sottosuccessione $\{\nu_j\}_{j\in\mathbb{N}}$ tale che
+    \begin{enumerate}[label={(\arabic*)}]
+        \item per ogni $j\in\mathbb{N}$ e $k\le\nu_j$ si ha $k_X\big(F^k(o),o\big) \le k_X\big(F^{\nu_j}(o),o\big)$;
+        \item $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial X$.
+    \end{enumerate}
+    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)<+\infty$, quindi
+
+    DA QUI
 \end{proof}

@@ -11,7 +11,7 @@
 \end{proof}
 
 \begin{prop} \label{metrica_bilip}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata. Allora
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Allora
     \begin{enumerate}[label={(\arabic*)}]
         \item esiste $c>0$ tale che $c\|Z\| \le K_X(z;Z)$ per ogni $z \in X$ e $Z \in T_zX$;
         \item per ogni compatto $K\subseteq X$, esiste una costante $C_1=C_1(K)>0$ tale che $K_X(z;Z) \le C_1\|Z\|$ per ogni $z \in X$ e $Z \in T_zX$.
@@ -29,7 +29,7 @@
 \end{proof}
 
 \begin{lm} \label{restrdis}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata e $\sigma:[a,b] \longrightarrow X$ una curva assolutamente continua. Se
+    Siano $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata e $\sigma:[a,b] \longrightarrow X$ una curva assolutamente continua. Se
     $$l_X(\sigma) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa$$
     allora, per ogni $a \le s \le t \le b$, si ha
     $$l_X(\sigma\restrict{[s,t]}) \le k_X\big(\sigma(s),\sigma(t)\big)+\kappa.$$
@@ -44,7 +44,7 @@
 \end{proof}
 
 \begin{thm} \label{similgeo_conn}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata. Per ogni $z,w \in X$ e ogni $\kappa>0$ esiste una $(1,\kappa)$-simil-geodetica $\sigma:[a,b]\longrightarrow X$ tale che $\sigma(a)=z$ e $\sigma(b)=w$.
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Per ogni $z,w \in X$ e ogni $\kappa>0$ esiste una $(1,\kappa)$-simil-geodetica $\sigma:[a,b]\longrightarrow X$ tale che $\sigma(a)=z$ e $\sigma(b)=w$.
 \end{thm}
 
 \begin{proof}
@@ -67,12 +67,71 @@
     per ogni $0 \le s \le t \le l_X(\gamma)$. Segue dunque che $\sigma$ è una $(1,\kappa)$-simil-geodetica.
 \end{proof}
 
+\begin{lm} \label{quasiovvio}
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Se $\sigma:[a,b] \longrightarrow X$ è una $(1,\kappa)$-simil-geodetica per qualche $\kappa>0$, allora per ogni $t \in [a,b]$ si ha
+    $$k_X\big(\sigma(a),\sigma(t)\big)+k_X\big(\sigma(t),\sigma(b)\big) \le k_X\big(\sigma(a),\sigma(b)\big)+3\kappa.$$
+\end{lm}
+
+\begin{proof}
+    È un'immediata conseguenza della definizione di $(1,\kappa)$-simil-geodetica.
+\end{proof}
+
+\begin{prop} \label{inf_impl_ugu}
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Siano $\nu,\mu:\mathbb{N}\longrightarrow\mathbb{N}$ due funzioni strettamente crescenti e $F\in\text{Hol}(X,X)$ per cui esiste $x_0 \in X$ tale che
+    $$\lim_{j\longrightarrow+\infty} k_X\big(F^{\nu(j)}(x_0),x_0\big)=\lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(x_0),x_0\big)=+\infty.$$
+    Allora esiste $\xi\in\partial X$ tale che
+    $$\lim_{j\longrightarrow+\infty} F^{\nu(j)}(z)=\lim_{j\longrightarrow+\infty} F^{\mu(j)}(z)=\xi$$
+    per ogni $z \in X$.
+\end{prop}
+
+\begin{proof}
+    Usando la disuguaglianza triangolare e il fatto che le funzioni olomorfe sono semicontrazioni rispetto a $k_X$, troviamo che
+    \begin{gather*}
+        k_X\big(F^{\nu(j)}(z),z\big) \ge k_X\big(F^{\nu(j)}(x_0),x_0\big)-2k_X(x_0,z)\text{ e}\\
+        k_X\big(F^{\mu(j)}(z),z\big) \ge k_X\big(F^{\mu(j)}(x_0),x_0\big)-2k_X(x_0,z).
+    \end{gather*}
+    Segue che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(z),z\big)=\lim_{j\longrightarrow+\infty}k_X\big(F^{\mu(j)}(z),z\big)=+\infty$ per ogni $z \in X$. Usando l'ipotesi e il fatto che $X$ è limitata in $\mathbb{C}^d$, possiamo trovare una funzione strettamente crescente $\tau:\mathbb{N} \longrightarrow \mathbb{N}$ tale che
+    \begin{itemize}
+        \item si ha $k_X\big(F^{(\nu\circ\tau)(j)}(x_0),x_0\big) \ge k_X\big(F^k(x_0),x_0\big)$ per ogni $j \in \mathbb{N}$ e per ogni $k \le (\nu\circ\tau)(j)$;
+        \item la successione $\{F^{(\nu\circ\tau)(j)}(x_0)\}_{j\in\mathbb{N}}$ converge a un certo $\xi\in\partial X$.
+    \end{itemize}
+    Vogliamo ora mostrare la seguente asserzione.
+
+    Siano $\{m_j\}_{j\in\mathbb{N}}$ e $\{m'_j\}_{j\in\mathbb{N}}$ due successioni strettamente crescenti di numeri naturali e $z_0,z'_0\in M$ tali che
+    \begin{enumerate}[label={(\arabic*)}]
+        \item per ogni $j\in\mathbb{N}$ si ha $m_j \ge m'_j$;
+        \item per ogni $j\in\mathbb{N}$ e $k \le m_j$ si ha $k_X\big(F^{m_j}(z_0),z_0\big) \ge k_X\big(F^k(z_0),z_0\big)$;
+        \item si ha $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{m_j}(z_0),z_0\big)=\lim_{j\longrightarrow+\infty}k_X\big(F^{m'_j}(z'_0),z_0\big)=+\infty$;
+        \item le successioni $\{F^{m_j}(z_0)\}_{j\in\mathbb{N}}$ e $\{F^{m'_j}(z'_0)\}_{j\in\mathbb{N}}$ convergono, rispettivamente, a $\zeta$ e $\zeta'$ in $\partial X$;
+    \end{enumerate}
+    allora $\zeta=\zeta'$.
+
+    Supponiamo per assurdo che $\zeta\not=\zeta'$. Grazie al Teorema \ref{similgeo_conn} possiamo scegliere, per ogni $j\in\mathbb{N}$, una $(1,\kappa_0)$-simil-geodetica $\sigma_j:[0,T_j] \longrightarrow X$ tale che $\sigma_j(0)=F^{m_j}(z_0)$ e $\sigma_j(T_j)=F^{m'_j}(z'_0)$. Adesso, dato che abbiamo assunto che $\{F^{m_j}(z_0)\}_{j\in\mathbb{N}}$ e $\{F^{m'_j}(z'_0)\}_{j\in\mathbb{N}}$ convergano a due punti di $\partial X$ distinti e $X$ ha la visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche, esistono una costante $0<R<+\infty$ e, per ogni $j\in\mathbb{N}$, un $t_j\in[0,T_j]$ tali che $k_X\big(z_0,\sigma_j(t_j)\big)<R$. Per il Lemma \ref{quasiovvio} si ha dunque che
+    \begin{align*}
+        k_X\big(F^{m_j}(z_0),F^{m'_j}(z'_0)\big) &\ge k_X\big(F^{m_j}(z_0),\sigma_j(t_j)\big)+k_X\big(\sigma_j(t_j),F^{m'_j}(z'_0)\big)-3\kappa_0\\
+        &\ge k_X\big(F^{m_j}(z_0),z_0\big)-k_X\big(z_0,\sigma_j(t_j)\big)+\\
+        &+k_X\big(F^{m'_j}(z'_0),z_0\big)-k_X\big(z_0,\sigma_j(t_j)\big)-3\kappa_0\\
+        &\ge k_X\big(F^{m_j}(z_0),z_0\big)+k_X\big(F^{m'_j}(z'_0),z_0\big)-3\kappa_0-2R.
+    \end{align*}
+    D'altra parte, abbiamo anche che
+    \begin{align*}
+        k_X\big(F^{m_j}(z_0),F^{m'_j}(z'_0)\big) &\le k_X\big(F^{m_j-m'_j}(z_0),z'_0\big) \\
+        &\le k_X\big(F^{m_j-m'_j}(z_0),z_0\big)+k_X(z_0,z'_0) \\
+        &\le k_X\big(F^{m_j}(z_0),z_0\big)+k_X(z_0,z'_0),
+    \end{align*}
+    dove per la prima e la terza disuguaglianza abbiamo usato le condizioni (1) e (2) sulle successioni $\{m_j\}_{j\in\mathbb{N}}$ e $\{m'_j\}_{j\in\mathbb{N}}$; nella prima, abbiamo anche usato che le funzioni olomorfe sono semicontrazioni rispetto a $k_X$. Mettendo insieme quanto trovato e riarrangiando i termini, otteniamo
+    $$k_X\big(F^{m'_j}(z'_0),z_0\big) \le k_X(z_0,z'_0)+3\kappa_0+2R,$$
+    che è in contraddizione con la condizione (3).\\
+
+    Adesso che l'asserzione è stata dimostrata, possiamo concludere la dimostrazione. Mostriamo innanzitutto che $\displaystyle\lim_{j\longrightarrow+\infty}F^{\nu(j)}(z)=\xi$ per ogni $z\in X$. Fissiamo uno $z\in X$ e prendiamo $\xi'$ punto limite di $\{F^{\nu(j)}(z)\}_{j\in\mathbb{N}}$. Allora esiste una $\tau':\mathbb{N}\longrightarrow\mathbb{N}$, strettamente crescente, tale che $\displaystyle \lim_{j\longrightarrow+\infty} F^{\nu\left(\tau'(j)\right)}(z)=\xi'$. Scegliamo una $\tilde{\tau}:\mathbb{N}\longrightarrow\mathbb{N}$, strettamente crescente, tale che $\nu\circ\tau\circ\tilde{\tau} \ge \nu\circ\tau'$ e applichiamo l'asserzione dimostrata sopra a $m_j=(\nu\circ\tau\circ\tilde{\tau})(j), m'_j=(\nu\circ\tau')(j)$ e $z_0=x_0,z'_0=z$. Troviamo così $\xi'=\xi$, da cui segue facilmente che tutta la successione deve tendere a $\xi$. Ragionando in modo analogo, troviamo che vale lo stesso anche per $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$, come voluto.
+\end{proof}
+
 \begin{thm} \label{lim_is_const}
-    Sia $X$ una varietà connessa complessa embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Sia $\{F_\nu\}_{\nu\in\mathbb{N}} \subseteq \mathcal{O}(X,X)$  una successione che converge uniformemente sui compatti di $X$ a una $\psi\in\mathcal{O}(X,\partial X)$. Allora $\psi$ è costante.
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Sia $\{F_\nu\}_{\nu\in\mathbb{N}} \subseteq \textnormal{Hol}(X,X)$  una successione che converge uniformemente sui compatti di $X$ a una $\psi\in\textnormal{Hol}(X,\partial X)$. Allora $\psi$ è costante.
 \end{thm}
 
 \begin{proof}
-    Supponiamo, per assurdo, che $\psi$ non sia costante. Allora, dati $x \in X$ e $\epsilon>0$, la restrizione di $\psi$ alla palla aperta rispetto alla distanza di Kobayashi di centro $x$ e raggio $\epsilon$, $B_{k_X}(x,\epsilon)$, non è costante. Infatti, tale palla è un aperto di $X$, e se $\psi$ fosse costante su di essa lo sarebbe su tutta $X$ per il principio di identità delle funzioni olomorfe, poiché $X$ è connessa. Questa, però, sarebbe una contraddizione alla nostra assunzione.
+    Supponiamo, per assurdo, che $\psi$ non sia costante. Allora, dati $x \in X$ e $\epsilon>0$, la restrizione di $\psi$ a $B_{k_X}(x,\epsilon)$, la palla aperta rispetto alla distanza di Kobayashi di centro $x$ e raggio $\epsilon$, non è costante. Infatti, tale palla è un aperto di $X$, e se $\psi$ fosse costante su di essa lo sarebbe su tutta $X$ per il principio di identità delle funzioni olomorfe, poiché $X$ è connessa. Questa, però, sarebbe una contraddizione alla nostra assunzione.
 
     Fissiamo $x_0 \in X$ e poniamo $\epsilon_0=\kappa_0/3$. Per quanto detto, deve esistere un $x_1 \in B_{k_X}(x_0,\epsilon_0)$ tale che $\{F_\nu(x_0)\}_{\nu\in\mathbb{N}}$ e $\{F_\nu(x_1)\}_{\nu\in\mathbb{N}}$ convergono rispettivamente a $\xi$ e $\eta$, con $\xi,\eta \in \partial X$ e $\xi\not=\eta$. Consideriamo adesso una $(1,\kappa_0/3)$-simil-geodetica $\gamma:[a,b]\longrightarrow X$ tale che $\gamma(a)=x_0$ e $\gamma(b)=x_1$, che esiste per il Teorema \ref{similgeo_conn}. Per definizione si ha che
     $$|a-b|-\kappa_0/3 \le k_X(x_0,x_1) \implies |a-b| \le k_X(x_0,x_1)+\kappa_0/3 \le 2\kappa_0/3.$$
