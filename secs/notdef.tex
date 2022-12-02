@@ -20,7 +20,7 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     \begin{equation}
         \lambda_{\mathbb{D}}(z;v)=\frac{1}{1-|z|^2}|v|
     \end{equation}
-    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z^{\mathbb{C}}\mathbb{D}$. La metrica $K_{\mathbb{D}}$ è hermitiana completa con curvatura gaussiana costante uguale a $-4$.
+    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z^{\mathbb{C}}\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana completa con curvatura gaussiana costante uguale a $-4$.
 \end{defn}
 
 \begin{defn}
@@ -31,7 +31,19 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     per ogni $z_1,z_2 \in \mathbb{D}$.
 \end{defn}
 
-Oltre alla curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse (lemma di Schwarz-Pick, si veda ad esempio \cite[Chapter I, paragraph 1, Theorem 1.1]{K2}).
+Oltre ad avere curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse. Ciò discende dal seguente risultato.
+
+\begin{lm}
+    (lemma di Schwarz-Pick) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$.
+    Allora per ogni $z, w \in \mathbb{D}$ si ha
+    $$\left|\frac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\right| \le \left|\frac{z-w}{1-\bar{w}z}\right| \text{ e } \frac{|f'(z)|}{1-|f(z)|^2} \le \frac{1}{1-|z|^2}.$$
+  \end{lm}
+
+Per la dimsotrazione si rimanda a \cite[Chapter I, paragraph 1, Theorem 1.1]{K2}. Ci tornerà utile anche la versione semplificata.
+
+\begin{lm}
+    (lemma di Schwarz) Sia $f\in\textnormal{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z\in\mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$.
+\end{lm}
 
 Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poincaré ad una qualsiasi varietà complessa mantenendo queste proprietà, in particolare quella di rendere le funzioni olomorfe delle semicontrazioni. Ci sono vari modi per farlo, noi nello specifico vedremo la (pseudo)metrica e la (pseudo)distanza di Kobayashi, introdotte nel 1967 in \cite{K1}.
 
@@ -45,7 +57,7 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
 \end{defn}
 
 \begin{oss} \label{metr_noncr}
-    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica.
+    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse, embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica.
 \end{oss}
 
 Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.
