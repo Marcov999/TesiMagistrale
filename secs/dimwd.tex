@@ -26,7 +26,30 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
         \item per ogni $j\in\mathbb{N}$ e $k\le\nu_j$ si ha $k_X\big(F^k(o),o\big) \le k_X\big(F^{\nu_j}(o),o\big)$;
         \item $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial X$.
     \end{enumerate}
-    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)<+\infty$, quindi
 
-    DA QUI
+    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$, quindi
+    \begin{align*}
+        \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty}\, &k_X\big(F^{\nu_h}(o),F^{\mu_j}(o)\big) \\
+        &\ge \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty} \Big(k_X\big(F^{\nu_h}(o),o\big)-k_X\big(F^{\mu_j}(o),o\big)\Big)=+\infty.
+    \end{align*}
+
+    Fissiamo ora un $l\in\mathbb{N}$. Se applichiamo il Teorema \ref{lim_is_const} ad una sottosuccessione arbitraria di $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$ che converge uniformemente sui compatti di $X$, dal momento che sul compatto $\{F^l(o)\}$ converge a $\eta$ otteniamo (usando anche il teorema di Montel) che tutta la sottosuccessione converge, uniformemente sui compatti di $X$, a $\eta$.
+
+    Poniamo $M_l=\displaystyle\limsup_{j\longrightarrow+\infty}k_X\big(F^{\mu_j-l}(o),o\big)$. Affermiamo che $\displaystyle\limsup_{l\longrightarrow+\infty}M_l<+\infty$. Supponiamo per assurdo che non sia così, allora esiste una sottosuccessione $\{l_m\}_{m\in\mathbb{N}}$ tale che $M_{l_m}>m$ per ogni $m$. Per definizione di $M_l$ e per quanto appena trovato sulla successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$, abbiamo quindi che esiste una sottosottosuccessione $\{j_m\}_{m\in\mathbb{N}}$ tale che
+    \begin{enumerate}[label={(\arabic*)}]
+        \item $\|F^{\mu_{j_m}-l_m}(o)-\eta\|<1/k$;
+        \item $k_X\big(F^{\mu_{j_m}-l_m}(o),o\big)>k$.
+    \end{enumerate}
+    Per la Proposizione \ref{inf_impl_ugu} deve dunque essere $\eta=\xi$, contraddizione. Perciò segue che $\displaystyle\limsup_{l\longrightarrow+\infty}M_l<+\infty$. Allora
+    \begin{align*}
+        \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty}\, &k_X\big(F^{\nu_h}(o),F^{\mu_j}(o)\big) \\
+        &\le \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty} k_X\big(o,F^{\mu_j-\nu_h}(o)\big)=\limsup_{h\longrightarrow+\infty}M_{\nu_h}<+\infty,
+    \end{align*}
+    in contraddizione con quanto trovato prima; questo conclude il Caso 1.\\
+
+    Caso 2: esiste (e quindi per ogni) $o \in X$ tale che
+    $$\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)<+\infty.$$
+    Ricordiamo che abbiamo assunto che esistano due punti distinti $\xi,\eta\in\Gamma$. Poiché $X$ soddisfa la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche, esistono $V_\xi, V_\eta$ intorni in $\mathbb{C}^d$ rispettivamente di $\xi$ e di $\eta$, con $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, e un compatto $K$ di $X$ tali che ogni $(1,\kappa_0)$-simil-geodetica in $X$ che collega un punto di $V_\xi$ a un punto di $V_\eta$ interseca $K$.
+    Adesso definiamo, per $\delta>0$ arbitrario, la funzione $G_\delta:K\times K\longrightarrow [0,+\infty)$ data da
+    $$G_\delta(x_1,x_2)=\inf\{k_X\big(F^m(x_1),x_2\big)\mid m\in\mathbb{N}, \|F^m(x_1)-\xi\|<\delta\}.$$
 \end{proof}
