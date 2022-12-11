@@ -1,6 +1,6 @@
 Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema di tipo Wolff-Denjoy per varietà Kobayashi-iperboliche. Riportiamo la dimostrazione data in \cite{CMS}, ma notiamo che la strategia e le tecniche impiegate sono sostanzialmente riprese da \cite{BZ1} e \cite{BM}. Ognuno di questi articoli ha generalizzato il risultato ottenuto nel precedente.
 
-\begin{thm}
+\begin{thm} \label{wd_type}
     (\cite[Theorem 1.15]{CMS}) Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche.
     
     Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
@@ -69,5 +69,32 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
         \item si ha $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2)$.
     \end{enumerate}
 
-    QUI, FINIRE!
+    Per il Teorema \ref{similgeo_conn}, abbiamo che per ogni $j\in\mathbb{N}$ esiste una $(1,1/j)$-simil-geodetica $\sigma_j:[0,T_j]\longrightarrow X$ con $\sigma_j(0)=F^{\nu(j)+\mu(j)}(q_1)$ e $\sigma_j(T_j)=F^{\mu(j)}(q_2)$. Dato che $\{F^{\nu(j)+\mu(j)}(q_1)\}_{j\in\mathbb{N}}$ e $\{F^{\mu(j)}(q_2)\}_{j\in\mathbb{N}}$ convergono, rispettivamente, a $\xi$ e $\eta$, per $j$ abbastanza grande si ha che $\sigma_j(0)\in V_\xi$ e $\sigma_j(T_j)\in V_\eta$, e $\sigma_j$ è una $(1,\kappa_0)$-simil-geodetica. Dunque $\Ima{\sigma_j}\cap K\not=\emptyset$ per $j$ abbastanza grande. Per ogni tale $j$ scegliamo un punto $x_j^*\in \Ima{\sigma_j}\cap K$. Per compattezza di $K$, a meno di passare a una sottosuccessione possiamo supporre che $x_j^* \longrightarrow x^* \in K$ per $j\longrightarrow+\infty$. Per il Lemma \ref{quasiovvio} troviamo che
+    $$k_X\big(F^{\nu(j)+\mu(j)}(q_1),F^{\mu(j)}(q_2)\big) \ge k_X\big(F^{\nu(j)+\mu(j)}(q_1),x_j^*\big)+k_X\big(x_j^*,F^{\mu(j)}(q_2)\big)-3/i.$$
+    Adesso, si ha che
+    \begin{align*}
+        \liminf_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)+\mu(j)}(q_1),x_j^*\big) &\ge \liminf_{j\longrightarrow+\infty} \Big(k_X\big(F^{\nu(j)+\mu(j)}(q_1),x^*\big)-k_X(x^*,x_j^*)\Big)\\
+        &=\liminf_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)+\mu(j)}(q_1),x^*\big) \ge G(q_1,x^*);
+    \end{align*}
+    inoltre, per definizione di $\epsilon$ abbiamo che
+    $$\liminf_{j\longrightarrow+\infty}k_X\big(x_j^*,F^{\mu(j)}(q_2)\big) \ge \epsilon.$$
+    Mettendo assieme queste tre disuguaglianze, troviamo che
+    $$\liminf_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)+\mu(j)}(q_1),F^{\mu(j)}(q_2)\big) \ge G(q_1,x^*)+\epsilon.$$
+    D'altra parte, abbiamo che
+    $$\limsup_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)+\mu(j)}(q_1),F^{\mu(j)}(q_2)\big) \le \limsup_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2).$$
+    Segue che $G(q_1,q_2) \ge G(q_1,x^*)+\epsilon$, in contraddizione con la scelta di $q_1$ e $q_2$. \\
+
+    Poiché sia il Caso 1 che il Caso 2 portano ad un assurdo, ne consegue che la supposizione che $\Gamma$ contenga almeno due punti dev'essere sbagliata, da cui la tesi.
+\end{proof}
+
+\begin{cor}
+    Il Teorema \ref{abate_wd}: sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso e $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite di $f$ sono relativamente compatte in $\Omega$;
+        \item esiste un unico punto di $\partial\Omega$ tale che le iterate di $f$ convergono tutte, uniformemente sui compatti, a quel punto.
+    \end{itemize}
+\end{cor}
+
+\begin{proof}
+    Abbiamo già osservato che i domini limitati e strettamente pseudoconvessi di $\mathbb{C}^n$ soddisfano la condizione di visibilità rispetto alle simil-geodetiche. Abbiamo anche visto che sono completi rispetto alla distanza di Kobayashi, dunque per la Proposizione \ref{comp_is_taut} sono taut. Si conclude applicando il Teorema \ref{wd_type}.
 \end{proof}

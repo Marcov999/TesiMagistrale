@@ -1,4 +1,8 @@
-Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con un paio di teoremi noti dell'analisi complessa in più variabili.
+Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre dimostrazioni. Cominciamo con alcuni teoremi noti dell'analisi complessa in più variabili.
+
+\begin{thm}
+    (Weierstrass, \cite[Chapter 1, Proposition 5]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\{f_{\nu}\}_{\nu\in\mathbb{N}} \subseteq \mathcal{O}(\Omega)$ una successione che converge uniformemente sui compatti a $f\in C^0(\Omega)$; allora $f\in\mathcal{O}(\Omega)$.
+\end{thm}
 
 \begin{thm}
     (Montel, \cite[Chapter 1, Proposition 6]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\mathcal{F}$ una famiglia uniformemente limitata sui compatti; allora è relativamente compatta in $\mathcal{O}(\Omega)$.
@@ -99,6 +103,28 @@ Si può dimostrare qualcosa di più.
 \begin{prop}
     (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
 \end{prop}
+
+Adesso vogliamo mostrare che tutte le varietà Kobayashi-iperboliche complete sono taut. Per farlo, ci servirà il ben noto teorema di Ascoli-Arzelà.
+
+\begin{thm}
+    (Ascoli-Arzelà, INSERIRE REFERENCE) Sia $X$ uno spazio metrico e $Y$ uno spazio metrico localmente compatto. Allora un famiglia $\mathcal{F}\subseteq C^0(Y,X)$ è relativamente compatta in $C^0(X,Y)$ se e solo se le seguenti due condizioni sono soddisfatte:
+    \begin{nlist}
+        \item $\mathcal{F}$ è equicontinua;
+        \item l'insieme $\{f(y)\mid f\in\mathcal{F}\}$ è relativamente compatto in $X$ per ogni $y\in Y$.
+    \end{nlist}
+\end{thm}
+
+\begin{prop} \label{comp_is_taut}
+    Ogni varietà Kobayashi-iperbolica completa è taut.
+\end{prop}
+
+\begin{proof}
+    Sia $X$ una varietà Kobayashi-iperbolica completa, e consideriamo una successione $\{\varphi_\nu\}\subseteq\text{Hol}(\mathbb{D},X)$ che non è compattamente divergente; vogliamo mostrare che ammette una sottosuccessione che converge in $\text{Hol}(\mathbb{D},X)$.
+
+    A meno di passare a una sottosuccessione, possiamo trovare due compatti $H\subseteq\mathbb{D}$ e $K\subseteq X$ tali che $\varphi_\nu(H)\cap K\not=\emptyset$ per ogni $\nu\in\mathbb{N}$. Fissiamo $z_0\in K$ e $\zeta_\nu\in H$ tale che $\varphi_\nu(\zeta_\nu)\in K$, e poniamo $r=\max\{k_X(z,z_0)\mid z\in K\}$. Allora per ogni $\zeta\in\mathbb{D}$ e $\nu\in\mathbb{N}$ abbiamo che
+    $$k_X\big(\varphi_\nu(\zeta),z_0\big) \le k_X\big(\varphi_\nu(\zeta),\varphi_\nu(\zeta_\nu)\big)+k_X\big(\varphi_\nu(\zeta_\nu),z_0\big) \le k_{\mathbb{D}} (\zeta,\zeta_\nu)+r.$$
+    Posto $R=\max\{k_X(\zeta,\zeta')\mid \zeta'\in H\}$, abbiamo che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R+r$, che è compatta perché $X$ è Kobayashi-ierpbolica completa (si veda \cite[Chapter 2, Paragraph 3, Proposition 2.3.17]{A1}; si usa il Lemma \ref{ballball} e poco altro); di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-ierpbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si può dimostrare che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
+\end{proof}
 
 Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia che cerchiamo per il comportamento delle iterate delle funzioni olomorfe, dobbiamo studiarne alcune proprietà.
 
