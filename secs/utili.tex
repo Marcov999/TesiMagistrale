@@ -1,3 +1,7 @@
+Prima di andare a vedere il teorema di tipo Wolff-Denjoy, dobbiamo mostrare diversi risultati preliminari. Visto che andremo a dimostrare la versione del teorema che si trova in \cite{CMS}, tali risultati sono per la maggior parte dimostrati, e il resto citati, nel suddetto articolo. \\
+
+Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, che permettono anche di ottenere risultati analoghi per la distanza.
+
 \begin{lm} \label{polycpt}
     Sia $X$ una varietà complessa. Se un sottoinsieme compatto $K\subseteq X$ è contenuto nel polidisco di una carta di $X$, allora esiste una costante $C=C(K)>0$ tale che $K_X(z;Z) \le C\|Z\|$ per ogni $z \in K$ e $Z \in T_zX$.
 \end{lm}
@@ -28,6 +32,8 @@
     per ogni $z \in U_{z_j}'$ e $Z\in T_zX$, dove $C_i>0$ è una costante che dipende dal compatto $\overline{U}_{z_j}'$. Basta allora porre $C(K)=\displaystyle\max_{j=1,\dots,l}\{C_j\}$.
 \end{proof}
 
+Il seguente Lemma è un fatto tecnico che ci servirà tra poco.
+
 \begin{lm} \label{restrdis}
     Siano $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata e $\sigma:[a,b] \longrightarrow X$ una curva assolutamente continua. Se
     $$l_X(\sigma) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa$$
@@ -42,6 +48,8 @@
     $$l_X(\sigma\restrict{[s,t]}) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa-k_X\big(\sigma(a),\sigma(s)\big)-k_X\big(\sigma(t),\sigma(b)\big).$$
     Applicando la disuguaglianza triangolare, si ottiene la tesi.
 \end{proof}
+
+Quello che vogliamo mostrare adesso è che le varietà complesse, connesse, embettate in $\mathbb{C}^d$ e limitate sono anche connesse per archi simil-geodetici.
 
 \begin{thm} \label{similgeo_conn}
     Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Per ogni $z,w \in X$ e ogni $\kappa>0$ esiste una $(1,\kappa)$-simil-geodetica $\sigma:[a,b]\longrightarrow X$ tale che $\sigma(a)=z$ e $\sigma(b)=w$.
@@ -67,6 +75,8 @@
     per ogni $0 \le s \le t \le l_X(\gamma)$. Segue dunque che $\sigma$ è una $(1,\kappa)$-simil-geodetica.
 \end{proof}
 
+Adesso ci serve un Lemma quasi ovvio.
+
 \begin{lm} \label{quasiovvio}
     Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Se $\sigma:[a,b] \longrightarrow X$ è una $(1,\kappa)$-simil-geodetica per qualche $\kappa>0$, allora per ogni $t \in [a,b]$ si ha
     $$k_X\big(\sigma(a),\sigma(t)\big)+k_X\big(\sigma(t),\sigma(b)\big) \le k_X\big(\sigma(a),\sigma(b)\big)+3\kappa.$$
@@ -75,6 +85,8 @@
 \begin{proof}
     È un'immediata conseguenza della definizione di $(1,\kappa)$-simil-geodetica.
 \end{proof}
+
+Quello che dimostreremo adesso è uno dei fatti cruciali nella dimostrazione del teorema di tipo Wolff-Denjoy. Afferma che, sotto condizioni di visibilità per le simil-geodetiche, le sottosuccessioni di iterate di una funzione olomorfa che ``tendono a infinito'' convergono tutte, puntualmente, a un unico punto del bordo.
 
 \begin{prop} \label{inf_impl_ugu}
     Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Siano $\nu,\mu:\mathbb{N}\longrightarrow\mathbb{N}$ due funzioni strettamente crescenti e $F\in\textnormal{Hol}(X,X)$ per cui esiste $x_0 \in X$ tale che
@@ -125,6 +137,8 @@
 
     Adesso che l'asserzione è stata dimostrata, possiamo concludere la dimostrazione. Mostriamo innanzitutto che $\displaystyle\lim_{j\longrightarrow+\infty}F^{\nu(j)}(z)=\xi$ per ogni $z\in X$. Fissiamo uno $z\in X$ e prendiamo $\xi'$ punto limite di $\{F^{\nu(j)}(z)\}_{j\in\mathbb{N}}$. Allora esiste una $\tau':\mathbb{N}\longrightarrow\mathbb{N}$, strettamente crescente, tale che $\displaystyle \lim_{j\longrightarrow+\infty} F^{\nu\left(\tau'(j)\right)}(z)=\xi'$. Scegliamo una $\tilde{\tau}:\mathbb{N}\longrightarrow\mathbb{N}$, strettamente crescente, tale che $\nu\circ\tau\circ\tilde{\tau} \ge \nu\circ\tau'$ e applichiamo l'asserzione dimostrata sopra a $m_j=(\nu\circ\tau\circ\tilde{\tau})(j), m'_j=(\nu\circ\tau')(j)$ e $z_0=x_0,z'_0=z$. Troviamo così $\xi'=\xi$, da cui segue facilmente che tutta la successione deve tendere a $\xi$. Ragionando in modo analogo, troviamo che vale lo stesso anche per $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$, come voluto.
 \end{proof}
+
+Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Questo afferma che, sotto condizioni di visibilità per le simil-geodetiche, le successioni di funzioni olomorfe che convergono uniformemente sui compatti di $X$ devono necessariamente convergere a una costante.
 
 \begin{thm} \label{lim_is_const}
     Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Sia $\{F_\nu\}_{\nu\in\mathbb{N}} \subseteq \textnormal{Hol}(X,X)$  una successione che converge uniformemente sui compatti di $X$ a una $\psi\in\textnormal{Hol}(X,\partial X)$. Allora $\psi$ è costante.
