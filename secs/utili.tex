@@ -1,6 +1,6 @@
 Prima di andare a vedere il teorema di tipo Wolff-Denjoy, dobbiamo mostrare diversi risultati preliminari. Visto che andremo a dimostrare la versione del teorema che si trova in \cite{CMS}, tali risultati sono per la maggior parte dimostrati, e il resto citati, nel suddetto articolo. \\
 
-Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, che permettono anche di ottenere risultati analoghi per la distanza.
+Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, che permettono anche di ottenere la lipschitzianità delle simil-geodetiche.
 
 \begin{lm} \label{polycpt}
     Sia $X$ una varietà complessa. Se un sottoinsieme compatto $K\subseteq X$ è contenuto nel polidisco di una carta di $X$, allora esiste una costante $C=C(K)>0$ tale che $K_X(z;Z) \le C\|Z\|$ per ogni $z \in K$ e $Z \in T_zX$.
@@ -30,6 +30,18 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     (2) Per ogni $z \in K$ scegliamo un polidisco $U_z$ centrato in $z$ e contenuno in una carta di $X$. Sia $U_z'\subseteq U_z$ un altro polidisco, nella stessa carta, centrato in $z$ e relativamente compatto in $U_z$ per ogni $z \in K$. Dato che $K$ è compatto, esistono $z_1,\dots,z_l$ tali che $K\subseteq\displaystyle\bigcup_{j=1}^l U_{z_j}'$. Allora, poiché $\overline{U}_{z_j}'$ è un sottoinsieme compatto di $U_{z_j}$ per $j=1,\dots,l$, per il Lemma \ref{polycpt} abbiamo
     $$K_X(z,Z) \le C_i\|Z\|$$
     per ogni $z \in U_{z_j}'$ e $Z\in T_zX$, dove $C_i>0$ è una costante che dipende dal compatto $\overline{U}_{z_j}'$. Basta allora porre $C(K)=\displaystyle\max_{j=1,\dots,l}\{C_j\}$.
+\end{proof}
+
+\begin{prop} \label{simillip}
+    Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Per ogni $\lambda \ge 1$ esiste una costante $C=C(\lambda)>0$ tale che ogni $(\lambda,\kappa)$-simil-geodetica è $C$-lipschitziana rispetto alla distanza euclidea.
+\end{prop}
+
+\begin{proof}
+    Ogni $(\lambda,\kappa)$-simil-geodetica $\sigma:I\longrightarrow X$ è, per definizione, assolutamente continua rispetto alla distanza euclidea. Allora, per il teorema fondamentale del calcolo integrale di Lebesgue, per ogni $s,t\in I$ abbiamo che $\displaystyle\sigma(t)=\sigma(s)+\int_s^t\sigma'(r)\diff r$.
+    
+    Per il punto (1) della Proposizione \ref{metrica_bilip}, esiste una costante $c>0$ tale che $c\|Z\| \le K_X(z;Z)$ per ogni $z\in X$ e $Z\in T_zX$, e per definizione di $(\lambda,\kappa)$-simil-geodetica $K_X\big(\sigma(t);\sigma'(t)\big) \le \lambda$ per quasi ogni $t\in I$. Dunque $\|\sigma'(t)\| \le \lambda/c$ per quasi ogni $t\in I$, da cui
+    $$\|\sigma(t)-\sigma(s)\| =\|\int_s^t\sigma'(r)\diff r\| \le \int_s^t\|\sigma'(r)\|\diff r \le \frac{\lambda}{c}|t-s|,$$
+    ciè $\sigma$ è $\lambda/c$-lipschitziana.
 \end{proof}
 
 Il seguente Lemma è un fatto tecnico che ci servirà tra poco.

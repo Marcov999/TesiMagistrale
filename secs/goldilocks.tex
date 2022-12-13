@@ -1,0 +1,56 @@
+Il primo esempio di una classe di domini di $\mathbb{C}^n$ con visibilità è quello, introdotto in \cite{BZ1}, dei domini Goldilocks. Prima di darne la definizione, introduciamo per un dominio limitato $\Omega\subseteq\mathbb{C}^n$ e $r>0$ la quantità
+$$M_\Omega(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid \delta_\Omega(x) \le r, \|v\|=1\right\}.$$
+La funzione $M_\Omega(r)$ è monotona crescente, dunque misurabile secondo Lebesgue; inoltre, segue dal punto (1) della Proposizione \ref{metrica_bilip} che è anche limitata. Perciò ha senso la definizione che stiamo per dare.
+
+\begin{defn}
+    Un dominio limitato $\Omega\subseteq\mathbb{C}^n$ è detto \textit{dominio Goldilocks} se
+    \begin{enumerate}[label={(\arabic*)}]
+        \item esiste (e quindi per ogni) $\epsilon>0$ tale che $\displaystyle\int_0^{\epsilon} \frac{1}{r}M_\Omega(r)\diff r<+\infty$;
+        \item per ogni $x_0\in\Omega$ esistono due costanti $C,\alpha>0$ (che dipendono da $x_0$) tali che $k_\Omega(x_0,x) \le C+\alpha\log{\dfrac{1}{\delta_\Omega(x)}}$ per ogni $x\in\Omega$.
+    \end{enumerate}
+\end{defn}
+
+Il nome particolare, domini Goldilocks, è dovuto al fatto che per tali domini il bordo non ha cuspidi rivolte verso l'esterno né punti in cui il bordo stesso è piatto fino a ordine infinito; il primo caso è escluso dalla condizione (2) nella definizione, il secondo dalla condizione (1).
+
+Adesso mostriamo che i domini Goldilocks soddisfano la condizione di visibilità rispetto alle simil-geodetiche.
+
+\begin{thm}
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato Goldilocks, e fissiamo $\lambda\ge 1$ e $\kappa\ge 0$. Se $\xi,\eta\in\partial\Omega$ e $V_\xi,V_\eta$ sono intorni di $\xi,\eta$ in $\mathbb{C}^n$ tali che $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, allora esiste un compatto $K\subseteq\Omega$ tale che ogni $(\lambda,\kappa)$-simil-geodetica in $\Omega$ che collega un punto di $V_\xi$ a un punto di $V_\eta$ interseca $K$.
+\end{thm}
+
+\begin{proof}
+    Supponiamo per assurdo che un tale compatto non esista. Allora possiamo trovare una successione di $(\lambda,\kappa)$-simil-geodetiche $\sigma_n:[a_n,b_n]\longrightarrow\Omega$ tali che $\sigma_n(a_n)\in V_\xi,\sigma_n(b_n)\in V_\eta$ e $\displaystyle0=\lim_{n\rightarrow+\infty}\max\{\delta_\Omega\big(\sigma_n(t)\big) \mid t\in[a_n,b_n]\}$. Riparametrizzando, possiamo assumere $\delta_\Omega\big(\sigma_n(0)\big)=\max\{\delta_\Omega\big(\sigma_n(t)\big) \mid t\in[a_n,b_n]\}$. Inoltre, a meno di passare a una sottosuccessione possiamo anche supporre che $a_n \longrightarrow a\in[-\infty,0]$, $b_n \longrightarrow b\in[0,+\infty]$, $\sigma_n(a_n)\longrightarrow \xi'$ e $\sigma_n(b_n)\longrightarrow\eta'$. Sotto le nostre ipotesi, dev'essere $\xi'\in\overline{V}_\xi\cap\partial\Omega$ e $\eta'\in\overline{V}_\eta\cap\partial\Omega$, dunque $\xi'\not=\eta'$ perché $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$.
+
+    Per la Proposizione \ref{simillip} esiste una costante $C>0$ tale che ogni $\sigma_n$ è $C$-lipschitziana rispetto alla distanza euclidea. Dunque, applicando il teorema di Ascoli-Arzelà e procedendo con un argomento diagonale, a meno di passare a un'ulteriore sottosuccessione possiamo supporre che $\{\sigma_n\}_{n\in\mathbb{N}}$ converge, uniformemente sui compatti di $(a,b)$, a una curva $\sigma:(a,b)\longrightarrow\partial\Omega$. Notiamo che dev'essere $a\not=b$, perché ogni $\sigma_n$ è $C$-lipschitziana e dunque, passando al limite, si ha $0<\|\xi'-\eta'\|\le C|b-a|$.
+    
+    Adesso vogliamo mostrare che $\|\sigma_n'(t)\| \le \lambda M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ per quasi ogni $t\in[a_n,b_n]$. Se $\sigma'(t)=0$ è immediato, altrimenti dalla definzie di $(\lambda,\kappa)$-simil-geodetica e di $M_\Omega$ si ha
+    $$\|\sigma_n'(t)\| \le \frac{\lambda}{K_\Omega\left(\sigma_n(t);\frac{1}{\|\sigma_n'(t)\|}\sigma_n'(t)\right)} \le \lambda M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big).$$
+
+    Mostriamo che $\sigma$ è costante. Dato che $\delta_\Omega\big(\sigma_n(t)\big) \le \delta_\Omega\big(\sigma_n(0)\big)$, abbiamo che $M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big) \le M_\Omega\Big(\delta_\Omega\big(\sigma_n(0)\big)\Big)$, dunque $M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ tende a $0$ uniformemente in $t$. Ma allora, dati $a<u<w<b$, troviamo che
+    \begin{align*}
+        \|\sigma(u)-\sigma(w)\|&=\lim_{n\longrightarrow+\infty}\|\sigma_n(u)-\sigma_n(w)\| \\
+        &\le \limsup_{n\longrightarrow+\infty}\int_u^w \|\sigma_n'(t)\|\diff t \le \limsup_{n\longrightarrow+\infty}\int_u^w M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big) \diff t=0,
+    \end{align*}
+    dunque $\sigma$ è costante. \\
+
+    Vogliamo ottenere una contraddizione mostrando anche che $\sigma$ non è costante. Fissiamo $x_0\in\Omega$; per la condizione (2) nella definizione di dominio Goldilocks, esistono due costanti $C,\alpha>0$ tali che $k_\Omega(x,x_0) \le C+\alpha\log{\dfrac{1}{\delta_\Omega(x)}}$ per ogni $x\in\Omega$. Segue, usando anche la definizione di $(\lambda,\kappa)$-simil-geodetica, che
+    \begin{align*}
+        \frac{1}{\lambda}|t|-\kappa \le k_\Omega\big(\sigma_n(0),\sigma_n(t)\big) &\le k_\Omega\big(\sigma_n(0),x_0\big)+k_\Omega\big(x_0,\sigma_n(t)\big)\\
+        &\le 2C+\alpha\log{\frac{1}{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)}}.
+    \end{align*}
+    Quindi $\delta_\Omega\big(\sigma_n(t)\big) \le \sqrt{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)} \le Ae^{-B|t|}$, con $A=e^{(2C+\kappa)/(2\alpha)}$ e $B=1/(2\alpha\lambda)$. Allora, per la stima trovata sopra su $\|\sigma_n'(t)\|$, si ha anche che $\|\sigma_n'(t)\| \le \lambda M_\Omega(Ae^{-B|t|})$.
+    
+    Osserviamo adesso il seguente fatto: se, data $f:[0,+\infty)\longrightarrow[0,+\infty)$ limitata e misurabile secondo Lebesgue, esiste (e dunque per ogni) $\epsilon>0$ tale che $\displaystyle \int_0^\epsilon \frac{1}{r}f(r)\diff r<+\infty$, allora, scrivendo $r=Ae^{-Bt}$ e usando cambio di variabile, abbiamo che $\displaystyle\int_0^{+\infty} f(Ae^{-Bt})\diff t<+\infty$ per ogni $A,B>0$. Per la condizione (1) nella definizione di dominio Goldilocks, possiamo applicare questo fatto a $M_\Omega$ usando le costanti $A$ e $B$ trovate sopra; ciò ci permette di fissare $a',b'\in(a,b)$ tali che
+    $$\|\xi'-\eta'\|>\lambda\int_a^{a'} M_\Omega(Ae^{-B|t|})\diff t+\lambda\int_{b'}^b M_\Omega(Ae^{-B|t|})\diff t.$$
+    Allora
+    \begin{align*}
+        \|\sigma(b')-\sigma(a')\|&=\lim_{n\longrightarrow+\infty}\|\sigma_n(b')-\sigma_n(a')\| \\
+        & \ge \lim_{n\longrightarrow+\infty}\big(\|\sigma_n(b_n)-\sigma_n(a_n)\|+\\
+        &-\|\sigma_n(b_n)-\sigma_n(b')\|-\|\sigma_n(a')-\sigma_n(a_n)\|\big) \\
+        &\ge \|\xi'-\eta'\|-\limsup_{n\longrightarrow+\infty}\int_{b'}^{b_n}\|\sigma_n'(t)\|\diff t-\limsup_{n\longrightarrow+\infty}\int_{a_n}^{a'}\|\sigma_n'(t)\|\diff t\\
+        &\ge \|\xi'-\eta'\|-\limsup_{n\longrightarrow+\infty}\lambda\int_{b'}^{b_n}M_\Omega(Ae^{-B|t|})\diff t+\\
+        &-\limsup_{n\longrightarrow+\infty}\lambda\int_{a_n}^{a'}M_\Omega(Ae^{-B|t|})\diff t\\
+        &=\|\xi'-\eta'\|-\lambda\int_{b'}^b M_\Omega(Ae^{-B|t|})\diff t-\lambda\int_a^{a'}M_\Omega(Ae^{-B|t|})\diff t>0,
+    \end{align*}
+    dunque $\sigma$ non è costante, e questo ci dà una contraddizione.
+\end{proof}

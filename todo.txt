@@ -1,5 +1,4 @@
 Per il momento, nell'ordine:
-teorema WD per varietà taut con visibilità;
 esempi.
 Poi:
 domini di tipo finito;
@@ -13,11 +12,6 @@ ringraziamenti.
 Non scordarti, via via che scrivi, di mantenere una bibliografia adeguata.
 
 DA FARE:
-capire se vedremo/se ci serve che la pseudometrica è una metrica per i limitati;
-capire se torna visibilità in senso classico implica visibilità con il compatto;
-capire che controesempio ci serve davvero e trovarlo;
-capire se per l'esempio di \mathbb{B}^2 è meglio lasciare così o andare di Goldilock;
-fare il disegno in inkscape per la definizione di visibilità.
 
-DOPO AVER SCRITTO LA DIM DI WD SOTTO VISIBILITÀ, PRIMA DI INVIARE AD ABATE:
+DA FARE PRIMA O POI, PRIMA DI INVIARE AD ABATE:
 rileggio tutto quello che hai scritto NEL DETTAGLIO e pulisci un po' qua e là (sì, ci devono già essere i disegnini [dai che ora li sai fare!]; sì, devi aver capito per bene quale notazioni, quali definizioni, e quali risultati ti servono e devi tenere e di quali invece ti devi liberare. Deve uscire un lavoro pulito).
