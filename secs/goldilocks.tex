@@ -2,7 +2,7 @@ Il primo esempio di una classe di domini di $\mathbb{C}^n$ con visibilità è qu
 $$M_\Omega(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid \delta_\Omega(x) \le r, \|v\|=1\right\}.$$
 La funzione $M_\Omega(r)$ è monotona crescente, dunque misurabile secondo Lebesgue; inoltre, segue dal punto (1) della Proposizione \ref{metrica_bilip} che è anche limitata. Perciò ha senso la definizione che stiamo per dare.
 
-\begin{defn}
+\begin{defn} \label{gold}
     Un dominio limitato $\Omega\subseteq\mathbb{C}^n$ è detto \textit{dominio Goldilocks} se
     \begin{enumerate}[label={(\arabic*)}]
         \item esiste (e quindi per ogni) $\epsilon>0$ tale che $\displaystyle\int_0^{\epsilon} \frac{1}{r}M_\Omega(r)\diff r<+\infty$;
@@ -25,7 +25,7 @@ Adesso mostriamo che i domini Goldilocks soddisfano la condizione di visibilità
 
     Per la Proposizione \ref{simillip} esiste una costante $C>0$ tale che ogni $\sigma_n$ è $C$-lipschitziana rispetto alla distanza euclidea. Dunque, applicando il teorema di Ascoli-Arzelà e procedendo con un argomento diagonale, a meno di passare a un'ulteriore sottosuccessione possiamo supporre che $\{\sigma_n\}_{n\in\mathbb{N}}$ converge, uniformemente sui compatti di $(a,b)$, a una curva $\sigma:(a,b)\longrightarrow\partial\Omega$. Notiamo che dev'essere $a\not=b$, perché ogni $\sigma_n$ è $C$-lipschitziana e dunque, passando al limite, si ha $0<\|\xi'-\eta'\|\le C|b-a|$.
     
-    Adesso vogliamo mostrare che $\|\sigma_n'(t)\| \le \lambda M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ per quasi ogni $t\in[a_n,b_n]$. Se $\sigma'(t)=0$ è immediato, altrimenti dalla definzie di $(\lambda,\kappa)$-simil-geodetica e di $M_\Omega$ si ha
+    Adesso vogliamo mostrare che $\|\sigma_n'(t)\| \le \lambda M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ per quasi ogni $t\in[a_n,b_n]$. Se $\sigma'(t)=0$ è immediato, altrimenti dalla definizione di $(\lambda,\kappa)$-simil-geodetica e di $M_\Omega$ si ha
     $$\|\sigma_n'(t)\| \le \frac{\lambda}{K_\Omega\left(\sigma_n(t);\frac{1}{\|\sigma_n'(t)\|}\sigma_n'(t)\right)} \le \lambda M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big).$$
 
     Mostriamo che $\sigma$ è costante. Dato che $\delta_\Omega\big(\sigma_n(t)\big) \le \delta_\Omega\big(\sigma_n(0)\big)$, abbiamo che $M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big) \le M_\Omega\Big(\delta_\Omega\big(\sigma_n(0)\big)\Big)$, dunque $M_\Omega\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ tende a $0$ uniformemente in $t$. Ma allora, dati $a<u<w<b$, troviamo che
@@ -56,3 +56,5 @@ Adesso mostriamo che i domini Goldilocks soddisfano la condizione di visibilità
     \end{align*}
     dunque $\sigma$ non è costante, e questo ci dà una contraddizione.
 \end{proof}
+
+Un esempio esplicito di domini Goldilocks sono i domini limitati, pseudoconvessi e di tipo finito. Risultati più precisi per questo tipo di domini, inclusa la definizione di tipo finito e la dimostrazione che sono domini Goldilocks, li vedremo nella prossima sezione.
