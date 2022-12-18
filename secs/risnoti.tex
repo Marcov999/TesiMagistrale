@@ -9,13 +9,13 @@ Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre
 \end{thm}
 
 \begin{thm} \label{hartogs_fen}
-    (Serre, Ehrenpreis \cite[Chapter 1, Paragraph 1.2, Theorem 1.2.6]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato, con $n>1$. Sia $K$ un sottoinsieme compatto di $\Omega$ tale che $\Omega\setminus K$ è connesso. Se $f\in\mathcal{O}(\Omega\setminus K)$, allora esiste $F\in\mathcal{O}(\Omega)$ tale che $F\restrict{\Omega\setminus K}=f$.
+    (Serre, Ehrenpreis, \cite[Chapter 1, Paragraph 1.2, Theorem 1.2.6]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato, con $n>1$. Sia $K$ un sottoinsieme compatto di $\Omega$ tale che $\Omega\setminus K$ è connesso. Se $f\in\mathcal{O}(\Omega\setminus K)$, allora esiste $F\in\mathcal{O}(\Omega)$ tale che $F\restrict{\Omega\setminus K}=f$.
 \end{thm}
 
-Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi espliciti, dalla quale discende un'importante conseguenza.
+Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari, dalla quale discende un'importante conseguenza.
 
-\begin{prop}
-    (\cite[Chapter 2.3, Proposition 2.3.4 and Corollary 2.3.7]{A1}) Si ha che:
+\begin{prop} \label{k_polidisco}
+    (\cite[Chapter 2, Paragraph 2.3, Proposition 2.3.4 and Corollary 2.3.7]{A1}) Valgono le seguenti affermazioni:
     \begin{nlist}
         \item la distanza di Poincaré e la pseudodistanza di Kobayashi coincidono per $\mathbb{D}$;
         \item dati $z=(z_1,\dots,z_n)$ e $w=(w_1,\dots,w_n)$ in $\mathbb{D}^n$, si ha
@@ -23,88 +23,90 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi espliciti, d
     \end{nlist}
 \end{prop}
 \begin{proof}
-    \begin{nlist}
-        \item Che $k_{\mathbb{D}}\ge\omega$ segue dal lemma di Schwarz-Pick e dalla disuguaglianza triangolare per la distanza di Poincaré; per avere l'uguaglianza, basta notare che il minimo nella definizione di $k_{\mathbb{D}}$ è effettivamente raggiunto usando l'identità.
-        \item Poiché le proiezioni nelle varie coordinate sono funzioni olomorfe, per ogni $j=1,\dots, n$ si ha
-        $$k_{\mathbb{D}^n}(z,w) \ge k_{\mathbb{D}}(z_j,w_k)=\omega(z_j,w_j),$$
-        dove la disuguaglianza segue dall'Osservazione \ref{k_lip} e l'uguaglianza dal punto (i).
+    (i) Che $k_{\mathbb{D}}\ge\omega$ segue dal lemma di Schwarz-Pick e dalla disuguaglianza triangolare per la distanza di Poincaré; per avere l'uguaglianza, basta notare che il minimo nella definizione di $k_{\mathbb{D}}$ è effettivamente raggiunto usando l'identità.\\
 
-        Per mostrare che il minimo è effettivamente raggiunto, notiamo che dall'Osservazione \ref{k_lip} segue anche che $k_{\mathbb{D}^n}$ e $k_{\mathbb{D}}=\omega$ sono invarianti per biolomorfismo. Componendo quindi con $f_1\times\dots\times f_n$ dove $f_j \in \text{Aut}(\mathbb{D})$ è tale che $f_j(z_j)=0$, abbiamo che sia $k_{\mathbb{D}^n}(z,w)$ che $\max_{j=1,\dots,n}\{\omega(z_j,w_j)\}$ rimangono invariati. Possiamo dunque supporre, senza perdita di generalità, $z=0$. Allora, detto $j_0$ l'indice per cui $\omega(0,w_{j_0})$ è massimo, si ha che anche $|w_{j_0}|$ è massimo. Consideriamo $\varphi=g_1\times\dots\times g_n$ dove $g_j \in\text{Hol}(\mathbb{D},\mathbb{D})$ è l'identità per $j=j_0$ e un'opportuna rotomotetia per $j\not=j_0$, di modo che $g_j(w_{j_0})=w_j$. Abbiamo così $\varphi(z_{j_0})=\varphi(0)=0=z$ e $\varphi(w_{j_0})=w$.
-    \end{nlist}
+    (ii) Poiché le proiezioni nelle varie coordinate sono funzioni olomorfe, per ogni $j=1,\dots, n$ si ha
+    $$k_{\mathbb{D}^n}(z,w) \ge k_{\mathbb{D}}(z_j,w_j)=\omega(z_j,w_j),$$
+    dove la disuguaglianza segue dall'Osservazione \ref{k_lip} e l'uguaglianza dal punto (i).
+
+    Per mostrare che il minimo è effettivamente raggiunto, notiamo che dall'Osservazione \ref{k_lip} segue anche che $k_{\mathbb{D}^n}$ e $k_{\mathbb{D}}=\omega$ sono invarianti per biolomorfismo. Componendo quindi con $f_1\times\dots\times f_n$ dove $f_j \in \text{Aut}(\mathbb{D})$ è tale che $f_j(z_j)=0$, abbiamo che sia $k_{\mathbb{D}^n}(z,w)$ che $\displaystyle\max_{j=1,\dots,n}\{\omega(z_j,w_j)\}$ rimangono invariati. Possiamo dunque supporre, senza perdita di generalità, $z=0$. Allora, detto $j_0$ l'indice per cui $\omega(0,w_{j_0})$ è massimo, si ha che anche $|w_{j_0}|$ è massimo. Basta quindi considerare $\varphi=g_1\times\dots\times g_n$, dove $g_j \in\text{Hol}(\mathbb{D},\mathbb{D})$ è l'identità per $j=j_0$ e un'opportuna rotomotetia per $j\not=j_0$, di modo che $g_j(w_{j_0})=w_j$. Abbiamo così $\varphi(z_{j_0})=\varphi(0)=0=z$ e $\varphi(w_{j_0})=w$.
 \end{proof}
 
 \begin{cor}
     La pseudodistanza di Kobayashi è effettivamente una distanza per i domini limitati.
 \end{cor}
 \begin{proof}
-    Discende tutto dalla Proposizione precedente e dall'Osservazione \ref{k_lip}. Innanzitutto, dalla Proposizione abbiamo che $k_{\mathbb{D}^n}$ è effettivamente una distanza; poiché dall'Osservazione sappiamo che $k_X$ è invariante per biolomorfismi, segue che $k_{\mathbb{D}_r^n}$ è una distanza per ogni $r>0$. Se $\Omega\subseteq\mathbb{C}^n$ è un dominio limitato, esiste $r>0$ tale che $\Omega\subseteq\mathbb{D}_r^n$. In tal caso, l'inclusione è una funzione olomorfa. Allora, sempre dall'Osservazione, si ha che se $x,y \in \Omega$ con $x\not=y$ allora $0<k_{\mathbb{D}_r^n}(x,y) \le k_{\Omega}(x,y)$. Segue dunque che $k_\Omega$ è una distanza, come voluto.
+    Discende tutto dalla Proposizione \ref{k_polidisco} e dall'Osservazione \ref{k_lip}. Innanzitutto, dalla Proposizione abbiamo che $k_{\mathbb{D}^n}$ è effettivamente una distanza; poiché dall'Osservazione sappiamo che $k_X$ è invariante per biolomorfismi, segue che $k_{\mathbb{D}_r^n}$ è una distanza per ogni $r>0$. Se $\Omega\subseteq\mathbb{C}^n$ è un dominio limitato, esiste $r>0$ tale che $\Omega\subseteq\mathbb{D}_r^n$. In tal caso, l'inclusione è una funzione olomorfa. Allora, sempre dall'Osservazione, si ha che se $x,y \in \Omega$ con $x\not=y$ allora $0<k_{\mathbb{D}_r^n}(x,y) \le k_{\Omega}(x,y)$. Segue dunque che $k_\Omega$ è una distanza, come voluto.
 \end{proof}
 
 \begin{oss}
-    Con la stessa dimostrazione, si ottiene anche che le sottovarietà di varietà Kobayashi-iperboliche sono Kobayashi-iperboliche. In particolare, le varietà complesse connesse embeddate in $\mathbb{C}^d$ e limitate sono Kobayashi-iperboliche.
+    Con la stessa dimostrazione, si ottiene anche che le sottovarietà di varietà Kobayashi-iperboliche sono Kobayashi-iperboliche. In particolare, le varietà complesse, connesse, embeddate in $\mathbb{C}^d$ e limitate sono Kobayashi-iperboliche.
 \end{oss}
 
 Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi; per una dimostrazione si rimanda a \cite[Theorem 1]{R} e \cite[Theorem 3.1]{V}.
 
 \begin{thm} \label{lung_int}
-    \cite[Result 2.1]{CMS} Sia $X$ una sottovarietà complessa connessa embeddata in $\mathbb{C}^d$. Per ogni $z,w \in X$, abbiamo
+    \cite[Result 2.1]{CMS} Sia $X$ una sottovarietà complessa, connessa e embeddata in $\mathbb{C}^d$. Per ogni $z,w \in X$, abbiamo
     \begin{nlist}
         \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è $C^1$ a tratti, }\gamma(a)=z,\gamma(b)=w\}$;
         \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è assolutamente continua,}$\\
         $\text{    }\qquad\qquad\,\,\,\,\gamma(a)=z,\gamma(b)=w\}$.
     \end{nlist}
-    Qui, $l_X(\gamma)=\displaystyle\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t$ è ben definito in entrambi i casi.
+    Qui, $l_X(\gamma):=\displaystyle\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t$, la \textnormal{lunghezza di $\gamma$ in $X$ rispetto alla pseudometrica di Kobayashi}, è ben definita in entrambi i casi.
 \end{thm}
 
 Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la dicotomia sul comportamento delle iterate delle funzioni olomorfe. Per farlo, ci servono prima alcuni risultati.
 
 \begin{lm} \label{ballball}
-    Siano $X$ una varietà Kobayashi-iperbolica, $z_0 \in X$ e $r_1,r_2>0$. Allora $B_X\big(B_X(z_0,r_1),r_2\big)=B_X(z_0,r_1+r_2)$, dove $B_X(x,r)$ è la palla di centro $x \in X$ e raggio $r>0$ rispetto alla distanza di Kobayashi e, dato $A\subseteq X$, poniamo $B_X(A,r)=\displaystyle\bigcup_{x \in A}B_X(x,r)$.
+    Siano $X$ una varietà Kobayashi-iperbolica, $z_0 \in X$ e $r_1,r_2>0$. Allora
+    $$B_X\big(B_X(z_0,r_1),r_2\big)=B_X(z_0,r_1+r_2),$$
+    dove $B_X(x,r)$ è la palla di centro $x \in X$ e raggio $r>0$ rispetto alla distanza di Kobayashi e, dato $A\subseteq X$, poniamo $B_X(A,r)=\displaystyle\bigcup_{x \in A}B_X(x,r)$.
 \end{lm}
 \begin{proof}
     L'inclusione $B_X\big(B_X(z_0,r_1),r_2\big)\subseteq B_X(z_0,r_1+r_2)$ segue dalla disuguaglianza triangolare.
 
-    Per l'altra inclusione, consideriamo $z \in B_X(z_0,r_1+r_2)$ e prendiamo $\epsilon>0$ tale che $3\epsilon=r_1+r_2-k_X(z_0,z)$. Adesso, se $k_X(z_0,z)<r_1$ la conclusione è immediata; assumiamo dunque che $k_X(z_0,z)\ge r_1$, allora si ha $r_2-\epsilon \ge 0$. Supponiamo che $r_1 \le \epsilon$. Allora $k_X(z_0,z)=r_1+r_2-3\epsilon<r_2$ e anche in questo caso la conclusione segue. Assumiamo quindi anche che $r_1-\epsilon>0$.
+    Per l'altra inclusione, consideriamo $z \in B_X(z_0,r_1+r_2)$ e prendiamo $\epsilon>0$ tale che $3\epsilon=r_1+r_2-k_X(z_0,z)$. Adesso, se $k_X(z_0,z)<r_1$ la conclusione è immediata; assumiamo dunque che $k_X(z_0,z)\ge r_1$, quindi si ha $r_2-\epsilon>0$. Supponiamo che $r_1 \le \epsilon$. Allora $k_X(z_0,z)=r_1+r_2-3\epsilon<r_2$ e anche in questo caso la conclusione segue. Perciò, assumiamo anche che $r_1-\epsilon>0$.
 
-    Dalla definizione di $k_X$, esistono $\varphi_1,\dots,\varphi_m \in \text{Hol}(\mathbb{D},X)$ e $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ tali che $\varphi_1(\zeta_0)=z_0$, $\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)$ per $j=1,\dots,m-1$, $\varphi_m(\zeta_m)=z$ e
+    Dalla definizione di $k_X$, esistono $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e $\varphi_1,\dots,\varphi_m \in \text{Hol}(\mathbb{D},X)$ tali che $\varphi_1(\zeta_0)=z_0$, $\varphi_m(\zeta_m)=z$, $\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)$ per $j=1,\dots,m-1$ e
     $$\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)<r_1+r_2-2\epsilon.$$
     Sia $\mu \le m$ il più grande intero tale che
     $$\sum_{j=1}^{\mu-1} \omega(\zeta_{j-1},\zeta_j)<r_1-\epsilon,$$
     che esiste perché $r_1-\epsilon>0$. Prendiamo $\eta_{\mu}$ il punto sulla geodetica congiungente $\zeta_{\mu-1}$ e $\zeta_{\mu}$ tale che
     $$\sum_{j=1}^{\mu-1} \omega(\zeta_{j-1},\zeta_j)+\omega(\zeta_{\mu-1},\eta_{\mu})=r_1-\epsilon,$$
-    che esiste perché $r_1+r_2-2\epsilon \ge r_1-\epsilon$. Prendendo dunque $w=\varphi_{\mu}(\eta_{\mu})$ abbiamo $k_X(z_0,w)<r_1$, inoltre per come è stato scelto $\eta_{\mu}$ si ha
+    che esiste perché $r_1+r_2-2\epsilon>r_1-\epsilon$ e per definizione di $\mu$. Prendendo dunque $w=\varphi_{\mu}(\eta_{\mu})$ abbiamo $k_X(z_0,w)<r_1$, cioè $w\in B_X(z_0,r_1)$. Inoltre, per come è stato scelto $\eta_{\mu}$, si ha
     \begin{align*}
         \sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)&=\sum_{j=1}^{\mu-1} \omega(\zeta_{j-1},\zeta_j)+\omega(\zeta_{\mu-1},\zeta_{\mu})+\sum_{j=\mu+1}^m \omega(\zeta_{j-1},\zeta_j)\\
         &=\sum_{j=1}^{\mu-1} \omega(\zeta_{j-1},\zeta_j)+\omega(\zeta_{\mu-1},\eta_{\mu})+\\
-        &+\omega(\eta_{\mu},\zeta_{\mu})+\sum_{j=\mu+1}^m \omega(\zeta_{j-1},\zeta_j),
+        &+\omega(\eta_{\mu},\zeta_{\mu})+\sum_{j=\mu+1}^m \omega(\zeta_{j-1},\zeta_j)\\
+        &=r_1-\epsilon+\omega(\eta_{\mu},\zeta_{\mu})+\sum_{j=\mu+1}^m \omega(\zeta_{j-1},\zeta_j),
     \end{align*}
     da cui
-    $$\omega(\eta_{\mu},\zeta_{\mu})+\sum_{j=\mu+1}^m \omega(\zeta_{j-1},\zeta_j)=\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)-(r_1-\epsilon)<r_2-\epsilon,$$
-    perciò $k_X(w,z)<r_2$ e di conseguenza $z \in B_X\big(B_X(z_0,r_1),r_2\big)$, come voluto.
+    $$\omega(\eta_{\mu},\zeta_{\mu})+\sum_{j=\mu+1}^m \omega(\zeta_{j-1},\zeta_j)=\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)-(r_1-\epsilon)<r_2-\epsilon;$$
+    perciò $k_X(w,z)<r_2$. Di conseguenza, $z \in B_X\big(B_X(z_0,r_1),r_2\big)$ come voluto.
 \end{proof}
 
-Vogliamo dare una caratterizzazione equivalente all'essere taut per una varietà.
+Vogliamo dare ora una caratterizzazione equivalente all'essere taut per una varietà.
 
 \begin{oss} \label{c0yx}
     Dalla definizione della compattificazione di Alexandroff, una successione in $C^0(Y,X)$ converge in $C^0(Y,X^*)$ alla funzione costante a $\infty$ se e solo se è compattamente divergente. Inoltre, se $X$ e $Y$ sono varietà (ma in realtà bastano ipotesi meno stringenti), un sottoinsieme di $C^0(Y,X^*)$ è compatto se e solo se è compatto per successioni.
 \end{oss}
 
-\begin{cor}
-    Una varietà complessa connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
-\end{cor}
+\begin{prop}
+    Una varietà complessa e connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
+\end{prop}
 \begin{proof}
-    Supponiamo che $X$ sia taut e prendiamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$, e per l'Osservazione \ref{c0yx} è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante a $\infty$. Ma, per l'Osservazione \label{c0yx}, questo significa che $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
+    Supponiamo che $X$ sia taut e prendiamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per definizione è Kobayashi-iperbolica, dunque per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$, e per l'Osservazione \ref{c0yx} è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante a $\infty$. Ma, per l'Osservazione \ref{c0yx}, questo significa che $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
 
-    Supponiamo adesso che $\text{Hol}(\mathbb{D},X)$ sia normale. Se $f$ è una funzione nella sua chiusura in $C^0(\mathbb{D},X^*)$, allora è il limite di una successione in $\text{Hol}(\mathbb{D},X)$. Poiché questa famiglia è normale, possiamo trovare una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente, ma dovrà comunque convergere a $f$. Allora nel primo caso $f \in \text{Hol}(\mathbb{D},X)$, mentre nel secondo è la funzione costante a $\infty$. Dunque $X$ è taut.
+    Supponiamo adesso che $\text{Hol}(\mathbb{D},X)$ sia normale. Se $f$ è una funzione nella sua chiusura in $C^0(\mathbb{D},X^*)$, allora è il limite di una successione in $\text{Hol}(\mathbb{D},X)$. Poiché questa famiglia è normale, possiamo trovare una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente, ma dovrà comunque convergere a $f$. Allora nel primo caso, applicando il teorema di Weierstrass in carte opportune, troviamo che $f \in \text{Hol}(\mathbb{D},X)$, mentre nel secondo caso è la funzione costante a $\infty$. Dunque $X$ è taut.
 \end{proof}
 
 Si può dimostrare qualcosa di più.
 
 \begin{prop}
-    (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
+    (\cite[Chapter 2, Paragraph 2.1, Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
 \end{prop}
 
-Adesso vogliamo mostrare che tutte le varietà Kobayashi-iperboliche complete sono taut. Per farlo, ci servirà il ben noto teorema di Ascoli-Arzelà.
+Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali che $k_X$ è una distanza completa sono taut. Per farlo, ci servirà il ben noto teorema di Ascoli-Arzelà.
 
 \begin{thm}
     (Ascoli-Arzelà, \cite[Chapter 7, Theorem 17]{Ke}) Sia $X$ uno spazio metrico e $Y$ uno spazio metrico localmente compatto. Allora un famiglia $\mathcal{F}\subseteq C^0(Y,X)$ è relativamente compatta in $C^0(X,Y)$ se e solo se le seguenti due condizioni sono soddisfatte:
@@ -115,15 +117,15 @@ Adesso vogliamo mostrare che tutte le varietà Kobayashi-iperboliche complete so
 \end{thm}
 
 \begin{prop} \label{comp_is_taut}
-    Ogni varietà Kobayashi-iperbolica completa è taut.
+    Ogni varietà $X$ Kobayashi-iperbolica e $k_X$-completa è taut.
 \end{prop}
 
 \begin{proof}
-    Sia $X$ una varietà Kobayashi-iperbolica completa, e consideriamo una successione $\{\varphi_\nu\}\subseteq\text{Hol}(\mathbb{D},X)$ che non è compattamente divergente; vogliamo mostrare che ammette una sottosuccessione che converge in $\text{Hol}(\mathbb{D},X)$.
+    Sia $X$ una varietà Kobayashi-iperbolica e $k_X$-completa, e consideriamo una successione $\{\varphi_\nu\}\subseteq\text{Hol}(\mathbb{D},X)$ che non è compattamente divergente; vogliamo mostrare che ammette una sottosuccessione che converge in $\text{Hol}(\mathbb{D},X)$.
 
     A meno di passare a una sottosuccessione, possiamo trovare due compatti $H\subseteq\mathbb{D}$ e $K\subseteq X$ tali che $\varphi_\nu(H)\cap K\not=\emptyset$ per ogni $\nu\in\mathbb{N}$. Fissiamo $z_0\in K$ e $\zeta_\nu\in H$ tale che $\varphi_\nu(\zeta_\nu)\in K$, e poniamo $r=\max\{k_X(z,z_0)\mid z\in K\}$. Allora per ogni $\zeta\in\mathbb{D}$ e $\nu\in\mathbb{N}$ abbiamo che
     $$k_X\big(\varphi_\nu(\zeta),z_0\big) \le k_X\big(\varphi_\nu(\zeta),\varphi_\nu(\zeta_\nu)\big)+k_X\big(\varphi_\nu(\zeta_\nu),z_0\big) \le k_{\mathbb{D}} (\zeta,\zeta_\nu)+r.$$
-    Posto $R=\max\{k_X(\zeta,\zeta')\mid \zeta'\in H\}$, abbiamo che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R+r$, che è compatta perché $X$ è Kobayashi-ierpbolica completa (si veda \cite[Chapter 2, Paragraph 3, Proposition 2.3.17]{A1}; si usa il Lemma \ref{ballball} e poco altro); di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-ierpbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si può dimostrare che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
+    Posto $R=\max\{k_X(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R+r$, che è compatta perché $X$ è Kobayashi-ierpbolica e $k_X$-completa (si veda \cite[Chapter 2, Paragraph 2.3, Proposition 2.3.17]{A1}; si usa il Lemma \ref{ballball} e poco altro); di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si può dimostrare che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
 \end{proof}
 
 Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia che cerchiamo per il comportamento delle iterate delle funzioni olomorfe, dobbiamo studiarne alcune proprietà.
@@ -136,38 +138,40 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 
     Sia $P=D\rho(z_0):\mathbb{C}^n \longrightarrow \mathbb{C}^n$ e definiamo $\varphi:\Omega \longrightarrow \mathbb{C}^n$ come
     $$\varphi=\id+(2P-\id)\circ(\rho-P).$$
-    Poiché $D\varphi(z_0)=\id$, la funzione $\varphi$ definisce una carta locale in un intorno di $z_0$. Adesso, dato che $P^2=P$ e $\rho^2=\rho$ si ha
+    Poiché $D\varphi(z_0)=\id$, la funzione $\varphi$ definisce una carta locale in un intorno di $z_0$. Adesso, dato che $\rho^2=\rho$ e $P^2=P$, si ha
     \begin{align*}
         \varphi\circ\rho&=\rho+(2P-\id)\circ\rho^2-(2P-\id)\circ P\circ\rho\\
         &=P\circ\rho=P+P\circ(2P-\id)\circ(\rho-P)=P\circ\varphi.
     \end{align*}
-    Allora letta in questa carta $\rho$ diventa lineare, perciò $M$ è una sottovarietà vicino a $z_0$. Per arbitrarietà di $z_0$, segue che $M$ è una varietà. È chiusa perché $\rho(X)=\text{Fix}(\rho)$.
+    Allora, letta in questa carta, $\rho$ diventa lineare; perciò, $M$ è una sottovarietà vicino a $z_0$. Per arbitrarietà di $z_0$, segue che $M$ è una varietà. È chiusa perché $\rho(X)=\text{Fix}(\rho)$.
 \end{proof}
 
 \begin{thm} \label{retraiii}
-    (\cite[Theorem 2.1.5]{A4}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite di $f$ è della forma $h=\gamma\circ\rho$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
+    (\cite[Theorem 2.1.5]{A4}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite $h\in\Gamma(f)$ è della forma
+    $$h=\gamma\circ\rho,$$
+    dove $\gamma\in\textnormal{Aut}(M)$. Chiamiamo tale $M$ la \textnormal{varietà limite} di $f$.
 
     Inoltre, $\varphi=f\restrict{M}\in\textnormal{Aut}(M)$ e $\Gamma(f)$ è isomorfo al sottogruppo di $\textnormal{Aut}(M)$ dato dalla chiusura di $\{\varphi^k\}_{k \in\mathbb{N}}$.
 \end{thm}
 
 \begin{proof}
-    Poiché la successione delle iterate non è compattamente divergente, esistono due compatti $H,K\subseteq X$ e una sottosuccessione delle iterate tali che l'intersezione di $K$ con l'immagine di $H$ tramite le funzioni della sottosuccessione non è mai vuota. Dato che $X$ è tesa, possiamo estrarre una sottosottosuccessione che converge uniformemente sui compatti o è compattamente divergente; per costruzione non può essere il secondo caso, dunque abbiamo trovato una sottosuccessione $\{f^{k_{\nu}}\}_{\nu\in\mathbb{N}}$ che converge uniformemente sui compatti a $h\in\text{Hol}(X,X)$. Possiamo anche assumere che $p_\nu=k_{\nu+1}-k_\nu$ e $q_\nu=p_\nu-k_\nu$ tendano a $+\infty$ per $\nu\longrightarrow+\infty$. A meno di prendere ulteriori sottosuccessioni, possiamo anche supporre che $\{f^{p_\nu}\}_{\nu\in\mathbb{N}}$ e $\{f^{q_\nu}\}_{\nu\in\mathbb{N}}$ convergano uniformemente sui compatti o siano compattamente divergenti (non necessariamente la stessa cosa per entrambe); è facile vedere che i ragionamenti che andremo a fare vanno bene considerando anche eventuali sottosuccessioni, quindi non perdiamo di generalità. Allora
+    Poiché la successione delle iterate di $f$ non è compattamente divergente, esistono due compatti $H,K\subseteq X$ e una sottosuccessione delle iterate tali che l'intersezione di $K$ con l'immagine di $H$ tramite le funzioni della sottosuccessione non è mai vuota. Dato che $X$ è taut, possiamo estrarre una sottosottosuccessione che converge uniformemente sui compatti o è compattamente divergente; per costruzione non può essere il secondo caso, dunque abbiamo trovato una sottosuccessione $\{f^{k_{\nu}}\}_{\nu\in\mathbb{N}}$ che converge uniformemente sui compatti a $h\in\text{Hol}(X,X)$. Possiamo anche assumere che $p_\nu=k_{\nu+1}-k_\nu$ e $q_\nu=p_\nu-k_\nu$ tendano a $+\infty$ per $\nu\longrightarrow+\infty$. A meno di prendere ulteriori sottosuccessioni, possiamo anche supporre che $\{f^{p_\nu}\}_{\nu\in\mathbb{N}}$ e $\{f^{q_\nu}\}_{\nu\in\mathbb{N}}$ convergano uniformemente sui compatti o siano compattamente divergenti (non necessariamente la stessa cosa per entrambe); è facile vedere che i ragionamenti che andremo a fare sono validi anche considerando eventuali sottosuccessioni, quindi non perdiamo di generalità. Allora
     $$\lim_{\nu\longrightarrow+\infty}f^{p_\nu}\big(f^{k_\nu}(z)\big)=\lim_{\nu\longrightarrow+\infty}f^{k_{\nu+1}}(z)=h(z)$$
-    per ogni $z \in X$; poiché l'orbita di $z$ tramite $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ tende a qualcosa, è relativamente compatta, dunque $\{f^{p_\nu}\}_{\nu\in\mathbb{N}}$ non può essere compattamente divergente. Allora converge a una $\rho\in\text{Hol}(X,X)$ tale che
+    per ogni $z \in X$. Poiché l'orbita di $z$ tramite $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ tende a qualcosa, è relativamente compatta, dunque $\{f^{p_\nu}\}_{\nu\in\mathbb{N}}$ non può essere compattamente divergente. Allora converge, uniformemente sui compatti, a una $\rho\in\text{Hol}(X,X)$ tale che
     \begin{equation} \label{roacca}
         h\circ\rho=\rho\circ h=h.
     \end{equation}
-    Similmente troviamo che $\{f^{q_\nu}\}_{\nu\in\mathbb{N}}$ converge a una $g\in\text{Hol}(X,X)$ tale che
+    Similmente troviamo che $\{f^{q_\nu}\}_{\nu\in\mathbb{N}}$ converge, uniformemente sui compatti, a una $g\in\text{Hol}(X,X)$ tale che
     \begin{equation} \label{giacca}
         g\circ h=h\circ g=\rho.
     \end{equation}
-    In particolare, $\rho^2=\rho\circ\rho=g\circ h\circ\rho=g\circ h=\rho$, perciò $\rho$ è una retrazione di $X$ su una sottovarietà $M$. Dalla \eqref{roacca} abbiamo $h(X)\subseteq M$, inoltre $g\circ\rho=\rho\circ g$, da cui $g(M)\subseteq M$; allora la \eqref{giacca} ci dà $g\circ h\restrict{M}=h\circ g\restrict{M}=\id_M$. Dunque ponendo $\gamma=h\restrict{M}$ otteniamo $h=\gamma\circ\rho$ con $\gamma\in\text{Aut}(M)$. Dobbiamo mostrare che $\rho$ non dipende da $h$, in particolare non dipende dalla sottosuccessione scelta.
+    In particolare, $\rho^2=\rho\circ\rho=g\circ h\circ\rho=g\circ h=\rho$, perciò $\rho$ è una retrazione di $X$ su una sottovarietà $M$. Dalla \eqref{roacca} abbiamo $h(X)\subseteq M$, inoltre $g\circ\rho=\rho\circ g$, da cui $g(M)\subseteq M$; allora la \eqref{giacca} ci dà $g\circ h\restrict{M}=h\circ g\restrict{M}=\id_M$. Dunque, ponendo $\gamma=h\restrict{M}$, otteniamo $h=\gamma\circ\rho$ con $\gamma\in\text{Aut}(M)$. Dobbiamo mostrare che $\rho$ non dipende da $h$, in particolare non dipende dalla sottosuccessione scelta.
 
-    Sia $\{f^{k'_\nu}\}_{\nu\in\mathbb{N}}$ un'altra sottosuccessione convergente a $h'\in\text{Hol}(X,X)$. Ragionando come sopra, possiamo supporre che $s_\nu=k'_\nu-k_\nu$ e $t_\nu=k_{\nu+1}-k'_\nu$ convergano a $+\infty$ per $\nu\longrightarrow+\infty$ e che $\{f^{s_\nu}\}_{\nu\in\mathbb{N}}$ e $\{f^{t_\nu}\}_{\nu\in\mathbb{N}}$ convergano rispettivamente a $\alpha,\beta \in \text{Hol}(X,X)$ tali che
+    Sia $\{f^{k'_\nu}\}_{\nu\in\mathbb{N}}$ un'altra sottosuccessione convergente a $h'\in\text{Hol}(X,X)$. Ragionando come sopra, possiamo supporre che $s_\nu=k'_\nu-k_\nu$ e $t_\nu=k_{\nu+1}-k'_\nu$ convergano a $+\infty$ per $\nu\longrightarrow+\infty$ e che $\{f^{s_\nu}\}_{\nu\in\mathbb{N}}$ e $\{f^{t_\nu}\}_{\nu\in\mathbb{N}}$ convergano, uniformemente sui compatti, rispettivamente a $\alpha,\beta \in \text{Hol}(X,X)$ tali che
     \begin{equation}\label{accaprimo}
         \alpha\circ h=h\circ\alpha=h' \qquad\text{ e }\qquad \beta\circ h'=h'\circ\beta=h.
     \end{equation}
-    Allora $h(X)=h'(X)$, dunque $M$ non dipende dalla sottosuccessione scelta. Adesso scriviamo $h=\gamma_1\circ\rho_1,h'=\gamma_2\circ\rho_2,\alpha=\gamma_3\circ\rho_3,\beta=\gamma_4\circ\rho_4$ dove $\rho_1,\rho_2,\rho_3,\rho_4$ sono delle retrazioni olomorfe di $X$ su $M$ e $\gamma_1,\gamma_2,\gamma_3,\gamma_4\in\text{Aut}(M)$. Vogliamo dire che $\rho_1=\rho_2$. Notiamo che $h\circ h'=h'\circ h$ e $\alpha\circ\beta=\beta\circ\alpha$, che insieme alla \eqref{accaprimo} ci dà
+    Allora $h(X)=h'(X)$, dunque $M$ non dipende dalla sottosuccessione scelta. Adesso scriviamo $h=\gamma_1\circ\rho_1,h'=\gamma_2\circ\rho_2,\alpha=\gamma_3\circ\rho_3$ e $\beta=\gamma_4\circ\rho_4$, dove $\rho_1,\rho_2,\rho_3,\rho_4$ sono delle retrazioni olomorfe di $X$ su $M$ e $\gamma_1,\gamma_2,\gamma_3,\gamma_4\in\text{Aut}(M)$. Vogliamo dire che $\rho_1=\rho_2$. Notiamo che $h\circ h'=h'\circ h$ e $\alpha\circ\beta=\beta\circ\alpha$, che insieme alla \eqref{accaprimo} ci dà
     \begin{equation}\label{gammaro}\begin{split}
         \gamma_1\circ\gamma_2\circ\rho_2=\gamma_2\circ\gamma_1\circ\rho_1,\\
         \gamma_3\circ\gamma_1\circ\rho_1=\gamma_1\circ\gamma_3\circ\rho_3=\gamma_2\circ\rho_2,\\
@@ -186,11 +190,11 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma di cinque asserzioni equivalenti.
 
 \begin{thm} \label{dicotomia}
-    (\cite[Theorem 1.1]{A2}) Sia $X$ una varietà taut e $f \in \textnormal{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
+    (\cite[Theorem 1.1]{A2}) Sia $X$ una varietà taut e consideriamo $f \in \textnormal{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
     \begin{nlist}
-        \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non è compattamente divergente;
-        \item la successione delle iterate $\{f^k\}_{k \in \mathbb{N}}$ non contiene alcuna sottosuccessione compattamente divergente;
-        \item $\{f^k\}_{k \in \mathbb{N}}$ è relativamente compatta in $\textnormal{Hol}(X,X)$;
+        \item la successione $\{f^k\}_{k \in \mathbb{N}}$ delle iterate di $f$ non è compattamente divergente;
+        \item la successione $\{f^k\}_{k \in \mathbb{N}}$ delle iterate di $f$ non contiene alcuna sottosuccessione compattamente divergente;
+        \item la successione $\{f^k\}_{k \in \mathbb{N}}$ delle iterate di $f$ è relativamente compatta in $\textnormal{Hol}(X,X)$;
         \item l'orbita di $z$ è relativamente compatta in $X$ per ogni $z \in X$;
         \item esiste $z_0 \in X$ la cui orbita è relativamente compatta in $X$.
     \end{nlist}
@@ -199,9 +203,9 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
 \begin{proof}
     (v) $\implies$ (ii). Consideriamo $H=\{z_0\}$ e $K=\overline{\{f^k(z_0)\mid k\in\mathbb{N}\}}$; ovviamente $H$ è compatto, e $K$ lo è per l'ipotesi (v). Allora $f^k(H)\cap K\not=\emptyset$ per ogni $k\in\mathbb{N}$, dunque $\{f^k\}_{k \in \mathbb{N}}$ non può contenere sottosuccessioni compattamente divergenti.
 
-    (ii) $\implies$ (iii). Poiché $(X,k_X)$ è uno spazio metrico, $\text{Hol}(X,X)$ è metrizzabile, prendendo ad esempio la distanza del $\sup$ (così facendo, la topologia coincide con quella di sottospazio di $C^0(X,X)$, che è quella che vogliamo). Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatta, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è tesa, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
+    (ii) $\implies$ (iii). Poiché $(X,k_X)$ è uno spazio metrico, $\text{Hol}(X,X)$ è metrizzabile, prendendo ad esempio la distanza del $\sup$ (così facendo, la topologia coincide con quella di sottospazio di $C^0(X,X)$, che è quella che vogliamo). Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatta, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è taut, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
 
-    (iii) $\implies$ (iv). Fissiamo $z\in X$ e consideriamo la funzione $\text{Hol}(X,X)\longrightarrow X$ tale che $f\longmapsto f(z)$. Questa funzione è continua rispetto alla topologia su $\text{Hol}(X,X)$, dunque l'immagine della chiusura di $\{f^k\mid k\in\mathbb{N}\}$ è compatta perché immagine di un compatto, chiusa perché compatta in uno spazio Hausdorff, e contiene $\{f^k(z)\mid k\in\mathbb{N}\}$. Perciò l'orbita di $z$ è contenuta in un compatto chiuso, quindi è relativamente compatta, come voluto.
+    (iii) $\implies$ (iv). Fissiamo $z\in X$ e consideriamo la funzione $\text{Hol}(X,X)\longrightarrow X$ tale che $f\longmapsto f(z)$. Questa funzione è continua rispetto alla topologia su $\text{Hol}(X,X)$, dunque l'immagine della chiusura di $\{f^k\mid k\in\mathbb{N}\}$ è compatta perché immagine di un compatto, chiusa perché compatta in uno spazio Hausdorff, e contiene $\{f^k(z)\mid k\in\mathbb{N}\}$. Perciò, l'orbita di $z$ è contenuta in un compatto chiuso, quindi è relativamente compatta, come voluto.
 
     (iv) $\implies$ (i). Ovvio.
 
@@ -212,11 +216,11 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
     e possiamo assumere che $B_M(w_j,\epsilon_0/4)\cap C\not=\emptyset$ per $j=1,\dots,r$.
     Per ogni $j=1,\dots, r$ scegliamo $k_j\in\mathbb{N}$ tale che $\varphi^{k_j}(z_0)\in B_M(w_j,\epsilon_0/4)$; allora
     \begin{equation}\label{capci}
-        B_M(z_0,\epsilon_0)\cap C \subseteq \bigcup_{j=1}^r \left[B_M\big(\varphi^{k_j}(z_0),\epsilon_0/2\big)\cap C\right].
+        B_M(z_0,\epsilon_0)\cap C \subseteq \bigcup_{j=1}^r \Big(B_M\big(\varphi^{k_j}(z_0),\epsilon_0/2\big)\cap C\Big).
     \end{equation}
-    Dato che $\id_M\in\Gamma(\varphi)$, l'insieme $I=\{k\in\mathbb{N}\mid k_M\big(\varphi^k(z_0),z_0\big)<\epsilon_0/2\}$ è infinito; dunque possiamo trovare un $k_0 \in I$ tale che $k_0 \ge \max\{1,k_1,\dots,k_r\}$. Poniamo $\displaystyle K=\bigcup_{k=1}^{k_0}\overline{B_M\big(\varphi^k(z_0),\epsilon_0\big)}$; per costruzione, $K$ è compatto, dunque ci basta mostrare che $C \subseteq K$. Prendiamo $h \in I$; dato che l'insieme $I$ è infinito, è sufficiente mostrare che $\varphi^k(z_0) \in K$ per ogni $0 \le k \le h$.
+    Dato che $\id_M\in\Gamma(\varphi)$, l'insieme $I=\{k\in\mathbb{N}\mid k_M\big(\varphi^k(z_0),z_0\big)<\epsilon_0/2\}$ è infinito; dunque possiamo trovare un $k_0 \in I$ tale che $k_0 \ge \max\{1,k_1,\dots,k_r\}$. Poniamo $\displaystyle K=\bigcup_{k=0}^{k_0}\overline{B_M\big(\varphi^k(z_0),\epsilon_0\big)}$; per costruzione, $K$ è chiuso e compatto, dunque ci basta mostrare che $C \subseteq K$. Prendiamo $h \in I$; dato che l'insieme $I$ è infinito, è sufficiente mostrare che $\varphi^k(z_0) \in K$ per ogni $0 \le k \le h$.
 
-    Supponiamo, per assurdo, che esista un minimo $h_0 \in I$ tale che l'insieme $\{\varphi^k(z_0)\mid 0\le k\le k_0\}$ non è contenuto in $K$. Ovviamente $h_0>k_0$. Poiché $h_0,k_0 \in I$, abbiamo anche che $k_M\big(\varphi^{k_0}(z_0),\varphi^{h_0}(z_0)\big)<\epsilon_0$. Dunque
+    Supponiamo, per assurdo, che esista un minimo $h_0 \in I$ tale che l'insieme $\{\varphi^k(z_0)\mid 0\le k\le h_0\}$ non sia contenuto in $K$. Ovviamente $h_0>k_0$. Poiché $h_0,k_0 \in I$, abbiamo anche che $k_M\big(\varphi^{k_0}(z_0),\varphi^{h_0}(z_0)\big)<\epsilon_0$. Dunque
     $$k_M\big(\varphi^{k_0-j}(z_0),\varphi^{h_0-j}(z_0)\big)=k_M\big(\varphi^{k_0}(z_0),\varphi^{h_0}(z_0)\big)<\epsilon_0$$
     per ogni $0 \le j \le k_0$. In particolare,
     \begin{equation} \label{inKappa}
@@ -232,19 +236,19 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
 Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ottenere la dicotomia, anche in un caso piuttosto regolare. In realtà, dalla Proposizione \ref{alex} sappiamo che l'essere Kobayashi-iperbolica implica una proprietà di compattezza per le funzioni olomorfe da $X$ in sé. Per definizione, l'essere taut impone che le funzioni limite in $\text{Hol}(X,X)$ siano ancora in $\text{Hol}(X,X)$ oppure siano la costante a infinito; ciò ci dà appunto la dicotomia (orbite relativamente compatte oppure iterate comapttamente divergenti) che esclude i casi misti nel Teorema \ref{dicotomia}.
 
 \begin{ex} \label{servetaut}
-    Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$ la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per il Teorema \ref{hartogs_fen}, non è un dominio di olomorfia), e i domini taut diversi da $\mathbb{C}^n$ sono sempre pseudoconvessi (si veda \cite[Theorem F]{W}).
+    Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$, la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per il Teorema \ref{hartogs_fen}, non è un dominio di olomorfia), e i domini taut diversi da $\mathbb{C}^n$ sono sempre pseudoconvessi (si veda \cite[Theorem F]{W}).
 
     Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque orbite relativamente compatte coesistono con orbite che tendono al bordo, quindi $f$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
     
-    In particolare, le funzioni limite di $f$ non sono né costanti né in $\text{Hol}(\Omega,\Omega)$, e questo è un controesempio, senza l'ipotesi taut, per il risultato di tipo Wolff-Denjoy che vedremo nella prossima sezione.
+    In particolare, le funzioni limite di $f$ non sono né costanti né in $\text{Hol}(\Omega,\Omega)$, e questo è un controesempio, senza l'ipotesi taut, per il teorema di tipo ``Wolff-Denjoy'' che vedremo nella prossima sezione.
 \end{ex}
 
-Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente pseudoconvessi (quindi con bordo $C^2$), in particolare faremo riferimento a una dimostrazione che sfrutta fatti geometrici quali la Gromov-iperbolicità. Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
+Per finire, vediamo un teorema di tipo ``Wolff-Denjoy'' per domini strettamente pseudoconvessi (quindi con bordo $C^2$); in particolare, faremo riferimento a una dimostrazione che sfrutta fatti geometrici quali la Gromov-iperbolicità. Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
 
 \begin{thm} \label{abate_wd}
-    (Abate, \cite[Theorem 0.5]{A2}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso e $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
+    (Abate, \cite[Theorem 0.5]{A2}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso, e sia $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
-        \item le orbite di $f$ sono relativamente compatte in $\Omega$;
+        \item le orbite dei punti di $\Omega$ tramite $f$ sono relativamente compatte in $\Omega$;
         \item esiste un unico punto di $\partial\Omega$ tale che le iterate di $f$ convergono tutte, uniformemente sui compatti, a quel punto.
     \end{itemize}
 \end{thm}
@@ -252,7 +256,7 @@ Per finire, vediamo un risultato di tipo Wolff-Denjoy per domini strettamente ps
 Per dimostrarlo usando la Gromov-iperbolicità, è prima necessario mostrare che $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Citiamo l'articolo di Balogh e Bonk in cui si trova la dimostrazione.
 
 \begin{thm} \label{balogh_bonk}
-    (Balogh, Bonk \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso. Allora $(\Omega,k_{\Omega})$ è proprio, cioè tale che ogni sottoinsieme chiuso e limitato è compatto, e Gromov-iperbolico. Inoltre, il bordo iperbolico $\partial_G\Omega$ è identificato con il bordo euclideo $\partial\Omega$.
+    (Balogh, Bonk, \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso. Allora $(\Omega,k_{\Omega})$ è proprio, cioè tale che ogni sottoinsieme chiuso e limitato è compatto, e Gromov-iperbolico. Inoltre, il bordo iperbolico $\partial_G\Omega$ può essere identificato con il bordo euclideo $\partial\Omega$.
 \end{thm}
 
 Serve anche un Teorema dovuto a Karlsson.
@@ -265,8 +269,8 @@ Serve anche un Teorema dovuto a Karlsson.
     \end{nlist}
     Sia $\phi:X \longrightarrow X$ una semicontrazione. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
-        \item le orbite di $\phi$ sono limitate;
-        \item esiste un unico punto di $\overline{X}\setminus X$ a cui convergono tutte le orbite.
+        \item le orbite dei punti di $X$ tramite $\phi$ sono limitate;
+        \item esiste un unico punto di $\overline{X}\setminus X$ a cui convergono tutte le orbite di $\phi$.
     \end{itemize}
 \end{thm}
 

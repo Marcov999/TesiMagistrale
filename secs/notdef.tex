@@ -1,7 +1,7 @@
 Introduciamo la notazione che useremo:
 \begin{itemize}
-    \item scriviamo $\Omega$ per indicare un \textit{dominio} di $\mathbb{C}^n$, vale a dire un aperto connesso;
-    \item con \textit{varietà complessa} s'intende una varietà differenziabile reale di dimensione pari con i cambi di carta olomorfi se visti come fra aperti di $\mathbb{C}^n$;
+    \item scriviamo $\Omega$ per indicare un \textit{dominio} in $\mathbb{C}^n$, vale a dire un aperto connesso;
+    \item con \textit{varietà complessa} s'intende una varietà differenziabile reale, di dimensione pari e con i cambi di carta olomorfi se visti come fra aperti di $\mathbb{C}^n$;
     \item data $X$ varietà complessa e $x \in X$, indichiamo con $T_xX$ lo spazio tangente a $X$ in $x$, che nel caso dei domini è canonicamente identificato con $\mathbb{C}^n$;
     \item dati $X,Y$ spazi topologici, quando parliamo di convergenza nell'insieme $C^0(X,Y)$ delle funzioni continue da $X$ a $Y$ sottintendiamo sempre che si parla della topologia compatta-aperta, che nel caso in cui $Y$ sia uno spazio metrico coincide con la topologia della convergenza uniforme sui compatti (potrebbe capitare che commetteremo abusi di terminologia in merito);
     \item dato $X$ spazio topologico e data $f \in C^0(X,X)$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$;
@@ -9,8 +9,7 @@ Introduciamo la notazione che useremo:
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $Df(x)$ il differenziale di $f$ in $x \in X$;
     \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$, mentre $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$ è il polidisco in $\mathbb{C}^n$ e $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$ è il disco di raggio $r>0$;
     \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di raggio $r>0$;
-    \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $x \in \mathbb{C}^n$, scriviamo $\delta(x)=\displaystyle\inf_{w \in \partial\Omega}\|x-w\|$ per indicare la distanza euclidea di $x$ dal bordo di $\Omega$;
-    \item ALTRO? \marginpar{ricordati di cancellare questo item dalla lista quando non servirà più}
+    \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $x \in \mathbb{C}^n$, scriviamo $\delta(x)=\displaystyle\inf_{w \in \partial\Omega}\|x-w\|$ per indicare la distanza euclidea di $x$ dal bordo di $\Omega$.
 \end{itemize}
 
 Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
@@ -20,11 +19,11 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     \begin{equation}
         \lambda_{\mathbb{D}}(z;v)=\frac{1}{1-|z|^2}|v|
     \end{equation}
-    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z^{\mathbb{C}}\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana completa con curvatura gaussiana costante uguale a $-4$.
+    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana, completa e con curvatura gaussiana costante uguale a $-4$.
 \end{defn}
 
 \begin{defn}
-    La \textit{distanza di Poincaré} (o \textit{iperbolica}) $k_{\mathbb{D}}$ su $\mathbb{D}$ è la forma integrata della metrica di Poincaré. Per fatti noti di geometria iperbolica, è una distanza completa la cui espressione è data da
+    La \textit{distanza di Poincaré} (o \textit{iperbolica}) $\omega$ su $\mathbb{D}$ è la forma integrata della metrica di Poincaré. Per fatti noti di geometria iperbolica, è una distanza completa la cui espressione è data da
     \begin{equation}
         \omega(z_1,z_2)=\frac{1}{2}\log{\frac{1+\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}{1-\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}}
     \end{equation}
@@ -57,27 +56,27 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
 \end{defn}
 
 \begin{oss} \label{metr_noncr}
-    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche che, data $f \in \text{Hol}(X,Y)$, allora dalla definizione segue che $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse, embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica.
+    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche, data $f \in \text{Hol}(X,Y)$, che dalla definizione segue $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse, embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica.
 \end{oss}
 
 Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.
 
 \begin{defn}
-    Sia $X$ una varietà complessa connessa; la \textit{pseudodistanza di Kobayashi} su $X$ è data da
+    Sia $X$ una varietà complessa e connessa; la \textit{pseudodistanza di Kobayashi} su $X$ è data da
     \begin{equation}\begin{split}
-        k_X(z,w)=&\inf\Bigg\{\sum_{j=1}^m \omega(z_{j-1},z_j) \mid m \in \mathbb{N}, z_j \in \mathbb{D}\text{ per }j=0,\dots,m\text{ tali che}\\
-        &\text{esistono }\varphi_j\in \text{Hol}(\mathbb{D},X) \text{ con } \varphi_1(z_0)=z,\varphi_m(z_m)=w\text{ e}\\
-        &\varphi_j(z_j)=\varphi_{j+1}(z_j)\text{ per }j=1,\dots,m-1\Bigg\}
+        k_X(z,w)=&\inf\Bigg\{\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j) \mid m \in \mathbb{N}, \zeta_j \in \mathbb{D}\text{ per }j=0,\dots,m\text{ tali che}\\
+        &\text{esistono }\varphi_j\in \text{Hol}(\mathbb{D},X) \text{ con } \varphi_1(\zeta_0)=z,\varphi_m(\zeta_m)=w\text{ e}\\
+        &\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)\text{ per }j=1,\dots,m-1\Bigg\}
     \end{split}\end{equation}
     per $z,w \in X$.
 \end{defn}
 
 \begin{oss} \label{k_lip}
-    È facile vedere che $k_X$ è una pseudodistanza, ma in generale non è una distanza, ad esempio perché, come prima, $k_{\mathbb{C}^n}\equiv 0$; vedremo però più avanti che per i domini limitati è effettivamente una distanza. Inoltre, data $f \in \text{Hol}(X,Y)$, dalla definizione segue che $k_Y\big(f(x),f(y)\big) \le k_X(x,y)$ per ogni $x,y \in X$.
+    È facile vedere che $k_X$ è una pseudodistanza, ma in generale non è una distanza, ad esempio perché, come prima, $k_{\mathbb{C}^n}\equiv 0$; vedremo però più avanti che per le varietà $X$ complesse, connesse, embeddate in $\mathbb{C}^d$ e limitate $k_X$ è effettivamente una distanza. Inoltre, data $f \in \text{Hol}(X,Y)$, dalla definizione segue che $k_Y\big(f(x),f(y)\big) \le k_X(x,y)$ per ogni $x,y \in X$.
 \end{oss}
 
 \begin{defn}
-    Sia $X$ una varietà complessa connessa. Se $k_X$ è una distanza, diremo che $X$ è \textit{Kobayashi-iperbolica}.
+    Sia $X$ una varietà complessa e connessa. Se $k_X$ è una distanza, diremo che $X$ è \textit{Kobayashi-iperbolica}.
 \end{defn}
 
 \begin{oss}
@@ -87,7 +86,7 @@ Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è co
 Il seguente risultato per le varietà Kobayashi-iperboliche verrà spesso usato implicitamente.
 
 \begin{prop}
-    (Barth, \cite{B}) Una varietà complessa connessa $X$ è Kobayashi-iperbolica se e solo se $k_X$ induce su $X$ la topologia di varietà.
+    (Barth, \cite{B}) Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $k_X$ vi induce la topologia di varietà.
 \end{prop}
 
 Diamo ora delle definizioni che ci serviranno per enunciare i risultati già noti nel caso dei domini regolari.
@@ -98,7 +97,7 @@ Diamo ora delle definizioni che ci serviranno per enunciare i risultati già not
         \item $\mu(Z)=0$ se e solo se $Z=0$;
         \item $\mu(\zeta Z)=|\zeta|\mu(Z)$ per ogni $Z \in \mathbb{C}^n$ e $\zeta\in\mathbb{C}$.
     \end{nlist}
-    Dato $\Omega\subseteq\mathbb{C}^n$ un dominio, poniamo $\mu_{\Omega}(Z)=\inf_{w\in\mathbb{C}^n\setminus\Omega}\mu(Z-w)$.
+    Dato $\Omega\subseteq\mathbb{C}^n$ un dominio, poniamo $\mu_{\Omega}(Z)=\displaystyle\inf_{w\in\mathbb{C}^n\setminus\Omega}\mu(Z-w)$.
 \end{defn}
 
 \begin{defn}
@@ -111,7 +110,8 @@ Diamo ora delle definizioni che ci serviranno per enunciare i risultati già not
     Un dominio $\Omega \subseteq \mathbb{C}^n$ si dice \textit{(Hartogs) pseudoconvesso} se esiste un funzionale di Minkowski $\mu$ tale che $-\log\mu_{\Omega}$ è plurisubarmonica in $\Omega$.
 \end{defn}
 
- Ci servirà il seguente risultato per un controesempio.
+ Il seguente risultato ci servirà per un controesempio.
+
  \begin{thm}
     (\cite[Chapter 5, Paragraph 5.1, Theorem 5.1.2]{Kr}) Ogni dominio pseudoconvesso è un dominio di olomorfia.
  \end{thm}
@@ -137,26 +137,25 @@ Vale il seguente risultato.
     (\cite[Chapter 3, Paragraph 3.3, Theorem 3.3.5]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ è Levi pseudoconvesso se e solo se è Hartogs pseudoconvesso.
 \end{thm}
 
-Nella prossima sottosezione citeremo alcuni risultati sulla geometria dei domini limitati strettamente pseudoconvessi dotati della distanza di Kobayashi. In particolare, vedremo che sono Gromov-iperbolici, il che permette di derivare un teorema di tipo Wolff-Denjoy per questi domini.
+Nella prossima sottosezione citeremo alcuni risultati sulla geometria dei domini limitati strettamente pseudoconvessi dotati della distanza di Kobayashi. In particolare, vedremo che sono Gromov-iperbolici, il che permette di derivare un teorema di tipo ``Wolff-Denjoy'' per questi domini.
 
 \begin{defn}
     Sia $(X,d)$ uno spazio metrico. Dati $x,y,w \in X$ il \textit{prodotto di Gromov} tra $x$ e $y$ con punto base $w$ è $(x,y)_w=\frac{1}{2}\big(d(x,w)+d(y,w)-d(x,y)\big)$. Dato $\delta \ge 0$, diciamo che $X$ è \textit{$\delta$-iperbolico} se
     $$(x,y)_w \ge \min\{(x,z)_w,(y,z)_w\}-\delta\text{ per ogni }x,y,z,w \in X.$$
     Se $(X,d)$ è $\delta$-iperbolico per qualche $\delta \ge 0$, diremo che è \textit{Gromov-iperbolico}.
 
-    Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è costruito come classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow \infty}(x_i,x_j)_w=\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow \infty}(x_i,y_i)_w=\infty$. Questa costruzione è indipendente dalla scelta di $w$.
+    Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
 \end{defn}
 
 \begin{oss}
-    È possibile mettere una topologia su $X\cup\partial_GX$ che lo rende uno spazio compatto.
+    È possibile mettere una topologia su $X\cup\partial_GX$ che lo rende uno spazio compatto. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
 \end{oss}
 
-Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per i teoremi che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi del teorema. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica.
+Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica.
 
 \begin{prop} \label{alex}
-    (\cite[Theorem 1.3]{A3}) Sia $X$ una varietà complessa connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
+    (\cite[Theorem 1.3]{A3})\marginpar{Dove trovo una reference (con dim.) per la seconda parte? È che la uso dopo, quindi mi serve; o è un'ovvia conseguenza?} Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
     
-    \marginpar{Dove trovo una reference per la seconda parte? È che la uso dopo, quindi mi serve}
     Inoltre, se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$.
 \end{prop}
 
@@ -167,7 +166,7 @@ Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la
 Per finire, diamo delle definizioni che ci serviranno per parlare del comportamente delle iterate di funzioni olomorfe.
 
 \begin{defn}
-    Siano $X$ e $Y$ due spazi topologici. Diciamo che una successione $\{f_{\nu}\}_{\nu \in \mathbb{N}} \subset C^0(X,Y)$ è \textit{compattamente divergente} se per ogni coppia di compatti $H\subseteq X$ e $K\subseteq Y$ esiste $\nu_0 \in \mathbb{N}$ tale che $f(H)\cap K=\emptyset$ per ogni $\nu \ge \nu_0$.
+    Siano $X$ e $Y$ due spazi topologici. Diciamo che una successione $\{f_{\nu}\}_{\nu \in \mathbb{N}} \subseteq C^0(X,Y)$ è \textit{compattamente divergente} se, per ogni coppia di compatti $H\subseteq X$ e $K\subseteq Y$, esiste $\nu_0 \in \mathbb{N}$ tale che $f_\nu(H)\cap K=\emptyset$ per ogni $\nu \ge \nu_0$.
 
     Una famiglia $\mathcal{F} \subseteq C^0(X,Y)$ è detta \textit{normale} se ogni successione in $\mathcal{F}$ ammette una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente.
 \end{defn}
