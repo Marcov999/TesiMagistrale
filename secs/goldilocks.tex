@@ -1,9 +1,10 @@
 Il primo esempio di una classe di domini di $\mathbb{C}^n$ con visibilità è quello, introdotto in \cite{BZ1}, dei domini Goldilocks. Prima di darne la definizione, introduciamo per un dominio limitato $\Omega\subseteq\mathbb{C}^n$ e $r>0$ la quantità
 $$M_\Omega(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid \delta_\Omega(x) \le r, \|v\|=1\right\}.$$
+
 La funzione $M_\Omega(r)$ è monotona crescente, dunque misurabile secondo Lebesgue; inoltre, segue dal punto (1) della Proposizione \ref{metrica_bilip} che è anche limitata. Perciò ha senso la definizione che stiamo per dare.
 
 \begin{defn} \label{gold}
-    Un dominio limitato $\Omega\subseteq\mathbb{C}^n$ è detto \textit{dominio Goldilocks} se
+    Un dominio limitato $\Omega\subseteq\mathbb{C}^n$ è detto \textit{dominio Goldilocks} se:
     \begin{enumerate}[label={(\arabic*)}]
         \item esiste (e quindi per ogni) $\epsilon>0$ tale che $\displaystyle\int_0^{\epsilon} \frac{1}{r}M_\Omega(r)\diff r<+\infty$;
         \item per ogni $x_0\in\Omega$ esistono due costanti $C,\alpha>0$ (che dipendono da $x_0$) tali che $k_\Omega(x_0,x) \le C+\alpha\log{\dfrac{1}{\delta_\Omega(x)}}$ per ogni $x\in\Omega$.
@@ -38,12 +39,13 @@ Adesso mostriamo che i domini Goldilocks soddisfano la condizione di visibilità
     Vogliamo ottenere una contraddizione mostrando anche che $\sigma$ non è costante. Fissiamo $x_0\in\Omega$; per la condizione (2) nella definizione di dominio Goldilocks, esistono due costanti $C,\alpha>0$ tali che $k_\Omega(x,x_0) \le C+\alpha\log{\dfrac{1}{\delta_\Omega(x)}}$ per ogni $x\in\Omega$. Segue, usando anche la definizione di $(\lambda,\kappa)$-simil-geodetica, che
     \begin{align*}
         \frac{1}{\lambda}|t|-\kappa \le k_\Omega\big(\sigma_n(0),\sigma_n(t)\big) &\le k_\Omega\big(\sigma_n(0),x_0\big)+k_\Omega\big(x_0,\sigma_n(t)\big)\\
-        &\le 2C+\alpha\log{\frac{1}{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)}}.
+        &\le 2C+\alpha\log{\frac{1}{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)}};
     \end{align*}
-    Quindi $\delta_\Omega\big(\sigma_n(t)\big) \le \sqrt{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)} \le Ae^{-B|t|}$, con $A=e^{(2C+\kappa)/(2\alpha)}$ e $B=1/(2\alpha\lambda)$. Allora, per la stima trovata sopra su $\|\sigma_n'(t)\|$, si ha anche che $\|\sigma_n'(t)\| \le \lambda M_\Omega(Ae^{-B|t|})$.
+    quindi $\delta_\Omega\big(\sigma_n(t)\big) \le \sqrt{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)} \le Ae^{-B|t|}$, con $A=e^{(2C+\kappa)/(2\alpha)}$ e $B=1/(2\alpha\lambda)$. Allora, per la stima trovata sopra su $\|\sigma_n'(t)\|$, si ha anche che $\|\sigma_n'(t)\| \le \lambda M_\Omega(Ae^{-B|t|})$.
     
-    Osserviamo adesso il seguente fatto: se, data $f:[0,+\infty)\longrightarrow[0,+\infty)$ limitata e misurabile secondo Lebesgue, esiste (e dunque per ogni) $\epsilon>0$ tale che $\displaystyle \int_0^\epsilon \frac{1}{r}f(r)\diff r<+\infty$, allora, scrivendo $r=Ae^{-Bt}$ e usando cambio di variabile, abbiamo che $\displaystyle\int_0^{+\infty} f(Ae^{-Bt})\diff t<+\infty$ per ogni $A,B>0$. Per la condizione (1) nella definizione di dominio Goldilocks, possiamo applicare questo fatto a $M_\Omega$ usando le costanti $A$ e $B$ trovate sopra; ciò ci permette di fissare $a',b'\in(a,b)$ tali che
+    Osserviamo adesso il seguente fatto: se, data $f:[0,+\infty)\longrightarrow[0,+\infty)$ limitata e misurabile secondo Lebesgue, esiste (e dunque per ogni) $\epsilon>0$ tale che $\displaystyle \int_0^\epsilon \frac{1}{r}f(r)\diff r<+\infty$, allora, scrivendo $r=Ae^{-Bt}$ e usando cambio di variabile, abbiamo che $\displaystyle\int_0^{+\infty} f(Ae^{-Bt})\diff t<+\infty$ per ogni $A,B>0$. Per la condizione (1) nella Definizione \ref{gold}, possiamo applicare questo fatto a $M_\Omega$ usando le costanti $A$ e $B$ trovate sopra; ciò ci permette di fissare $a',b'\in(a,b)$ tali che
     $$\|\xi'-\eta'\|>\lambda\int_a^{a'} M_\Omega(Ae^{-B|t|})\diff t+\lambda\int_{b'}^b M_\Omega(Ae^{-B|t|})\diff t.$$
+
     Allora
     \begin{align*}
         \|\sigma(b')-\sigma(a')\|&=\lim_{n\longrightarrow+\infty}\|\sigma_n(b')-\sigma_n(a')\| \\

@@ -96,7 +96,7 @@ Vogliamo dare ora una caratterizzazione equivalente all'essere taut per una vari
     Una varietà complessa e connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
 \end{prop}
 \begin{proof}
-    Supponiamo che $X$ sia taut e prendiamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per definizione è Kobayashi-iperbolica, dunque per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$, e per l'Osservazione \ref{c0yx} è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante a $\infty$. Ma, per l'Osservazione \ref{c0yx}, questo significa che $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
+    Supponiamo che $X$ sia taut e consideriamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per definizione è Kobayashi-iperbolica, dunque per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$, e per l'Osservazione \ref{c0yx} è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante a $\infty$. Ma, per l'Osservazione \ref{c0yx}, questo significa che $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
 
     Supponiamo adesso che $\text{Hol}(\mathbb{D},X)$ sia normale. Se $f$ è una funzione nella sua chiusura in $C^0(\mathbb{D},X^*)$, allora è il limite di una successione in $\text{Hol}(\mathbb{D},X)$. Poiché questa famiglia è normale, possiamo trovare una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente, ma dovrà comunque convergere a $f$. Allora nel primo caso, applicando il teorema di Weierstrass in carte opportune, troviamo che $f \in \text{Hol}(\mathbb{D},X)$, mentre nel secondo caso è la funzione costante a $\infty$. Dunque $X$ è taut.
 \end{proof}
@@ -224,7 +224,7 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
     \begin{equation}\label{capci}
         B_M(z_0,\epsilon_0)\cap C \subseteq \bigcup_{j=1}^r \Big(B_M\big(\varphi^{k_j}(z_0),\epsilon_0/2\big)\cap C\Big).
     \end{equation}
-    
+
     Dato che $\id_M\in\Gamma(\varphi)$, l'insieme $I=\{k\in\mathbb{N}\mid k_M\big(\varphi^k(z_0),z_0\big)<\epsilon_0/2\}$ è infinito; dunque possiamo trovare un $k_0 \in I$ tale che $k_0 \ge \max\{1,k_1,\dots,k_r\}$. Poniamo $\displaystyle K=\bigcup_{k=0}^{k_0}\overline{B_M\big(\varphi^k(z_0),\epsilon_0\big)}$; per costruzione, $K$ è chiuso e compatto, dunque ci basta mostrare che $C \subseteq K$. Prendiamo $h \in I$; dato che l'insieme $I$ è infinito, è sufficiente mostrare che $\varphi^k(z_0) \in K$ per ogni $0 \le k \le h$.
 
     Supponiamo, per assurdo, che esista un minimo $h_0 \in I$ tale che l'insieme $\{\varphi^k(z_0)\mid 0\le k\le h_0\}$ non sia contenuto in $K$. Ovviamente $h_0>k_0$. Poiché $h_0,k_0 \in I$, abbiamo anche che $k_M\big(\varphi^{k_0}(z_0),\varphi^{h_0}(z_0)\big)<\epsilon_0$. Dunque
