@@ -1,7 +1,7 @@
 Per il momento, nell'ordine:
-esempi.
+esempi;
+domini di tipo finito.
 Poi:
-domini di tipo finito;
 domini illimitati.
 Forse:
 estensioni al bordo.
@@ -11,7 +11,7 @@ ringraziamenti.
 
 Non scordarti, via via che scrivi, di mantenere una bibliografia adeguata.
 
-DA FARE:
-
-DA FARE PRIMA O POI, PRIMA DI INVIARE AD ABATE:
-rileggio tutto quello che hai scritto NEL DETTAGLIO e pulisci un po' qua e là (sì, ci devono già essere i disegnini [dai che ora li sai fare!]; sì, devi aver capito per bene quale notazioni, quali definizioni, e quali risultati ti servono e devi tenere e di quali invece ti devi liberare. Deve uscire un lavoro pulito).
+DA FARE ADESSO:
+finire di texare la parte sui domini di tipo finito e gli esempi;
+se avanza tempo, ricontrollare per bene anche quelli;
+(quando Abate avrà risposto) tutte le modifiche che ti dirà (...).
