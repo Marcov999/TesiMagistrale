@@ -56,7 +56,7 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
 \end{defn}
 
 \begin{oss} \label{metr_noncr}
-    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche, data $f \in \text{Hol}(X,Y)$, che dalla definizione segue $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse, embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica.
+    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche, data $f \in \text{Hol}(X,Y)$, che dalla definizione segue $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse, embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica; vale a dire, $K_X(z;Z)>0$ per ogni $z\in X$ e $0\not=Z\in T_zX$ (nella Proposizione \ref{metrica_bilip}, punto (1), dimostreremo qualcosa di più forte).
 \end{oss}
 
 Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.
@@ -122,13 +122,10 @@ Nel caso di domini regolari, si può dare una definizione di pseudoconvessità p
     Sia $\Omega \subseteq \mathbb{C}^n$ un dominio con bordo $C^2$, cioè esiste una funzione $\rho \in C^2(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$.
     
     Dato $p \in \partial\Omega$, lo \textit{spazio tangente complesso} a $\partial\Omega$ in $p$ è
-    \begin{equation}
-        H_p\partial\Omega=\{Z \in \mathbb{C}^n \mid \langle \bar{\partial}\rho(p),Z\rangle=0\}.
-    \end{equation}
+    $$H_p\partial\Omega=\{Z \in \mathbb{C}^n \mid \langle \bar{\partial}\rho(p),Z\rangle=0\}.$$
+
     Diciamo che $\Omega$ è \textit{Levi pseudoconvesso} se la \textit{forma di Levi}
-    \begin{equation}
-        L_{\rho}(p;Z)=\sum_{\nu,\mu=1}^n \frac{\partial^2\rho}{\partial z_\nu\partial\bar{z}_\mu}(p)Z_\nu\bar{Z}_\mu, \quad Z=(Z_1,\dots,Z_n) \in \mathbb{C}^n
-    \end{equation}
+    $$L_{\rho}(p;Z)=\sum_{\nu,\mu=1}^n \frac{\partial^2\rho}{\partial z_\nu\partial\bar{z}_\mu}(p)Z_\nu\bar{Z}_\mu, \quad Z=(Z_1,\dots,Z_n) \in \mathbb{C}^n$$
       è semidefinita positiva in $H_p\partial\Omega$ per ogni $p \in \partial\Omega$. Diciamo che è \textit{strettamente pseudoconvesso} se la forma di Levi è definita positiva.
 \end{defn}
 
@@ -142,6 +139,7 @@ Nella sottosezione \ref{risnoti} citeremo alcuni risultati sulla geometria dei d
 \begin{defn}
     Sia $(X,d)$ uno spazio metrico. Dati $x,y,w \in X$ il \textit{prodotto di Gromov} tra $x$ e $y$ con punto base $w$ è $(x,y)_w=\frac{1}{2}\big(d(x,w)+d(y,w)-d(x,y)\big)$. Dato $\delta \ge 0$, diciamo che $X$ è \textit{$\delta$-iperbolico} se
     $$(x,y)_w \ge \min\{(x,z)_w,(y,z)_w\}-\delta\text{ per ogni }x,y,z,w \in X.$$
+
     Se $(X,d)$ è $\delta$-iperbolico per qualche $\delta \ge 0$, diremo che è \textit{Gromov-iperbolico}.
 
     Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.

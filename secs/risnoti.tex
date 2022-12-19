@@ -69,6 +69,7 @@ Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la di
 
     Dalla definizione di $k_X$, esistono $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e $\varphi_1,\dots,\varphi_m \in \text{Hol}(\mathbb{D},X)$ tali che $\varphi_1(\zeta_0)=z_0$, $\varphi_m(\zeta_m)=z$, $\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)$ per $j=1,\dots,m-1$ e
     $$\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)<r_1+r_2-2\epsilon.$$
+
     Sia $\mu \le m$ il più grande intero tale che
     $$\sum_{j=1}^{\mu-1} \omega(\zeta_{j-1},\zeta_j)<r_1-\epsilon,$$
     che esiste perché $r_1-\epsilon>0$. Prendiamo $\eta_{\mu}$ il punto sulla geodetica congiungente $\zeta_{\mu-1}$ e $\zeta_{\mu}$ tale che
@@ -125,6 +126,7 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali c
 
     A meno di passare a una sottosuccessione, possiamo trovare due compatti $H\subseteq\mathbb{D}$ e $K\subseteq X$ tali che $\varphi_\nu(H)\cap K\not=\emptyset$ per ogni $\nu\in\mathbb{N}$. Fissiamo $z_0\in K$ e $\zeta_\nu\in H$ tale che $\varphi_\nu(\zeta_\nu)\in K$, e poniamo $r=\max\{k_X(z,z_0)\mid z\in K\}$. Allora per ogni $\zeta\in\mathbb{D}$ e $\nu\in\mathbb{N}$ abbiamo che
     $$k_X\big(\varphi_\nu(\zeta),z_0\big) \le k_X\big(\varphi_\nu(\zeta),\varphi_\nu(\zeta_\nu)\big)+k_X\big(\varphi_\nu(\zeta_\nu),z_0\big) \le k_{\mathbb{D}} (\zeta,\zeta_\nu)+r.$$
+
     Posto $R=\max\{k_X(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R+r$, che è compatta perché $X$ è Kobayashi-ierpbolica e $k_X$-completa (si veda \cite[Chapter 2, Paragraph 2.3, Proposition 2.3.17]{A1}; si usa il Lemma \ref{ballball} e poco altro); di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si può dimostrare che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
 \end{proof}
 
@@ -138,11 +140,13 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 
     Sia $P=D\rho(z_0):\mathbb{C}^n \longrightarrow \mathbb{C}^n$ e definiamo $\varphi:\Omega \longrightarrow \mathbb{C}^n$ come
     $$\varphi=\id+(2P-\id)\circ(\rho-P).$$
+
     Poiché $D\varphi(z_0)=\id$, la funzione $\varphi$ definisce una carta locale in un intorno di $z_0$. Adesso, dato che $\rho^2=\rho$ e $P^2=P$, si ha
     \begin{align*}
         \varphi\circ\rho&=\rho+(2P-\id)\circ\rho^2-(2P-\id)\circ P\circ\rho\\
         &=P\circ\rho=P+P\circ(2P-\id)\circ(\rho-P)=P\circ\varphi.
     \end{align*}
+
     Allora, letta in questa carta, $\rho$ diventa lineare; perciò, $M$ è una sottovarietà vicino a $z_0$. Per arbitrarietà di $z_0$, segue che $M$ è una varietà. È chiusa perché $\rho(X)=\text{Fix}(\rho)$.
 \end{proof}
 
@@ -159,25 +163,27 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
     $$\lim_{\nu\longrightarrow+\infty}f^{p_\nu}\big(f^{k_\nu}(z)\big)=\lim_{\nu\longrightarrow+\infty}f^{k_{\nu+1}}(z)=h(z)$$
     per ogni $z \in X$. Poiché l'orbita di $z$ tramite $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ tende a qualcosa, è relativamente compatta, dunque $\{f^{p_\nu}\}_{\nu\in\mathbb{N}}$ non può essere compattamente divergente. Allora converge, uniformemente sui compatti, a una $\rho\in\text{Hol}(X,X)$ tale che
     \begin{equation} \label{roacca}
-        h\circ\rho=\rho\circ h=h.
+        h\circ\rho=\rho\circ h=h;
     \end{equation}
-    Similmente troviamo che $\{f^{q_\nu}\}_{\nu\in\mathbb{N}}$ converge, uniformemente sui compatti, a una $g\in\text{Hol}(X,X)$ tale che
+    similmente, troviamo che $\{f^{q_\nu}\}_{\nu\in\mathbb{N}}$ converge, uniformemente sui compatti, a una $g\in\text{Hol}(X,X)$ tale che
     \begin{equation} \label{giacca}
         g\circ h=h\circ g=\rho.
     \end{equation}
+
     In particolare, $\rho^2=\rho\circ\rho=g\circ h\circ\rho=g\circ h=\rho$, perciò $\rho$ è una retrazione di $X$ su una sottovarietà $M$. Dalla \eqref{roacca} abbiamo $h(X)\subseteq M$, inoltre $g\circ\rho=\rho\circ g$, da cui $g(M)\subseteq M$; allora la \eqref{giacca} ci dà $g\circ h\restrict{M}=h\circ g\restrict{M}=\id_M$. Dunque, ponendo $\gamma=h\restrict{M}$, otteniamo $h=\gamma\circ\rho$ con $\gamma\in\text{Aut}(M)$. Dobbiamo mostrare che $\rho$ non dipende da $h$, in particolare non dipende dalla sottosuccessione scelta.
 
     Sia $\{f^{k'_\nu}\}_{\nu\in\mathbb{N}}$ un'altra sottosuccessione convergente a $h'\in\text{Hol}(X,X)$. Ragionando come sopra, possiamo supporre che $s_\nu=k'_\nu-k_\nu$ e $t_\nu=k_{\nu+1}-k'_\nu$ convergano a $+\infty$ per $\nu\longrightarrow+\infty$ e che $\{f^{s_\nu}\}_{\nu\in\mathbb{N}}$ e $\{f^{t_\nu}\}_{\nu\in\mathbb{N}}$ convergano, uniformemente sui compatti, rispettivamente a $\alpha,\beta \in \text{Hol}(X,X)$ tali che
     \begin{equation}\label{accaprimo}
-        \alpha\circ h=h\circ\alpha=h' \qquad\text{ e }\qquad \beta\circ h'=h'\circ\beta=h.
+        \alpha\circ h=h\circ\alpha=h' \qquad\text{ e }\qquad \beta\circ h'=h'\circ\beta=h;
     \end{equation}
-    Allora $h(X)=h'(X)$, dunque $M$ non dipende dalla sottosuccessione scelta. Adesso scriviamo $h=\gamma_1\circ\rho_1,h'=\gamma_2\circ\rho_2,\alpha=\gamma_3\circ\rho_3$ e $\beta=\gamma_4\circ\rho_4$, dove $\rho_1,\rho_2,\rho_3,\rho_4$ sono delle retrazioni olomorfe di $X$ su $M$ e $\gamma_1,\gamma_2,\gamma_3,\gamma_4\in\text{Aut}(M)$. Vogliamo dire che $\rho_1=\rho_2$. Notiamo che $h\circ h'=h'\circ h$ e $\alpha\circ\beta=\beta\circ\alpha$, che insieme alla \eqref{accaprimo} ci dà
+    allora $h(X)=h'(X)$, dunque $M$ non dipende dalla sottosuccessione scelta. Adesso scriviamo $h=\gamma_1\circ\rho_1,h'=\gamma_2\circ\rho_2,\alpha=\gamma_3\circ\rho_3$ e $\beta=\gamma_4\circ\rho_4$, dove $\rho_1,\rho_2,\rho_3,\rho_4$ sono delle retrazioni olomorfe di $X$ su $M$ e $\gamma_1,\gamma_2,\gamma_3,\gamma_4\in\text{Aut}(M)$. Vogliamo dire che $\rho_1=\rho_2$. Notiamo che $h\circ h'=h'\circ h$ e $\alpha\circ\beta=\beta\circ\alpha$, che insieme alla \eqref{accaprimo} ci dà
     \begin{equation}\label{gammaro}\begin{split}
         \gamma_1\circ\gamma_2\circ\rho_2=\gamma_2\circ\gamma_1\circ\rho_1,\\
         \gamma_3\circ\gamma_1\circ\rho_1=\gamma_1\circ\gamma_3\circ\rho_3=\gamma_2\circ\rho_2,\\
         \gamma_4\circ\gamma_2\circ\rho_2=\gamma_2\circ\gamma_4\circ\rho_4=\gamma_1\circ\rho_1,\\
         \gamma_3\circ\gamma_4\circ\rho_4=\gamma_4\circ\gamma_3\circ\rho_3.
     \end{split}\end{equation}
+
     Usando la prima equazione in \eqref{gammaro} scriviamo $\rho_2$ in funzione di $\rho_1$, e sostituendo nella seconda troviamo $\gamma_3=\gamma_1^{-1}\circ\gamma_2$. Similmente, usando la prima equazione scriviamo $\rho_1$ in funzione di $\rho_2$ e sostituendo nella terza troviamo $\gamma_4=\gamma_2^{-1}\circ\gamma_1$. Allora $\gamma_3=\gamma_4^{-1}$ e la quarta equazione ci dà $\rho_3=\rho_4$. Usando la seconda e la terza equazione abbiamo quindi
     $$\rho_2=\gamma_2^{-1}\circ\gamma_1\circ\gamma_3\circ\rho_3=\rho_3=\rho_4=\gamma_1^{-1}\circ\gamma_2\circ\gamma_4\circ\rho_4=\rho_1,$$
     come voluto.
@@ -218,6 +224,7 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
     \begin{equation}\label{capci}
         B_M(z_0,\epsilon_0)\cap C \subseteq \bigcup_{j=1}^r \Big(B_M\big(\varphi^{k_j}(z_0),\epsilon_0/2\big)\cap C\Big).
     \end{equation}
+    
     Dato che $\id_M\in\Gamma(\varphi)$, l'insieme $I=\{k\in\mathbb{N}\mid k_M\big(\varphi^k(z_0),z_0\big)<\epsilon_0/2\}$ è infinito; dunque possiamo trovare un $k_0 \in I$ tale che $k_0 \ge \max\{1,k_1,\dots,k_r\}$. Poniamo $\displaystyle K=\bigcup_{k=0}^{k_0}\overline{B_M\big(\varphi^k(z_0),\epsilon_0\big)}$; per costruzione, $K$ è chiuso e compatto, dunque ci basta mostrare che $C \subseteq K$. Prendiamo $h \in I$; dato che l'insieme $I$ è infinito, è sufficiente mostrare che $\varphi^k(z_0) \in K$ per ogni $0 \le k \le h$.
 
     Supponiamo, per assurdo, che esista un minimo $h_0 \in I$ tale che l'insieme $\{\varphi^k(z_0)\mid 0\le k\le h_0\}$ non sia contenuto in $K$. Ovviamente $h_0>k_0$. Poiché $h_0,k_0 \in I$, abbiamo anche che $k_M\big(\varphi^{k_0}(z_0),\varphi^{h_0}(z_0)\big)<\epsilon_0$. Dunque

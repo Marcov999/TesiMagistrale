@@ -7,27 +7,27 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 \end{lm}
 
 \begin{proof}
-    Sia $n=\dim{X}$ e $D=\mathbb{D}_{r_1}\times\dots\times\mathbb{D}_{r_n}$ il polidisco che contiene $K$. Applicando l'Osservazione \ref{metr_noncr} all'inclusione e passando in coordinate, per ogni $z \in K$ e $Z \in T_zX$ si ha che
+    Siano $n=\dim{X}$ e $D=\mathbb{D}_{r_1}\times\dots\times\mathbb{D}_{r_n}$ il polidisco che contiene $K$. Applicando l'Osservazione \ref{metr_noncr} all'inclusione e passando in coordinate, per ogni $z \in K$ e $Z \in T_zX$ si ha che
     $$K_X(z;Z) \le K_D(z;Z) \le \max_{j=1,\dots,n} \frac{r_j|Z_j|}{r_j^2-|z_j|^2}.$$
-    Per ottenere la seconda disuguaglianza, ragioniamo al seguente modo: a meno di riscalare tutto per una costante, possiamo supporre che il membro destro sia uguale a $1$ (se fosse $0$, avremmo $Z=0$ e la tesi sarebbe immediata). Consideriamo adesso la funzione $f\in\text{Hol}(\mathbb{D},D)$ che manda $\zeta\in\mathbb{D}$ nell'elemento di $D$ che ha come $j$-esima coordinata $\dfrac{r_j\alpha_j\zeta+z_j}{1+\bar{z}_j\alpha_j\zeta/r_j}$, dove $\alpha_j=\dfrac{r_jZ_j}{r_j^2-|z_j|^2}$; allora si ha che $Df(0)\cdot 1=Z$ e la disuguaglianza discende dalla definizione di $K_D$.
     
-    Poiché, per compattezza di $K$, la quantità $r_j^2-|z_j|^2$ è limitata dal basso da una costante positiva per $j=1,\dots,n$, la tesi segue facilmente.
+    Per ottenere la seconda disuguaglianza, ragioniamo al seguente modo: a meno di riscalare tutto per una costante, possiamo supporre che il membro destro sia uguale a $1$ (se fosse $0$, avremmo $Z=0$ e la tesi sarebbe immediata). Consideriamo adesso la funzione $f\in\text{Hol}(\mathbb{D},D)$ che manda $\zeta\in\mathbb{D}$ nell'elemento di $D$ che ha come $j$-esima coordinata $\dfrac{r_j\alpha_j\zeta+z_j}{1+\bar{z}_j\alpha_j\zeta/r_j}$, dove $\alpha_j=\dfrac{r_jZ_j}{r_j^2-|z_j|^2}$; allora $f(0)=z$ e si ha che $Df(0)\cdot 1=Z$ e la disuguaglianza discende dalla definizione di $K_D$. Poiché, per compattezza di $K$, la quantità $r_j^2-|z_j|^2$ è limitata dal basso da una costante positiva per $j=1,\dots,n$, la tesi segue facilmente.
 \end{proof}
 
 \begin{prop} \label{metrica_bilip}
     Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Allora
     \begin{enumerate}[label={(\arabic*)}]
         \item esiste $c>0$ tale che $c\|Z\| \le K_X(z;Z)$ per ogni $z \in X$ e $Z \in T_zX$;
-        \item per ogni compatto $K\subseteq X$, esiste una costante $C_1=C_1(K)>0$ tale che $K_X(z;Z) \le C_1\|Z\|$ per ogni $z \in X$ e $Z \in T_zX$.
+        \item per ogni compatto $K\subseteq X$, esiste una costante $C=C(K)>0$ tale che $K_X(z;Z) \le C\|Z\|$ per ogni $z \in X$ e $Z \in T_zX$.
     \end{enumerate}
 \end{prop}
 
 \begin{proof}
-    (1) Supponiamo per assurdo che esistano $z_j \in X$ e $Z_j \in T_{z_j}X$ tali che $\displaystyle \lim_{j \longrightarrow +\infty} K_X(z_j;Z_j)/\|Z_j\| \longrightarrow 0$. Senza perdita di generalità possiamo supporre $\|Z_j\|=1$ per ogni $j$. Per definizione di $K_X$, esistono delle funzioni $f_j\in\text{Hol}(\mathbb{D},X)$ e dei $v_j \in \mathbb{C}$ tali che $f_j(0)=z_j$ e
-    $$|v_j| \le 2K_X(z_j;Z_j)\quad\text{ e }\quad Df_j(0)v_j=Z_j.$$
+    (1) Supponiamo per assurdo che esistano $z_j \in X$ e $Z_j \in T_{z_j}X$, con $Z_j\not=0$, tali che $\displaystyle \lim_{j \longrightarrow +\infty} K_X(z_j;Z_j)/\|Z_j\| \longrightarrow 0$. Senza perdita di generalità possiamo supporre $\|Z_j\|=1$ per ogni $j$. Per definizione di $K_X$, esistono delle funzioni $f_j\in\text{Hol}(\mathbb{D},X)$ e dei $v_j \in \mathbb{C}$ tali che $f_j(0)=z_j$ e
+    $$|v_j| \le K_X(z_j;Z_j)+1/j\quad\text{ e }\quad Df_j(0)v_j=Z_j.$$
+
     Segue che $\displaystyle \lim_{j \longrightarrow +\infty}\|Df_j(0)\|=\lim_{j \longrightarrow +\infty}1/|v_j|=+\infty$. A meno di sottosuccessioni e di riordinare le coordinate, possiamo supporre che siano le prime componenti dei vettori $Df_j(0)$ a tendere a $+\infty$. Chiamiamo $g_j$ la prima componente di $f_j$, cosicché $g_j'$ è la prima componente di $Df_j$. Le $g_j$ sono le composizioni delle $f_j$ con un embedding e una proiezione, dunque sono olomorfe; inoltre, poiché $X$ è limitata, sono equilimitate. Esiste quindi un $r>0$ tale che $g_j \in \text{Hol}(\mathbb{D},\mathbb{D}_r)$ per ogni $j$. Adesso, noi sappiamo che $\displaystyle\lim_{j\longrightarrow +\infty} |g_j'(0)|=+\infty$; basta allora applicare il lemma di Schwarz per ottenere una contraddizione.
 
-    (2) Per ogni $z \in K$ scegliamo un polidisco $U_z$ centrato in $z$ e contenuno in una carta di $X$. Sia $U_z'\subseteq U_z$ un altro polidisco, nella stessa carta, centrato in $z$ e relativamente compatto in $U_z$ per ogni $z \in K$. Dato che $K$ è compatto, esistono $z_1,\dots,z_l$ tali che $K\subseteq\displaystyle\bigcup_{j=1}^l U_{z_j}'$. Allora, poiché $\overline{U}_{z_j}'$ è un sottoinsieme compatto di $U_{z_j}$ per $j=1,\dots,l$, per il Lemma \ref{polycpt} abbiamo
+    (2) Per ogni $z \in K$, scegliamo un polidisco $U_z$ centrato in $z$ e contenuno in una carta di $X$; sia $U_z'\subseteq U_z$ un altro polidisco, nella stessa carta, centrato in $z$ e relativamente compatto in $U_z$ per ogni $z \in K$. Dato che $K$ è compatto, esistono $z_1,\dots,z_l$ tali che $K\subseteq\displaystyle\bigcup_{j=1}^l U_{z_j}'$. Allora, poiché $\overline{U}_{z_j}'$ è un sottoinsieme compatto di $U_{z_j}$ per $j=1,\dots,l$, per il Lemma \ref{polycpt} abbiamo
     $$K_X(z,Z) \le C_i\|Z\|$$
     per ogni $z \in U_{z_j}'$ e $Z\in T_zX$, dove $C_i>0$ è una costante che dipende dal compatto $\overline{U}_{z_j}'$. Basta allora porre $C(K)=\displaystyle\max_{j=1,\dots,l}\{C_j\}$.
 \end{proof}
@@ -37,18 +37,19 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 \end{prop}
 
 \begin{proof}
-    Ogni $(\lambda,\kappa)$-simil-geodetica $\sigma:I\longrightarrow X$ è, per definizione, assolutamente continua rispetto alla distanza euclidea. Allora, per il teorema fondamentale del calcolo integrale di Lebesgue, per ogni $s,t\in I$ abbiamo che $\displaystyle\sigma(t)=\sigma(s)+\int_s^t\sigma'(r)\diff r$.
+    Ogni $(\lambda,\kappa)$-simil-geodetica $\sigma:I\longrightarrow X$ è, per definizione, assolutamente continua rispetto alla distanza euclidea. Allora, per il teorema fondamentale del calcolo integrale di Lebesgue, per ogni $s,t\in I$ abbiamo che
+    $$\sigma(t)=\sigma(s)+\int_s^t\sigma'(r)\diff r.$$
     
     Per il punto (1) della Proposizione \ref{metrica_bilip}, esiste una costante $c>0$ tale che $c\|Z\| \le K_X(z;Z)$ per ogni $z\in X$ e $Z\in T_zX$, e per definizione di $(\lambda,\kappa)$-simil-geodetica $K_X\big(\sigma(t);\sigma'(t)\big) \le \lambda$ per quasi ogni $t\in I$. Dunque $\|\sigma'(t)\| \le \lambda/c$ per quasi ogni $t\in I$, da cui
     $$\|\sigma(t)-\sigma(s)\| =\|\int_s^t\sigma'(r)\diff r\| \le \int_s^t\|\sigma'(r)\|\diff r \le \frac{\lambda}{c}|t-s|,$$
-    ciè $\sigma$ è $\lambda/c$-lipschitziana.
+    cioè $\sigma$ è $\lambda/c$-lipschitziana rispetto alla distanza euclidea.
 \end{proof}
 
 Il seguente Lemma è un fatto tecnico che ci servirà tra poco.
 
 \begin{lm} \label{restrdis}
     Siano $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata e $\sigma:[a,b] \longrightarrow X$ una curva assolutamente continua. Se
-    $$l_X(\sigma) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa$$
+    $$l_X(\sigma) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa,$$
     allora, per ogni $a \le s \le t \le b$, si ha
     $$l_X(\sigma\restrict{[s,t]}) \le k_X\big(\sigma(s),\sigma(t)\big)+\kappa.$$
 \end{lm}
@@ -56,9 +57,10 @@ Il seguente Lemma è un fatto tecnico che ci servirà tra poco.
 \begin{proof}
     Siano $s$ e $t$ come sopra. Allora
     $$l_X(\sigma\restrict{[s,t]})=l_X(\sigma)-l_X(\sigma\restrict{[a,s]})-l_X(\sigma\restrict{[t,b]}).$$
+
     Usando la nostra ipotesi e il punto (ii) del Teorema \ref{lung_int}, troviamo
-    $$l_X(\sigma\restrict{[s,t]}) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa-k_X\big(\sigma(a),\sigma(s)\big)-k_X\big(\sigma(t),\sigma(b)\big).$$
-    Applicando la disuguaglianza triangolare, si ottiene la tesi.
+    $$l_X(\sigma\restrict{[s,t]}) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa-k_X\big(\sigma(a),\sigma(s)\big)-k_X\big(\sigma(t),\sigma(b)\big);$$
+    applicando la disuguaglianza triangolare, si ottiene la tesi.
 \end{proof}
 
 Quello che vogliamo mostrare adesso è che le varietà complesse, connesse, embettate in $\mathbb{C}^d$ e limitate sono anche connesse per archi simil-geodetici.
@@ -69,25 +71,28 @@ Quello che vogliamo mostrare adesso è che le varietà complesse, connesse, embe
 
 \begin{proof}
     Per il punto (i) del Teorema \ref{lung_int}, a meno di riparametrizzare esiste una curva $C^1$ a tratti $\gamma:[0,1] \longrightarrow X$ tale che $\gamma(0)=z,\gamma(1)=w$ e
-    $$l_X(\gamma)<k_X(z,w)+\kappa.$$
-    Inoltre, a meno di perturbare di poco la curva, possiamo assumere che sia $C^1$ e che $\gamma'(t)\not=0$ per ogni $t\in[0,1]$. Consideriamo la funzione $f:[0,1] \longrightarrow [0,+\infty)$ data da
+    $$l_X(\gamma)<k_X(z,w)+\kappa;$$
+    inoltre, a meno di perturbare di poco la curva, possiamo assumere che sia $C^1$ e che $\gamma'(t)\not=0$ per ogni $t\in[0,1]$. Consideriamo la funzione $f:[0,1] \longrightarrow [0,+\infty)$ data da
     $$f(t)=\int_0^t K_X\big(\gamma(r);\gamma'(r)\big)\diff r.$$
+
     Poiché $\gamma([0,1])$ è compatto in $X$, per i punti (1) e (2) della Proposizione \ref{metrica_bilip} esiste $C>0$ tale che
     $$\frac{1}{C}\|\gamma'(t)\| \le K_X\big(\gamma(t);\gamma'(t)\big) \le C\|\gamma'(t)\|\text{ per ogni }t\in[0,1].$$
-    Dato che $\|\gamma'(t)\|>0$ per ogni $t\in[0,1]$ e $\gamma'$ è continua, esistono $A,B>0$ tali che $A \le \|\gamma'(t)\le B$ per ogni $t\in[0,1]$. Dunque $f$ è una funzione bilipschitziana e, di conseguenza, strettamente crescente. Chiamiamo $g:[0,l_X(\gamma)] \longrightarrow [0,1]$ l'inversa di $f$. Il nostro claim è che la curva $\sigma=\gamma\circ g:[0,l_X(\gamma)] \longrightarrow X$ sia una $(1,\kappa)$-simil-geodetica.
 
-    Poiché $g$ è bilipschitziana (perché lo è la sua inversa) e $\gamma$ è $C^1$, abbiamo che $\sigma$ è lipschitziana e quindi assolutamente continua. Allora, per i $t$ per i quali $g'(t)$ esiste si ha $\sigma'(t)=\gamma'\big(g(t)\big)\gamma'(t)$. Inoltre, per tali $t$ anche $f'\big(g(t)\big)$ esiste ed è non-nullo, e $g'(t)=1/f'\big(g(t)\big)>0$. Per il teorema fondamentale del calcolo integrale di Lebesgue, si ha che $f'$ esiste per quasi ogni $s\in[0,1]$ e $f'(s)=K_X\big(\gamma(s);\gamma'(s)\big)$. Siccome $g$ è bilipschitziana, la preimmagine degli $s\in[0,1]$ per cui esiste $f'(s)$ è un sottoinsieme di $[0,l_X(\gamma)]$ di misura piena. Visto che $\gamma'(s)\not=0$ per ogni $s\in[0,1]$, otteniamo che
+    Dato che $\|\gamma'(t)\|>0$ per ogni $t\in[0,1]$ e $\gamma'$ è continua, esistono $A,B>0$ tali che $A \le \|\gamma'(t)\|\le B$ per ogni $t\in[0,1]$. Dunque $f$ è una funzione bilipschitziana e, di conseguenza, strettamente crescente. Chiamiamo $g:[0,l_X(\gamma)] \longrightarrow [0,1]$ l'inversa di $f$. Vogliamo dire che la curva $\sigma=\gamma\circ g:[0,l_X(\gamma)] \longrightarrow X$ è una $(1,\kappa)$-simil-geodetica.
+
+    Poiché $g$ è bilipschitziana (perché lo è la sua inversa) e $\gamma$ è $C^1$, abbiamo che $\sigma$ è lipschitziana, quindi è assolutamente continua; allora, per i $t$ per i quali $g'(t)$ esiste, si ha $\sigma'(t)=\gamma'\big(g(t)\big)g'(t)$. Inoltre, per tali $t$ anche $f'\big(g(t)\big)$ esiste ed è non-nullo, e $g'(t)=1/f'\big(g(t)\big)>0$. Per il teorema fondamentale del calcolo integrale di Lebesgue, si ha che $f'$ esiste per quasi ogni $s\in[0,1]$ e $f'(s)=K_X\big(\gamma(s);\gamma'(s)\big)$. Siccome $g$ è bilipschitziana, la preimmagine degli $s\in[0,1]$ per cui $f'(s)$ esiste è un sottoinsieme di $[0,l_X(\gamma)]$ di misura piena. Visto che $\gamma'(s)\not=0$ per ogni $s\in[0,1]$, otteniamo che
     $$g'(t)=\frac{1}{K_X\Big(\gamma\big(g(t)\big);\gamma'\big(g(t)\big)\Big)}$$
     per quasi ogni $t\in[0,l_X(\gamma)]$. Per tali $t$ si ha che
-    $$K_X\big(\sigma(t);\sigma'(t)\big)=K_X\Big(\gamma\big(g(t)\big);\gamma'\big(g(t)\big)g'(t)\Big)=1.$$
-    Quindi $l_X(\sigma)=l_X(\gamma) \le k_X(z,w)+\kappa$. Per il Lemma \ref{restrdis} si ha, per ogni $0 \le s \le t \le l_X(\gamma)$, che
+    $$K_X\big(\sigma(t);\sigma'(t)\big)=K_X\Big(\gamma\big(g(t)\big);\gamma'\big(g(t)\big)g'(t)\Big)=1;$$
+    quindi $l_X(\sigma)=l_X(\gamma) \le k_X(z,w)+\kappa$. Per il Lemma \ref{restrdis} si ha, per ogni $0 \le s \le t \le l_X(\gamma)$, che
     $$|t-s|=l_X(\sigma\restrict{[s,t]}) \le k_X\big(\sigma(s),\sigma(t)\big)+\kappa.$$
+
     Dato che $\sigma$ è assolutamente continua, per il punto (ii) del Teorema \ref{lung_int} abbiamo anche che
     $$k_X\big(\sigma(s),\sigma(t)\big) \le l_X(\sigma\restrict{[s,t]})=|s-t|$$
     per ogni $0 \le s \le t \le l_X(\gamma)$. Segue dunque che $\sigma$ è una $(1,\kappa)$-simil-geodetica.
 \end{proof}
 
-Adesso ci serve un Lemma quasi ovvio.
+Adesso ci servirà un Lemma quasi ovvio.
 
 \begin{lm} \label{quasiovvio}
     Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Se $\sigma:[a,b] \longrightarrow X$ è una $(1,\kappa)$-simil-geodetica per qualche $\kappa>0$, allora per ogni $t \in [a,b]$ si ha
@@ -98,13 +103,17 @@ Adesso ci serve un Lemma quasi ovvio.
     È un'immediata conseguenza della definizione di $(1,\kappa)$-simil-geodetica.
 \end{proof}
 
-Quello che dimostreremo adesso è uno dei fatti cruciali nella dimostrazione del teorema di tipo Wolff-Denjoy. Afferma che, sotto condizioni di visibilità per le simil-geodetiche, le sottosuccessioni di iterate di una funzione olomorfa che ``tendono a infinito'' convergono tutte, puntualmente, a un unico punto del bordo.
+Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il teorema di tipo ``Wolff-Denjoy''. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le sottosuccessioni di iterate di una funzione olomorfa che ``tendono a infinito'' convergono tutte, puntualmente, a un unico punto del bordo. Ci permette dunque di concludere, nel caso in cui le iterate convergano uniformemente sui compatti a una funzione a valori nel bordo, che tale funzione è costante.
 
 \begin{prop} \label{inf_impl_ugu}
     Sia $X$ una varietà complessa, connessa, embeddata in $\mathbb{C}^d$ e limitata. Supponiamo che esista un $\kappa_0>0$ tale che $X$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Siano $\nu,\mu:\mathbb{N}\longrightarrow\mathbb{N}$ due funzioni strettamente crescenti e $F\in\textnormal{Hol}(X,X)$ per cui esiste $x_0 \in X$ tale che
-    $$\lim_{j\longrightarrow+\infty} k_X\big(F^{\nu(j)}(x_0),x_0\big)=\lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(x_0),x_0\big)=+\infty.$$
-    Allora esiste $\xi\in\partial X$ tale che
-    $$\lim_{j\longrightarrow+\infty} F^{\nu(j)}(z)=\lim_{j\longrightarrow+\infty} F^{\mu(j)}(z)=\xi$$
+    \begin{equation}
+        \lim_{j\longrightarrow+\infty} k_X\big(F^{\nu(j)}(x_0),x_0\big)=\lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(x_0),x_0\big)=+\infty;
+    \end{equation}
+    allora esiste $\xi\in\partial X$ tale che
+    \begin{equation}
+        \lim_{j\longrightarrow+\infty} F^{\nu(j)}(z)=\lim_{j\longrightarrow+\infty} F^{\mu(j)}(z)=\xi
+    \end{equation}
     per ogni $z \in X$.
 \end{prop}
 
