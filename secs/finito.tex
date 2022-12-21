@@ -1,18 +1,26 @@
-Iniziamo con la definizione di dominio finito nel senso di D'Angelo, introdotta in \cite{D'A}.
+Vogliamo ora dimostrare che i domini di tipo finito sono domini Goldilocks, e ottenere, come già anticipato, risultati più precisi per essi. Iniziamo con la definizione di dominio di tipo finito nel senso di D'Angelo, introdotta in \cite{D'A}.
 
 \begin{defn}
-    \marginpar{Controllare se questa definizione va bene}
-    Data una funzione $g\in C^\infty(\mathbb{C}^n)$ e $p\in\mathbb{C}^n$, \textit{l'ordine di contatto di $g$ in $p$} è $v_p(g)$, il grado del primo polinomio non nullo dell'espansione in Taylor in $p$ di $g-g(p)$. Se la funzione è a valori in più variabili, si considera il minimo degli ordini delle componenti.
+    Data una funzione $g\in C^\infty(\mathbb{C}^n)$ e $p\in\mathbb{C}^n$, \textit{l'ordine di contatto di $g$ in $p$} è $v_p(g)$, il grado del primo termine non nullo dello sviluppo di Taylor in $p$ di $g-g(p)$. Se la funzione è a valori in più variabili, si considera il minimo degli ordini delle componenti.
 
-    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$, cioè esiste una funzione $\rho\in C^\infty(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$. Sia $\textbf{f}$ il germe di una funzione olomorfa a valori in una $1$-varietà algebrica tale che $f(0)=z_0\in\partial\Omega$. Poniamo $\Delta_1(z_0)=\displaystyle\sup_{\textbf{f}} \frac{v_0(\rho\circ f)}{v_0(f)}$.
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$, cioè esiste una funzione $\rho\in C^\infty(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$. Dato $z_0\in\partial\Omega$, consideriamo l'insieme $\mathcal{D}_{z_0}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=z_0\textit{ e }f'(0)\not=0\}$ dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $z_0$ e che sono lisci nell'origine. Poniamo
+    $$\Delta_1(z_0):=\sup_{f\in\mathcal{D}_{z_0}} v_0(\rho\circ f).$$
 
     La quantità $\Delta_1(z_0)$ è detta il \textit{tipo} di $z_0\in\partial\Omega$. Il dominio $\Omega$ si dice \textit{di tipo finito nel senso di D'Angelo} (o più brevemente \textit{di tipo finito}) se $\Delta_1(z_0)<+\infty$ per ogni $z_0\in\partial\Omega$.
 \end{defn}
 
-Ci servirà anche il seguente fatto.
+\begin{oss}
+    \begin{enumerate}
+        \item Esisono diverse definizioni di dominio di tipo finito, che sono sostanzialmente equivalenti (o quasi) in due variabili o per domini convessi in qualsiasi numero di variabili; negli altri casi, invece, la situazione è più complicata. Noi ci limiteremo al caso di domini di tipo finito nel senso di D'Angelo, poiché è ciò che ci serve per ottenere la stima dal basso sulla metrica di Kobayashi.
+        \item La condizione $f'(0)\not=0$, cioè che il disco analitico sia liscio, è necessaria. Altrimenti, calcolando un disco analitico in $z^k$ con $k>1$ invece che in $z$, otteniamo un altro disco analitico non lisco con ordine di contatto almeno $k$; di conseguenza, tutti i punti e tutti i domini sarebbero di tipo infinito.
+        \item È naturale supporre, come faremo a breve, la pseudoconvessità del dominio; infatti, si può mostrare che in tal caso il tipo del dominio è almeno $2$. I punti strettamenti pseudoconvessi sono caratterizzati dall'avere tipo esattamente uguale a $2$.
+    \end{enumerate}
+\end{oss}
+
+Ci servirà il seguente fatto.
 
 \begin{thm} \label{cho}
-    (\cite[Theorem 1]{C}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Sia $z_0\in\partial\Omega$ di tipo finito e $U$ un intorno di $z_0$ tale che $\partial\Omega\cap U$ è liscio e pseudoconvesso. Allora esiste un intorno $V\subseteq U$ di $z_0$ e due costanti $c,\epsilon>0$ tali che si ha
+    (\cite[Theorem 1]{C}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Siano inoltre $z_0\in\partial\Omega$ di tipo finito e $U$ un intorno di $z_0$ tale che $\partial\Omega\cap U$ è liscio e pseudoconvesso. Allora esiste un intorno $V\subseteq U$ di $z_0$ e due costanti $c,\epsilon>0$ tali che si ha
     $$K_\Omega(z;Z) \ge c\frac{\|Z\|}{\delta_\Omega(z)^\epsilon}$$
     per ogni $z\in\Omega$ e $Z\in T_z\Omega$.
 \end{thm}
