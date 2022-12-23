@@ -1,9 +1,9 @@
-Vogliamo ora dimostrare che i domini di tipo finito sono domini Goldilocks, e ottenere, come già anticipato, risultati più precisi per essi. Iniziamo con la definizione di dominio di tipo finito nel senso di D'Angelo, introdotta in \cite{D'A}.
+Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini Goldilocks. Iniziamo con la definizione di dominio di tipo finito nel senso di D'Angelo, introdotta in \cite{D'A}.
 
 \begin{defn}
-    Data una funzione $g\in C^\infty(\mathbb{C}^n)$ e $p\in\mathbb{C}^n$, \textit{l'ordine di contatto di $g$ in $p$} è $v_p(g)$, il grado del primo termine non nullo dello sviluppo di Taylor in $p$ di $g-g(p)$. Se la funzione è a valori in più variabili, si considera il minimo degli ordini delle componenti.
+    Dati un aperto $A\subseteq\mathbb{C}^n$, una funzione $g\in C^\infty(A)$ e $p\in A$, \textit{l'ordine di contatto di $g$ in $p$} è $v_p(g)$, il grado del primo termine non nullo dello sviluppo di Taylor in $p$ di $g-g(p)$. Se la funzione è a valori in più variabili, si considera il minimo degli ordini di contatto delle componenti.
 
-    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$, cioè esiste una funzione $\rho\in C^\infty(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$. Dato $z_0\in\partial\Omega$, consideriamo l'insieme $\mathcal{D}_{z_0}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=z_0\textit{ e }f'(0)\not=0\}$ dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $z_0$ e che sono lisci nell'origine. Poniamo
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$, cioè esiste una funzione $\rho\in C^\infty(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$. Dato $z_0\in\partial\Omega$, consideriamo l'insieme $\mathcal{D}_{z_0}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=z_0\text{ e }f'(0)\not=0\}$ dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $z_0$ e che sono lisci nell'origine. Poniamo
     $$\Delta_1(z_0):=\sup_{f\in\mathcal{D}_{z_0}} v_0(\rho\circ f).$$
 
     La quantità $\Delta_1(z_0)$ è detta il \textit{tipo} di $z_0\in\partial\Omega$. Il dominio $\Omega$ si dice \textit{di tipo finito nel senso di D'Angelo} (o più brevemente \textit{di tipo finito}) se $\Delta_1(z_0)<+\infty$ per ogni $z_0\in\partial\Omega$.
@@ -11,7 +11,7 @@ Vogliamo ora dimostrare che i domini di tipo finito sono domini Goldilocks, e ot
 
 \begin{oss}
     \begin{enumerate}
-        \item Esisono diverse definizioni di dominio di tipo finito, che sono sostanzialmente equivalenti (o quasi) in due variabili o per domini convessi in qualsiasi numero di variabili; negli altri casi, invece, la situazione è più complicata. Noi ci limiteremo al caso di domini di tipo finito nel senso di D'Angelo, poiché è ciò che ci serve per ottenere la stima dal basso sulla metrica di Kobayashi.
+        \item Esistono diverse definizioni di dominio di tipo finito, che sono sostanzialmente equivalenti (o quasi) in due variabili o per domini convessi in qualsiasi numero di variabili; negli altri casi, invece, la situazione è più complicata. Noi ci limiteremo al caso di domini di tipo finito nel senso di D'Angelo, poiché è ciò che ci serve per ottenere la stima dal basso sulla metrica di Kobayashi.
         \item La condizione $f'(0)\not=0$, cioè che il disco analitico sia liscio, è necessaria. Altrimenti, calcolando un disco analitico in $z^k$ con $k>1$ invece che in $z$, otteniamo un altro disco analitico non lisco con ordine di contatto almeno $k$; di conseguenza, tutti i punti e tutti i domini sarebbero di tipo infinito.
         \item È naturale supporre, come faremo a breve, la pseudoconvessità del dominio; infatti, si può mostrare che in tal caso il tipo del dominio è almeno $2$. I punti strettamenti pseudoconvessi sono caratterizzati dall'avere tipo esattamente uguale a $2$.
     \end{enumerate}
@@ -20,27 +20,31 @@ Vogliamo ora dimostrare che i domini di tipo finito sono domini Goldilocks, e ot
 Ci servirà il seguente fatto.
 
 \begin{thm} \label{cho}
-    (\cite[Theorem 1]{C}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Siano inoltre $z_0\in\partial\Omega$ di tipo finito e $U$ un intorno di $z_0$ tale che $\partial\Omega\cap U$ è liscio e pseudoconvesso. Allora esiste un intorno $V\subseteq U$ di $z_0$ e due costanti $c,\epsilon>0$ tali che si ha
+    (\cite[Theorem 1]{C}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Siano inoltre $z_0\in\partial\Omega$ di tipo finito e $U$ un intorno di $z_0$ tale che $\partial\Omega\cap U$ è liscio e pseudoconvesso. Allora esistono un intorno $V\subseteq U$ di $z_0$ e due costanti $c,\epsilon>0$ tali che si ha
     $$K_\Omega(z;Z) \ge c\frac{\|Z\|}{\delta_\Omega(z)^\epsilon}$$
-    per ogni $z\in\Omega$ e $Z\in T_z\Omega$.
+    per ogni $z\in\Omega\cap V$ e $Z\in T_z\Omega$.
 \end{thm}
 
 Possiamo allora dimostrare che per i domini limitati, pseudoconvessi e di tipo finito vale la condizione (1) nella definizione di dominio Goldilocks.
 
-\begin{cor}
-    Sia $\Omega$ un dominio limitato, pseudoconvesso e di tipo finito. Allora $\Omega$ soddisfa la condizione (1) nella Definizione \ref{gold}.
+\begin{cor} \label{finito_is_1}
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato, pseudoconvesso e di tipo finito. Allora $\Omega$ soddisfa la condizione (1) nella Definizione \ref{gold}.
 \end{cor}
 
 \begin{proof}
-    Poiché $\Omega$ è limitato, pseudoconvesso e di tipo finito, $\partial\Omega$ è compatto e ogni intorno di ogni suo punto soddisfa le ipotesi del Teorema \ref{cho}. Possiamo allora trovare un numero finito di aperti $V_1,\dots, V_n$ che ricoprono $\partial\Omega$ e delle costanti $c,\epsilon_1,\dots,\epsilon_N>0$ tali che $K_\Omega(x;v) \ge c\cdot\delta_\Omega(z)^{-\epsilon_j}$ per ogni $z\in\Omega\cap V_j$ e $v\in T_z\Omega$ con $\|v\|=1$.
+    Poiché $\Omega$ è limitato, pseudoconvesso e di tipo finito, $\partial\Omega$ è compatto e ogni intorno di ogni suo punto soddisfa le ipotesi del Teorema \ref{cho}. Possiamo allora trovare un numero finito di aperti $V_1,\dots, V_N$ che ricoprono $\partial\Omega$ e delle costanti $c,\epsilon_1,\dots,\epsilon_N>0$ tali che
+    $$K_\Omega(x;v) \ge c\cdot\delta_\Omega(z)^{-\epsilon_j}$$
+    per ogni $z\in\Omega\cap V_j$ e $v\in T_z\Omega$ con $\|v\|=1$.
 
-    Basta dunque prendere $s=\min\{\epsilon_1,\dots,\epsilon_N\}$ e $r>0$ piccolo abbastanza affinché $r<1$ e $\{z\in\Omega\mid\delta_\Omega(z) \le r\}\subseteq V_1\cup\dots\cup V_N$. Segue che $M_\Omega(r) \le r^s/c$ con $s>0$ per $r$ sufficientemente piccolo, dunque la condizione (1) nella Definizione \ref{gold} è soddisfatta.
+    Basta dunque prendere $s=\min\{\epsilon_1,\dots,\epsilon_N\}$ e $r>0$ piccolo abbastanza affinché $r<1$ e $\{z\in\Omega\mid\delta_\Omega(z) \le r\}\subseteq V_1\cup\dots\cup V_N$. Segue che
+    $$M_\Omega(r) \le r^s/c$$
+    con $s>0$ per $r$ sufficientemente piccolo, dunque la condizione (1) nella Definizione \ref{gold} è soddisfatta.
 \end{proof}
 
 Andiamo ora a dimostrare che soddisfano anche la condizione (2). Per questa, servono ipotesi meno stringenti.
 
-\begin{prop}
-    Sia $\Omega\subseteq\mathbb{C}^n$ limitato con bordo $C^2$. Allora $\Omega$ soddisfa la condizione (2) nella Definizione \ref{gold}.
+\begin{prop} \label{finito_is_2}
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ soddisfa la condizione (2) nella Definizione \ref{gold}.
 \end{prop}
 
 \begin{proof}
@@ -51,7 +55,16 @@ Andiamo ora a dimostrare che soddisfano anche la condizione (2). Per questa, ser
         \item per ogni $z\in\Omega$, la fibra $\pi^{-1}\big(\pi(z)\big)$ è un sottoinsieme della normale a $\partial\Omega$ in $\pi(z)$;
         \item la mappa $z\longmapsto\big(\pi(z),\delta_\Omega(z)\big)$ è un omeomorfismo tra $U_\epsilon$ e $\partial\Omega\times(0,\epsilon)$.
     \end{nlist}
-    A meno di prendere $\epsilon$ sufficientemente piccolo, per ogni $z\in\Omega$ con $\delta_\Omega(z)=\epsilon$ si ha che la palla euclidea di centro $z$ e raggio $\epsilon$ è tutta contenuta in $\Omega$. Presi allora $p,q\in\Omega$ con $\pi(p)=\pi(q)$ e $\epsilon\ge\delta_\Omega(p)\ge\delta_\Omega(q)$, poniamo $z_0$ il punto (interno a $\Omega$) della normale a $\partial\Omega$ in $\pi(p)$ tale che $\delta_\Omega(z_0)=\epsilon$. Usando la funzione $\varphi:\mathbb{D}\longrightarrow\Omega$ tale che $\varphi(\zeta)=z_0+\zeta\big(\pi(p)-z_0\big)$, troviamo $k_\Omega(p,q) \le \dfrac{1}{2}\log{\dfrac{\delta_\Omega(p)}{\delta_\Omega(q)}}$.
+    È facile osservare che, per ogni $z\in\Omega$ con $\delta_\Omega(z)=\epsilon$, si ha che la palla euclidea di centro $z$ e raggio $\epsilon$ è tutta contenuta in $\Omega$. Presi allora $p,q\in\Omega$ con $\pi(p)=\pi(q)$ e $\epsilon\ge\delta_\Omega(p)\ge\delta_\Omega(q)$, poniamo $z_0$ il punto (interno a $\Omega$) della normale a $\partial\Omega$ in $\pi(p)$ tale che $\delta_\Omega(z_0)=\epsilon$. Usando la funzione olomorfa $\varphi:\mathbb{D}\longrightarrow\Omega$ tale che $\varphi(\zeta)=z_0+\zeta\big(\pi(p)-z_0\big)$, troviamo
+    $$k_\Omega(p,q) \le \dfrac{1}{2}\log{\dfrac{\delta_\Omega(p)}{\delta_\Omega(q)}}.$$
 
-    Adesso, notiamo che l'insieme $K=\{z\in\Omega\mid\delta_\Omega(z)\ge\epsilon\}$ è compatto. Dato $x_0\in\Omega$, basta allora prendere $\alpha=1/2$ e $C=\frac{1}{2}\log{\epsilon}+\text{diam}_{k_\Omega}(K)$ se $x_0\in K$, altrimenti si prende $C=\max\{\frac{1}{2}\log{\epsilon},D_{k_{\Omega}}(x_0,K)\}$ dove abbiamo posto $D_{k_\Omega}(x_0,K)=\max\{k_\Omega(x_0,z)\mid z\in K\}$. Segue dunque che $\Omega$ soddisfa la condizione (2) nella Definizione \ref{gold}.
+    Adesso, notiamo che l'insieme $K=\{z\in\Omega\mid\delta_\Omega(z)\ge\epsilon\}$ è compatto. Dato $x_0\in\Omega$, basta allora prendere $\alpha=1/2$ e $C=\frac{1}{2}\log{\epsilon}+D_{k_{\Omega}}(x_0,K)$, dove abbiamo posto $D_{k_\Omega}(x_0,K)=\max\{k_\Omega(x_0,z)\mid z\in K\}$. Segue dunque che $\Omega$ soddisfa la condizione (2) nella Definizione \ref{gold}.
 \end{proof}
+
+Usando il Corollario \ref{finito_is_1}, la Proposizione \ref{finito_is_2} e la Proposizione \ref{psdcvx_is_taut}, otteniamo il seguente risultato.
+
+\begin{cor}
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato, pseudoconvesso e di tipo finito. Allora $\Omega$ è un dominio Goldilocks e una varietà taut.
+    
+    In particolare, per il Teorema \ref{gold_is_vis} si ha che $\Omega$ soddisfa le ipotesi del Teorema \ref{wd_type}.
+\end{cor}
