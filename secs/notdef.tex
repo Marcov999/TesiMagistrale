@@ -1,15 +1,15 @@
-Introduciamo la notazione che useremo:
+Introduciamo le notazioni e definizioni che useremo:
 \begin{itemize}
-    \item scriviamo $\Omega$ per indicare un \textit{dominio} in $\mathbb{C}^n$, vale a dire un aperto connesso;
-    \item con \textit{varietà complessa} s'intende una varietà differenziabile reale, di dimensione pari e con i cambi di carta olomorfi se visti come fra aperti di $\mathbb{C}^n$;
-    \item data $X$ varietà complessa e $x \in X$, indichiamo con $T_xX$ lo spazio tangente a $X$ in $x$, che nel caso dei domini è canonicamente identificato con $\mathbb{C}^n$;
-    \item dati $X,Y$ spazi topologici, quando parliamo di convergenza nell'insieme $C^0(X,Y)$ delle funzioni continue da $X$ a $Y$ sottintendiamo sempre che si parla della topologia compatta-aperta, che nel caso in cui $Y$ sia uno spazio metrico coincide con la topologia della convergenza uniforme sui compatti (potrebbe capitare che commetteremo abusi di terminologia in merito);
-    \item dato $X$ spazio topologico e data $f \in C^0(X,X)$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$;
-    \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme delle funzioni biolomorfe da $X$ in sé;
-    \item data $f \in \text{Hol}(X,Y)$, indichiamo con $Df(x)$ il differenziale di $f$ in $x \in X$;
-    \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$, mentre $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$ è il polidisco in $\mathbb{C}^n$ e $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$ è il disco di raggio $r>0$;
-    \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di raggio $r>0$;
-    \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $x \in \mathbb{C}^n$, scriviamo $\delta(x)=\displaystyle\inf_{w \in \partial\Omega}\|x-w\|$ per indicare la distanza euclidea di $x$ dal bordo di $\Omega$.
+    \item  un \textit{dominio} in $\mathbb{C}^n$ è un aperto connesso;
+    \item una \textit{varietà complessa} di dimensione $n$ è una varietà differenziabile reale, di dimensione $2n$ e tale che i cambi di carta siano olomorfi se considerati fra aperti di $\mathbb{C}^n$;
+    \item dati una varietà complessa $X$ e $x \in X$, indichiamo con $T_xX$ lo spazio tangente complesso a $X$ in $x$, che nel caso dei domini è canonicamente identificato con $\mathbb{C}^n$;
+    \item dati $X,Y$ spazi topologici, $C^0(X,Y)$ è lo spazio delle funzioni continue da $X$ a $Y$ considerato con la topologia compatta-aperta. Nel caso in cui $Y$ sia uno spazio metrico, tale topologia coincide con la topologia della convergenza uniforme sui compatti;
+    \item dati un insieme $X$ e una funzione $f:X\longrightarrow X$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$;
+    \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme dei biolomorfismi di $X$ in sé;
+    \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff f_x$ il differenziale di $f$ in $x \in X$;
+    \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$, mentre $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$ è il polidisco in $\mathbb{C}^n$ e $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$ è il disco di centro $0$ e raggio $r>0$;
+    \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di centro l'origine $O\in\mathbb{C}^n$ e raggio $r>0$;
+    \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $z \in \mathbb{C}^n$, scriviamo $\delta(z)=\displaystyle\inf_{p \in \partial\Omega}\|z-p\|$ per indicare la distanza euclidea di $x$ dal bordo di $\Omega$.
 \end{itemize}
 
 Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
@@ -30,57 +30,123 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     per ogni $z_1,z_2 \in \mathbb{D}$.
 \end{defn}
 
-Oltre ad avere curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse. Ciò discende dal seguente risultato.
+Oltre ad avere curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse.
 
 \begin{lm}
     (lemma di Schwarz-Pick) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$.
     Allora per ogni $z, w \in \mathbb{D}$ si ha
     $$\left|\frac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\right| \le \left|\frac{z-w}{1-\bar{w}z}\right| \text{ e } \frac{|f'(z)|}{1-|f(z)|^2} \le \frac{1}{1-|z|^2}.$$
-  \end{lm}
-
-Per la dimsotrazione si rimanda a \cite[Chapter I, paragraph 1, Theorem 1.1]{Ko2}. Ci tornerà utile anche la versione semplificata.
-
-\begin{lm}
-    (lemma di Schwarz) Sia $f\in\textnormal{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z\in\mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$.
+    Inoltre, se vale l'uguaglianza nella prima per $z_0,w_0$ con $z_0\not=w_0$ o nella seconda per $z_0$ allora $f\in\textnormal{Aut}(\mathbb{D})$ e vale sempre l'uguaglianza.
 \end{lm}
 
-Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poincaré ad una qualsiasi varietà complessa mantenendo queste proprietà, in particolare quella di rendere le funzioni olomorfe delle semicontrazioni. Ci sono vari modi per farlo, noi nello specifico vedremo la (pseudo)metrica e la (pseudo)distanza di Kobayashi, introdotte nel 1967 in \cite{Ko1}.
+Per la dimostrazione si rimanda a \cite[Chapter I, Theorem 1.1]{Ko2}.
+
+\begin{cor}
+    Sia $f\in\textnormal{Hol}(\mathbb{D},\mathbb{D})$. Allora si ha
+    \begin{equation}
+        \omega\big(f(z),f(w)\big) \le \omega(z,w)
+    \end{equation}
+    per ogni $z,w\in\mathbb{D}$.
+\end{cor}
+  
+\begin{proof}
+    Discende dal lemma di Schwarz-Pick e dal fatto che la funzione $\text{arctanh}$ è strettamente crescente.
+\end{proof}
+
+Ci tornerà utile anche la versione semplificata del lemma di Schwarz-Pick.
+
+\begin{lm}
+    (lemma di Schwarz) Sia $f\in\textnormal{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z\in\mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguaglianza nella prima per $z_0\not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z$ per qualche $\theta\in\mathbb{R}$.
+\end{lm}
+
+Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poincaré a una qualsiasi varietà complessa mantenendo la proprietà di rendere le funzioni olomorfe delle semicontrazioni. Ci sono vari modi per farlo, noi nello specifico vedremo la (pseudo)metrica e la (pseudo)distanza di Kobayashi, introdotte nel 1967 in \cite{Ko1}.
 
 \begin{defn}
     Sia $X$ una varietà complessa; la \textit{pseudometrica di Kobayashi} su $X$ è
     \begin{equation}\begin{split}
         K_X(x;Z)=&\inf\{|v| \mid v \in \mathbb{C}, \text{ esiste }f \in \text{Hol}(\mathbb{D},X) \\
-        &\text{ tale che } f(0)=x, Df(0)v=Z\}
+        &\text{ tale che } f(0)=x, \diff f_0(v)=Z\}
     \end{split}\end{equation}
     per ogni $x \in X$ e $Z \in T_xX$.
 \end{defn}
 
 \begin{oss} \label{metr_noncr}
-    Non possiamo parlare di metrica perché, ad esempio, $K_{\mathbb{C}^n}\equiv 0$. Notiamo anche, data $f \in \text{Hol}(X,Y)$, che dalla definizione segue $K_Y\big(f(x);Df(x)Z\big) \le K_X(x;Z)$ per ogni $x \in X$ e $Z \in T_xX$. Ne consegue, restringendosi a una coordinata opportuna e applicando il lemma di Schwarz, che per le varietà $X$ complesse, embeddate in $\mathbb{C}^d$ e limitate $K_X$ è effettivamente una metrica; vale a dire, $K_X(z;Z)>0$ per ogni $z\in X$ e $0\not=Z\in T_zX$ (nella Proposizione \ref{metrica_bilip}, punto (1), dimostreremo qualcosa di più forte).
+    Non possiamo sempre parlare di metrica perché, per esempio, $K_{\mathbb{C}^n}\equiv 0$. Infatti, dati $z\in\mathbb{C}^n$ e $Z\in T_z\mathbb{C}^n=\mathbb{C}^n$, abbiamo che la funzione $f_\epsilon\in\text{Hol}(\mathbb{D},\mathbb{C}^n)$ data da $f_\epsilon(\zeta)=z+\zeta Z/\epsilon$ è tale che $\diff (f_\epsilon)_0(\epsilon)=Z$ per ogni $\epsilon>0$; di conseguenza, $K_{\mathbb{C}^n}(z;Z)=0$.
 \end{oss}
+
+Vediamo adesso che le funzioni olomorfe sono semicontrazioni rispetto alla pseudometrica di Kobayashi.
+
+\begin{prop}
+    Siano $X$ e $Y$ varietà complesse, e sia $f \in \textnormal{Hol}(X,Y)$. Allora si ha
+    \begin{equation}
+        K_Y\big(f(x);\diff f_x(Z)\big) \le K_X(x;Z)
+    \end{equation}
+    per ogni $x \in X$ e $Z \in T_xX$.
+\end{prop}
+
+\begin{proof}
+    Dati $x\in X$ e $Z\in T_xX$, poniamo
+    \begin{align*}
+        A_X(x;Z)=&\{v \in \mathbb{C} \mid \text{esiste }g \in \text{Hol}(\mathbb{D},X) \\
+        &\text{ tale che } g(0)=x, \diff g_0(v)=Z\},
+    \end{align*}
+    e sia $A_Y\big(f(x);\diff f_x(Z)\big)$ definito analogamente. Dato $v\in A_X(x;Z)$, prendiamo $g\in\text{Hol}(\mathbb{D},X)$ tale che $g(0)=x$ e $\diff g_0(v)=Z$. Allora $(f\circ g)(0)=f(x)$ e $\diff(f\circ g)_0(v)=(\diff f_x\circ\diff g_0)(v)=\diff f_x(Z)$; dunque $v \in A_Y\big(f(x);\diff f_x(Z)\big)$. Quindi $A_X(x;Z)\subseteq A_Y\big(f(x);\diff f_x(Z)\big)$ e la tesi segue dalle definizioni di $K_X$ e $K_Y$.
+\end{proof}
+
+Nei casi a cui siamo interessati, la pseudometrica di Kobayashi è effettivamente una metrica.
+
+\begin{prop}
+    Sia $X$ una sottovarietà complessa e limitata di $\mathbb{C}^d$. Allora $K_X$ è una metrica, cioè $K_X(z;Z)>0$ per ogni $z\in X$ e $0\not=Z\in T_zX$.
+\end{prop}
+
+\begin{proof}
+    È un'immediata conseguenza di un risultato più forte che dimostreremo nella prossima sezione, il punto (1) della Proposizione \ref{metrica_bilip}.
+\end{proof}
 
 Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.
 
 \begin{defn}
     Sia $X$ una varietà complessa e connessa; la \textit{pseudodistanza di Kobayashi} su $X$ è data da
     \begin{equation}\begin{split}
-        k_X(z,w)=&\inf\Bigg\{\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j) \mid m \in \mathbb{N}, \zeta_j \in \mathbb{D}\text{ per }j=0,\dots,m\text{ tali che}\\
-        &\text{esistono }\varphi_j\in \text{Hol}(\mathbb{D},X) \text{ con } \varphi_1(\zeta_0)=z,\varphi_m(\zeta_m)=w\text{ e}\\
-        &\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)\text{ per }j=1,\dots,m-1\Bigg\}
+        k_X(z,w)=&\inf\Bigg\{\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j) \bigg\vert \text{esistono }m\in\mathbb{N},\text{ punti }\zeta_0,\dots,\zeta_m \in \mathbb{D}\text{ e}\\
+        &\text{funzioni }\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X) \text{ tali che } \varphi_1(\zeta_0)=z,\varphi_m(\zeta_m)=w\\
+        &\text{e }\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)\text{ per }j=1,\dots,m-1\Bigg\}
     \end{split}\end{equation}
     per $z,w \in X$.
 \end{defn}
 
 \begin{oss} \label{k_lip}
-    È facile vedere che $k_X$ è una pseudodistanza, ma in generale non è una distanza, ad esempio perché, come prima, $k_{\mathbb{C}^n}\equiv 0$; vedremo però più avanti che per le varietà $X$ complesse, connesse, embeddate in $\mathbb{C}^d$ e limitate $k_X$ è effettivamente una distanza. Inoltre, data $f \in \text{Hol}(X,Y)$, dalla definizione segue che $k_Y\big(f(x),f(y)\big) \le k_X(x,y)$ per ogni $x,y \in X$.
+    È facile vedere che $k_X$ è una pseudodistanza, ma in generale non è una distanza, ad esempio perché, come prima, $k_{\mathbb{C}^n}\equiv 0$. Infatti, dati $z,w\in X$, possiamo considerare i punti $\zeta_0=0$ e $1>\zeta_1=\epsilon>0$ e la funzione $\varphi_1\in\text{Hol}(\mathbb{D},\mathbb{C}^n)$ tale che $\varphi_1(\zeta)=z+\zeta(w-z)/\epsilon$. Si ha $\varphi_1(\zeta_0)=z$ e $\varphi_1(\zeta_1)=w$; perciò, per definizione, $k_{\mathbb{C}^n}(z,w) \le \omega(0,\epsilon)$ per ogni $1>\epsilon>0$, da cui $k_{\mathbb{C}^n}(z,w)=0$.
+    
+    Vedremo però più avanti (Osservazione \ref{kobisdist}) che se $X$ è una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$ allora $k_X$ è effettivamente una distanza.
 \end{oss}
 
+Vediamo adesso che le funzioni olomorfe sono delle semicontrazioni rispetto alla pseudodistanza di Kobayashi.
+
+\begin{prop}
+    Siano $X$ e $Y$ varietà complesse e connesse, e consideriamo $f \in \textnormal{Hol}(X,Y)$. Allora
+    \begin{equation}
+        k_Y\big(f(x),f(y)\big) \le k_X(x,y)
+    \end{equation}
+    per ogni $x,y \in X$.
+\end{prop}
+
+\begin{proof}
+    Dati $x,y\in X$, poniamo
+    \begin{align*}
+        A_X(x,y)=&\Bigg\{\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j) \bigg\vert \text{esistono }m\in\mathbb{N},\text{ punti }\zeta_0,\dots,\zeta_m \in \mathbb{D}\text{ e}\\
+        &\text{funzioni }\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X) \text{ tali che } \varphi_1(\zeta_0)=x,\varphi_m(\zeta_m)=y\\
+        &\text{e }\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)\text{ per }j=1,\dots,m-1\Bigg\},
+    \end{align*}
+    e sia $A_Y\big(f(x),f(y)\big)$ definito analogamente. Dati punti $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e funzioni $\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X)$ che realizzano $\displaystyle\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)$ in $A_X(x,y)$, si verifica immediatamente che $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e $f\circ\varphi_1,\dots,f\circ\varphi_m\in\text{Hol}(\mathbb{D},Y)$ realizzano lo stesso numero in $A_Y\big(f(x),f(y)\big)$. Quindi $A_X(x,y)\subseteq A_Y\big(f(x),f(y)\big)$ e la tesi segue dalle definizioni di $k_X$ e $k_Y$.
+\end{proof}
+
 \begin{defn}
-    Sia $X$ una varietà complessa e connessa. Se $k_X$ è una distanza, diremo che $X$ è \textit{Kobayashi-iperbolica}.
+    Una varietà complessa e connessa $X$ è \textit{Kobayashi-iperbolica} se $k_X$ è una distanza.
 \end{defn}
 
 \begin{oss}
-    Dalla definizione di $k_X$ segue che ogni varietà Kobayashi-iperbolica è uno \textit{spazio di lunghezze} nel senso di \cite[Part I, Paragraph 3, Definition 3.1]{BH}.
+    Dalla definizione di $k_X$ segue che ogni varietà Kobayashi-iperbolica è uno \textit{spazio di lunghezze} nel senso di \cite[Part I, Definition 3.1]{BH}.
 \end{oss}
 
 Il seguente risultato per le varietà Kobayashi-iperboliche verrà spesso usato implicitamente.
@@ -166,11 +232,11 @@ Per finire, diamo delle definizioni che ci serviranno per parlare del comportame
 \begin{defn}
     Siano $X$ e $Y$ due spazi topologici. Diciamo che una successione $\{f_{\nu}\}_{\nu \in \mathbb{N}} \subseteq C^0(X,Y)$ è \textit{compattamente divergente} se, per ogni coppia di compatti $H\subseteq X$ e $K\subseteq Y$, esiste $\nu_0 \in \mathbb{N}$ tale che $f_\nu(H)\cap K=\emptyset$ per ogni $\nu \ge \nu_0$.
 
-    Una famiglia $\mathcal{F} \subseteq C^0(X,Y)$ è detta \textit{normale} se ogni successione in $\mathcal{F}$ ammette una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente.
+    Una famiglia $\mathcal{F} \subseteq C^0(X,Y)$ è detta \textit{normale} se ogni successione in $\mathcal{F}$ ammette una sottosuccessione che converge a una funzione in $C^0(X,Y)$ oppure è compattamente divergente.
 \end{defn}
 
 \begin{defn}
-    Sia $f\in C^0(X,X)$. Diciamo che $g\in C^0(X,X)$ è una \textit{funzione limite} di $f$ se esiste una sottosuccessione delle iterate di $f$ che converge a $g$ uniformemente sui compatti. Denotiamo con $\Gamma(f)$ l'insieme di tutte le funzioni limite di $f$.
+    Sia $f\in C^0(X,X)$. Diciamo che $g\in C^0(X,X)$ è una \textit{funzione limite} di $f$ se esiste una sottosuccessione delle iterate di $f$ che converge a $g$ in $C^0(X,X)$. Denotiamo con $\Gamma(f)$ l'insieme di tutte le funzioni limite di $f$.
 \end{defn}
 
 \begin{defn}
