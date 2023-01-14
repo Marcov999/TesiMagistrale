@@ -7,7 +7,7 @@ Introduciamo le notazioni e definizioni che useremo:
     \item dati un insieme $X$ e una funzione $f:X\longrightarrow X$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$;
     \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme dei biolomorfismi di $X$ in sé;
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff f_x$ il differenziale di $f$ in $x \in X$;
-    \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$, mentre $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$ è il polidisco in $\mathbb{C}^n$ e $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$ è il disco di centro $0$ e raggio $r>0$;
+    \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$; il disco di centro $0$ e raggio $r>0$ è $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$; il disco di centro $a\in\mathbb{C}$ e raggio $r>0$ è $D(a,r)=\{z\in\mathbb{C}\mid |z-a|<r\}$; il polidisco in $\mathbb{C}^n$ è $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$;
     \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di centro l'origine $O\in\mathbb{C}^n$ e raggio $r>0$;
     \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $z \in \mathbb{C}^n$, scriviamo $\delta(z)=\displaystyle\inf_{p \in \partial\Omega}\|z-p\|$ per indicare la distanza euclidea di $x$ dal bordo di $\Omega$.
 \end{itemize}
@@ -35,8 +35,8 @@ Oltre ad avere curvatura negativa costante, la metrica e la distanza di Poincar�
 \begin{lm}
     (lemma di Schwarz-Pick) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$.
     Allora per ogni $z, w \in \mathbb{D}$ si ha
-    $$\left|\frac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\right| \le \left|\frac{z-w}{1-\bar{w}z}\right| \text{ e } \frac{|f'(z)|}{1-|f(z)|^2} \le \frac{1}{1-|z|^2}.$$
-    Inoltre, se vale l'uguaglianza nella prima per $z_0,w_0$ con $z_0\not=w_0$ o nella seconda per $z_0$ allora $f\in\textnormal{Aut}(\mathbb{D})$ e vale sempre l'uguaglianza.
+    $$\left|\frac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\right| \le \left|\frac{z-w}{1-\bar{w}z}\right| \text{ e } \frac{|f'(z)|}{1-|f(z)|^2} \le \frac{1}{1-|z|^2};$$
+    inoltre, se vale l'uguaglianza nella prima per $z_0,w_0$ con $z_0\not=w_0$ o nella seconda per $z_0$ allora $f\in\textnormal{Aut}(\mathbb{D})$ e vale sempre l'uguaglianza.
 \end{lm}
 
 Per la dimostrazione si rimanda a \cite[Chapter I, Theorem 1.1]{Ko2}.
@@ -123,7 +123,7 @@ Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è co
 
 Vediamo adesso che le funzioni olomorfe sono delle semicontrazioni rispetto alla pseudodistanza di Kobayashi.
 
-\begin{prop}
+\begin{prop} \label{semicontr}
     Siano $X$ e $Y$ varietà complesse e connesse, e consideriamo $f \in \textnormal{Hol}(X,Y)$. Allora
     \begin{equation}
         k_Y\big(f(x),f(y)\big) \le k_X(x,y)
@@ -140,6 +140,16 @@ Vediamo adesso che le funzioni olomorfe sono delle semicontrazioni rispetto alla
     \end{align*}
     e sia $A_Y\big(f(x),f(y)\big)$ definito analogamente. Dati punti $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e funzioni $\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X)$ che realizzano $\displaystyle\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)$ in $A_X(x,y)$, si verifica immediatamente che $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e $f\circ\varphi_1,\dots,f\circ\varphi_m\in\text{Hol}(\mathbb{D},Y)$ realizzano lo stesso numero in $A_Y\big(f(x),f(y)\big)$. Quindi $A_X(x,y)\subseteq A_Y\big(f(x),f(y)\big)$ e la tesi segue dalle definizioni di $k_X$ e $k_Y$.
 \end{proof}
+
+Segue immediatamente l'invarianza per biolomorfismi.
+
+\begin{cor} \label{bioloiso}
+    Siano $X$ e $Y$ varietà complesse e connesse, e consideriamo un biolomorfismo $f:X \longrightarrow Y$. Allora
+    \begin{equation}
+        k_Y\big(f(x),f(y)\big)=k_X(x,y)
+    \end{equation}
+    per ogni $x,y \in X$.
+\end{cor}
 
 \begin{defn}
     Una varietà complessa e connessa $X$ è \textit{Kobayashi-iperbolica} se $k_X$ è una distanza.
@@ -167,7 +177,7 @@ Diamo ora delle definizioni che ci serviranno per enunciare i risultati già not
 \end{defn}
 
 \begin{defn}
-    Sia $A\subseteq\mathbb{C}$ un aperto. Una funzione $u:A \longrightarrow \mathbb{R}\cup\{-\infty\}$ semicontinua superiormente è detta \textit{subarmonica} se per ogni $a \in A$, per ogni $r>0$ tale che $\overline{D(a,r)} \subset A$ e per ogni $h$ continua in $\overline{D(a,r)}$ e armonica in $D(a,r)$, se $h\restrict{\partial D(a,r)} \ge u\restrict{\partial D(a,r)}$, allora anche $h\restrict{D(a,r)} \ge u \restrict{D(a,r)}$.
+    Sia $A\subseteq\mathbb{C}$ un aperto. Una funzione $u:A \longrightarrow \mathbb{R}\cup\{-\infty\}$ semicontinua superiormente è detta \textit{subarmonica} se per ogni $a \in A$, per ogni $r>0$ tale che $\overline{D(a,r)} \subset A$ e per ogni $h$ continua in $\overline{D(a,r)}$ e armonica in $D(a,r)$, se $h\restrict{\partial D(a,r)} \ge u\restrict{\partial D(a,r)}$ allora anche $h\restrict{D(a,r)} \ge u \restrict{D(a,r)}$.
 
     Sia $A\subseteq\mathbb{C}^n$ un aperto. Una funzione $u:A \longrightarrow \mathbb{R}\cup\{-\infty\}$ semicontinua superiormente è detta \textit{plurisubarmonica} se per ogni $a \in A$ e per ogni $Z \in \mathbb{C}^n$ l'applicazione $\zeta \longmapsto u(a+\zeta Z)$ è subarmonica dove definita.
 \end{defn}
@@ -179,25 +189,26 @@ Diamo ora delle definizioni che ci serviranno per enunciare i risultati già not
  Il seguente risultato ci servirà per un controesempio.
 
  \begin{thm}
-    (\cite[Chapter 5, Paragraph 5.1, Theorem 5.1.2]{Kr}) Ogni dominio pseudoconvesso è un dominio di olomorfia.
+    (\cite[Theorem 5.1.2]{Kr}) Ogni dominio pseudoconvesso è un dominio di olomorfia.
  \end{thm}
 
 Nel caso di domini regolari, si può dare una definizione di pseudoconvessità più operativa equivalente.
 
 \begin{defn}
-    Sia $\Omega \subseteq \mathbb{C}^n$ un dominio con bordo $C^2$, cioè esiste una funzione $\rho \in C^2(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$.
+    Sia $\Omega \subseteq \mathbb{C}^n$ un dominio con bordo $C^2$, cioè tale che esista una funzione $\rho \in C^2(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$.
     
     Dato $p \in \partial\Omega$, lo \textit{spazio tangente complesso} a $\partial\Omega$ in $p$ è
-    $$H_p\partial\Omega=\{Z \in \mathbb{C}^n \mid \langle \bar{\partial}\rho(p),Z\rangle=0\}.$$
+    $$H_p\partial\Omega=\{Z \in \mathbb{C}^n \mid \langle \bar{\partial}\rho(p),Z\rangle=0\},$$
+    dove $\bar{\partial}\rho(p)=\left(\dfrac{\partial\rho}{\partial\bar{z}_1}(p),\dots,\dfrac{\partial\rho}{\partial\bar{z}_n}(p)\right)$.
 
     Diciamo che $\Omega$ è \textit{Levi pseudoconvesso} se la \textit{forma di Levi}
     $$L_{\rho}(p;Z)=\sum_{\nu,\mu=1}^n \frac{\partial^2\rho}{\partial z_\nu\partial\bar{z}_\mu}(p)Z_\nu\bar{Z}_\mu, \quad Z=(Z_1,\dots,Z_n) \in \mathbb{C}^n$$
-      è semidefinita positiva in $H_p\partial\Omega$ per ogni $p \in \partial\Omega$. Diciamo che è \textit{strettamente pseudoconvesso} se la forma di Levi è definita positiva.
+      è semidefinita positiva in $H_p\partial\Omega$ per ogni $p \in \partial\Omega$. Diciamo che è \textit{strettamente pseudoconvesso} se la forma di Levi è definita positiva in $H_p\partial\Omega$ per ogni $p \in \partial\Omega$.
 \end{defn}
 
 Vale il seguente risultato.
-\begin{thm}
-    (\cite[Chapter 3, Paragraph 3.3, Theorem 3.3.5]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ è Levi pseudoconvesso se e solo se è Hartogs pseudoconvesso.
+\begin{thm}\marginpar{Nel risultato citato non c'è l'ipotesi di limitatezza; teniamolo a mente, potrebbe tornare utile}
+    (\cite[Theorem 3.3.5]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ è Levi pseudoconvesso se e solo se è Hartogs pseudoconvesso.
 \end{thm}
 
 Nella sottosezione \ref{risnoti} citeremo alcuni risultati sulla geometria dei domini limitati strettamente pseudoconvessi dotati della distanza di Kobayashi. In particolare, vedremo che sono Gromov-iperbolici, il che permette di derivare un teorema di tipo ``Wolff-Denjoy'' per questi domini.
@@ -224,7 +235,7 @@ Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la
 \end{prop}
 
 \begin{defn}
-    Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante a $\infty$.
+    Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante $\infty$.
 \end{defn}
 
 Per finire, diamo delle definizioni che ci serviranno per parlare del comportamente delle iterate di funzioni olomorfe.
