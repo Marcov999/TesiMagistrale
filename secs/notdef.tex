@@ -76,7 +76,7 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
 
 Vediamo adesso che le funzioni olomorfe sono semicontrazioni rispetto alla pseudometrica di Kobayashi.
 
-\begin{prop}
+\begin{prop} \label{metrdecr}
     Siano $X$ e $Y$ varietà complesse, e sia $f \in \textnormal{Hol}(X,Y)$. Allora si ha
     \begin{equation}
         K_Y\big(f(x);\diff f_x(Z)\big) \le K_X(x;Z)
@@ -90,7 +90,13 @@ Vediamo adesso che le funzioni olomorfe sono semicontrazioni rispetto alla pseud
         A_X(x;Z)=&\{v \in \mathbb{C} \mid \text{esiste }g \in \text{Hol}(\mathbb{D},X) \\
         &\text{ tale che } g(0)=x, \diff g_0(v)=Z\},
     \end{align*}
-    e sia $A_Y\big(f(x);\diff f_x(Z)\big)$ definito analogamente. Dato $v\in A_X(x;Z)$, prendiamo $g\in\text{Hol}(\mathbb{D},X)$ tale che $g(0)=x$ e $\diff g_0(v)=Z$. Allora $(f\circ g)(0)=f(x)$ e $\diff(f\circ g)_0(v)=(\diff f_x\circ\diff g_0)(v)=\diff f_x(Z)$; dunque $v \in A_Y\big(f(x);\diff f_x(Z)\big)$. Quindi $A_X(x;Z)\subseteq A_Y\big(f(x);\diff f_x(Z)\big)$ e la tesi segue dalle definizioni di $K_X$ e $K_Y$.
+    e sia $A_Y\big(f(x);\diff f_x(Z)\big)$ definito analogamente. Per definizione,
+    \begin{gather*}
+        K_X(x;Z)=\inf\{|v|\mid v\in A_X(x;Z)\}\\
+        \text{ e }\\
+        K_Y\big(f(x);\diff f_x(Z)\big)=\inf\{|v|\mid v\in A_Y\big(f(x);\diff f_x(Z)\big)\};
+    \end{gather*}
+    quindi ci basta mostrare che $A_X(x;Z)\subseteq A_Y\big(f(x);\diff f_x(Z)\big)$. Dato $v\in A_X(x;Z)$, prendiamo $g\in\text{Hol}(\mathbb{D},X)$ tale che $g(0)=x$ e $\diff g_0(v)=Z$. Allora abbiamo $(f\circ g)(0)=f(x)$ e $\diff(f\circ g)_0(v)=(\diff f_x\circ\diff g_0)(v)=\diff f_x(Z)$; dunque $v \in A_Y\big(f(x);\diff f_x(Z)\big)$. Perciò $A_X(x;Z)\subseteq A_Y\big(f(x);\diff f_x(Z)\big)$, come voluto.
 \end{proof}
 
 Nei casi a cui siamo interessati, la pseudometrica di Kobayashi è effettivamente una metrica.
@@ -138,7 +144,9 @@ Vediamo adesso che le funzioni olomorfe sono delle semicontrazioni rispetto alla
         &\text{funzioni }\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X) \text{ tali che } \varphi_1(\zeta_0)=x,\varphi_m(\zeta_m)=y\\
         &\text{e }\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)\text{ per }j=1,\dots,m-1\Bigg\},
     \end{align*}
-    e sia $A_Y\big(f(x),f(y)\big)$ definito analogamente. Dati punti $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e funzioni $\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X)$ che realizzano $\displaystyle\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)$ in $A_X(x,y)$, si verifica immediatamente che $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e $f\circ\varphi_1,\dots,f\circ\varphi_m\in\text{Hol}(\mathbb{D},Y)$ realizzano lo stesso numero in $A_Y\big(f(x),f(y)\big)$. Quindi $A_X(x,y)\subseteq A_Y\big(f(x),f(y)\big)$ e la tesi segue dalle definizioni di $k_X$ e $k_Y$.
+    e sia $A_Y\big(f(x),f(y)\big)$ definito analogamente. Per definizione,
+    $$k_X(x,y)=\inf A_X(x,y)\quad \text{e}\quad k_Y\big(f(x),f(y)\big)=\inf A_Y\big(f(x),f(y)\big);$$
+    quindi ci basta mostrare che $A_X(x,y)\subseteq A_Y\big(f(x),f(y)\big)$. Dati $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e $\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X)$ che realizzano $\displaystyle\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j)$ in $A_X(x,y)$, si verifica immediatamente che $\zeta_0,\dots,\zeta_m \in \mathbb{D}$ e $f\circ\varphi_1,\dots,f\circ\varphi_m\in\text{Hol}(\mathbb{D},Y)$ realizzano lo stesso numero in $A_Y\big(f(x),f(y)\big)$. Perciò $A_X(x,y)\subseteq A_Y\big(f(x),f(y)\big)$, come voluto.
 \end{proof}
 
 Segue immediatamente l'invarianza per biolomorfismi.
