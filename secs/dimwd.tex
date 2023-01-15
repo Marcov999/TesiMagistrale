@@ -13,9 +13,9 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
 \begin{proof}
     Poiché $X$ è taut, per il Teorema \ref{dicotomia} o l'orbita di $z$ tramite $F$ è relativamente compatta per ogni $z \in X$, oppure la successione delle iterate $\{F^\nu\}_{\nu\in\mathbb{N}}$ è compattamente divergente. Supponiamo che le orbite di $F$ non siano relativamente compatte in $X$; allora la successione delle iterate di $F$ è compattamente divergente.
 
-    Consideriamo una sottosuccessione qualsiasi di $\{F^\nu\}_{\nu\in\mathbb{N}}$. Usando il teorema di Montel, possiamo trovare una sottosottosuccessione che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \overline{X}$. Infatti, poiché $X$ è limitata allora la sottosuccessione è uniformemente limitata sui compatti di $X$; possiamo dunque fissare un ricoprimento numerabile di $X$ fatto di aperti relativamente compatti contenuti in carte ed estrarre, con un procedimento diagonale nel quale si applica il teorema di Montel ad ogni tale carta, una sottosottosuccessione che converga uniformemente sui compatti di ogni carta, in particolare sugli aperti del ricoprimento. Prendendo un'esaustione in compatti di $X$ (ad esempio, le palle chiuse rispetto a $k_X$) si può concludere facilmente che la convergenza è uniforme su tutti i compatti di $X$.
+    Consideriamo una sottosuccessione qualsiasi di $\{F^\nu\}_{\nu\in\mathbb{N}}$. Usando il teorema di Montel, possiamo trovare una sottosottosuccessione che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \mathbb{C}^d$ con $\tilde{F}(X)\subseteq\overline{X}$. Infatti, poiché $X$ è limitata allora la sottosuccessione è uniformemente limitata sui compatti di $X$; possiamo dunque fissare un ricoprimento numerabile di $X$ fatto di aperti relativamente compatti contenuti in carte ed estrarre, con un procedimento diagonale nel quale si applica il teorema di Montel ad ogni tale carta, una sottosottosuccessione che converga uniformemente sui compatti di ogni carta, in particolare sugli aperti del ricoprimento. Prendendo un'esaustione in compatti di $X$, si può concludere facilmente che la convergenza è uniforme su tutti i compatti di $X$.
 
-    Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}\in\text{Hol}(X,\partial X)$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
+    Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}(X)\subseteq\partial X$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
     $$\Gamma:=\overline{\{F^\nu\}}_{\nu\in\mathbb{N}}\setminus\{F^\nu\}_{\nu\in\mathbb{N}}$$
     come un insieme di punti di $\partial X$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti. \\
 
@@ -28,7 +28,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
         \item $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial X$.
     \end{enumerate}
 
-    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$, quindi
+    Adesso, \marginpar{\cite[Proposition 2.3.17]{A1} va cambiato con la reference al Lemma opportuno, quando lo aggiungerai}poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse $k_X$-completa, allora per \cite[Proposition 2.3.17]{A1} avremmo subito un assurdo. Altrimenti, si ha
     \begin{equation} \label{daoainfinito}
         \begin{aligned}
             \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty}\, &k_X\big(F^{\nu_h}(o),F^{\mu_j}(o)\big) \\
@@ -43,7 +43,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
     affermiamo che
     $$\limsup_{l\longrightarrow+\infty}M_l<+\infty.$$
 
-    Supponiamo per assurdo che non sia così, allora esiste una sottosuccessione $\{l_m\}_{m\in\mathbb{N}}$ tale che $M_{l_m}>m$ per ogni $m$. Per definizione di $M_l$ e per quanto appena trovato sulla successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$, abbiamo quindi che esiste una sottosottosuccessione $\{j_m\}_{m\in\mathbb{N}}$ tale che:
+    Supponiamo per assurdo che non sia così; allora esiste una sottosuccessione $\{l_m\}_{m\in\mathbb{N}}$ tale che $M_{l_m}>m$ per ogni $m$. Per definizione di $M_l$ e per quanto appena trovato sulla successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$, abbiamo quindi che esiste una sottosottosuccessione $\{j_m\}_{m\in\mathbb{N}}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
         \item $\|F^{\mu_{j_m}-l_m}(o)-\eta\|<1/m$;
         \item $k_X\big(F^{\mu_{j_m}-l_m}(o),o\big)>m$.
@@ -59,7 +59,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
     Caso 2: esiste (e quindi per ogni) $o \in X$ tale che
     $$\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)<+\infty.$$
     
-    Ricordiamo che abbiamo assunto che esistano due punti distinti $\xi,\eta\in\Gamma$. Poiché $X$ soddisfa la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche, esistono $V_\xi, V_\eta$ intorni in $\mathbb{C}^d$ rispettivamente di $\xi$ e di $\eta$, con $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, e un compatto $K$ di $X$ tali che ogni $(1,\kappa_0)$-simil-geodetica in $X$ che collega un punto di $V_\xi$ a un punto di $V_\eta$ interseca $K$.
+    Ricordiamo che abbiamo assunto che esistano due punti distinti $\xi,\eta\in\Gamma$. Poiché $X$ è $(1,\kappa_0)$-visibile, esistono $V_\xi, V_\eta$ intorni in $\mathbb{C}^d$ rispettivamente di $\xi$ e di $\eta$, con $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, e un compatto $K$ di $X$ tali che ogni $(1,\kappa_0)$-simil-geodetica in $X$ che collega un punto di $V_\xi$ a un punto di $V_\eta$ interseca $K$.
     Adesso definiamo, per $\delta>0$ arbitrario, la funzione $G_\delta:K\times K\longrightarrow [0,+\infty)$ data da
     $$G_\delta(x_1,x_2):=\inf\{k_X\big(F^m(x_1),x_2\big)\mid m\in\mathbb{N}, \|F^m(x_1)-\xi\|<\delta\}.$$
 
@@ -75,7 +75,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
     definiamo inoltre
     $$\epsilon:=\liminf_{z \longrightarrow\eta}\inf_{y\in K}k_X(z,y).$$
     
-    Mettendo assieme il Teorema \ref{lung_int} e la Proposizione \ref{metrica_bilip}, otteniamo che $k_X$ è boundata dal basso da una costante per la distanza euclidea; quindi $\epsilon>0$. Scegliamo ora due punti $q_1,q_2 \in K$ tali che
+    Mettendo assieme il Teorema \ref{lung_int} e la Proposizione \ref{metrica_bilip}, otteniamo che $k_X$ è limitata dal basso da una costante per la distanza euclidea; quindi $\epsilon>0$. Scegliamo ora due punti $q_1,q_2 \in K$ tali che
     $$G(q_1,q_2)<\inf_{x_1,x_2\in K}G(x_1,x_2)+\epsilon.$$
     
     Inoltre, dalla definizione di $G_{\delta}$ abbiamo che, per ogni $j\in\mathbb{N}$, esiste $m\in\mathbb{N}$ tale che $\|F^m(q_1)-\xi\|<1/j$ e $G_{1/j}(q_1,q_2) \le k_X\big(F^m(q_1),q_2\big) \le G_{1/j}(q_1,q_2)+1/j$. Possiamo dunque trovare una funzione strettamente crescente $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che per ogni $j\in\mathbb{N}$ si ha
@@ -90,7 +90,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
         \item si ha $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2)$.
     \end{enumerate}
 
-    Per il Teorema \ref{similgeo_conn}, abbiamo che per ogni $j\in\mathbb{N}$ esiste una $(1,1/j)$-simil-geodetica $\sigma_j:[0,T_j]\longrightarrow X$ con $\sigma_j(0)=F^{\nu(j)+\mu(j)}(q_1)$ e $\sigma_j(T_j)=F^{\mu(j)}(q_2)$. Dato che $\{F^{\nu(j)+\mu(j)}(q_1)\}_{j\in\mathbb{N}}$ e $\{F^{\mu(j)}(q_2)\}_{j\in\mathbb{N}}$ convergono, rispettivamente, a $\xi$ e $\eta$, per $j$ abbastanza grande si ha che $\sigma_j(0)\in V_\xi$ e $\sigma_j(T_j)\in V_\eta$, e $\sigma_j$ è una $(1,\kappa_0)$-simil-geodetica. Dunque $\Ima{\sigma_j}\cap K\not=\emptyset$ per $j$ abbastanza grande. Per ogni tale $j$ scegliamo un punto $x_j^*\in \Ima{\sigma_j}\cap K$. Per compattezza di $K$, a meno di passare a una sottosuccessione possiamo supporre che $x_j^* \longrightarrow x^* \in K$ per $j\longrightarrow+\infty$. Per il Lemma \ref{quasiovvio} troviamo che
+    Per il Teorema \ref{similgeo_conn}, abbiamo che per ogni $j\in\mathbb{N}$ esiste una $(1,1/j)$-simil-geodetica $\sigma_j:[0,T_j]\longrightarrow X$ con $\sigma_j(0)=F^{\nu(j)+\mu(j)}(q_1)$ e $\sigma_j(T_j)=F^{\mu(j)}(q_2)$. Dato che $\{F^{\nu(j)+\mu(j)}(q_1)\}_{j\in\mathbb{N}}$ e $\{F^{\mu(j)}(q_2)\}_{j\in\mathbb{N}}$ convergono, rispettivamente, a $\xi$ e $\eta$, per $j$ abbastanza grande si ha che $\sigma_j(0)\in V_\xi$ e $\sigma_j(T_j)\in V_\eta$, e $\sigma_j$ è una $(1,\kappa_0)$-simil-geodetica. Dunque $\sigma_j([0,T_j])\cap K\not=\emptyset$ per $j$ abbastanza grande. Per ogni tale $j$ scegliamo un $t_j\in[0,T_j]$ tale che $x_j^*=\sigma_j(t_j)\in K$. Per compattezza di $K$, a meno di passare a una sottosuccessione possiamo supporre che $x_j^* \longrightarrow x^* \in K$ per $j\longrightarrow+\infty$. Poiché per ogni $j\in\mathbb{N}$ la curva $\sigma_j$ è una $(1,1/j)$-simil-geodetica, per il Lemma \ref{quasiovvio} troviamo che
     \begin{equation} \label{trejay}
         k_X\big(F^{\nu(j)+\mu(j)}(q_1),F^{\mu(j)}(q_2)\big) \ge k_X\big(F^{\nu(j)+\mu(j)}(q_1),x_j^*\big)+k_X\big(x_j^*,F^{\mu(j)}(q_2)\big)-3/j.
     \end{equation}
@@ -117,36 +117,38 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
     Poiché sia il Caso 1 che il Caso 2 portano ad una contraddizione, ne consegue che la supposizione che $\Gamma$ contenga almeno due punti dev'essere sbagliata, da cui segue facilmente la tesi.
 \end{proof}
 
+La dimostrazione del Teorema \ref{abate_wd} è immediata.
+
 \begin{cor}
-    Il Teorema \ref{abate_wd}: sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso, e sia $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
+    Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso, e sia $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
         \item le orbite dei punti di $\Omega$ tramite $f$ sono relativamente compatte in $\Omega$; oppure,
-        \item esiste un unico punto di $\partial\Omega$ tale che le iterate di $f$ convergono tutte, uniformemente sui compatti, a quel punto.
+        \item esiste un unico punto di $\partial\Omega$ tale che la successione delle iterate di $f$ converge, uniformemente sui compatti, a quel punto.
     \end{itemize}
 \end{cor}
 
 \begin{proof}
-    Abbiamo già osservato che i domini limitati e strettamente pseudoconvessi di $\mathbb{C}^n$ soddisfano la condizione di visibilità rispetto alle simil-geodetiche. Abbiamo anche visto che sono completi rispetto alla distanza di Kobayashi, dunque per la Proposizione \ref{comp_is_taut} sono taut. Si conclude applicando il Teorema \ref{wd_type}.
+    Abbiamo già notato, nell'Osservazione \ref{spscvxisvis}, che i domini limitati e strettamente pseudoconvessi di $\mathbb{C}^n$ sono visibili per le simil-geodetiche. Abbiamo anche visto che sono completi rispetto alla distanza di Kobayashi, dunque per la Proposizione \ref{comp_is_taut} sono taut. Si conclude applicando il Teorema \ref{wd_type}.
 \end{proof}
 
 Sotto ipotesi di natura topologica si può ottenere qualcosa di più. Il risultato che ci permetterà di fare ciò è il seguente.
 
 \begin{thm} \label{periodico}
-    (\cite[Theorem 0.4]{A2}) Sia $X$ una varietà taut e di tipo topologico finito, cioè i gruppi di omologia singolare $H_j(\Omega;\mathbb{Z})$ hanno rango finito per ogni $j\in\mathbb{N}$. Supponiamo che $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$ dispari, e consideriamo $f\in\text{Hol}(X,X)$. Allora la successione $\{f^h\}_{h\in\mathbb{N}}$ non è compattamente divergente se e solo se $f$ ha un punto periodico in $X$, cioè esistono $x\in X$ e $h_0\in\mathbb{N}$ tali che $f^{h_0}(x)=x$.
+    (\cite[Theorem 0.4]{A2}) Sia $X$ una varietà taut e di tipo topologico finito, cioè i gruppi di omologia singolare $H_j(\Omega;\mathbb{Z})$ hanno rango finito per ogni $j\in\mathbb{N}$. Supponiamo che $H^j(X;\mathbb{Q})=0$ per ogni $j>0$, e consideriamo una funzione $f\in\textnormal{Hol}(X,X)$. Allora la successione $\{f^h\}_{h\in\mathbb{N}}$ non è compattamente divergente se e solo se $f$ ha un punto periodico in $X$, cioè esistono $x\in X$ e $h_0\in\mathbb{N}$ tali che $f^{h_0}(x)=x$.
 \end{thm}
 
 \begin{cor}
-    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Supponiamo che $\Omega$ sia taut e che esista un $\kappa_0>0$ tale che $\Omega$ soddisfi la condizione di visibilità rispetto alle $(1,\kappa_0)$-simil-geodetiche. Supponiamo inoltre che $\Omega$ sia di tipo topologico finito e che $H^j(X;\mathbb{C})=0$ per ogni $1\le j\le n$ dispari.
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Supponiamo che $\Omega$ sia taut e che esista un $\kappa_0>0$ tale che $\Omega$ sia $(1,\kappa_0)$-visibile. Supponiamo inoltre che $\Omega$ sia di tipo topologico finito e che $H^j(X;\mathbb{C})=0$ per ogni $1\le j\le n$.
 
     Sia $F:\Omega\longrightarrow\Omega$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
         \item le orbite dei punti di $\Omega$ tramite $F$ sono relativamente compatte in $\Omega$, ed esiste un punto periodico in $\Omega$ per $F$; oppure,
-        \item esiste un unico punto di $\partial X$ tale che le iterate di $F$ convergono tutte, uniformemente sui compatti, a quel punto.
+        \item esiste un unico punto di $\partial X$ tale che la successione delle iterate di $F$ converge, uniformemente sui compatti, a quel punto.
     \end{itemize}
 \end{cor}
 
 \begin{proof}
-    Dato che $\Omega$ è un dominio taut limitato, per \cite[Theorem F]{W} è pseudoconvesso. È allora ben noto (si veda \cite[Chapter IV, Paragraph 4.2, Theorema 4.2.7]{H}) che $H^j(\Omega;\mathbb{C})=0$ per ogni $j>n$. Poiché $\Omega$ è di tipo topologico finito, per il teorema dei coefficienti universali si ha che
+    Dato che $\Omega$ è un dominio taut limitato, per \cite[Theorem F]{W} è pseudoconvesso. È allora ben noto che $H^j(\Omega;\mathbb{C})=0$ per ogni $j>n$ (si veda \cite[Theorema 4.2.7]{H}). Poiché $\Omega$ è di tipo topologico finito, per il teorema dei coefficienti universali si ha che
     $$\dim_{\mathbb{C}}{H^j(\Omega;\mathbb{C})}=\dim_{\mathbb{Q}}{H^j(\Omega;\mathbb{Q})}=\rk{H_j(\Omega;\mathbb{Z})}$$
     per ogni $j\in\mathbb{N}$. Si verifica allora che $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$ dispari. Si conclude facilmente usando il Teorema \ref{periodico} e il Teorema \ref{wd_type}.
 \end{proof}
