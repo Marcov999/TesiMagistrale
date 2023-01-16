@@ -19,15 +19,15 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     \begin{equation}
         \lambda_{\mathbb{D}}(z;v)=\frac{1}{1-|z|^2}|v|
     \end{equation}
-    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana, completa e con curvatura gaussiana costante uguale a $-4$.
+    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana di curvatura gaussiana costante uguale a $-4$ (si veda \cite[Definition 1.10.1 and Example 1.10.2]{A5}).
 \end{defn}
 
 \begin{defn}
-    La \textit{distanza di Poincaré} (o \textit{iperbolica}) $\omega$ su $\mathbb{D}$ è la forma integrata della metrica di Poincaré. Per fatti noti di geometria iperbolica, è una distanza completa la cui espressione è data da
+    La \textit{distanza di Poincaré} (o \textit{iperbolica}) $\omega$ su $\mathbb{D}$ è la forma integrata della metrica di Poincaré. È una distanza completa la cui espressione è data da
     \begin{equation}
         \omega(z_1,z_2)=\frac{1}{2}\log{\frac{1+\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}{1-\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}}
     \end{equation}
-    per ogni $z_1,z_2 \in \mathbb{D}$.
+    per ogni $z_1,z_2 \in \mathbb{D}$ (si veda \cite[point (iii) of Proposition 1.2.7 and Proposition 1.9.14]{A5}).
 \end{defn}
 
 Oltre ad avere curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse.
@@ -58,6 +58,24 @@ Ci tornerà utile anche la versione semplificata del lemma di Schwarz-Pick.
 \begin{lm}
     (lemma di Schwarz) Sia $f\in\textnormal{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z\in\mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguaglianza nella prima per $z_0\not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z$ per qualche $\theta\in\mathbb{R}$.
 \end{lm}
+
+Enunciamo adesso dei fatti noti sulle geodetiche del disco unitario con la metrica di Poincaré. Visto che ne parleremo più in generale, diamo la definizione per spazi metrici.
+
+\begin{defn}
+    Siano $(X,d)$ uno spazio metrico e $I\subseteq\mathbb{R}$ un intervallo. Una curva $\sigma:I\longrightarrow X$ è detta \textit{geodetica} se
+    $$d\big(\sigma(t_1),\sigma(t_2)\big)=|t_1-t_2|$$
+    per ogni $t_1,t_2\in I$.
+\end{defn}
+
+\begin{oss}\marginpar{Sono in dubbio se definire una lunghezza in generale per spazi metrici: potrebbe confondersi con la def. \ref{lung_X}}
+    Dati una geodetica $\sigma:I\longrightarrow X$ e $a,b\in I$, si ha
+    $$d\big(\sigma(a),\sigma(b)\big)=\inf_{a=t_0,t_1,\dots,t_n=b} \sum_{j=1}^n d\big(\sigma(t_{j-1}),\sigma(t_j)\big);$$
+    cioè, le geodetiche sono le curve che ``minimizzano la lunghezza''.
+\end{oss}
+
+\begin{prop}
+    (\cite[point (iv) of Proposition 1.2.7]{A5}) Le geodetiche di $(\mathbb{D},\omega)$ sono i diametri di $\mathbb{D}$ e le intersezioni con $\mathbb{D}$ dei cerchi euclidei ortogonali a $\partial\mathbb{D}$. In particolare, ogni coppia di punti distinti è connessa da un'unica geodetica.
+\end{prop}
 
 Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poincaré a una qualsiasi varietà complessa mantenendo la proprietà di rendere le funzioni olomorfe delle semicontrazioni. Ci sono vari modi per farlo, noi nello specifico vedremo la (pseudo)metrica e la (pseudo)distanza di Kobayashi, introdotte nel 1967 in \cite{Ko1}.
 

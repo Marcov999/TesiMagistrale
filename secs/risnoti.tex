@@ -29,7 +29,17 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari,
     $$k_{\mathbb{D}^n}(z,w) \ge k_{\mathbb{D}}(z_j,w_j)=\omega(z_j,w_j),$$
     dove la disuguaglianza segue dalla Proposizione \ref{semicontr} e l'uguaglianza dal punto (i).
 
-    Per mostrare che il minimo è effettivamente raggiunto, ricordiamo che dal Corollario \ref{bioloiso} segue che $k_{\mathbb{D}^n}$ e $k_{\mathbb{D}}=\omega$ sono invarianti per biolomorfismi. Componendo quindi con $f_1\times\dots\times f_n$ dove $f_j \in \text{Aut}(\mathbb{D})$ è tale che $f_j(z_j)=0$, abbiamo che sia $k_{\mathbb{D}^n}(z,w)$ che $\displaystyle\max_{j=1,\dots,n}\{\omega(z_j,w_j)\}$ rimangono invariati. Possiamo dunque supporre, senza perdita di generalità, $z=0$. Allora, detto $j_0$ l'indice per cui $\omega(0,w_{j_0})$ è massimo, si ha che anche $|w_{j_0}|$ è massimo. Basta quindi considerare $\varphi=(g_1,\dots,g_n)$, dove $g_j \in\text{Hol}(\mathbb{D},\mathbb{D})$ è l'identità per $j=j_0$ e un'opportuna rotomotetia per $j\not=j_0$, di modo che $g_j(w_{j_0})=w_j$. Abbiamo così $\varphi(z_{j_0})=\varphi(0)=0=z$ e $\varphi(w_{j_0})=w$.
+    Per mostrare che il minimo è effettivamente raggiunto, ricordiamo che dal Corollario \ref{bioloiso} segue che $k_{\mathbb{D}^n}$ e $k_{\mathbb{D}}=\omega$ sono invarianti per biolomorfismi. Consideriamo allora $f_1,\dots, f_n \in \text{Aut}(\mathbb{D})$ tali che $f_j(z_j)=0$ per ogni $j=1,\dots,n$, e poniamo $f=f_1\times\dots\times f_n\in\text{Aut}(\mathbb{D}^n)$. Abbiamo quindi
+    \begin{gather*}
+        k_{\mathbb{D}^n}(z,w)=k_{\mathbb{D}^n}\big(f(z),f(w)\big)=k_{\mathbb{D}^n}\big(O,f(w)\big)\\
+        \text{e}\\
+        \max_{j=1,\dots,n}\{\omega(z_j,w_j)\}=\max_{j=1,\dots,n}\big\{\omega\big(f_j(z_j),f_j(w_j)\big)\big\}=\max_{j=1,\dots,n}\big\{\omega\big(0,f_j(w_j)\big)\big\};
+    \end{gather*}
+    possiamo dunque supporre, senza perdita di generalità, $z=O$.
+    
+    Allora, detto $j_0$ l'indice per cui $\omega(0,w_{j_0})$ è massimo, si ha che anche $|w_{j_0}|$ è massimo. Consideriamo, per ogni $j=1,\dots,n$, la funzione $g_j \in\text{Hol}(\mathbb{D},\mathbb{D})$ data da $g_j(\zeta)=\zeta\cdot w_j/w_{j_0}$, di modo che $g_j(w_{j_0})=w_j$. Poniamo $\varphi=(g_1,\dots,g_n)$, per cui $\varphi\in\text{Hol}(\mathbb{D},\mathbb{D}^n)$; inoltre, $\varphi(z_{j_0})=\varphi(0)=O=z$ e $\varphi(w_{j_0})=w$. Si ha dunque, per definizione, che
+    $$k_{\mathbb{D}^n}(z,w) \le \omega(0,w_{j_0})=\max_{j=1,\dots,n}\omega(0,w_j)=\max_{j=1,\dots,n}\omega(z_j,w_j),$$
+    come voluto.
 \end{proof}
 
 \begin{cor}
@@ -45,7 +55,7 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari,
 
 Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi.
 
-\begin{defn}
+\begin{defn} \label{lung_X}
     Sia $X$ una sottovarietà complessa e connessa di $\mathbb{C}^d$, e sia $\gamma:[a,b] \longrightarrow X$ tale che la funzione $K_X\big(\gamma(\cdot);\gamma'(\cdot)\big)$ sia integrabile su $[a,b]$. La \textit{lunghezza di $\gamma$ in $X$ rispetto alla pseudometrica di Kobayashi} è
     $$l_X(\gamma):=\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t.$$
 \end{defn}
@@ -100,8 +110,8 @@ Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la di
 
 Vogliamo dare ora una caratterizzazione equivalente all'essere taut per una varietà.
 
-\begin{oss} \label{c0yx}
-    Dalla definizione della compattificazione di Alexandroff, una successione in $C^0(Y,X)$ converge in $C^0(Y,X^*)$ alla funzione costante $\infty$ se e solo se è compattamente divergente. Inoltre, se $X$ e $Y$ sono varietà (ma in realtà bastano ipotesi meno stringenti), un sottoinsieme di $C^0(Y,X^*)$ è compatto se e solo se è compatto per successioni.
+\begin{oss} \label{c0yx}\marginpar{Servirebbe una reference dove la dimostrazione è fatta più nel dettaglio; per ora lascio così, poi ci torno cercando qualcosa di più specifico}
+    Dalla definizione della compattificazione di Alexandroff, una successione in $C^0(Y,X)$ converge in $C^0(Y,X^*)$ alla funzione costante $\infty$ se e solo se è compattamente divergente. Inoltre, se $X$ e $Y$ sono varietà (ma in realtà bastano ipotesi meno stringenti), un sottoinsieme di $C^0(Y,X^*)$ è compatto se e solo se è compatto per successioni (si veda \cite[Section 1]{A3}).
 \end{oss}
 
 \begin{prop}
@@ -129,6 +139,22 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali c
     \end{nlist}
 \end{thm}
 
+\begin{lm} \label{errerhocpt}
+    Siano $X$ una varietà Kobayashi-iperbolica, $z_0\in X$ e $r>0$. Supponiamo che esista un $\rho>0$ tale che la palla chiusa $\overline{B_X(z,\rho)}$ è compatta per ogni $z\in B_X(z_0,r)$; allora $\overline{B_X(z_0,r)}$ è compatta.
+\end{lm}
+
+\begin{proof}
+    Poiché $X$ è una varietà, è localmente compatta; inoltre, essendo $X$ Kobayashi-iperbolica, $k_X$ è una distanza. Dunque esiste $0<s<r$ tale che $\overline{B_X(z_0,s)}$ è compatta. Ci basta allora mostrare che, se $\overline{B_X(z_0,s)}$ è compatta, anche $\overline{B_X(z_0,s+\rho/2)}$ lo è. Sia $\{z_\nu\}_{\nu\in\mathbb{N}}$ una successione in $\overline{B_X(z_0,s+\rho/2)}$; per il Lemma \ref{ballball}, esiste una successione $\{w_\nu\}_{\nu\in\mathbb{N}}$ in $\overline{B_X(z_0,s)}$ tale che $k_X(z_\nu,w_\nu)<3\rho/4$ per ogni $\nu\in\mathbb{N}$. A meno di sottosuccessioni, possiamo supporre $w_\nu\longrightarrow \tilde{w}\in\overline{B_X(z_0,s)}$. Allora $z_\nu\in\overline{B_X(\tilde{w},\rho)}$ per $\nu$ sufficientemente grande; dunque, per ipotesi $\{z_\nu\}_{\nu\in\mathbb{N}}$ ammette una sottosuccessione convergente.
+\end{proof}
+
+\begin{lm} \label{comp_is_comp}
+    Sia $X$ una varietà Kobayashi-iperbolica. Allora $X$ è $k_X$-completa se e solo se le palle chiuse sono compatte.
+\end{lm}
+
+\begin{proof}
+    Un'implicazione è ovvia. Assumiano dunque che $X$ sia $k_X$-completa; per il Lemma \ref{errerhocpt}, ci basta mostrare che esiste $\rho>0$ tale che $\overline{B_X(z_0,\rho)}$ è compatta per ogni $z_0\in X$. Supponiamo per assurdo che non sia così; allora esiste $z_1\in X$ tale che $\overline{B_X(z_1,1/2)}$ non è compatta. Usando il Lemma \ref{errerhocpt}, possiamo costruire induttivamente una successione $\{z_\nu\}_{\nu\in\mathbb{N}}$ tale che $z_\nu\in B_X(z_{\nu-1},1/2^{\nu-1})$ e $\overline{B_X(z_\nu,1/2^\nu)}$ non è compatta. Tale successione è di Cauchy, per cui converge a $w_0\in X$ perché $X$ è $k_X$-completa. Poiché $X$ è una varietà, è localmente compatta; quindi esiste $\epsilon>0$ tale che $\overline{B_X(w_0,\epsilon)}$ è compatta. Ma per $\nu$ sufficientemente grande $\overline{B_X(z_\nu,1/2^\nu)}\subseteq\overline{B_X(w_0,\epsilon)}$; dunque sarebbe compatta, contraddizione.
+\end{proof}
+
 \begin{prop} \label{comp_is_taut}
     Ogni varietà $X$ Kobayashi-iperbolica e $k_X$-completa è taut.
 \end{prop}
@@ -139,7 +165,7 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali c
     A meno di passare a una sottosuccessione, possiamo trovare due compatti $H\subseteq\mathbb{D}$ e $K\subseteq X$ tali che $\varphi_\nu(H)\cap K\not=\emptyset$ per ogni $\nu\in\mathbb{N}$. Per ogni $\nu\in\mathbb{{N}}$ scegliamo $\zeta_\nu\in H$ tale che $\varphi_\nu(\zeta_\nu)\in K$; fissato $z_0\in K$ poniamo $r=\max\{k_X(z,z_0)\mid z\in K\}$. Allora per ogni $\zeta\in\mathbb{D}$ e $\nu\in\mathbb{N}$ abbiamo che
     $$k_X\big(\varphi_\nu(\zeta),z_0\big) \le k_X\big(\varphi_\nu(\zeta),\varphi_\nu(\zeta_\nu)\big)+k_X\big(\varphi_\nu(\zeta_\nu),z_0\big) \le k_{\mathbb{D}} (\zeta,\zeta_\nu)+r.$$
 
-    Posto $R=\max\{k_{\mathbb{D}}(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R+r$, che è compatta perché $X$ è Kobayashi-iperbolica e $k_X$-completa (si veda \cite[Proposition 2.3.17]{A1}; si usa il Lemma \ref{ballball} e poco altro); di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si vede che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
+    Posto $R_\zeta=\max\{k_{\mathbb{D}}(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R_\zeta+r$, che è compatta per il Lemma \ref{comp_is_comp}; di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si vede che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
 \end{proof}
 
 Usando la Proposizione \ref{comp_is_taut}, si può dimostrare che tutti i domini limitati e strettamente pseudoconvessi sono taut. Tuttavia, più avanti avremo bisogno di un risultato un po' più forte.
@@ -171,7 +197,7 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 \end{proof}
 
 \begin{thm} \label{retraiii}
-    (\cite[Theorem 2.1.5]{A4}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite $h\in\Gamma(f)$ è della forma
+    (\cite[Theorem 2.1.29]{A1}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite $h\in\Gamma(f)$ è della forma
     $$h=\gamma\circ\rho,$$
     con $\gamma\in\textnormal{Aut}(M)$.
 
