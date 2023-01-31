@@ -103,34 +103,38 @@ Adesso ci servirà un Lemma quasi ovvio.
     È un'immediata conseguenza della definizione di $(1,\kappa)$-simil-geodetica.
 \end{proof}
 
+Il seguente Lemma,\marginpar{Controllare questa affermazione dopo aver scritto l'altro lemma} invece, ci servirà per la prossima dimostrazione. È un risultato sulla convergenza puntuale, mentre più avanti ne vedremo uno analogo sulla convergenza uniforme sui compatti.
+
+\begin{lm} \label{lemmasottosotto1}
+    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$, e sia $F\in\textnormal{Hol}(X,X)$. Dati una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $z\in X$, se l'insieme dei punti limite della successione $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$ consiste in un solo punto $\xi$ allora $\displaystyle\lim_{j\longrightarrow+\infty}F^{\mu(j)}(z)\longrightarrow\xi$.
+\end{lm}
+
+\begin{proof}
+    Supponiamo per assurdo che non valga la tesi. Allora esistono un $\epsilon>0$ e una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}$ tali che $\|F^{\mu(j_n)}(z)-\xi\| \ge \epsilon$ per ogni $n\in\mathbb{N}$. Per limitatezza di $X$, a meno di prendere un'ulteriore sottosuccessione possiamo suppore che $\displaystyle\lim_{n\longrightarrow+\infty}F^{\mu(j_n)}(z)\longrightarrow\xi'$. Per ipotesi dev'essere $\xi'=\xi$, in contraddizione con il fatto che $\|F^{\mu(j_n)}(z)-\xi\| \ge \epsilon$ per ogni $n\in\mathbb{N}$.
+\end{proof}
+
 Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il teorema di tipo ``Wolff-Denjoy''. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le sottosuccessioni di iterate di una funzione olomorfa che ``tendono a infinito'' convergono tutte, puntualmente, a un unico punto del bordo.
 
 \begin{prop} \label{inf_impl_ugu}
-    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Data una funzione $F\in\textnormal{Hol}(X,X)$, esiste $\xi\in\partial X$ tale che per ogni funzione $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ strettamente crescente per cui esiste $x_0 \in X$ tale che
+    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Data una funzione $F\in\textnormal{Hol}(X,X)$, esiste $\xi\in\partial X$ tale che per ogni funzione $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ strettamente crescente per cui esiste $x_0 \in X$ tale che
     \begin{equation}
-        \lim_{j\longrightarrow+\infty} k_X\big(F^{\nu(j)}(x_0),x_0\big)=+\infty
+        \lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(x_0),x_0\big)=+\infty
     \end{equation}
     si ha
     \begin{equation}
-        \lim_{j\longrightarrow+\infty} F^{\nu(j)}(z)=\xi
+        \lim_{j\longrightarrow+\infty} F^{\mu(j)}(z)=\xi
     \end{equation}
     per ogni $z \in X$.
 \end{prop}
 
 \begin{proof}
-    Usando la disuguaglianza triangolare e il fatto che le funzioni olomorfe sono semicontrazioni rispetto a $k_X$, troviamo che
-    \begin{gather*}
-        k_X\big(F^{\nu(j)}(z),z\big) \ge k_X\big(F^{\nu(j)}(x_0),x_0\big)-2k_X(x_0,z)\\
-        \text{e}\\
-        k_X\big(F^{\mu(j)}(z),z\big) \ge k_X\big(F^{\mu(j)}(x_0),x_0\big)-2k_X(x_0,z);
-    \end{gather*}
-    segue che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(z),z\big)=\lim_{j\longrightarrow+\infty}k_X\big(F^{\mu(j)}(z),z\big)=+\infty$ per ogni $z \in X$. Usando l'ipotesi e il fatto che $X$ è limitata in $\mathbb{C}^d$, possiamo trovare una funzione strettamente crescente $\tau:\mathbb{N} \longrightarrow \mathbb{N}$ tale che
+    Se $\displaystyle\limsup_{n\longrightarrow+\infty}k_X\big(F^n(x_0),x_0\big)<+\infty$ l'affermazione è vera a vuoto per ogni $\xi\in\partial X$. Altrimenti, possiamo prendere una funzione strettamente crescente $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che
     \begin{itemize}
-        \item si ha $k_X\big(F^{(\nu\circ\tau)(j)}(x_0),x_0\big) \ge k_X\big(F^k(x_0),x_0\big)$ per ogni $j \in \mathbb{N}$ e per ogni $k \le (\nu\circ\tau)(j)$;
-        \item la successione $\{F^{(\nu\circ\tau)(j)}(x_0)\}_{j\in\mathbb{N}}$ converge a un certo $\xi\in\partial X$.
+        \item si ha $k_X\big(F^{\nu(j)}(x_0),x_0\big) \ge k_X\big(F^k(x_0),x_0\big)$ per ogni $j \in \mathbb{N}$ e per ogni $k \le (\nu\circ\tau)(j)$;
+        \item la successione $\{F^{\nu(j)}(x_0)\}_{j\in\mathbb{N}}$ converge a un certo $\xi\in\partial X$.
     \end{itemize}
     
-    Infatti,\marginpar{È TUTTO ROTTO!!!} per limitatezza di $X$ esiste una successione $\{l_h\}_{h\in\mathbb{N}}$ tale che la successione $\{F^{\nu(l_h)}(x_0)\}_{h\in\mathbb{N}}$ converga a un qualche punto di $\overline{X}$, e in realtà di $\partial X$ perché la distanza da $x_0$ tende a infinito; basta dunque definire $\tau(j)$ come il minimo $l_h$ tale che $l_h>\tau(j-1)$ e $k_X\big(F^{\nu(l_h)}(x_0),x_0\big) \ge \max_{k\le\nu(l_h)}\{k_X\big(F^k(x_0),x_0\big)\}$, dove la seconda condizione può essere soddisfatta perché $k_X\big(F^{\nu(j)}(x_0),x_0\big)\longrightarrow+\infty$.
+    Infatti, definendo induttivamente $l_0=0$ e $l_n$ come il minimo numero naturale $h>l_{n-1}$ tale che $k_X\big(F^h(x_0),x_0\big) \ge \max\left\{n,k_X\big(F^{l_{n-1}}(x_0),x_0\big)\right\}$, abbiamo $k_X\big(F^{l_n}(x_0),x_0\big) \ge k_X\big(F^k(x_0),x_0\big)$ per ogni $n$ e per ogni $k \le l_n$; inoltre, abbiamo $\displaystyle\lim_{n\longrightarrow+\infty}k_X\big(F^{l_n}(x_0),x_0\big)=+\infty$. Per limitatezza di $X$, esiste un'ulteriore sottosuccessione $l_{n_j}$ tale che $F^{l_{n_j}}(x_0)$ converge a un certo $\xi\in\overline{X}$, e in realtà $\xi\in\partial X$ visto che la distanza di Kobayashi da $x_0$ tende a $+\infty$; basta allora porre $\nu(j)=l_{n_j}$.\\
 
     Vogliamo ora mostrare la seguente asserzione.
 
@@ -164,7 +168,13 @@ Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il te
     $$k_X\big(F^{m'_j}(z'_0),z_0\big) \le k_X(z_0,z'_0)+3\kappa_0+2R,$$
     che è in contraddizione con la condizione (3).\\
 
-    Adesso che l'asserzione è stata dimostrata, possiamo concludere la dimostrazione. Mostriamo innanzitutto che $\displaystyle\lim_{j\longrightarrow+\infty}F^{\nu(j)}(z)=\xi$ per ogni $z\in X$. Fissiamo uno $z\in X$, e prendiamo $\xi'$ punto limite di $\{F^{\nu(j)}(z)\}_{j\in\mathbb{N}}$. Allora esiste una $\tau':\mathbb{N}\longrightarrow\mathbb{N}$, strettamente crescente, tale che $\displaystyle \lim_{j\longrightarrow+\infty} F^{(\nu\circ\tau')(j)}(z)=\xi'$. Scegliamo una $\tilde{\tau}:\mathbb{N}\longrightarrow\mathbb{N}$, strettamente crescente, tale che $\nu\circ\tau\circ\tilde{\tau} \ge \nu\circ\tau'$ e applichiamo l'asserzione dimostrata sopra a $m_j=(\nu\circ\tau\circ\tilde{\tau})(j), m'_j=(\nu\circ\tau')(j)$ e $z_0=x_0,z'_0=z$. Troviamo così $\xi'=\xi$, da cui segue facilmente che tutta la successione deve tendere a $\xi$. Ragionando in modo analogo, troviamo che vale lo stesso anche per $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$, come voluto.
+    Adesso che l'asserzione è stata dimostrata, possiamo concludere la dimostrazione. Usando la disuguaglianza triangolare e il fatto che le funzioni olomorfe sono semicontrazioni rispetto a $k_X$, troviamo che
+    \begin{gather*}
+        k_X\big(F^{\mu(j)}(z),z'\big) \ge k_X\big(F^{\mu(j)}(x_0),x_0\big)-k_X(x_0,z)-k_X(z',x_0);
+    \end{gather*}
+    segue che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\mu(j)}(z),z'\big)=+\infty$ per ogni $z,z' \in X$.
+
+     Fissiamo ora uno $z\in X$, e prendiamo $\xi'$ punto limite di $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$. Allora deve esistere una funzione strettamente crescente $\tau:\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\displaystyle \lim_{j\longrightarrow+\infty} F^{(\mu\circ\tau)(j)}(z)=\xi'$. Scegliamo inoltre una funzione strettamente crescente $\tau':\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\nu\circ\tau' \ge \mu\circ\tau$ e applichiamo l'asserzione dimostrata sopra a $m_j=(\nu\circ\tau')(j), m'_j=(\mu\circ\tau)(j)$ e $z_0=x_0,z'_0=z$. Troviamo così $\xi'=\xi$ e si conclude grazie al Lemma \ref{lemmasottosotto1}.
 \end{proof}
 
 Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le successioni di funzioni olomorfe che convergono uniformemente sui compatti di $X$ devono necessariamente convergere a una costante.
