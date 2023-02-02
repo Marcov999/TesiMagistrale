@@ -103,7 +103,7 @@ Adesso ci servirà un Lemma quasi ovvio.
     È un'immediata conseguenza della definizione di $(1,\kappa)$-simil-geodetica.
 \end{proof}
 
-Il seguente Lemma,\marginpar{Controllare questa affermazione dopo aver scritto l'altro lemma} invece, ci servirà per la prossima dimostrazione. È un risultato sulla convergenza puntuale, mentre più avanti ne vedremo uno analogo sulla convergenza uniforme sui compatti.
+Il seguente Lemma, invece, ci servirà per la prossima dimostrazione. È un risultato sulla convergenza puntuale, mentre più avanti ne vedremo uno sulla convergenza uniforme sui compatti per varietà $(1,\kappa_0)$-visibili per qualche $\kappa_0>0$.
 
 \begin{lm} \label{lemmasottosotto1}
     Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$, e sia $F\in\textnormal{Hol}(X,X)$. Dati una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $z\in X$, se l'insieme dei punti limite della successione $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$ consiste in un solo punto $\xi$ allora $\displaystyle\lim_{j\longrightarrow+\infty}F^{\mu(j)}(z)\longrightarrow\xi$.
@@ -208,4 +208,14 @@ Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma c
     dove abbiamo usato che le funzioni olomorfe non aumentano la metrica di Kobayashi e, visto che $\gamma$ è una $(1,\kappa_0/3)$-simil-geodetica, la \eqref{simil-geo2}. Si ha anche che la curva $\sigma_\nu$ è assolutamente continua per ogni $\nu$, poiché composizione di $\gamma$, che è assolutamente continua per definizione di $(1,\kappa_0/3)$-simil-geodetica, e $F_\nu$, che è olomorfa e dunque lipschitziana sul compatto $\gamma([a,b])$. Grazie alla \eqref{snu1} e alla \eqref{snu2}, possiamo concludere che $\sigma_\nu$ è una $(1,\kappa_0)$-simil-geodetica per ogni $\nu$.
     
     Adesso, poiché $\{F_\nu\}_{\nu\in\mathbb{N}}$ converge uniformemente sui compatti di $X$ a una funzione olomorfa $\psi$ a valori in $\partial X$, ne consegue che per ogni compatto $K\subseteq X$ esiste un $\nu(K)\in\mathbb{N}$ tale che, per ogni $\nu\ge\nu(K)$, si ha $\sigma_\nu([a,b])\cap K=\emptyset$. Ma così troviamo una contraddizione, perché $X$ è $(1,\kappa_0)$-visibile.
+\end{proof}
+
+Concludiamo la questa sottosezione con l'analogo del Lemma \ref{lemmasottosotto1} per la convergenza uniforme sui compatti.
+
+\begin{lm} \label{lemmasottosotto2}
+    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Consideriamo una $F\in\textnormal{Hol}(X,X)$ tale che la successione delle iterate di $F$ è compattamente divergente, e supponiamo che esistano un compatto $K$ di $X$, una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $\xi\in\partial X$ tali che la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge alla costante $\xi$ uniformemente su $K$; allora converge alla costante $\xi$ uniformemente su tutti i compatti di $X$.
+\end{lm}
+
+\begin{proof}
+    Supponiamo per assurdo che non valga la tesi; allora esistono un compatto $H\subseteq X$, un $\epsilon>0$, una successione di numeri naturali $\{j_n\}_{n\in\mathbb{N}}$ e una successione $\{z_n\}_{n\in\mathbb{N}}$ con $z_n\in H$ per ogni $n\in\mathbb{N}$ tali che $\|F^{\mu(j_n)}(z_n)-\xi\|\ge\epsilon$ per ogni $n\in\mathbb{N}$. Applicando il Corollario \ref{montel}, troviamo una sottosuccessione $\{j_{n_m}\}_{m\in\mathbb{N}}$ tale che la successione $\{F^{\mu(j_{n_m})}\}_{m\in\mathbb{N}}$ converge uniformemente sui compatti di $X$ a una funzione olomorfa $\tilde{F}:X \rightarrow \mathbb{C}^d$ con $\tilde{F}(X)\subseteq\overline{X}$. Poiché la successione delle iterate di $F$ è compattamente divergente, dev'essere $\tilde{F}(X)\subseteq\partial X$; allora per il Teorema \ref{lim_is_const} $\tilde{F}$ è costante. Siccome su $K$ la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge alla costante $\xi$, la funzione $\tilde{F}$ dev'essere proprio tale costante; ma per costruzione la convergenza non può essere uniforme sul compatto $H$, assurdo.
 \end{proof}

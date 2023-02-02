@@ -8,6 +8,18 @@ Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre
     (Montel, \cite[Chapter 1, Proposition 6]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\mathcal{F}\subseteq\mathcal{O}(\Omega)$, una famiglia uniformemente limitata sui compatti, cioè tale che per ogni compatto $K\subseteq\Omega$ esiste una costante $M_K>0$ tale che $|f(z)|\le M_K$ per ogni $f\in\mathcal{F}$ e $z\in K$; allora è relativamente compatta in $\mathcal{O}(\Omega)$.
 \end{thm}
 
+Ci tornerà utile una conseguenza del teorema di Montel per sottovarietà di $\mathbb{C}^d$.
+
+\begin{cor} \label{montel}
+    Sia $X$ una sottovarietà complessa e limitata di $\mathbb{C}^d$, e consideriamo una successione $\{F_j\}_{j\in\mathbb{N}}\subseteq\textnormal{Hol}(X,X)$. Allora esiste una sottosuccessione $\{F_{j_n}\}_{n\in\mathbb{N}}$ che converge uniformemente sui compatti di $X$ a una funzione olomorfa $F:X\longrightarrow\mathbb{C}^d$ con $F(X)\subseteq\overline{X}$.
+\end{cor}
+
+\begin{proof}
+    Poiché $X$ è limitata, la successione $\{F_j\}_{j\in\mathbb{N}}$ è uniformemente limitata sui compatti di $X$; possiamo dunque fissare un ricoprimento numerabile di $X$ fatto di aperti relativamente compatti contenuti in carte ed estrarre, con un procedimento diagonale nel quale si applica il teorema di Montel ad ogni tale carta, una sottosuccessione che converge uniformemente sui compatti di ogni carta, in particolare sugli aperti del ricoprimento. Preso allora un qualsiasi compatto $K$ di $X$, basta estrarre un suo sottoricoprimento finito degli aperti presi sopra e notare che per un numero finito di aperti la convergenza rimane uniforme sull'unione.
+
+    Chiaramente la convergenza uniforme sui compatti implica la convergenza puntuale e $F_j(X)\subseteq X$ per ogni $j\in\mathbb{N}$, per cui abbiamo automaticamente che $F(X)\subseteq\overline{X}$.
+\end{proof}
+
 \begin{thm} \label{hartogs_fen}
     (Serre, Ehrenpreis, \cite[Theorem 1.2.6]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato, con $n>1$. Sia $K$ un sottoinsieme compatto di $\Omega$ tale che $\Omega\setminus K$ è connesso. Se $f\in\mathcal{O}(\Omega\setminus K)$, allora esiste $F\in\mathcal{O}(\Omega)$ tale che $F\restrict{\Omega\setminus K}=f$.
 \end{thm}

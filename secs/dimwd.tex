@@ -13,9 +13,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
 \begin{proof}
     Poiché $X$ è taut, per il Teorema \ref{dicotomia} o l'orbita di $z$ tramite $F$ è relativamente compatta per ogni $z \in X$, oppure la successione delle iterate $\{F^\nu\}_{\nu\in\mathbb{N}}$ è compattamente divergente. Supponiamo che le orbite di $F$ non siano relativamente compatte in $X$; allora la successione delle iterate di $F$ è compattamente divergente.
 
-    Consideriamo una sottosuccessione qualsiasi di $\{F^\nu\}_{\nu\in\mathbb{N}}$. Usando il teorema di Montel, possiamo trovare una sottosottosuccessione che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \mathbb{C}^d$ con $\tilde{F}(X)\subseteq\overline{X}$. Infatti, poiché $X$ è limitata allora la sottosuccessione è uniformemente limitata sui compatti di $X$; possiamo dunque fissare un ricoprimento numerabile di $X$ fatto di aperti relativamente compatti contenuti in carte ed estrarre, con un procedimento diagonale nel quale si applica il teorema di Montel ad ogni tale carta, una sottosottosuccessione che converga uniformemente sui compatti di ogni carta, in particolare sugli aperti del ricoprimento. Prendendo un'esaustione in compatti di $X$, si può concludere facilmente che la convergenza è uniforme su tutti i compatti di $X$.
-
-    Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}(X)\subseteq\partial X$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
+    Consideriamo una sottosuccessione di $\{F^\nu\}_{\nu\in\mathbb{N}}$ che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \mathbb{C}^d$ con $\tilde{F}(X)\subseteq\overline{X}$. Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}(X)\subseteq\partial X$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
     $$\Gamma:=\overline{\{F^\nu\}}_{\nu\in\mathbb{N}}\setminus\{F^\nu\}_{\nu\in\mathbb{N}}$$
     come un insieme di punti di $\partial X$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti. \\
 
@@ -28,7 +26,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
         \item $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial X$.
     \end{enumerate}
 
-    Adesso, \marginpar{\cite[Proposition 2.3.17]{A1} va cambiato con la reference al Lemma opportuno, quando lo aggiungerai}poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse $k_X$-completa, allora per \cite[Proposition 2.3.17]{A1} avremmo subito un assurdo. Altrimenti, si ha
+    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse $k_X$-completa, allora per il Lemma \ref{comp_is_comp} avremmo subito un assurdo. Altrimenti, si ha
     \begin{equation} \label{daoainfinito}
         \begin{aligned}
             \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty}\, &k_X\big(F^{\nu_h}(o),F^{\mu_j}(o)\big) \\
@@ -36,7 +34,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
         \end{aligned}
     \end{equation}
 
-    Consideriamo ora un $l\in\mathbb{N}$. Se applichiamo il Teorema \ref{lim_is_const} ad una sottosuccessione arbitraria di $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$ che converge uniformemente sui compatti di $X$, dal momento che sul compatto $\{F^l(o)\}$ converge a $\eta$ otteniamo (usando anche il teorema di Montel) che tutta la sottosuccessione converge, uniformemente sui compatti di $X$, a $\eta$.
+    Consideriamo ora un $l\in\mathbb{N}$. Poiché la successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$ converge uniformemente sul compatto $\{F^l(o)\}$ a $\eta$, per il Lemma \ref{lemmasottosotto2} converge, uniformemente su tutti i compatti di $X$, a $\eta$.
 
     Poniamo
     $$M_l:=\limsup_{j\longrightarrow+\infty}k_X\big(F^{\mu_j-l}(o),o\big);$$
