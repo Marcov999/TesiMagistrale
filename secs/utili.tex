@@ -32,6 +32,19 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     per ogni $z \in U_{z_j}'$ e $Z\in T_zX$, dove $C_i>0$ è una costante che dipende dal compatto $\overline{U}_{z_j}'$. Basta allora porre $C(K)=\displaystyle\max_{j=1,\dots,l}\{C_j\}$.
 \end{proof}
 
+\begin{cor} \label{dist_da_sotto}
+    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Allora esiste $c>0$ tale che $c\|z-w\| \le k_X(z,w)$ per ogni $z,w \in X$.
+\end{cor}
+
+\begin{proof}
+    Per il Teorema \ref{lung_int} ci basta mostrare che $c\|z-w\| \le l_X(\gamma)$ per ogni curva $C^1$ a tratti $\gamma:[a,b] \longrightarrow X$ tale che $\gamma(a)=z$ e $\gamma(b)=w$. Prendendo $c>0$ dato dal punto (1) della Proposizione \ref{metrica_bilip}, abbiamo che
+    \begin{align*}
+        l_X(\gamma)&=\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t \ge \int_a^b c\|\gamma'(t)\|\diff t\\
+        &\ge c\left\|\int_a^b \gamma'(t)\diff t\right\|=c\|z-w\|,
+    \end{align*}
+    come voluto.
+\end{proof}
+
 \begin{prop} \label{simillip}
     Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Per ogni $\lambda \ge 1$ esiste una costante $C=C(\lambda)>0$ tale che ogni $(\lambda,\kappa)$-simil-geodetica è $C$-lipschitziana rispetto alla distanza euclidea.
 \end{prop}
