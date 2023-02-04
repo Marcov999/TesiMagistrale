@@ -187,7 +187,7 @@ Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il te
     \end{gather*}
     segue che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\mu(j)}(z),z'\big)=+\infty$ per ogni $z,z' \in X$.
 
-     Fissiamo ora uno $z\in X$, e prendiamo $\xi'$ punto limite di $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$. Allora deve esistere una funzione strettamente crescente $\tau:\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\displaystyle \lim_{j\longrightarrow+\infty} F^{(\mu\circ\tau)(j)}(z)=\xi'$. Scegliamo inoltre una funzione strettamente crescente $\tau':\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\nu\circ\tau' \ge \mu\circ\tau$ e applichiamo l'asserzione dimostrata sopra a $m_j=(\nu\circ\tau')(j), m'_j=(\mu\circ\tau)(j)$ e $z_0=x_0,z'_0=z$. Troviamo così $\xi'=\xi$ e si conclude grazie al Lemma \ref{lemmasottosotto1}.
+     Fissiamo ora uno $z\in X$, e prendiamo $\xi'$ punto limite di $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$. Allora deve esistere una funzione strettamente crescente $\tau:\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\displaystyle \lim_{j\longrightarrow+\infty} F^{(\mu\circ\tau)(j)}(z)=\xi'$; inoltre, poiché $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\mu(j)}(z),z\big)=+\infty$, dev'essere $\xi'\in\partial X$. Scegliamo una funzione strettamente crescente $\tau':\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\nu\circ\tau' \ge \mu\circ\tau$ e applichiamo l'asserzione dimostrata sopra alle successioni $m_j=(\nu\circ\tau')(j), m'_j=(\mu\circ\tau)(j)$ e ai punti $z_0=x_0,z'_0=z$, per i quali si verificano facilmente le condizioni (1), (2), (3) e (4). Troviamo così $\xi'=\xi$ e si conclude grazie al Lemma \ref{lemmasottosotto1}.
 \end{proof}
 
 Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le successioni di funzioni olomorfe che convergono uniformemente sui compatti di $X$ devono necessariamente convergere a una costante.
@@ -214,7 +214,7 @@ Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma c
     Infine, per ogni $t$ si ha
     \begin{equation} \label{snu2}
         \begin{aligned}
-            K_X\big(\sigma_\nu(t);\sigma_\nu'(t)\big)&=K_X\Big(F_\nu\big(\gamma(s)\big);DF_\nu\big(\gamma(t)\big)\gamma'(t)\Big) \\
+            K_X\big(\sigma_\nu(t);\sigma_\nu'(t)\big)&=K_X\Big(F_\nu\big(\gamma(s)\big);\diff(F_\nu)_{\gamma(t)}\big(\gamma'(t)\big)\Big) \\
             &\le K_X\big(\gamma(t);\gamma'(t)\big) \le 1,
         \end{aligned}
     \end{equation}

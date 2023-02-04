@@ -325,13 +325,13 @@ Per finire, vediamo un teorema di tipo ``Wolff-Denjoy'' per domini strettamente 
 Per dimostrarlo usando la Gromov-iperbolicità, è prima necessario mostrare che $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Citiamo l'articolo di Balogh e Bonk in cui si trova la dimostrazione.
 
 \begin{thm} \label{balogh_bonk}
-    (Balogh, Bonk, \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso. Allora $(\Omega,k_{\Omega})$ è proprio, cioè tale che ogni sottoinsieme chiuso e limitato è compatto, e Gromov-iperbolico. Inoltre, il bordo iperbolico $\partial_G\Omega$ può essere identificato con il bordo euclideo $\partial\Omega$.
+    (Balogh, Bonk, \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso; allora $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Inoltre, il bordo iperbolico $\partial_G\Omega$ può essere identificato con il bordo euclideo $\partial\Omega$, cioè sono identificati come spazi topologici.
 \end{thm}
 
 Serve anche un Teorema dovuto a Karlsson.
 
 \begin{thm} \label{karlsson}
-    (Karlsson, \cite[Corollary 3.7]{Ka}) Sia $(X,d)$ uno spazio metrico proprio tale che
+    (Karlsson, \cite[Corollary 3.7]{Ka}) Sia $(X,d)$ uno spazio metrico proprio, cioè in cui ogni ogni sottoinsieme chiuso e limitato è compatto, tale che
     \begin{nlist}
         \item è un aperto denso di uno spazio topologico $\overline{X}$ compatto e di Hausdorff la cui topologia di sottospazio coincide con la topologia di spazio metrico. Inoltre, dati $x \in X$ e $x_n$ una successione in $X$ che converge a un punto di $\overline{X}\setminus X$, si ha $\displaystyle\lim_{n\longrightarrow+\infty}d(x,x_n)=+\infty$;
         \item date $x_n$ e $y_n$ due successioni convergenti a due punti distinti di $\overline{X}\setminus X$ e $z \in X$, si ha $\displaystyle\lim_{n\longrightarrow+\infty} d(x_n,y_n)-\max\{d(x_n,z),d(y_n,z)\}=+\infty$.
@@ -343,6 +343,6 @@ Serve anche un Teorema dovuto a Karlsson.
     \end{itemize}
 \end{thm}
 
-L'ipotesi (ii) del Teoerema \ref{karlsson} è sempre verificata dagli spazi Gromov-iperbolici, mentre segue dal Teorema \ref{balogh_bonk} che la (i) è vera per i domini limitati e strettamente pseudoconvessi. Usando anche il teorema di Montel, si ottiene così il Teorema \ref{abate_wd}.
+L'ipotesi (ii) del Teoerema \ref{karlsson} è sempre verificata dagli spazi Gromov-iperbolici, mentre segue dal Teorema \ref{balogh_bonk} che la (i) è vera per i domini limitati e strettamente pseudoconvessi; per \cite[Paragraph 3.3]{G}, sono anche propri. Usando anche il teorema di Montel, si ottiene così il Teorema \ref{abate_wd}.
 
 Tuttavia, come già anticipato nell'introduzione, quello che noi andremo a vedere è un risultato che vale anche per domini con bordo non necessariamente regolare. L'ipotesi di tipo geometrico che andremo ad utilizzare è il concetto di visibilità, di cui discuteremo anche il rapporto con la Gromov-iperbolicità.

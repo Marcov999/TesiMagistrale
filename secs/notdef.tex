@@ -9,7 +9,8 @@ Introduciamo le notazioni e definizioni che useremo:
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff f_x$ il differenziale di $f$ in $x \in X$;
     \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$; il disco di centro $0$ e raggio $r>0$ è $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$; il disco di centro $a\in\mathbb{C}$ e raggio $r>0$ è $D(a,r)=\{z\in\mathbb{C}\mid |z-a|<r\}$; il polidisco in $\mathbb{C}^n$ è $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$;
     \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di centro l'origine $O\in\mathbb{C}^n$ e raggio $r>0$;
-    \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $z \in \mathbb{C}^n$, scriviamo $\delta(z)=\displaystyle\inf_{p \in \partial\Omega}\|z-p\|$ per indicare la distanza euclidea di $x$ dal bordo di $\Omega$.
+    \item dato un sottoinsieme $\Omega\subseteq \mathbb{C}^n$, indichiamo il \textit{bordo euclideo} con $\partial\Omega:=\overline{\Omega}\setminus\Omega$;
+    \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $z \in \mathbb{C}^n$, scriviamo $\delta(z)=\displaystyle\inf_{p \in \partial\Omega}\|z-p\|$ per indicare la distanza euclidea di $x$ dal bordo euclideo di $\Omega$.
 \end{itemize}
 
 Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
@@ -244,12 +245,16 @@ Nella sottosezione \ref{risnoti} citeremo alcuni risultati sulla geometria dei d
     $$(x,y)_w \ge \min\{(x,z)_w,(y,z)_w\}-\delta\text{ per ogni }x,y,z,w \in X.$$
 
     Se $(X,d)$ è $\delta$-iperbolico per qualche $\delta \ge 0$, diremo che è \textit{Gromov-iperbolico}.
+\end{defn}
 
-    Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
+\begin{defn}
+    Sia\marginpar{Per definirlo non c'è molto altro da dire, l'Osservazione dopo serviva ad aggiungere i fatti interessanti} $(X,d)$ uno spazio metrico Gromov-iperbolico. Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
+
+    Inoltre, è possibile estendere il prodotto di Gromov a tutto $X\cup\partial_GX$ in modo che valga ancora la disuguaglianza per la Gromov-iperbolicità, eventualmente cambiando $\delta$. Il bordo iperbolico possiede anche una \textit{classe canonica di distanze} correlate al prodotto di Gromov, che inducono tutte la stessa topologia.
 \end{defn}
 
 \begin{oss}
-    È possibile mettere una topologia su $X\cup\partial_GX$ che lo rende uno spazio compatto. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
+    È possibile\marginpar{In \cite{BH} usa l'ipotesi proprio e geodetico per dire che la topologia è la stessa; non vorrei fosse una cosa diversa da quella a cui mi sto riferendo} mettere una topologia su $X\cup\partial_GX$ che lo rende uno spazio compatto, e tale che ristretta a $\partial_GX$ coincida con la topologia indotta dalla classe canonica di distanze. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
 \end{oss}
 
 Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica.
