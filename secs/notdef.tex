@@ -257,13 +257,29 @@ Nella sottosezione \ref{risnoti} citeremo alcuni risultati sulla geometria dei d
     È possibile\marginpar{In \cite{BH} usa l'ipotesi proprio e geodetico per dire che la topologia è la stessa; non vorrei fosse una cosa diversa da quella a cui mi sto riferendo} mettere una topologia su $X\cup\partial_GX$ che lo rende uno spazio compatto, e tale che ristretta a $\partial_GX$ coincida con la topologia indotta dalla classe canonica di distanze. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
 \end{oss}
 
-Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica.
+Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica; non lo dimostreremo tutto, ma per la parte che andremo a mostrare avremo bisogno del ben noto teorema di Ascoli-Arzelà.
+
+\begin{thm}
+    (Ascoli-Arzelà, \cite[Chapter 7, Theorem 17]{Ke}) Siano $X$ uno spazio metrico e $Y$ uno spazio metrico localmente compatto. Allora un famiglia $\mathcal{F}\subseteq C^0(Y,X)$ è relativamente compatta in $C^0(Y,X)$ se e solo se le seguenti due condizioni sono soddisfatte:
+    \begin{nlist}
+        \item $\mathcal{F}$ è equicontinua;
+        \item l'insieme $\{f(y)\mid f\in\mathcal{F}\}$ è relativamente compatto in $X$ per ogni $y\in Y$.
+    \end{nlist}
+\end{thm}
 
 \begin{prop} \label{alex}
-    (\cite[Theorem 1.3]{A3})\marginpar{Dove trovo una reference (con dim.) per la seconda parte? È che la uso dopo, quindi mi serve; o è un'ovvia conseguenza?} Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
+    (\cite[Theorem 1.3]{A3}) Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
     
     Inoltre, se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$.
 \end{prop}
+
+\begin{proof}
+    Dimostriamo solamente che se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$, dando per buona la prima parte. Poiché $X$ è una varietà,\marginpar{Se devo giustificarlo, direi \cite[4.16]{Ke}} possiamo fissare una distanza $d$ su $X^*$ che induca la topologia della compattificazione. Dato che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, per il teorema di Ascoli-Arzelà è equicontinuo.
+    
+    Sia $Y$ una varietà complessa, mostriamo che $\text{Hol}(Y,X)$ è equicontinuo. Se per assurdo non lo fosse, esisterebbero $\epsilon>0$, un punto $z\in Y$ e due successioni $\{z_\nu\}_{\nu\in\mathbb{N}}\subseteq Y$ e $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq\text{Hol}(Y,X)$ tali che $d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$. Scegliendo delle coordinate opportune, possiamo assumere che $Y$ sia la palla euclidea di un qualche $\mathbb{C}^n$ e che $z=0$. Definiamo $g_\nu\in\text{Hol}(\mathbb{D},X)$ nel seguente modo: $g_\nu(\zeta)=f_\nu(\zeta z_\nu/\|z_\nu\|)$; allora $\|z_\nu\| \longrightarrow 0$ per $\nu\longrightarrow 0$ e $d\big(g_\nu(\|z_\nu\|),g_\nu(0)\big)=d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$, contraddizione con il fatto che $\text{Hol}(\mathbb{D},X)$ è equicontinuo.
+
+    Dunque $\text{Hol}(Y,X)$ è equicontinuo; per compattezza di $X^*$ valgono le ipotesi del teorema di Ascoli-Arzelà, per cui abbiamo che è relativamente compatto in $C^0(Y,X^*)$, come voluto.
+\end{proof}
 
 \begin{defn}
     Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante $\infty$.

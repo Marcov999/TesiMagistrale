@@ -73,7 +73,7 @@ Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi.
 \end{defn}
 
 \begin{thm} \label{lung_int}
-    (\cite[Theorem 1]{R} e \cite[Theorem 3.1]{V}) Sia $X$ una sottovarietà complessa e connessa di $\mathbb{C}^d$. Per ogni $z,w \in X$ abbiamo che:
+    (\cite[Theorem 1]{Roy} e \cite[Theorem 3.1]{V}) Sia $X$ una sottovarietà complessa e connessa di $\mathbb{C}^d$. Per ogni $z,w \in X$ abbiamo che:
     \begin{nlist}
         \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è $C^1$ a tratti, }\gamma(a)=z,\gamma(b)=w\}$;
         \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è assolutamente continua,}$\\
@@ -141,15 +141,7 @@ Si può dimostrare qualcosa di più.
     (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
 \end{prop}
 
-Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali che $k_X$ è una distanza completa sono taut. Per farlo, ci servirà il ben noto teorema di Ascoli-Arzelà.
-
-\begin{thm}
-    (Ascoli-Arzelà, \cite[Chapter 7, Theorem 17]{Ke}) Sia $X$ uno spazio metrico e $Y$ uno spazio metrico localmente compatto. Allora un famiglia $\mathcal{F}\subseteq C^0(Y,X)$ è relativamente compatta in $C^0(X,Y)$ se e solo se le seguenti due condizioni sono soddisfatte:
-    \begin{nlist}
-        \item $\mathcal{F}$ è equicontinua;
-        \item l'insieme $\{f(y)\mid f\in\mathcal{F}\}$ è relativamente compatto in $X$ per ogni $y\in Y$.
-    \end{nlist}
-\end{thm}
+Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali che $k_X$ è una distanza completa sono taut.
 
 \begin{lm} \label{errerhocpt}
     Siano $X$ una varietà Kobayashi-iperbolica, $z_0\in X$ e $r>0$. Supponiamo che esista un $\rho>0$ tale che la palla chiusa $\overline{B_X(z,\rho)}$ è compatta per ogni $z\in B_X(z_0,r)$; allora $\overline{B_X(z_0,r)}$ è compatta.
@@ -180,6 +172,10 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali c
     Posto $R_\zeta=\max\{k_{\mathbb{D}}(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R_\zeta+r$, che è compatta per il Lemma \ref{comp_is_comp}; di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si vede che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
 \end{proof}
 
+\begin{ex}
+    In \cite{Rosa} viene costruito un esempio di un aperto\marginpar{Dominio?} di $\mathbb{C}^3$ limitato (dunque Kobayashi-iperbolico) e taut, ma non Kobayashi-completo.
+\end{ex}
+
 Usando la Proposizione \ref{comp_is_taut}, si può dimostrare che tutti i domini limitati e strettamente pseudoconvessi sono taut. Tuttavia, più avanti avremo bisogno di un risultato un po' più forte.
 
 \begin{prop} \label{psdcvx_is_taut}
@@ -188,8 +184,10 @@ Usando la Proposizione \ref{comp_is_taut}, si può dimostrare che tutti i domini
 
 Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia che cerchiamo per il comportamento delle iterate delle funzioni olomorfe, dobbiamo studiare alcune proprietà delle funzioni limite di funzioni olomorfe su varietà taut.
 
+Per farlo, ci servirà il seguente fatto sull'immagine di una retrazione olomorfa dovuto a Rossi; riportiamo la dimostrazione data da Cartan in \cite{Ca}.
+
 \begin{lm}
-    Sia $X$ una varietà complessa e $\rho\in\textnormal{Hol}(X,X)$ una retrazione olomorfa di $X$. Allora l'immagine di $\rho$ è una sottovarietà chiusa di $X$.
+    (\cite[Section 5]{Ross}) Sia $X$ una varietà complessa e $\rho\in\textnormal{Hol}(X,X)$ una retrazione olomorfa di $X$. Allora l'immagine di $\rho$ è una sottovarietà chiusa di $X$.
 \end{lm}
 \begin{proof}
     Sia $M=\rho(X)$. Per definizione di retrazione $\rho(X)=\text{Fix}(\rho)$, da cui si ha che $M$ è chiusa.
