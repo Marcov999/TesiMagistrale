@@ -9,15 +9,15 @@ Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini 
 \end{defn}
     
 \begin{defn}
-    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $z_0\in\partial\Omega$. L'insieme dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $z_0$ e che sono lisci nell'origine è dato da
-    $$\mathcal{D}_{z_0}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=z_0\text{ e }f'(0)\not=0\}.$$
+    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. L'insieme dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $\xi$ e che sono lisci nell'origine è dato da
+    $$\mathcal{D}_{\xi}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=\xi\text{ e }f'(0)\not=0\}.$$
 \end{defn}
 
 \begin{defn}
-    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $z_0\in\partial\Omega$. Il \textit{tipo} di $z_0$ è dato da
-    $$\Delta_1(z_0):=\sup_{f\in\mathcal{D}_{z_0}} v_0(\rho\circ f).$$
+    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. Il \textit{tipo} di $\xi$ è dato da
+    $$\Delta_1(\xi):=\sup_{f\in\mathcal{D}_{\xi}} v_0(\rho\circ f).$$
 
-    Il dominio $\Omega$ si dice \textit{di tipo finito nel senso di D'Angelo} (o più brevemente \textit{di tipo finito}) se $\Delta_1(z_0)<+\infty$ per ogni $z_0\in\partial\Omega$.
+    Il dominio $\Omega$ si dice \textit{di tipo finito nel senso di D'Angelo} (o più brevemente \textit{di tipo finito}) se $\Delta_1(\xi)<+\infty$ per ogni $\xi\in\partial\Omega$.
 \end{defn}
 
 \begin{oss}
@@ -31,7 +31,7 @@ Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini 
 Ci servirà il seguente fatto.
 
 \begin{thm} \label{cho}
-    (\cite[Theorem 1]{Ch}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Siano inoltre $z_0\in\partial\Omega$ di tipo finito e $U$ un intorno di $z_0$ tale che $\partial\Omega\cap U$ è liscio e pseudoconvesso. Allora esistono un intorno $V\subseteq U$ di $z_0$ e due costanti $c,\epsilon>0$ tali che si ha
+    (\cite[Theorem 1]{Ch}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Siano inoltre $z_0\in\partial\Omega$ di tipo finito e $U$ un intorno di $\xi$ tale che $\partial\Omega\cap U$ è liscio e pseudoconvesso. Allora esistono un intorno $V\subseteq U$ di $\xi$ e due costanti $c,\epsilon>0$ tali che si ha
     $$K_\Omega(z;Z) \ge c\frac{\|Z\|}{\delta_\Omega(z)^\epsilon}$$
     per ogni $z\in\Omega\cap V$ e $Z\in T_z\Omega$.
 \end{thm}

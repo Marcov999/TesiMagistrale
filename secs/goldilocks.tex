@@ -41,7 +41,8 @@ Adesso mostriamo che i domini Goldilocks sono visibili per le simil-geodetiche.
         \frac{1}{\lambda}|t|-\kappa \le k_\Omega\big(\sigma_n(0),\sigma_n(t)\big) &\le k_\Omega\big(\sigma_n(0),x_0\big)+k_\Omega\big(x_0,\sigma_n(t)\big)\\
         &\le 2C+\alpha\log{\frac{1}{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)}};
     \end{align*}
-    quindi $\delta_\Omega\big(\sigma_n(t)\big) \le \sqrt{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)} \le Ae^{-B|t|}$, con $A=e^{(2C+\kappa)/(2\alpha)}$ e $B=1/(2\alpha\lambda)$. Allora, per la stima trovata sopra su $\|\sigma_n'(t)\|$, si ha anche che $\|\sigma_n'(t)\| \le \lambda M_\Omega(Ae^{-B|t|})$.
+    quindi $\delta_\Omega\big(\sigma_n(t)\big) \le \sqrt{\delta_\Omega\big(\sigma_n(0)\big)\delta_\Omega\big(\sigma_n(t)\big)} \le Ae^{-B|t|}$, con $A=e^{(2C+\kappa)/(2\alpha)}$ e $B=1/(2\alpha\lambda)$. Allora, per la stima trovata sopra su $\|\sigma_n'(t)\|$, si ha anche che
+    $$\|\sigma_n'(t)\| \le \lambda M_\Omega(Ae^{-B|t|}).$$
     
     Osserviamo adesso il seguente fatto: se, data $f:[0,+\infty)\longrightarrow[0,+\infty)$ limitata e misurabile secondo Lebesgue, esiste (e dunque per ogni) $\epsilon>0$ tale che $\displaystyle \int_0^\epsilon \frac{1}{r}f(r)\diff r<+\infty$, allora, scrivendo $r=Ae^{-Bt}$ e usando un cambio di variabile, abbiamo che $\displaystyle\int_{\frac{1}{B}\log\frac{A}{\epsilon}}^{+\infty} f(Ae^{-Bt})\diff t<+\infty$, di conseguenza anche $\displaystyle\int_0^{+\infty} f(Ae^{-Bt})\diff t<+\infty$, per ogni $A,B>0$. Per la condizione (1) nella Definizione \ref{gold}, possiamo applicare questo fatto a $M_\Omega$ usando le costanti $A$ e $B$ trovate sopra; ciò ci permette di fissare $a',b'\in(a,b)$ tali che
     $$\|\xi'-\eta'\|>\lambda\int_a^{a'} M_\Omega(Ae^{-B|t|})\diff t+\lambda\int_{b'}^b M_\Omega(Ae^{-B|t|})\diff t.$$

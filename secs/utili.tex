@@ -32,6 +32,10 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     per ogni $z \in U_{z_j}'$ e $Z\in T_zX$, dove $C_i>0$ è una costante che dipende dal compatto $\overline{U}_{z_j}'$. Basta allora porre $C(K)=\displaystyle\max_{j=1,\dots,l}\{C_j\}$.
 \end{proof}
 
+\begin{oss} \label{basta_herm}
+    Nella precedente Proposizione, per il punto (1) non è necessario che la metrica sia quella euclidea, basta una metrica hermitiana qualsiasi. Inoltre, se si permette alla costante di dipendere da un compatto, l'enunciato è equivalente, per una varietà complessa astratta, all'essere Kobayashi-iperbolica (\cite[Theorem 2]{Roy}); per una dimostrazione si veda \cite[Proposition 2.3.33]{A1}. Per il punto (2), segue dalla dimostrazione che l'ipotesi che $X$ fosse limitata non era necessaria.
+\end{oss}
+
 \begin{cor} \label{dist_da_sotto}
     Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Allora esiste $c>0$ tale che $c\|z-w\| \le k_X(z,w)$ per ogni $z,w \in X$.
 \end{cor}
@@ -57,6 +61,10 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     $$\|\sigma(t)-\sigma(s)\| =\|\int_s^t\sigma'(r)\diff r\| \le \int_s^t\|\sigma'(r)\|\diff r \le \frac{\lambda}{c}|t-s|,$$
     cioè $\sigma$ è $\lambda/c$-lipschitziana rispetto alla distanza euclidea.
 \end{proof}
+
+\begin{oss}
+    In base all'Osservazione \ref{basta_herm}, sia il Corollario \ref{dist_da_sotto} che la Proposizione \ref{simillip} restano veri sostituendo la metrica euclidea con una qualsiasi metrica hermitiana.
+\end{oss}
 
 Il seguente Lemma è un fatto tecnico che ci servirà tra poco.
 
@@ -129,9 +137,9 @@ Il seguente Lemma, invece, ci servirà per la prossima dimostrazione. È un risu
 Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il teorema di tipo ``Wolff-Denjoy''. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le sottosuccessioni di iterate di una funzione olomorfa che ``tendono a infinito'' convergono tutte, puntualmente, a un unico punto del bordo.
 
 \begin{prop} \label{inf_impl_ugu}
-    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Data una funzione $F\in\textnormal{Hol}(X,X)$, esiste $\xi\in\partial X$ tale che per ogni funzione $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ strettamente crescente per cui esiste $x_0 \in X$ tale che
+    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Data una funzione $F\in\textnormal{Hol}(X,X)$, esiste $\xi\in\partial X$ tale che per ogni funzione $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ strettamente crescente per cui esiste $y_0 \in X$ tale che
     \begin{equation}
-        \lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(x_0),x_0\big)=+\infty
+        \lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(y_0),y_0\big)=+\infty
     \end{equation}
     si ha
     \begin{equation}
@@ -141,7 +149,7 @@ Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il te
 \end{prop}
 
 \begin{proof}
-    Se $\displaystyle\limsup_{n\longrightarrow+\infty}k_X\big(F^n(x_0),x_0\big)<+\infty$ l'affermazione è vera a vuoto per ogni $\xi\in\partial X$. Altrimenti, possiamo prendere una funzione strettamente crescente $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che
+    Se $\displaystyle\limsup_{n\longrightarrow+\infty}k_X\big(F^n(x),x\big)<+\infty$ per ogni $x\in X$ l'affermazione è vera a vuoto per ogni $\xi\in\partial X$. Altrimenti, esiste $x_0\in X$ tale per cui possiamo prendere una funzione strettamente crescente $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che
     \begin{itemize}
         \item si ha $k_X\big(F^{\nu(j)}(x_0),x_0\big) \ge k_X\big(F^k(x_0),x_0\big)$ per ogni $j \in \mathbb{N}$ e per ogni $k \le \nu(j)$;
         \item la successione $\{F^{\nu(j)}(x_0)\}_{j\in\mathbb{N}}$ converge a un certo $\xi\in\partial X$.
@@ -183,7 +191,7 @@ Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il te
 
     Adesso che l'asserzione è stata dimostrata, possiamo concludere la dimostrazione. Usando la disuguaglianza triangolare e il fatto che le funzioni olomorfe sono semicontrazioni rispetto a $k_X$, troviamo che
     \begin{gather*}
-        k_X\big(F^{\mu(j)}(z),z'\big) \ge k_X\big(F^{\mu(j)}(x_0),x_0\big)-k_X(x_0,z)-k_X(z',x_0);
+        k_X\big(F^{\mu(j)}(z),z'\big) \ge k_X\big(F^{\mu(j)}(y_0),y_0\big)-k_X(y_0,z)-k_X(z',y_0);
     \end{gather*}
     segue che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\mu(j)}(z),z'\big)=+\infty$ per ogni $z,z' \in X$.
 

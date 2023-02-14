@@ -9,7 +9,7 @@ Introduciamo le notazioni e definizioni che useremo:
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff f_x$ il differenziale di $f$ in $x \in X$;
     \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$; il disco di centro $0$ e raggio $r>0$ è $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$; il disco di centro $a\in\mathbb{C}$ e raggio $r>0$ è $D(a,r)=\{z\in\mathbb{C}\mid |z-a|<r\}$; il polidisco in $\mathbb{C}^n$ è $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$;
     \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di centro l'origine $O\in\mathbb{C}^n$ e raggio $r>0$;
-    \item dato un sottoinsieme $\Omega\subseteq \mathbb{C}^n$, indichiamo il \textit{bordo euclideo} con $\partial\Omega:=\overline{\Omega}\setminus\Omega$;
+    \item dato un sottoinsieme $A\subseteq \mathbb{C}^n$, indichiamo il \textit{bordo euclideo} con $\partial A:=\overline{A}\setminus A$;
     \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $z \in \mathbb{C}^n$, scriviamo $\delta(z)=\displaystyle\inf_{p \in \partial\Omega}\|z-p\|$ per indicare la distanza euclidea di $x$ dal bordo euclideo di $\Omega$.
 \end{itemize}
 
@@ -241,7 +241,10 @@ Vale il seguente risultato.
 Nella sottosezione \ref{risnoti} citeremo alcuni risultati sulla geometria dei domini limitati strettamente pseudoconvessi dotati della distanza di Kobayashi. In particolare, vedremo che sono Gromov-iperbolici, il che permette di derivare un teorema di tipo ``Wolff-Denjoy'' per questi domini.
 
 \begin{defn}
-    Sia $(X,d)$ uno spazio metrico. Dati $x,y,w \in X$ il \textit{prodotto di Gromov} tra $x$ e $y$ con punto base $w$ è $(x,y)_w=\frac{1}{2}\big(d(x,w)+d(y,w)-d(x,y)\big)$. Dato $\delta \ge 0$, diciamo che $X$ è \textit{$\delta$-iperbolico} se
+    Sia $(X,d)$ uno spazio metrico. Dati $x,y,w \in X$ il \textit{prodotto di Gromov} tra $x$ e $y$ con punto base $w$ è
+    $$(x,y)_w=\frac{1}{2}\big(d(x,w)+d(y,w)-d(x,y)\big).$$
+    
+    Dato $\delta \ge 0$, diciamo che $X$ è \textit{$\delta$-iperbolico} se
     $$(x,y)_w \ge \min\{(x,z)_w,(y,z)_w\}-\delta\text{ per ogni }x,y,z,w \in X.$$
 
     Se $(X,d)$ è $\delta$-iperbolico per qualche $\delta \ge 0$, diremo che è \textit{Gromov-iperbolico}.
