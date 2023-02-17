@@ -4,7 +4,6 @@ Introduciamo le notazioni e definizioni che useremo:
     \item una \textit{varietà complessa} di dimensione $n$ è una varietà differenziabile reale, di dimensione $2n$ e tale che i cambi di carta siano olomorfi se considerati fra aperti di $\mathbb{C}^n$;
     \item dati una varietà complessa $X$ e $x \in X$, indichiamo con $T_xX$ lo spazio tangente complesso a $X$ in $x$, che nel caso dei domini è canonicamente identificato con $\mathbb{C}^n$;
     \item dati $X,Y$ spazi topologici, $C^0(X,Y)$ è lo spazio delle funzioni continue da $X$ a $Y$ considerato con la topologia compatta-aperta. Nel caso in cui $Y$ sia uno spazio metrico, tale topologia coincide con la topologia della convergenza uniforme sui compatti;
-    \item dati un insieme $X$ e una funzione $f:X\longrightarrow X$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$;
     \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme dei biolomorfismi di $X$ in sé;
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff f_x$ il differenziale di $f$ in $x \in X$;
     \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$; il disco di centro $0$ e raggio $r>0$ è $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$; il disco di centro $a\in\mathbb{C}$ e raggio $r>0$ è $D(a,r)=\{z\in\mathbb{C}\mid |z-a|<r\}$; il polidisco in $\mathbb{C}^n$ è $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$;
@@ -234,72 +233,6 @@ Nel caso di domini regolari, si può dare una definizione di pseudoconvessità p
 \end{defn}
 
 Vale il seguente risultato.
-\begin{thm}\marginpar{Nel risultato citato non c'è l'ipotesi di limitatezza; teniamolo a mente, potrebbe tornare utile}
+\begin{thm}
     (\cite[Theorem 3.3.5]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ è Levi pseudoconvesso se e solo se è Hartogs pseudoconvesso.
 \end{thm}
-
-Nella sottosezione \ref{risnoti} citeremo alcuni risultati sulla geometria dei domini limitati strettamente pseudoconvessi dotati della distanza di Kobayashi. In particolare, vedremo che sono Gromov-iperbolici, il che permette di derivare un teorema di tipo ``Wolff-Denjoy'' per questi domini.
-
-\begin{defn}
-    Sia $(X,d)$ uno spazio metrico. Dati $x,y,w \in X$ il \textit{prodotto di Gromov} tra $x$ e $y$ con punto base $w$ è
-    $$(x,y)_w=\frac{1}{2}\big(d(x,w)+d(y,w)-d(x,y)\big).$$
-    
-    Dato $\delta \ge 0$, diciamo che $X$ è \textit{$\delta$-iperbolico} se
-    $$(x,y)_w \ge \min\{(x,z)_w,(y,z)_w\}-\delta\text{ per ogni }x,y,z,w \in X.$$
-
-    Se $(X,d)$ è $\delta$-iperbolico per qualche $\delta \ge 0$, diremo che è \textit{Gromov-iperbolico}.
-\end{defn}
-
-\begin{defn}
-    Sia\marginpar{Per definirlo non c'è molto altro da dire, l'Osservazione dopo serviva ad aggiungere i fatti interessanti} $(X,d)$ uno spazio metrico Gromov-iperbolico. Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
-
-    Inoltre, è possibile estendere il prodotto di Gromov a tutto $X\cup\partial_GX$ in modo che valga ancora la disuguaglianza per la Gromov-iperbolicità, eventualmente cambiando $\delta$. Il bordo iperbolico possiede anche una \textit{classe canonica di distanze} correlate al prodotto di Gromov, che inducono tutte la stessa topologia.
-\end{defn}
-
-\begin{oss}
-    È possibile\marginpar{In \cite{BH} usa l'ipotesi proprio e geodetico per dire che la topologia è la stessa; non vorrei fosse una cosa diversa da quella a cui mi sto riferendo} mettere una topologia su $X\cup\partial_GX$ che lo rende uno spazio compatto, e tale che ristretta a $\partial_GX$ coincida con la topologia indotta dalla classe canonica di distanze. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
-\end{oss}
-
-Prima di passare a vedere i risultati noti della teoria sulla pseudometrica e la pseudodistanza di Kobayashi e sui domini strettamente pseudoconvessi, introduciamo il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica; non lo dimostreremo tutto, ma per la parte che andremo a mostrare avremo bisogno del ben noto teorema di Ascoli-Arzelà.
-
-\begin{thm}
-    (Ascoli-Arzelà, \cite[Chapter 7, Theorem 17]{Ke}) Siano $X$ uno spazio metrico e $Y$ uno spazio metrico localmente compatto. Allora un famiglia $\mathcal{F}\subseteq C^0(Y,X)$ è relativamente compatta in $C^0(Y,X)$ se e solo se le seguenti due condizioni sono soddisfatte:
-    \begin{nlist}
-        \item $\mathcal{F}$ è equicontinua;
-        \item l'insieme $\{f(y)\mid f\in\mathcal{F}\}$ è relativamente compatto in $X$ per ogni $y\in Y$.
-    \end{nlist}
-\end{thm}
-
-\begin{prop} \label{alex}
-    (\cite[Theorem 1.3]{A3}) Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
-    
-    Inoltre, se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$.
-\end{prop}
-
-\begin{proof}
-    Dimostriamo solamente che se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$, dando per buona la prima parte. Poiché $X$ è una varietà,\marginpar{Se devo giustificarlo, direi \cite[4.16]{Ke}} possiamo fissare una distanza $d$ su $X^*$ che induca la topologia della compattificazione. Dato che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, per il teorema di Ascoli-Arzelà è equicontinuo.
-    
-    Sia $Y$ una varietà complessa, mostriamo che $\text{Hol}(Y,X)$ è equicontinuo. Se per assurdo non lo fosse, esisterebbero $\epsilon>0$, un punto $z\in Y$ e due successioni $\{z_\nu\}_{\nu\in\mathbb{N}}\subseteq Y$ e $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq\text{Hol}(Y,X)$ tali che $d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$. Scegliendo delle coordinate opportune, possiamo assumere che $Y$ sia la palla euclidea di un qualche $\mathbb{C}^n$ e che $z=0$. Definiamo $g_\nu\in\text{Hol}(\mathbb{D},X)$ nel seguente modo: $g_\nu(\zeta)=f_\nu(\zeta z_\nu/\|z_\nu\|)$; allora $\|z_\nu\| \longrightarrow 0$ per $\nu\longrightarrow 0$ e $d\big(g_\nu(\|z_\nu\|),g_\nu(0)\big)=d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$, contraddizione con il fatto che $\text{Hol}(\mathbb{D},X)$ è equicontinuo.
-
-    Dunque $\text{Hol}(Y,X)$ è equicontinuo; per compattezza di $X^*$ valgono le ipotesi del teorema di Ascoli-Arzelà, per cui abbiamo che è relativamente compatto in $C^0(Y,X^*)$, come voluto.
-\end{proof}
-
-\begin{defn}
-    Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante $\infty$.
-\end{defn}
-
-Per finire, diamo delle definizioni che ci serviranno per parlare del comportamente delle iterate di funzioni olomorfe.
-
-\begin{defn}
-    Siano $X$ e $Y$ due spazi topologici. Diciamo che una successione $\{f_{\nu}\}_{\nu \in \mathbb{N}} \subseteq C^0(X,Y)$ è \textit{compattamente divergente} se, per ogni coppia di compatti $H\subseteq X$ e $K\subseteq Y$, esiste $\nu_0 \in \mathbb{N}$ tale che $f_\nu(H)\cap K=\emptyset$ per ogni $\nu \ge \nu_0$.
-
-    Una famiglia $\mathcal{F} \subseteq C^0(X,Y)$ è detta \textit{normale} se ogni successione in $\mathcal{F}$ ammette una sottosuccessione che converge a una funzione in $C^0(X,Y)$ oppure è compattamente divergente.
-\end{defn}
-
-\begin{defn}
-    Sia $f\in C^0(X,X)$. Diciamo che $g\in C^0(X,X)$ è una \textit{funzione limite} di $f$ se esiste una sottosuccessione delle iterate di $f$ che converge a $g$ in $C^0(X,X)$. Denotiamo con $\Gamma(f)$ l'insieme di tutte le funzioni limite di $f$.
-\end{defn}
-
-\begin{defn}
-    Una \textit{retrazione olomorfa} di una varietà complessa $X$ è una funzione $\rho\in\text{Hol}(X,X)$ tale che $\rho^2=\rho$. L'immagine di una retrazione olomorfa è detta \textit{retratto olomorfo}.
-\end{defn}
