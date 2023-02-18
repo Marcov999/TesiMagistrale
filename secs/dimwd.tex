@@ -129,14 +129,18 @@ La dimostrazione del Teorema \ref{abate_wd} è immediata.
     Abbiamo già notato, nell'Osservazione \ref{spscvxisvis}, che i domini limitati e strettamente pseudoconvessi di $\mathbb{C}^n$ sono visibili per le simil-geodetiche. Abbiamo anche visto che sono completi rispetto alla distanza di Kobayashi, dunque per la Proposizione \ref{comp_is_taut} sono taut. Si conclude applicando il Teorema \ref{wd_type}.
 \end{proof}
 
-Sotto ipotesi di natura topologica si può ottenere qualcosa di più. Il risultato che ci permetterà di fare ciò è il seguente.
+Sotto ipotesi di natura topologica si può ottenere qualcosa di più.
+
+\begin{defn}
+    Una varietà complessa $X$ si dice di \textit{tipo topologico finito} se i gruppi di omologia singolare $H_j(\Omega;\mathbb{Z})$ hanno rango finito per ogni $j\in\mathbb{N}$.
+\end{defn}
 
 \begin{thm} \label{periodico}
-    (\cite[Theorem 0.4]{A2}) Sia $X$ una varietà taut e di tipo topologico finito, cioè i gruppi di omologia singolare $H_j(\Omega;\mathbb{Z})$ hanno rango finito per ogni $j\in\mathbb{N}$. Supponiamo che $H^j(X;\mathbb{Q})=0$ per ogni $j>0$, e consideriamo una funzione $f\in\textnormal{Hol}(X,X)$. Allora la successione $\{f^h\}_{h\in\mathbb{N}}$ non è compattamente divergente se e solo se $f$ ha un punto periodico in $X$, cioè esistono $x\in X$ e $h_0\in\mathbb{N}$ tali che $f^{h_0}(x)=x$.
+    (\cite[Theorem 0.4]{A2}) Sia $X$ una varietà taut e di tipo topologico finito. Supponiamo che $H^j(X;\mathbb{Q})=0$ per ogni $j>0$, e consideriamo una funzione $F\in\textnormal{Hol}(X,X)$. Allora la successione $\{F^h\}_{h\in\mathbb{N}}$ non è compattamente divergente se e solo se $F$ ha un punto periodico in $X$, cioè esistono $x\in X$ e $h_0\in\mathbb{N}$ tali che $F^{h_0}(x)=x$.
 \end{thm}
 
 \begin{cor}
-    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Supponiamo che $\Omega$ sia taut e che esista un $\kappa_0>0$ tale che $\Omega$ sia $(1,\kappa_0)$-visibile. Supponiamo inoltre che $\Omega$ sia di tipo topologico finito e che $H^j(X;\mathbb{C})=0$ per ogni $1\le j\le n$.
+    (\cite[Theorem 1.9]{BM}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato. Supponiamo che $\Omega$ sia taut e che esista un $\kappa_0>0$ tale che $\Omega$ sia $(1,\kappa_0)$-visibile. Supponiamo inoltre che $\Omega$ sia di tipo topologico finito e che $H^j(X;\mathbb{C})=0$ per ogni $1\le j\le n$.
 
     Sia $F:\Omega\longrightarrow\Omega$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
@@ -147,6 +151,6 @@ Sotto ipotesi di natura topologica si può ottenere qualcosa di più. Il risulta
 
 \begin{proof}
     Dato che $\Omega$ è un dominio taut limitato, per \cite[Theorem F]{W} è pseudoconvesso. È allora ben noto che $H^j(\Omega;\mathbb{C})=0$ per ogni $j>n$ (si veda \cite[Theorema 4.2.7]{H}). Poiché $\Omega$ è di tipo topologico finito, per il teorema dei coefficienti universali si ha che
-    $$\dim_{\mathbb{C}}{H^j(\Omega;\mathbb{C})}=\dim_{\mathbb{Q}}{H^j(\Omega;\mathbb{Q})}=\rk{H_j(\Omega;\mathbb{Z})}$$
-    per ogni $j\in\mathbb{N}$. Si verifica allora che $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$ dispari. Si conclude facilmente usando il Teorema \ref{periodico} e il Teorema \ref{wd_type}.
+    $$\dim_{\mathbb{Q}}{H^j(\Omega;\mathbb{Q})}=\rk{H_j(\Omega;\mathbb{Z})}=\dim_{\mathbb{C}}{H^j(\Omega;\mathbb{C})}$$
+    per ogni $j\in\mathbb{N}$. Si verifica allora che $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$. Si conclude facilmente usando il Teorema \ref{periodico} e il Teorema \ref{wd_type}.
 \end{proof}

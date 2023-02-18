@@ -3,7 +3,7 @@ Prima di andare a vedere il teorema di tipo ``Wolff-Denjoy'', dobbiamo mostrare 
 Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, che permettono anche di ottenere la lipschitzianità delle simil-geodetiche.
 
 \begin{lm} \label{polycpt}
-    Sia $X$ una sottovarietà complessa di $\mathbb{C}^d$. Se un sottoinsieme compatto $K\subseteq X$ è contenuto nel polidisco di una carta di $X$, allora esiste una costante $C=C(K)>0$ tale che $K_X(z;Z) \le C\|Z\|$ per ogni $z \in K$ e $Z \in T_zX$.
+    Sia $X$ una varietà complessa. Se un sottoinsieme compatto $K\subseteq X$ è contenuto nel polidisco di una carta di $X$, allora esiste una costante $C=C(K)>0$ tale che $K_X(z;Z) \le C\|Z\|$ per ogni $z \in K$ e $Z \in T_zX$, dove la norma è quella euclidea indotta dalla carta.
 \end{lm}
 
 \begin{proof}
@@ -33,7 +33,7 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 \end{proof}
 
 \begin{oss} \label{basta_herm}
-    Nella precedente Proposizione, per il punto (1) non è necessario che la metrica sia quella euclidea, basta una metrica hermitiana qualsiasi. Inoltre, se si permette alla costante di dipendere da un compatto, l'enunciato è equivalente, per una varietà complessa astratta, all'essere Kobayashi-iperbolica (\cite[Theorem 2]{Roy}); per una dimostrazione si veda \cite[Proposition 2.3.33]{A1}. Per il punto (2), segue dalla dimostrazione che l'ipotesi che $X$ fosse limitata non era necessaria.
+    Nella precedente Proposizione, per il punto (1) non è necessario che la metrica sia quella euclidea, basta una metrica hermitiana qualsiasi. Inoltre, se si permette alla costante di dipendere da un compatto, l'enunciato è equivalente, per una varietà complessa astratta, all'essere Kobayashi-iperbolica (\cite[Theorem 2]{Roy}); per una dimostrazione si veda \cite[Proposition 2.3.33]{A1}. Per il punto (2), segue dalla dimostrazione che l'ipotesi che $X$ sia limitata non è necessaria.
 \end{oss}
 
 \begin{cor} \label{dist_da_sotto}
@@ -58,7 +58,7 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     $$\sigma(t)=\sigma(s)+\int_s^t\sigma'(r)\diff r.$$
     
     Per il punto (1) della Proposizione \ref{metrica_bilip}, esiste una costante $c>0$ tale che $c\|Z\| \le K_X(z;Z)$ per ogni $z\in X$ e $Z\in T_zX$, e per definizione di $(\lambda,\kappa)$-simil-geodetica $K_X\big(\sigma(t);\sigma'(t)\big) \le \lambda$ per quasi ogni $t\in I$. Dunque $\|\sigma'(t)\| \le \lambda/c$ per quasi ogni $t\in I$, da cui
-    $$\|\sigma(t)-\sigma(s)\| =\|\int_s^t\sigma'(r)\diff r\| \le \int_s^t\|\sigma'(r)\|\diff r \le \frac{\lambda}{c}|t-s|,$$
+    $$\|\sigma(t)-\sigma(s)\| =\left\|\int_s^t\sigma'(r)\diff r\right\| \le \int_s^t\|\sigma'(r)\|\diff r \le \frac{\lambda}{c}|t-s|,$$
     cioè $\sigma$ è $\lambda/c$-lipschitziana rispetto alla distanza euclidea.
 \end{proof}
 
@@ -69,7 +69,7 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 Il seguente Lemma è un fatto tecnico che ci servirà tra poco.
 
 \begin{lm} \label{restrdis}
-    Siano $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$ e $\sigma:[a,b] \longrightarrow X$ una curva assolutamente continua. Se
+    Siano $X$ una varietà complessa e connessa e $\sigma:[a,b] \longrightarrow X$ una curva assolutamente continua. Se
     $$l_X(\sigma) \le k_X\big(\sigma(a),\sigma(b)\big)+\kappa,$$
     allora, per ogni $a \le s \le t \le b$, si ha
     $$l_X(\sigma\restrict{[s,t]}) \le k_X\big(\sigma(s),\sigma(t)\big)+\kappa.$$
@@ -84,10 +84,10 @@ Il seguente Lemma è un fatto tecnico che ci servirà tra poco.
     applicando la disuguaglianza triangolare, si ottiene la tesi.
 \end{proof}
 
-Quello che vogliamo mostrare adesso è che le sottovarietà complesse, connesse e limitate di $\mathbb{C}^d$ sono anche connesse per archi simil-geodetici.
+ Adesso vogliamo mostrare che le sottovarietà Kobayashi-iperboliche di $\mathbb{C}^d$ sono connesse per archi simil-geodetici.
 
 \begin{thm} \label{similgeo_conn}
-    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Per ogni $z,w \in X$ e ogni $\kappa>0$ esiste una $(1,\kappa)$-simil-geodetica $\sigma:[a,b]\longrightarrow X$ tale che $\sigma(a)=z$ e $\sigma(b)=w$.
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di $\mathbb{C}^d$. Per ogni $z,w \in X$ e ogni $\kappa>0$ esiste una $(1,\kappa)$-simil-geodetica $\sigma:[a,b]\longrightarrow X$ tale che $\sigma(a)=z$ e $\sigma(b)=w$.
 \end{thm}
 
 \begin{proof}
@@ -96,7 +96,7 @@ Quello che vogliamo mostrare adesso è che le sottovarietà complesse, connesse 
     inoltre, a meno di perturbare di poco la curva, possiamo assumere che sia $C^1$ e che $\gamma'(t)\not=0$ per ogni $t\in[0,1]$. Consideriamo la funzione $f:[0,1] \longrightarrow [0,+\infty)$ data da
     $$f(t)=\int_0^t K_X\big(\gamma(r);\gamma'(r)\big)\diff r.$$
 
-    Poiché $\gamma([0,1])$ è compatto in $X$, per i punti (1) e (2) della Proposizione \ref{metrica_bilip} esiste $C>0$ tale che
+    Poiché $\gamma([0,1])$ è compatto in $X$, per i punti (1) e (2) della Proposizione \ref{metrica_bilip} e per l'Osservazione \ref{basta_herm} esiste $C>0$ tale che
     $$\frac{1}{C}\|\gamma'(t)\| \le K_X\big(\gamma(t);\gamma'(t)\big) \le C\|\gamma'(t)\|\text{ per ogni }t\in[0,1].$$
 
     Dato che $\|\gamma'(t)\|>0$ per ogni $t\in[0,1]$ e $\gamma'$ è continua, esistono $A,B>0$ tali che $A \le \|\gamma'(t)\|\le B$ per ogni $t\in[0,1]$. Dunque $f$ è una funzione bilipschitziana e, di conseguenza, strettamente crescente. Chiamiamo $g:[0,l_X(\gamma)] \longrightarrow [0,1]$ l'inversa di $f$. Vogliamo dire che la curva $\sigma=\gamma\circ g:[0,l_X(\gamma)] \longrightarrow X$ è una $(1,\kappa)$-simil-geodetica; sostanzialmente, $\sigma$ è la riparametrizzazione per lunghezza d'arco di $\gamma$.
@@ -116,7 +116,7 @@ Quello che vogliamo mostrare adesso è che le sottovarietà complesse, connesse 
 Adesso ci servirà un Lemma quasi ovvio.
 
 \begin{lm} \label{quasiovvio}
-    Sia $X$ una varietà Kobayashi-iperbolica. Se $\sigma:[a,b] \longrightarrow X$ è una $(1,\kappa)$-simil-geodetica per qualche $\kappa>0$, allora per ogni $t \in [a,b]$ si ha
+    Sia $X$ una varietà complessa\marginpar{E connessa? Da sistemare con la def di simil-geodetica}. Se $\sigma:[a,b] \longrightarrow X$ è una $(1,\kappa)$-simil-geodetica per qualche $\kappa>0$, allora per ogni $t \in [a,b]$ si ha
     $$k_X\big(\sigma(a),\sigma(t)\big)+k_X\big(\sigma(t),\sigma(b)\big) \le k_X\big(\sigma(a),\sigma(b)\big)+3\kappa.$$
 \end{lm}
 
@@ -127,7 +127,7 @@ Adesso ci servirà un Lemma quasi ovvio.
 Il seguente Lemma, invece, ci servirà per la prossima dimostrazione. È un risultato sulla convergenza puntuale, mentre più avanti ne vedremo uno sulla convergenza uniforme sui compatti per varietà $(1,\kappa_0)$-visibili per qualche $\kappa_0>0$.
 
 \begin{lm} \label{lemmasottosotto1}
-    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$, e sia $F\in\textnormal{Hol}(X,X)$. Dati una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $z\in X$, se l'insieme dei punti limite della successione $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$ consiste in un solo punto $\xi$ allora $\displaystyle\lim_{j\longrightarrow+\infty}F^{\mu(j)}(z)\longrightarrow\xi$.
+    Sia $X$ una sottovarietà complessa e limitata di $\mathbb{C}^d$\marginpar{Sarebbe bello riuscire a ottenere che vale per varietà Kobayashi-iperboliche}, e sia $F\in\textnormal{Hol}(X,X)$. Dati una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $z\in X$, se l'insieme dei punti limite della successione $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$ consiste in un solo punto $\xi$ allora $\displaystyle\lim_{j\longrightarrow+\infty}F^{\mu(j)}(z)\longrightarrow\xi$.
 \end{lm}
 
 \begin{proof}
