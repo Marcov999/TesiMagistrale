@@ -1,9 +1,7 @@
 Per il momento, nell'ordine:
-esempi;
-domini di tipo finito.
-Poi:
+esempi.;
 domini illimitati.
-Forse:
+Poi, forse:
 estensioni al bordo.
 Alla fine:
 introduzione;
@@ -12,5 +10,6 @@ ringraziamenti.
 Non scordarti, via via che scrivi, di mantenere una bibliografia adeguata.
 
 DA FARE ADESSO:
-la checklist aggiunta a penna sulla copia stampata con le correzioni di abate;
-finire di texare la parte sui domini di tipo finito e gli esempi.
+texare esempi;
+(quando Abate risponde) generalizzare (forse);
+correggere note a margine e sulla bozza stampata (quando/se possibile).

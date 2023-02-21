@@ -1,0 +1,59 @@
+L'ultimo esempio è quello mostrato in \cite[Section 5.2]{CMS}; si tratta di un altro esempio di dominio non di tipo Goldilocks\marginpar{È taut? Non è taut? C'è modo di vederlo?} che soddisfa la condizione di visibilità.
+
+Iniziamo considerando la funzione $\Phi_0:\mathbb{C}^2\longrightarrow\mathbb{R}$ definita da
+$$\Phi_0(z):=\begin{cases}
+    \exp(-1/\|z\|^2)-\mathfrak{Im}(z_2) &\mbox{se }z=(z_1,z_2)\not=(0,0)\\
+    0 &\mbox{se }z=0.
+\end{cases}$$
+
+Poiché la matrice hessiana di $\Phi_0$ (vista come funzione da $\mathbb{R}^4$ in $\mathbb{R}$) è la stessa della funzione $\exp(-1/\|z\|^2)$ estesa a $0$ nell'origine, che è convessa vicino all'origine, esiste $\epsilon>0$ tale che $\Phi_0$ è convessa in $\mathbb{B}^2_{2\epsilon}$. Scegliamo inoltre una funzione liscia $\psi:\mathbb{C}^2\longrightarrow[0,1]$ tale che $\psi\equiv 1$ in $\mathbb{B}^2_{2\epsilon}$ e $\text{supp}\,{\psi}\subseteq \mathbb{B}^2_{3\epsilon}$. Poniamo $\Phi:=\Phi_0\cdot\psi$ e $c_0:=\displaystyle\sup_{z\in\mathbb{C}^2}\big(-\Phi(z)\big)>0$.
+
+Scegliamo adesso una funzione $\chi:[0,+\infty)\longrightarrow[0,+\infty)$ che sia identicamente nulla in $[0,\epsilon^2]$, strettamente crescente in $[\epsilon^2,+\infty)$ e strettamente convessa in $\big(\epsilon^2,(\epsilon+\delta)^2\big)$ per $\delta>0$ sufficientemente piccolo\marginpar{Quanto piccolo? $\delta<\epsilon$? Vedi sotto}; per esempio, possiamo prendere $\chi(t)=\exp\big(-1/(t-\epsilon^2)\big)$ per $t>\epsilon^2$ e $0$ altrove. Poniamo $c_1:=\chi\big((\epsilon+\delta/2)^2\big)$ e $C:=c_0/c_1$. Definiamo
+$$\Psi(z):=C\chi(\|z\|^2)$$
+per ogni $z\in\mathbb{C}^2$.
+
+Osserviamo che:
+\begin{itemize}
+    \item la funzione $\Psi$ è liscia e non negativa su tutto $\mathbb{C}^2$, nulla in $\overline{\mathbb{B}^2_\epsilon}$, e strettamente convessa e strettamente positiva in $\mathbb{B}^2_{\epsilon+\delta}\setminus\overline{\mathbb{B}^2_\epsilon}$;
+    \item si ha $\Psi(z)\ge c_0$ per ogni $z\in\mathbb{C}^2\setminus\mathbb{B}^2_{\epsilon+\delta/2}$, da cui $\Psi(z)+\Phi(z)\ge 0$ per ogni $z\in\mathbb{C}^2\setminus\mathbb{B}^2_{\epsilon+\delta/2}$;
+    \item si ha $\Psi(z)+\Phi(z)=\Phi(z)=\Phi_0(z)$ per ogni $z\in\mathbb{B}^2_\epsilon$.
+\end{itemize}
+
+Consideriamo adesso il dominio
+$$\Omega:=\{z=(z_1,z_2)\in\mathbb{C}^2\mid \rho(z):=\Psi(z)+\Phi(z)<0\}.$$
+
+Notiamo che $\Omega\subseteq\mathbb{B}^2_{\epsilon+\delta/2}$, dove $\rho=\Psi+\Phi_0$, che è una funzione convessa; per cui $\Omega$ è un dominio convesso limitato. Calcolando il gradiente di $\rho$, vediamo che esiste al più un punto $p_0\in\partial\Omega$ dove il gradiente si annulla, che è della forma $p_0=(0,ic)$; inoltre, $p_0\in\overline{\mathbb{B}^2_{\epsilon+\delta/2}}\setminus\overline{\mathbb{B}^2_\epsilon}$. Dunque $\Omega$ è un dominio limitato e convesso tale che $\partial\Omega\setminus\{p_0\}$ è liscio. Si ha anche che ogni punto di $(\partial\Omega\setminus\{p_0\})\cap(\mathbb{B}^2_{\epsilon+\delta}\setminus\overline{\mathbb{B}^2_\epsilon})$ è un punto del bordo di $\Omega$ strettamente convesso (perché in $\mathbb{B}^2_{\epsilon+\delta}\setminus\overline{\mathbb{B}^2_\epsilon}$ la funzione $\Psi$ è strettamente convessa); dunque è pseudoconvesso e, per \cite[Corollary 5.6]{D'A}, è un punto di tipo finito (si veda la Definizione \ref{tipofin})\marginpar{Non mi piace sta cosa che cito una definizione successiva. Inoltre: punto strettamente convesso implica pseudoconvesso, no? Sembra così ovvio...}. Poniamo $S:=\partial\Omega\cap\overline{\mathbb{B}^2_\epsilon}$ e osserviamo che
+$$S=\overline{\mathbb{B}^2_\epsilon}\cap\{z\in\mathbb{C}^2\mid \Phi_0(z)=0\};$$
+si ha anche che ogni punto di $S$ diverso da $(0,0)$ è un punto del bordo di $\Omega$ di tipo finito (perché $\Phi_0$ è strettamente convessa in $\overline{\mathbb{B}^2_\epsilon}\setminus\{(0,0)\}$, per cui ogni punto di $S$ è strettamente convesso). \\
+
+Possiamo ora procedere a dimostrare che $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda \ge 1$ e $\kappa>0$.
+
+\begin{thm}
+    (\cite[Theorem 1.9]{CMS}) RICOPIARE ENUNCIATO.
+\end{thm}
+
+\begin{proof}
+    SCRIVERE DIMOSTRAZIONE.
+\end{proof}
+
+\begin{cor}
+    (\cite[Corollary 1.10]{CMS}) RICOPIARE ENUNCIATO.
+\end{cor}
+
+\begin{proof}
+    SCRIVERE DIMOSTRAZIONE.
+\end{proof}
+
+CONCLUDERE MOSTRANDO CHE $S$ SODDISFA\marginpar{Ma siamo sicuri? Controllare dim. del Corollario per sicurezza} LE IPOTESI DEL COROLLARIO. \\
+
+Mostriamo adesso che $\Omega$ non soddisfa la condizione (1) nella Definizione \ref{gold}. Iniziamo notando che
+$$\Omega\cap\mathbb{B}^2_{\epsilon/2}=\{(z_1,z_2)\in\mathbb{B}^2_{\epsilon/2}\mid \mathfrak{Im}(z_2)>\exp(-1/\|z\|^2)\};$$
+dunque, per $r>0$ sufficientemente piccolo, si ha che $p_r:=(0,ir)\in\Omega$. Poniamo $v:=(1,0)$ e $s:=\sqrt{\dfrac{1}{\log(1/r)}-r^2}$; allora \marginpar{Capire perché. \cite{CMS} menziona Graham, ma non si degna di citare (né di definire le funzioni, se è per questo...)}
+$$K_\Omega(p_r;v) \le \frac{1}{s}.$$
+
+Adesso, poiché $(0,0)\in\partial\Omega$, si ha $\delta_\Omega(p_r) \le r$, per cui
+$$M_\Omega(r) \ge \frac{1}{K_\Omega(p_r;v)} \ge s=\sqrt{\frac{1}{\log(1/r)}-r^2};$$
+per cui ci basta mostrare che, per $r_0>0$ sufficientemente piccolo affinché l'integranda sia definita, si ha
+$$\int_0^{r_0}\frac{1}{r}\sqrt{\frac{1}{\log(1/r)}-r^2}\diff r=+\infty.$$
+
+Ciò segue facilmente confrontando con la funzione $r \longmapsto \dfrac{1}{r}\cdot\dfrac{1}{\sqrt{\log(1/r)}}$.
