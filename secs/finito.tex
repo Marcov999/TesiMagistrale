@@ -1,29 +1,13 @@
 Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini Goldilocks. Iniziamo con la definizione di dominio di tipo finito nel senso di D'Angelo, introdotta in \cite{D'A}.
 
 \begin{defn}
-    Dati un aperto $A\subseteq\mathbb{C}^n$, una funzione $g\in C^\infty(A)$ e $p\in A$, \textit{l'ordine (o la molteplicità) di $g$ in $p$} è $v_p(g)$, il grado del primo termine non nullo dello sviluppo di Taylor in $p$ di $g-g(p)$. Se la funzione è a valori in più variabili, si considera il minimo degli ordini di contatto delle componenti.
-\end{defn}
-
-\begin{defn}
-    Un dominio $\Omega\subseteq\mathbb{C}^n$ ha bordo $C^\infty$ se esiste una funzione $\rho\in C^\infty(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$.
-\end{defn}
-    
-\begin{defn}
-    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. L'insieme dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $\xi$ e che sono lisci nell'origine è dato da
-    $$\mathcal{D}_{\xi}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=\xi\text{ e }f'(0)\not=0\}.$$
-\end{defn}
-
-\begin{defn} \label{tipofin}
-    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. Il \textit{tipo} di $\xi$ è dato da
-    $$\Delta_1(\xi):=\sup_{f\in\mathcal{D}_{\xi}} v_0(\rho\circ f).$$
-
-    Il dominio $\Omega$ si dice \textit{di tipo finito nel senso di D'Angelo} (o più brevemente \textit{di tipo finito}) se $\Delta_1(\xi)<+\infty$ per ogni $\xi\in\partial\Omega$.
+    Un dominio $\Omega\subseteq\mathbb{C}^n$ con bordo $C^\infty$ si dice \textit{di tipo finito nel senso di D'Angelo} (o più brevemente \textit{di tipo finito}) se $\Delta_1(\xi)<+\infty$ per ogni $\xi\in\partial\Omega$.
 \end{defn}
 
 \begin{oss}
     \begin{enumerate}
         \item Esistono diverse definizioni di dominio di tipo finito, che sono sostanzialmente equivalenti (o quasi) in due variabili o per domini convessi in qualsiasi numero di variabili; negli altri casi, invece, la situazione è più complicata. Noi ci limiteremo al caso di domini di tipo finito nel senso di D'Angelo, poiché è ciò che ci serve per ottenere la stima dal basso sulla metrica di Kobayashi.
-        \item La condizione $f'(0)\not=0$, cioè che il disco analitico sia liscio, è necessaria. Altrimenti, calcolando un disco analitico in $z^k$ con $k>1$ invece che in $z$, otteniamo un altro disco analitico non lisco con ordine di contatto almeno $k$; di conseguenza, tutti i punti e tutti i domini sarebbero di tipo infinito.
+        \item La condizione $f'(0)\not=0$ nella Definizione \ref{discanal}, cioè che il disco analitico sia liscio, è necessaria. Altrimenti, calcolando un disco analitico in $z^k$ con $k>1$ invece che in $z$, otteniamo un altro disco analitico non lisco con ordine di contatto almeno $k$; di conseguenza, tutti i punti e tutti i domini sarebbero di tipo infinito.
         \item È naturale supporre, come faremo a breve, la pseudoconvessità del dominio; infatti, si può mostrare (\cite[Corollary 5.6]{D'A} con $p=p_0$) che in tal caso il tipo del dominio è almeno $2$. I punti strettamenti pseudoconvessi sono caratterizzati dall'avere tipo esattamente uguale a $2$\marginpar{Manca un'implicazione} (\cite[Corollary 5.8]{D'A} e ???).
     \end{enumerate}
 \end{oss}

@@ -6,9 +6,9 @@ $$\Phi_0(z):=\begin{cases}
     0 &\mbox{se }z=0.
 \end{cases}$$
 
-Poiché la matrice hessiana di $\Phi_0$ (vista come funzione da $\mathbb{R}^4$ in $\mathbb{R}$) è la stessa della funzione $\exp(-1/\|z\|^2)$ estesa a $0$ nell'origine, che è convessa vicino all'origine, esiste $\epsilon>0$ tale che $\Phi_0$ è convessa in $\mathbb{B}^2_{2\epsilon}$. Scegliamo inoltre una funzione liscia $\psi:\mathbb{C}^2\longrightarrow[0,1]$ tale che $\psi\equiv 1$ in $\mathbb{B}^2_{2\epsilon}$ e $\text{supp}\,{\psi}\subseteq \mathbb{B}^2_{3\epsilon}$. Poniamo $\Phi:=\Phi_0\cdot\psi$ e $c_0:=\displaystyle\sup_{z\in\mathbb{C}^2}\big(-\Phi(z)\big)>0$.
+Poiché la matrice hessiana di $\Phi_0$ (vista come funzione da $\mathbb{R}^4$ in $\mathbb{R}$) è la stessa della funzione $\exp(-1/\|z\|^2)$ estesa a $0$ nell'origine, che è convessa vicino all'origine, esiste $0<\epsilon<1$ tale che $\Phi_0$ è convessa in $\mathbb{B}^2_{2\epsilon}$. Scegliamo inoltre una funzione liscia $\psi:\mathbb{C}^2\longrightarrow[0,1]$ tale che $\psi\equiv 1$ in $\mathbb{B}^2_{2\epsilon}$ e $\text{supp}\,{\psi}\subseteq \mathbb{B}^2_{3\epsilon}$. Poniamo $\Phi:=\Phi_0\cdot\psi$ e $c_0:=\displaystyle\sup_{z\in\mathbb{C}^2}\big(-\Phi(z)\big)>0$.
 
-Scegliamo adesso una funzione $\chi:[0,+\infty)\longrightarrow[0,+\infty)$ che sia identicamente nulla in $[0,\epsilon^2]$, strettamente crescente in $[\epsilon^2,+\infty)$ e strettamente convessa in $\big(\epsilon^2,(\epsilon+\delta)^2\big)$ per $\delta>0$ sufficientemente piccolo\marginpar{Quanto piccolo? $\delta<\epsilon$? Vedi sotto}; per esempio, possiamo prendere $\chi(t)=\exp\big(-1/(t-\epsilon^2)\big)$ per $t>\epsilon^2$ e $0$ altrove. Poniamo $c_1:=\chi\big((\epsilon+\delta/2)^2\big)$ e $C:=c_0/c_1$. Definiamo
+Scegliamo adesso una funzione liscia $\chi:[0,+\infty)\longrightarrow[0,+\infty)$ che sia identicamente nulla in $[0,\epsilon^2]$, strettamente crescente in $[\epsilon^2,+\infty)$ e strettamente convessa in $\big(\epsilon^2,(\epsilon+\delta)^2\big)$ per $0<\delta<\epsilon$; per esempio, possiamo prendere $\chi(t)=\exp\big(-1/(t-\epsilon^2)\big)$ per $t>\epsilon^2$ e $0$ altrove. Poniamo $c_1:=\chi\big((\epsilon+\delta/2)^2\big)$ e $C:=c_0/c_1$. Definiamo
 $$\Psi(z):=C\chi(\|z\|^2)$$
 per ogni $z\in\mathbb{C}^2$.
 
@@ -19,17 +19,51 @@ Osserviamo che:
     \item si ha $\Psi(z)+\Phi(z)=\Phi(z)=\Phi_0(z)$ per ogni $z\in\mathbb{B}^2_\epsilon$.
 \end{itemize}
 
+A breve ci servirà sapere cos'è il tipo di un punto nel senso di D'Angelo. Nella sezione \ref{Ulteriori risultati} diremo qualcosa di più riguardo a queste definizioni.
+
+\begin{defn}
+    Dati un aperto $A\subseteq\mathbb{C}^n$, una funzione $g\in C^\infty(A)$ e $p\in A$, \textit{l'ordine (o la molteplicità) di $g$ in $p$} è $v_p(g)$, il grado del primo termine non nullo dello sviluppo di Taylor in $p$ di $g-g(p)$. Se la funzione è a valori in più variabili, si considera il minimo degli ordini di contatto delle componenti.
+\end{defn}
+
+\begin{defn}
+    Un dominio $\Omega\subseteq\mathbb{C}^n$ ha bordo $C^\infty$ se esiste una funzione $\rho\in C^\infty(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$.
+\end{defn}
+    
+\begin{defn} \label{discanal}
+    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. L'insieme dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $\xi$ e che sono lisci nell'origine è dato da
+    $$\mathcal{D}_{\xi}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=\xi\text{ e }f'(0)\not=0\}.$$
+\end{defn}
+
+\begin{defn}
+    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. Il \textit{tipo} di $\xi$ è dato da
+    $$\Delta_1(\xi):=\sup_{f\in\mathcal{D}_{\xi}} v_0(\rho\circ f).$$
+\end{defn}
+
 Consideriamo adesso il dominio
 $$\Omega:=\{z=(z_1,z_2)\in\mathbb{C}^2\mid \rho(z):=\Psi(z)+\Phi(z)<0\}.$$
 
-Notiamo che $\Omega\subseteq\mathbb{B}^2_{\epsilon+\delta/2}$, dove $\rho=\Psi+\Phi_0$, che è una funzione convessa; per cui $\Omega$ è un dominio convesso limitato. Calcolando il gradiente di $\rho$, vediamo che esiste al più un punto $p_0\in\partial\Omega$ dove il gradiente si annulla, che è della forma $p_0=(0,ic)$; inoltre, $p_0\in\overline{\mathbb{B}^2_{\epsilon+\delta/2}}\setminus\overline{\mathbb{B}^2_\epsilon}$. Dunque $\Omega$ è un dominio limitato e convesso tale che $\partial\Omega\setminus\{p_0\}$ è liscio. Si ha anche che ogni punto di $(\partial\Omega\setminus\{p_0\})\cap(\mathbb{B}^2_{\epsilon+\delta}\setminus\overline{\mathbb{B}^2_\epsilon})$ è un punto del bordo di $\Omega$ strettamente convesso (perché in $\mathbb{B}^2_{\epsilon+\delta}\setminus\overline{\mathbb{B}^2_\epsilon}$ la funzione $\Psi$ è strettamente convessa); dunque è pseudoconvesso e, per \cite[Corollary 5.6]{D'A}, è un punto di tipo finito (si veda la Definizione \ref{tipofin})\marginpar{Non mi piace sta cosa che cito una definizione successiva. Inoltre: punto strettamente convesso implica pseudoconvesso, no? Sembra così ovvio...}. Poniamo $S:=\partial\Omega\cap\overline{\mathbb{B}^2_\epsilon}$ e osserviamo che
+Notiamo che $\Omega\subseteq\mathbb{B}^2_{\epsilon+\delta/2}$, dove $\rho=\Psi+\Phi_0$, che è una funzione convessa; per cui $\Omega$ è un dominio convesso limitato. Calcolando il gradiente di $\rho$, vediamo che esiste al più un punto $p_0\in\partial\Omega$ dove il gradiente si annulla, che è della forma $p_0=(0,ic)$; inoltre, $p_0\in\overline{\mathbb{B}^2_{\epsilon+\delta/2}}\setminus\overline{\mathbb{B}^2_\epsilon}$. Dunque $\Omega$ è un dominio limitato e convesso tale che $\partial\Omega\setminus\{p_0\}$ è liscio. Si ha anche che ogni punto di $(\partial\Omega\setminus\{p_0\})\cap(\mathbb{B}^2_{\epsilon+\delta}\setminus\overline{\mathbb{B}^2_\epsilon})$ è un punto del bordo di $\Omega$ strettamente convesso (perché in $\mathbb{B}^2_{\epsilon+\delta}\setminus\overline{\mathbb{B}^2_\epsilon}$ la funzione $\Psi$ è strettamente convessa e la funzione $\Phi_0$ è convessa); dunque è pseudoconvesso (segue dalla dimostrazione di \cite[Proposition 2.1.13]{A1}) e, per \cite[Corollary 5.6]{D'A}, è un punto di tipo finito. Poniamo $S:=\partial\Omega\cap\overline{\mathbb{B}^2_\epsilon}$ e osserviamo che
 $$S=\overline{\mathbb{B}^2_\epsilon}\cap\{z\in\mathbb{C}^2\mid \Phi_0(z)=0\};$$
 si ha anche che ogni punto di $S$ diverso da $(0,0)$ è un punto del bordo di $\Omega$ di tipo finito (perché $\Phi_0$ è strettamente convessa in $\overline{\mathbb{B}^2_\epsilon}\setminus\{(0,0)\}$, per cui ogni punto di $S$ è strettamente convesso). \\
 
-Possiamo ora procedere a dimostrare che $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda \ge 1$ e $\kappa>0$.
+Possiamo ora procedere a dimostrare che $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda \ge 1$ e $\kappa>0$. Poniamo
+$$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delta_\Omega(x) \le r, \|v\|=1\right\}.$$
 
-\begin{thm}
-    (\cite[Theorem 1.9]{CMS}) RICOPIARE ENUNCIATO.
+\begin{thm} \label{extvis}
+    (\cite[Theorem 1.9]{CMS}) Sia $\Omega$ un dominio limitato di $\mathbb{C}^d$. Sia $S\subseteq\partial\Omega$ un insieme chiuso tale che per ogni $p,q\in\partial\Omega$ con $p\not=q$ esistono $p'\in\partial\Omega$ e $r>0$ tali, detta $B(p',r)$ la palla euclidea di centro $p'$ e raggio $r$, che:
+    \begin{nlist}
+        \item si ha $p\in B(p',r)$ e $q\in\partial\Omega\setminus\overline{B(p',r)}$;
+        \item si ha $S\cap\partial B(p',r)=\emptyset$.
+    \end{nlist}
+    
+    Inoltre, supponiamo che per ogni $q'\in\partial\Omega\setminus S$ esistono un intorno $U$ di $q'$, uno $z_0\in\Omega$ e una funzione $C^1$ strettamente crescente $f:(0,+\infty)\longrightarrow\mathbb{R}$, con $f(t)\longrightarrow+\infty$ per $t\longrightarrow+\infty$, tali che:
+    \begin{enumerate}
+        \item si ha $k_\Omega(z_0,z) \le f\big(1/\delta_\Omega(z)\big)$ per ogni $z\in\Omega\cap U$;
+        \item si ha $M_{\Omega,U}(r)\longrightarrow 0$ per $r\longrightarrow 0$;
+        \item esiste $r_0>0$ tale che $\displaystyle\int_0^{r_0}\frac{M_{\Omega,U}(r)}{r^2}f'\left(\frac{1}{r}\right)\diff r<+\infty$.
+    \end{enumerate}
+
+    Allora $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda \ge 1$ e $\kappa>0$.
 \end{thm}
 
 \begin{proof}
@@ -37,11 +71,33 @@ Possiamo ora procedere a dimostrare che $\Omega$ è $(\lambda,\kappa)$-visibile 
 \end{proof}
 
 \begin{cor}
-    (\cite[Corollary 1.10]{CMS}) RICOPIARE ENUNCIATO.
+    (\cite[Corollary 1.10]{CMS}) Sia $\Omega$ un dominio limitato di $\mathbb{C}^d$. Supponiamo che esista un compatto $S\subseteq\partial\Omega$ tale che $S_a$, l'insieme dei punti di accumulazione di $S$, sia finito, e inoltre che ogni punto $p\in\partial\Omega\setminus S$ sia un punto liscio di bordo pseudoconvesso e di tipo finito. Allora $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda \ge 1$ e $\kappa>0$.
 \end{cor}
 
 \begin{proof}
-    SCRIVERE DIMOSTRAZIONE.
+    Mostriamo che, dati $p,q\in\partial\Omega$ con $p\not=q$, sono soddisfatte le ipotesi (i) e (ii) del Teorema \ref{extvis}. Per farlo, consideriamo $S_0:=S_a\cup\{p,q\}$. Allora, per finitezza di $S_0$, esiste $\epsilon_0>0$ tale che $\overline{B(x,\epsilon_0)}\cap\overline{B(x',\epsilon_0)}=\emptyset$ per ogni $x,x'\in S_0$. Adesso poniamo
+    $$S_1:=(S\cup\{p,q\})\setminus\left(\bigcup_{x\in S_a}\overline{B(x,\epsilon_0)}\right);$$
+    notiamo che $S_1$ è un insieme finito disgiunto dal compatto $K:=\displaystyle\bigcup_{x\in S_a}\overline{B(x,\epsilon_0)}$. Dunque esiste $\epsilon_1>0$ tale che:
+    \begin{itemize}
+        \item si ha $\overline{B(y,\epsilon_1)}\cap K=\emptyset$ per ogni $y\in S_1$;
+        \item $\overline{B(y,\epsilon_1)}\cap\overline{B(y',\epsilon_1)}=\emptyset$ per ogni $y,y'\in S_1$ con $y\not=y'$.
+    \end{itemize}
+    
+    Distinguiamo ora due casi. \\
+
+    Caso 1: $p\not\in K$.
+
+    Basta prendere $p'=p$ e $r=\epsilon_1$. \\
+
+    Caso 2: $p\in K$.
+
+    In questo caso esiste un $x_0\in S_a$ tale che $p\in\overline{B(x_0,\epsilon_0)}$. Consideriamo la seguente famiglia di insiemi con chiusure mutualmente disgiunte:
+    $$\mathcal{B}:=\{B(x,\epsilon_0)\mid x\in S_a\}\cup\{B(y,\epsilon_1)\mid y\in S_1\};$$
+    allora esiste $\epsilon_2>0$ tale che $\epsilon_2<\text{dist}(B_1,B_2)/4$ per ogni $B_1,B_2\in\mathcal{B}$. Segue che $\mathcal{C}:=\{B(x,\epsilon_0+\epsilon_2)\mid x\in S_a\}\cup\{B(y,\epsilon_1+\epsilon_2)\mid y\in S_1\}$ è una famiglia di insiemi con chiusure mutualmente disgiunte. Allora basta prendere $p'=x_0$ e $r=\epsilon_1+\epsilon_2$. \\
+
+    Mostriamo adesso che, per ogni $q'\in\partial\Omega\setminus S$, esistono un intorno $U$ e una funzione $f$ che soddisfano le ipotesi (1), (2) e (3) del Teorema \ref{extvis}.
+    
+    FINIRE DIM (CI SONO DELLE REFERENCE DA GUARDARE).
 \end{proof}
 
 CONCLUDERE MOSTRANDO CHE $S$ SODDISFA\marginpar{Ma siamo sicuri? Controllare dim. del Corollario per sicurezza} LE IPOTESI DEL COROLLARIO. \\
