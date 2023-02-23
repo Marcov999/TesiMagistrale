@@ -57,7 +57,7 @@ $$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delt
     \end{nlist}
     
     Inoltre, supponiamo che per ogni $q'\in\partial\Omega\setminus S$ esistono un intorno $U$ di $q'$, uno $z_0\in\Omega$ e una funzione $C^1$ strettamente crescente $f:(0,+\infty)\longrightarrow\mathbb{R}$, con $f(t)\longrightarrow+\infty$ per $t\longrightarrow+\infty$, tali che:
-    \begin{enumerate}
+    \begin{enumerate}[label={(\arabic*)}]
         \item si ha $k_\Omega(z_0,z) \le f\big(1/\delta_\Omega(z)\big)$ per ogni $z\in\Omega\cap U$;
         \item si ha $M_{\Omega,U}(r)\longrightarrow 0$ per $r\longrightarrow 0$;
         \item esiste $r_0>0$ tale che $\displaystyle\int_0^{r_0}\frac{M_{\Omega,U}(r)}{r^2}f'\left(\frac{1}{r}\right)\diff r<+\infty$.
@@ -67,7 +67,43 @@ $$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delt
 \end{thm}
 
 \begin{proof}
-    SCRIVERE DIMOSTRAZIONE.
+    La dimostrazione è molto simile a quella del Teorema \ref{gold_is_vis}. Supponiamo per assurdo che esistano $\lambda \ge 1$ e $\kappa>0$ tali che $\Omega$ non sia $(\lambda,\kappa)$-visibile. Allora esistono $p,q\in\partial\Omega$ con $p\not=q$, due successioni $\{p_n\}_{n\in\mathbb{N}}$ e $\{q_n\}_{n\in\mathbb{N}}$, convergenti rispettivamente a $p$ e $q$, e una successione $\{\gamma_n\}_{n\in\mathbb{N}}$ di $(\lambda,\kappa)$-simil-geodetiche, con $\gamma_n:[a_n,b_n]\longrightarrow\Omega$ e $\gamma_n(a_n)=p_n$ e $\gamma_n(b_n)=q_n$ per ogni $n\in\mathbb{N}$, tali che
+    $$\max_{a_n\le t\le b_n}\delta_\Omega\big(\gamma_n(t)\big)\longrightarrow 0\text{ per }n\longrightarrow+\infty.$$
+
+    Per ipotesi esistono $p'\in\partial\Omega$ e $r>0$ tali che valgano (i) e (ii). Poiché $p_n\longrightarrow p$ e $q_n\longrightarrow q$ per $n\longrightarrow+\infty$, possiamo assumere senza perdita di generalità che $\{p_n\}_{n\in\mathbb{N}}\subseteq B(p',r)$ e $\{q_n\}_{n\in\mathbb{N}}\subseteq \Omega\setminus\overline{B(p',r)}$. Poiché $\gamma_n$ è una curva continua che collega $p_n$ e $q_n$, deve esistere $\alpha_n\in(a_n,b_n)$ tale che $\xi_n:=\gamma_n(\alpha_n)\in\partial B(p',r)$; a meno di sottosuccessioni, possiamo assumere che $\xi_n\longrightarrow\xi\in\partial\Omega\cap\partial B(p',r)$ per $n\longrightarrow+\infty$. Per (ii) si ha che $\xi\in\partial\Omega\setminus S$; allora esistono, per ipotesi, un intorno $U$ di $\xi$, uno $z_0\in\Omega$ e una funzione $C^1$ strettamente crescente $f:(0,+\infty)\longrightarrow\mathbb{R}$ tali che valgano (1), (2) e (3). Osserviamo che tali ipotesi sono ancora soddisfatte se prendiamo un intorno $V \subseteq U$ di $\xi$, per cui, a meno di prendere un intorno più piccolo, possiamo supporre che $\overline{U}\cap(S\cup\{p,q\})=\emptyset$; inoltre, di nuovo a meno di sottosuccessioni, possiamo anche supporre che $q_n\not\in\overline{U}$.
+
+    Sia $\epsilon>0$ tale che $\overline{B(\xi,\epsilon)}\subseteq U$; poiché $\xi_n\longrightarrow \xi$ per $n\longrightarrow+\infty$, possiamo assumere senza perdita di generalità che $\{\xi_n\}_{n\in\mathbb{N}}\subseteq B(\xi,\epsilon)$. Per ogni $n\in\mathbb{N}$ poniamo
+    $$\beta_n:=\inf\{t\in[\alpha_n,b_n]\mid \gamma_n(t)\in\partial B(\xi,\epsilon)\};$$
+    per definizione di $\beta_n$ e per il fatto che $\partial B(\xi,\epsilon)$ è chiuso, si ha $\gamma_n(\beta_n)\in\partial B(\xi,\epsilon)$ e $a_n<\alpha_n<\beta_n<b_n$. Poniamo $\sigma_n:=\gamma_n\restrict{[\alpha_n,\beta_n]}:[\alpha_n,\beta_n]\longrightarrow\Omega$ per ogni $n\in\mathbb{N}$. Allora, poiché $\gamma_n(\alpha_n)=\xi_n\in B(\xi,\epsilon)$, per definizione di $\beta_n$ dev'essere $\sigma_n([\alpha_n,\beta_n])\subseteq\overline{B(\xi,\epsilon)}\subseteq U$. Notiamo che, essendo la restrizione della $(\lambda,\kappa)$-simil-geodetica $\gamma_n$, anche $\sigma_n$ è una $(\lambda,\kappa)$-simil-geodetica per ogni $n\in\mathbb{N}$; inoltre, si ha
+    $$\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)\le\max_{a_n\le t\le b_n}\delta_\Omega\big(\gamma_n(t)\big)\longrightarrow 0\text{ per }n\longrightarrow+\infty.$$
+
+    Adesso, a meno di riparametrizzare le curve $\sigma_n$, possiamo assumere che $\alpha_n\le 0\le\beta_n$ e che
+    $$\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)=\delta_\Omega\big(\sigma_n(0)\big)$$
+    per ogni $n\in\mathbb{N}$. Per la Proposizione \ref{simillip} esiste una costante $C>0$, che dipende solo da $\lambda$, tale che le $(\lambda,\kappa)$-simil-geodetiche di $\Omega$ sono $C$-lipschitziane rispetto alla distanza euclidea. Allora, applicando il teorema di Ascoli-Arzelà e passando a un'opportuna sottosuccessione con un procedimento diagonale, possiamo assumere che:
+    \begin{itemize}
+        \item si ha $\alpha_n\longrightarrow\alpha\in[-\infty,0]$ e $\beta_n\longrightarrow\beta\in[0,+\infty]$ per $n\longrightarrow+\infty$;
+        \item la successione $\{\sigma_n\}_{n\in\mathbb{N}}$ converge uniformemente sui compatti di $(\alpha,\beta)$ a una curva continua $\sigma:(\alpha,\beta)\longrightarrow \overline{B(\xi,\epsilon)}\subseteq U$;
+        \item si ha $\sigma_n(\alpha_n)=\xi_n\longrightarrow\xi$ e $\sigma_n(\beta_n)=\eta_n\longrightarrow\eta$ per $n\longrightarrow+\infty$, con $\xi\in\partial\Omega\cap\partial B(p',r)$ e $\eta\in\partial\Omega\cap\partial B(\xi,\epsilon)$.
+    \end{itemize}
+
+    Ovviamente dev'essere $\xi\not=\eta$; quindi, dato che $\|\sigma(\alpha_n)-\sigma(\beta_n)\| \le C(\beta_n-\alpha_n)$ per ogni $n\in\mathbb{N}$, si ha che $C(\beta-\alpha)\ge\|\xi-\eta\|>0$, per cui $\beta>\alpha$. \\
+
+    Mostriamo adesso che $\sigma$ è costante. Vediamo innanzitutto che per ogni $n\in\mathbb{N}$ e per quasi ogni $t\in(\alpha_n,\beta_n)$ si ha
+    $$\|\sigma_n'(t)\| \le \lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big).$$
+    
+    Sia $t\in(\alpha_n,\beta_n)$ tale che $\sigma_n'(t)$ esiste e $\|\sigma_n'(t)\|\not=0$ (altrimenti la disuguaglianza è immediata). Ricordiamo che ogni $\sigma_n$ è una $(\lambda,\kappa)$-simil-geodetica, per cui $K_\Omega\big(\sigma_n(t);\sigma_n'(t)\big)\le\lambda$; quindi, dato che $\sigma_n([\alpha_n,\beta_n])\subseteq U$, si ha
+    $$\|\sigma_n'(t)\|\le \frac{\lambda}{K_\Omega\left(\sigma_n(t);\frac{\sigma_n'(t)}{\|\sigma_n'(t)\|}\right)}\le\lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big),$$
+    come voluto. Adesso, poiché $\displaystyle\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)\longrightarrow 0$ per $n\longrightarrow+\infty$, dal fatto che $M_{\Omega,U}$ è crescente e dall'ipotesi (2) si ha che $M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)\longrightarrow 0$ uniformemente. Ma allora, dati $\alpha<u\le w<\beta$, si ha
+    \begin{align*}
+        \|\sigma(u)-\sigma(w)\|&\le \lim_{n\longrightarrow+\infty}\|\sigma_n(u)-\sigma_n(w)\| \\
+        =&\lim_{n\longrightarrow+\infty}\left\|\int_u^w\sigma_n'(t)\diff t\right\|\le \limsup_{n\longrightarrow+\infty} \int_u^w \|\sigma_n'(t)\|\diff t\\
+        &\le \lambda\limsup_{n\longrightarrow+\infty} \int_u^w M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)\diff t=0;
+    \end{align*}
+    dunque $\sigma$ è costante su $(\alpha,\beta)$. \\
+
+    Vogliamo ottenere una contraddizione mostrando anche che $\sigma$ non è costante. Distinguiamo due casi.
+
+    Caso 1: sia $\alpha$ che $\beta$ sono finiti.
 \end{proof}
 
 \begin{cor}
@@ -95,16 +131,20 @@ $$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delt
     $$\mathcal{B}:=\{B(x,\epsilon_0)\mid x\in S_a\}\cup\{B(y,\epsilon_1)\mid y\in S_1\};$$
     allora esiste $\epsilon_2>0$ tale che $\epsilon_2<\text{dist}(B_1,B_2)/4$ per ogni $B_1,B_2\in\mathcal{B}$. Segue che $\mathcal{C}:=\{B(x,\epsilon_0+\epsilon_2)\mid x\in S_a\}\cup\{B(y,\epsilon_1+\epsilon_2)\mid y\in S_1\}$ è una famiglia di insiemi con chiusure mutualmente disgiunte. Allora basta prendere $p'=x_0$ e $r=\epsilon_1+\epsilon_2$. \\
 
-    Mostriamo adesso che, per ogni $q'\in\partial\Omega\setminus S$, esistono un intorno $U$ e una funzione $f$ che soddisfano le ipotesi (1), (2) e (3) del Teorema \ref{extvis}.
-    
-    FINIRE DIM (CI SONO DELLE REFERENCE DA GUARDARE).
+    Per concludere mostriamo adesso che, per ogni $q'\in\partial\Omega\setminus S$, esistono un intorno $U$ e una funzione $f$ che soddisfano le ipotesi (1), (2) e (3) del Teorema \ref{extvis}. Fissiamo un tale $q'$; allora sono soddisfatte le ipotesi di \cite[Theorem 1]{Ch}\marginpar{Non sono tanto convinto di 'sta cosa che qui lo cito e basta, mentre dopo lo cito esplicitamente; a questo punto mi domando se non sia meglio riorganizzare anche le ultime sezioni} e \cite[Proposition 2.5]{FR}, per cui esistono un intorno $U$ di $q'$, due costanti $c,\epsilon>0$, un punto $z_0\in\Omega$ e una costante $A$ tali che, ponendo $f(x):=A+\dfrac{1}{2}\log{x}$ per ogni $x\in(0,+\infty)$, si ha
+    \begin{gather*}
+        k_\Omega(z,z_0) \le f\big(1/\delta_\Omega(z)\big)\\
+        \text{e}\\
+        K_\Omega(z;v) \ge c\frac{\|v\|}{\delta_\Omega(z)^{\epsilon}}
+    \end{gather*}
+    per ogni $z\in\Omega\cap U$ e $v\in\mathbb{C}^d$. Ne consegue facilmente che le ipotesi (1), (2) e (3) del Teorema \ref{extvis} sono soddisfatte, come voluto.
 \end{proof}
 
-CONCLUDERE MOSTRANDO CHE $S$ SODDISFA\marginpar{Ma siamo sicuri? Controllare dim. del Corollario per sicurezza} LE IPOTESI DEL COROLLARIO. \\
+CONCLUDERE MOSTRANDO CHE $S$ SODDISFA\marginpar{Ma siamo sicuri? Controllare bene per sicurezza} LE IPOTESI DEL COROLLARIO. \\
 
 Mostriamo adesso che $\Omega$ non soddisfa la condizione (1) nella Definizione \ref{gold}. Iniziamo notando che
 $$\Omega\cap\mathbb{B}^2_{\epsilon/2}=\{(z_1,z_2)\in\mathbb{B}^2_{\epsilon/2}\mid \mathfrak{Im}(z_2)>\exp(-1/\|z\|^2)\};$$
-dunque, per $r>0$ sufficientemente piccolo, si ha che $p_r:=(0,ir)\in\Omega$. Poniamo $v:=(1,0)$ e $s:=\sqrt{\dfrac{1}{\log(1/r)}-r^2}$; allora \marginpar{Capire perché. \cite{CMS} menziona Graham, ma non si degna di citare (né di definire le funzioni, se è per questo...)}
+dunque, per $r>0$ sufficientemente piccolo, si ha che $p_r:=(0,ir)\in\Omega$. Poniamo $v:=(1,0)$ e $s:=\sqrt{\dfrac{1}{\log(1/r)}-r^2}$; allora la funzione $\varphi:\mathbb{D}\longrightarrow\Omega$ data da $\varphi(\zeta)=p_r+\zeta sv$ è ben definita (cioè l'immagine è effettivamente contenuta in $\Omega$) e olomorfa, per cui
 $$K_\Omega(p_r;v) \le \frac{1}{s}.$$
 
 Adesso, poiché $(0,0)\in\partial\Omega$, si ha $\delta_\Omega(p_r) \le r$, per cui
