@@ -103,7 +103,45 @@ $$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delt
 
     Vogliamo ottenere una contraddizione mostrando anche che $\sigma$ non è costante. Distinguiamo due casi.
 
-    Caso 1: sia $\alpha$ che $\beta$ sono finiti.
+    Caso 1: sia $\alpha$ che $\beta$ sono finiti. Per ogni $n\in\mathbb{N}$, definiamo al seguente modo la curva $\tilde{\sigma}_n:[\alpha,\beta]\longrightarrow\Omega$: restringiamo $\sigma_n$ all'intervallo $[\alpha_n,\beta_n]\cap[\alpha,\beta]$ ed estendiamola ad una costante sugli intervalli $[\alpha,\alpha_n]$ e $[\beta_n,\beta]$ se $\alpha<\alpha_n$ o $\beta_n<\beta$. È facile vedere che le $\tilde{\sigma}_n$ sono ancora $C$-lipschitziane, per cui, applicando di nuovo Ascoli-Arzelà, a meno di sottosuccessioni convergono, uniformemente sui compatti, a una curva continua $\tilde{\sigma}:[\alpha,\beta]\longrightarrow\overline{\Omega}$. Questa curva estende in modo continuo $\sigma$ a tutto $[\alpha,\beta]$ e $\tilde{\sigma}(\alpha)=\xi\not=\eta=\tilde{\sigma}(\beta)$, per cui $\tilde{\sigma}$ non è costante, e di conseguenza non lo è neanche $\sigma$.
+
+    Caso 2: $\alpha=-\infty$ o $\beta=+\infty$. Ricordiamo che $\sigma_n$ è una $(\lambda,\kappa)$-simil-geodetica per ogni $n\in\mathbb{N}$; dunque si ha
+    \begin{equation}\label{disconf}
+        \begin{aligned}
+            \frac{1}{\lambda}|t|-\kappa&\le k_\Omega\big(\sigma_n(0),\sigma_n(t)\big)\\
+            &\le k_\Omega\big(\sigma_n(0),z_0\big)+k_\Omega\big(z_0,\sigma_n(t)\big) \le 2f\left(\frac{1}{\delta_\Omega\big(\sigma_n(t)\big)}\right),
+        \end{aligned}
+    \end{equation}
+    dove l'ultima disuguaglianza segue dall'ipotesi (1), dal fatto che per ogni $n\in\mathbb{N}$ si ha $\sigma_n([\alpha_n,\beta_n])\subseteq\Omega\cap U$ e da $\displaystyle\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)=\delta_\Omega\big(\sigma_n(0)\big)$.
+
+    Consideriamo il caso $\beta=+\infty$. Poiché la successione $\{\beta_n\}_{n\in\mathbb{N}}$ diverge a $+\infty$ e $f$ è continua con $\displaystyle\lim_{n\longrightarrow+\infty}f(t)=+\infty$, esistono un naturale $N\in\mathbb{N}$ e una costante $B>0$ tali che per ogni $n\ge N$ e $t\in(B,\beta_n]$ si ha $\dfrac{|t|}{2\lambda}-\dfrac{\kappa}{2}\in f\big((0,+\infty)\big)$. Usando anche la disuguaglianza \eqref{disconf} e il fatto che $f$ è strettamente crescente, troviamo che
+    $$f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right) \le \frac{1}{\delta_\Omega\big(\sigma_n(t)\big)}$$
+    per ogni $n\ge N$ e $t\in(B,\beta_n]$. Se $\alpha=-\infty$, ragionando allo stesso modo troviamo un intero $N'$ e una costante $A>0$ tali che
+    $$f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right) \le \frac{1}{\delta_\Omega\big(\sigma_n(t)\big)}$$
+    per ogni $n\ge N'$ e $t\in[\alpha_n,-A)$. Vediamo il caso $\alpha=-\infty$ e $\beta=+\infty$. Dalle due disuguaglianze appena mostrate, usando anche che $\|\sigma_n'(t)\| \le \lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ e che $M_{\Omega,U}$ è crescente, troviamo che
+    $$\|\sigma_n'(t)\| \le \lambda M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)$$
+    per ogni $n\ge\max\{N,N'\}$ e per quasi ogni $t\in[\alpha_n,-A)\cup(B,\beta_n]$. Usando l'ipotesi (3) e il cambio di variabile $r=\dfrac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}$, si ha che esistono due costanti $c\in(-\infty,-A)$ e $d\in(B,+\infty)$ tali che
+    \begin{align*}
+        \lambda\int_{-\infty}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t&+\lambda\int_d^{+\infty}M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &<\|\xi-\eta\|.
+    \end{align*}
+
+    Allora, usando le ultime due disuguaglianze, otteniamo
+    \begin{align*}
+        \|\sigma(d)-\sigma(c)\|&=\lim_{n\longrightarrow+\infty}\|\sigma_n(d)-\sigma_n(c)\|\\
+        &\ge\limsup_{n\longrightarrow+\infty}(\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\|\sigma_n(\alpha_n)-\sigma_n(c)\|\\
+        &-\|\sigma_n(\beta_n)-\sigma_n(d)\|)\\
+        &\ge\lim_{n\longrightarrow+\infty}\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\limsup_{n\longrightarrow+\infty}\left\|\int_{\alpha_n}^c \sigma_n'(t)\diff t\right\|\\
+        &-\limsup_{n\longrightarrow+\infty}\left\|\int_d^{\beta_n} \sigma_n'(t)\diff t\right\|\\
+        &\ge\|\xi-\eta\|-\limsup_{n\longrightarrow+\infty}\int_{\alpha_n}^c \|\sigma_n'(t)\|\diff t-\limsup_{n\longrightarrow+\infty}\int_d^{\beta_n} \|\sigma_n'(t)\|\diff t\\
+        &\ge\|\xi-\eta\|-\limsup_{n\longrightarrow+\infty}\lambda\int_{\alpha_n}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &-\limsup_{n\longrightarrow+\infty}\lambda\int_d^{\beta_n} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &=\|\xi-\eta\|-\lambda\int_{-\infty}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &-\lambda\int_d^{+\infty} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t>0;
+    \end{align*}
+    dunque in questo caso $\sigma$ non è costante. Se invece $a<-\infty$ e $b=+\infty$ (il caso $a=-\infty$ e $b<+\infty$ è analogo), ragionando come nel caso 1 estendiamo le $\sigma_n$ a delle $\tilde{\sigma}_n$ che, a meno di sottosuccessioni, convergono uniformemente sui compatti a una curva continua $\tilde{\sigma}:[a,+\infty)\longrightarrow\overline{\Omega}$ che estende $\sigma$. Allora basta ripetere la stima precedente con $\tilde{\sigma}_n, \tilde{\sigma}$ e $\alpha$ al posto di $\sigma_n, \sigma$ e $c$ e scegliendo un $d$ opportuno, trovando così che $\tilde{\sigma}$, e di conseguenza $\sigma$, non è costante. \\
+
+    Poiché la nostra assunzione porta a una contraddizione, dev'essere falsa, da cui la tesi.
 \end{proof}
 
 \begin{cor}

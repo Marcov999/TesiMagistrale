@@ -5,7 +5,7 @@ Introduciamo le notazioni e definizioni che useremo:
     \item dati una varietà complessa $X$ e $x \in X$, indichiamo con $T_xX$ lo spazio tangente complesso a $X$ in $x$, che nel caso dei domini è canonicamente identificato con $\mathbb{C}^n$;
     \item dati $X,Y$ spazi topologici, $C^0(X,Y)$ è lo spazio delle funzioni continue da $X$ a $Y$ considerato con la topologia compatta-aperta. Nel caso in cui $Y$ sia uno spazio metrico, tale topologia coincide con la topologia della convergenza uniforme sui compatti;
     \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme dei biolomorfismi di $X$ in sé;
-    \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff f_x$ il differenziale di $f$ in $x \in X$;
+    \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff_x f$ il differenziale di $f$ in $x \in X$;
     \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$; il disco di centro $0$ e raggio $r>0$ è $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$; il disco di centro $a\in\mathbb{C}$ e raggio $r>0$ è $D(a,r)=\{z\in\mathbb{C}\mid |z-a|<r\}$; il polidisco in $\mathbb{C}^n$ è $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$;
     \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di centro l'origine $O\in\mathbb{C}^n$ e raggio $r>0$;
     \item dato un sottoinsieme $A\subseteq \mathbb{C}^n$, il bordo euclideo di $A$ è $\partial A:=\overline{A}\setminus A$;
@@ -19,7 +19,7 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     \begin{equation}
         \lambda_{\mathbb{D}}(z;v)=\frac{1}{1-|z|^2}|v|
     \end{equation}
-    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana di curvatura gaussiana costante uguale a $-4$ (si veda \cite[Definition 1.10.1 and Example 1.10.2]{A5}).
+    per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana di curvatura gaussiana costante uguale a $-4$ (si veda \cite[Section 1-5]{Ah}).
 \end{defn}
 
 \begin{defn}
@@ -27,7 +27,7 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     \begin{equation}
         \omega(z_1,z_2)=\frac{1}{2}\log{\frac{1+\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}{1-\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}}
     \end{equation}
-    per ogni $z_1,z_2 \in \mathbb{D}$ (si veda \cite[point (iii) of Proposition 1.2.7 and Proposition 1.9.14]{A5}).
+    per ogni $z_1,z_2 \in \mathbb{D}$ (si veda \cite[Section 1-1]{Ah}).
 \end{defn}
 
 Oltre ad avere curvatura negativa costante, la metrica e la distanza di Poincaré sono tali che le funzioni olomorfe dal disco unitario in sé sono semicontrazioni rispetto ad esse.
@@ -67,7 +67,7 @@ Enunciamo adesso dei fatti noti sulle geodetiche del disco unitario con la metri
     per ogni $t_1,t_2\in I$.
 \end{defn}
 
-\begin{oss}\marginpar{Sono in dubbio se definire una lunghezza in generale per spazi metrici: potrebbe confondersi con la def. \ref{lung_X}}
+\begin{oss}
     Dati una geodetica $\sigma:I\longrightarrow X$ e $a,b\in I$, si ha
     $$d\big(\sigma(a),\sigma(b)\big)=\inf_{a=t_0,t_1,\dots,t_n=b} \sum_{j=1}^n d\big(\sigma(t_{j-1}),\sigma(t_j)\big);$$
     cioè, le geodetiche sono le curve che ``minimizzano la lunghezza''.
@@ -83,13 +83,13 @@ Quello che vogliamo fare ora è generalizzare la metrica e la distanza di Poinca
     Sia $X$ una varietà complessa; la \textit{pseudometrica di Kobayashi} su $X$ è
     \begin{equation}\begin{split}
         K_X(x;Z)=&\inf\{|v| \mid v \in \mathbb{C}, \text{ esiste }f \in \text{Hol}(\mathbb{D},X) \\
-        &\text{ tale che } f(0)=x, \diff f_0(v)=Z\}
+        &\text{ tale che } f(0)=x, \diff_0 f(v)=Z\}
     \end{split}\end{equation}
     per ogni $x \in X$ e $Z \in T_xX$.
 \end{defn}
 
 \begin{oss} \label{metr_noncr}
-    Non possiamo sempre parlare di metrica perché, per esempio, $K_{\mathbb{C}^n}\equiv 0$. Infatti, dati $z\in\mathbb{C}^n$ e $Z\in T_z\mathbb{C}^n=\mathbb{C}^n$, abbiamo che la funzione $f_\epsilon\in\text{Hol}(\mathbb{D},\mathbb{C}^n)$ data da $f_\epsilon(\zeta)=z+\zeta Z/\epsilon$ è tale che $\diff (f_\epsilon)_0(\epsilon)=Z$ per ogni $\epsilon>0$; di conseguenza, $K_{\mathbb{C}^n}(z;Z)=0$.
+    Non possiamo sempre parlare di metrica perché, per esempio, $K_{\mathbb{C}^n}\equiv 0$. Infatti, dati $z\in\mathbb{C}^n$ e $Z\in T_z\mathbb{C}^n=\mathbb{C}^n$, abbiamo che la funzione $f_\epsilon\in\text{Hol}(\mathbb{D},\mathbb{C}^n)$ data da $f_\epsilon(\zeta)=z+\zeta Z/\epsilon$ è tale che $\diff_0 f_\epsilon(\epsilon)=Z$ per ogni $\epsilon>0$; di conseguenza, $K_{\mathbb{C}^n}(z;Z)=0$.
 \end{oss}
 
 Vediamo adesso che le funzioni olomorfe sono semicontrazioni rispetto alla pseudometrica di Kobayashi.
@@ -97,7 +97,7 @@ Vediamo adesso che le funzioni olomorfe sono semicontrazioni rispetto alla pseud
 \begin{prop} \label{metrdecr}
     Siano $X$ e $Y$ varietà complesse, e sia $f \in \textnormal{Hol}(X,Y)$. Allora si ha
     \begin{equation}
-        K_Y\big(f(x);\diff f_x(Z)\big) \le K_X(x;Z)
+        K_Y\big(f(x);\diff_x f(Z)\big) \le K_X(x;Z)
     \end{equation}
     per ogni $x \in X$ e $Z \in T_xX$.
 \end{prop}
@@ -106,15 +106,15 @@ Vediamo adesso che le funzioni olomorfe sono semicontrazioni rispetto alla pseud
     Dati $x\in X$ e $Z\in T_xX$, poniamo
     \begin{align*}
         A_X(x;Z)=&\{v \in \mathbb{C} \mid \text{esiste }g \in \text{Hol}(\mathbb{D},X) \\
-        &\text{ tale che } g(0)=x, \diff g_0(v)=Z\},
+        &\text{ tale che } g(0)=x, \diff_0 g(v)=Z\},
     \end{align*}
-    e sia $A_Y\big(f(x);\diff f_x(Z)\big)$ definito analogamente. Per definizione,
+    e sia $A_Y\big(f(x);\diff_x f(Z)\big)$ definito analogamente. Per definizione,
     \begin{gather*}
         K_X(x;Z)=\inf\{|v|\mid v\in A_X(x;Z)\}\\
         \text{ e }\\
-        K_Y\big(f(x);\diff f_x(Z)\big)=\inf\{|v|\mid v\in A_Y\big(f(x);\diff f_x(Z)\big)\};
+        K_Y\big(f(x);\diff_x f(Z)\big)=\inf\{|v|\mid v\in A_Y\big(f(x);\diff_x f(Z)\big)\};
     \end{gather*}
-    quindi ci basta mostrare che $A_X(x;Z)\subseteq A_Y\big(f(x);\diff f_x(Z)\big)$. Dato $v\in A_X(x;Z)$, prendiamo $g\in\text{Hol}(\mathbb{D},X)$ tale che $g(0)=x$ e $\diff g_0(v)=Z$. Allora abbiamo $(f\circ g)(0)=f(x)$ e $\diff(f\circ g)_0(v)=(\diff f_x\circ\diff g_0)(v)=\diff f_x(Z)$; dunque $v \in A_Y\big(f(x);\diff f_x(Z)\big)$. Perciò $A_X(x;Z)\subseteq A_Y\big(f(x);\diff f_x(Z)\big)$, come voluto.
+    quindi ci basta mostrare che $A_X(x;Z)\subseteq A_Y\big(f(x);\diff_x f(Z)\big)$. Dato $v\in A_X(x;Z)$, prendiamo $g\in\text{Hol}(\mathbb{D},X)$ tale che $g(0)=x$ e $\diff_0 g(v)=Z$. Allora abbiamo $(f\circ g)(0)=f(x)$ e $\diff_0(f\circ g)(v)=(\diff_x f\circ\diff_0 g)(v)=\diff_x f(Z)$; dunque $v \in A_Y\big(f(x);\diff_x f(Z)\big)$. Perciò $A_X(x;Z)\subseteq A_Y\big(f(x);\diff_x f(Z)\big)$, come voluto.
 \end{proof}
 
 Nei casi a cui siamo interessati, la pseudometrica di Kobayashi è effettivamente una metrica.

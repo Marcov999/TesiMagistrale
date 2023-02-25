@@ -104,7 +104,7 @@ Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi i
 \end{prop}
 
 \begin{proof}
-    Dimostriamo solamente che se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$, dando per buona la prima parte. Poiché $X$ è una varietà,\marginpar{Se devo giustificarlo, direi \cite[4.16]{Ke}} possiamo fissare una distanza $d$ su $X^*$ che induca la topologia della compattificazione. Dato che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, per il teorema di Ascoli-Arzelà è equicontinuo.
+    Dimostriamo solamente che se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$, dando per buona la prima parte. Poiché $X$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $X^*$ che induca la topologia della compattificazione. Dato che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, per il teorema di Ascoli-Arzelà è equicontinuo.
     
     Sia $Y$ una varietà complessa, mostriamo che $\text{Hol}(Y,X)$ è equicontinuo. Se per assurdo non lo fosse, esisterebbero $\epsilon>0$, un punto $z\in Y$ e due successioni $\{z_\nu\}_{\nu\in\mathbb{N}}\subseteq Y$ e $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq\text{Hol}(Y,X)$ tali che $d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$. Scegliendo delle coordinate opportune, possiamo assumere che $Y$ sia la palla euclidea di un qualche $\mathbb{C}^n$ e che $z=0$. Definiamo $g_\nu\in\text{Hol}(\mathbb{D},X)$ nel seguente modo: $g_\nu(\zeta)=f_\nu(\zeta z_\nu/\|z_\nu\|)$; allora $\|z_\nu\| \longrightarrow 0$ per $\nu\longrightarrow 0$ e $d\big(g_\nu(\|z_\nu\|),g_\nu(0)\big)=d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$, contraddizione con il fatto che $\text{Hol}(\mathbb{D},X)$ è equicontinuo.
 
@@ -217,7 +217,7 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali c
 \end{proof}
 
 \begin{ex}
-    In \cite{Rosa} viene costruito un esempio di un aperto\marginpar{Dominio?} di $\mathbb{C}^3$ limitato (dunque Kobayashi-iperbolico) e taut, ma non Kobayashi-completo.
+    In \cite{Rosa} viene costruito un esempio di un dominio di $\mathbb{C}^3$ limitato (dunque Kobayashi-iperbolico) e taut, ma non Kobayashi-completo.
 \end{ex}
 
 Usando la Proposizione \ref{comp_is_taut}, si può dimostrare che tutti i domini limitati e strettamente pseudoconvessi sono taut. Tuttavia, più avanti avremo bisogno di un risultato un po' più forte.

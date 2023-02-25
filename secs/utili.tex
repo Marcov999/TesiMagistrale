@@ -23,9 +23,9 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 
 \begin{proof}
     (1) Supponiamo per assurdo che esistano $z_j \in X$ e $Z_j \in T_{z_j}X$, con $Z_j\not=0$, tali che $\displaystyle \lim_{j \longrightarrow +\infty} K_X(z_j;Z_j)/\|Z_j\| \longrightarrow 0$. Senza perdita di generalità possiamo supporre $\|Z_j\|=1$ per ogni $j$. Per definizione di $K_X$, esistono delle funzioni $f_j\in\text{Hol}(\mathbb{D},X)$ e dei $v_j \in \mathbb{C}$ tali che $f_j(0)=z_j$ e
-    $$|v_j| \le K_X(z_j;Z_j)+1/j\quad\text{ e }\quad \diff (f_j)_0(v_j)=Z_j.$$
+    $$|v_j| \le K_X(z_j;Z_j)+1/j\quad\text{ e }\quad \diff_0 f_j(v_j)=Z_j.$$
 
-    Segue che $\displaystyle \lim_{j \longrightarrow +\infty}\|\diff(f_j)_0(1)\| \ge \lim_{j \longrightarrow +\infty}1/|v_j|=+\infty$. A meno di sottosuccessioni e di riordinare le coordinate, possiamo supporre che siano le prime componenti dei vettori $\diff(f_j)_0(1)$ a tendere a $+\infty$. Chiamiamo $g_j$ la prima componente di $f_j$, cosicché $g_j'$ è la prima componente di $\diff(f_j)(1)$. Le $g_j$ sono le composizioni delle $f_j$ con un embedding e una proiezione, dunque sono olomorfe; inoltre, poiché $X$ è limitata, sono equilimitate. Esiste quindi un $r>0$ tale che $g_j \in \text{Hol}(\mathbb{D},\mathbb{D}_r)$ per ogni $j$. Adesso, noi sappiamo che $\displaystyle\lim_{j\longrightarrow +\infty} |g_j'(0)|=+\infty$; basta allora applicare il lemma di Schwarz a $\dfrac{g_j-g_j(0)}{2r}$ con $j$ sufficientemente grande per ottenere una contraddizione.
+    Segue che $\displaystyle \lim_{j \longrightarrow +\infty}\|\diff_0f_j(1)\| \ge \lim_{j \longrightarrow +\infty}1/|v_j|=+\infty$. A meno di sottosuccessioni e di riordinare le coordinate, possiamo supporre che siano le prime componenti dei vettori $\diff_0f_j(1)$ a tendere a $+\infty$. Chiamiamo $g_j$ la prima componente di $f_j$, cosicché $g_j'$ è la prima componente di $\diff f_j(1)$. Le $g_j$ sono le composizioni delle $f_j$ con un embedding e una proiezione, dunque sono olomorfe; inoltre, poiché $X$ è limitata, sono equilimitate. Esiste quindi un $r>0$ tale che $g_j \in \text{Hol}(\mathbb{D},\mathbb{D}_r)$ per ogni $j$. Adesso, noi sappiamo che $\displaystyle\lim_{j\longrightarrow +\infty} |g_j'(0)|=+\infty$; basta allora applicare il lemma di Schwarz a $\dfrac{g_j-g_j(0)}{2r}$ con $j$ sufficientemente grande per ottenere una contraddizione.
 
     (2) Per ogni $z \in K$, scegliamo un polidisco $U_z$ centrato in $z$ e contenuno in una carta di $X$; sia $U_z'\subseteq U_z$ un altro polidisco, nella stessa carta, centrato in $z$ e relativamente compatto in $U_z$ per ogni $z \in K$. Dato che $K$ è compatto, esistono $z_1,\dots,z_l$ tali che $K\subseteq\displaystyle\bigcup_{j=1}^l U_{z_j}'$. Allora, poiché $\overline{U}_{z_j}'$ è un sottoinsieme compatto di $U_{z_j}$ per $j=1,\dots,l$, per il Lemma \ref{polycpt} abbiamo
     $$K_X(z,Z) \le C_i\|Z\|$$
@@ -222,7 +222,7 @@ Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma c
     Infine, per ogni $t$ si ha
     \begin{equation} \label{snu2}
         \begin{aligned}
-            K_X\big(\sigma_\nu(t);\sigma_\nu'(t)\big)&=K_X\Big(F_\nu\big(\gamma(s)\big);\diff(F_\nu)_{\gamma(t)}\big(\gamma'(t)\big)\Big) \\
+            K_X\big(\sigma_\nu(t);\sigma_\nu'(t)\big)&=K_X\Big(F_\nu\big(\gamma(s)\big);\diff_{\gamma(t)}F_\nu\big(\gamma'(t)\big)\Big) \\
             &\le K_X\big(\gamma(t);\gamma'(t)\big) \le 1,
         \end{aligned}
     \end{equation}
