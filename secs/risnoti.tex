@@ -131,15 +131,26 @@ Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la di
 
 Iniziamo dando una caratterizzazione equivalente all'essere taut per una varietà.
 
-\begin{oss} \label{c0yx}\marginpar{Servirebbe una reference dove la dimostrazione è fatta più nel dettaglio; per ora lascio così, poi ci torno cercando qualcosa di più specifico}
-    Dalla definizione della compattificazione di Alexandroff, una successione in $C^0(Y,X)$ converge in $C^0(Y,X^*)$ alla funzione costante $\infty$ se e solo se è compattamente divergente. Inoltre, se $X$ e $Y$ sono varietà (ma in realtà bastano ipotesi meno stringenti) $C^0(Y,X^*)$ è metrizzabile, per cui un suo sottoinsieme è compatto se e solo se è compatto per successioni (si veda \cite[Section 1]{A3}).
-\end{oss}
+\begin{lm} \label{c0yx}
+    Siano $(X,d)$ uno spazio metrico e $Y$ uno spazio topologico tale che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ di compatti di $Y$ con la seguente proprietà: per ogni compatto $K\subseteq Y$ esiste $n\in\mathbb{N}$ tale che $K\subseteq K_n$. Allora $C^0(Y,X)$ è metrizzabile.
+    
+    In particolare, un suo sottoinsieme è compatto se e solo se è compatto per successioni.
+\end{lm}
+
+\begin{proof}
+    Per ogni $n\in\mathbb{N}$ e per ogni $f,g\in C^0(Y,X)$ poniamo
+    $$d_n(f,g)=\displaystyle\sup_{x\in K_n} d\big(f(x),g(x)\big);$$
+    definiamo
+    $$\tilde{d}(f,g)=\sum_{n=1}^{+\infty} \frac{1}{2^n}\cdot\frac{d_n(f,g)}{1+d_n(f,g)}.$$
+
+    È facile verificare che $\tilde{d}$ è una distanza, che induce proprio la topologia della convergenza uniforme sui compatti.
+\end{proof}
 
 \begin{prop}
     Una varietà complessa e connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
 \end{prop}
 \begin{proof}
-    Supponiamo che $X$ sia taut e consideriamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per definizione $X$ è Kobayashi-iperbolica; dunque per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$, e per l'Osservazione \ref{c0yx} è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante $\infty$. Ma, per l'Osservazione \ref{c0yx}, questo significa che $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
+    Supponiamo che $X$ sia taut e consideriamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per definizione $X$ è Kobayashi-iperbolica; dunque per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$. Poiché $X$ è una varietà, $X^*$ è metrizzabile per \cite[4.16]{Ke}; inoltre, è facile vedere che $\mathbb{D}$ soddisfa le ipotesi dello spazio $Y$ nel Lemma \ref{c0yx}. Quindi $C^0(\mathbb{D},X^*)$ è metrizzabile e la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante $\infty$. Ma, dalla definizione della compattificazione di Alexandroff, una successione in $C^0(\mathbb{D},X)$ converge in $C^0(\mathbb{D},X^*)$ alla funzione costante $\infty$ se e solo se è compattamente divergente; quindi $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
 
     Supponiamo adesso che $\text{Hol}(\mathbb{D},X)$ sia normale. Se $f$ è una funzione nella sua chiusura in $C^0(\mathbb{D},X^*)$, allora è il limite di una successione in $\text{Hol}(\mathbb{D},X)$. Poiché questa famiglia è normale, possiamo trovare una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente, ma dovrà comunque convergere a $f$. Allora nel primo caso, applicando il teorema di Weierstrass in carte opportune, troviamo che $f \in \text{Hol}(\mathbb{D},X)$, mentre nel secondo caso è la funzione costante $\infty$. Dunque $X$ è taut.
 \end{proof}
@@ -323,7 +334,7 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
 \begin{proof}
     (v) $\implies$ (ii). Consideriamo $H=\{z_0\}$ e $K=\overline{\{f^k(z_0)\mid k\in\mathbb{N}\}}$; ovviamente $H$ è compatto, e $K$ lo è per l'ipotesi (v). Allora $f^k(H)\cap K\not=\emptyset$ per ogni $k\in\mathbb{N}$, per cui $\{f^k\}_{k \in \mathbb{N}}$ non può contenere sottosuccessioni compattamente divergenti.
 
-    (ii) $\implies$ (iii). Per l'Osservazione \ref{c0yx} abbiamo che $C^0(X,X^*)$ metrizzabile; dunque $\text{Hol}(X,X)$, visto come suo sottospazio, è metrizzabile. Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatta, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è taut, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
+    (ii) $\implies$ (iii). Poiché $X$ è una varietà, $X$ e $X^*$ soddisfano le ipotesi del Lemma \ref{c0yx}, da cui $C^0(X,X^*)$ è metrizzabile; dunque $\text{Hol}(X,X)$, visto come suo sottospazio, è metrizzabile. Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatta, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è taut, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
 
     (iii) $\implies$ (iv). Fissiamo $z\in X$ e consideriamo la funzione $\text{Hol}(X,X)\longrightarrow X$ data da $f\longmapsto f(z)$. Questa funzione è continua rispetto alla topologia su $\text{Hol}(X,X)$, dunque l'immagine della chiusura di $\{f^k\mid k\in\mathbb{N}\}$ è compatta perché immagine di un compatto, chiusa perché compatta in uno spazio di Hausdorff, e contiene $\{f^k(z)\mid k\in\mathbb{N}\}$. Perciò l'orbita di $z$ è contenuta in un compatto chiuso, e quindi è relativamente compatta, come voluto.
 
@@ -357,7 +368,7 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
 Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ottenere la dicotomia, anche in un caso piuttosto regolare. In realtà, dalla Proposizione \ref{alex} sappiamo che l'essere Kobayashi-iperbolica implica una proprietà di compattezza per le funzioni olomorfe da $X$ in sé. Per definizione, l'essere taut impone che le funzioni limite in $\text{Hol}(X,X)$ siano ancora in $\text{Hol}(X,X)$ oppure siano la costante $\infty$; ciò ci dà appunto la dicotomia (orbite relativamente compatte oppure iterate comapttamente divergenti) che esclude i casi misti nel Teorema \ref{dicotomia}.
 
 \begin{ex} \label{servetaut}
-    Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$, la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per il Teorema \ref{hartogs_fen}, non è un dominio di olomorfia), e i domini taut diversi da $\mathbb{C}^n$ sono sempre pseudoconvessi (si veda \cite[Theorem F]{W}).
+    Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$, la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per il Teorema \ref{hartogs_fen}, non è un dominio di olomorfia), e i domini taut diversi da $\mathbb{C}^n$ sono sempre pseudoconvessi (si veda \cite[Theorem F]{Wu}).
 
     Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque orbite relativamente compatte coesistono con orbite che tendono al bordo, quindi $\{f^h\}_{h\in\mathbb{N}}$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
     
