@@ -3,13 +3,13 @@ Introduciamo le notazioni e definizioni che useremo:
     \item  un \textit{dominio} in $\mathbb{C}^n$ è un aperto connesso;
     \item una \textit{varietà complessa} di dimensione $n$ è una varietà differenziabile reale, di dimensione $2n$ e tale che i cambi di carta siano olomorfi se considerati fra aperti di $\mathbb{C}^n$;
     \item dati una varietà complessa $X$ e $x \in X$, indichiamo con $T_xX$ lo spazio tangente complesso a $X$ in $x$, che nel caso dei domini è canonicamente identificato con $\mathbb{C}^n$;
-    \item nei vari enunciati, quando è data una varietà complessa $X$ sottintendiamo anche di aver fissato una metrica hermitiana $\|\cdot\|_X$ su $X$, che induce la distanza $d_X$ se $X$ è connessa; quando $X$ è sottovarietà di una varietà complessa $Y$, fissiamo la metrica hermitiana su $Y$ e consideriamo su $X$ la metrica indotta; se la varietà ambiente è $Y=\mathbb{C}^n$ useremo sempre $\|\cdot\|_{\mathbb{C}^n}=\|\cdot\|$, la metrica euclidea su $\mathbb{C}^n$;
+    \item nei vari enunciati, quando è data una varietà complessa $X$ sottintendiamo anche di aver fissato una metrica hermitiana $\|\cdot\|_X$ su $X$, che induce la distanza $d_X$ se $X$ è connessa; quando $X$ è sottovarietà complessa di una varietà complessa $Y$, fissiamo la metrica hermitiana su $Y$ e consideriamo su $X$ la metrica indotta; se la varietà ambiente è $Y=\mathbb{C}^n$ useremo sempre $\|\cdot\|_{\mathbb{C}^n}=\|\cdot\|$, la metrica euclidea su $\mathbb{C}^n$;
     \item dati $X,Y$ spazi topologici, $C^0(X,Y)$ è lo spazio delle funzioni continue da $X$ a $Y$ considerato con la topologia compatta-aperta. Nel caso in cui $Y$ sia uno spazio metrico, tale topologia coincide con la topologia della convergenza uniforme sui compatti;
     \item date $X,Y$ varietà complesse, indichiamo con $\text{Hol}(X,Y)$ l'insieme delle funzioni olomorfe da $X$ a $Y$, con $\mathcal{O}(X)$ l'insieme delle funzioni olomorfe da $X$ in $\mathbb{C}$ e con $\text{Aut}(X)$ l'insieme dei biolomorfismi di $X$ in sé;
     \item data $f \in \text{Hol}(X,Y)$, indichiamo con $\diff_x f$ il differenziale di $f$ in $x \in X$;
     \item il disco unitario è $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$; il disco di centro $0$ e raggio $r>0$ è $\mathbb{D}_r=\{z \in \mathbb{C} \mid |z|<r\}$; il disco di centro $a\in\mathbb{C}$ e raggio $r>0$ è $D(a,r)=\{z\in\mathbb{C}\mid |z-a|<r\}$; il polidisco in $\mathbb{C}^n$ è $\mathbb{D}^n=\mathbb{D}\times\dots\times\mathbb{D}$;
     \item la palla unitaria (euclidea) in $\mathbb{C}^n$ è $\mathbb{B}^n=\{z \in \mathbb{C}^n \mid \|z\|<1\}$, dove $\|\cdot\|$ indica la norma euclidea, mentre $\mathbb{B}_r^n=\{z \in \mathbb{C}^n \mid \|z\|<r\}$ è la palla (euclidea) di centro l'origine $O\in\mathbb{C}^n$ e raggio $r>0$;
-    \item dato un sottoinsieme $A\subseteq \mathbb{C}^n$, il bordo euclideo di $A$ è $\partial A:=\overline{A}\setminus A$;
+    \item dati uno spazio topologico $Y$ e un suo sottoinsieme $A\subseteq Y$, il bordo relativo di $A$ in $Y$ è $\partial_Y A:=\overline{A}\setminus A$, dove la chiusura è fatta in $Y$; se $Y=\mathbb{C}^n$ allora $\partial_{\mathbb{C}^n}A=\partial A$ è il bordo euclideo;
     \item dato un dominio $\Omega\subseteq\mathbb{C}^n$ e $z \in \mathbb{C}^n$, scriviamo $\delta(z)=\displaystyle\inf_{p \in \partial\Omega}\|z-p\|$ per indicare la distanza euclidea di $x$ dal bordo euclideo di $\Omega$.
 \end{itemize}
 
@@ -23,7 +23,7 @@ Ricordiamo cosa sono la metrica e la distanza di Poincaré in $\mathbb{D}$.
     per ogni $z \in \mathbb{D}$ e $v \in \mathbb{C}\cong T_z\mathbb{D}$. La metrica $\lambda_{\mathbb{D}}$ è hermitiana di curvatura gaussiana costante uguale a $-4$ (si veda \cite[Section 1-5]{Ah}).
 \end{defn}
 
-\begin{defn}
+\begin{defn} \label{poidist}
     La \textit{distanza di Poincaré} (o \textit{iperbolica}) $\omega$ su $\mathbb{D}$ è la forma integrata della metrica di Poincaré. È una distanza completa la cui espressione è data da
     \begin{equation}
         \omega(z_1,z_2)=\frac{1}{2}\log{\frac{1+\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}{1-\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|}}
@@ -125,7 +125,7 @@ Nei casi a cui siamo interessati, la pseudometrica di Kobayashi è effettivament
 \end{prop}
 
 \begin{proof}
-    È un'immediata conseguenza di un risultato più forte che dimostreremo nella prossima sezione, il punto (1) della Proposizione \ref{metrica_bilip}.
+    È un'immediata conseguenza di un risultato più forte che dimostreremo nella prossima sezione, il punto (3) della Proposizione \ref{metrica_bilip}.
 \end{proof}
 
 Definiamo adesso la (pseudo)distanza di Kobayashi; più avanti vedremo com'è collegata alla pseudometrica di Kobayashi.

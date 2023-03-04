@@ -18,23 +18,6 @@ Quella che useremo noi sarà una versione del teorema di Montel per varietà tau
     (Serre, Ehrenpreis, \cite[Theorem 1.2.6]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato, con $n>1$. Sia $K$ un sottoinsieme compatto di $\Omega$ tale che $\Omega\setminus K$ è connesso. Se $f\in\mathcal{O}(\Omega\setminus K)$, allora esiste $F\in\mathcal{O}(\Omega)$ tale che $F\restrict{\Omega\setminus K}=f$.
 \end{thm}
 
-Useremo anche il seguente fatto sulla metrizzabilità di spazi di funzioni.
-
-\begin{lm} \label{c0yx}
-    Siano $(X,d)$ uno spazio metrico e $Y$ uno spazio topologico tale che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ di compatti di $Y$ con la seguente proprietà: per ogni compatto $K\subseteq Y$ esiste $n\in\mathbb{N}$ tale che $K\subseteq K_n$. Allora $C^0(Y,X)$ è metrizzabile.
-    
-    In particolare, un suo sottoinsieme è compatto se e solo se è compatto per successioni.
-\end{lm}
-
-\begin{proof}
-    Per ogni $n\in\mathbb{N}$ e per ogni $f,g\in C^0(Y,X)$ poniamo
-    $$d_n(f,g)=\displaystyle\sup_{x\in K_n} d\big(f(x),g(x)\big);$$
-    definiamo
-    $$\tilde{d}(f,g)=\sum_{n=1}^{+\infty} \frac{1}{2^n}\cdot\frac{d_n(f,g)}{1+d_n(f,g)}.$$
-
-    È facile verificare che $\tilde{d}$ è una distanza, che induce proprio la topologia della convergenza uniforme sui compatti.
-\end{proof}
-
 Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari, dalla quale discende un'importante conseguenza.
 
 \begin{prop} \label{k_polidisco}
@@ -73,7 +56,7 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari,
 \end{proof}
 
 \begin{oss} \label{kobisdist}
-    Con la stessa dimostrazione, si ottiene anche che le sottovarietà connesse di varietà Kobayashi-iperboliche sono Kobayashi-iperboliche. In particolare, abbiamo che le sottovarietà complesse, connesse e limitate di $\mathbb{C}^d$ sono Kobayashi-iperboliche.
+    Con la stessa dimostrazione, si ottiene anche che le sottovarietà complesse e connesse di varietà Kobayashi-iperboliche sono Kobayashi-iperboliche. In particolare, abbiamo che le sottovarietà complesse, connesse e limitate di $\mathbb{C}^d$ sono Kobayashi-iperboliche.
 \end{oss}
 
 Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi.
@@ -109,7 +92,7 @@ Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi i
 \end{lm}
 
 \begin{proof}
-    Supponiamo per assurdo che esista una varietà complessa $W$ per cui ciò non valga; allora esistono $\epsilon>0$, un punto $\tilde{w}\in W$\marginpar{Perché esiste $\tilde{w}$? Spiegare e/o aggiustare} e due successioni $\{w_\nu\}_{\nu\in\mathbb{N}}\subseteq W$ e $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq \text{Hol}(W,X)$ tali che $w_\nu\longrightarrow \tilde{w}$ per $\nu\longrightarrow+\infty$ e $d\big(f_\nu(w_\nu),f_\nu(\tilde{w})\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$. Scegliendo un opportuno sistema di coordinate locali, possiamo assumere che $W$ sia la palla euclidea unitaria $B$ di un qualche $\mathbb{C}^n$ e prendere $\tilde{w}=0$.
+    Supponiamo per assurdo che esista una varietà complessa $W$ per cui ciò non valga; allora esistono $\epsilon>0$, un punto $\tilde{w}\in W$\marginpar{Perché esiste $\tilde{w}$? Spiegare e/o aggiustare} e due successioni $\{w_\nu\}_{\nu\in\mathbb{N}}\subseteq W$ e $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq \text{Hol}(W,X)$ tali che $w_\nu\longrightarrow \tilde{w}$ per $\nu\longrightarrow+\infty$ e $d\big(f_\nu(w_\nu),f_\nu(\tilde{w})\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$. Scegliendo un opportuno sistema di coordinate locali e a meno di sottosuccessioni, possiamo assumere che $W$ sia una qualche $\mathbb{B}^n$ e prendere $\tilde{w}=0$.
 
     Definiamo $g_\nu\in\text{Hol}(\mathbb{D},X)$ come $g_\nu(\zeta)=f_\nu(\zeta w_\nu/\|w_\nu\|)$; allora $\|w_\nu\|\longrightarrow 0$ per $\nu\longrightarrow+\infty$ e
     $$d\big(g_\nu(\|w_\nu\|),g_\nu(0)\big)=d\big(f_\nu(w_\nu),f_\nu(\tilde{w})\big)\ge\epsilon$$
@@ -132,26 +115,26 @@ Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi i
     Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante $\infty$.
 \end{defn}
 
-Strettamente legato al concetto di varietà taut è quello di varietà tautly embedded, ipotesi che può essere interpretata dicendo che per una certa sottovarietà di una varietà complessa vale una forma del teorema di Montel.
+Strettamente legato al concetto di varietà taut è quello di varietà tautly embedded, ipotesi che può essere interpretata dicendo che per una certa sottovarietà complessa di una varietà complessa ambiente vale una forma del teorema di Montel.
 
 \begin{defn}
-    Sia $X$ una sottovarietà di una varietà complessa $Y$. Diciamo che $X$ è \textit{tautly embedded} in $Y$ se $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$.
+    Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Diciamo che $X$ è \textit{tautly embedded} in $Y$ se $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$.
 \end{defn}
 
 \begin{prop} \label{montel}
-    (\cite[Proposition 2.1.4, point (i)]{A1}) Sia $X$ una sottovarietà di una varietà complessa $Y$. Allora $X$ è tautly embedded in $Y$ se e solo se $\textnormal{Hol}(W,X)$ è relativamente compatto in $\textnormal{Hol}(W,Y)$ per ogni varietà complessa $W$.
+    (\cite[Proposition 2.1.4, point (i)]{A1}) Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Allora $X$ è tautly embedded in $Y$ se e solo se $\textnormal{Hol}(W,X)$ è relativamente compatto in $\textnormal{Hol}(W,Y)$ per ogni varietà complessa $W$.
 \end{prop}
 
 \begin{proof}
-    Un'implicazione è immediata. Viceversa, supponiamo che $X$ sia tautly embdedded in $Y$. Dato che $Y$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $Y$ che induce la topologia di varietà. Per il Lemma \ref{c0yx} $C^0(\mathbb{D},Y)$ è metrizzabile\marginpar{Ma serve?}, per cui $\text{Hol}(\mathbb{D},X)$, che è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, è relativamente compatto per successioni; in particolare, poiché contiene le mappe costanti, segue che $X$ è relativamente compatto per successioni in $Y$. Allora $X$ è relativamente compatto in $Y$, dato che quest'ultimo è metrizzabile.
+    Un'implicazione è immediata. Viceversa, supponiamo che $X$ sia tautly embdedded in $Y$, cioè che $\text{Hol}(\mathbb{D},X)$ sia relativamente compatto in $\text{Hol}(\mathbb{D},Y)$. Dato che $Y$ è una varietà, è Hausdorff, per cui le mappe costanti, che indichiamo con $\text{cost}(\mathbb{D},Y)$, sono un chiuso di $C^0(\mathbb{D},Y)$ omeomorfo a $Y$; in particolare, la chiusura di $\text{cost}(\mathbb{D},X)$ in $\text{Hol}(\mathbb{D},Y)$ è contenuta sia nella chiusura di $\text{Hol}(\mathbb{D},X)$, che è un compatto, sia in $\text{cost}(\mathbb{D},Y)$, che è un chiuso. Dunque è un compatto e, a meno di omeomorfismo, coincide con la chiusura di $X$ in $Y$; segue che $X$ è relativamente compatto in $Y$.
     
-    Per definizione, $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, dunque anche in $C^0(\mathbb{D},Y)$ in quanto quest'ultimo è metrizzabile\marginpar{Basta Hausdorff, e magari non serve nemmeno quello}; per Ascoli-Arzelà, segue che $\text{Hol}(\mathbb{D},X)$ è equicontinuo rispetto a $d$. Per il Lemma \ref{equico} si ha che $\text{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$; inoltre, la chiusura di $\text{Hol}(W,X)$ in $\text{Hol}(W,Y)$ è contenuta in $C^0(W,\overline{X})$. Dato che $\overline{X}$ è compatto, possiamo applicare Ascoli-Arzelà per ottenere che $\text{Hol}(W,X)$ è relativamente compatto in $C^0(W,Y)$. Per il teorema di Weierstrass la chiusura è contenuta in $\text{Hol}(W,Y)$, da cui la tesi.
+    Dato che $Y$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $Y$ che induce la topologia di varietà. Per definizione, $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, dunque anche in $C^0(\mathbb{D},Y)$ in quanto quest'ultimo è Hausdorff perché lo è $Y$; per Ascoli-Arzelà, segue che $\text{Hol}(\mathbb{D},X)$ è equicontinuo rispetto a $d$. Per il Lemma \ref{equico} si ha che $\text{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$; inoltre, poiché $\text{Hol}(W,Y\setminus\overline{X})$ è aperto, la chiusura di $\text{Hol}(W,X)$ in $\text{Hol}(W,Y)$ è contenuta in $C^0(W,\overline{X})$. Dato che $\overline{X}$ è compatto, possiamo applicare Ascoli-Arzelà per ottenere che $\text{Hol}(W,X)$ è relativamente compatto in $C^0(W,Y)$. Per il teorema di Weierstrass, applicato in carte opportune, la chiusura è contenuta in $\text{Hol}(W,Y)$, da cui la tesi.
 \end{proof}
 
 Ci servirà anche il seguente fatto.
 
 \begin{prop}
-    Siano $Y$ una varietà taut e $X\subset\subset Y$ una sottovarietà relativamente compatta. Allora $X$ è tautly embdedded in $Y$.
+    Siano $Y$ una varietà taut e $X\subset\subset Y$ una sottovarietà complessa relativamente compatta. Allora $X$ è tautly embdedded in $Y$.
 \end{prop}
 
 \begin{proof}
@@ -174,7 +157,22 @@ Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la di
 
 Iniziamo dando una caratterizzazione equivalente all'essere taut per una varietà.
 
-\begin{prop}
+\begin{lm} \label{c0yx}
+    Siano $(X,d)$ uno spazio metrico e $Y$ uno spazio topologico tale che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ di compatti di $Y$ con la seguente proprietà: per ogni compatto $K\subseteq Y$ esiste $n\in\mathbb{N}$ tale che $K\subseteq K_n$. Allora $C^0(Y,X)$ è metrizzabile.
+    
+    In particolare, un suo sottoinsieme è chiuso (rispettivamente, compatto) se e solo se è chiuso (rispettivamente, compatto) per successioni.
+\end{lm}
+
+\begin{proof}
+    Per ogni $n\in\mathbb{N}$ e per ogni $f,g\in C^0(Y,X)$ poniamo
+    $$d_n(f,g)=\displaystyle\sup_{x\in K_n} d\big(f(x),g(x)\big);$$
+    definiamo
+    $$\tilde{d}(f,g)=\sum_{n=1}^{+\infty} \frac{1}{2^n}\cdot\frac{d_n(f,g)}{1+d_n(f,g)}.$$
+
+    È facile verificare che $\tilde{d}$ è una distanza, che induce proprio la topologia della convergenza uniforme sui compatti.
+\end{proof}
+
+\begin{prop} \label{tautsse}
     Una varietà complessa e connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
 \end{prop}
 \begin{proof}
@@ -188,6 +186,14 @@ Si può dimostrare qualcosa di più.
 \begin{prop}
     (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
 \end{prop}
+
+\begin{proof}
+    Come fatto nella dimostrazione della Proposizione \ref{tautsse}, possiamo fissare una distanza $d$ su $X^*$ compatibile con la sua topologia. Poiché $X$ è taut si ha che $\text{Hol}(\mathbb{D},X)\cup\{\infty\}$ è compatto in $C^0(\mathbb{D},X^*)$, da cui, per Ascoli-Arzelà, abbiamo che è equicontinuo rispetto a $d$. Allora, per il Lemma \ref{equico}, $\text{Hol}(Y,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $Y$.
+
+    Supponiamo adesso che esista una varietà complessa $Y$ tale che $\text{Hol}(Y,X)$ non sia normale. Allora $\text{Hol}(Y,X)\cup\{\infty\}$ non è un compatto di $C^0(Y,X^*)$; dato che è equicontinuo rispetto a $d$, per Ascoli-Arzelà abbiamo che non è un chiuso di $C^0(Y,X^*)$. Poiché $Y$ è una varietà soddisfa le ipotesi del Lemma \ref{c0yx}, per cui $C^0(Y,X^*)$ è metrizzabile; allora $\text{Hol}(Y,X)\cup\{\infty\}$ non è chiuso se e solo se non è chiuso per successioni, cioè esiste una successione $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq \text{Hol}(Y,X)$ convergente, uniformemente sui compatti, a una funzione $f\in C^0(Y,X^*)$ che non sta né in $C^0(Y,X)$ (altrimenti starebbe in $\text{Hol}(Y,X)$, per Weierstrass applicato a carte opportune) né è la funzione costante $\infty$. Allora è facile mostrare che esiste un punto $z_0\in Y$ tale che $f(z_0)=\infty$ e $f$ non è identicamente $\infty$ in ogni intorno di $z_0$. Dunque, scegliendo un opportuno sistema di coordinate locali, possiamo assumere senza perdita di generalità che $Y$ sia una qualche $\mathbb{B}^n$ e che $z_0=0$.
+
+    Dato che $f\not\equiv\infty$, esiste $z_1\in\mathbb{B}^n$ tale che $f(z_1)\not=\infty$. Possiamo allora definire le funzioni $g_\nu\in\text{Hol}(\mathbb{D},X)$ e $g\in C^0(\mathbb{D},X^*)$ come $g_\nu(\zeta)=f_\nu(\zeta z_1/\|z_1\|)$ per ogni $\nu\in\mathbb{N}$ e $g(\zeta)=f(\zeta z_1/\|z_1\|)$. Allora $g_\nu\longrightarrow g$ per $\nu\longrightarrow+\infty$ uniformemente sui compatti, ma $g\not\in C^0(\mathbb{D},X)\cup\{\infty\}$, in contraddizione con il fatto che l'insieme $\text{Hol}(\mathbb{D},X)\cup\{\infty\}$ è un compatto, e in particolare un chiuso (per successioni), di $C^0(\mathbb{D},X^*)$, che abbiamo già visto essere metrizzabile.
+\end{proof}
 
 Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali che $k_X$ è una distanza completa sono taut.
 
@@ -252,7 +258,7 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche  tali c
     A meno di passare a una sottosuccessione, possiamo trovare due compatti $H\subseteq\mathbb{D}$ e $K\subseteq X$ tali che $\varphi_\nu(H)\cap K\not=\emptyset$ per ogni $\nu\in\mathbb{N}$. Per ogni $\nu\in\mathbb{{N}}$ scegliamo $\zeta_\nu\in H$ tale che $\varphi_\nu(\zeta_\nu)\in K$; fissato $z_0\in K$ poniamo $r=\max\{k_X(z,z_0)\mid z\in K\}$. Allora per ogni $\zeta\in\mathbb{D}$ e $\nu\in\mathbb{N}$ abbiamo che
     $$k_X\big(\varphi_\nu(\zeta),z_0\big) \le k_X\big(\varphi_\nu(\zeta),\varphi_\nu(\zeta_\nu)\big)+k_X\big(\varphi_\nu(\zeta_\nu),z_0\big) \le k_{\mathbb{D}} (\zeta,\zeta_\nu)+r.$$
 
-    Posto $R_\zeta=\max\{k_{\mathbb{D}}(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R_\zeta+r$, che è compatta per il Lemma \ref{comp_is_comp}; di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; usando il teorema di Weierstrass, si vede che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
+    Posto $R_\zeta=\max\{k_{\mathbb{D}}(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R_\zeta+r$, che è compatta per il Lemma \ref{comp_is_comp}; di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; applicando il teorema di Weierstrass in carte opportune, si vede che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
 \end{proof}
 
 \begin{ex}
@@ -278,7 +284,7 @@ Prima di enunciare il risultato che, data una varietà taut, ci dà la dicotomia
 Ci servirà il seguente fatto sull'immagine di una retrazione olomorfa dovuto a Rossi; riportiamo la dimostrazione data da Cartan in \cite{Ca}.
 
 \begin{lm}
-    (\cite[Section 5]{Ross}) Sia $X$ una varietà complessa e consideriamo $\rho\in\textnormal{Hol}(X,X)$ una retrazione olomorfa di $X$. Allora l'immagine di $\rho$ è una sottovarietà chiusa di $X$.
+    (\cite[Section 5]{Ross}) Sia $X$ una varietà complessa e consideriamo $\rho\in\textnormal{Hol}(X,X)$ una retrazione olomorfa di $X$. Allora l'immagine di $\rho$ è una sottovarietà complessa chiusa di $X$.
 \end{lm}
 \begin{proof}
     Sia $M=\rho(X)$. Per definizione di retrazione $\rho(X)=\text{Fix}(\rho)$, da cui si ha che $M$ è chiusa.
@@ -294,13 +300,13 @@ Ci servirà il seguente fatto sull'immagine di una retrazione olomorfa dovuto a 
         &=P\circ\rho=P+P\circ(2P-\id)\circ(\rho-P)=P\circ\varphi.
     \end{align*}
 
-    Allora, letta in questa carta, $\rho$ diventa lineare; perciò, $M$ è una sottovarietà vicino a $z_0$. Per arbitrarietà di $z_0$, segue che $M$ è una varietà.
+    Allora, letta in questa carta, $\rho$ diventa lineare; perciò, $M$ è una sottovarietà complessa vicino a $z_0$. Per arbitrarietà di $z_0$, segue che $M$ è una varietà.
 \end{proof}
 
 Dobbiamo ora studiare alcune proprietà delle funzioni limite di funzioni olomorfe su varietà taut.
 
 \begin{thm} \label{retraiii}
-    (\cite[Theorem 2.1.29]{A1}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà $M$ di $X$ tale che ogni funzione limite $h\in\Gamma(f)$ è della forma
+    (\cite[Theorem 2.1.29]{A1}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un'unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà complessa $M$ di $X$ tale che ogni funzione limite $h\in\Gamma(f)$ è della forma
     $$h=\gamma\circ\rho,$$
     con $\gamma\in\textnormal{Aut}(M)$.
 
@@ -319,7 +325,7 @@ Dobbiamo ora studiare alcune proprietà delle funzioni limite di funzioni olomor
         g\circ h=h\circ g=\rho.
     \end{equation}
 
-    In particolare, $\rho^2=\rho\circ\rho=g\circ h\circ\rho=g\circ h=\rho$, perciò $\rho$ è una retrazione di $X$ su una sottovarietà $M$. Dalla \eqref{roacca} abbiamo $h(X)\subseteq M$; inoltre $g\circ\rho=\rho\circ g$, da cui $g(M)\subseteq M$. Allora la \eqref{giacca} ci dà $g\circ h\restrict{M}=h\circ g\restrict{M}=\id_M$. Dunque, ponendo $\gamma=h\restrict{M}$, otteniamo $h=\gamma\circ\rho$ con $\gamma\in\text{Aut}(M)$. Dobbiamo mostrare che $\rho$ non dipende da $h$; in particolare, non dipende dalla sottosuccessione scelta.
+    In particolare, $\rho^2=\rho\circ\rho=g\circ h\circ\rho=g\circ h=\rho$, perciò $\rho$ è una retrazione di $X$ su una sottovarietà complessa $M$. Dalla \eqref{roacca} abbiamo $h(X)\subseteq M$; inoltre $g\circ\rho=\rho\circ g$, da cui $g(M)\subseteq M$. Allora la \eqref{giacca} ci dà $g\circ h\restrict{M}=h\circ g\restrict{M}=\id_M$. Dunque, ponendo $\gamma=h\restrict{M}$, otteniamo $h=\gamma\circ\rho$ con $\gamma\in\text{Aut}(M)$. Dobbiamo mostrare che $\rho$ non dipende da $h$; in particolare, non dipende dalla sottosuccessione scelta.
 
     Sia $\{f^{k'_\nu}\}_{\nu\in\mathbb{N}}$ un'altra sottosuccessione convergente a $h'\in\text{Hol}(X,X)$. Ragionando come sopra, possiamo supporre che $s_\nu=k'_\nu-k_\nu$ e $t_\nu=k_{\nu+1}-k'_\nu$ convergano a $+\infty$ per $\nu\longrightarrow+\infty$ e che $\{f^{s_\nu}\}_{\nu\in\mathbb{N}}$ e $\{f^{t_\nu}\}_{\nu\in\mathbb{N}}$ convergano, uniformemente sui compatti, rispettivamente a $\alpha,\beta \in \text{Hol}(X,X)$ tali che
     \begin{equation}\label{accaprimo}
@@ -416,13 +422,13 @@ Per finire, vediamo un teorema di tipo ``Wolff-Denjoy'' per domini strettamente 
 \end{defn}
 
 \begin{defn}
-    Sia\marginpar{Per definirlo non c'è molto altro da dire, l'Osservazione dopo serviva ad aggiungere i fatti interessanti} $(X,d)$ uno spazio metrico Gromov-iperbolico. Fissato $w \in X$, il \textit{bordo iperbolico} $\partial_GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
+    Sia\marginpar{Per definirlo non c'è molto altro da dire, l'Osservazione dopo serviva ad aggiungere i fatti interessanti} $(X,d)$ uno spazio metrico Gromov-iperbolico. Fissato $w \in X$, il \textit{bordo iperbolico} $\partial^GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
 
-    Inoltre, è possibile estendere il prodotto di Gromov a tutto $X\cup\partial_GX$ in modo che valga ancora la disuguaglianza per la Gromov-iperbolicità, eventualmente cambiando $\delta$. Il bordo iperbolico possiede anche una \textit{classe canonica di distanze} correlate al prodotto di Gromov, che inducono tutte la stessa topologia.
+    Inoltre, è possibile estendere il prodotto di Gromov a tutto $X\cup\partial^GX$ in modo che valga ancora la disuguaglianza per la Gromov-iperbolicità, eventualmente cambiando $\delta$. Il bordo iperbolico possiede anche una \textit{classe canonica di distanze} correlate al prodotto di Gromov, che inducono tutte la stessa topologia.
 \end{defn}
 
 \begin{oss}
-    È possibile\marginpar{In \cite{BH} usa l'ipotesi proprio e geodetico per dire che la topologia è la stessa; non vorrei fosse una cosa diversa da quella a cui mi sto riferendo} mettere una topologia su $X\cup\partial_GX$ che lo rende uno spazio compatto, e tale che ristretta a $\partial_GX$ coincida con la topologia indotta dalla classe canonica di distanze. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
+    È possibile\marginpar{In \cite{BH} usa l'ipotesi proprio e geodetico per dire che la topologia è la stessa; non vorrei fosse una cosa diversa da quella a cui mi sto riferendo} mettere una topologia su $X\cup\partial^GX$ che lo rende uno spazio compatto, e tale che ristretta a $\partial^GX$ coincida con la topologia indotta dalla classe canonica di distanze. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
 \end{oss}
 
 Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
@@ -438,7 +444,7 @@ Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbo
 Per dimostrarlo usando la Gromov-iperbolicità, è prima necessario mostrare che $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Citiamo l'articolo di Balogh e Bonk in cui si trova la dimostrazione.
 
 \begin{thm} \label{balogh_bonk}
-    (Balogh, Bonk, \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso; allora $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Inoltre, il bordo iperbolico $\partial_G\Omega$ può essere identificato con il bordo euclideo $\partial\Omega$, cioè sono identificati come spazi topologici.
+    (Balogh, Bonk, \cite[Theorem 1.4]{BB}) Sia $\Omega \subseteq \mathbb{C}^n$ con $n \ge 2$ un dominio limitato e strettamente pseudoconvesso; allora $(\Omega,k_{\Omega})$ è Gromov-iperbolico. Inoltre, il bordo iperbolico $\partial^G\Omega$ può essere identificato con il bordo euclideo $\partial\Omega$, cioè sono identificati come spazi topologici.
 \end{thm}
 
 Serve anche un Teorema dovuto a Karlsson.
