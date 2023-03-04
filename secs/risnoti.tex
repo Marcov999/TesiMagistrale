@@ -12,21 +12,28 @@ Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre
     (Montel, \cite[Chapter 1, Proposition 6]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\mathcal{F}\subseteq\mathcal{O}(\Omega)$, una famiglia uniformemente limitata sui compatti; allora è relativamente compatta in $\mathcal{O}(\Omega)$.
 \end{thm}
 
-Ci tornerà utile una conseguenza del teorema di Montel per sottovarietà di $\mathbb{C}^d$.
-
-\begin{cor} \label{montel}
-    Sia $X$ una sottovarietà complessa e limitata di $\mathbb{C}^d$, e consideriamo una successione $\{F_j\}_{j\in\mathbb{N}}\subseteq\textnormal{Hol}(X,X)$. Allora esiste una sottosuccessione $\{F_{j_n}\}_{n\in\mathbb{N}}$ che converge uniformemente sui compatti di $X$ a una funzione olomorfa $F:X\longrightarrow\mathbb{C}^d$ con $F(X)\subseteq\overline{X}$.
-\end{cor}
-
-\begin{proof}
-    Poiché $X$ è limitata, la successione $\{F_j\}_{j\in\mathbb{N}}$ è uniformemente limitata sui compatti di $X$; possiamo dunque fissare un ricoprimento numerabile di $X$ fatto di aperti relativamente compatti contenuti in carte ed estrarre, con un procedimento diagonale nel quale si applica il teorema di Montel ad ogni tale carta, una sottosuccessione che converge uniformemente sui compatti di ogni carta, in particolare sugli aperti del ricoprimento. Preso allora un qualsiasi compatto $K$ di $X$, basta estrarre un suo sottoricoprimento finito degli aperti presi sopra e notare che per un numero finito di aperti la convergenza rimane uniforme sull'unione.
-
-    Chiaramente la convergenza uniforme sui compatti implica la convergenza puntuale e $F_j(X)\subseteq X$ per ogni $j\in\mathbb{N}$, per cui abbiamo automaticamente che $F(X)\subseteq\overline{X}$.
-\end{proof}
+Quella che useremo noi sarà una versione del teorema di Montel per varietà tautly embdedded, che vedremo più avanti.
 
 \begin{thm} \label{hartogs_fen}
     (Serre, Ehrenpreis, \cite[Theorem 1.2.6]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato, con $n>1$. Sia $K$ un sottoinsieme compatto di $\Omega$ tale che $\Omega\setminus K$ è connesso. Se $f\in\mathcal{O}(\Omega\setminus K)$, allora esiste $F\in\mathcal{O}(\Omega)$ tale che $F\restrict{\Omega\setminus K}=f$.
 \end{thm}
+
+Useremo anche il seguente fatto sulla metrizzabilità di spazi di funzioni.
+
+\begin{lm} \label{c0yx}
+    Siano $(X,d)$ uno spazio metrico e $Y$ uno spazio topologico tale che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ di compatti di $Y$ con la seguente proprietà: per ogni compatto $K\subseteq Y$ esiste $n\in\mathbb{N}$ tale che $K\subseteq K_n$. Allora $C^0(Y,X)$ è metrizzabile.
+    
+    In particolare, un suo sottoinsieme è compatto se e solo se è compatto per successioni.
+\end{lm}
+
+\begin{proof}
+    Per ogni $n\in\mathbb{N}$ e per ogni $f,g\in C^0(Y,X)$ poniamo
+    $$d_n(f,g)=\displaystyle\sup_{x\in K_n} d\big(f(x),g(x)\big);$$
+    definiamo
+    $$\tilde{d}(f,g)=\sum_{n=1}^{+\infty} \frac{1}{2^n}\cdot\frac{d_n(f,g)}{1+d_n(f,g)}.$$
+
+    È facile verificare che $\tilde{d}$ è una distanza, che induce proprio la topologia della convergenza uniforme sui compatti.
+\end{proof}
 
 Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari, dalla quale discende un'importante conseguenza.
 
@@ -72,7 +79,7 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari,
 Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi.
 
 \begin{defn} \label{lung_X}
-    Sia $X$ una varietà complessa e connessa\marginpar{In questa def e nel teorema successivo, non mi pare che serva imporre che $X$ sia una sottovarietà; si snelliscono così un po' di ipotesi più avanti}, e consideriamo una curva $\gamma:[a,b] \longrightarrow X$ tale che la funzione $K_X\big(\gamma(\cdot);\gamma'(\cdot)\big)$ sia integrabile su $[a,b]$. La \textit{lunghezza di $\gamma$ in $X$ rispetto alla pseudometrica di Kobayashi} è
+    Sia $X$ una varietà complessa e connessa, e consideriamo una curva $\gamma:[a,b] \longrightarrow X$ tale che la funzione $K_X\big(\gamma(\cdot);\gamma'(\cdot)\big)$ sia integrabile su $[a,b]$. La \textit{lunghezza di $\gamma$ in $X$ rispetto alla pseudometrica di Kobayashi} è
     $$l_X(\gamma):=\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t.$$
 \end{defn}
 
@@ -80,11 +87,11 @@ Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi.
     (\cite[Theorem 1]{Roy} e \cite[Theorem 3.1]{V}) Sia $X$ una varietà complessa e connessa. Per ogni $z,w \in X$ abbiamo che:
     \begin{nlist}
         \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è $C^1$ a tratti, }\gamma(a)=z,\gamma(b)=w\}$;
-        \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è assolutamente continua,}$\\
-        $\text{    }\qquad\qquad\,\,\,\,\gamma(a)=z,\gamma(b)=w\}$.
+        \item $k_X(z,w)=\inf\{l_X(\gamma) \mid \gamma:[a,b] \longrightarrow X\text{ è assolutamente continua}$\\
+        $\text{    }\qquad\qquad\,\,\,\,\text{rispetto a } d_X,\gamma(a)=z,\gamma(b)=w\}$.
     \end{nlist}
 
-    Qui, $l_X(\gamma)$ è ben definita in entrambi i casi.
+    Qui, $d_X$ è la distanza indotta dalla metrica hermitiana $\|\cdot\|_X$, e $l_X(\gamma)$ è ben definita in entrambi i casi.
 \end{thm}
 
 Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica; non lo dimostreremo tutto, ma per la parte che andremo a mostrare avremo bisogno del ben noto teorema di Ascoli-Arzelà.
@@ -97,6 +104,18 @@ Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi i
     \end{nlist}
 \end{thm}
 
+\begin{lm} \label{equico}
+    (\cite[Proposition 2.1.1]{A1}) Siano $X$ una varietà complessa e $d$ una distanza su $X$ compatibile con la topologia di varietà. Supponiamo che $\textnormal{Hol}(\mathbb{D},X)$ sia equicontinuo rispetto a $d$; allora $\textnormal{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$.
+\end{lm}
+
+\begin{proof}
+    Supponiamo per assurdo che esista una varietà complessa $W$ per cui ciò non valga; allora esistono $\epsilon>0$, un punto $\tilde{w}\in W$\marginpar{Perché esiste $\tilde{w}$? Spiegare e/o aggiustare} e due successioni $\{w_\nu\}_{\nu\in\mathbb{N}}\subseteq W$ e $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq \text{Hol}(W,X)$ tali che $w_\nu\longrightarrow \tilde{w}$ per $\nu\longrightarrow+\infty$ e $d\big(f_\nu(w_\nu),f_\nu(\tilde{w})\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$. Scegliendo un opportuno sistema di coordinate locali, possiamo assumere che $W$ sia la palla euclidea unitaria $B$ di un qualche $\mathbb{C}^n$ e prendere $\tilde{w}=0$.
+
+    Definiamo $g_\nu\in\text{Hol}(\mathbb{D},X)$ come $g_\nu(\zeta)=f_\nu(\zeta w_\nu/\|w_\nu\|)$; allora $\|w_\nu\|\longrightarrow 0$ per $\nu\longrightarrow+\infty$ e
+    $$d\big(g_\nu(\|w_\nu\|),g_\nu(0)\big)=d\big(f_\nu(w_\nu),f_\nu(\tilde{w})\big)\ge\epsilon$$
+    per ogni $\nu\in\mathbb{N}$, in contraddizione con l'ipotesi che $\text{Hol}(\mathbb{D},X)$ sia equicontinuo rispetto a $d$.
+\end{proof}
+
 \begin{prop} \label{alex}
     (\cite[Theorem 1.3]{A3}) Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
     
@@ -106,16 +125,40 @@ Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi i
 \begin{proof}
     Dimostriamo solamente che se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$, dando per buona la prima parte. Poiché $X$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $X^*$ che induca la topologia della compattificazione. Dato che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, per il teorema di Ascoli-Arzelà è equicontinuo.
     
-    Sia $Y$ una varietà complessa, mostriamo che $\text{Hol}(Y,X)$ è equicontinuo. Se per assurdo non lo fosse, esisterebbero $\epsilon>0$, un punto $z\in Y$ e due successioni $\{z_\nu\}_{\nu\in\mathbb{N}}\subseteq Y$ e $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq\text{Hol}(Y,X)$ tali che $d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$. Scegliendo delle coordinate opportune, possiamo assumere che $Y$ sia la palla euclidea di un qualche $\mathbb{C}^n$ e che $z=0$. Definiamo $g_\nu\in\text{Hol}(\mathbb{D},X)$ nel seguente modo: $g_\nu(\zeta)=f_\nu(\zeta z_\nu/\|z_\nu\|)$; allora $\|z_\nu\| \longrightarrow 0$ per $\nu\longrightarrow 0$ e $d\big(g_\nu(\|z_\nu\|),g_\nu(0)\big)=d\big(f_\nu(z_\nu),f_\nu(z)\big)\ge\epsilon$ per ogni $\nu\in\mathbb{N}$, contraddizione con il fatto che $\text{Hol}(\mathbb{D},X)$ è equicontinuo.
-
-    Dunque $\text{Hol}(Y,X)$ è equicontinuo; per compattezza di $X^*$ valgono le ipotesi del teorema di Ascoli-Arzelà, per cui abbiamo che è relativamente compatto in $C^0(Y,X^*)$, come voluto.
+    Data una varietà complessa $Y$, per il Lemma \ref{equico}, considerando su $X$ la distanza $d\restrict{X}$, si ha che $\text{Hol}(Y,X)$ è equicontinuo; per compattezza di $X^*$ valgono le ipotesi del teorema di Ascoli-Arzelà, per cui abbiamo che è relativamente compatto in $C^0(Y,X^*)$, come voluto.
 \end{proof}
 
 \begin{defn}
     Una varietà complessa $X$ si dice \textit{taut} se è Kobayashi-iperbolica e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante $\infty$.
 \end{defn}
 
-Diamo anche delle definizioni che ci serviranno per parlare del comportamento delle iterate di funzioni olomorfe, partendo dalla definizione stessa di iterata.
+Strettamente legato al concetto di varietà taut è quello di varietà tautly embedded, ipotesi che può essere interpretata dicendo che per una certa sottovarietà di una varietà complessa vale una forma del teorema di Montel.
+
+\begin{defn}
+    Sia $X$ una sottovarietà di una varietà complessa $Y$. Diciamo che $X$ è \textit{tautly embedded} in $Y$ se $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$.
+\end{defn}
+
+\begin{prop} \label{montel}
+    (\cite[Proposition 2.1.4, point (i)]{A1}) Sia $X$ una sottovarietà di una varietà complessa $Y$. Allora $X$ è tautly embedded in $Y$ se e solo se $\textnormal{Hol}(W,X)$ è relativamente compatto in $\textnormal{Hol}(W,Y)$ per ogni varietà complessa $W$.
+\end{prop}
+
+\begin{proof}
+    Un'implicazione è immediata. Viceversa, supponiamo che $X$ sia tautly embdedded in $Y$. Dato che $Y$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $Y$ che induce la topologia di varietà. Per il Lemma \ref{c0yx} $C^0(\mathbb{D},Y)$ è metrizzabile\marginpar{Ma serve?}, per cui $\text{Hol}(\mathbb{D},X)$, che è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, è relativamente compatto per successioni; in particolare, poiché contiene le mappe costanti, segue che $X$ è relativamente compatto per successioni in $Y$. Allora $X$ è relativamente compatto in $Y$, dato che quest'ultimo è metrizzabile.
+    
+    Per definizione, $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, dunque anche in $C^0(\mathbb{D},Y)$ in quanto quest'ultimo è metrizzabile\marginpar{Basta Hausdorff, e magari non serve nemmeno quello}; per Ascoli-Arzelà, segue che $\text{Hol}(\mathbb{D},X)$ è equicontinuo rispetto a $d$. Per il Lemma \ref{equico} si ha che $\text{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$; inoltre, la chiusura di $\text{Hol}(W,X)$ in $\text{Hol}(W,Y)$ è contenuta in $C^0(W,\overline{X})$. Dato che $\overline{X}$ è compatto, possiamo applicare Ascoli-Arzelà per ottenere che $\text{Hol}(W,X)$ è relativamente compatto in $C^0(W,Y)$. Per il teorema di Weierstrass la chiusura è contenuta in $\text{Hol}(W,Y)$, da cui la tesi.
+\end{proof}
+
+Ci servirà anche il seguente fatto.
+
+\begin{prop}
+    Siano $Y$ una varietà taut e $X\subset\subset Y$ una sottovarietà relativamente compatta. Allora $X$ è tautly embdedded in $Y$.
+\end{prop}
+
+\begin{proof}
+    Poiché $X$ è relativamente compatta in $Y$, nessuna successione in $\text{Hol}(\mathbb{D},X)$ è compattamente divergente; essendo $X$ taut, per definizione segue che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, come voluto.
+\end{proof}
+
+Diamo ora delle definizioni che ci serviranno per parlare del comportamento delle iterate di funzioni olomorfe, partendo dalla definizione stessa di iterata.
 
 \begin{defn}
     Dati un insieme $X$ e una funzione $f:X\longrightarrow X$, poniamo induttivamente $f^0=\id_X$ e $f^{k+1}=f\circ f^k$. Chiamiamo $f^k$ l'\textit{iterata} $k$-esima di $f$ e, per ogni $x \in X$, l'\textit{orbita} di $x$ tramite $f$ è l'insieme $\{f^k(x)\mid k \in \mathbb{N}\}$.
@@ -130,21 +173,6 @@ Diamo anche delle definizioni che ci serviranno per parlare del comportamento de
 Adesso vogliamo arrivare a dire che l'ipotesi taut ci permette di ottenere la dicotomia sul comportamento delle iterate delle funzioni olomorfe. Per farlo, ci servono prima alcuni risultati.
 
 Iniziamo dando una caratterizzazione equivalente all'essere taut per una varietà.
-
-\begin{lm} \label{c0yx}
-    Siano $(X,d)$ uno spazio metrico e $Y$ uno spazio topologico tale che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ di compatti di $Y$ con la seguente proprietà: per ogni compatto $K\subseteq Y$ esiste $n\in\mathbb{N}$ tale che $K\subseteq K_n$. Allora $C^0(Y,X)$ è metrizzabile.
-    
-    In particolare, un suo sottoinsieme è compatto se e solo se è compatto per successioni.
-\end{lm}
-
-\begin{proof}
-    Per ogni $n\in\mathbb{N}$ e per ogni $f,g\in C^0(Y,X)$ poniamo
-    $$d_n(f,g)=\displaystyle\sup_{x\in K_n} d\big(f(x),g(x)\big);$$
-    definiamo
-    $$\tilde{d}(f,g)=\sum_{n=1}^{+\infty} \frac{1}{2^n}\cdot\frac{d_n(f,g)}{1+d_n(f,g)}.$$
-
-    È facile verificare che $\tilde{d}$ è una distanza, che induce proprio la topologia della convergenza uniforme sui compatti.
-\end{proof}
 
 \begin{prop}
     Una varietà complessa e connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
