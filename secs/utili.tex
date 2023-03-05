@@ -49,7 +49,7 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     $$K_X(z,Z) \le C_j\|Z\|_X$$
     per ogni $z \in U_{z_j}'$ e $Z\in T_zX$, dove $C_j>0$ è una costante che dipende dal compatto $\overline{U}_{z_j}'$. Basta allora porre $C(K)=\displaystyle\max_{j=1,\dots,l}\{C_j\}$.
 
-    (1) Supponiamo per assurdo che esistano $z_j \in X$ e $Z_j \in T_{z_j}X$, con $Z_j\not=0$, tali che $\displaystyle \lim_{j \longrightarrow +\infty} K_X(z_j;Z_j)/\|Z_j\| \longrightarrow 0$. Senza perdita di generalità possiamo supporre $\|Z_j\|=1$ per ogni $j$. Per definizione di $K_X$, esistono delle funzioni $f_j\in\text{Hol}(\mathbb{D},X)$ e dei $v_j \in \mathbb{C}$ tali che $f_j(0)=z_j$ e
+    (3) Supponiamo per assurdo che esistano $z_j \in X$ e $Z_j \in T_{z_j}X$, con $Z_j\not=0$, tali che $\displaystyle \lim_{j \longrightarrow +\infty} K_X(z_j;Z_j)/\|Z_j\| \longrightarrow 0$. Senza perdita di generalità possiamo supporre $\|Z_j\|=1$ per ogni $j$. Per definizione di $K_X$, esistono delle funzioni $f_j\in\text{Hol}(\mathbb{D},X)$ e dei $v_j \in \mathbb{C}$ tali che $f_j(0)=z_j$ e
     $$|v_j| \le K_X(z_j;Z_j)+1/j\quad\text{ e }\quad \diff_0 f_j(v_j)=Z_j.$$
 
     Segue che $\displaystyle \lim_{j \longrightarrow +\infty}\|\diff_0f_j(1)\| \ge \lim_{j \longrightarrow +\infty}1/|v_j|=+\infty$. A meno di sottosuccessioni e di riordinare le coordinate, possiamo supporre che siano le prime componenti dei vettori $\diff_0f_j(1)$ a tendere a $+\infty$. Chiamiamo $g_j$ la prima componente di $f_j$, cosicché $g_j'$ è la prima componente di $\diff f_j(1)$. Le $g_j$ sono le composizioni delle $f_j$ con un embedding e una proiezione, dunque sono olomorfe; inoltre, poiché $X$ è limitata, sono equilimitate. Esiste quindi un $r>0$ tale che $g_j \in \text{Hol}(\mathbb{D},\mathbb{D}_r)$ per ogni $j$. Adesso, noi sappiamo che $\displaystyle\lim_{j\longrightarrow +\infty} |g_j'(0)|=+\infty$; basta allora applicare il lemma di Schwarz a $\dfrac{g_j-g_j(0)}{2r}$ con $j$ sufficientemente grande per ottenere una contraddizione.
@@ -60,7 +60,7 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 \end{oss}
 
 \begin{cor} \label{dist_da_sotto}
-    Siano $Y$ una varietà Kobayashi-iperbolica e $X$ una sottovarietà complessa, connessa e relativamente compatta di $Y$. Allora esiste $c>0$ tale che $c\cdot d_X(z,w) \le k_X(z,w)$ per ogni $z,w \in X$.
+    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Allora esiste $c>0$ tale che $c\cdot d_X(z,w) \le k_X(z,w)$ per ogni $z,w \in X$.
 \end{cor}
 
 \begin{proof}
@@ -73,7 +73,7 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 \end{proof}
 
 \begin{prop} \label{simillip}
-    Siano $Y$ una varietà Kobayashi-iperbolica e $X$ una sottovarietà complessa, connessa e relativamente compatta di $Y$. Allora per ogni $\lambda \ge 1$ esiste una costante $C=C(\lambda)>0$ tale che ogni $(\lambda,\kappa)$-simil-geodetica è $C$-lipschitziana rispetto a $d_X$.
+    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Allora si ha che per ogni $\lambda \ge 1$ esiste una costante $C=C(\lambda)>0$ tale che ogni $(\lambda,\kappa)$-simil-geodetica è $C$-lipschitziana rispetto a $d_X$.
 \end{prop}
 
 \begin{proof}
@@ -175,7 +175,7 @@ Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il te
         \item la successione $\{F^{\nu(j)}(x_0)\}_{j\in\mathbb{N}}$ converge a un certo $\xi\in\partial_YX$.
     \end{itemize}
     
-    Infatti, definendo induttivamente $l_0=0$ e $l_n$ come il minimo numero naturale $h>l_{n-1}$ tale che $k_X\big(F^h(x_0),x_0\big) \ge \max\left\{n,k_X\big(F^{l_{n-1}}(x_0),x_0\big)\right\}$, abbiamo $k_X\big(F^{l_n}(x_0),x_0\big) \ge k_X\big(F^k(x_0),x_0\big)$ per ogni $n$ e per ogni $k \le l_n$; inoltre, abbiamo $\displaystyle\lim_{n\longrightarrow+\infty}k_X\big(F^{l_n}(x_0),x_0\big)=+\infty$. Per limitatezza di $X$, esiste un'ulteriore sottosuccessione $l_{n_j}$ tale che $F^{l_{n_j}}(x_0)$ converge a un certo $\xi\in\overline{X}$, e in realtà $\xi\in\partial_YX$ visto che la distanza di Kobayashi da $x_0$ tende a $+\infty$; basta allora porre $\nu(j)=l_{n_j}$.\\
+    Infatti, definendo induttivamente $l_0=0$ e $l_n$ come il minimo numero naturale $h>l_{n-1}$ tale che $k_X\big(F^h(x_0),x_0\big) \ge \max\left\{n,k_X\big(F^{l_{n-1}}(x_0),x_0\big)\right\}$, abbiamo $k_X\big(F^{l_n}(x_0),x_0\big) \ge k_X\big(F^k(x_0),x_0\big)$ per ogni $n$ e per ogni $k \le l_n$; inoltre, abbiamo $\displaystyle\lim_{n\longrightarrow+\infty}k_X\big(F^{l_n}(x_0),x_0\big)=+\infty$. Per relativa compattezza di $X$, esiste un'ulteriore sottosuccessione $l_{n_j}$ tale che $F^{l_{n_j}}(x_0)$ converge a un certo $\xi\in\overline{X}$, e in realtà $\xi\in\partial_YX$ visto che la distanza di Kobayashi da $x_0$ tende a $+\infty$; basta allora porre $\nu(j)=l_{n_j}$.\\
 
     Vogliamo ora mostrare la seguente asserzione.
 
@@ -221,7 +221,7 @@ Quello che andremo ora a dimostrare è uno dei fatti cruciali per ottenere il te
 Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le successioni di funzioni olomorfe che convergono uniformemente sui compatti di $X$ devono necessariamente convergere a una costante.
 
 \begin{thm} \label{lim_is_const}
-    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Supponiamo che esista una costante $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Consideriamo una successione $\{F_\nu\}_{\nu\in\mathbb{N}} \subseteq \textnormal{Hol}(X,X)$ che converge uniformemente sui compatti di $X$ a una $\psi\in\textnormal{Hol}(X,Y)$ con $\psi(X)\subseteq\partial_YX$. Allora $\psi$ è costante.
+    Sia $X$ una sottovarietà complessa e connessa di una varietà Kobayashi-iperbolica $Y$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Consideriamo una successione $\{F_\nu\}_{\nu\in\mathbb{N}} \subseteq \textnormal{Hol}(X,X)$ che converge uniformemente sui compatti di $X$ a una $\psi\in\textnormal{Hol}(X,Y)$ con $\psi(X)\subseteq\partial_YX$. Allora $\psi$ è costante.
 \end{thm}
 
 \begin{proof}
@@ -246,7 +246,7 @@ Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma c
             &\le K_X\big(\gamma(t);\gamma'(t)\big) \le 1,
         \end{aligned}
     \end{equation}
-    dove abbiamo usato che le funzioni olomorfe non aumentano la metrica di Kobayashi e, visto che $\gamma$ è una $(1,\kappa_0/3)$-simil-geodetica, la \eqref{simil-geo2}. Si ha anche che la curva $\sigma_\nu$ è assolutamente continua rispetto a $d_X$ per ogni $\nu$, poiché composizione di $\gamma$, che è assolutamente continua per definizione di $(1,\kappa_0/3)$-simil-geodetica, e $F_\nu$, che è olomorfa e dunque lipschitziana (sempre rispetto a $d_X$) sul compatto $\gamma([a,b])$. Grazie alla \eqref{snu1} e alla \eqref{snu2}, possiamo concludere che $\sigma_\nu$ è una $(1,\kappa_0)$-simil-geodetica per ogni $\nu$.
+    dove abbiamo usato che la Proposizione \ref{metrdecr} e, visto che $\gamma$ è una $(1,\kappa_0/3)$-simil-geodetica, la \eqref{simil-geo2}. Si ha anche che la curva $\sigma_\nu$ è assolutamente continua rispetto a $d_X$ per ogni $\nu$, poiché composizione di $\gamma$, che è assolutamente continua per definizione di $(1,\kappa_0/3)$-simil-geodetica, e $F_\nu$, che è olomorfa e dunque lipschitziana (sempre rispetto a $d_X$) sul compatto $\gamma([a,b])$. Grazie alla \eqref{snu1} e alla \eqref{snu2}, possiamo concludere che $\sigma_\nu$ è una $(1,\kappa_0)$-simil-geodetica per ogni $\nu$.
     
     Adesso, poiché $\{F_\nu\}_{\nu\in\mathbb{N}}$ converge uniformemente sui compatti di $X$ a una funzione olomorfa $\psi$ a valori in $\partial_YX$, ne consegue che per ogni compatto $K\subseteq X$ esiste un $\nu(K)\in\mathbb{N}$ tale che, per ogni $\nu\ge\nu(K)$, si ha $\sigma_\nu([a,b])\cap K=\emptyset$. Ma così troviamo una contraddizione, perché $X$ è $(1,\kappa_0)$-visibile.
 \end{proof}
