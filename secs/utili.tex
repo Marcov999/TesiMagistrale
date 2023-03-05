@@ -60,20 +60,20 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
 \end{oss}
 
 \begin{cor} \label{dist_da_sotto}
-    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Allora esiste $c>0$ tale che $c\cdot d_X(z,w) \le k_X(z,w)$ per ogni $z,w \in X$.
+    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Allora esiste $c>0$ tale che $c\cdot d_Y(z,w) \le k_X(z,w)$ per ogni $z,w \in X$.
 \end{cor}
 
 \begin{proof}
-    Per il Teorema \ref{lung_int} ci basta mostrare che $c\cdot d_X(z,w) \le l_X(\gamma)$ per ogni curva $C^1$ a tratti $\gamma:[a,b] \longrightarrow X$ tale che $\gamma(a)=z$ e $\gamma(b)=w$. Prendendo $c=c(\overline{X})>0$ dato dal punto (1) della Proposizione \ref{metrica_bilip}, ricordando che $\|\cdot\|_X=\|\cdot\|_Y\restrict{X}$ e usando la Proposizione \ref{metrdecr}, abbiamo che
+    Per il Teorema \ref{lung_int} ci basta mostrare che $c\cdot d_Y(z,w) \le l_X(\gamma)$ per ogni curva $C^1$ a tratti $\gamma:[a,b] \longrightarrow X$ tale che $\gamma(a)=z$ e $\gamma(b)=w$. Prendendo $c=c(\overline{X})>0$ dato dal punto (1) della Proposizione \ref{metrica_bilip} e usando la Proposizione \ref{metrdecr}, abbiamo che
     \begin{align*}
         l_X(\gamma)&=\int_a^b K_X\big(\gamma(t);\gamma'(t)\big)\diff t \ge \int_a^b K_Y\big(\gamma(t);\gamma'(t)\big)\diff t\\
-        &\ge \int_a^b c\|\gamma'(t)\|_Y\diff t=\int_a^b c\|\gamma'(t)\|_X\diff t\ge c\cdot d_X(z,w),
+        &\ge \int_a^b c\|\gamma'(t)\|_Y\diff t c\cdot d_Y(z,w),
     \end{align*}
     come voluto.
 \end{proof}
 
 \begin{prop} \label{simillip}
-    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Allora si ha che per ogni $\lambda \ge 1$ esiste una costante $C=C(\lambda)>0$ tale che ogni $(\lambda,\kappa)$-simil-geodetica è $C$-lipschitziana rispetto a $d_X$.
+    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Allora si ha che per ogni $\lambda \ge 1$ esiste una costante $C=C(\lambda)>0$ tale che ogni $(\lambda,\kappa)$-simil-geodetica è $C$-lipschitziana rispetto a $d_Y$.
 \end{prop}
 
 \begin{proof}
@@ -81,8 +81,8 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     $$\sigma(t)=\sigma(s)+\int_s^t\sigma'(r)\diff r.$$
     
     Per il punto (1) della Proposizione \ref{metrica_bilip}, esiste una costante $c=c(\overline{X})>0$ tale che $c\|Z\|_Y \le K_Y(z;Z)$ per ogni $z\in X$ e $Z\in T_zX$, e per definizione di $(\lambda,\kappa)$-simil-geodetica $K_X\big(\sigma(t);\sigma'(t)\big) \le \lambda$ per quasi ogni $t\in I$. Dunque, usando anche la Proposizione \ref{metrdecr}, si ha che $\|\sigma'(t)\|_Y \le \lambda/c$ per quasi ogni $t\in I$, da cui
-    $$d_X\big(\sigma(t),\sigma(s)\big) \le \int_s^t\|\sigma'(r)\|_X\diff r=\int_s^t\|\sigma'(r)\|_Y\diff r \le \frac{\lambda}{c}|t-s|,$$
-    cioè $\sigma$ è $\lambda/c$-lipschitziana rispetto alla distanza euclidea.
+    $$d_Y\big(\sigma(t),\sigma(s)\big) \le \int_s^t\|\sigma'(r)\|_Y\diff r \le \frac{\lambda}{c}|t-s|,$$
+    cioè $\sigma$ è $\lambda/c$-lipschitziana rispetto a $d_Y$.
 \end{proof}
 
 Il seguente Lemma è un fatto tecnico che ci servirà tra poco.

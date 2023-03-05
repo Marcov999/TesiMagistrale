@@ -1,32 +1,32 @@
-Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema di tipo ``Wolff-Denjoy'' per varietà Kobayashi-iperboliche. Riportiamo la dimostrazione data in \cite{CMS}, ma notiamo che la strategia e le tecniche impiegate sono sostanzialmente riprese da \cite{BZ1} e \cite{BM}. Ognuno di questi articoli ha generalizzato il risultato ottenuto nel precedente.
+Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di tipo ``Wolff-Denjoy'' per varietà Kobayashi-iperboliche. La dimostrazione riportata ricalca quella data in \cite{CMS}, che a sua volta riprende la strategia e le tecniche impiegate da \cite{BZ1} e \cite{BM}. Ognuno di questi articoli ha generalizzato il risultato ottenuto nel precedente.
 
-\begin{thm} \label{wd_type}
-    (\cite[Theorem 1.15]{CMS}) Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+\begin{thm} \label{wd_type_strong}
+    Sia $X$ una sottovarietà complessa e tautly embedded di una varietà Kobayashi-iperbolica $Y$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
     
     Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
         \item le orbite dei punti di $X$ tramite $F$ sono relativamente compatte in $X$; oppure,
-        \item esiste un unico punto di $\partial X$ tale che la successione delle iterate di $F$ converge, uniformemente sui compatti, a quel punto.
+        \item esiste un unico punto di $\partial_YX$ tale che la successione delle iterate di $F$ converge, uniformemente sui compatti, a quel punto.
     \end{itemize}
 \end{thm}
 
 \begin{proof}
     Poiché $X$ è taut, per il Teorema \ref{dicotomia} o l'orbita di $z$ tramite $F$ è relativamente compatta per ogni $z \in X$, oppure la successione delle iterate $\{F^\nu\}_{\nu\in\mathbb{N}}$ è compattamente divergente. Supponiamo che le orbite di $F$ non siano relativamente compatte in $X$; allora la successione delle iterate di $F$ è compattamente divergente.
 
-    Consideriamo una sottosuccessione di $\{F^\nu\}_{\nu\in\mathbb{N}}$ che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow \mathbb{C}^d$ con $\tilde{F}(X)\subseteq\overline{X}$. Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}(X)\subseteq\partial X$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
+    Consideriamo una sottosuccessione di $\{F^\nu\}_{\nu\in\mathbb{N}}$ che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow Y$ con $\tilde{F}(X)\subseteq\overline{X}$. Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}(X)\subseteq\partial_YX$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
     $$\Gamma:=\overline{\{F^\nu\}}_{\nu\in\mathbb{N}}\setminus\{F^\nu\}_{\nu\in\mathbb{N}}$$
-    come un insieme di punti di $\partial X$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti. \\
+    come un insieme di punti di $\partial_YX$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti. \\
 
     Caso 1: esiste (e quindi per ogni) $o \in X$ tale che
     $$\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)=+\infty.$$
 
-    Possiamo dunque scegliere una sottosuccessione $\{\nu_j\}_{j\in\mathbb{N}}$ tale che:
+    Possiamo dunque scegliere, in modo simile a quanto fatto all'inizio della dimostrazione della Proposizione \ref{inf_impl_ugu} e applicando la Proposizione \ref{montel}, una sottosuccessione $\{\nu_j\}_{j\in\mathbb{N}}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
         \item per ogni $j\in\mathbb{N}$ e $k\le\nu_j$ si ha $k_X\big(F^k(o),o\big) \le k_X\big(F^{\nu_j}(o),o\big)$;
-        \item $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial X$.
+        \item $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial_YX$.
     \end{enumerate}
 
-    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial X$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse $k_X$-completa, allora per il Lemma \ref{comp_is_comp} avremmo subito un assurdo. Altrimenti, si ha
+    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial_YX$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse $k_X$-completa, allora per il Lemma \ref{comp_is_comp} avremmo subito un assurdo. Altrimenti, si ha
     \begin{equation} \label{daoainfinito}
         \begin{aligned}
             \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty}\, &k_X\big(F^{\nu_h}(o),F^{\mu_j}(o)\big) \\
@@ -43,7 +43,7 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
 
     Supponiamo per assurdo che non sia così; allora esiste una sottosuccessione $\{l_m\}_{m\in\mathbb{N}}$ tale che $M_{l_m}>m$ per ogni $m$. Per definizione di $M_l$ e per quanto appena trovato sulla successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$, abbiamo quindi che esiste una sottosottosuccessione $\{j_m\}_{m\in\mathbb{N}}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
-        \item $\|F^{\mu_{j_m}-l_m}(o)-\eta\|<1/m$;
+        \item $d_Y\big(F^{\mu_{j_m}-l_m}(o),\eta\big)<1/m$;
         \item $k_X\big(F^{\mu_{j_m}-l_m}(o),o\big)>m$.
     \end{enumerate}
 
@@ -57,29 +57,32 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
     Caso 2: esiste (e quindi per ogni) $o \in X$ tale che
     $$\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)<+\infty.$$
     
-    Ricordiamo che abbiamo assunto che esistano due punti distinti $\xi,\eta\in\Gamma$. Poiché $X$ è $(1,\kappa_0)$-visibile, esistono $V_\xi, V_\eta$ intorni in $\mathbb{C}^d$ rispettivamente di $\xi$ e di $\eta$, con $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, e un compatto $K$ di $X$ tali che ogni $(1,\kappa_0)$-simil-geodetica in $X$ che collega un punto di $V_\xi$ a un punto di $V_\eta$ interseca $K$.
+    Ricordiamo che abbiamo assunto che esistano due punti distinti $\xi,\eta\in\Gamma$. Poiché $X$ è $(1,\kappa_0)$-visibile, esistono $V_\xi, V_\eta$ intorni in $\overline{X}$ rispettivamente di $\xi$ e di $\eta$, con $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, e un compatto $K$ di $X$ tali che ogni $(1,\kappa_0)$-simil-geodetica in $X$ che collega un punto di $V_\xi$ a un punto di $V_\eta$ interseca $K$.
     Adesso definiamo, per $\delta>0$ arbitrario, la funzione $G_\delta:K\times K\longrightarrow [0,+\infty)$ data da
-    $$G_\delta(x_1,x_2):=\inf\{k_X\big(F^m(x_1),x_2\big)\mid m\in\mathbb{N}, \|F^m(x_1)-\xi\|<\delta\}.$$
+    $$G_\delta(x_1,x_2):=\inf\big\{k_X\big(F^m(x_1),x_2\big)\mid m\in\mathbb{N}, d_Y\big(F^m(x_1),\xi\big)<\delta\big\}.$$
 
     Notiamo che $G_\delta$ è ben definita per ogni $\delta>0$ (basta considerare la sottosuccessione delle iterate di $F$ che converge a $\xi$ uniformemente sui compatti di $X$) e che $G_{\delta_1}(x_1,x_2) \ge G_{\delta_2}(x_1,x_2)$ per ogni $x_1,x_2 \in K$ e $\delta_1 \le \delta_2$. Vogliamo dire che, in questo caso, si ha
     $$\sup_{\delta>0,x_1,x_2\in K}G_\delta(x_1,x_2)<+\infty.$$
 
-    Supponiamo per assurdo che non sia così; allora esistono una successione di reali positivi $\{\delta_n\}_{n\in\mathbb{N}}$ e due successioni $\{x_n'\}_{n\in\mathbb{N}}$ e $\{x_n''\}_{n\in\mathbb{N}}$ in $K$ tali che $G_{\delta_n}(x_n',x_n'') \ge n$ per ogni $n\in\mathbb{N}$. Possiamo inoltre supporre che le successioni $\{\delta_n\}_{n\in\mathbb{N}}, \{x_n'\}_{n\in\mathbb{N}}$ e $\{x_n''\}_{n\in\mathbb{N}}$ convergano, rispettivamente, a $\delta_0 \ge 0$ e $x_1,x_2\in K$. Sia $\{\nu_j\}_{j\in\mathbb{N}}$ una sottosuccessione di $\mathbb{N}$ tale che $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi$. Allora per ogni $n\in\mathbb{N}$ esiste $j(n)\in\mathbb{N}$ tale che si ha $\displaystyle\sup_{x\in K}\|F^{\nu_j}(x)-\xi\|<\delta_n$ per ogni $j \ge j(n)$. In particolare, per ogni $n \in \mathbb{N}$ si ha $\|F^{\nu_{j(n)}}(x_n')-\xi\|<\delta_n$. Segue che
+    Supponiamo per assurdo che non sia così; allora esistono una successione di reali positivi $\{\delta_n\}_{n\in\mathbb{N}}$ e due successioni $\{x_n'\}_{n\in\mathbb{N}}$ e $\{x_n''\}_{n\in\mathbb{N}}$ in $K$ tali che $G_{\delta_n}(x_n',x_n'') \ge n$ per ogni $n\in\mathbb{N}$. Possiamo inoltre supporre che le successioni $\{\delta_n\}_{n\in\mathbb{N}}, \{x_n'\}_{n\in\mathbb{N}}$ e $\{x_n''\}_{n\in\mathbb{N}}$ convergano, rispettivamente, a $\delta_0 \ge 0$ e $x',x''\in K$. Sia $\{\nu_j\}_{j\in\mathbb{N}}$ una sottosuccessione di $\mathbb{N}$ tale che $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi$. Allora per ogni $n\in\mathbb{N}$ esiste $j(n)\in\mathbb{N}$ tale che si ha $\displaystyle\sup_{x\in K}d_Y\big(F^{\nu_j}(x),\xi\big)<\delta_n$ per ogni $j \ge j(n)$. In particolare, per ogni $n \in \mathbb{N}$ si ha $d_Y\big(F^{\nu_{j(n)}}(x_n'),\xi\big)<\delta_n$. Segue che
     $$n \le G_{\delta_n}(x_n',x_n'') \le k_X\big(F^{\nu_{j(n)}}(x_n'),x_n''\big);$$
-    da ciò discende facilmente che $\displaystyle\lim_{n\longrightarrow+\infty}k_X\big(F^{\nu_{j(n)}}(x_1),x_1\big)=+\infty$, in contraddizione con l'ipotesi del Caso 2.
+    da ciò discende facilmente che $\displaystyle\lim_{n\longrightarrow+\infty}k_X\big(F^{\nu_{j(n)}}(x'),x'\big)=+\infty$, in contraddizione con l'ipotesi del Caso 2.
 
     Abbiamo dunque che, per ogni $x_1,x_2 \in K$, è ben definita la funzione data da
     $$G(x_1,x_2):=\lim_{\delta\longrightarrow 0^+}G_\delta(x_1,x_2);$$
     definiamo inoltre
     $$\epsilon:=\liminf_{z \longrightarrow\eta}\inf_{y\in K}k_X(z,y).$$
     
-    Per il Corollario \ref{dist_da_sotto} abbiamo che $k_X(z,y) \ge c\|z-y\|$, e quest'ultima quantità è sempre maggiore di una costante positiva per $z$ sufficientemente vicino al bordo e di conseguenza lontano dal compatto $K$; quindi $\epsilon>0$. Scegliamo ora due punti $q_1,q_2 \in K$ tali che
+    Per il Corollario \ref{dist_da_sotto} abbiamo che $k_X(z,y) \ge c\cdot d_Y(z,y)$, e quest'ultima quantità è sempre maggiore di una costante positiva per $z$ sufficientemente vicino al bordo e di conseguenza lontano dal compatto $K$; quindi $\epsilon>0$. Scegliamo ora due punti $q_1,q_2 \in K$ tali che
     $$G(q_1,q_2)<\inf_{x_1,x_2\in K}G(x_1,x_2)+\epsilon.$$
     
-    Inoltre, dalla definizione di $G_{\delta}$ abbiamo che, per ogni $j\in\mathbb{N}$, esiste $m\in\mathbb{N}$ tale che $\|F^m(q_1)-\xi\|<1/j$ e $G_{1/j}(q_1,q_2) \le k_X\big(F^m(q_1),q_2\big) \le G_{1/j}(q_1,q_2)+1/j$. Possiamo dunque trovare una funzione strettamente crescente $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che per ogni $j\in\mathbb{N}$ si ha
-    $$\|F^{\nu(j)}(q_1)-\xi\|<1/j \quad\text{e}\quad G_{1/j}(q_1,q_2) \le k_X\big(F^{\nu(j)}(q_1),q_2\big) \le G_{1/j}(q_1,q_2)+1/j.$$
-
-    Poiché $\{F^{\nu(j)}(q_1)\}_{j\in\mathbb{N}}$ converge a $\xi$, per il Lemma \ref{lemmasottosotto2} la successione $\{F^{\nu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi$. Da come è stata scelta $\nu$, abbiamo anche che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2)$.
+    Inoltre, dalla definizione di $G_{\delta}$ abbiamo che, per ogni $j\in\mathbb{N}$, esiste $m\in\mathbb{N}$ tale che $d_Y\big(F^m(q_1),\xi\big)<1/j$ e $G_{1/j}(q_1,q_2) \le k_X\big(F^m(q_1),q_2\big) \le G_{1/j}(q_1,q_2)+1/j$. Possiamo dunque trovare una funzione strettamente crescente $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che per ogni $j\in\mathbb{N}$ si ha
+    \begin{gather*}
+        d_Y\big(F^{\nu(j)}(q_1),\xi\big)<1/\nu(j)\\
+        \text{e}\\
+        G_{1/\nu(j)}(q_1,q_2) \le k_X\big(F^{\nu(j)}(q_1),q_2\big) \le G_{1/\nu(j)}(q_1,q_2)+1/\nu(j);
+    \end{gather*}
+    poiché $\{F^{\nu(j)}(q_1)\}_{j\in\mathbb{N}}$ converge a $\xi$, per il Lemma \ref{lemmasottosotto2} la successione $\{F^{\nu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi$. Da come è stata scelta $\nu$, abbiamo anche che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2)$.
 
     Fissiamo adesso una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta$. Dato un compatto $K\subseteq X$, anche $F^{\mu(j)}(K)$ è compatto, in quanto immagine continua di un compatto; allora, poiché la successione $\{F^{\nu(h)}\}_{h\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$, per ogni $j\in\mathbb{N}$ fissato troviamo che la successione $\{F^{\nu(h)+\mu(j)}\}_{h\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$. Ciò implica, considerando un'esaustione di $X$ in compatti, che esiste una funzione strettamente crescente $\tau:\mathbb{N}\longrightarrow\mathbb{N}$ tale che la successione $\{F^{(\nu\circ\tau)(j)+\mu(j)}\}_{j\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$. Ricordando le proprietà di $\nu$, e a meno di rinominare le funzioni, possiamo dunque dire di avere due funzioni strettamente crescenti $\nu,\mu:\mathbb{N}\longrightarrow\mathbb{N}$ tali che:
     \begin{enumerate}[label={(\arabic*)}]
@@ -112,10 +115,34 @@ Andiamo adesso ad enunciare e dimostrare la versione più generale di un teorema
 
     Dunque si ha che $G(q_1,q_2) \ge G(q_1,x^*)+\epsilon$, in contraddizione con la scelta di $q_1$ e $q_2$. \\
 
-    Poiché sia il Caso 1 che il Caso 2 portano ad una contraddizione, ne consegue che la supposizione che $\Gamma$ contenga almeno due punti dev'essere sbagliata, da cui segue facilmente la tesi.
+    Poiché sia il Caso 1 che il Caso 2 portano a una contraddizione, ne consegue che la supposizione che $\Gamma$ contenga almeno due punti dev'essere sbagliata, da cui segue facilmente la tesi.
 \end{proof}
 
-La dimostrazione del Teorema \ref{abate_wd} è immediata.
+Vogliamo ora ottenere come conseguenza il teorema di tipo ``Wolff-Denjoy'' dimostrato in \cite{CMS}. Per fare ciò, ci servirà il seguente Lemma.
+
+\begin{lm} \label{rcitit}
+    (\cite[Proposition 2.1.5]{A1}) Sia $X$ una sottovarietà complessa e relativamente compatta di una varietà taut $Y$. Allora $X$ è una sottovarietà tautly embedded di $Y$.
+\end{lm}
+
+\begin{proof}
+    Poiché $X$ è relativamente compatta in $Y$, nessuna successione in $\text{Hol}(\mathbb{D},X)$ può essere compattamente divergente in $Y$. Dato che $Y$ è taut, ne consegue che ogni tale successione ammette una sottosuccessione convergente, uniformemente sui compatti, a una funzione in $\text{Hol}(\mathbb{D},Y)$. Ciò implica che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto per successioni in $\text{Hol}(\mathbb{D},X)$; quindi, per il Lemma \ref{c0yx}, è relativamente compatto, cioè $X$ è una sottovarietà tautly embedded di $Y$, come voluto.
+\end{proof}
+
+\begin{cor} \label{wd_type}
+    (\cite[Theorem 1.15]{CMS}) Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+    
+    Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite dei punti di $X$ tramite $F$ sono relativamente compatte in $X$; oppure,
+        \item esiste un unico punto di $\partial X$ tale che la successione delle iterate di $F$ converge, uniformemente sui compatti, a quel punto.
+    \end{itemize}
+\end{cor}
+
+\begin{proof}
+    Poiché $X$ è limitata, esiste $R>0$ tale che $X$ è una sottovarietà complessa e relativamente compatta della varietà Kobayashi-iperbolica $\mathbb{B}_R^d$. Abbiamo già osservato che $\mathbb{B}_R^d$ è pseudoconvessa; quindi è taut per la Proposizione \ref{psdcvx_is_taut}. Allora $X$ è una sottovarietà tautly embedded di $\mathbb{B}_R^d$ per il Lemma \ref{rcitit}. Essendo anche taut e $(1,\kappa_0)$-visibile, soddisfa le ipotesi del Teorema \ref{wd_type_strong}, da cui la tesi.
+\end{proof}
+
+Adesso la dimostrazione del Teorema \ref{abate_wd} è immediata.
 
 \begin{cor}
     Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso, e sia $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
@@ -126,7 +153,7 @@ La dimostrazione del Teorema \ref{abate_wd} è immediata.
 \end{cor}
 
 \begin{proof}
-    Abbiamo già notato, nell'Osservazione \ref{spscvxisvis}, che i domini limitati e strettamente pseudoconvessi di $\mathbb{C}^n$ sono visibili per le simil-geodetiche. Abbiamo anche visto che sono completi rispetto alla distanza di Kobayashi, dunque per la Proposizione \ref{comp_is_taut} sono taut. Si conclude applicando il Teorema \ref{wd_type}.
+    Abbiamo già notato, nell'Osservazione \ref{spscvxisvis}, che i domini limitati e strettamente pseudoconvessi di $\mathbb{C}^n$ sono visibili per le simil-geodetiche. Abbiamo anche visto che sono completi rispetto alla distanza di Kobayashi, dunque per la Proposizione \ref{comp_is_taut} sono taut. Si conclude applicando il Corollario \ref{wd_type}.
 \end{proof}
 
 Sotto ipotesi di natura topologica si può ottenere qualcosa di più.
@@ -152,5 +179,5 @@ Sotto ipotesi di natura topologica si può ottenere qualcosa di più.
 \begin{proof}
     Dato che $\Omega$ è un dominio taut limitato, per \cite[Theorem F]{Wu} è pseudoconvesso. È allora ben noto che $H^j(\Omega;\mathbb{C})=0$ per ogni $j>n$ (si veda \cite[Theorema 4.2.7]{H}). Poiché $\Omega$ è di tipo topologico finito, per il teorema dei coefficienti universali si ha che
     $$\dim_{\mathbb{Q}}{H^j(\Omega;\mathbb{Q})}=\rk{H_j(\Omega;\mathbb{Z})}=\dim_{\mathbb{C}}{H^j(\Omega;\mathbb{C})}$$
-    per ogni $j\in\mathbb{N}$. Si verifica allora che $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$. Si conclude facilmente usando il Teorema \ref{periodico} e il Teorema \ref{wd_type}.
+    per ogni $j\in\mathbb{N}$. Si verifica allora che $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$. Si conclude facilmente usando il Teorema \ref{periodico} e il Corollario \ref{wd_type}.
 \end{proof}
