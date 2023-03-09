@@ -45,4 +45,182 @@ per $\mathfrak{Re}w$ sufficientemente vicino a $-A$, che tende crescendo a $0$ p
 
 In \cite[Section 3.2]{CMS} vengono costruiti domini Caltrops con un numero arbitrario di punte. \\
 
-Vediamo adesso che i domini Caltrops hanno le proprietà volute. Cominciamo con la condizione di visibilità.
+Vediamo adesso che i domini Caltrops hanno le proprietà volute. Cominciamo con la condizione di visibilità, mostrando un risultato che ci servirà anche nel prossimo esempio. Poniamo
+$$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delta_\Omega(x) \le r, \|v\|=1\right\}.$$
+
+\begin{thm} \label{extvis}
+    (\cite[Theorem 1.9]{CMS}) Sia $\Omega$ un dominio limitato di $\mathbb{C}^d$. Sia $S\subseteq\partial\Omega$ un insieme chiuso tale che per ogni $p,q\in\partial\Omega$ con $p\not=q$ esistono $p'\in\partial\Omega$ e $r>0$ tali, detta $B(p',r)$ la palla euclidea di centro $p'$ e raggio $r$, che:
+    \begin{nlist}
+        \item si ha $p\in B(p',r)$ e $q\in\partial\Omega\setminus\overline{B(p',r)}$;
+        \item si ha $S\cap\partial B(p',r)=\emptyset$.
+    \end{nlist}
+    
+    Inoltre, supponiamo che per ogni $q'\in\partial\Omega\setminus S$ esistono un intorno $U$ di $q'$, uno $z_0\in\Omega$ e una funzione $C^1$ strettamente crescente $f:(0,+\infty)\longrightarrow\mathbb{R}$, con $f(t)\longrightarrow+\infty$ per $t\longrightarrow+\infty$, tali che:
+    \begin{enumerate}[label={(\arabic*)}]
+        \item si ha $k_\Omega(z_0,z) \le f\big(1/\delta_\Omega(z)\big)$ per ogni $z\in\Omega\cap U$;
+        \item si ha $M_{\Omega,U}(r)\longrightarrow 0$ per $r\longrightarrow 0$;
+        \item esiste $r_0>0$ tale che $\displaystyle\int_0^{r_0}\frac{M_{\Omega,U}(r)}{r^2}f'\left(\frac{1}{r}\right)\diff r<+\infty$.
+    \end{enumerate}
+
+    Allora $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda \ge 1$ e $\kappa>0$.
+\end{thm}
+
+\begin{proof}
+    La dimostrazione è molto simile a quella del Teorema \ref{gold_is_vis}. Supponiamo per assurdo che esistano $\lambda \ge 1$ e $\kappa>0$ tali che $\Omega$ non sia $(\lambda,\kappa)$-visibile. Allora esistono $p,q\in\partial\Omega$ con $p\not=q$, due successioni $\{p_n\}_{n\in\mathbb{N}}$ e $\{q_n\}_{n\in\mathbb{N}}$, convergenti rispettivamente a $p$ e $q$, e una successione $\{\gamma_n\}_{n\in\mathbb{N}}$ di $(\lambda,\kappa)$-simil-geodetiche, con $\gamma_n:[a_n,b_n]\longrightarrow\Omega$ e $\gamma_n(a_n)=p_n$ e $\gamma_n(b_n)=q_n$ per ogni $n\in\mathbb{N}$, tali che
+    $$\max_{a_n\le t\le b_n}\delta_\Omega\big(\gamma_n(t)\big)\longrightarrow 0\text{ per }n\longrightarrow+\infty.$$
+
+    Per ipotesi esistono $p'\in\partial\Omega$ e $r>0$ tali che valgano (i) e (ii). Poiché $p_n\longrightarrow p$ e $q_n\longrightarrow q$ per $n\longrightarrow+\infty$, possiamo assumere senza perdita di generalità che $\{p_n\}_{n\in\mathbb{N}}\subseteq B(p',r)$ e $\{q_n\}_{n\in\mathbb{N}}\subseteq \Omega\setminus\overline{B(p',r)}$. Poiché $\gamma_n$ è una curva continua che collega $p_n$ e $q_n$, deve esistere $\alpha_n\in(a_n,b_n)$ tale che $\xi_n:=\gamma_n(\alpha_n)\in\partial B(p',r)$; a meno di sottosuccessioni, possiamo assumere che $\xi_n\longrightarrow\xi\in\partial\Omega\cap\partial B(p',r)$ per $n\longrightarrow+\infty$. Per (ii) si ha che $\xi\in\partial\Omega\setminus S$; allora esistono, per ipotesi, un intorno $U$ di $\xi$, uno $z_0\in\Omega$ e una funzione $C^1$ strettamente crescente $f:(0,+\infty)\longrightarrow\mathbb{R}$ tali che valgano (1), (2) e (3). Osserviamo che tali ipotesi sono ancora soddisfatte se prendiamo un intorno $V \subseteq U$ di $\xi$, per cui, a meno di prendere un intorno più piccolo, possiamo supporre che $\overline{U}\cap(S\cup\{p,q\})=\emptyset$; inoltre, di nuovo a meno di sottosuccessioni, possiamo anche supporre che $q_n\not\in\overline{U}$.
+
+    Sia $\epsilon>0$ tale che $\overline{B(\xi,\epsilon)}\subseteq U$; poiché $\xi_n\longrightarrow \xi$ per $n\longrightarrow+\infty$, possiamo assumere senza perdita di generalità che $\{\xi_n\}_{n\in\mathbb{N}}\subseteq B(\xi,\epsilon)$. Per ogni $n\in\mathbb{N}$ poniamo
+    $$\beta_n:=\inf\{t\in[\alpha_n,b_n]\mid \gamma_n(t)\in\partial B(\xi,\epsilon)\};$$
+    per definizione di $\beta_n$ e per il fatto che $\partial B(\xi,\epsilon)$ è chiuso, si ha $\gamma_n(\beta_n)\in\partial B(\xi,\epsilon)$ e $a_n<\alpha_n<\beta_n<b_n$. Poniamo $\sigma_n:=\gamma_n\restrict{[\alpha_n,\beta_n]}:[\alpha_n,\beta_n]\longrightarrow\Omega$ per ogni $n\in\mathbb{N}$. Allora, poiché $\gamma_n(\alpha_n)=\xi_n\in B(\xi,\epsilon)$, per definizione di $\beta_n$ dev'essere $\sigma_n([\alpha_n,\beta_n])\subseteq\overline{B(\xi,\epsilon)}\subseteq U$. Notiamo che, essendo la restrizione della $(\lambda,\kappa)$-simil-geodetica $\gamma_n$, anche $\sigma_n$ è una $(\lambda,\kappa)$-simil-geodetica per ogni $n\in\mathbb{N}$; inoltre, si ha
+    $$\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)\le\max_{a_n\le t\le b_n}\delta_\Omega\big(\gamma_n(t)\big)\longrightarrow 0\text{ per }n\longrightarrow+\infty.$$
+
+    Adesso, a meno di riparametrizzare le curve $\sigma_n$, possiamo assumere che $\alpha_n\le 0\le\beta_n$ e che
+    $$\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)=\delta_\Omega\big(\sigma_n(0)\big)$$
+    per ogni $n\in\mathbb{N}$. Per la Proposizione \ref{simillip} esiste una costante $C>0$, che dipende solo da $\lambda$, tale che le $(\lambda,\kappa)$-simil-geodetiche di $\Omega$ sono $C$-lipschitziane rispetto alla distanza euclidea. Allora, applicando il teorema di Ascoli-Arzelà e passando a un'opportuna sottosuccessione con un procedimento diagonale, possiamo assumere che:
+    \begin{itemize}
+        \item si ha $\alpha_n\longrightarrow\alpha\in[-\infty,0]$ e $\beta_n\longrightarrow\beta\in[0,+\infty]$ per $n\longrightarrow+\infty$;
+        \item la successione $\{\sigma_n\}_{n\in\mathbb{N}}$ converge uniformemente sui compatti di $(\alpha,\beta)$ a una curva continua $\sigma:(\alpha,\beta)\longrightarrow \overline{B(\xi,\epsilon)}\subseteq U$;
+        \item si ha $\sigma_n(\alpha_n)=\xi_n\longrightarrow\xi$ e $\sigma_n(\beta_n)=\eta_n\longrightarrow\eta$ per $n\longrightarrow+\infty$, con $\xi\in\partial\Omega\cap\partial B(p',r)$ e $\eta\in\partial\Omega\cap\partial B(\xi,\epsilon)$.
+    \end{itemize}
+
+    Ovviamente dev'essere $\xi\not=\eta$; quindi, dato che $\|\sigma(\alpha_n)-\sigma(\beta_n)\| \le C(\beta_n-\alpha_n)$ per ogni $n\in\mathbb{N}$, si ha che $C(\beta-\alpha)\ge\|\xi-\eta\|>0$, per cui $\beta>\alpha$. \\
+
+    Mostriamo adesso che $\sigma$ è costante. Vediamo innanzitutto che per ogni $n\in\mathbb{N}$ e per quasi ogni $t\in(\alpha_n,\beta_n)$ si ha
+    $$\|\sigma_n'(t)\| \le \lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big).$$
+    
+    Sia $t\in(\alpha_n,\beta_n)$ tale che $\sigma_n'(t)$ esiste e $\|\sigma_n'(t)\|\not=0$ (altrimenti la disuguaglianza è immediata). Ricordiamo che ogni $\sigma_n$ è una $(\lambda,\kappa)$-simil-geodetica, per cui $K_\Omega\big(\sigma_n(t);\sigma_n'(t)\big)\le\lambda$; quindi, dato che $\sigma_n([\alpha_n,\beta_n])\subseteq U$, si ha
+    $$\|\sigma_n'(t)\|\le \frac{\lambda}{K_\Omega\left(\sigma_n(t);\frac{\sigma_n'(t)}{\|\sigma_n'(t)\|}\right)}\le\lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big),$$
+    come voluto. Adesso, poiché $\displaystyle\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)\longrightarrow 0$ per $n\longrightarrow+\infty$, dal fatto che $M_{\Omega,U}$ è crescente e dall'ipotesi (2) si ha che $M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)\longrightarrow 0$ uniformemente. Ma allora, dati $\alpha<u\le w<\beta$, si ha
+    \begin{align*}
+        \|\sigma(u)-\sigma(w)\|&\le \lim_{n\longrightarrow+\infty}\|\sigma_n(u)-\sigma_n(w)\| \\
+        =&\lim_{n\longrightarrow+\infty}\left\|\int_u^w\sigma_n'(t)\diff t\right\|\le \limsup_{n\longrightarrow+\infty} \int_u^w \|\sigma_n'(t)\|\diff t\\
+        &\le \lambda\limsup_{n\longrightarrow+\infty} \int_u^w M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)\diff t=0;
+    \end{align*}
+    dunque $\sigma$ è costante su $(\alpha,\beta)$. \\
+
+    Vogliamo ottenere una contraddizione mostrando anche che $\sigma$ non è costante. Distinguiamo due casi.
+
+    Caso 1: sia $\alpha$ che $\beta$ sono finiti. Per ogni $n\in\mathbb{N}$, definiamo al seguente modo la curva $\tilde{\sigma}_n:[\alpha,\beta]\longrightarrow\Omega$: restringiamo $\sigma_n$ all'intervallo $[\alpha_n,\beta_n]\cap[\alpha,\beta]$ ed estendiamola ad una costante sugli intervalli $[\alpha,\alpha_n]$ e $[\beta_n,\beta]$ se $\alpha<\alpha_n$ o $\beta_n<\beta$. È facile vedere che le $\tilde{\sigma}_n$ sono ancora $C$-lipschitziane, per cui, applicando di nuovo Ascoli-Arzelà, a meno di sottosuccessioni convergono, uniformemente sui compatti, a una curva continua $\tilde{\sigma}:[\alpha,\beta]\longrightarrow\overline{\Omega}$. Questa curva estende in modo continuo $\sigma$ a tutto $[\alpha,\beta]$ e $\tilde{\sigma}(\alpha)=\xi\not=\eta=\tilde{\sigma}(\beta)$, per cui $\tilde{\sigma}$ non è costante, e di conseguenza non lo è neanche $\sigma$.
+
+    Caso 2: $\alpha=-\infty$ o $\beta=+\infty$. Ricordiamo che $\sigma_n$ è una $(\lambda,\kappa)$-simil-geodetica per ogni $n\in\mathbb{N}$; dunque si ha
+    \begin{equation}\label{disconf}
+        \begin{aligned}
+            \frac{1}{\lambda}|t|-\kappa&\le k_\Omega\big(\sigma_n(0),\sigma_n(t)\big)\\
+            &\le k_\Omega\big(\sigma_n(0),z_0\big)+k_\Omega\big(z_0,\sigma_n(t)\big) \le 2f\left(\frac{1}{\delta_\Omega\big(\sigma_n(t)\big)}\right),
+        \end{aligned}
+    \end{equation}
+    dove l'ultima disuguaglianza segue dall'ipotesi (1), dal fatto che per ogni $n\in\mathbb{N}$ si ha $\sigma_n([\alpha_n,\beta_n])\subseteq\Omega\cap U$ e da $\displaystyle\max_{\alpha_n\le t\le \beta_n}\delta_\Omega\big(\sigma_n(t)\big)=\delta_\Omega\big(\sigma_n(0)\big)$.
+
+    Consideriamo il caso $\beta=+\infty$. Poiché la successione $\{\beta_n\}_{n\in\mathbb{N}}$ diverge a $+\infty$ e $f$ è continua con $\displaystyle\lim_{n\longrightarrow+\infty}f(t)=+\infty$, esistono un naturale $N\in\mathbb{N}$ e una costante $B>0$ tali che per ogni $n\ge N$ e $t\in(B,\beta_n]$ si ha $\dfrac{|t|}{2\lambda}-\dfrac{\kappa}{2}\in f\big((0,+\infty)\big)$. Usando anche la disuguaglianza \eqref{disconf} e il fatto che $f$ è strettamente crescente, troviamo che
+    $$f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right) \le \frac{1}{\delta_\Omega\big(\sigma_n(t)\big)}$$
+    per ogni $n\ge N$ e $t\in(B,\beta_n]$. Se $\alpha=-\infty$, ragionando allo stesso modo troviamo un intero $N'$ e una costante $A>0$ tali che
+    $$f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right) \le \frac{1}{\delta_\Omega\big(\sigma_n(t)\big)}$$
+    per ogni $n\ge N'$ e $t\in[\alpha_n,-A)$. Vediamo il caso $\alpha=-\infty$ e $\beta=+\infty$. Dalle due disuguaglianze appena mostrate, usando anche che $\|\sigma_n'(t)\| \le \lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ e che $M_{\Omega,U}$ è crescente, troviamo che
+    $$\|\sigma_n'(t)\| \le \lambda M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)$$
+    per ogni $n\ge\max\{N,N'\}$ e per quasi ogni $t\in[\alpha_n,-A)\cup(B,\beta_n]$. Usando l'ipotesi (3) e il cambio di variabile $r=\dfrac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}$, si ha che esistono due costanti $c\in(-\infty,-A)$ e $d\in(B,+\infty)$ tali che
+    \begin{align*}
+        \lambda\int_{-\infty}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t&+\lambda\int_d^{+\infty}M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &<\|\xi-\eta\|.
+    \end{align*}
+
+    Allora, usando le ultime due disuguaglianze, otteniamo
+    \begin{align*}
+        \|\sigma(d)-\sigma(c)\|&=\lim_{n\longrightarrow+\infty}\|\sigma_n(d)-\sigma_n(c)\|\\
+        &\ge\limsup_{n\longrightarrow+\infty}(\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\|\sigma_n(\alpha_n)-\sigma_n(c)\|\\
+        &-\|\sigma_n(\beta_n)-\sigma_n(d)\|)\\
+        &\ge\lim_{n\longrightarrow+\infty}\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\limsup_{n\longrightarrow+\infty}\left\|\int_{\alpha_n}^c \sigma_n'(t)\diff t\right\|\\
+        &-\limsup_{n\longrightarrow+\infty}\left\|\int_d^{\beta_n} \sigma_n'(t)\diff t\right\|\\
+        &\ge\|\xi-\eta\|-\limsup_{n\longrightarrow+\infty}\int_{\alpha_n}^c \|\sigma_n'(t)\|\diff t-\limsup_{n\longrightarrow+\infty}\int_d^{\beta_n} \|\sigma_n'(t)\|\diff t\\
+        &\ge\|\xi-\eta\|-\limsup_{n\longrightarrow+\infty}\lambda\int_{\alpha_n}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &-\limsup_{n\longrightarrow+\infty}\lambda\int_d^{\beta_n} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &=\|\xi-\eta\|-\lambda\int_{-\infty}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &-\lambda\int_d^{+\infty} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t>0;
+    \end{align*}
+    dunque in questo caso $\sigma$ non è costante. Se invece $a<-\infty$ e $b=+\infty$ (il caso $a=-\infty$ e $b<+\infty$ è analogo), ragionando come nel caso 1 estendiamo le $\sigma_n$ a delle $\tilde{\sigma}_n$ che, a meno di sottosuccessioni, convergono uniformemente sui compatti a una curva continua $\tilde{\sigma}:[a,+\infty)\longrightarrow\overline{\Omega}$ che estende $\sigma$. Allora basta ripetere la stima precedente con $\tilde{\sigma}_n, \tilde{\sigma}$ e $\alpha$ al posto di $\sigma_n, \sigma$ e $c$ e scegliendo un $d$ opportuno, trovando così che $\tilde{\sigma}$, e di conseguenza $\sigma$, non è costante. \\
+
+    Poiché la nostra assunzione porta a una contraddizione, dev'essere falsa, da cui la tesi.
+\end{proof}
+
+Per i domini Caltrops applicheremo il Teorema \ref{extvis} con $U=\Omega$, per cui $M_{\Omega,U}=M_\Omega$, e $S=\emptyset$. Per mostrare che un dominio Caltrop $\Omega$ soddisfa le ipotesi del Teorema \ref{extvis} l'idea, spiegata in \cite[Section 6]{CMS}, è la seguente: si calcola $k_D$ per un dominio planare $D$ che useremo come modello, dopodiché immergeremo copie di $D$ in $\Omega$ in maniera affine, di modo che ogni punti di $\Omega$ sufficientemente vicino al bordo sia contenuto in una di queste copie. A questo punto, useremo la Proposizione \ref{semicontr} per stimare la distanza di Kobayashi su $\Omega$. 
+
+Per essere precisi, useremo una classe di domini con certe proprietà, che adesso andiamo a costruire. Dati $a,h>0$, poniamo
+$$S_{a,h}=\{z\in\mathbb{C}\mid\mathfrak{Re}z>a\text{ e }-h<\mathfrak{Im}z<h\}.$$
+
+Indichiamo con $T_{a,h}$ l'immagine di $S_{a,h}$ tramite la mappa $z\longmapsto 1/z$ e notiamo che
+$$T_{a,h}=\left(\mathbb{C}\setminus\overline{D\left(\frac{-i}{2h},\frac{1}{2h}\right)}\right)\cap\left(\mathbb{C}\setminus\overline{D\left(\frac{i}{2h},\frac{1}{2h}\right)}\right)\cap D\left(\frac{1}{2a},\frac{1}{2a}\right).$$
+
+Indichiamo con $\mathcal{Q}^{\alpha,a,h}$ l'immagine di $T_{a,h}$ tramite la mappa $\phi_\alpha(z)=z^{\alpha}$, dove $\alpha$ è un reale maggiore di $1$ e $a$ e $h$ sono scelti in modo che $\phi_\alpha$ sia un biolomorfismo.
+
+Osserviamo che $T_{a,h}$ ha una cuspide quadratica in $0$. Dunque esistono due costanti $c_1,c_2>0$ tali che per ogni $z\in\partial T_{a,h}$ si ha
+\begin{equation} \label{cusp_estimate}
+    c_1(\mathfrak{Re}z)^2 \le |\mathfrak{Im}z| \le c_2(\mathfrak{Re}z)^2
+\end{equation}
+per $\mathfrak{Re}z$ sufficientemente piccola. Più precisamente, per $\delta>0$ sufficientemente piccolo l'insieme $\partial T_{a,h}\cap\{z\in\mathbb{C}\mid 0 \le \mathfrak{Re}\le\delta\}$ è dato dall'unione dei grafici di $f$ e $-f$, dove, posto $z=x+iy$, si ha $f(x)=\dfrac{1}{2h}-\sqrt{\dfrac{1}{4h^2}-x^2}$, per cui abbiamo che
+\begin{equation} \label{cerchio}
+    f(x)=hx^2+O(x^4)
+\end{equation}
+per $x\longrightarrow0^+$.
+
+Il seguente risultato sulle proprietà dei domini $\mathcal{Q}^{\alpha,a,h}$ sarà quello usato per ottenere stime sulla distanza di Kobayashi dei domini Caltrops.
+
+\begin{prop} \label{qaah_biolo}
+    Sia $\alpha>1$ e sia $\mathcal{Q}^{\alpha,a,h}$ come sopra, con $a,h>0$ scelti opportunamente. Poniamo $p=(1+\alpha)/\alpha$; allora
+    \begin{enumerate}[label={(\arabic*)}]
+        \item esistono delle costanti $\epsilon,C_1,C_2>0$ tali che, per ogni $z\in\partial\mathcal{Q}^{\alpha,a,h}$ con $0\le\mathfrak{Re}z\le\epsilon$, si ha che
+        $$C_1(\mathfrak{Re}z)^p \le |\mathfrak{Im}z| \le C_2(\mathfrak{Re}z)^p;$$
+        \item fissata una costante $M>1$ esiste $\epsilon>0$ sufficientemente piccolo tale che la disuguaglianza al punto (1) vale con $C_2=Mh\alpha$. Inoltre, fissati $\alpha>1$ e $h>0$, tale scelta di $\epsilon$ decresce al crescere di $a$;
+        \item fissiamo un punto $x_0\in\mathcal{Q}^{\alpha,a,h}\cap\mathbb{R}$. Esiste una costante $C=C(x_0)>0$ tale che per ogni $x\in(0,x_0)$ si ha che
+        $$k_{\mathcal{Q}^{\alpha,a,h}}(x_0,x) \le C+\frac{\pi}{4h}x^{-1/\alpha}.$$
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Siano $c_1$ e $c_2$ le costanti date in \eqref{cusp_estimate}, e sia $f$ la funzione di \eqref{cerchio}, cioè $f(x)=\dfrac{1}{2h}-\sqrt{\dfrac{1}{4h^2}-x^2}$. Vogliamo studiare l'immagine dei grafici di $f$ e $-f$ tramite $\phi_\alpha$. Per simmetria, ci basterò studiare l'immagine del grafico di $f$. Scriviamo $z$ nel grafico di $f$ sufficientemente vicino a $0$ come $z=x+iy$, con $x \ge 0$ e $c_1x^2\le y\le c_2x^2$. Per $x>0$ sufficientemente piccolo, svolgiamo il seguente conto:
+    \begin{align*}
+        \phi_\alpha(z)&=(x+iy)^{\alpha}\\
+        &=x^{\alpha}\left(1+\sum_{j=1}^{+\infty}\frac{(-1)^j}{(2j)!}\prod_{\nu=0}^{2j-1}(\alpha-\nu)\frac{y^{2j}}{x^{2j}}\right)\\
+        &+ix^{\alpha}\left(\sum_{j=0}^{+\infty}\frac{(-1)^j}{(2j+1)!}\prod_{\nu=0}^{2j}(\alpha-\nu)\frac{y^{2j+1}}{x^{2j+1}}\right).
+    \end{align*}
+
+    Usando il fatto che $c_1x^2\le y\le c_2x^2$, si vede facilmente che
+    \begin{gather*}
+        \mathfrak{Re}\big(\phi_\alpha(z)\big)=x^\alpha+O(x^{2+\alpha})\\
+        \text{ e }\\
+        c_1\alpha x^{1+\alpha}\big(1-O(x^2)\big) \le \mathfrak{Im}\big(\phi_\alpha(z)\big) \le c_2\alpha x^{1+\alpha}\big(1+O(x^2)\big)
+    \end{gather*}
+    per $z=x+iy$ nel grafico di $f$ e $x>0$ sufficientemente piccolo. Da queste disuguaglianze segue la tesi del punto (1).
+
+    Il punto (2) segue dalle stime con le quali abbiamo dimostrato il punto (1), e da come il dominio di $f$ dipende, per costruzione, da $a$.
+
+    Consideriamo il biolomorfismo $\Phi_{\alpha,a,h}$ da $\mathcal{Q}^{\alpha,a,h}$ in $\mathbb{D}$ dato da
+    $$\Phi_{\alpha,a,h}=f_3\circ f_2\circ f_1\circ g\circ(\phi_\alpha\restrict{T_{a,h}})^{-1},$$
+    dove
+    \begin{align*}
+        g(z)&=1/z\text{ per ogni }z\in T_{a,h},\\
+        f_1(z)&=\frac{\pi i}{2h}(z-a)\text{ per ogni }z\in S_{a,h},\\
+        f_2(z)&=\sin{z}\text{ per ogni }z\in \mathbb{C}\text{ con }-\pi/2<\mathfrak{Re}z<\pi/2\text{ e }\mathfrak{Im}z>0,\\
+        f_3(z)&=\frac{z-i}{z+i}\text{ per ogni }z\in\mathbb{C}\text{ con }\mathfrak{Im}z>0.
+    \end{align*}
+
+    Osserviamo che $\Phi_{\alpha,a,h}$ manda l'intervallo chiuso e limitato $\overline{\mathcal{Q}^{\alpha,a,h}\cap\mathbb{R}}$ omeomorficamente in $[-1,1]$. Inoltre, manda il punto $o=\dfrac{1}{\left(\frac{2h}{\pi}\log(\sqrt{2}+1)+a\right)^\alpha}$ in $0$, e se $x\in\mathcal{Q}^{\alpha,a,h}\cap\mathbb{R}$ è minore di $o$ allora $\Phi_{\alpha,a,h}(x)\in(0,1)$. Allora per tali $x$ si ha che
+    $$k_{\mathcal{Q}^{\alpha,a,h}}(o,x)=k_{\mathbb{D}}\big(0,\Phi_{\alpha,a,h}(x)\big)=\frac{1}{2}\log\left(\frac{1+\Phi_{\alpha,a,h}(x)}{1-\Phi_{\alpha,a,h}(x)}\right).$$
+
+    Calcolando esplicitamente $\Phi_{\alpha,a,h}(x)$, troviamo che
+    \begin{align*}
+        \frac{1}{2}\log\left(\frac{1+\Phi_{\alpha,a,h}(x)}{1-\Phi_{\alpha,a,h}(x)}\right)&=\frac{1}{2}\log\left(e^{\frac{\pi}{2h}\left(\frac{1}{x^{1/\alpha}}-a\right)}-e^{-\frac{\pi}{2h}\left(\frac{1}{x^{1/\alpha}}-a\right)}\right)-\frac{\log{2}}{2}\\
+        &\le \frac{1}{2}\log\left(e^{\frac{\pi}{2h}\left(\frac{1}{x^{1/\alpha}}-a\right)}\right) \le \frac{\pi}{4h}x^{-1/\alpha};
+    \end{align*}
+    usando anche la disuguaglianza triangolare, otteniamo così la tesi del punto (3).
+\end{proof}
+
+I prossimi risultati saranno quelli necessari a immergere affinamente copie di $\mathcal{Q}^{\alpha,a,h}$ in un dominio Caltrop nel modo voluto. Nel seguito, con $o$ indichiamo il punto introdotto nella dimostrazione della Proposizione \ref{qaah_biolo}, associato al dominio $\mathcal{Q}^{\alpha,a,h}$ che staremo trattando.
+
+\begin{lm}
+    Siano $\epsilon>0$ e $\phi:[0,\epsilon)\longrightarrow\mathbb{R}$ una funzione continua, strettamente crescente e derivabile in $(0,\epsilon)$. Supponiamo che $\phi'$ sia strettamente crescente e che $\phi(0)=0$. Allora per ogni $(x,y)\in[0,+\infty)\times[0,+\infty)$ tale che $x+y<\epsilon$ si ha che $\phi(x+y) \ge \phi(x)+\phi(y)$.
+\end{lm}
+
+\begin{proof}
+    È una banale conseguenza del teorema fondamentale del calcolo integrale.
+\end{proof}
