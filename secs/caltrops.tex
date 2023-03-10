@@ -217,10 +217,57 @@ Il seguente risultato sulle proprietà dei domini $\mathcal{Q}^{\alpha,a,h}$ sar
 
 I prossimi risultati saranno quelli necessari a immergere affinamente copie di $\mathcal{Q}^{\alpha,a,h}$ in un dominio Caltrop nel modo voluto. Nel seguito, con $o$ indichiamo il punto introdotto nella dimostrazione della Proposizione \ref{qaah_biolo}, associato al dominio $\mathcal{Q}^{\alpha,a,h}$ che staremo trattando.
 
-\begin{lm}
+\begin{lm} \label{superadd}
     Siano $\epsilon>0$ e $\phi:[0,\epsilon)\longrightarrow\mathbb{R}$ una funzione continua, strettamente crescente e derivabile in $(0,\epsilon)$. Supponiamo che $\phi'$ sia strettamente crescente e che $\phi(0)=0$. Allora per ogni $(x,y)\in[0,+\infty)\times[0,+\infty)$ tale che $x+y<\epsilon$ si ha che $\phi(x+y) \ge \phi(x)+\phi(y)$.
 \end{lm}
 
 \begin{proof}
     È una banale conseguenza del teorema fondamentale del calcolo integrale.
+\end{proof}
+
+\begin{lm}
+    Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua che sia di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
+    \begin{itemize}
+        \item esiste una costante $C>1$ tale che $x^p/C\le\psi(x)\le Cx^p$ per ogni $x\in[0,A]$;
+        \item si ha che $\psi$ è strettamente crescente;
+        \item si ha che $\psi'$ è strettamente crescente su $(0,A)$.
+    \end{itemize}
+
+    Poniamo $\mathcal{R}:=\left\{z\in\mathbb{C}\mid 0<\mathfrak{Re}z<A\text{ e }|\mathfrak{Im}z|<\psi\bigl(\mathfrak{Re}z\bigr)\right\}$. Allora esistono una costante $B\in(0,A)$, un compatto $K$ che interseca $\{z\in\mathbb{C}\mid\mathfrak{Re}z=A\}$ e tale che $K\setminus\{z\in\mathbb{C}\mid\mathfrak{Re}z=A\}\subsetneq\mathcal{R}$, e due costanti $a,h>0$ tali che per ogni $x+iy\in\mathcal{R}$ con $x\le B$ si ha che:
+    \begin{enumerate}[label={(\arabic*)}]
+        \item vale $\bigl(\psi^{-1}(|y|)+iy\bigr)+\mathcal{Q}^{1/(p-1),a,h}\subseteq\mathcal{R}$;
+        \item vale $\psi^{-1}(|y|)+o>x$;
+        \item vale $\bigl(\psi^{-1}(|y|)+iy\bigr)+o\in K$;
+        \item vale $\delta_{\mathcal{R}}(x+iy) \le |\psi^{-1}(|y|)-x|$.
+    \end{enumerate}
+\end{lm}
+
+\begin{proof}
+    Per il punto (2) della Proposizione \ref{qaah_biolo}, possiamo fissare una costante $M>1$ tale che per ogni $\alpha>1$ e ogni $a,h>0$ esiste un $\epsilon=\epsilon(\alpha,a,h)>0$ tale che
+    \begin{align*}
+        \mathcal{Q}^{\alpha,a,h}\cap\{\mathfrak{Re}w<\epsilon\}&\subseteq \{w\in\mathbb{C}\mid 0<\mathfrak{Re}w<\epsilon\text{ e }|\mathfrak{Im}w|<Mh\alpha(\mathfrak{Re}w)^{(1+\alpha)/\alpha}\}\\
+        &=:S^{\alpha,a,h},
+    \end{align*}
+    e tale che, per $\alpha$ e $h$ fissati, $\epsilon\longrightarrow0$ per $a\longrightarrow+\infty$; notiamo anche che possiamo imporre $\mathcal{Q}^{\alpha,a,h}\cap\{\mathfrak{Re}w<\epsilon\}=\mathcal{Q}^{\alpha,a,h}$ per $a$ sufficientemente grande. Fissiamo adesso $\alpha=1/(p-1)$. Poiché, per costruzione di $\mathcal{Q}^{\alpha,a,h}$, a parte reale fissata di un punto del bordo la parte immaginaria decresce, la costante $\epsilon$ scelta non decresce al decrescere di $h$. Allora possiamo scegliere $a$ sufficientemente grande e $h$ sufficientemente piccolo, in modo che $\mathcal{Q}^{\alpha,a,h}\cap\{\mathfrak{Re}w<\epsilon\}=\mathcal{Q}^{\alpha,a,h}$ e $\epsilon,o<A/2$, e $Mh\alpha<1/C$.
+    
+    Adesso fissiamo una costante $B\in(0,A)$ tale che $B<\min\{0,\epsilon/2\}$. Sia $z=x+iy\in\mathcal{R}$ con $x\le B$. Consideriamo l'insieme $\bigl(\psi^{-1}(|y|)+iy\bigr)+\mathcal{Q}^{\alpha,a,h}$. Un elemento arbitrario di questo insieme è della forma $\bigl(\psi^{-1}(|y|)+s\bigr)+i(y+t)$, con $s+it\in\mathcal{Q}^{\alpha,a,h}$. Dato che $\mathcal{Q}^{\alpha,a,h}\subseteq S^{\alpha,a,h}$, si ha $0<s<\epsilon$ e $|t|<Mh\alpha s^p$. Il punto $\bigl(\psi^{-1}(|y|)+s\bigr)+i(y+t)$ sta in $\mathcal{R}$ se e solo \begin{gather*}
+        0<\psi^{-1}(|y|)+s<A\\
+        \text{e}\\
+        |y+t|<\psi\big(\psi^{-1}(|y|)+s\big).
+    \end{gather*}
+
+    Poiché $x+iy\in\mathcal{R}$ e $\psi$ è strettamente crescente, si ha $0 \le \psi^{-1}(|y|)<x\le B$, per cui $0<\psi^{-1}(|y|)+s<\epsilon/2+\epsilon<A$. Dunque, per mostrare il punto (1), ci resta da dimostrare che $|y+t|<\psi\big(\psi^{-1}(|y|)+s\big)$. Notiamo che $\psi$ soddisfa le ipotesi del Lemma \ref{superadd}, da cui
+    $$\psi\big(\psi^{-1}(|y|)+s\big)\ge |y|+\psi(s)\ge |y|+s^p/C,$$
+    dove la prima disuguaglianza è data dal Lemma e la seconda è vera per ipotesi. Allora si ha che
+    $$|y+t| \le |y|+|t|<|y|+Mh\alpha s^p<|y|+s^p/C \le \psi\big(\psi^{-1}(|y|)+s\big),$$
+    come voluto.
+
+    Per ogni $x+iy\in\mathcal{R}$ con $x\le B$ si ha $\psi^{-1}(|y|)+o>B \ge x$ per come è stato scelto $B$, e questo dimostra il punto (2).
+
+    Definiamo $K:=\left\{z\in\mathbb{C}\mid o \le \mathfrak{Re}z\le A\text{ e }|\mathfrak{Im}z| \le \psi\big(\mathfrak{Re}(z)-o\big)\right\}$. Per ogni $x+iy\in\mathcal{R}$ con $x\le B$ si ha
+    $$o \le o+\psi^{-1}(|y|) <o+x \le o+B<2o<A.$$
+
+    Inoltre $|y|=\psi\Big(\big(\psi^{-1}(|y|)+o\big)-o\Big)$, per cui $o+\big(\psi^{-1}(|y|)+iy\big)\in K$. Per costruzione, $K$ è un compatto che soddisfa le condizioni richeste, dunque abbiamo mostrato il punto (3).
+
+    Infine, per ogni $x+iy\in\mathcal{R}$ con $x\le B$ si ha che $\psi^{-1}(|y|)+iy\in\partial\mathcal{R}$, per cui $\delta_{\mathcal{R}}(x+iy) \le \left|\big(\psi^{-1}(|y|)+iy\big)-(x+iy)\right|=|\psi^{-1}(|y|)-x|$; questo dimostra il punto (4).
 \end{proof}
