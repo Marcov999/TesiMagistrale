@@ -225,7 +225,7 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
     È una banale conseguenza del teorema fondamentale del calcolo integrale.
 \end{proof}
 
-\begin{lm}
+\begin{lm} \label{psierre}
     Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua che sia di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
     \begin{itemize}
         \item esiste una costante $C>1$ tale che $x^p/C\le\psi(x)\le Cx^p$ per ogni $x\in[0,A]$;
@@ -250,7 +250,7 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
     \end{align*}
     e tale che, per $\alpha$ e $h$ fissati, $\epsilon\longrightarrow0$ per $a\longrightarrow+\infty$; notiamo anche che possiamo imporre $\mathcal{Q}^{\alpha,a,h}\cap\{\mathfrak{Re}w<\epsilon\}=\mathcal{Q}^{\alpha,a,h}$ per $a$ sufficientemente grande. Fissiamo adesso $\alpha=1/(p-1)$. Poiché, per costruzione di $\mathcal{Q}^{\alpha,a,h}$, a parte reale fissata di un punto del bordo la parte immaginaria decresce, la costante $\epsilon$ scelta non decresce al decrescere di $h$. Allora possiamo scegliere $a$ sufficientemente grande e $h$ sufficientemente piccolo, in modo che $\mathcal{Q}^{\alpha,a,h}\cap\{\mathfrak{Re}w<\epsilon\}=\mathcal{Q}^{\alpha,a,h}$ e $\epsilon,o<A/2$, e $Mh\alpha<1/C$.
     
-    Adesso fissiamo una costante $B\in(0,A)$ tale che $B<\min\{0,\epsilon/2\}$. Sia $z=x+iy\in\mathcal{R}$ con $x\le B$. Consideriamo l'insieme $\bigl(\psi^{-1}(|y|)+iy\bigr)+\mathcal{Q}^{\alpha,a,h}$. Un elemento arbitrario di questo insieme è della forma $\bigl(\psi^{-1}(|y|)+s\bigr)+i(y+t)$, con $s+it\in\mathcal{Q}^{\alpha,a,h}$. Dato che $\mathcal{Q}^{\alpha,a,h}\subseteq S^{\alpha,a,h}$, si ha $0<s<\epsilon$ e $|t|<Mh\alpha s^p$. Il punto $\bigl(\psi^{-1}(|y|)+s\bigr)+i(y+t)$ sta in $\mathcal{R}$ se e solo \begin{gather*}
+    Adesso fissiamo una costante $B\in(0,A)$ tale che $B<\min\{o,\epsilon/2\}$. Sia $z=x+iy\in\mathcal{R}$ con $x\le B$. Consideriamo l'insieme $\bigl(\psi^{-1}(|y|)+iy\bigr)+\mathcal{Q}^{\alpha,a,h}$. Un elemento arbitrario di questo insieme è della forma $\bigl(\psi^{-1}(|y|)+s\bigr)+i(y+t)$, con $s+it\in\mathcal{Q}^{\alpha,a,h}$. Dato che $\mathcal{Q}^{\alpha,a,h}\subseteq S^{\alpha,a,h}$, si ha $0<s<\epsilon$ e $|t|<Mh\alpha s^p$. Il punto $\bigl(\psi^{-1}(|y|)+s\bigr)+i(y+t)$ sta in $\mathcal{R}$ se e solo \begin{gather*}
         0<\psi^{-1}(|y|)+s<A\\
         \text{e}\\
         |y+t|<\psi\big(\psi^{-1}(|y|)+s\big).
@@ -270,4 +270,77 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
     Inoltre $|y|=\psi\Big(\big(\psi^{-1}(|y|)+o\big)-o\Big)$, per cui $o+\big(\psi^{-1}(|y|)+iy\big)\in K$. Per costruzione, $K$ è un compatto che soddisfa le condizioni richeste, dunque abbiamo mostrato il punto (3).
 
     Infine, per ogni $x+iy\in\mathcal{R}$ con $x\le B$ si ha che $\psi^{-1}(|y|)+iy\in\partial\mathcal{R}$, per cui $\delta_{\mathcal{R}}(x+iy) \le \left|\big(\psi^{-1}(|y|)+iy\big)-(x+iy)\right|=|\psi^{-1}(|y|)-x|$; questo dimostra il punto (4).
+\end{proof}
+
+Il prossimo risultato, che è sostanzialmente una versione parametrizzata del precedente, tratta dell'immersione del dominio modello $\mathcal{Q}^{\alpha,a,h}$ in un dominio Caltrop con una punta. Per brevità, scriveremo $(z_1,\dots,z_{n-1},z_n)\in\mathbb{C}^n$ come $(z',z_n)$.
+
+\begin{lm}
+    Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua che sia di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
+    \begin{itemize}
+        \item esiste una costante $C>1$ tale che $x^p/C\le\psi(x)\le Cx^p$ per ogni $x\in[0,A]$;
+        \item si ha che $\psi$ è strettamente crescente;
+        \item si ha che $\psi'$ è strettamente crescente su $(0,A)$.
+    \end{itemize}
+
+    Sia
+    $$D:=\{z\in\mathbb{C}^n\mid 0<\mathfrak{Re}z_n<A\text{ e }(\mathfrak{Im}z_n)^2+\|z'\|^2<\big(\psi(\mathfrak{Re}z_n)\big)^2\}.$$
+
+    Sia $w'\in\mathbb{C}^{n-1}$ e poniamo
+    $$\mathcal{R}_{w'}:=\pi_n\left[\big((w',0)+\{0_{n-1}\}\times\mathbb{C}\big)\cap D\right],$$
+    dove $\pi_n$ è la proiezione sull'ultima coordinata. Sia $\alpha=1/(p-1)$. Allora esistono delle costanti $a,h,B>0$ e un compatto $K\subseteq\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n\le A\}$, che interseca $\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n=A\}$ e tale che $K\setminus\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n=A\}\subsetneq D$, tali che per ogni $w'\in\mathbb{C}^{n-1}$ con $\|w'\|<\psi(B/2)$ e ogni $\zeta\in\mathcal{R}_{w'}$ con $\mathfrak{Re}\zeta\le B$ si ha che:
+    \begin{enumerate}[label={(\arabic*)}]
+        \item vale $\Big(\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\Big)+\mathcal{Q}^{\alpha,a,h}\subseteq\mathcal{R}_{w'}$;
+        \item vale $\psi^{-1}\big(S(\zeta,w')\big)+o>\mathfrak{Re}\zeta$;
+        \item vale $\Big(\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\Big)+o\in\pi_n\left[\big((w',0)+\{0_{n-1}\}\times\mathbb{C}\big)\cap K\right]$;
+        \item vale $\delta_D\big((w',\zeta)\big) \le \left|\mathfrak{Re}\zeta-\psi^{-1}\big(S(\zeta,w')\big)\right|$,
+    \end{enumerate}
+    dove $S(\zeta,w')=\sqrt{(\mathfrak{Im}\zeta)^2+\|w'\|^2}$.
+\end{lm}
+
+\begin{proof}
+    Notiamo che
+    \begin{align*}
+        \mathcal{R}_{w'}&=\{\zeta\mid (w',\zeta)\in D\}\\
+        &=\{\zeta\mid0<\mathfrak{Re}\zeta<A\text{ e }(\mathfrak{Im}\zeta)^2+\|w'\|^2<\big(\psi(\mathfrak{Re}\zeta)\big)^2\}\\
+        &=\{\zeta\mid \psi^{-1}(\|w'\|)<\mathfrak{Re}\zeta<A\text{ e }(\mathfrak{Im}\zeta)^2+\|w'\|^2<\big(\psi(\mathfrak{Re}\zeta)\big)^2\},
+    \end{align*}
+    per cui $\mathcal{R}_{w'}\not=\emptyset$ se e solo se $\|w'\|<\psi(A)$; poiché la costante $B$ sarà scelta in $(0,A)$, nel nostro caso $\mathcal{R}_{w'}$ sarà sempre non vuoto. Notiamo inoltre che l'insieme $\mathcal{R}_{0_{n-1}}$ coincide con l'insieme $\mathcal{R}$ del Lemma \ref{psierre}. Prendiamo dunque $a,h$ e $B$ date da tale Lemma. Scriviamo per semplicità $c=1/C$, e osserviamo che dalla dimostrazione del Lemma \ref{psierre} discendono le seguenti disuguaglianze:
+    \begin{gather}
+        B+s<3A/4<A\text{ e }|t|<cs^p\text{ per ogni }s+it\in\mathcal{Q}^{\alpha,a,h};\label{qminoredia}\\
+        o>B.\label{obbi}
+    \end{gather}
+
+    Supponiamo ora che $w'\not=0_{n-1}$. Sia $\zeta\in\mathcal{R}_{w'}$ tale che $\mathfrak{Re}\zeta\le B$. Un elemento arbitrario dell'insieme $\Big(\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\Big)+\mathcal{Q}^{\alpha,a,h}$ è della forma $\Big(\psi^{-1}\big(S(\zeta,w')\big)+s\Big)+i(\mathfrak{Im}\zeta+t)$ con $s+it\in\mathcal{Q}^{\alpha,a,h}$. Un tale punto appartiene a $\mathcal{R}_{w'}$ se e solo se:
+    \begin{nlist}
+        \item si ha $\psi^{-1}\big(S(\zeta,w')\big)+s<A$;
+        \item si ha $\|w'\|^2+(\mathfrak{Im}w+t)^2<\bigg(\psi\Big(\psi^{-1}\big(S(\zeta,w'\big)+s)\Big)\bigg)^2$.
+    \end{nlist}
+
+    Poiché $\zeta\in\mathcal{R}_{w'}$ e $\mathfrak{Re}\zeta\le B$, abbiamo che
+    $$(\mathfrak{Im}\zeta)^2+\|w'\|^2<\big(\psi(\mathfrak{Re}\zeta)\big)^2<\big(\psi(B)\big)^2;$$
+    quindi $\psi^{-1}\big(S(\zeta,w')\big)+s<B+s<A$, dove l'ultima disuguaglianza è la prima in \eqref{qminoredia}. È così verificata la condizione (i). Vediamo ora la condizione (ii). Per il Lemma \ref{superadd} e per le ipotesi su $\psi$ si ha che
+    $$\psi\Big(\psi^{-1}\big(S(\zeta,w'\big)+s)\Big)\ge S(\zeta,w')+\psi(s) \ge S(\zeta,w')+cs^p;$$
+    dunque
+    $$\bigg(\psi\Big(\psi^{-1}\big(S(\zeta,w'\big)+s)\Big)\bigg)^2-(\mathfrak{Im}\zeta)^2-\|w'\|^2\ge 2cs^pS(\zeta,w')+c^2s^{2p}.$$
+
+    Allora la condizione (ii) segue se mostriamo che
+    $$2t\mathfrak{Im}\zeta+t^2<2cs^pS(\zeta,w')+c^2s^{2p},$$
+    ma quest'ultima disuguaglianza segue dalla seconda disuguaglianza in \eqref{qminoredia}. Abbiamo così dimostrato il punto (1).
+
+    Adesso notiamo che
+    $$\psi^{-1}\big(S(\zeta,w')\big)+o \ge \psi^{-1}(\mathfrak{Im}\zeta)+o>B\ge\mathfrak{Re}\zeta,$$
+    dove la seconda disuguaglianza segue da \eqref{obbi}; questo dimostra il punto (2).
+
+    Poniamo $K:=\{(w',\zeta)\in\mathbb{C}^n\mid o\le\mathfrak{Re}\zeta\le A\text{ e }S(\zeta,w')\le\psi(\mathfrak{Re}\zeta-o)\}$. Si verifica facilmente che $K$ è un compatto con le proprietà richieste. Sia $\zeta\in\mathcal{R}_{w'}$ tale che $\mathfrak{Re}\zeta\le B$ e poniamo $\eta:=\Big(\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\Big)+o$; allora abbiamo che
+    $$o\le\psi^{-1}(\|w'\|)+o\le\mathfrak{Re}\eta<\mathfrak{Re}\zeta+o\le B+o<A.$$
+
+    Inoltre, si ha che $S(\eta,w')=S(\zeta,w')=\psi(\mathfrak{Re}\eta-o)$; quindi
+    $$\eta\in\pi_n\left[\big((w',0)+\{0_{n-1}\}\times\mathbb{C}\big)\cap K\right],$$
+    e questo dimostra il punto (3).
+
+    Per il punto (4), se $(w',\zeta)$ è preso come sopra, allora
+    $$\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\in\partial\mathcal{R}_{w'};$$
+    dunque
+    $$\delta_D\big((w',\zeta)\big)\le \delta_{\mathcal{R}_{w'}}(\zeta)\le\left|\mathfrak{Re}\zeta-\psi^{-1}\big(S(\zeta,w')\big)\right|,$$
+    come voluto.
 \end{proof}

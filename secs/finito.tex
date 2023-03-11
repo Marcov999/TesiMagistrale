@@ -1,6 +1,24 @@
 Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini Goldilocks. Iniziamo con la definizione di dominio di tipo finito nel senso di D'Angelo, introdotta in \cite{D'A}.
 
 \begin{defn}
+    Dati un aperto $A\subseteq\mathbb{C}^n$, una funzione $g\in C^\infty(A)$ e $p\in A$, \textit{l'ordine (o la molteplicità) di $g$ in $p$} è $v_p(g)$, il grado del primo termine non nullo dello sviluppo di Taylor in $p$ di $g-g(p)$. Se la funzione è a valori in più variabili, si considera il minimo degli ordini di contatto delle componenti.
+\end{defn}
+
+\begin{defn}
+    Un dominio $\Omega\subseteq\mathbb{C}^n$ ha bordo $C^\infty$ se esiste una funzione $\rho\in C^\infty(\mathbb{C}^n)$ tale che $\Omega=\{\rho(z)<0\}$ e $\diff\rho\not=0$ in ogni punto di $\partial\Omega$.
+\end{defn}
+    
+\begin{defn} \label{discanal}
+    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. L'insieme dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $\xi$ e che sono lisci nell'origine è dato da
+    $$\mathcal{D}_{\xi}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=\xi\text{ e }f'(0)\not=0\}.$$
+\end{defn}
+
+\begin{defn}
+    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. Il \textit{tipo} di $\xi$ è dato da
+    $$\Delta_1(\xi):=\sup_{f\in\mathcal{D}_{\xi}} v_0(\rho\circ f).$$
+\end{defn}
+
+\begin{defn}
     Un dominio $\Omega\subseteq\mathbb{C}^n$ con bordo $C^\infty$ si dice \textit{di tipo finito nel senso di D'Angelo} (o più brevemente \textit{di tipo finito}) se $\Delta_1(\xi)<+\infty$ per ogni $\xi\in\partial\Omega$.
 \end{defn}
 
