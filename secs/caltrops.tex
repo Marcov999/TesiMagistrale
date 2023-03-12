@@ -189,7 +189,7 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
 
 Il prossimo risultato, che è sostanzialmente una versione parametrizzata del precedente, tratta dell'immersione del dominio modello $\mathcal{Q}^{\alpha,a,h}$ in un dominio Caltrop con una punta. Per brevità, scriveremo $(z_1,\dots,z_{n-1},z_n)\in\mathbb{C}^n$ come $(z',z_n)$.
 
-\begin{lm}
+\begin{lm}\label{6punto4}
     Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua che sia di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
     \begin{itemize}
         \item esiste una costante $C>1$ tale che $x^p/C\le\psi(x)\le Cx^p$ per ogni $x\in[0,A]$;
@@ -260,7 +260,7 @@ Il prossimo risultato, che è sostanzialmente una versione parametrizzata del pr
     come voluto.
 \end{proof}
 
-Ci serviranno anche i seguenti due risultati.
+Ci serviranno anche i seguenti risultati.
 
 \begin{lm} \label{analisibase}
     Siano $A>0$, $p>1$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione tale che:
@@ -277,12 +277,16 @@ Ci serviranno anche i seguenti due risultati.
     Che $\psi'(0)$ esista e sia uguale a $0$ segue immediatamente dalla stima su $\psi(x)$. Dunque $\psi'$ si estende a una funzione su $[0,A)$. Poiché $\psi'$ è monotona crescente, esiste $\displaystyle\lim_{x\longrightarrow0^+}\psi'(x)=l<+\infty$. Segue allora da risultati elementari di analisi in una variabile che $l=0$.
 \end{proof}
 
-\begin{lm}
+\begin{lm} \label{pshestimate}
     (\cite[Result 2.6]{BM})\marginpar{Sistemare con la reference originale} Siano $\Omega\subseteq\mathbb{C}^n$ un dominio e $p\in\Omega$. Supponiamo che esista una funzione $u$ plurisubarmonica, negativa, di classe $C^2$ in un intorno di $p$ e tale che esiste $c>0$ per cui si ha
     $$L_u(p;v) \ge c\|v\|^2$$
     per ogni $v\in\mathbb{C}^n$. Allora esiste una costante $\alpha>0$ tale che
     $$K_\Omega(p;v)\ge\left(\frac{c}{\alpha}\right)^{1/2}\frac{\|v\|}{|u(p)|^2}$$
     per ogni $v\in\mathbb{C}^n$.
+\end{lm}
+
+\begin{lm}\label{psdcvxcpt}
+    (\cite[Result 2.4]{BM})\marginpar{Sistemare con la reference originale} Sia $\Omega\subseteq\mathbb{C}^n$ con $n\ge 2$ un dominio limitato. Sia $\mathcal{M}_0$ un insieme aperto in $\partial\Omega$ che sia anche un'ipersuperficie di classe $C^2$. Assumiamo che $\mathcal{M}_0$ ammetta una funzione di definizione $\phi$ di classe $C^2$ in un qualche aperto contenente $\mathcal{M}_0$, e tale che esista una costante $\delta>0$ per cui $L_\phi(\xi;v)\ge\sigma\|v\|^2$ per ogni $\xi\in\mathcal{M}_0$ e $v\in\mathbb{C}^n$. Sia $\mathcal{M}_1\subsetneq\mathcal{M}_0$ un sottoinsieme compatto. Allora esistono un intorno di $\mathcal{M}_1$ in $\overline{\Omega}$, sia esso $\mathcal{V}$, e due costanti $C,c>0$ tali che $K_\Omega(z;v)\ge \big(1-C\delta_\Omega(z)^{1/2}\big)\dfrac{c\|v\|}{\delta_\Omega(z)^{1/2}}$ per ogni $z\in\mathcal{V}\cap\Omega$ e $v\in\mathbb{C}^n$.
 \end{lm}
 
 Siamo ora pronti a dimostrare quello che volevamo.
@@ -296,7 +300,7 @@ Siamo ora pronti a dimostrare quello che volevamo.
 
     Passo 1: una stima dal basso per $K_\Omega(w;\cdot)$ per $w$ contenuto in una punta.
 
-    Siano $\{q_1,\dots,q_N\}\subseteq\partial\Omega$ i punti della Definizione \ref{defcaltrop}, e fissiamo $q_{j^*}$ uno di tali punti. Siano $p_{j^*}\in(1,3/2)$ l'esponente, $\mathbb{U}^{(j^*)}$ la trasformazione unitaria e $\psi_{j^*}:[0,A_{j^*}]\longrightarrow[0,+\infty)$ la funzione associati a $q_{j^*}$ nella Definizione \ref{defcaltrop}. Per la Proposizione \ref{metrdecr} abbiamo che $K_\Omega$ è invariante per biolomorfismi, e $\mathbb{U}^{(j^*)}$ è un biolomorfismo che coincide con il proprio differenziale e preserva la norma euclidea; allora possiamo assumere senza perdita di generalità $\mathbb{U}^{(j^*)}=\id$ e $q_{j^*}=0$, per cui, ponendo $A=A_{j^*}$ e $\psi=\psi_{j^*}$, si ha che
+    Siano $\{q_1,\dots,q_N\}\subseteq\partial\Omega$ i punti della Definizione \ref{defcaltrop}, e fissiamo $q_{j^*}$ uno di tali punti. Siano $p_{j^*}\in(1,3/2)$ l'esponente, $\mathbb{U}^{(j^*)}$ la trasformazione unitaria e $\psi_{j^*}:[0,A_{j^*}]\longrightarrow[0,+\infty)$ la funzione associati a $q_{j^*}$ nella Definizione \ref{defcaltrop}. Per la Proposizione \ref{metrdecr} abbiamo che $K_\Omega$ è invariante per biolomorfismi, e $\mathbb{U}_{j^*}$ è un biolomorfismo con differenziale $\mathbb{U}^{(j^*)}$ chee preserva la norma euclidea; allora possiamo assumere senza perdita di generalità $\mathbb{U}_{j^*}=\id$ e $q_{j^*}=0$, per cui, ponendo $A=A_{j^*}$ e $\psi=\psi_{j^*}$, si ha che
     $$\Omega\cap V_{j^*}=\left\{z\in\mathbb{C}^n\mid 0<\mathfrak{Re}z_n<A\text{ e }(\mathfrak{Im}z_n)^2+\|z'\|^2<\big(\psi(\mathfrak{Re}z_n)\big)^2\right\}.$$
 
     Poniamo $\rho(z):=(\mathfrak{Im}z_n)^2+\|z'\|^2-\big(\psi(\mathfrak{Re}z_n)\big)^2$ per $z\in\Omega\cap V_{j^*}$. Calcolando le derivate parziali seconde in modo analogo a come fatto nella costruzione dell'esempio a una punta, ricordando le proprietà di $\psi$ e applicando il Lemma \ref{analisibase}, troviamo che esiste una costante $A'\in(0,A]$ tale che
@@ -343,7 +347,67 @@ Siamo ora pronti a dimostrare quello che volevamo.
         \item dalle disuguaglianze sulla forma di Levi che seguono dalle condizioni imposte su $\phi$, e dalle definizioni di $\chi_1$ e $\chi_2$, segue per\marginpar{Qua la citazione mi piace ancora meno} \cite[Excercise prior to Proposition 2.2.6]{Kr} che $u$ è plurisubarmonica su $\Omega$.
     \end{itemize}
 
-    Per la simmetria di rotazione della punta $\Omega\cap V_{j^*}$, per ogni $w\in\Omega\cap V_{j^*}$ con $\mathfrak{Re}w_n$ sufficientemente piccolo si ha che $\delta_\Omega(w)=\text{dist}\big(\mathfrak{Re}w_n+iS(w),\text{graph}(\psi)\big)$, dove con $\text{graph}(\psi)$ s'intende il grafico di $\psi$ e $S(w)=\sqrt{(\mathfrak{Im}w_n)^2+\|w'\|^2}$. Da ciò, e da risultati elementari di analisi, segue che per tali $w$, se $\xi^w\in\partial\Omega$ è tale che $\|w-\xi^w\|=\delta_\Omega(w)$, allora $\mathfrak{Re}(w_n)-\mathfrak{Re}\big(\pi_n(\xi^w)\big)\in\big(0,\psi(\mathfrak{Re}w_n)\psi'(\mathfrak{Re}w_n)\big)$. Segue dunque, dal Lemma \ref{analisibase} e da stime elementari, scrivendo $\xi^w_n=\pi_n(\xi^w)$, che
+    Per la simmetria di rotazione della punta $\Omega\cap V_{j^*}$, per ogni $w\in\Omega\cap V_{j^*}$ con $\mathfrak{Re}w_n$ sufficientemente piccolo si ha che $\delta_\Omega(w)=\text{dist}\big(\mathfrak{Re}w_n+iS(w),\text{graph}(\psi)\big)$, dove con $\text{graph}(\psi)$ s'intende il grafico di $\psi$ e $S(w)=\sqrt{(\mathfrak{Im}w_n)^2+\|w'\|^2}$. Segue dunque, da semplici stime geometriche e dal Lemma \ref{analisibase}, ponendo $\xi^w_n=\pi_n(\xi^w)$, che
     $$\frac{\partial_\Omega(w)}{\psi(\mathfrak{Re}w_n)-S(w)}=\frac{\left|(\mathfrak{Re}\xi^w_n-\mathfrak{Re}w_n)+i\big(\psi(\mathfrak{Re}\xi^w_n)-S(w)\big)\right|}{\psi(\mathfrak{Re}w_n)-S(w)}\longrightarrow 1$$
-    per $\mathfrak{Re}w_n\longrightarrow 0$.\marginpar{VERIFICARE!!!}
+    per $\mathfrak{Re}w_n\longrightarrow 0$. Allora esiste una costante $A''>0$ tale che:
+    \begin{gather}
+        \{z\in\Omega\cap V_{j^*}\mid0<\mathfrak{Re}z_n<A''\}\subseteq\Omega\cap U^{(1)};\label{7punto4}\\
+        \psi(x)\in(0,1)\text{ per ogni }x\in(0,A'');\label{7punto4due}\\
+        \frac{\delta_\Omega(w)}{\psi(\mathfrak{Re}w_n)-S(w)}>1/2\label{7punto5}
+    \end{gather}
+    per ogni $w\in\Omega\cap V_{j^*}$ tale che $\mathfrak{Re}w_n\in(0,A'')$.
+
+    Fissiamo ora un punto $w\in\Omega\cap V_{j^*}$ tale che $0<\mathfrak{Re}w_n<A''$; allora esiste una costante $b>0$ tale che
+    \begin{equation}
+        \begin{aligned}
+            K_\Omega(w;v)&\ge b\frac{\|v\|}{|u(w)|^2}\\
+            &=b\frac{\|v\|}{\big(\psi(\mathfrak{Re}w_n)-S(w)\big)^{1/2}\big(\psi(\mathfrak{Re}w_n)+S(w)\big)^{1/2}}\\
+            &\ge\frac{b}{\sqrt{2}}\cdot\frac{\|v\|}{\big(\psi(\mathfrak{Re}w_n)-S(w)\big)^{1/2}} \ge \frac{b}{2}\cdot\frac{\|v\|}{\delta_\Omega(w)^{1/2}},
+        \end{aligned}
+    \end{equation}
+    dove la prima disuguaglianza segue dal Lemma \ref{pshestimate}, l'uguaglianza segue da \eqref{7punto4} e dalle definizioni di $\chi_1$ e $\chi_2$, e la penultima e ultima disuguaglianza seguono, rispettivamente, da \eqref{7punto4due} e da \eqref{7punto5}.\\
+
+    Passo 2: una stima dall'alto per $M_\Omega$.
+
+    Dato che le stime fatte al passo 1 valgono per un qualsiasi $q_{j^*}$, che sono in numero finito, ne deduciamo che esistono delle costanti $\beta,A_1'',\dots,A_N''>0$ tali che
+    \begin{equation}\label{7punto7}
+        K_\Omega(w;v)\ge\beta\frac{\|v\|}{\delta_\Omega(w)^{1/2}}
+    \end{equation}
+    per ogni $w\in\Omega\cap\mathbb{U}_j^{-1}(\{z\mid\in\mathbb{C}^n\mid \mathfrak{Re}z_n<A_j''\})$, per ogni $v\in\mathbb{C}^n$ e per $j=1,\dots,N$. Adesso poniamo
+    \begin{gather*}
+        \mathcal{M}_0:=\partial\Omega\cap\bigcap_{j=1}^N \mathbb{U}_j^{-1}(\{z\in\mathbb{C}^n\mid \mathfrak{Re}z_n>A_j''/2\}),\\
+        \mathcal{M}_1:=\partial\Omega\setminus\bigcup_{j=1}^N \mathbb{U}_j^{-1}(\{z\in\mathbb{C}^n\mid \mathfrak{Re}z_n<A_j''\}).
+    \end{gather*}
+    
+    Dalla Definizione \ref{defcaltrop}, in ogni punto di $\partial\Omega\setminus\{q_1,\dots,q_N\}$ esiste una funzione di definizione locale. Poiché $\mathcal{M}_0$ è relativamente compatto in $\partial\Omega$, usando delle partizioni dell'unità possiamo incollare tra loro un numero finito di tali funzioni per ottenere una funzione di definzione per $\mathcal{M}_0$; siccome possiamo sempre farlo in modo che vicino a un punto specifico sia uguale alla funzione di definizione locale per $\partial\Omega\setminus\{q_1,\dots,q_N\}$, e dato che la stretta pseudoconvessità in un punto è indipendente dalla funzione di definizione scelta (\cite[Section 3.2]{Kr}), usando anche \cite[Proposition 3.2.1]{Kr} si trova che $\mathcal{M}_0$ soddisfa le ipotesi del Lemma \ref{psdcvxcpt}.
+
+    Dunque esistono un intorno $\mathcal{V}$ di $\mathcal{M}_1$ in $\overline{\Omega}$ e una costante $\beta'>0$ tali che
+    \begin{equation}\label{7punto8}
+        K_\Omega(w;v)\ge \beta'\frac{\|v\|}{\delta_\Omega(w)^{1/2}}
+    \end{equation}
+    per ogni $w\in\mathcal{V}\cap\Omega$ e $v\in\mathbb{C}^n$. Consideriamo adesso l'insieme
+    $$\Omega\setminus\left(\mathcal{V}\cup\bigcup_{j=1}^N \mathbb{U}_j^{-1}(\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n<A_j''\})\right),$$
+    che è compatto per definizione; allora la pseudometrica di Kobayashi ha un minimo positivo su tale insieme. Per la \eqref{7punto7} e la \eqref{7punto8}, segue che
+    $$\frac{1}{K_\Omega(w;v)}\lesssim\delta_\Omega(w)^{1/2}$$
+    per ogni $w\in\Omega$ e per ogni $v\in\mathbb{C}^n$ con $\|v\|=1$. In particolare, $M_\Omega(r)\lesssim r^{1/2}$.\\
+
+    Passo 3: il comportamento di $k_\Omega$.
+
+    Fissiamo inizialmente un punto $q_j$, e siano $a_j$, $h_j$ e $B_j$ le costanti date dal Lemma \ref{6punto4} con $\psi=\psi_j$. Per semplicità di notazione poniamo $a=a_j$ e $h=h_j$. Consideriamo un punto $w\in\Omega\cap\mathbb{U}_j^{-1}(\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n<B_j/2\})$ e scriviamo $\mathbb{U}_j(w)=(\omega',\omega_n)$. Sia $\Psi_{j,w}:\mathcal{Q}^{\alpha,a,h}\longrightarrow\mathbb{C}^n$ la funzione olomorfa data da
+    $$\psi_{j,w}(\zeta):=\mathbb{U}_j^{-1}\Big(\omega',\psi_j^{-1}\big(S(\omega)\big)+i\mathfrak{Im}\omega_n+\zeta\Big),$$
+    con $\alpha=1/(p_j-1)$ e $S(\omega)=\sqrt{(\mathfrak{Im}\omega_n)^2+\|\omega'\|^2}$. Notiamo che questa mappa è un'immersione affine di $\mathcal{Q}^{\alpha,a,h}$ in $\mathbb{C}^n$. Vogliamo vedere che è un'immersione a valori in $\Omega$, per potervi ottenere la stime per $k_\Omega$.
+
+    Notiamo che $\mathfrak{Re}\omega_n<B_j/2$; allora, per come è stato preso $w$ e per la Definizione \ref{defcaltrop}, si ha $\|\omega'\|<\psi_j(B_j/2)$. Segue quindi dai punti (1) e (2) del Lemma \ref{6punto4} che:
+    \begin{nlist}
+        \item si ha
+        \begin{align*}
+            \{\omega'\}&\times\Big(\psi_j^{-1}\big(S(\omega)\big)+i\mathfrak{Im}\omega_n+\mathcal{Q}^{\alpha,a,h}\Big)\\
+            &\subseteq \{(z',z_n)\in\mathbb{C}^n\mid\mathfrak{Re}z_n\in(0,A_j)\text{ e }(\mathfrak{Im}z_n)^2+\|z'\|^2<\psi_j(\mathfrak{Re}z_n)^2\};
+        \end{align*}
+        \item si ha $\mathfrak{Re}\omega_n\in\Big(\psi_j^{-1}\big(S(\omega)\big),\psi_j^{-1}\big(S(\omega)\big)+o\Big)$.
+    \end{nlist}
+
+    Adesso poniamo $K_j:=\mathbb{U}_j^{-1}(K)$ e $z_w:=\Psi_{j,w}(o)$, dove $K$ è il compatto dato dal Lemma \ref{6punto4}. Allora segue, dalla parte (3) del Lemma, che $z_w\in K_j$ per ogni $w\in\Omega\cap V_j$ tale che $0<\mathfrak{Re}\omega_n<B_j/2$.
+
+    Dal punto (i) sopra segue che $\Psi_{j,w}(\mathcal{Q}^{\alpha,a,h})\subseteq\Omega$. Per definizione abbiamo che $\Psi_{j,w}\Big(-\psi_j^{-1}\big(S(\omega)\big)+\mathfrak{Re}\omega_n\Big)=w$. Allora, per la Proposizione \ref{semicontr}, si ha $k_\Omega(z_w,w)\le k_{\mathcal{Q}^{\alpha,a,h}}\Big(o,-\psi_j^{-1}\big(S(\omega)\big)+\mathfrak{Re}\omega_n\Big)$. Dal punto (ii) e dalla Proposizione \ref{qaah_biolo} con $x_0=o$ troviamo che esiste una costante $C^{(j)}>0$ tale che $k_\Omega(z_w,w)\le C^{(j)}+\dfrac{\pi}{4h}\left|\mathfrak{Re}\omega_n-\psi_j^{-1}\big(S(\omega)\big)\right|^{-(p_j-1)}$.
 \end{proof}
