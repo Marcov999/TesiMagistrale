@@ -281,7 +281,7 @@ Ci serviranno anche i seguenti risultati.
     (\cite[Result 2.6]{BM})\marginpar{Sistemare con la reference originale} Siano $\Omega\subseteq\mathbb{C}^n$ un dominio e $p\in\Omega$. Supponiamo che esista una funzione $u$ plurisubarmonica, negativa, di classe $C^2$ in un intorno di $p$ e tale che esiste $c>0$ per cui si ha
     $$L_u(p;v) \ge c\|v\|^2$$
     per ogni $v\in\mathbb{C}^n$. Allora esiste una costante $\alpha>0$ tale che
-    $$K_\Omega(p;v)\ge\left(\frac{c}{\alpha}\right)^{1/2}\frac{\|v\|}{|u(p)|^2}$$
+    $$K_\Omega(p;v)\ge\left(\frac{c}{\alpha}\right)^{1/2}\frac{\|v\|}{|u(p)|^{1/2}}$$
     per ogni $v\in\mathbb{C}^n$.
 \end{lm}
 
@@ -348,7 +348,9 @@ Siamo ora pronti a dimostrare quello che volevamo.
     \end{itemize}
 
     Per la simmetria di rotazione della punta $\Omega\cap V_{j^*}$, per ogni $w\in\Omega\cap V_{j^*}$ con $\mathfrak{Re}w_n$ sufficientemente piccolo si ha che $\delta_\Omega(w)=\text{dist}\big(\mathfrak{Re}w_n+iS(w),\text{graph}(\psi)\big)$, dove con $\text{graph}(\psi)$ s'intende il grafico di $\psi$ e $S(w)=\sqrt{(\mathfrak{Im}w_n)^2+\|w'\|^2}$. Segue dunque, da semplici stime geometriche e dal Lemma \ref{analisibase}, ponendo $\xi^w_n=\pi_n(\xi^w)$, che
-    $$\frac{\partial_\Omega(w)}{\psi(\mathfrak{Re}w_n)-S(w)}=\frac{\left|(\mathfrak{Re}\xi^w_n-\mathfrak{Re}w_n)+i\big(\psi(\mathfrak{Re}\xi^w_n)-S(w)\big)\right|}{\psi(\mathfrak{Re}w_n)-S(w)}\longrightarrow 1$$
+    \begin{equation}\label{limite_brutto}
+        \frac{\delta_\Omega(w)}{\psi(\mathfrak{Re}w_n)-S(w)}=\frac{\left|(\mathfrak{Re}\xi^w_n-\mathfrak{Re}w_n)+i\big(\psi(\mathfrak{Re}\xi^w_n)-S(w)\big)\right|}{\psi(\mathfrak{Re}w_n)-S(w)}\longrightarrow 1
+    \end{equation}
     per $\mathfrak{Re}w_n\longrightarrow 0$. Allora esiste una costante $A''>0$ tale che:
     \begin{gather}
         \{z\in\Omega\cap V_{j^*}\mid0<\mathfrak{Re}z_n<A''\}\subseteq\Omega\cap U^{(1)};\label{7punto4}\\
@@ -358,9 +360,9 @@ Siamo ora pronti a dimostrare quello che volevamo.
     per ogni $w\in\Omega\cap V_{j^*}$ tale che $\mathfrak{Re}w_n\in(0,A'')$.
 
     Fissiamo ora un punto $w\in\Omega\cap V_{j^*}$ tale che $0<\mathfrak{Re}w_n<A''$; allora esiste una costante $b>0$ tale che
-    \begin{equation}
+    \begin{equation}\label{7punto6}
         \begin{aligned}
-            K_\Omega(w;v)&\ge b\frac{\|v\|}{|u(w)|^2}\\
+            K_\Omega(w;v)&\ge b\frac{\|v\|}{|u(w)|^{1/2}}\\
             &=b\frac{\|v\|}{\big(\psi(\mathfrak{Re}w_n)-S(w)\big)^{1/2}\big(\psi(\mathfrak{Re}w_n)+S(w)\big)^{1/2}}\\
             &\ge\frac{b}{\sqrt{2}}\cdot\frac{\|v\|}{\big(\psi(\mathfrak{Re}w_n)-S(w)\big)^{1/2}} \ge \frac{b}{2}\cdot\frac{\|v\|}{\delta_\Omega(w)^{1/2}},
         \end{aligned}
@@ -407,7 +409,74 @@ Siamo ora pronti a dimostrare quello che volevamo.
         \item si ha $\mathfrak{Re}\omega_n\in\Big(\psi_j^{-1}\big(S(\omega)\big),\psi_j^{-1}\big(S(\omega)\big)+o\Big)$.
     \end{nlist}
 
-    Adesso poniamo $K_j:=\mathbb{U}_j^{-1}(K)$ e $z_w:=\Psi_{j,w}(o)$, dove $K$ è il compatto dato dal Lemma \ref{6punto4}. Allora segue, dalla parte (3) del Lemma, che $z_w\in K_j$ per ogni $w\in\Omega\cap V_j$ tale che $0<\mathfrak{Re}\omega_n<B_j/2$.
+    Adesso poniamo $K_j:=\mathbb{U}_j^{-1}(K)$ e $z_w:=\Psi_{j,w}(o)$, dove $K$ è il compatto dato dal Lemma \ref{6punto4}. Allora segue, dalla parte (3) del Lemma, che
+    \begin{equation}\label{7punto9}
+        z_w\in K_j
+    \end{equation}
+    per ogni $w\in\Omega\cap V_j$ tale che $0<\mathfrak{Re}\omega_n<B_j/2$.
 
-    Dal punto (i) sopra segue che $\Psi_{j,w}(\mathcal{Q}^{\alpha,a,h})\subseteq\Omega$. Per definizione abbiamo che $\Psi_{j,w}\Big(-\psi_j^{-1}\big(S(\omega)\big)+\mathfrak{Re}\omega_n\Big)=w$. Allora, per la Proposizione \ref{semicontr}, si ha $k_\Omega(z_w,w)\le k_{\mathcal{Q}^{\alpha,a,h}}\Big(o,-\psi_j^{-1}\big(S(\omega)\big)+\mathfrak{Re}\omega_n\Big)$. Dal punto (ii) e dalla Proposizione \ref{qaah_biolo} con $x_0=o$ troviamo che esiste una costante $C^{(j)}>0$ tale che $k_\Omega(z_w,w)\le C^{(j)}+\dfrac{\pi}{4h}\left|\mathfrak{Re}\omega_n-\psi_j^{-1}\big(S(\omega)\big)\right|^{-(p_j-1)}$.
+    Dal punto (i) sopra segue che $\Psi_{j,w}(\mathcal{Q}^{\alpha,a,h})\subseteq\Omega$. Per definizione abbiamo che $\Psi_{j,w}\Big(-\psi_j^{-1}\big(S(\omega)\big)+\mathfrak{Re}\omega_n\Big)=w$. Allora, per la Proposizione \ref{semicontr}, si ha $k_\Omega(z_w,w)\le k_{\mathcal{Q}^{\alpha,a,h}}\Big(o,-\psi_j^{-1}\big(S(\omega)\big)+\mathfrak{Re}\omega_n\Big)$. Dal punto (ii) e dalla Proposizione \ref{qaah_biolo} con $x_0=o$ troviamo che esiste una costante $C^{(j)}>0$ tale che $k_\Omega(z_w,w)\le C^{(j)}+\dfrac{\pi}{4h}\left|\mathfrak{Re}\omega_n-\psi_j^{-1}\big(S(\omega)\big)\right|^{-(p_j-1)}$. Dato che $\mathbb{U}_j$ preserva le distanze euclidee, quest'ultima disuguaglianza insieme al punto (4) del Lemma \ref{6punto4} ci dicono che
+    \begin{equation}\label{7punto10}
+        k_\Omega(z_w,w) \le C^{(j)}+\frac{\pi}{4h}\delta_\Omega(w)^{-(p_j-1)}
+    \end{equation}
+    per ogni $w\in\Omega\cap V_j$ tale che $0<\mathfrak{Re}\omega_n<B_j/2$. Siccome il punto $q_j$ è stato scelto arbitrariamente, la \eqref{7punto9} e la \eqref{7punto10} valgono per ogni $j=1,\dots,N$.
+
+    Dato che $\partial\Omega$ è di classe $C^2$ all'infuori dei punti $q_1,\dots,q_N$ e $\Omega$ è limitato, esistono un compatto $K_0\subseteq\Omega$ e una costante $R>0$ tali che per ogni punto
+    \begin{equation}\label{7punto11}
+        w\in\Omega\setminus\left(K_0\cup\bigcup_{j=1}^N\mathbb{U}_j^{-1}(\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n<B_j/2\})\right)
+    \end{equation}
+    esiste un punto
+    $$\xi^w\in\partial\Omega\setminus\bigcup_{j=1}^N\mathbb{U}_j^{-1}(\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n<B_j/4\})$$
+    tale che, detto $\eta^w$ il vettore unitaro normale a $\partial\Omega$ entrante in $\xi^w$, allora:
+    \begin{itemize}
+        \item si ha $\xi^w+D(R;R)\eta^w\subseteq \Omega$;
+        \item si ha che $w$ appartiene al segmento congiungente $\xi^w$ a $\xi^w+R\eta^w=:z^w$;
+        \item si ha $z^w\in K_0$.
+    \end{itemize}
+    Per trovare $K_0$ e $R$, basta considerare un intorno tubolare dato \cite[Chapter 9, Theorem 20]{S}. Chiediamo anche che $\delta_\Omega(w)<1$ per ogni $w\not\in K_0$. Per ogni tale $w$ esiste un unico numero $t(w)\in(0,R)$ tale che $\xi^w+t(w)\eta^w=w$. Da ciò, e dalla Proposizione \ref{semicontr}, segue che
+    \begin{equation}\label{7punto12}
+        \begin{aligned}
+            k_\Omega(z^w,w)&\le k_{D(R;R)}\big(0,1-t(w)\big)=\frac{1}{2}\log\left(\frac{2-t(w)/R}{t(w)/R}\right)\\
+            &\le\log{\sqrt{2R}}+\frac{1}{2}\log\left(\frac{1}{\|\xi^w-w\|}\right)\le\log{\sqrt{2R}}+\frac{1}{2}\log\left(\frac{1}{\delta_\Omega(w)}\right)
+        \end{aligned}
+    \end{equation}
+    per ogni $w$ che soddisfa la \eqref{7punto11}. Fissiamo ora un punto $z_0\in\Omega$e  poniamo
+    \begin{gather*}
+        K^*:=K_0\cup K_1\cup\dots\cup K_N\\
+        \text{e}\\
+        C_0:=\displaystyle\sup_{x\in K^*}k_\Omega(z_0,x)+\max\{\log{\sqrt{2R}},C^{(1)},\dots,C^{(N)}\};
+    \end{gather*}
+    allora, dalla disuguaglianza triangolare per $k_\Omega$, dalla \eqref{7punto9} e dalle disuguaglianze \eqref{7punto10} e \eqref{7punto12}, troviamo che esiste una costante $C_1>0$ tale che
+    $$k_\Omega(z_0,z)\le C_0+C_1\delta_\Omega(z)^{-\max_{j=1,\dots,N}p_j+1}$$
+    per ogni $z\in\Omega$.\\
+
+    Passo 4: $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda\ge 1$ e $\kappa>0$.
+
+    Poniamo $p_0:=\displaystyle\max_{j=1,\dots,N} p_j$; abbiamo $p_0\in(1,3/2)$ per ipotesi. Per mostrare la tesi di questo passaggio, ci basterà verificare le ipotesi del Teorema \ref{extvis}. Prendendo $S=\emptyset$ e $f(r)=C_0+C_1r^{p_0-1}$, e usando i passaggi 2 e 3 dimostrati sopra, la verifica è immediata.\\
+
+    Passo 5: $\Omega$ non è un dominio Goldilocks.
+
+    Vogliamo mostrare che la condizione (2) nella Definizione \ref{gold} non è soddisfatta da $\Omega$. Per farlo, fissiamo un punto $q_{j^*}$; come fatto al passo 1, ci restringiamo a $\Omega\cap V_{j^*}$. Riprendendo la notazione di quel passaggio, prendiamo $A=A_{j^*}$, $A''=A_{j^*}''$, $\psi=\psi_{j^*}$, $q_{j^*}=0$ e $p=p_{j^*}$. Sia $z_0=(0,\dots,0,A''/2)$; mostriamo che per ogni $z\in\Omega\cap V_{j^*}$ tale che $0<\mathfrak{Re}z_n<A''/2$ si ha
+    \begin{equation}\label{7punto14}
+        k_\Omega(z_0,z)\gtrsim(\mathfrak{Re}z_n)^{-(p-1)}-(A''/2)^{-(p-1)}.
+    \end{equation}
+
+    Fissiamo uno $z$ che soddisfa le suddette condizioni. Sia $\gamma:[0,1]\longrightarrow\Omega$ una curva $C^1$ a tratti tale che $\gamma(0)=z_0$, $\gamma(1)=z$ e $\gamma([0,1))\subseteq\Omega\cap V_{j^*}$. Detta $\gamma_n$ l'ultima coordinata di $\gamma$, per continuità di $\mathfrak{Re}\gamma_n$, e con considerazioni elementari, troviamo che esistono $\alpha,\beta\in[0,1]$ tali che $(\mathfrak{Re}\gamma_n)([\alpha,\beta])=[\mathfrak{Re}z_n,A''/2]$. Quindi
+    $$\int_0^1 K_\Omega\big(\gamma(t);\gamma'(t)\big)\diff t\ge\int_\alpha^\beta K_\Omega\big(\gamma(t);\gamma'(t)\big)\diff t\ge \int_\alpha^\beta \frac{b\|\gamma'(t)\|}{\left|u\big(\gamma(t)\big)\right|^{1/2}}\diff t,$$
+    dove la seconda disuguaglianza segue dalla \eqref{7punto6}. Per ogni $w\in\Omega\cap V_{j^*}$ con $0<\mathfrak{Re}w_n<A''$ si ha
+    $$|u(w)|=\big(\psi(\mathfrak{Re}w_n)\big)^2-\|w'\|^2-(\mathfrak{Im}w_n)^2 \le \big(\psi(\mathfrak{Re}w_n)\big)^2 \le C^2(\mathfrak{Re}w_n)^{2p},$$
+    dove abbiamo preso $C=C_{j^*}$. Combinando con la disuguaglianza precedente, troviamo
+    \begin{align*}
+        \int_0^1 K_\Omega\big(\gamma(t);\gamma'(t)\big)\diff t&\ge \frac{b}{C}\int_\alpha^\beta \frac{|(\mathfrak{Re}\gamma_n)'(t)|}{\big((\mathfrak{Re}\gamma_n)(t)\big)^p}\diff t\\
+        &\ge \left|\frac{b}{C}\int_\alpha^\beta \frac{(\mathfrak{Re}\gamma_n)'(t)}{\big((\mathfrak{Re}\gamma_n)(t)\big)^p}\diff t\right|=\frac{b}{C}\int_{\mathfrak{Re}z_n}^{A''/2}\frac{1}{t^p}\diff t,
+    \end{align*}
+    dove il cambio di variabile nell'ultimo passaggio non è propriamente consentito ($\mathfrak{Re}\gamma_n$ potrebbe non essere monotona su $[\alpha,\beta]$), ma possiamo farlo su un numero finito di intervalli dove è monotona e la cui immagine partiziona $[\mathfrak{Re}z_n,A''/2]$, mentre i pezzi rimanenti possiamo assorbirli nella precedente disuguaglianza. La disuguaglianza \eqref{7punto14} segue applicando il Teorema \ref{lung_int}.
+
+    Poniamo adesso $\mu^x:=(0,\dots,0,x)$ per $0<x<A''/2$. Per la \eqref{7punto14} si ha che
+    $$k_\Omega(z_0,\mu^x) \gtrsim x^{-(p-1)}-(A''/2)^{-(p-1)}.$$
+    
+    Dalla \eqref{limite_brutto} segue che $\delta_\Omega(\mu^x) \approx x^p$ per $x\in(0,A''/2)$. Dunque, combinando con la disuguaglianza precedente, abbiamo
+    $$k_\Omega(z_0,\mu^x) \gtrsim \delta_\Omega(\mu^x)^{-1+1/p}-(A''/2)^{-(p-1)}.$$
+
+    Dato che $p=p_{j^*}>1$, si ha $\dfrac{\delta_\Omega(\mu^x)^{-1+1/p}}{\log\left(\frac{1}{\delta_\Omega(\mu^x)}\right)}\longrightarrow +\infty$ per $\mu^x\longrightarrow 0=q_{j^*}$. Quindi $k_\Omega(z_0,\mu^x)$ non può soddisfare la condizione (2) nella Definizione \ref{gold}, come voluto. Questo conclude la dimostrazione.
 \end{proof}
