@@ -64,6 +64,13 @@ $$T_{a,h}=\left(\mathbb{C}\setminus\overline{D\left(\frac{-i}{2h},\frac{1}{2h}\r
 
 Indichiamo con $\mathcal{Q}^{\alpha,a,h}$ l'immagine di $T_{a,h}$ tramite la mappa $\phi_\alpha(z)=z^{\alpha}$, dove $\alpha$ è un reale maggiore di $1$ e $a$ e $h$ sono scelti in modo che $\phi_\alpha$ sia un biolomorfismo.
 
+\begin{figure}[h!]
+    \begin{center}
+        \includegraphics[width=0.75\textwidth, trim=0 10cm 0 5cm]{Immagini/qalphaah.pdf} \\
+        \caption{Il dominio $\mathcal{Q}^{5,\frac{1}{2},\frac{1}{10}}$}
+    \end{center}
+\end{figure}
+
 Osserviamo che $T_{a,h}$ ha una cuspide quadratica in $0$. Dunque esistono due costanti $c_1,c_2>0$ tali che per ogni $z\in\partial T_{a,h}$ si ha
 \begin{equation} \label{cusp_estimate}
     c_1(\mathfrak{Re}z)^2 \le |\mathfrak{Im}z| \le c_2(\mathfrak{Re}z)^2
@@ -158,7 +165,7 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
 \end{lm}
 
 \begin{proof}
-    Per il punto (2) della Proposizione \ref{qaah_biolo}, possiamo fissare una costante $M>1$ tale che per ogni $\alpha>1$ e ogni $a,h>0$ esiste un $\epsilon=\epsilon(\alpha,a,h)>0$ tale che
+    Per il punto (2) della Proposizione \ref{qaah_biolo}, possiamo fissare una costante $M>1$ tale che per ogni $\alpha>1$ e ogni $a,h>0$ esiste $\epsilon=\epsilon(\alpha,a,h)>0$ tale che
     \begin{align*}
         \mathcal{Q}^{\alpha,a,h}\cap\{\mathfrak{Re}w<\epsilon\}&\subseteq \{w\in\mathbb{C}\mid 0<\mathfrak{Re}w<\epsilon\text{ e }|\mathfrak{Im}w|<Mh\alpha(\mathfrak{Re}w)^{(1+\alpha)/\alpha}\}\\
         &=:S^{\alpha,a,h},
@@ -278,7 +285,7 @@ Ci serviranno anche i seguenti risultati.
 \end{proof}
 
 \begin{lm} \label{pshestimate}
-    (\cite[Result 2.6]{BM})\marginpar{Sistemare con la reference originale} Siano $\Omega\subseteq\mathbb{C}^n$ un dominio e $p\in\Omega$. Supponiamo che esista una funzione $u$ plurisubarmonica, negativa, di classe $C^2$ in un intorno di $p$ e tale che esiste $c>0$ per cui si ha
+    (Conseguenza della dimostrazione di \cite[Proposition 6]{Si}) Siano $\Omega\subseteq\mathbb{C}^n$ un dominio e $p\in\Omega$. Supponiamo che esista una funzione $u$ plurisubarmonica, negativa, di classe $C^2$ in un intorno di $p$ e tale che esiste $c>0$ per cui si ha
     $$L_u(p;v) \ge c\|v\|^2$$
     per ogni $v\in\mathbb{C}^n$. Allora esiste una costante $\alpha>0$ tale che
     $$K_\Omega(p;v)\ge\left(\frac{c}{\alpha}\right)^{1/2}\frac{\|v\|}{|u(p)|^{1/2}}$$
@@ -286,7 +293,7 @@ Ci serviranno anche i seguenti risultati.
 \end{lm}
 
 \begin{lm}\label{psdcvxcpt}
-    (\cite[Result 2.4]{BM})\marginpar{Sistemare con la reference originale} Sia $\Omega\subseteq\mathbb{C}^n$ con $n\ge 2$ un dominio limitato. Sia $\mathcal{M}_0$ un insieme aperto in $\partial\Omega$ che sia anche un'ipersuperficie di classe $C^2$. Assumiamo che $\mathcal{M}_0$ ammetta una funzione di definizione $\phi$ di classe $C^2$ in un qualche aperto contenente $\mathcal{M}_0$, e tale che esista una costante $\delta>0$ per cui $L_\phi(\xi;v)\ge\sigma\|v\|^2$ per ogni $\xi\in\mathcal{M}_0$ e $v\in\mathbb{C}^n$. Sia $\mathcal{M}_1\subsetneq\mathcal{M}_0$ un sottoinsieme compatto. Allora esistono un intorno di $\mathcal{M}_1$ in $\overline{\Omega}$, sia esso $\mathcal{V}$, e due costanti $C,c>0$ tali che $K_\Omega(z;v)\ge \big(1-C\delta_\Omega(z)^{1/2}\big)\dfrac{c\|v\|}{\delta_\Omega(z)^{1/2}}$ per ogni $z\in\mathcal{V}\cap\Omega$ e $v\in\mathbb{C}^n$.
+    (Conseguenza di \cite[Theorem B]{M}) Sia $\Omega\subseteq\mathbb{C}^n$ con $n\ge 2$ un dominio limitato. Sia $\mathcal{M}_0$ un insieme aperto in $\partial\Omega$ che sia anche un'ipersuperficie di classe $C^2$. Assumiamo che $\mathcal{M}_0$ ammetta una funzione di definizione $\phi$ di classe $C^2$ in un qualche aperto contenente $\mathcal{M}_0$, e tale che esista una costante $\delta>0$ per cui $L_\phi(\xi;v)\ge\sigma\|v\|^2$ per ogni $\xi\in\mathcal{M}_0$ e $v\in\mathbb{C}^n$. Sia $\mathcal{M}_1\subsetneq\mathcal{M}_0$ un sottoinsieme compatto. Allora esistono un intorno di $\mathcal{M}_1$ in $\overline{\Omega}$, sia esso $\mathcal{V}$, e due costanti $C,c>0$ tali che $K_\Omega(z;v)\ge \big(1-C\delta_\Omega(z)^{1/2}\big)\dfrac{c\|v\|}{\delta_\Omega(z)^{1/2}}$ per ogni $z\in\mathcal{V}\cap\Omega$ e $v\in\mathbb{C}^n$.
 \end{lm}
 
 Siamo ora pronti a dimostrare quello che volevamo.
@@ -433,7 +440,7 @@ Siamo ora pronti a dimostrare quello che volevamo.
         \item si ha che $w$ appartiene al segmento congiungente $\xi^w$ a $\xi^w+R\eta^w=:z^w$;
         \item si ha $z^w\in K_0$.
     \end{itemize}
-    Per trovare $K_0$ e $R$, basta considerare un intorno tubolare dato \cite[Chapter 9, Theorem 20]{S}. Chiediamo anche che $\delta_\Omega(w)<1$ per ogni $w\not\in K_0$. Per ogni tale $w$ esiste un unico numero $t(w)\in(0,R)$ tale che $\xi^w+t(w)\eta^w=w$. Da ciò, e dalla Proposizione \ref{semicontr}, segue che
+    Per trovare $K_0$ e $R$, basta considerare un intorno tubolare dato \cite[Chapter 9, Theorem 20]{Sp}. Chiediamo anche che $\delta_\Omega(w)<1$ per ogni $w\not\in K_0$. Per ogni tale $w$ esiste un unico numero $t(w)\in(0,R)$ tale che $\xi^w+t(w)\eta^w=w$. Da ciò, e dalla Proposizione \ref{semicontr}, segue che
     \begin{equation}\label{7punto12}
         \begin{aligned}
             k_\Omega(z^w,w)&\le k_{D(R;R)}\big(0,1-t(w)\big)=\frac{1}{2}\log\left(\frac{2-t(w)/R}{t(w)/R}\right)\\
@@ -480,3 +487,38 @@ Siamo ora pronti a dimostrare quello che volevamo.
 
     Dato che $p=p_{j^*}>1$, si ha $\dfrac{\delta_\Omega(\mu^x)^{-1+1/p}}{\log\left(\frac{1}{\delta_\Omega(\mu^x)}\right)}\longrightarrow +\infty$ per $\mu^x\longrightarrow 0=q_{j^*}$. Quindi $k_\Omega(z_0,\mu^x)$ non può soddisfare la condizione (2) nella Definizione \ref{gold}, come voluto. Questo conclude la dimostrazione.
 \end{proof}
+
+Vediamo ora che i domini Caltrops sono taut. Ci servirà il seguente risultato.
+
+\begin{lm} \label{ainftyecompl}
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato tale che esiste (e quindi per ogni) uno $z_0\in\Omega$ tale che per ogni $\xi\in\partial\Omega$ si ha $\displaystyle\lim_{w\longrightarrow\xi}k_\Omega(z_0,w)=+\infty$; allora $(\Omega,k_\Omega)$ è completo.
+\end{lm}
+
+\begin{proof}
+    Sia $\{w_\nu\}_{\nu\in\mathbb{N}}\subseteq\Omega$ una successione di Cauchy; è sufficiente mostrare che ammette una sottosuccessione convergente. Per limitatezza di $\Omega$, ammette una sottosuccessione $\{w_{\nu_j}\}_{j\in\mathbb{N}}$ convergente a $\xi\in\overline{\Omega}$. Supponiamo per assurdo che $\xi\in\partial\Omega$; allora $\displaystyle\lim_{j\longrightarrow+\infty}k_\Omega(z_0,w_{\nu_j})=+\infty$, ma questo, per la disuguaglianza triangolare, è in contraddizione con il fatto che la successione sia di Cauchy.
+\end{proof}
+
+\begin{thm}
+    (\cite[Theorem 8.2]{BM}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio Caltrop. Allora $(\Omega,k_\Omega)$ è completo; in particolare, per la Proposizione \ref{comp_is_taut}, è taut.
+\end{thm}
+
+\begin{proof}
+    Adottiamo la notazione della precedente dimostrazione, della quale possiamo usare tutti i risultati intermedi, visto che siamo nelle stesse ipotesi. Fissiamo $z_0\in\Omega$ e $\xi\in\partial\Omega$.
+    
+    Consideriamo prima il caso $\xi\in\partial\Omega\setminus\{q_1,\dots,q_N\}$. Prendiamo un punto $\eta\in\partial\Omega\setminus(\{q_1,\dots,q_N,\xi\})$. Per ipotesi, $\Omega$ è strettamente pseudoconvesso in $\xi$ e $\eta$. Prendiamo due aperti $V_\xi$ e $V_\eta$ di $\mathbb{C}^n$, intorni rispettivamente di $\xi$ e $\eta$, e una costante $C>0$ dati da \cite[Corollary 2.4]{FR}. Sia $b_\eta\in\Omega\cap V_\eta$. Consideriamo una successione $\{w_\nu\}_{\nu\in\mathbb{N}}\subseteq\Omega$ tale che $w_\nu\longrightarrow\xi$ per $\nu\longrightarrow+\infty$; possiamo assumere $w_\nu\in\Omega\cap V_\xi$ per ogni $\nu\in\mathbb{N}$. Allora \cite[Corollary 2.4]{FR} ci dice che
+    \begin{align*}
+        k_\Omega(z_0,w_\nu)&\ge k_\Omega(w_\nu,b_\eta)-k_\Omega(b_\eta,z_0)\\
+        &\ge \frac{1}{2}\log{\frac{1}{\delta_\Omega(w_\nu)}}+\frac{1}{2}\log{\frac{1}{\delta_\Omega(b_\eta)}}-k_\Omega(b_\eta,z_0)-C,
+    \end{align*}
+    e quest'ultima quantità tende a $+\infty$ per $\nu$ che tende a $+\infty$.
+
+    Adesso vogliamo mostrare la stessa cosa per $\xi=q_{j^*}$, dove $j^*\in\{1,\dots,N\}$. Consideriamo una successione $\{w_\nu\}_{\nu\in\mathbb{N}}\subseteq\Omega$ tale che $w_\nu\longrightarrow q_{j^*}$ per $\nu\longrightarrow+\infty$; possiamo assumere $w_\nu\in\Omega\cap V_{j^*}$ per ogni $\nu\in\mathbb{N}$. Ricordiamo che possiamo assumere senza perdita di generalità $q_{j^*}=0$ e $\mathbb{U}_{j^*}=\id$. Poniamo inoltre $w_{\nu,n}:=\pi_n(w_\nu)$. Allora $\mathfrak{Re}w_{\nu,n}\longrightarrow0$ per $\nu\longrightarrow+\infty$. Scrivendo $z_0'$ al posto di $z_0$ nella disuguaglianza \eqref{7punto14}, si ha che
+    $$k_\Omega(z_0',w_\nu)\gtrsim (\mathfrak{Re}w_{\nu,n})^{-(p-1)}-(A''/2)^{-(p-1)},$$
+    e quest'ultima quantità va a $+\infty$ per $\nu\longrightarrow+\infty$; per disuguaglianza triangolare, vale anche con lo $z_0$ scelto nella prima parte della dimostrazione. Si conclude applicando il Lemma \ref{ainftyecompl}.
+\end{proof}
+
+Da quanto dimostrato, discende il teorema di tipo ``Wolff-Denjoy''.
+
+\begin{cor}
+    Sia $\Omega$ un dominio Caltrop; allora $\Omega$ soddisfa le ipotesi del Corollario \ref{wd_type}.
+\end{cor}

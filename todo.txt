@@ -1,9 +1,5 @@
 Per il momento, nell'ordine:
-esempi.;
-domini illimitati.
-Poi:
-disegni vari (tipo nei caltrops, non farebbero male).
-Poi, forse:
+domini illimitati;
 estensioni al bordo.
 Alla fine:
 introduzione;
@@ -12,5 +8,4 @@ ringraziamenti.
 Non scordarti, via via che scrivi, di mantenere una bibliografia adeguata.
 
 DA FARE ADESSO:
-texare esempi;
 correggere note a margine e sulla bozza stampata (quando/se possibile).
