@@ -1,7 +1,7 @@
-Il primo esempio di una classe di domini di $\mathbb{C}^n$ con visibilità è quello, introdotto in \cite{BZ1}, dei domini Goldilocks. Prima di darne la definizione, introduciamo per un dominio limitato $\Omega\subseteq\mathbb{C}^n$ e $r>0$ la quantità
-$$M_\Omega(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega,\delta_\Omega(x) \le r, \|v\|=1\right\}.$$
+Il primo esempio di una classe di domini di $\mathbb{C}^n$ con visibilità è quello, introdotto in \cite{BZ1}, dei domini Goldilocks. Prima di darne la definizione, introduciamo per un dominio limitato $\Omega\subseteq\mathbb{C}^n$, un sottoinsieme $U\subseteq\mathbb{C}^n$ e $r>0$ la quantità
+$$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delta_\Omega(x) \le r, \|v\|=1\right\}.$$
 
-La funzione $M_\Omega$ è monotona crescente, dunque misurabile secondo Lebesgue; inoltre, segue dal punto (3) della Proposizione \ref{metrica_bilip} che è anche limitata. Perciò ha senso la definizione che stiamo per dare.
+Poniamo $M_\Omega:=M_{\Omega,\mathbb{C}^n}$. La funzione $M_{\Omega,U}$ è monotona crescente, dunque misurabile secondo Lebesgue; inoltre, segue dal punto (3) della Proposizione \ref{metrica_bilip} che è anche limitata. Perciò ha senso la definizione che stiamo per dare.
 
 \begin{defn} \label{gold}
     Un dominio limitato $\Omega\subseteq\mathbb{C}^n$ è detto \textit{dominio Goldilocks} se:
@@ -15,8 +15,7 @@ La funzione $M_\Omega$ è monotona crescente, dunque misurabile secondo Lebesgue
     Il nome particolare, domini Goldilocks (Riccioli d'oro, in italiano), è dovuto al fatto che, come la protagonista della fiaba, tali domini evitano due estremi ``sgradevoli'': il bordo non ha cuspidi rivolte verso l'esterno né punti in cui il bordo stesso è piatto fino a ordine infinito. Il primo caso è escluso dalla condizione (2) nella definizione. La condizione (1) implica che il dominio è pseudoconvesso (\cite[Proposition 2.15]{BZ1}).
 \end{oss}
 
-Per vedere che i domini Goldilocks soddisfano la condizione di visibilità, iniziamo mostrando un risultato che ci servirà anche nei prossimi esempi. Poniamo
-$$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delta_\Omega(x) \le r, \|v\|=1\right\}.$$
+Per vedere che i domini Goldilocks soddisfano la condizione di visibilità, iniziamo mostrando un risultato che ci servirà anche nei prossimi esempi.
 
 \begin{thm} \label{extvis}
     (\cite[Theorem 1.9]{CMS}) Sia $\Omega$ un dominio limitato di $\mathbb{C}^d$. Sia $S\subseteq\partial\Omega$ un insieme chiuso tale che per ogni $p,q\in\partial\Omega$ con $p\not=q$ esistono $p'\in\partial\Omega$ e $r>0$ tali, detta $B(p',r)$ la palla euclidea di centro $p'$ e raggio $r$, che:
@@ -120,7 +119,7 @@ Adesso mostriamo che i domini Goldilocks sono visibili per le simil-geodetiche.
 \end{cor}
 
 \begin{proof}
-    Basta applicare il Teorema \ref{extvis} con $S=\emptyset$, $U=\mathbb{C}^n$, per cui abbiamo che $M_{\Omega,U}=M_\Omega$, e $f(x)=\log{x}$.
+    Basta applicare il Teorema \ref{extvis} con $S=\emptyset$, $U=\mathbb{C}^n$, per cui abbiamo che $f(x)=C+\alpha\log{x}$, con $C$ e $\alpha$ dati dal punto (2) della Definizione \ref{gold} per un punto fissato.
 \end{proof}
 
 Un esempio esplicito di domini Goldilocks sono i domini limitati, pseudoconvessi e di tipo finito.

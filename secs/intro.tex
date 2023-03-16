@@ -10,11 +10,55 @@ L'obiettivo di questa tesi è dimostrare alcune possibili generalizzazioni, in p
 
 Era già nota da tempo la generalizzazione, dovuta ad Abate (\cite[Theorem 0.5]{A2}), per domini limitati e strettamente pseudoconvessi in più variabili; in questo caso, però, l'affermazione ``la funzione $f$ ha un punto fisso'' è sostituita da ``le orbite dei punti del dominio tramite $f$ sono relativamente compatte nel dominio''. Ci riferiremo a enunciati con tesi simili come teoremi di tipo ``Wolff-Denjoy''.
 
-Più recentemente, in diversi articoli si è cercato di ottenere risultati analoghi per domini sempre più generali. Nel 2017 Bharali e Zimmer, nel loro articolo \cite{BZ1}, hanno dimostrato un teorema di tipo ``Wolff-Denjoy'' per una particolare classe di domini, da loro chiamati domini Goldilocks, che siano anche taut; esempi di domini Goldilocks sono i domini limitati, pseudoconvessi e di tipo finito nel senso di D'Angelo. Nel 2021 Bharali e Maitra, in \cite{BM}, hanno osservato che la dimostrazione fatta in \cite{BZ1} può essere estesa a domini taut che soddisfino una certa condizione per i punti del bordo, detta di visibilità, e hanno anche mostrato un teorema di tipo ``Wolff-Denjoy'' per domini di tipo topologico finito; inoltre, hanno definito e costruito esempi di una classe di domini, che chiamano domini Caltrops, che hanno questa proprietà ma che non sono domini Goldilocks. Nel preprint \cite{CMS} del 2021 Chandel, Maitra e Sarkar fanno vedere che non è necessario supporre che la varietà sia un dominio, basta che sia una sottovarietà di $\mathbb{C}^d$; costruiscono inoltre altri esempi di domini che soddisfano la condizione di visibilità.
+Il teorema ottenuto da Abate può essere dimostrato, come vedremo, usando i risultati di \cite{BB} e \cite{Ka}. In particolare, nel primo dei due articoli gli autori dimostrano che i domini limitati e strettamente pseudoconvessi sono iperbolici nel senso di Gromov. Sebbene gli approcci meno recenti ai risultati che vedremo si sono sviluppati sotto queste ipotesi, vedremo soltanto un breve accenno a come possono essere usate. Ci interesseremo invece di ottenere teoremi di tipo ``Wolff-Denjoy'' sotto ipotesi che verificheremo poi essere soddisfatte anche, ma non solo, dai domini limitati e strettamente pseudoconvessi.\\
 
-Negli articoli citati finora, sono stati considerati domini e varietà limitati. Il caso di domini illimitati è stato studiato nel 2022 da Bharali e Zimmer nel preprint \cite{BZ2}; considerando il bordo della end compactification\marginpar{Devo decidere come tradurre end compactification} al posto del bordo euclideo, riescono così ad ottenere un teorema di tipo ``Wolff-Denjoy'' anche per il caso illimitato.
+Più recentemente, in diversi articoli si è cercato di ottenere risultati analoghi a quello di Abate per domini sempre più generali.
 
-Notiamo inoltre che in \cite{BZ1}, \cite{CMS} e \cite{BZ2} vengono anche mostrati dei risultati di estensione al bordo di funzioni olomorfe, isometrie e quasi-isometrie; nei due preprint viene anche evidenziato un legame tra l'estensione al bordo e la condizione di visibilità.\\
+Nel 2017 Bharali e Zimmer, nel loro articolo \cite{BZ1}, hanno dimostrato un teorema di tipo ``Wolff-Denjoy'' per una particolare classe di domini, da loro chiamati domini Goldilocks, che siano anche taut.
+
+\begin{defn}
+    Sia $X$ una varietà complessa e connessa; la \textit{pseudodistanza di Kobayashi} su $X$ è data da
+    \begin{align*}
+        k_X(z,w)=&\inf\Bigg\{\sum_{j=1}^m \omega(\zeta_{j-1},\zeta_j) \bigg\vert \text{esistono }m\in\mathbb{N},\text{ punti }\zeta_0,\dots,\zeta_m \in \mathbb{D}\text{ e}\\
+        &\text{funzioni }\varphi_1,\dots,\varphi_m\in\text{Hol}(\mathbb{D},X) \text{ tali che } \varphi_1(\zeta_0)=z,\varphi_m(\zeta_m)=w\\
+        &\text{e }\varphi_j(\zeta_j)=\varphi_{j+1}(\zeta_j)\text{ per }j=1,\dots,m-1\Bigg\}
+    \end{align*}
+    per $z,w \in X$.
+\end{defn}
+
+\begin{defn}
+    Una varietà complessa e connessa $X$ si dice \textit{taut} se la pseudodistanza di Kobayashi è effettivamente una distanza e ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante $\infty$.
+\end{defn}
+
+Esempi di domini Goldilocks sono i domini limitati, pseudoconvessi e di tipo finito nel senso di D'Angelo.
+
+Nel 2021 Bharali e Maitra, in \cite{BM}, hanno osservato che la dimostrazione fatta in \cite{BZ1} può essere estesa a domini taut che soddisfino una certa condizione per i punti del bordo, detta di visibilità.
+
+\begin{defn}
+    Sia $X$ una varietà complessa e connessa; fissiamo due costanti $\lambda \ge 1$ e $\kappa \ge 0$. Sia $I\subseteq \mathbb{R}$ un intervallo; una curva $\sigma:I \longrightarrow X$ è detta una \textit{$(\lambda,\kappa)$-simil-geodetica} se
+    \begin{enumerate}
+        \item per ogni $s,t \in I$ si ha
+        $$\frac{1}{\lambda}|t-s|-\kappa \le k_X\big(\sigma(s),\sigma(t)\big)\le\lambda|t-s|+\kappa;$$
+        \item $\sigma$ è assolutamente continua (quindi $\sigma'(t)$ esiste per quasi ogni $t \in I$) e per quasi ogni $t \in I$ si ha
+        $$K_X\big(\sigma(t);\sigma'(t)\big) \le \lambda.$$
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    Sia $X$ una sottovarietà complessa e connessa di una varietà complessa $Y$, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Diciamo che $X$ è \textit{$(\lambda,\kappa)$-visibile} se
+    \begin{enumerate}
+        \item ogni due punti distinti di $X$ possono essere collegati da una $(\lambda,\kappa)$-simil-geodetica;
+        \item per ogni coppia di punti $p,q\in\partial_YX$ con $p\not=q$, esistono in $\overline{X}$ due intorni $V$ e $W$, di $p$ e $q$ rispettivamente, con chiusura disgiunta, e un compatto $K$ di $X$ tali che  ogni $(\lambda,\kappa)$-simil-geodetica in $X$ che collega un punto di $V$ a un punto di $W$ interseca $K$.
+    \end{enumerate}
+\end{defn}
+
+Bharali e Maitra hanno anche mostrato un teorema di tipo ``Wolff-Denjoy'' per domini di tipo topologico finito; inoltre, hanno definito e costruito esempi di una classe di domini, che chiamano domini Caltrops, che sono taut e hanno la condizione di visibilità, ma non sono domini Goldilocks.
+
+Nel preprint \cite{CMS} del 2021 Chandel, Maitra e Sarkar fanno vedere che non è necessario supporre che la varietà sia un dominio, basta che sia una sottovarietà di $\mathbb{C}^d$; costruiscono inoltre altri esempi di domini che soddisfano la condizione di visibilità.\\
+
+Negli articoli citati finora, sono stati considerati domini e varietà limitati. Il caso di domini illimitati è stato studiato nel 2022 da Bharali e Zimmer nel preprint \cite{BZ2}; considerando il bordo della end compactification al posto del bordo euclideo, riescono così ad ottenere un teorema di tipo ``Wolff-Denjoy'' anche per il caso illimitato.
+
+Notiamo inoltre che in \cite{BZ1}, \cite{CMS} e \cite{BZ2} vengono anche mostrati dei risultati di estensione al bordo di funzioni olomorfe, isometrie e quasi-isometrie; nei due preprint viene anche evidenziato un legame tra l'estensione al bordo e la condizione di visibilità. Si noti che, in alcuni dei teoremi di estensione, ritroviamo tra le ipotesi la condizione di Gromov-iperbolicità. \\
 
 In questa tesi ci poniamo l'obiettivo di generalizzare ulteriormente il teorema di tipo ``Wolff-Denjoy'' mostrato in \cite{CMS}. Osserviamo come le varie ipotesi giocano un ruolo fondamentale nella dimostrazione di tale teorema:
 \begin{nlist}
@@ -23,12 +67,16 @@ In questa tesi ci poniamo l'obiettivo di generalizzare ulteriormente il teorema 
     \item dall'ipotesi di visibilità segue che tale limite dev'essere una funzione costante.
 \end{nlist}
 
-Nell'enunciato che vogliamo andare a dimostrare, l'ipotesi che la varietà sia una sottovarietà limitata di $\mathbb{C}^d$ sarà sostituita dall'essere una sottovarietà tautly embedded\marginpar{Anche qui devo decidere come tradurre} di una varietà Kobayashi-iperbolica. \\
+Nell'enunciato che vogliamo andare a dimostrare, l'ipotesi che la varietà sia una sottovarietà limitata di $\mathbb{C}^d$ sarà sostituita dall'essere una sottovarietà tautly embedded di una varietà Kobayashi-iperbolica; tale ipotesi può essere interpretata dicendo che per la sottovarietà vale una forma del teorema di Montel.
 
-Nella sezione \ref{Preliminari} daremo le definizioni di base, come quelle di varietà Kobayashi-iperbolica e di varietà taut, ed enunceremo risultati noti e alla base della teoria della dinamica olomorfa in più variabili; alcuni verranno anche dimostrati, tra cui una versione del teorema di Montel per varietà tautly embedded e il fatto che per varietà taut vale una dicotomia nella dinamica delle funzioni olomorfe.
+\begin{defn}
+    Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Diciamo che $X$ è \textit{tautly embedded} in $Y$ se $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$.
+\end{defn}
 
-Nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità} daremo una definizione formale della condizione di visibilità e vedremo una serie di risultati tecnici, tra cui il fatto che con l'ipotesi di visibilità il limite di una successione convergente uniformemente sui compatti a una funzione a valori nel bordo dev'essere costante. A questo punto, i vari risultati ottenuti verranno utilizzati per dare una dimostrazione di un teorema di tipo ``Wolff-Denjoy''; nella dimostrazione rimarrà da verificare che il limite è lo stesso per ogni sottosuccessione delle iterate, da cui poi segue facilmente che dev'essere il limite di tutta la successione. Otterremo come corollari i teoremi di tipo ``Wolff-Denjoy'' dimostrati in \cite{A2} e in \cite{CMS}, e quello per i domini di tipo topologico finito dimostrato in \cite{BM}.
+Nella sezione \ref{Preliminari} daremo le definizioni ed enunceremo i risultati alla base della teoria della dinamica olomorfa in più variabili; alcuni verranno anche dimostrati, tra cui una versione generalizzata del teorema di Montel per varietà tautly embedded e il fatto che per varietà taut vale una dicotomia nella dinamica delle funzioni olomorfe.
+
+Nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità} studieremo la condizione di visibilità e vedremo una serie di risultati tecnici, tra cui il fatto che con l'ipotesi di visibilità il limite di una successione convergente uniformemente sui compatti a una funzione a valori nel bordo dev'essere costante. A questo punto, i vari risultati ottenuti verranno utilizzati per dare una dimostrazione di un teorema di tipo ``Wolff-Denjoy''; nella dimostrazione rimarrà da verificare che il limite è lo stesso per ogni sottosuccessione delle iterate, da cui poi segue facilmente che dev'essere il limite di tutta la successione. Otterremo come corollari i teoremi di tipo ``Wolff-Denjoy'' dimostrati in \cite{A2} e in \cite{CMS}, e quello per i domini di tipo topologico finito dimostrato in \cite{BM}.
 
 Nella sezione \ref{Esempi di domini con visibilità} costruiremo gli esempi citati sopra e vedremo quali ipotesi del teorema soddisfano.
 
-Nella sezione \ref{Ulteriori risultati} vedremo il caso dei domini di tipo finito nel senso di D'Angelo e dei domini illimitati, e citeremo alcuni dei legami tra la condizione di visibilità e i risultati di estensione al bordo.
+Nella sezione \ref{Ulteriori risultati} vedremo il caso dei domini illimitati, e citeremo alcuni dei legami tra la condizione di visibilità e i risultati di estensione al bordo.
