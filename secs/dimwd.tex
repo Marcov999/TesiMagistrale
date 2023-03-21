@@ -23,7 +23,8 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
     Possiamo dunque scegliere, in modo simile a quanto fatto all'inizio della dimostrazione della Proposizione \ref{inf_impl_ugu} e applicando la Proposizione \ref{montel}, una sottosuccessione $\{\nu_j\}_{j\in\mathbb{N}}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
         \item per ogni $j\in\mathbb{N}$ e $k\le\nu_j$ si ha $k_X\big(F^k(o),o\big) \le k_X\big(F^{\nu_j}(o),o\big)$;
-        \item $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial_YX$.
+        \item si ha $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu_j}(o),o\big)=+\infty$;
+        \item si ha che $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial_YX$.
     \end{enumerate}
 
     Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial_YX$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse $k_X$-completa, allora per il Lemma \ref{comp_is_comp} avremmo subito un assurdo. Altrimenti, si ha
