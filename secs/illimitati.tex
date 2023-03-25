@@ -86,7 +86,7 @@ Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà
     per ogni $n$, in contraddizione con l'ipotesi che la successione $\{f_n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{unaproppp}
     Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-ultravisibile. Sia $F\in\textnormal{Hol}(X,X)$ tale che la successione $\{F^n\}_{n\in\mathbb{N}}$ sia compattamente divergente. Allora esiste $\xi\in\partial^\mathcal{E}X$ tale che per ogni funzione $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ strettamente crescente per cui esiste $y_0 \in X$ tale che
     \begin{equation}
         \lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(y_0),y_0\big)=+\infty
@@ -146,3 +146,43 @@ Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà
 \end{proof}
 
 Siamo ora pronti a dimostrare il teorema di tipo ``Wolff-Denjoy'' nel caso non relativamente compatto.
+
+\begin{thm} \label{wd_type_ill}
+    Sia $X$ una sottovarietà taut di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-ultravisibile.
+    
+    Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite dei punti di $X$ tramite $F$ sono relativamente compatte in $X$; oppure,
+        \item esiste un unico punto $\xi\in\partial^\mathcal{E}X$ tale che la successione delle iterate di $F$ converge alla costante $\xi$ in $C^0(X,\overline{X}^\mathcal{E})$.
+    \end{itemize}
+\end{thm}
+
+\begin{proof}
+    La dimostrazione ricalca quella del Teorema \ref{wd_type_strong}. Riportiamo gli adattamenti necessari. Ricordiamo che ogni volta che nella dimostrazione del suddetto Teorema compaiono $\overline{X}$, $\partial_YX$ e ``visibilità'', in questa dimostrazione vanno sostituiti con $\overline{X}^\mathcal{E}$, $\partial^\mathcal{E}X$ e ``ultravisibilità''.\\
+
+    Dopo aver applicato il Teorema \ref{dicotomia}, si usano il Lemma \ref{limpt} per dire che l'insieme delle funzioni di limite di $F$ in $C^0(X,\overline{X}^\mathcal{E})$ è composto dalle sole costanti, e il Lemma \ref{estraiunasotto} per dire che è non vuoto. Se, come nella dimostrazione del Teorema \ref{wd_type_strong}, facciamo vedere che è composto da un'unica funzione costante, allora con un semplice assurdo otteniamo che tutta la successione $\{F^n\}_{n\in\mathbb{N}}$ converge a tale costante in $C^0(X,\overline{X}^\mathcal{E})$. Ci resta solo da vedere che l'insieme delle funzioni limite non contiene due funzioni.\\
+
+    Caso 1 della dimostrazione del Teorema \ref{wd_type_strong}: si usa la Proposizione \ref{unaproppp} al posto della Proposizione \ref{inf_impl_ugu}; si usa il Lemma \ref{estraiunasotto} al posto della Proposizione \ref{montel}; si usa il Lemma \ref{unaltrosottosotto} al posto del Lemma \ref{lemmasottosotto2}; al posto di scrivere $d_Y\big(F^{\mu_{j_m}-l_m}(o),\eta\big)<1/m$, dobbiamo dire che $F^{\mu_{j_m}-l_m}(o)\longrightarrow \eta$.\\
+
+    Caso 2: per definire $G_\delta$ nel caso in cui $\xi\in\mathcal{E}(\overline{X})$, si considerano gli $m\in\mathbb{N}$ tali che $F^m(x_1)\in\xi\big(K_{\lfloor1/\delta\rfloor}\cap\overline{X}\big)$, dove $\{K_n\}_{n\in\mathbb{N}}$ è un'esaustione in compatti di $Y$ (la dimostrazione che $\displaystyle\sup_{\delta>0,x_1,x_2\in K}G_\delta(x_1,x_2)<+\infty$ si riadatta facilmente).
+    
+    Per dire che $\displaystyle\liminf_{z \longrightarrow\eta}\inf_{y\in K}k_X(z,y)>0$ facciamo così: prendiamo un compatto $H\subseteq X$ tale che $K\subseteq{\mathop H\limits^ \circ}$, e osserviamo che la funzione che associa a $x\in K$ la quantità $\inf\left\{y\in X\setminus\mathop H\limits^ \circ\right\}$ è una funzione continua e strettamente positiva su un compatto.
+
+    Il resto della dimostrazione può essere riadattato in modo simile a quanto già detto sopra.
+\end{proof}
+
+\begin{oss}
+    Notiamo che l'ipotesi che $\overline{X}$ fosse localmente connessa è servita solo per dire che $\overline{X}^\mathcal{E}$ è compatta, mentre altrove l'unica conseguenza è stata un complicamento della dimostrazione. Se dunque supponiamo $X$ relativamente compatta in $Y$, possiamo ripetere le dimostrazioni dei risultati che precedono il Teorema \ref{wd_type_ill}, e poi rifare la dimostrazione del Teorema \ref{wd_type_strong} come vista nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità} ma usando i suddetti risultati, al più restringendoci a una componente connessa di $Y$. Si trova così la seguente generalizzazione del Teorema \ref{wd_type_strong}.
+\end{oss}
+
+\begin{thm} \label{wd_type_ultrastrong}
+    Sia $X$ una sottovarietà taut e relativamente compatta di una varietà complessa $Y$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+    
+    Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite dei punti di $X$ tramite $F$ sono relativamente compatte in $X$; oppure,
+        \item esiste un unico punto di $\partial_YX$ tale che la successione delle iterate di $F$ converge, uniformemente sui compatti, a quel punto.
+    \end{itemize}
+\end{thm}
+
+Costruiamo adesso un paio di esempi di domini di $\mathbb{C}^2$ che soddisfano le ipotesi del Teorema \ref{wd_type_ill}, riprendendo da \cite[Section 2]{BZ2}.
