@@ -1,0 +1,58 @@
+Vediamo adesso i risultati del preprint \cite{BZ2} sui domini illimitati; continuando quanto fatto finora, punteremo a generalizzare questi risultati,\marginpar{Forse dovrei chiamare la sezione ``Sottovarietà non relativamente compatte''?} arrivando a un teorema di tipo ``Wolff-Denjoy'' per sottovarietà taut e con visibilità, ma non necessariamente relativamente compatte.
+
+Come si può facilmente vedere pensando all'esempio della mappa $z\longmapsto z+1$ nel semipiano superiore $\mathbb{H}=\{z\in\mathbb{C}\mid\mathfrak{Im}z>0\}$, restringerci ai punti del bordo non sarà sufficiente. In questo caso, grazie a un biolomorfismo con $\mathbb{D}$ ci possiamo ricondurre al Teorema di Wolff-Denjoy originale; troviamo così che il limite è un punto di $\partial\mathbb{D}$ nel quale non possiamo estendere il biolomorfismo. È dunque chiaro che i risultati che vogliamo andare a studiare dipendono da come il dominio o la sottovarietà si immergano nella varietà ambiente, e in generale non possiamo aspettarci di avere sempre un bordo sufficientemente ricco per descrivere la dinamica delle iterate di funzioni olomorfe.
+
+Dobbiamo dunque estendere la nostra varietà come spazio topologico. Il modo giusto di farlo per ritrovare un teorema di tipo ``Wolff-Denjoy'' è la end compactification. Il concetto fondamentale per definire la end compactification è quello di end, definito da Freudenthal in \cite{F}. Diamo la definizione data in \cite[Chapter 1, Problem 19]{Sp}.
+
+\begin{defn} \label{end}
+    Sia $X$ uno spazio topologico non compatto. Una \textit{end} di $X$ è una funzione $e$ con dominio $\{K\subseteq X\mid K\text{ è comatto}\}$ tale che:
+    \begin{nlist}
+        \item a ogni compatto $K\subseteq X$ associa una componente connessa non vuota di $X\setminus K$;
+        \item per ogni coppia di compatti $K_1\subseteq K_2\subseteq X$ si ha $e(K_2)\subseteq e(K_1)$.
+    \end{nlist}
+    Indichiamo con $\mathcal{E}(X)$ l'insieme di tutte le end di $X$.
+\end{defn}
+
+\begin{oss} \label{endnonrelcpt}
+    Dato un compatto $K\subseteq X$, se una componente connessa $C$ di $X\setminus K$ è relativamente compatta in $X$, non si potrà mai avere $e(K)=C$; altrimenti, non potrebbe essere soddisfatta la condizione (ii) nella Definizione \ref{end} con $K$ e $K\cup\overline{C}$.
+\end{oss}
+
+Intuitivamente, una end è un modo di scegliere, andando all'infinito, ``da che parte andare''. Un esempio semplice per capire quest'interpretazione è l'albero binario infinito (lo si può pensare come un sottospazio di $\mathbb{R}^2$), dove a ogni livello ci troviamo in un nodo e abbiamo due possibili strade tra cui scegliere; poiché i livelli sono numerabili, è facile vedere che la cardinalità delle end è quella del continuo.
+
+\begin{oss}
+    Supponiamo che $X$ ammetta un'esaustione in compatti, cioè che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ tale che $K_n\subseteq{\mathop K\limits^ \circ}_{n+1}$ per ogni $n$ e che $\displaystyle\bigcup_{n=1}^{+\infty} K_n=X$; nei casi che studieremo $X$ sarà sempre una varietà connessa, per cui ammetterà un'esaustione in compatti. Allora una end $e$ è univocamente detereminata dalle sue immagini sui $K_n$ (segue facilmente dalle proprietà della end e da quelle dell'esaustione). Quindi, nel seguito, ci basterà fissare un'esaustione in compatti e lavorare con quella.
+\end{oss}
+
+Vogliamo ora mettere una topologia su $X^\mathcal{E}:=X\cup\mathcal{E}(X)$ che lo renda uno spazio compatto. Sebbene le end sono state definite con questo scopo in mente, sono comunque necessarie delle ipotesi. Si tratta di ipotesi che in generale sono soddisfatte da varietà astratte, ma poiché ci interesserà compattificare la chiusura di una sottovarietà dovremo prestare attenzione a un'ipotesi in particolare; si vedano l'Osservazione \ref{servelocconn} e l'Esempio \ref{servelocconnex}.
+
+\begin{prop} \label{endiscpt}
+    (\cite[Chapter 1, Problem 19]{Sp})\marginpar{Di nuovo cito un esercizio... quando avevo cercato la dim., l'unica che avevo trovato era online; può darsi che si trovi in \cite{F}, ma non so il tedesco} Sia $X$ uno spazio topologico connesso, localmente connesso, compatto e di Hausdorff. Mettiamo su $X^\mathcal{E}$ la topologia generata dalla topologia di $X$ e dai seguenti intorni per $e\in\mathcal{E}(X)$ al variare di $K\subseteq X$ compatto:
+    $$N_K(e)=e(K)\cup\{f\in\mathcal{E}(X)\mid f(K)=e(K)\};$$
+    allora $X\cup\mathcal{E}(X)$ è uno spazio compatto e di Hausdorff.
+\end{prop}
+
+\begin{oss} \label{endiscptsucc}
+    Se $X$ ammette un'esaustione in compatti $\{K_n\}_{n\in\mathbb{N}}$, ponendo $U_n^e=N_{K_n}(e)$ si ha che $\{U_n^e\}_{n\in\mathbb{N}}$ è un sistema fondamentale di intorni per $e$. Allora, se è anche primo numerabile e soddisfa le ipotesi di \label{endiscpt}, si ha che $X^\mathcal{E}$ è compatto e primo numerabile, per cui è compatto per successioni.
+\end{oss}
+
+\begin{oss} \label{servelocconn}
+    Come già accennato, data $X$ sottovarietà connessa di una varietà $Y$, andremo a studiare $\overline{X}^\mathcal{E}$. In tal caso, è facile verificare tutte le ipotesi della Proposizione \ref{endiscpt} tranne una: la locale connessione. Il motivo è perché in generale non è vera, come vedremo nell'esempio seguente.
+\end{oss}
+
+\begin{ex} \label{servelocconnex}
+    Si consideri l'emedding di $(0,1)$ in $\mathbb{R}^2$ dato da $x\longmapsto \sin(1/x)/x$. A meno di considerarne un ``ispessimento'' che diventa sempre più piccolo al tendere di $x$ a $0$, possiamo anche renderlo un dominio proprio e semplicemente connesso $\Omega$ di $\mathbb{C}$ (dunque biolomorfo a $\mathbb{D}$) avente bordo liscio al di fuori dell'asse immaginario.
+
+    Il sottospazio $\overline{\Omega}$ non è localmente connesso. Ragionando come nell'Osservazione \ref{endiscptsucc}, $\overline{\Omega}^\mathcal{E}$ è primo numerabile. Per vedere che non vale la Proposizione \ref{endiscpt}, ci basta dunque vedere che non è compatto per successioni. Consideriamo allora una successione di punti contenuti nelle ``gobbe''. Questa chiaramente non ammette sottosuccessioni convergenti in $\overline{\Omega}$. Tuttavia, per l'Osservazione \ref{endnonrelcpt} non ammette nemmeno sottosuccessioni convergenti a un punto di $\mathcal{E}(\overline{\Omega})$; infatti, poiché ogni esaustione in compatti prima o poi dovrà coprire il compatto $\overline{\Omega}\cap[0,1]$, le uniche componenti connesse non relativamente compatte dei complementari dei compatti saranno, definitivamente, due semirette dell'asse immaginario. È chiaro però che nessun punto della successione vi può appartenere, ma dato che queste semirette, unite alle opportune end, formano un sistema fondamentale di intorni per le end stesse, segue che non ci sono nemmeno sottosuccessioni convergenti a una end.
+\end{ex}
+
+Possiamo ora estendere il concetto di visibilità a sottovarietà connesse non relativamente compatte.
+
+\begin{defn} \label{visibility}
+    Sia $X$ una sottovarietà complessa e connessa di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e poniamo ${\partial^\mathcal{E}X=\partial_YX\cup\mathcal{E}(X)}$. Fissiamo $\lambda \ge 1$ e $\kappa \ge 0$; diciamo che $X$ è \textit{$(\lambda,\kappa)$-ultravisibile} se:
+    \begin{enumerate}
+        \item ogni due punti distinti di $X$ possono essere collegati da una $(\lambda,\kappa)$-simil-geodetica;
+        \item per ogni coppia di punti $p,q\in\partial^\mathcal{E}X$ con $p\not=q$, esistono in $\overline{X}^\mathcal{E}$ due intorni $V$ e $W$, di $p$ e $q$ rispettivamente, con chiusura disgiunta, e un compatto $K$ di $X$ tali che  ogni $(\lambda,\kappa)$-simil-geodetica in $X$ che collega un punto di $V$ a un punto di $W$ interseca $K$.
+    \end{enumerate}
+\end{defn}
+
+Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà Kobayashi-iperboliche, taut e $(1,\kappa_0)$-ultravisibili. Per farlo, in alcuni punti del nostro ragionamento riadatteremo le dimostrazioni degli enunciati visti nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità}, ma in altri dovremo ricavarci nuovi risultati.
