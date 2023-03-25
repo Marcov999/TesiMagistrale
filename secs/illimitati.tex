@@ -32,7 +32,7 @@ Vogliamo ora mettere una topologia su $X^\mathcal{E}:=X\cup\mathcal{E}(X)$ che l
 \end{prop}
 
 \begin{oss} \label{endiscptsucc}
-    Se $X$ ammette un'esaustione in compatti $\{K_n\}_{n\in\mathbb{N}}$, ponendo $U_n^e=N_{K_n}(e)$ si ha che $\{U_n^e\}_{n\in\mathbb{N}}$ è un sistema fondamentale di intorni per $e$. Allora, se è anche primo numerabile e soddisfa le ipotesi di \label{endiscpt}, si ha che $X^\mathcal{E}$ è compatto e primo numerabile, per cui è compatto per successioni.
+    Se $X$ ammette un'esaustione in compatti $\{K_n\}_{n\in\mathbb{N}}$, ponendo $U_n^e=N_{K_n}(e)$ si ha che $\{U_n^e\}_{n\in\mathbb{N}}$ è un sistema fondamentale di intorni per $e$. Allora, se è anche primo numerabile e soddisfa le ipotesi della Proposizione \ref{endiscpt}, si ha che $X^\mathcal{E}$ è compatto e primo numerabile, per cui è compatto per successioni.
 \end{oss}
 
 \begin{oss} \label{servelocconn}
@@ -40,7 +40,7 @@ Vogliamo ora mettere una topologia su $X^\mathcal{E}:=X\cup\mathcal{E}(X)$ che l
 \end{oss}
 
 \begin{ex} \label{servelocconnex}
-    Si consideri l'emedding di $(0,1)$ in $\mathbb{R}^2$ dato da $x\longmapsto \sin(1/x)/x$. A meno di considerarne un ``ispessimento'' che diventa sempre più piccolo al tendere di $x$ a $0$, possiamo anche renderlo un dominio proprio e semplicemente connesso $\Omega$ di $\mathbb{C}$ (dunque biolomorfo a $\mathbb{D}$) avente bordo liscio al di fuori dell'asse immaginario.
+    Si consideri l'embedding di $(0,1)$ in $\mathbb{R}^2$ dato dalla funzione $x\longmapsto \sin(1/x)/x$. A meno di considerarne un ``ispessimento'' che diventa sempre più piccolo al tendere di $x$ a $0$, possiamo anche renderlo un dominio proprio e semplicemente connesso $\Omega$ di $\mathbb{C}$ (dunque biolomorfo a $\mathbb{D}$) avente bordo liscio al di fuori dell'asse immaginario.
 
     Il sottospazio $\overline{\Omega}$ non è localmente connesso. Ragionando come nell'Osservazione \ref{endiscptsucc}, $\overline{\Omega}^\mathcal{E}$ è primo numerabile. Per vedere che non vale la Proposizione \ref{endiscpt}, ci basta dunque vedere che non è compatto per successioni. Consideriamo allora una successione di punti contenuti nelle ``gobbe''. Questa chiaramente non ammette sottosuccessioni convergenti in $\overline{\Omega}$. Tuttavia, per l'Osservazione \ref{endnonrelcpt} non ammette nemmeno sottosuccessioni convergenti a un punto di $\mathcal{E}(\overline{\Omega})$; infatti, poiché ogni esaustione in compatti prima o poi dovrà coprire il compatto $\overline{\Omega}\cap[0,1]$, le uniche componenti connesse non relativamente compatte dei complementari dei compatti saranno, definitivamente, due semirette dell'asse immaginario. È chiaro però che nessun punto della successione vi può appartenere, ma dato che queste semirette, unite alle opportune end, formano un sistema fondamentale di intorni per le end stesse, segue che non ci sono nemmeno sottosuccessioni convergenti a una end.
 \end{ex}
@@ -48,11 +48,101 @@ Vogliamo ora mettere una topologia su $X^\mathcal{E}:=X\cup\mathcal{E}(X)$ che l
 Possiamo ora estendere il concetto di visibilità a sottovarietà connesse non relativamente compatte.
 
 \begin{defn} \label{visibility}
-    Sia $X$ una sottovarietà complessa e connessa di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e poniamo ${\partial^\mathcal{E}X=\partial_YX\cup\mathcal{E}(X)}$. Fissiamo $\lambda \ge 1$ e $\kappa \ge 0$; diciamo che $X$ è \textit{$(\lambda,\kappa)$-ultravisibile} se:
+    Sia $X$ una sottovarietà complessa e connessa di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e definiamo il \textit{bordo end} come ${\partial^\mathcal{E}X:=\partial_YX\cup\mathcal{E}(X)}$. Fissiamo $\lambda \ge 1$ e $\kappa \ge 0$; diciamo che $X$ è \textit{$(\lambda,\kappa)$-ultravisibile} se:
     \begin{enumerate}
         \item ogni due punti distinti di $X$ possono essere collegati da una $(\lambda,\kappa)$-simil-geodetica;
         \item per ogni coppia di punti $p,q\in\partial^\mathcal{E}X$ con $p\not=q$, esistono in $\overline{X}^\mathcal{E}$ due intorni $V$ e $W$, di $p$ e $q$ rispettivamente, con chiusura disgiunta, e un compatto $K$ di $X$ tali che  ogni $(\lambda,\kappa)$-simil-geodetica in $X$ che collega un punto di $V$ a un punto di $W$ interseca $K$.
     \end{enumerate}
 \end{defn}
 
+\begin{oss}
+    Non escludiamo la possibilità che l'ipotesi che $\overline{X}$ sia localmente connessa sia ridondante, perché potrebbe seguire in qualche modo dalla condizione di ultravisibilità (per esempio, quest'ultima potrebbe implicare una qualche regolarità per $\partial_YX$). Non sappiamo se sia effettivamente vero, e in caso lo sia crediamo che la dimostrazione sia tutt'altro che semplice.
+    
+    Facciamo però notare che per l'Esempio \ref{servelocconnex}, sfruttando un biolomorfismo\marginpar{Esiste?} con $\mathbb{D}$ esteso ai punti regolari del bordo, si può mostrare che non vale la condizione di ultravisibilità. Esistono\marginpar{Serve una reference} anche esempi, sempre ispirati al seno del topologo, di domini limitati di $\mathbb{C}$ biolomorfi a $\mathbb{D}$ per i quali non vale l'analogo del teorema di Wolff-Denjoy; dal Corollario \ref{wd_type} segue che non soddisfano la condizione di visibilità, in quanto è facile verificare che soddisfano tutte le altre ipotesi.
+\end{oss}
+
 Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà Kobayashi-iperboliche, taut e $(1,\kappa_0)$-ultravisibili. Per farlo, in alcuni punti del nostro ragionamento riadatteremo le dimostrazioni degli enunciati visti nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità}, ma in altri dovremo ricavarci nuovi risultati.
+
+\begin{lm} \label{limpt}
+    Sia $X$ una sottovarietà complessa e connessa di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-ultravisibile. Siano $Z$ una varietà Kobayashi-iperbolica e $\{f_n\}_{n\in\mathbb{N}}\subseteq\textnormal{Hol}(Z,X)$ una successione compattamente divergente. Allora esistono $\xi\in\partial^\mathcal{E}X$ e una sottosuccessione $\{f_{n_j}\}_{j\in\mathbb{N}}$ tali che $f_{n_j}(z)\longrightarrow\xi$ per ogni $z\in Z$.
+\end{lm}
+
+\begin{proof}
+    Sia $z_0\in Z$. Per l'Osservazione \ref{endiscptsucc}, a meno di sottosuccessioni possiamo supporre che esista $\xi_0\in\partial^\mathcal{E}X$ tale che $f_n(z_0)\longrightarrow\xi_0$. Supponiamo per assurdo che esista $z_1\in Z$ tale che la successione $\{f_n(z_1)\}_{n\in\mathbb{N}}$ non converge a $\xi_0$. Considerando una curva continua che collega $z_0$ a $z_1$, si trova facilmente che possiamo eventualmente sostituirli con due punti tali che $k_Z(z_0,z_1)<\kappa_0/2$. Di nuovo a meno di sottosuccessioni, possiamo supporre che esista $\xi_1\in\partial^\mathcal{E}X$ tale che $\xi_1\not=\xi_0$ e $f_n(z_1)\longrightarrow\xi_1$.
+
+    Per il Teorema \ref{similgeo_conn} esiste una $(1,\kappa_0/2)$-simil-geodetica $\sigma:[0,T]\longrightarrow Z$ tale che $\sigma(0)=z_0$ e $\sigma(T)=z_1$. Poniamo $\sigma_n:=f_n\circ\sigma$, vogliamo dimostrare che $\sigma_n$ è una $(1,\kappa_0)$-simil-geodetica per ogni $n$. Per la Proposizione \ref{semicontr} e per la definizione di $(1,\kappa_0/2)$-simil-geodetica, abbiamo che
+    $$k_X\big(\sigma_n(s),\sigma_n(t)\big) \le k_Z\big(\sigma(s),\sigma(t)\big) \le |t-s|+\kappa_0/2\le |t-s|+\kappa_0$$
+    per ogni $s,t\in[0,T]$. Inoltre, sempre dalla definizione di di $(1,\kappa_0/2)$-simil-geodetica si ha che
+    \begin{align*}
+        |t-s|-\kappa_0 &\le |0-T|-\kappa_0/2-\kappa_0/2 \le k_Z\big(\sigma(0),\sigma(T)\big)-\kappa_0/2\\
+        &=k_Z(z_0,z_1)-\kappa_0/2<0\le k_X\big(\sigma_n(s),\sigma_n(t)\big)
+    \end{align*}
+    per ogni $s,t\in[0,T]$. Infine, dalla Proposizione \ref{metrdecr} e dalla definizione di $(1,\kappa_0/2)$-simil-geodetica segue che
+    $$K_X\big(\sigma_n(t);\sigma_n'(t)\big)\le K_Z\big(\sigma(t);\sigma'(t)\big) \le 1$$
+    per ogni $t\in[0,T]$. Dunque $\sigma_n$ è una $(1,\kappa_0)$-simil-geodetica per ogni $n$, come volevamo.
+
+    Adesso, poiché $\sigma_n(0)=f_n(z_0)\longrightarrow\xi_0$ e $\sigma_n(T)=f_n(z_1)\longrightarrow\xi_1$ e $X$ è $(1,\kappa_0)$-ultravisibile, esiste un compatto $K\subseteq X$ tale che
+    $$\emptyset\not=K\cap\sigma_n([0,T])=K\cap f_n\big(\sigma([0,T])\big)$$
+    per ogni $n$, in contraddizione con l'ipotesi che la successione $\{f_n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
+\end{proof}
+
+\begin{prop}
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-ultravisibile. Sia $F\in\textnormal{Hol}(X,X)$ tale che la successione $\{F^n\}_{n\in\mathbb{N}}$ sia compattamente divergente. Allora esiste $\xi\in\partial^\mathcal{E}X$ tale che per ogni funzione $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ strettamente crescente per cui esiste $y_0 \in X$ tale che
+    \begin{equation}
+        \lim_{j\longrightarrow+\infty} k_X\big(F^{\mu(j)}(y_0),y_0\big)=+\infty
+    \end{equation}
+    si ha
+    \begin{equation}
+        \lim_{j\longrightarrow+\infty} F^{\mu(j)}(z)=\xi
+    \end{equation}
+    per ogni $z \in X$.
+\end{prop}
+
+\begin{proof}
+    Si ripete la dimostrazione della Proposizione \ref{inf_impl_ugu} con le seguenti modifiche: $\overline{X}^\mathcal{E}$ e $\partial^\mathcal{E}X$ al posto di $\overline{X}$ e $\partial_YX$; ``per compattezza per successioni di $\overline{X}^\mathcal{E}$'' al posto di ``per relativa compattezza di $X$''; ultravisibilità al posto di visibilità; si utilizza il Lemma \ref{limpt} al posto del Lemma \ref{lemmasottosotto1}.
+\end{proof}
+
+\begin{lm} \label{nonazeroplease}
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-ultravisibile. Siano $\{x_n\}_{n\in\mathbb{N}}$ e $\{y_n\}_{n\in\mathbb{N}}$ due successioni di punti di $X$ tali che $x_n\longrightarrow\xi$ e $y_n\longrightarrow\xi'$, con $\xi,\xi'\in\partial^\mathcal{E}X$ e $\xi\not=\xi'$.
+    
+    Allora non può essere che $\displaystyle\lim_{n\longrightarrow+\infty}k_X(x_n,y_n)=0$.
+\end{lm}
+
+\begin{proof}
+    Supponiamo per assurdo che la tesi sia falsa, e prendiamo due successioni che la contraddicono. Per il Teorema \ref{similgeo_conn} possiamo prendere, per ogni $n\in\mathbb{N}$, una $(1,1/n)$-simil-geodetica $\sigma_n:[0,T_n]\longrightarrow X$ tale che $\sigma_n(0)=x_n$ e ${\sigma_n(T_n)=y_n}$. Per $n$ sufficientemente grande sono tutte $(1,\kappa_0)$-simil-geodetiche, per cui esistono un compatto $K\subseteq X$ e $t_n\in[0,T_n]$ tali che $\sigma_n(t_n)\in K$ per ogni $n$. Dato che $X$ è una varietà, possiamo prendere un compatto ${H\subseteq X}$ tale che $K\subseteq{\mathop H\limits^ \circ}$. Allora $\partial^\text{top}H$ e $K$ sono due compatti disgiunti, dove $\partial^\text{top}$ è il bordo topologico in $X$ (chiusura meno parte interna); dunque ${\displaystyle\inf_{\substack{x\in\partial^\text{top}H,\\y\in K}} k_X(x,y)=\epsilon>0}$.
+
+    Poiché $\sigma_n(0)$ e $\sigma_n(T_n)$ convergono a punti del bordo end, per $n$ sufficientemente grande appartengono a $X\setminus H$. Ma $\sigma_n(t_n)\in K\subseteq{\mathop H\limits^ \circ}$; quindi deve esistere $t_n'$ tale che $\sigma_n(t_n')\in\partial H$. Segue che
+    \begin{align*}
+        0&<\epsilon\le k_X\big(\sigma_n(t_n),\sigma_n(t_n')\big) \le |t_n-t_n'|+1/n\le |0-T_n|+1/n \\
+        &\le k_X\big(\sigma_n(0),\sigma_n(T_n)\big)+2/n=k_X(x_n,y_n)+2/n\longrightarrow0,
+    \end{align*}
+    contraddizione.
+\end{proof}
+
+\begin{lm} \label{unaltrosottosotto}
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-ultravisibile. Sia $F\in\textnormal{Hol}(X,X)$ tale che la successione $\{F^n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
+    
+    Supponiamo che esistano un compatto $K\subseteq X$, una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $\xi\in\partial^\mathcal{E}X$ tali che per ogni intorno $U$ di $\xi$ in $\overline{X}^\mathcal{E}$ esiste $j_0$ tale che per ogni $j\ge j_0$ si ha $F^{\mu(j)}(K)\subseteq U$. Allora la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge alla costante $\xi$ in $C^0(X,\overline{X}^\mathcal{E})$.
+\end{lm}
+
+\begin{proof}
+    Supponiamo per assurdo che la tesi non sia vera; esistono dunque un compatto $H\subseteq X$ e un intorno $U$ di $\xi$ in $\overline{X}^\mathcal{E}$ tali che ${F^{\mu(j)}(H)\not\subseteq U}$ frequentemente. Allora esistono una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ e una successione $\{z_n\}_{n\in\mathbb{N}}\subseteq H$ tali che $F^{\mu(j_n)}(z_n)\not\in U$ per ogni $n\in\mathbb{N}$.
+    
+    A meno di sottosuccessioni, usando il Lemma \ref{limpt} e la compattezza per successioni di $\overline{X}^\mathcal{E}$, possiamo supporre che $z_n\longrightarrow\tilde{z}\in H$, che ${F^{\mu(j_n)}(z)\longrightarrow\tilde{\xi}\in\overline{X}^\mathcal{E}}$ per ogni $z\in X$ e che $F^{\mu(j_n)}(z_n)\longrightarrow\xi'\in\overline{X}^\mathcal{E}$. Dato che $\{F^n\}_{n\in\mathbb{N}}$ è compattamente divergente, dev'essere $\xi'\in\partial^\mathcal{E}X$. Siccome $F^{\mu(j_n)}(z)\longrightarrow\xi$ per ogni $z\in K$, dev'essere $\tilde{\xi}=\xi$. Visto che $F^{\mu(j_n)}(z_n)\not\in U$ per ogni $n\in\mathbb{N}$, dev'essere $\xi\not=\xi'$.
+
+    Adesso notiamo che per la Proposizione \ref{semicontr} si ha
+    $$k_X\big(F^{\mu(j_n)}(z_n),F^{\mu(j_n)}(\tilde{z})\big)\le k_X(z_n,\tilde{z})\longrightarrow0$$
+    per $n\longrightarrow+\infty$. Basta allora applicare il Lemma \ref{nonazeroplease}, con $x_n=F^{\mu(j_n)}(z_n)$ e $y_n=F^{\mu(j_n)}(\tilde{z})$, per ottenere una contraddizione.
+\end{proof}
+
+\begin{lm} \label{estraiunasotto}
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che $\overline{X}$ sia localmente connessa e che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-ultravisibile. Sia $F\in\textnormal{Hol}(X,X)$ tale che la successione $\{F^n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
+
+    Per ogni funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ esistono $\xi\in\partial^\mathcal{E}X$ e una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ tale che la successione $\{F^{\mu(j_n)}\}_{n\in\mathbb{N}}$ converge alla costante $\xi$ in $C^0(X,\overline{X}^\mathcal{E})$.
+\end{lm}
+
+\begin{proof}
+    Fissiamo $z_0\in X$. Per la compattezza per successioni di $\overline{X}^\mathcal{E}$ e la divergenza dai compatti di $\{F^n\}_{n\in\mathbb{N}}$, esistono $\xi\in\partial^\mathcal{E}X$ e una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ tali che $F^{\mu(j_n)}(z_0)\longrightarrow\xi$. Allora la successione $\{F^{\mu(j_n)}\}_{n\in\mathbb{N}}$ converge alla costante $\xi$ uniformemente sul compatto $\{z_0\}$. Si conclude applicando il Lemma \ref{unaltrosottosotto}.
+\end{proof}
+
+Siamo ora pronti a dimostrare il teorema di tipo ``Wolff-Denjoy'' nel caso non relativamente compatto.
