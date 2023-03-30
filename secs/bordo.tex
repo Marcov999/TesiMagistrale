@@ -1,19 +1,5 @@
 Elenchiamo ora, senza dimostrarli, alcuni teoremi che legano l'ipotesi di visibilità alle estensioni al bordo di funzioni. Risultati di estensione erano noti da tempo per il caso di mappe tra domini regolari, per esempio strettamente pseudoconvessi o con bordo liscio. Gli enunciati che vedremo hanno ipotesi che permettono una minore regolarità del bordo (abbiamo visto, tra gli altri esempi, domini con visibilità che hanno delle cuspidi), ma tornerà in gioco la Gromov-iperbolicità, che nei teoremi di tipo ``Wolff-Denjoy'' non era presente tra le ipotesi.
 
-\begin{defn}
-    Un \textit{cono circolare aperto con apertura $\theta$} è un aperto di $\mathbb{C}^d$ della forma
-    $$\Gamma(v,\theta):=\{z\in\mathbb{C}^d\mid \mathfrak{Re}\langle z,v\rangle>\cos(\theta/2)\|z\|\},$$
-    dove $v$ è un vettore unitario di $\mathbb{C}^d$ e $\theta\in(0,\pi)$. Per ogni punto $p\in\mathbb{C}^d$, l'\textit{asse} del cono traslato $p+\Gamma(v,\theta)$ è l'insieme $\{p+tv\mid t>0\}$.
-\end{defn}
-
-\begin{defn}
-    Sia $\Omega$ un dominio di $\mathbb{C}^d$. Diciamo che $\Omega$ soddisfa una \textit{condizione di cono interno} se esistono due costanti $r>0$ e $\theta\in(0,\pi)$, e un compatto $K\subseteq\Omega$, tali che per ogni $x\in\Omega\setminus K$ esistono un punto $\xi_x\in\partial\Omega$ e un vettore unitario $v_x$ tali che:
-    \begin{itemize}
-        \item il punto $x$ appartiene all'asse del cono traslato $\xi_x+\Gamma(v_x,\theta)$;
-        \item si ha $\big(\xi_x+\Gamma(v_x,\theta)\big)\cap B_r(\xi_x)\subseteq\Omega$.
-    \end{itemize}
-\end{defn}
-
 \begin{thm}
     (\cite[Theorem 1.5]{BZ1}) Siano $D$ e $\Omega$ due domini limitati di $\mathbb{C}^d$. Supponiamo che $D$ sia pseudoconvesso con bordo $C^2$, e che $\Omega$ sia un dominio Goldilocks che soddisfa una condizione di cono interno. Allora ogni funzione olomorfa propria $F:D\longrightarrow\Omega$ si estende a una funzione continua su $\overline{D}$.
 \end{thm}
@@ -51,11 +37,6 @@ Bharali e Zimmer hanno dimostrato teoremi di estensione anche per domini con vis
 
     Sia $f:\Omega_1\longrightarrow\Omega_2$ un embedding quasi-isometrico rispetto alle distanze di Kobayashi; allora $f$ si estende a una funzione continua $\tilde{f}:\overline{\Omega}_1^\mathcal{E}\longrightarrow\overline{\Omega}_2^\mathcal{E}$.
 \end{thm}
-
-\begin{defn}
-    Sia $\Omega\subseteq\mathbb{C}^d$ un dominio. Diciamo che $\Omega$ è un \textit{dominio lipschitziano} (rispettivamente, \textit{dominio $C^0$}) se per ogni $x\in\Omega$ esistono un intorno $U_x$ di $x$, un cambio di coordinate unitarie centrato in $x$ e una funzione lipschitziana (rispettivamente, una funzione continua) $\varphi_x$, definita in un qualche intorno aperto dell'origine in $\mathbb{C}^{d-1}\times\mathbb{R}$, tali che, se $w=(w_1,\dots,w_n)$ sono le suddette coordinate e $W_x$ è l'immagine di $U_x$ tramite esse, allora $U_x\cap\Omega$ in coordinate è dato da
-    $$\{w\in W_x\mid \mathfrak{Im}w_n>\varphi_x(w_1,\dots,w_{n-1},\mathfrak{Re}w_n)\}.$$
-\end{defn}
 
 \begin{thm}
     (\cite[Theorem 1.9]{BZ2}) Siano $\Omega_1,\Omega_2\subsetneq\mathbb{C}$ due domini lipschitziani. Sia $f:\Omega_1\longrightarrow\Omega_2$ un biolomorfismo; allora $f$ si estende a un omeomorfismo $\tilde{f}:\overline{\Omega}_1^\mathcal{E}\longrightarrow\overline{\Omega}_2^\mathcal{E}$.
