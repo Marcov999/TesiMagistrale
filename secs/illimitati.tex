@@ -190,7 +190,7 @@ Costruiamo adesso un esempio di dominio $\Omega\subseteq\mathbb{C}^2$\marginpar{
 Partiamo dalla seguente definizione, che generalizza il concetto di dominio Goldilocks.
 
 \begin{defn} \label{localgold}
-    Un dominio $\Omega\subseteq\mathbb{C}^d$ si dice \textit{localmente Goldilocks} se per ogni $x\in\partial\Omega$ esiste un intorno $U$ di $x$ in $\overline{\Omega}$ tale che:
+    Un dominio $\Omega\subseteq\mathbb{C}^d$ si dice \textit{localmente Goldilocks} se per ogni $\xi\in\partial\Omega$ esiste un intorno $U$ di $\xi$ in $\overline{\Omega}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
         \item esiste un $\epsilon>0$ tale che $\displaystyle\int_0^\epsilon \frac{1}{r}M_{\Omega,U}(r)\diff r<+\infty$;
         \item per ogni $z_0\in\Omega$ esistono due costanti $C,\alpha>0$ (che dipendono da $z_0$ e da $U$) tali che $k_\Omega(z_0,z)\le C+\alpha\log{\dfrac{1}{\delta_\Omega(z)}}$ per ogni $z\in\Omega\cap U$.
@@ -206,7 +206,7 @@ Dimostriamo che essere localmente Goldilocks è una condizione sufficiente affin
 \begin{proof}
     Fissiamo $\lambda\ge1$ e $\kappa\ge0$. Fissiamo anche $\xi,\eta\in\partial^\mathcal{E}\Omega$ e $V_\xi,V_\eta$ come nel punto 2. della Definizione \ref{ultravisibility}; diremo più avanti come sceglierli. Fissiamo un'esaustione in compatti $\{K_n\}_{n\in\mathbb{N}}$ di $\Omega$. Supponiamo per assurdo che, per ogni $n\in\mathbb{N}$, esista una $(\lambda,\kappa)$-simil-geodetica $\sigma_n:[0,T_n]\longrightarrow\Omega$ con $\sigma_n(0)\in V_\xi$, $\sigma_n(T_n)\in V_\eta$ e ${\sigma_n([0,T_n])\cap K_n=\emptyset}$.
 
-    Per ottenere una contraddizione, dobbiamo scegliere $V_\xi$ e $V_\eta$ in modo opportuno. Se $\xi,\eta\in\partial\Omega$, basta che li prendiamo localmente compatti. Se $\xi\in\partial\Omega$ e $\eta\in\mathcal{E}(\overline{\Omega})$ (o viceversa), prendiamo un compatto $K$ di $\overline{\Omega}$ la cui parte interna contiene un intorno compatto di $\xi$; scegliamo come $V_\xi$ la parte interna di tale intorno e $V_\eta=\eta(K)$. Se $\xi,\eta\in\mathcal{E}\overline{\Omega}$, basta prendere $V_\xi=\xi(K),V_\eta=\eta(K)$ dove $K$ è un compatto sufficientemente grande.
+    Per ottenere una contraddizione, dobbiamo scegliere $V_\xi$ e $V_\eta$ in modo opportuno. Se $\xi,\eta\in\partial\Omega$, basta che li prendiamo localmente compatti. Se $\xi\in\partial\Omega$ e $\eta\in\mathcal{E}(\overline{\Omega})$ (o viceversa), prendiamo un compatto $K$ di $\overline{\Omega}$ la cui parte interna contiene un intorno compatto di $\xi$; scegliamo come $V_\xi$ la parte interna di tale intorno e $V_\eta=\eta(K)$. Se $\xi,\eta\in\mathcal{E}(\overline{\Omega})$, basta prendere $V_\xi=\xi(K),V_\eta=\eta(K)$ dove $K$ è un compatto sufficientemente grande.
 
     In tutti i casi sopra, abbiamo scelto gli intorni di modo che esista un compatto $K$ di $\overline{\Omega}$ tale che, per ogni $n\in\mathbb{N}$, deve esistere $t_n\in[0,T_n]$ per cui $\sigma_n(t_n)\in K$. A meno di sottosuccessioni, possiamo supporre $\sigma_n(t_n)\longrightarrow x_0\in\overline{\Omega}$. Poiché $\sigma_n([0,T_n])\cap K_n=\emptyset$ per ogni $n$, dev'essere $x_0\in\partial\Omega$. Sia $U$ l'intorno di $x_0$ dato dal punto (2) della Definizione \ref{localgold}, e osserviamo che lo possiamo prendere limitato. Di nuovo a meno di sottosuccessioni, possiamo trovare un intervallo $[a_n,b_n]\subseteq[0,T_n]$ contenente $t_n$ tale che:
     \begin{nlist}
@@ -265,11 +265,31 @@ Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo co
 \end{defn}
 
 \begin{lm} \label{conin}
-    Sia $\Omega$ un dominio di $\mathbb{C}^d$ che soddisfa una condizione di cono interno. Allora $\Omega$ soddisfa la condizione (2) nella definizione di dominio localmente Goldilocks.\marginpar{SCRIVERE LA DIMOSTRAZIONE}
+    Sia $\Omega$ un dominio di $\mathbb{C}^d$ che soddisfa una condizione di cono interno. Allora $\Omega$ soddisfa la condizione (2) nella definizione di dominio localmente Goldilocks.
 \end{lm}
 
 \begin{proof}
-    DA SCRIVERE.
+    Per ogni $\beta>1$ definiamo la funzione olomorfa $\psi_\beta:\mathbb{D}\longrightarrow\mathbb{C}$ come $\psi_\beta(\zeta):=(1+\zeta)^{1/\beta}$ e $\psi_\beta(0):=1$. Dati un vettore unitario $v\in\mathbb{C}^d$ e un numero $l>0$, definiamo la funzione olomorfa $\psi(\cdot;\beta,v,l):\mathbb{D}\longrightarrow\mathbb{C}^d$ come $\Psi(\zeta;\beta,v,l)=l\psi_\beta(\zeta)v$, e indichiamo la sua immagine con $\mathcal{L}(\beta,v,r)$.
+    
+    Fissiamo ora $\xi\in\partial\Omega$, e prendiamo $R>0$ e un intorno $U$ di $\xi$ tali che $U\subset\subset\mathbb{B}^d_R$; è facile vedere che esistono $R'>0$ e $\alpha>1$ tali che
+    $$R'\psi_\alpha(\mathbb{D})\subseteq \{\zeta\in\mathbb{C}\mid\mathfrak{Re}\zeta>\cos(\theta/2)|\zeta|\text{ e }|\zeta|<r\},$$
+    dove $\theta$ e $r$ sono dati dalla condizione di cono interno, e dipendono da $R$. Sia $K$ il compatto, anch'esso dipendente da $R$, dato sempre dalla condizione di cono interno; allora esiste un compatto $K'$ con $K\subseteq K'\subseteq\Omega$ e tale che, per ogni $x\in(\Omega\setminus K')\cap\mathbb{B}^d_R$, esistono $\xi_x\in\partial\Omega$ e un vettore unitario $v_x$ per cui:
+    \begin{nlist}
+        \item si ha $\xi_x+\mathcal{L}(\alpha,v_x,R')\subseteq\Omega$;
+        \item il punto $x$ appartiene al segmento che va da $\xi_x$ a $q_x:=\xi_x+\Psi(0;v_x,\alpha,R')$;
+        \item si ha che $q_x\in K'$.
+    \end{nlist}
+
+    Allora, per ogni tale $x$, esiste un unico numero $t(x)>0$ tale che si abbia $\xi_x+t(x)v_x=x$. Chiaramente $\delta_\Omega(x)\le t(x)$. Inoltre, $\Psi(\cdot;\alpha,v_x,R')$ mappa il punto $\big(t(x)/R'\big)^\alpha-1\in(-1,0)$ nel punto $x-\xi_x$.
+
+    Fissiamo $z_0\in\Omega$; è sufficiente verificare la tesi per $z\in (\Omega\setminus K')\cap \mathbb{B}^d_R$. Poniamo $C:=\sup\{k_\Omega(y,z_0)\mid y\in K'\}$. Allora, per quanto trovato sopra, si ha
+    \begin{align*}
+        k_\Omega(z_0,z)&\le k_\Omega(z_0,q_z)+k_\Omega(q_z,z) \le C+\omega\Big(0,\big(t(x)/R'\big)^\alpha-1\Big)\\
+        &=C+\frac{1}{2}\log\left(\frac{2-\big(t(x)/R'\big)^\alpha}{\big(t(x)/R'\big)^\alpha}\right) \le C+\frac{1}{2}\log\left(\frac{2}{\big(t(x)/R'\big)^\alpha}\right)\\
+        &\le \left(C+\frac{1}{2}\log\big(2(R')^\alpha\big)\right)+\frac{\alpha}{2}\log\left(\frac{1}{\delta_\Omega(z)}\right);
+    \end{align*}
+
+    poiché $k_\Omega(z_0,z) \le C$ per ogni $z\in K'\cap\mathbb{B}^d_R$, la tesi segue.
 \end{proof}
 
 \begin{lm} \label{cones}
@@ -291,14 +311,13 @@ Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo co
 
     Con questa scelta di $c_1$ abbiamo che $c_1\delta_\Omega(z)<|z-w|\le 2\delta_\Omega(z)$, e che ${D\big(w,\delta_\Omega(z)\big)\subseteq\mathbb{C}\setminus\Omega}$. Consideriamo ora la funzione olomorfa $f:\Omega\longrightarrow\mathbb{D}$ data da
     $$f(\zeta)=\frac{c_1\delta_\Omega(z)}{\zeta-w}$$
-    per ogni $\zeta\in\Omega$; che $f$ abbia valori in $\mathbb{D}$ segue dalla \eqref{troppeeq}. Allora, per la Proposizione \ref{metrdecr}, si ha\marginpar{$K_\mathbb{D}=\lambda_\mathbb{D}$?}
+    per ogni $\zeta\in\Omega$; che $f$ abbia valori in $\mathbb{D}$ segue dalla \eqref{troppeeq}. Allora, per la Proposizione \ref{metrdecr}, si ha
     \begin{align*}
-        K_\Omega(z;v) &\ge K_{\mathbb{D}}\big(f(z);f'(z)v\big)=\frac{|f'(z)||v|}{1-|f(z)|^2} \ge \frac{1}{2}\cdot\frac{|f'(z)||v|}{1-|f(z)|}\\
+        K_\Omega(z;v) &\ge K_{\mathbb{D}}\big(f(z);f'(z)v\big)\ge \frac{|f'(z)||v|}{1-|f(z)|^2} \ge \frac{1}{2}\cdot\frac{|f'(z)||v|}{1-|f(z)|}\\
         &=\frac{1}{2}\cdot\frac{1}{|z-w|-c_1\delta_\Omega(z)}\cdot\frac{c_1\delta_\Omega(z)}{|z-w|}|v|\\
-        &\ge \frac{1}{2}\cdot\frac{1}{2\delta_\Omega(z)-c_1\delta_\Omega(z)}\cdot\frac{c_1\delta_\Omega(z)}{2\delta_\Omega(z)}|v|=\frac{c_1}{4(2-c_1)\delta_\Omega(z)}|v|.
+        &\ge \frac{1}{2}\cdot\frac{1}{2\delta_\Omega(z)-c_1\delta_\Omega(z)}\cdot\frac{c_1\delta_\Omega(z)}{2\delta_\Omega(z)}|v|=\frac{c_1}{4(2-c_1)\delta_\Omega(z)}|v|,
     \end{align*}
-
-    Dato che $c_1$ dipende solo da $R$ e non da $z$, abbiamo concluso.
+    dove la seconda disuguaglianza segue dal lemma di Schwarz Pick e dalla definizione di $K_\mathbb{D}$, e le altre da quanto trovato sopra. Dato che $c_1$ dipende solo da $R$ e non da $z$, abbiamo concluso.
 \end{proof}
 
 \begin{defn}
@@ -311,9 +330,9 @@ Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo co
 \end{prop}
 
 \begin{proof}
-    È facile\marginpar{È davvero così facile?} verificare che un dominio lipschitziano soddisfa sia la condizione di cono interno che la condizione di cono esterno. La tesi segue dunque dai Lemmi \ref{conin} e \ref{cones}.
+    È facile verificare che un dominio lipschitziano soddisfa sia la condizione di cono interno che la condizione di cono esterno. La tesi segue dunque dai Lemmi \ref{conin} e \ref{cones}.
 \end{proof}
 
-È facile costruire un esempio di dominio illimitato $\Omega\subsetneq\mathbb{C}$ che soddisfi le ipotesi della Proposizione \ref{lipislocgold} e tale che $\mathcal{E}(\overline{\Omega})$ abbia cardinalità più che numerabile: per esempio, possiamo immergere l'albero binario infinito in $\mathbb{C}$, e considerarne un intorno $\Omega$ sufficientemente piccolo tale che $\partial\Omega$ sia localmente unione finita di curve lisce. In tal modo, $\overline{\Omega}$ è localmente connesso e $\Omega$ è semplicemente connesso, per cui biolomorfo a $\mathbb{D}$ e di conseguenza taut; dunque soddisfa le ipotesi del Teorema \ref{wd_type_ill}. È facile però notare che, in questo caso, otteniamo soltanto una versione modificata e più debole del teorema di Wolff-Denjoy.
+È facile costruire un esempio di dominio illimitato $\Omega\subsetneq\mathbb{C}$ che soddisfi le ipotesi della Proposizione \ref{lipislocgold} e tale che $\mathcal{E}(\overline{\Omega})$ abbia cardinalità più che numerabile: per esempio, possiamo immergere l'albero binario infinito in $\mathbb{C}$, e considerarne un intorno $\Omega$ sufficientemente piccolo tale che $\partial\Omega$ sia localmente un'unione finita di curve lisce. In tal modo, $\Omega$ è semplicemente connesso, per cui biolomorfo a $\mathbb{D}$ e di conseguenza taut, e $\overline{\Omega}$ è localmente connessa; quindi questo dominio soddisfa le ipotesi del Teorema \ref{wd_type_ill}. È facile però notare che, in questo caso, otteniamo soltanto una versione modificata e più debole del teorema di Wolff-Denjoy.
 
 Passiamo ora a costruire l'esempio in $\mathbb{C}^2$.
