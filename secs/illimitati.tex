@@ -185,7 +185,7 @@ Siamo ora pronti a dimostrare il teorema di tipo ``Wolff-Denjoy'' nel caso non r
     \end{itemize}
 \end{thm}
 
-Costruiamo adesso un esempio di dominio $\Omega\subseteq\mathbb{C}^2$\marginpar{Si riesce anche a dire che è taut?} ultravisibile e tale che la cardinalità di $\mathcal{E}(\overline{\Omega})$ sia più che numerabile, riprendendo da \cite[Section 2]{BZ2}.
+Costruiamo adesso un esempio di dominio $\Omega\subseteq\mathbb{C}^2$ taut, ultravisibile, con chiusura localmente connessa e tale che la cardinalità di $\mathcal{E}(\overline{\Omega})$ sia più che numerabile, riprendendo da \cite[Section 2]{BZ2}; si noti che un tale dominio soddisfa le ipotesi del Teorema \ref{wd_type_ill}.
 
 Partiamo dalla seguente definizione, che generalizza il concetto di dominio Goldilocks.
 
@@ -335,4 +335,8 @@ Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo co
 
 È facile costruire un esempio di dominio illimitato $\Omega\subsetneq\mathbb{C}$ che soddisfi le ipotesi della Proposizione \ref{lipislocgold} e tale che $\mathcal{E}(\overline{\Omega})$ abbia cardinalità più che numerabile: per esempio, possiamo immergere l'albero binario infinito in $\mathbb{C}$, e considerarne un intorno $\Omega$ sufficientemente piccolo tale che $\partial\Omega$ sia localmente un'unione finita di curve lisce. In tal modo, $\Omega$ è semplicemente connesso, per cui biolomorfo a $\mathbb{D}$ e di conseguenza taut, e $\overline{\Omega}$ è localmente connessa; quindi questo dominio soddisfa le ipotesi del Teorema \ref{wd_type_ill}. È facile però notare che, in questo caso, otteniamo soltanto una versione modificata e più debole del teorema di Wolff-Denjoy.
 
-Passiamo ora a costruire l'esempio in $\mathbb{C}^2$.
+Passiamo ora a costruire l'esempio in $\mathbb{C}^2$. Diremo soltanto a grandi linee quali sono i passaggi, senza entrare nei dettagli.
+
+Prendiamo $\Omega\subseteq\mathbb{C}$ costruito come sopra, e sia $\varphi:\mathbb{D}\longrightarrow\Omega$ un biolomorfismo; per \cite[Theorem 1.9]{BZ2} (si veda il Teorema \ref{citchemiserveprima} più avanti), possiamo estendere $\varphi$ a un omeomorfismo $\overline{\mathbb{D}}\longrightarrow\overline{\Omega}^\mathcal{E}$, che chiameremo sempre $\varphi$. Poniamo ${A:=\varphi^{-1}(\overline{\Omega}^\mathcal{E}\setminus\overline{\Omega})\subseteq S^1}$; come specificato in \cite[Section 2.3]{BZ2}, è possibile dimostrare che $\varphi$ ristretto a $\mathbb{D}\cup(S^1\setminus A)$ è un embedding liscio.
+
+Consideriamo la funzione $\Phi:\mathbb{B}^2\longrightarrow\mathbb{C}^2$ data da $\Phi(z_1,z_2):=\big(\varphi(z_1),z_2\big)$. Il dominio cercato è $\Omega'=\Phi(\mathbb{B}^2)$. L'unica cosa non immediata da verificare è che sia ultravisibile, e per farlo verificheremo che sia localmente Goldilocks; quindi ci interessa soltanto $\partial\Omega$. Per costruzione, $\Phi$ si estende a un embedding $C^1$ su $\overline{\mathbb{B}^2}\setminus(A\times\{0\})$, per cui $\partial\Omega'=\Phi\big(\partial\mathbb{B}^2\setminus(A\times\{0\})\big)$; allora, poiché $\mathbb{B}^2$ è Goldilocks e l'estensione di $\Phi$ è localmente un diffeomorfismo $C^1$ vicino ai punti di $\partial\mathbb{B}^2\setminus(A\times\{0\})$, si ottiene che $\Omega'$ è localmente Goldilocks.
