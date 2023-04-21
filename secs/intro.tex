@@ -1,12 +1,12 @@
 L'obiettivo di questa tesi è dimostrare alcune possibili generalizzazioni, in più variabili complesse, o anche per varietà complesse astratte che soddisfano opportune ipotesi, del teorema di Wolff-Denjoy sul comportamento delle iterate di funzioni olomorfe nel disco unitario in $\mathbb{C}$, dimostrato indipendentemente nel 1926 da Denjoy in \cite{D} e da Wolff in \cite{Wo}. Riportiamo l'enunciato di tale teorema.
 
-\begin{thm}
+\begin{thm*}
     (Wolff-Denjoy) Sia $f$ una funzione olomorfa nel disco unitario $\mathbb{D}$ in $\mathbb{C}$ a valori nel disco stesso. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
         \item la funzione $f$ ha un punto fisso nel disco; oppure,
         \item esiste un unico punto del bordo del disco tale che la successione delle iterate di $f$ converge, uniformemente sui compatti, a quel punto.
     \end{itemize}
-\end{thm}
+\end{thm*}
 
 Era già nota da tempo la generalizzazione, dovuta ad Abate (\cite[Theorem 0.5]{A2}), per domini limitati strettamente pseudoconvessi in più variabili; in questo caso, però, l'affermazione ``la funzione $f$ ha un punto fisso'' dev'essere sostituita da ``le orbite dei punti del dominio tramite $f$ sono relativamente compatte nel dominio''. Ci riferiremo a enunciati con tesi simili come teoremi di tipo ``Wolff-Denjoy''.
 
@@ -16,32 +16,32 @@ Più recentemente, in diversi articoli si è cercato di ottenere risultati analo
 
 Nel 2017 Bharali e Zimmer, nel loro articolo \cite{BZ1}, hanno dimostrato un teorema di tipo ``Wolff-Denjoy'' per una particolare classe di domini, da loro chiamati domini Goldilocks, che siano anche taut.
 
-\begin{defn}
+\begin{defn*}
     Una varietà complessa e connessa $X$ si dice \textit{taut} se ogni funzione nella chiusura di $\text{Hol}(\mathbb{D},X)$ in $C^0(\mathbb{D},X^*)$ è in $\text{Hol}(\mathbb{D},X)$ oppure è la funzione costante $\infty$.
-\end{defn}
+\end{defn*}
 
 Esempi di domini Goldilocks sono i domini limitati, pseudoconvessi e di tipo finito nel senso di D'Angelo.
 
 Nel 2021 Bharali e Maitra, in \cite{BM}, hanno osservato che la dimostrazione fatta in \cite{BZ1} può essere estesa a domini taut che soddisfino una certa condizione per i punti del bordo, detta di visibilità.
 
-\begin{defn}
+\begin{defn*}
     Sia $X$ una varietà complessa; la \textit{pseudometrica di Kobayashi} su $X$ è
     \begin{equation}\begin{split}
         K_X(x;Z)=&\inf\{|v| \mid v \in \mathbb{C}, \text{ esiste }f \in \text{Hol}(\mathbb{D},X) \\
         &\text{ tale che } f(0)=x, \diff_0 f(v)=Z\}
     \end{split}\end{equation}
     per ogni $x \in X$ e $Z \in T_xX$.
-\end{defn}
+\end{defn*}
 
-\begin{defn}
+\begin{defn*}
     Sia $X$ una varietà complessa e connessa; la \textit{pseudodistanza di Kobayashi} su $X$ è $k_X$, la forma integrata di $K_X$.
     
     Se $k_X$ è effettivamente una distanza, $X$ si dice \textit{Kobayashi-iperbolica.}
-\end{defn}
+\end{defn*}
 
 Si noti che ogni varietà taut è Kobayashi-iperbolica (\cite[Theorem 2.3.14]{A1}).
 
-\begin{defn}
+\begin{defn*}
     Sia $X$ una varietà complessa e connessa; fissiamo due costanti $\lambda \ge 1$ e $\kappa \ge 0$. Sia $I\subseteq \mathbb{R}$ un intervallo; una curva $\sigma:I \longrightarrow X$ è detta una \textit{$(\lambda,\kappa)$-simil-geodetica} se
     \begin{enumerate}
         \item per ogni $s,t \in I$ si ha
@@ -49,15 +49,15 @@ Si noti che ogni varietà taut è Kobayashi-iperbolica (\cite[Theorem 2.3.14]{A1
         \item $\sigma$ è assolutamente continua (quindi $\sigma'(t)$ esiste per quasi ogni $t \in I$) e per quasi ogni $t \in I$ si ha
         $$K_X\big(\sigma(t);\sigma'(t)\big) \le \lambda.$$
     \end{enumerate}
-\end{defn}
+\end{defn*}
 
-\begin{defn}
+\begin{defn*}
     Sia $X$ una sottovarietà complessa e connessa di una varietà complessa $Y$, e fissiamo $\lambda \ge 1$ e $\kappa \ge 0$. Diciamo che $X$ è \textit{$(\lambda,\kappa)$-visibile} se
     \begin{enumerate}
         \item ogni due punti distinti di $X$ possono essere collegati da una $(\lambda,\kappa)$-simil-geodetica;
         \item per ogni coppia di punti $p,q\in\partial_YX$ con $p\not=q$, esistono in $\overline{X}$ due intorni $V$ e $W$, di $p$ e $q$ rispettivamente, con chiusura disgiunta, e un compatto $K$ di $X$ tali che  ogni $(\lambda,\kappa)$-simil-geodetica in $X$ che collega un punto di $V$ a un punto di $W$ interseca $K$.
     \end{enumerate}
-\end{defn}
+\end{defn*}
 
 Bharali e Maitra hanno anche dimostrato un teorema di tipo ``Wolff-Denjoy'' per domini di tipo topologico finito; inoltre, hanno definito e costruito esempi di una classe di domini, che chiamano domini Caltrops, che sono taut e hanno la condizione di visibilità, ma non sono domini Goldilocks.
 
@@ -76,9 +76,21 @@ In questa tesi ci poniamo l'obiettivo di generalizzare ulteriormente il teorema 
 
 Nell'enunciato che vogliamo dimostrare, l'ipotesi che la varietà sia una sottovarietà limitata di $\mathbb{C}^d$ sarà sostituita dall'essere una sottovarietà tautly embedded di una varietà Kobayashi-iperbolica; tale ipotesi può essere interpretata dicendo che per la sottovarietà vale una forma del teorema di Montel.
 
-\begin{defn}
+\begin{defn*}
     Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Diciamo che $X$ è \textit{tautly embedded} in $Y$ se $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$.
-\end{defn}
+\end{defn*}
+
+Ecco infine il Teorema che ci proponiamo di dimostrare.
+
+\begin{thm*}
+    Sia $X$ una sottovarietà complessa e tautly embedded di una varietà Kobayashi-iperbolica $Y$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+    
+    Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
+    \begin{itemize}
+        \item le orbite dei punti di $X$ tramite $F$ sono relativamente compatte in $X$; oppure,
+        \item esiste un unico punto di $\partial_YX$ tale che la successione delle iterate di $F$ converge, uniformemente sui compatti, a quel punto.
+    \end{itemize}
+\end{thm*}
 
 Nella sezione \ref{Preliminari} daremo le definizioni ed enunceremo i risultati alla base della teoria della dinamica olomorfa in più variabili; alcuni verranno anche dimostrati, tra cui una versione generalizzata del teorema di Montel per varietà tautly embedded e il fatto che per varietà taut vale una dicotomia nella dinamica delle funzioni olomorfe.
 
