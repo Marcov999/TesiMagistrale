@@ -27,7 +27,7 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
         \item si ha che $\{F^{\nu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi\in\partial_YX$.
     \end{enumerate}
 
-    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial_YX$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse $k_X$-completa, allora per il Lemma \ref{comp_is_comp} avremmo subito un assurdo. Altrimenti, si ha
+    Adesso, poiché abbiamo assunto che $\Gamma$ contenga almeno due elementi, esiste una sottosuccessione $\{\mu_j\}_{j\in\mathbb{N}}$ tale che $\{F^{\mu_j}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta\in\partial_YX$ con $\eta\not=\xi$. Segue immediatamente dalla Proposizione \ref{inf_impl_ugu} che non possiamo avere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)=+\infty$. Perciò dev'essere $\displaystyle\limsup_{j\longrightarrow+\infty} k_X\big(F^{\mu_j}(o),o\big)<+\infty$; notiamo che se $X$ fosse Kobayashi-iperbolica completa, allora per il Lemma \ref{comp_is_comp} avremmo subito un assurdo. Altrimenti, si ha
     \begin{equation} \label{daoainfinito}
         \begin{aligned}
             \limsup_{h\longrightarrow+\infty}\limsup_{j\longrightarrow+\infty}\, &k_X\big(F^{\nu_h}(o),F^{\mu_j}(o)\big) \\
@@ -41,7 +41,6 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
     $$M_l:=\limsup_{j\longrightarrow+\infty}k_X\big(F^{\mu_j-l}(o),o\big);$$
     affermiamo che
     $$\limsup_{l\longrightarrow+\infty}M_l<+\infty.$$
-
     Supponiamo per assurdo che non sia così; allora esiste una sottosuccessione $\{l_m\}_{m\in\mathbb{N}}$ tale che $M_{l_m}>m$ per ogni $m$. Per definizione di $M_l$ e per quanto appena trovato sulla successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$, abbiamo quindi che esiste una sottosottosuccessione $\{j_m\}_{m\in\mathbb{N}}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
         \item $d_Y\big(F^{\mu_{j_m}-l_m}(o),\eta\big)<1/m$;
@@ -78,11 +77,9 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
     $$G(q_1,q_2)<\inf_{x_1,x_2\in K}G(x_1,x_2)+\epsilon.$$
     
     Inoltre, dalla definizione di $G_{\delta}$ abbiamo che, per ogni $j\in\mathbb{N}$, esiste $m\in\mathbb{N}$ tale che $d_Y\big(F^m(q_1),\xi\big)<1/j$ e $G_{1/j}(q_1,q_2) \le k_X\big(F^m(q_1),q_2\big) \le G_{1/j}(q_1,q_2)+1/j$. Possiamo dunque trovare una funzione strettamente crescente $\nu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che per ogni $j\in\mathbb{N}$ si ha
-    \begin{gather*}
-        d_Y\big(F^{\nu(j)}(q_1),\xi\big)<1/\nu(j)\\
-        \text{e}\\
-        G_{1/\nu(j)}(q_1,q_2) \le k_X\big(F^{\nu(j)}(q_1),q_2\big) \le G_{1/\nu(j)}(q_1,q_2)+1/\nu(j);
-    \end{gather*}
+    $$d_Y\big(F^{\nu(j)}(q_1),\xi\big)<1/\nu(j)$$
+    e
+    $$G_{1/\nu(j)}(q_1,q_2) \le k_X\big(F^{\nu(j)}(q_1),q_2\big) \le G_{1/\nu(j)}(q_1,q_2)+1/\nu(j);$$
     poiché $\{F^{\nu(j)}(q_1)\}_{j\in\mathbb{N}}$ converge a $\xi$, per il Lemma \ref{lemmasottosotto2} la successione $\{F^{\nu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi$. Da come è stata scelta $\nu$, abbiamo anche che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2)$.
 
     Fissiamo adesso una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta$. Dato un compatto $K\subseteq X$, anche $F^{\mu(j)}(K)$ è compatto, in quanto immagine continua di un compatto; allora, poiché la successione $\{F^{\nu(h)}\}_{h\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$, per ogni $j\in\mathbb{N}$ fissato troviamo che la successione $\{F^{\nu(h)+\mu(j)}\}_{h\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$. Ciò implica, considerando un'esaustione di $X$ in compatti, che esiste una funzione strettamente crescente $\tau:\mathbb{N}\longrightarrow\mathbb{N}$ tale che la successione $\{F^{(\nu\circ\tau)(j)+\mu(j)}\}_{j\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$. Ricordando le proprietà di $\nu$, e a meno di rinominare le funzioni, possiamo dunque dire di avere due funzioni strettamente crescenti $\nu,\mu:\mathbb{N}\longrightarrow\mathbb{N}$ tali che:
@@ -119,7 +116,7 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
     Poiché sia il Caso 1 che il Caso 2 portano a una contraddizione, ne consegue che la supposizione che $\Gamma$ contenga almeno due punti dev'essere sbagliata, da cui segue facilmente la tesi.
 \end{proof}
 
-Vogliamo ora ottenere come conseguenza il teorema di tipo ``Wolff-Denjoy'' dimostrato in \cite{CMS}. Per fare ciò, ci servirà il seguente Lemma.
+Vogliamo ora ottenere come conseguenza il teorema di tipo ``Wolff-Denjoy'' dimostrato in \cite{CMS}. Per fare ciò, ci servirà il seguente lemma.
 
 \begin{lm} \label{rcitit}
     (\cite[Proposition 2.1.5]{A1}) Sia $X$ una sottovarietà complessa e relativamente compatta di una varietà taut $Y$. Allora $X$ è una sottovarietà tautly embedded di $Y$.
@@ -180,5 +177,5 @@ Sotto ipotesi di natura topologica si può ottenere qualcosa di più.
 \begin{proof}
     Dato che $\Omega$ è un dominio taut limitato, per \cite[Theorem F]{Wu} è pseudoconvesso. È allora ben noto che $H^j(\Omega;\mathbb{C})=0$ per ogni $j>n$ (si veda \cite[Theorema 4.2.7]{H}). Poiché $\Omega$ è di tipo topologico finito, per il teorema dei coefficienti universali si ha che
     $$\dim_{\mathbb{Q}}{H^j(\Omega;\mathbb{Q})}=\rk{H_j(\Omega;\mathbb{Z})}=\dim_{\mathbb{C}}{H^j(\Omega;\mathbb{C})}$$
-    per ogni $j\in\mathbb{N}$. Si verifica allora che $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$. Si conclude facilmente usando il Teorema \ref{periodico} e il Corollario \ref{wd_type}.
+    per ogni $j\in\mathbb{N}$. Di conseguenza, $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$. Si conclude facilmente usando il Teorema \ref{periodico} e il Corollario \ref{wd_type}.
 \end{proof}
