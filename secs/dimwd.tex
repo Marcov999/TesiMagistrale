@@ -137,7 +137,7 @@ Vogliamo ora ottenere come conseguenza il teorema di tipo ``Wolff-Denjoy'' dimos
 \end{cor}
 
 \begin{proof}
-    Poiché $X$ è limitata, esiste $R>0$ tale che $X$ è una sottovarietà complessa e relativamente compatta della varietà Kobayashi-iperbolica $\mathbb{B}_R^d$. Abbiamo già osservato che $\mathbb{B}_R^d$ è pseudoconvessa; quindi è taut per la Proposizione \ref{psdcvx_is_taut}. Allora $X$ è una sottovarietà tautly embedded di $\mathbb{B}_R^d$ per il Lemma \ref{rcitit}. Essendo anche taut e $(1,\kappa_0)$-visibile, soddisfa le ipotesi del Teorema \ref{wd_type_strong}, da cui la tesi.
+    Poiché $X$ è limitata, esiste $R>0$ tale che $X$ è una sottovarietà complessa e relativamente compatta della varietà Kobayashi-iperbolica $\mathbb{B}_R^d$. Sia $f$ una funzione nella chiusura di $\text{Hol}(\mathbb{D},\mathbb{B}_R^d)$ in $C^0(\mathbb{D},\mathbb{B}_R^d)$, e consideriamo una successione $\{f_n\}_{n\in\mathbb{N}}\subseteq\text{Hol}(\mathbb{D},\mathbb{B}_R^d)$ che vi converge. Per il teorema di Montel, a meno di sottosuccessioni possiamo supporre che la successione converga a una funzione $\tilde{f}\in\text{Hol}(\mathbb{D},\mathbb{C}^d)$ con $\tilde{f}(\mathbb{D})\subseteq \overline{\mathbb{B}_R^d}$. Supponiamo che esista $z\in\mathbb{D}$ tale che $\tilde{f}(z)\in\partial\mathbb{B}_R^d$. Componendo $\tilde{f}$ con una funzione affine che si annulla in $\tilde{f}(z)$ e ha parte reale negativa nel resto di $\mathbb{B}_R^d$, e applicando il principio del massimo, si ottiene che $\tilde{f}$ è costante; di conseguenza, $f$ è la costante $\infty$. Perciò $\mathbb{B}_R^d$ è taut. Segue dal Lemma \ref{rcitit} che $X$ è una sottovarietà tautly embedded di $\mathbb{B}_R^d$. Essendo anche taut e $(1,\kappa_0)$-visibile, soddisfa le ipotesi del Teorema \ref{wd_type_strong}, da cui la tesi.
 \end{proof}
 
 Adesso la dimostrazione del Teorema \ref{abate_wd} è immediata.
@@ -175,7 +175,12 @@ Sotto ipotesi di natura topologica si può ottenere qualcosa di più.
 \end{cor}
 
 \begin{proof}
-    Dato che $\Omega$ è un dominio taut limitato, per \cite[Theorem F]{Wu} è pseudoconvesso. È allora ben noto che $H^j(\Omega;\mathbb{C})=0$ per ogni $j>n$ (si veda \cite[Theorema 4.2.7]{H}). Poiché $\Omega$ è di tipo topologico finito, per il teorema dei coefficienti universali si ha che
+    Dato che $\Omega$ è un dominio taut limitato, per \cite[Theorem F]{Wu} è pseudoconvesso. È allora ben noto che $H^j(\Omega;\mathbb{C})=0$ per ogni $j>n$ (si veda \cite[Theorem 4.2.7]{H}). Poiché $\Omega$ è di tipo topologico finito, per il teorema dei coefficienti universali si ha che
     $$\dim_{\mathbb{Q}}{H^j(\Omega;\mathbb{Q})}=\rk{H_j(\Omega;\mathbb{Z})}=\dim_{\mathbb{C}}{H^j(\Omega;\mathbb{C})}$$
     per ogni $j\in\mathbb{N}$. Di conseguenza, $H^j(X;\mathbb{Q})=0$ per ogni $j\in\mathbb{N}$. Si conclude facilmente usando il Teorema \ref{periodico} e il Corollario \ref{wd_type}.
 \end{proof}
+
+Concludiamo il capitolo citando un teorema che mostra come in più variabili, anche nel caso di domini contraibili che soddisfano le ipotesi dei teoremi visti in questa sezione, esistono funzioni con successione delle iterate non compattamente divergente ma senza punti fissi.
+\begin{thm}
+    (\cite[Theorem 1]{AH}) Sia $G=\faktor{\mathbb{Z}}{pq\mathbb{Z}}$ con $p$ e $q$ primi fra loro. Allora esiste un dominio limitato, pseudoconvesso, taut e contraibile $\Omega\subseteq\mathbb{C}^n$ tale che $G$ vi agisce tramite funzioni lineari complesse senza punti fissi.
+\end{thm}

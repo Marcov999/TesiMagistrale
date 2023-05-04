@@ -42,7 +42,9 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari,
     \begin{nlist}
         \item la distanza di Poincaré e la pseudodistanza di Kobayashi di $\mathbb{D}$ coincidono;
         \item dati $z=(z_1,\dots,z_n)$ e $w=(w_1,\dots,w_n)$ in $\mathbb{D}^n$, si ha
-        $$k_{\mathbb{D}^n}(z,w)=\max_{j=1,\dots,n}\{\omega(z_j,w_j)\}.$$
+        $$k_{\mathbb{D}^n}(z,w)=\max_{j=1,\dots,n}\{\omega(z_j,w_j)\};$$
+        \item dati $r_1,\dots,r_n>0$ e $z_j\in \mathbb{D}_{r_j}, Z_j\in T_{z_j}\mathbb{D}_{r_j}=\mathbb{C}$ per $j=1,\dots, n$, posti $z=(z_1,\dots,z_n)$, $Z=(Z_1,\dots,Z_n)$ e $D=\mathbb{D}_{r_1}\times\dots\times\mathbb{D}_{r_n}$ si ha
+        $$K_D(z;Z) \le \max_{j=1,\dots,n} \frac{r_j|Z_j|}{r_j^2-|z_j|^2}.$$
     \end{nlist}
 \end{prop}
 \begin{proof}
@@ -60,19 +62,21 @@ Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari,
     
     Allora, detto $j_0$ l'indice per cui $\omega(0,w_{j_0})$ è massimo, si ha che anche $|w_{j_0}|$ è massimo. Consideriamo, per ogni $j=1,\dots,n$, la funzione $g_j \in\text{Hol}(\mathbb{D},\mathbb{D})$ data da $g_j(\zeta)=\zeta\cdot w_j/w_{j_0}$, di modo che $g_j(w_{j_0})=w_j$. Poniamo $\varphi=(g_1,\dots,g_n)$, per cui $\varphi\in\text{Hol}(\mathbb{D},\mathbb{D}^n)$; inoltre, $\varphi(z_{j_0})=\varphi(0)=O=z$ e $\varphi(w_{j_0})=w$. Si ha dunque, per definizione, che
     $$k_{\mathbb{D}^n}(z,w) \le \omega(0,w_{j_0})=\max_{j=1,\dots,n}\omega(0,w_j)=\max_{j=1,\dots,n}\omega(z_j,w_j),$$
-    come voluto.
+    come voluto.\\
+
+    (iii) A meno di riscalare tutto per una costante, possiamo supporre che il membro destro sia uguale a $1$ (se fosse $0$, avremmo $Z=0$ e la tesi sarebbe immediata). Consideriamo la funzione $f\in\text{Hol}(\mathbb{D},D)$ che manda $\zeta\in\mathbb{D}$ nell'elemento di $D$ che ha come $j$-esima coordinata $\dfrac{r_j\alpha_j\zeta+z_j}{1+\bar{z}_j\alpha_j\zeta/r_j}$, dove $\alpha_j=\dfrac{r_jZ_j}{r_j^2-|z_j|^2}$; allora $f(0)=z, Df(0)\cdot 1=Z$ e la disuguaglianza discende dalla definizione di $K_D$.
 \end{proof}
 
-\begin{cor}
-    I domini limitati di $\mathbb{C}^n$ sono Kobayashi-iperbolici.
+\begin{cor}\label{kobisdist}
+    Le sottovarietà complesse e connesse di varietà Kobayashi-iperboliche sono Kobayashi-iperboliche.
+    
+    In particolare, le sottovarietà complesse, connesse e limitate di $\mathbb{C}^n$ sono Kobayashi-iperboliche e i domini limitati di $\mathbb{C}^n$ sono Kobayashi-iperbolici.
 \end{cor}
 \begin{proof}
-    Dal punto (ii) della Proposizione \ref{k_polidisco} abbiamo che $k_{\mathbb{D}^n}$ è effettivamente una distanza; poiché dal Corollario \ref{bioloiso} sappiamo che $k_X$ è invariante per biolomorfismi, segue che $k_{\mathbb{D}_r^n}$ è una distanza per ogni $r>0$. Se $\Omega\subseteq\mathbb{C}^n$ è un dominio limitato, esiste $r>0$ tale che $\Omega\subseteq\mathbb{D}_r^n$. In tal caso, l'inclusione è una funzione olomorfa. Quindi, dalla Proposizione \ref{semicontr}, si ha che se $z,w \in \Omega$ con $z\not=w$ allora $0<k_{\mathbb{D}_r^n}(z,w) \le k_{\Omega}(z,w)$. Segue dunque che $k_\Omega$ è una distanza, come voluto.
-\end{proof}
+    Siano $Y$ una varietà Kobayashi-iperbolica e $X$ una sottovarietà complessa e connessa di $Y$. In particolare, l'inclusione di $X$ in $Y$ è una funzione olomorfa; allora, dati $x,y\in X$ con $x\not=y$, per la Proposizione \ref{semicontr} si ha che $k_X(x,y)\ge k_Y(x,y)>0$, per cui $X$ è Kobayashi-iperbolica, come voluto.
 
-\begin{oss} \label{kobisdist}
-    Con la stessa dimostrazione, si ottiene anche che le sottovarietà complesse e connesse di varietà Kobayashi-iperboliche sono Kobayashi-iperboliche. In particolare, abbiamo che le sottovarietà complesse, connesse e limitate di $\mathbb{C}^d$ sono Kobayashi-iperboliche.
-\end{oss}
+    Se invece $X$ è una sottovarietà complessa, connessa e limitata o un dominio limitato di $\mathbb{C}^n$, esiste $r>0$ tale che $\Omega\subseteq\mathbb{D}_r^n$ e tale per cui l'inclusione di $X$ in $\mathbb{D}_r^n$ è un embedding. Dal punto (ii) della Proposizione \ref{k_polidisco} abbiamo che $k_{\mathbb{D}^n}$ è effettivamente una distanza; poiché dal Corollario \ref{bioloiso} sappiamo che $k_X$ è invariante per biolomorfismi, segue che anche $k_{\mathbb{D}_r^n}$ è una distanza.
+\end{proof}
 
 Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi.
 
@@ -470,7 +474,11 @@ Per finire, vediamo un teorema di tipo ``Wolff-Denjoy'' per domini strettamente 
 \end{defn}
 
 \begin{defn}
-    Sia\marginpar{Per definirlo non c'è molto altro da dire, l'Osservazione dopo serviva ad aggiungere i fatti interessanti} $(X,d)$ uno spazio metrico Gromov-iperbolico. Fissato $w \in X$, il \textit{bordo iperbolico} $\partial^GX$ è dato dalle classi di equivalenza delle successioni $(x_i)$ che convergono a infinito, cioè tali che $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$; due tali successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
+    Sia $(X,d)$ uno spazio metrico Gromov-iperbolico. Una successione $(x_i)$ \textit{converge a infinito} se $\displaystyle\lim_{i,j\rightarrow+\infty}(x_i,x_j)_w=+\infty$.
+\end{defn}
+
+\begin{defn}
+    Sia\marginpar{Per definirlo non c'è molto altro da dire, l'Osservazione dopo serviva ad aggiungere i fatti interessanti} $(X,d)$ uno spazio metrico Gromov-iperbolico. Fissato $w \in X$, il \textit{bordo iperbolico} $\partial^GX$ è dato dalle classi di equivalenza delle successioni convergenti a infinito quozientate tramite la seguente relazione di equivalenza: due successioni $(x_i), (y_i)$ sono equivalenti se $\displaystyle\lim_{i\rightarrow+\infty}(x_i,y_i)_w=+\infty$. Questa costruzione è indipendente dalla scelta di $w$.
 
     Inoltre, è possibile estendere il prodotto di Gromov a tutto $X\cup\partial^GX$ in modo che valga ancora la disuguaglianza per la Gromov-iperbolicità, eventualmente cambiando $\delta$. Il bordo iperbolico possiede anche una \textit{classe canonica di distanze} correlate al prodotto di Gromov, che inducono tutte la stessa topologia.
 \end{defn}
