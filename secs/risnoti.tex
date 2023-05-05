@@ -22,8 +22,6 @@ Il seguente fatto verrà usato spesso.
 
 \begin{lm} \label{c0yx}
     Siano $(X,d)$ uno spazio metrico e $Y$ uno spazio topologico tale che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ di compatti di $Y$ con la seguente proprietà: per ogni compatto $K\subseteq Y$ esiste $n\in\mathbb{N}$ tale che $K\subseteq K_n$. Allora $C^0(Y,X)$ è metrizzabile.
-    
-    In particolare, un suo sottoinsieme è chiuso (rispettivamente, compatto) se e solo se è chiuso (rispettivamente, compatto) per successioni.
 \end{lm}
 
 \begin{proof}
@@ -33,6 +31,14 @@ Il seguente fatto verrà usato spesso.
     $$\tilde{d}(f,g)=\sum_{n=1}^{+\infty} \frac{1}{2^n}\cdot\frac{d_n(f,g)}{1+d_n(f,g)}.$$
 
     È facile verificare che $\tilde{d}$ è una distanza, che induce proprio la topologia della convergenza uniforme sui compatti.
+\end{proof}
+
+\begin{cor} \label{ciffcps}
+    Siano $Y$ una varietà e $X$ una varietà o la compattificazione di Alexandroff di una varietà. Allora $C^0(Y,X)$ è metrizzabile; in particolare, un suo sottoinsieme è chiuso (rispettivamente, compatto) se e solo se è chiuso (rispettivamente, compatto) per successioni.
+\end{cor}
+
+\begin{proof}
+    Basta verificare le ipotesi del Lemma \ref{c0yx}. Che esista una successione di compatti come quella del lemma per $Y$ segue dal fatto che è una varietà, per cui ci rimane da verificare che $X$ sia metrizzabile. Questo è noto nel caso in cui sia una varietà, e segue da \cite[4.16]{Ke} nel caso in cui sia la compattificazione di Alexandroff di una varietà.
 \end{proof}
 
 Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari, dalla quale discende un'importante conseguenza.
@@ -119,7 +125,7 @@ Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi i
 \end{proof}
 
 \begin{prop} \label{alex}
-    (\cite[Theorem 1.3]{A3}) Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
+    (\cite[Theorem 1.3]{A4}) Sia $X$ una varietà complessa e connessa. Allora $X$ è Kobayashi-iperbolica se e solo se $\textnormal{Hol}(\mathbb{D},X)$ è relativamente compatto in $C^0(\mathbb{D},X^*)$, dove $X^*$ è la compattificazione di Alexandroff di $X$.
     
     Inoltre, se $X$ è Kobayashi-iperbolica allora $\textnormal{Hol}(Y,X)$ è relativamente compatto in $C^0(Y,X^*)$ per ogni varietà complessa $Y$.
 \end{prop}
@@ -141,13 +147,13 @@ Strettamente legato al concetto di varietà taut è quello di varietà tautly em
 \end{defn}
 
 \begin{prop} \label{montel}
-    (\cite[Proposition 2.1.4, point (i)]{A1})\marginpar{Ma l'articolo di Kiernan mica dimostra questa equivalenza...} Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Allora $X$ è tautly embedded in $Y$ se e solo se $\textnormal{Hol}(W,X)$ è relativamente compatto in $\textnormal{Hol}(W,Y)$ per ogni varietà complessa $W$.
+    (\cite[Proposition 2.1.4, point (i)]{A2})\marginpar{Ma l'articolo di Kiernan mica dimostra questa equivalenza...} Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Allora $X$ è tautly embedded in $Y$ se e solo se $\textnormal{Hol}(W,X)$ è relativamente compatto in $\textnormal{Hol}(W,Y)$ per ogni varietà complessa $W$.
 \end{prop}
 
 \begin{proof}
     Un'implicazione è immediata. Viceversa, supponiamo che $X$ sia tautly embedded in $Y$, cioè che $\text{Hol}(\mathbb{D},X)$ sia relativamente compatto in $\text{Hol}(\mathbb{D},Y)$. Dato che $Y$ è una varietà, è Hausdorff, per cui le mappe costanti, che indichiamo con $\text{cost}(\mathbb{D},Y)$, sono un chiuso di $C^0(\mathbb{D},Y)$ omeomorfo a $Y$; in particolare, la chiusura di $\text{cost}(\mathbb{D},X)$ in $\text{Hol}(\mathbb{D},Y)$ è contenuta sia nella chiusura di $\text{Hol}(\mathbb{D},X)$, che è un compatto, sia in $\text{cost}(\mathbb{D},Y)$, che è un chiuso. Dunque è un compatto e, a meno di omeomorfismo, coincide con la chiusura di $X$ in $Y$; segue che $X$ è relativamente compatta in $Y$.
     
-    Dato che $Y$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $Y$ che induce la topologia di varietà. Per definizione, $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, per cui anche in $C^0(\mathbb{D},Y)$ in quanto quest'ultimo è Hausdorff perché lo è $Y$; per Ascoli-Arzelà, segue che $\text{Hol}(\mathbb{D},X)$ è equicontinuo rispetto a $d$. Per il Lemma \ref{equico} si ha che $\text{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$; inoltre, poiché $\text{Hol}(W,Y\setminus\overline{X})$ è aperto, la chiusura di $\text{Hol}(W,X)$ in $\text{Hol}(W,Y)$ è contenuta in $C^0(W,\overline{X})$. Dato che $\overline{X}$ è compatto, possiamo applicare Ascoli-Arzelà per ottenere che $\text{Hol}(W,X)$ è relativamente compatto in $C^0(W,Y)$. Abbiamo che, essendo $Y$ metrizzabile e $W$ una varietà, valgono le ipotesi del Lemma \ref{c0yx}; quindi la chiusura di $\text{Hol}(W,X)$ in $C^0(W,Y)$ coincide con la chiusura per successioni. Per il teorema di Weierstrass, applicato in carte opportune, tale chiusura è contenuta in $\text{Hol}(W,Y)$, da cui la tesi.
+    Dato che $Y$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $Y$ che induce la topologia di varietà. Per definizione, $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, per cui anche in $C^0(\mathbb{D},Y)$ in quanto quest'ultimo è Hausdorff perché lo è $Y$; per Ascoli-Arzelà, segue che $\text{Hol}(\mathbb{D},X)$ è equicontinuo rispetto a $d$. Per il Lemma \ref{equico} si ha che $\text{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$; inoltre, poiché $\text{Hol}(W,Y\setminus\overline{X})$ è aperto, la chiusura di $\text{Hol}(W,X)$ in $\text{Hol}(W,Y)$ è contenuta in $C^0(W,\overline{X})$. Dato che $\overline{X}$ è compatto, possiamo applicare Ascoli-Arzelà per ottenere che $\text{Hol}(W,X)$ è relativamente compatto in $C^0(W,Y)$. Per il Corollario \ref{ciffcps}, la chiusura di $\text{Hol}(W,X)$ in $C^0(W,Y)$ coincide con la chiusura per successioni. Per il teorema di Weierstrass, applicato in carte opportune, tale chiusura è contenuta in $\text{Hol}(W,Y)$, da cui la tesi.
 \end{proof}
 
 Ci servirà anche il seguente fatto.
@@ -180,7 +186,7 @@ Iniziamo dando una caratterizzazione equivalente all'essere taut per una variet�
     Una varietà complessa e connessa $X$ è taut se e solo se la famiglia $\textnormal{Hol}(\mathbb{D},X)$ è normale.
 \end{prop}
 \begin{proof}
-    Supponiamo che $X$ sia taut e consideriamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per definizione $X$ è Kobayashi-iperbolica; dunque per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$. Poiché $X$ è una varietà, $X^*$ è metrizzabile per \cite[4.16]{Ke}; inoltre, è facile vedere che $\mathbb{D}$ soddisfa le ipotesi dello spazio $Y$ nel Lemma \ref{c0yx}. Quindi $C^0(\mathbb{D},X^*)$ è metrizzabile e la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante $\infty$. Ma, dalla definizione della compattificazione di Alexandroff, una successione in $C^0(\mathbb{D},X)$ converge in $C^0(\mathbb{D},X^*)$ alla funzione costante $\infty$ se e solo se è compattamente divergente; quindi $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
+    Supponiamo che $X$ sia taut e consideriamo una successione $\{f_{\nu}\}_{\nu\in\mathbb{N}}$ in $\text{Hol}(\mathbb{D},X)$. Per definizione $X$ è Kobayashi-iperbolica; dunque, per la Proposizione \ref{alex}, la chiusura di $\text{Hol}(\mathbb{D},X)$ è compatta in $C^0(\mathbb{D},X^*)$; per il Corollario \ref{ciffcps}, è compatta per successioni. Allora esiste una sottosuccessione $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ che converge, uniformemente sui compatti, a una qualche funzione $f$. Se $f \in \text{Hol}(\mathbb{D},X)$ abbiamo concluso; altrimenti, poiché $X$ è taut, $f$ è la funzione costante $\infty$. Ma, dalla definizione della compattificazione di Alexandroff, una successione in $C^0(\mathbb{D},X)$ converge in $C^0(\mathbb{D},X^*)$ alla funzione costante $\infty$ se e solo se è compattamente divergente; quindi $\{f_{\nu_j}\}_{j \in \mathbb{N}}$ è compattamente divergente. In ogni caso, possiamo concludere che $\text{Hol}(\mathbb{D},X)$ è normale.
 
     Supponiamo adesso che $\text{Hol}(\mathbb{D},X)$ sia normale. Se $f$ è una funzione nella sua chiusura in $C^0(\mathbb{D},X^*)$, allora è il limite di una successione in $\text{Hol}(\mathbb{D},X)$. Poiché questa famiglia è normale, possiamo trovare una sottosuccessione che converge uniformemente sui compatti oppure è compattamente divergente, ma dovrà comunque convergere a $f$. Allora nel primo caso, applicando il teorema di Weierstrass in carte opportune, troviamo che $f \in \text{Hol}(\mathbb{D},X)$, mentre nel secondo caso è la funzione costante $\infty$. Dunque $X$ è taut.
 \end{proof}
@@ -194,7 +200,7 @@ Si può dimostrare qualcosa di più.
 \begin{proof}
     Come fatto nella dimostrazione della Proposizione \ref{tautsse}, possiamo fissare una distanza $d$ su $X^*$ compatibile con la sua topologia. Poiché $X$ è taut si ha che $\text{Hol}(\mathbb{D},X)\cup\{\infty\}$ è compatto in $C^0(\mathbb{D},X^*)$, da cui, per Ascoli-Arzelà, abbiamo che è equicontinuo rispetto a $d$. Allora, per il Lemma \ref{equico}, $\text{Hol}(Y,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $Y$.
 
-    Supponiamo adesso che esista una varietà complessa $Y$ tale che $\text{Hol}(Y,X)$ non sia normale. Allora $\text{Hol}(Y,X)\cup\{\infty\}$ non è un compatto di $C^0(Y,X^*)$; dato che è equicontinuo rispetto a $d$, per Ascoli-Arzelà abbiamo che non è un chiuso di $C^0(Y,X^*)$. Poiché $Y$ è una varietà soddisfa le ipotesi del Lemma \ref{c0yx}, per cui $C^0(Y,X^*)$ è metrizzabile; allora $\text{Hol}(Y,X)\cup\{\infty\}$ non è chiuso se e solo se non è chiuso per successioni, cioè esiste una successione $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq \text{Hol}(Y,X)$ convergente, uniformemente sui compatti, a una funzione $f\in C^0(Y,X^*)$ che non sta né in $C^0(Y,X)$ (altrimenti starebbe in $\text{Hol}(Y,X)$, per Weierstrass applicato a carte opportune) né è la funzione costante $\infty$. Allora è facile mostrare che esiste un punto $z_0\in Y$ tale che $f(z_0)=\infty$ e $f$ non è identicamente $\infty$ in ogni intorno di $z_0$. Inoltre, scegliendo un opportuno sistema di coordinate locali, possiamo assumere senza perdita di generalità che $Y$ sia una qualche $\mathbb{B}^n$ e che $z_0=0$.
+    Supponiamo adesso che esista una varietà complessa $Y$ tale che $\text{Hol}(Y,X)$ non sia normale. Allora $\text{Hol}(Y,X)\cup\{\infty\}$ non è un compatto di $C^0(Y,X^*)$; dato che è equicontinuo rispetto a $d$, per Ascoli-Arzelà abbiamo che non è un chiuso di $C^0(Y,X^*)$. Per il Corollario \ref{ciffcps}, $\text{Hol}(Y,X)\cup\{\infty\}$ non è chiuso se e solo se non è chiuso per successioni, cioè esiste una successione $\{f_\nu\}_{\nu\in\mathbb{N}}\subseteq \text{Hol}(Y,X)$ convergente, uniformemente sui compatti, a una funzione $f\in C^0(Y,X^*)$ che non sta né in $C^0(Y,X)$ (altrimenti starebbe in $\text{Hol}(Y,X)$, per Weierstrass applicato a carte opportune) né è la funzione costante $\infty$. Allora è facile mostrare che esiste un punto $z_0\in Y$ tale che $f(z_0)=\infty$ e $f$ non è identicamente $\infty$ in ogni intorno di $z_0$. Inoltre, scegliendo un opportuno sistema di coordinate locali, possiamo assumere senza perdita di generalità che $Y$ sia una qualche $\mathbb{B}^n$ e che $z_0=0$.
 
     Dato che $f\not\equiv\infty$, esiste $z_1\in\mathbb{B}^n$ tale che $f(z_1)\not=\infty$. Possiamo allora definire le funzioni $g_\nu\in\text{Hol}(\mathbb{D},X)$ e $g\in C^0(\mathbb{D},X^*)$ come $g_\nu(\zeta)=f_\nu(\zeta z_1/\|z_1\|)$ per ogni $\nu\in\mathbb{N}$ e $g(\zeta)=f(\zeta z_1/\|z_1\|)$. Allora $g_\nu\longrightarrow g$ per $\nu\longrightarrow+\infty$ uniformemente sui compatti, ma $g\not\in C^0(\mathbb{D},X)\cup\{\infty\}$, in contraddizione con il fatto che l'insieme $\text{Hol}(\mathbb{D},X)\cup\{\infty\}$ è un compatto, e in particolare un chiuso (per successioni), di $C^0(\mathbb{D},X^*)$, che abbiamo già visto essere metrizzabile.
 \end{proof}
@@ -267,7 +273,7 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche tali ch
     Posto $R_\zeta=\max\{k_{\mathbb{D}}(\zeta,\zeta')\mid \zeta'\in H\}$, si ha dunque che la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è contenuta nella $k_X$-palla chiusa di centro $z_0$ e raggio $R_\zeta+r$, che è compatta per il Lemma \ref{comp_is_comp}; di conseguenza, la successione $\{\varphi_\nu(\zeta)\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $X$. Inoltre, poiché $X$ è Kobayashi-iperbolica, l'intera famiglia $\text{Hol}(\mathbb{D},X)$ è equicontinua (è $1$-lipschitziana rispetto alla distanza di Kobayashi); dunque, per il teorema di Ascoli-Arzelà, la successione $\{\varphi_\nu\}_{\nu\in\mathbb{N}}$ è relativamente compatta in $C^0(\mathbb{D},X)$. In particolare, ammette una sottosuccessione che converge in $C^0(\mathbb{D},X)$; applicando il teorema di Weierstrass in carte opportune, si vede che il limite appartiene a $\text{Hol}(\mathbb{D},X)$, da cui la tesi.
 \end{proof}
 
-\begin{ex}
+\begin{ex} \label{rosex}
     In \cite{Rosay} viene costruito un esempio di un dominio di $\mathbb{C}^3$ limitato (dunque Kobayashi-iperbolico) e taut, ma non Kobayashi-completo.
 \end{ex}
 
@@ -359,7 +365,7 @@ Ci servirà il seguente fatto sull'immagine di una retrazione olomorfa dovuto a 
 Dobbiamo ora studiare alcune proprietà delle funzioni limite di funzioni olomorfe su varietà taut.
 
 \begin{thm} \label{retraiii}
-    (\cite[Theorem 2.1.29]{A1}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un'unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà complessa $M$ di $X$ tale che ogni funzione limite $h\in\Gamma(f)$ è della forma
+    (\cite[Theorem 2.1.29]{A2}) Sia $X$ una varietà taut e consideriamo $f\in\textnormal{Hol}(X,X)$. Se la successione $\{f^k\}_{k\in\mathbb{N}}$ delle iterate di $f$ non è compattamente divergente, allora esiste un'unica retrazione olomorfa $\rho\in\Gamma(f)$ su una sottovarietà complessa $M$ di $X$ tale che ogni funzione limite $h\in\Gamma(f)$ è della forma
     $$h=\gamma\circ\rho,$$
     con $\gamma\in\textnormal{Aut}(M)$.
 
@@ -407,7 +413,7 @@ Dobbiamo ora studiare alcune proprietà delle funzioni limite di funzioni olomor
 Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma di cinque asserzioni equivalenti.
 
 \begin{thm} \label{dicotomia}
-    (\cite[Theorem 1.1]{A2}) Sia $X$ una varietà taut e consideriamo $f \in \textnormal{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
+    (\cite[Theorem 1.1]{A3}) Sia $X$ una varietà taut e consideriamo $f \in \textnormal{Hol}(X,X)$. Le seguenti affermazioni sono equivalenti:
     \begin{nlist}
         \item la successione $\{f^k\}_{k \in \mathbb{N}}$ delle iterate di $f$ non è compattamente divergente;
         \item la successione $\{f^k\}_{k \in \mathbb{N}}$ delle iterate di $f$ non contiene alcuna sottosuccessione compattamente divergente;
@@ -420,7 +426,7 @@ Vediamo finalmente la dicotomia cercata. Nello specifico, la vedremo nella forma
 \begin{proof}
     (v) $\implies$ (ii). Consideriamo $H=\{z_0\}$ e $K=\overline{\{f^k(z_0)\mid k\in\mathbb{N}\}}$; ovviamente $H$ è compatto, e $K$ lo è per l'ipotesi (v). Allora $f^k(H)\cap K\not=\emptyset$ per ogni $k\in\mathbb{N}$, per cui $\{f^k\}_{k \in \mathbb{N}}$ non può contenere sottosuccessioni compattamente divergenti.
 
-    (ii) $\implies$ (iii). Poiché $X$ è una varietà, $X$ e $X^*$ soddisfano le ipotesi del Lemma \ref{c0yx}, da cui $C^0(X,X^*)$ è metrizzabile; dunque $\text{Hol}(X,X)$, visto come suo sottospazio, è metrizzabile. Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatta, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è taut, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
+    (ii) $\implies$ (iii). Per il Corollario \ref{ciffcps} $C^0(X,X^*)$ è metrizzabile; dunque anche il suo sottospazio $\text{Hol}(X,X)$ è metrizzabile. Quindi, se per assurdo $\{f^k\}_{k \in \mathbb{N}}$ non fosse relativamente compatta, ammetterebbe una sottosuccessione $\{f^{k_\nu}\}_{\nu\in\mathbb{N}}$ senza sottosottosuccessioni convergenti. Ma allora, dato che $X$ è taut, conterrebbe una sottosottosuccessione compattamente divergente, ottenendo così una contraddizione all'ipotesi (ii).
 
     (iii) $\implies$ (iv). Fissiamo $z\in X$ e consideriamo la funzione $\text{Hol}(X,X)\longrightarrow X$ data da $f\longmapsto f(z)$. Questa funzione è continua rispetto alla topologia su $\text{Hol}(X,X)$, per cui l'immagine della chiusura di $\{f^k\mid k\in\mathbb{N}\}$ è compatta perché immagine di un compatto, chiusa perché compatta in uno spazio di Hausdorff, e contiene $\{f^k(z)\mid k\in\mathbb{N}\}$. Perciò l'orbita di $z$ è contenuta in un compatto chiuso, e quindi è relativamente compatta, come voluto.
 
@@ -484,13 +490,13 @@ Per finire, vediamo un teorema di tipo ``Wolff-Denjoy'' per domini strettamente 
 \end{defn}
 
 \begin{oss}
-    È possibile\marginpar{In \cite{BH} usa l'ipotesi proprio e geodetico per dire che la topologia è la stessa; non vorrei fosse una cosa diversa da quella a cui mi sto riferendo} mettere una topologia su $X\cup\partial^GX$ che lo rende uno spazio compatto, e tale che ristretta a $\partial^GX$ coincida con la topologia indotta dalla classe canonica di distanze. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli.
+    Se $X$ è proprio, cioè ogni suo sottoinsieme chiuso e limitato è compatto, e geodetico, cioè ogni coppia di punti è collegata da una geodetica, è possibile mettere una topologia su $X\cup\partial^GX$ che lo rende uno spazio compatto, e tale che ristretta a $\partial^GX$ coincida con la topologia indotta dalla classe canonica di distanze. Si veda \cite[Part III, Chapter H, Paragraph 3]{BH} per i dettagli. Più avanti (Osservazione \ref{spscvxisvis}) vedremo che i domini limitati e strettamente pseudoconvessi rientrano in questo caso.
 \end{oss}
 
 Il Teorema, che già era noto ancora prima che venisse mostrata la Gromov-iperbolicità, è il seguente.
 
 \begin{thm} \label{abate_wd}
-    (Abate, \cite[Theorem 0.5]{A2}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso, e sia $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
+    (Abate, \cite[Theorem 0.5]{A3}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato e strettamente pseudoconvesso, e sia $f \in \textnormal{Hol}(\Omega,\Omega)$. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
         \item le orbite dei punti di $\Omega$ tramite $f$ sono relativamente compatte in $\Omega$; oppure,
         \item esiste un unico punto di $\partial\Omega$ tale che le iterate di $f$ convergono tutte, uniformemente sui compatti, a quel punto.
@@ -506,7 +512,7 @@ Per dimostrarlo usando la Gromov-iperbolicità, è prima necessario mostrare che
 Serve anche un Teorema dovuto a Karlsson.
 
 \begin{thm} \label{karlsson}
-    (Karlsson, \cite[Corollary 3.7]{Ka}) Sia $(X,d)$ uno spazio metrico proprio, cioè in cui ogni ogni sottoinsieme chiuso e limitato è compatto, tale che
+    (Karlsson, \cite[Corollary 3.7]{Ka}) Sia $(X,d)$ uno spazio metrico proprio tale che:
     \begin{nlist}
         \item è un aperto denso di uno spazio topologico $\overline{X}$ compatto e di Hausdorff la cui topologia di sottospazio coincide con la topologia di spazio metrico. Inoltre, dati $x \in X$ e $x_n$ una successione in $X$ che converge a un punto di $\overline{X}\setminus X$, si ha $\displaystyle\lim_{n\longrightarrow+\infty}d(x,x_n)=+\infty$;
         \item date $x_n$ e $y_n$ due successioni convergenti a due punti distinti di $\overline{X}\setminus X$ e $z \in X$, si ha $\displaystyle\lim_{n\longrightarrow+\infty} d(x_n,y_n)-\max\{d(x_n,z),d(y_n,z)\}=+\infty$.
