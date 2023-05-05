@@ -38,7 +38,7 @@ Il seguente fatto verrà usato spesso.
 Vediamo adesso l'espressione esplicita per $k_X$ in un paio di casi particolari, dalla quale discende un'importante conseguenza.
 
 \begin{prop} \label{k_polidisco}
-    (\cite[Proposition 2.3.4 and Corollary 2.3.7]{A1}) Valgono le seguenti affermazioni:
+    (\cite[Section 1 and Section 2]{Roy}) Valgono le seguenti affermazioni:
     \begin{nlist}
         \item la distanza di Poincaré e la pseudodistanza di Kobayashi di $\mathbb{D}$ coincidono;
         \item dati $z=(z_1,\dots,z_n)$ e $w=(w_1,\dots,w_n)$ in $\mathbb{D}^n$, si ha
@@ -96,10 +96,10 @@ Citiamo ora un risultato che lega pseudometrica e pseudodistanza di Kobayashi.
     Qui, $d_X$ è la distanza indotta dalla metrica hermitiana $\|\cdot\|_X$, e $l_X(\gamma)$ è ben definita in entrambi i casi.
 \end{thm}
 
-Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica; non lo dimostreremo tutto, ma per la parte che andremo a mostrare avremo bisogno del ben noto teorema di Ascoli-Arzelà.
+Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi importante per ciò che andremo a dimostrare: infatti, quest'ipotesi ci darà la dicotomia nella tesi dei teoremi di tipo ``Wolff-Denjoy''. Vedremo anche con un esempio l'importanza di tale ipotesi. Prima di dare la definizione, ci servirà un risultato sul comportamento delle funzioni olomorfe a valori in una varietà Kobayashi-iperbolica; non lo dimostreremo tutto, ma per la parte che andremo a mostrare avremo bisogno del ben noto teorema di Ascoli-Arzelà. Per una dimostrazione si veda \cite[Chapter 7, Theorem 17]{Ke}.
 
 \begin{thm}
-    (Ascoli-Arzelà, \cite[Chapter 7, Theorem 17]{Ke}) Siano $X$ uno spazio metrico e $Y$ uno spazio metrico localmente compatto. Allora un famiglia $\mathcal{F}\subseteq C^0(Y,X)$ è relativamente compatta in $C^0(Y,X)$ se e solo se le seguenti due condizioni sono soddisfatte:
+    (Ascoli-Arzelà) Siano $X$ uno spazio metrico e $Y$ uno spazio metrico localmente compatto. Allora un famiglia $\mathcal{F}\subseteq C^0(Y,X)$ è relativamente compatta in $C^0(Y,X)$ se e solo se le seguenti due condizioni sono soddisfatte:
     \begin{nlist}
         \item $\mathcal{F}$ è equicontinua;
         \item l'insieme $\{f(y)\mid f\in\mathcal{F}\}$ è relativamente compatto in $X$ per ogni $y\in Y$.
@@ -107,7 +107,7 @@ Introduciamo adesso il concetto di varietà taut, che sarà per noi un'ipotesi i
 \end{thm}
 
 \begin{lm} \label{equico}
-    (\cite[Proposition 2.1.1]{A1}) Siano $X$ una varietà complessa e $d$ una distanza su $X$ compatibile con la topologia di varietà. Supponiamo che $\textnormal{Hol}(\mathbb{D},X)$ sia equicontinuo rispetto a $d$; allora $\textnormal{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$.
+    (\cite[Theorem 1]{B1}) Siano $X$ una varietà complessa e $d$ una distanza su $X$ compatibile con la topologia di varietà. Supponiamo che $\textnormal{Hol}(\mathbb{D},X)$ sia equicontinuo rispetto a $d$; allora $\textnormal{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$.
 \end{lm}
 
 \begin{proof}
@@ -141,7 +141,7 @@ Strettamente legato al concetto di varietà taut è quello di varietà tautly em
 \end{defn}
 
 \begin{prop} \label{montel}
-    (\cite[Proposition 2.1.4, point (i)]{A1}) Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Allora $X$ è tautly embedded in $Y$ se e solo se $\textnormal{Hol}(W,X)$ è relativamente compatto in $\textnormal{Hol}(W,Y)$ per ogni varietà complessa $W$.
+    (\cite[Proposition 2.1.4, point (i)]{A1})\marginpar{Ma l'articolo di Kiernan mica dimostra questa equivalenza...} Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Allora $X$ è tautly embedded in $Y$ se e solo se $\textnormal{Hol}(W,X)$ è relativamente compatto in $\textnormal{Hol}(W,Y)$ per ogni varietà complessa $W$.
 \end{prop}
 
 \begin{proof}
@@ -188,7 +188,7 @@ Iniziamo dando una caratterizzazione equivalente all'essere taut per una variet�
 Si può dimostrare qualcosa di più.
 
 \begin{prop}
-    (\cite[Theorem 2.1.2]{A1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
+    (\cite[Theorem 2]{B1}) Sia $X$ una varietà taut. Allora $\textnormal{Hol}(Y,X)$ è una famiglia normale per ogni varietà complessa $Y$.
 \end{prop}
 
 \begin{proof}
