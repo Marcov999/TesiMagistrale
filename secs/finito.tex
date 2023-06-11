@@ -14,7 +14,7 @@ Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini 
 \end{defn}
 
 \begin{defn}
-    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. Il \textit{tipo} di $\xi$ è dato da
+    Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e funzione di definzione $\rho$ e $\xi\in\partial\Omega$. Il \textit{tipo} di $\xi$ è dato da
     $$\Delta_1(\xi):=\sup_{f\in\mathcal{D}_{\xi}} v_0(\rho\circ f).$$
 \end{defn}
 
@@ -54,7 +54,7 @@ Possiamo allora dimostrare che per i domini limitati, pseudoconvessi e di tipo f
     con $s>0$ per $r$ sufficientemente piccolo, per cui la condizione (1) nella Definizione \ref{gold} è soddisfatta.
 \end{proof}
 
-Andiamo ora a dimostrare che soddisfano anche la condizione (2). Per questa, servono ipotesi meno stringenti.
+Andiamo ora a dimostrare che soddisfano anche la condizione (2). Per questa servono ipotesi meno stringenti.
 
 \begin{prop} \label{finito_is_2}
     (\cite[Proposition 1.2]{A1}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato con bordo $C^2$. Allora $\Omega$ soddisfa la condizione (2) nella Definizione \ref{gold}.
@@ -66,9 +66,9 @@ Andiamo ora a dimostrare che soddisfano anche la condizione (2). Per questa, ser
         \item si ha $U_\epsilon=\{z\in\mathbb{C}^n\mid\delta_\Omega(z)<\epsilon\}$;
         \item per ogni $z\in\Omega\cap U_\epsilon$ esiste un unico punto $\pi(z)\in\partial\Omega$ con $\|\pi(z)-z\|=\delta_\Omega(z)$;
         \item per ogni $z\in\Omega$, la fibra $\pi^{-1}\big(\pi(z)\big)$ è un sottoinsieme della normale a $\partial\Omega$ in $\pi(z)$;
-        \item la mappa $z\longmapsto\big(\pi(z),\delta_\Omega(z)\big)$ è un omeomorfismo tra $U_\epsilon$ e $\partial\Omega\times(0,\epsilon)$.
+        \item la mappa $z\longmapsto\big(\pi(z),\delta_\Omega(z)\big)$ è un omeomorfismo tra $U_\epsilon$ e $\partial\Omega\times(-\epsilon,\epsilon)$.
     \end{nlist}
-    È facile osservare che, per ogni $z\in\Omega$ con $\delta_\Omega(z)=\epsilon$, si ha che la palla euclidea di centro $z$ e raggio $\epsilon$ è tutta contenuta in $\Omega$. Presi allora $p,q\in\Omega$ con $\pi(p)=\pi(q)$ e $\epsilon\ge\delta_\Omega(p)\ge\delta_\Omega(q)$, poniamo $z_0$ il punto (interno a $\Omega$) della normale a $\partial\Omega$ in $\pi(p)$ tale che $\delta_\Omega(z_0)=\epsilon$. Usando la funzione olomorfa $\varphi:\mathbb{D}\longrightarrow\Omega$ tale che $\varphi(\zeta)=z_0+\zeta\big(\pi(p)-z_0\big)$, troviamo
+    È facile osservare che, per ogni $z\in\Omega$ con $\delta_\Omega(z)=\epsilon$, si ha che la palla euclidea di centro $z$ e raggio $\epsilon$ è tutta contenuta in $\Omega$. Presi allora $p,q\in\Omega$ con $\pi(p)=\pi(q)$ e $\epsilon\ge\delta_\Omega(p)\ge\delta_\Omega(q)$, poniamo $z_0$ il punto (interno a $\Omega$) della normale a $\partial\Omega$ in $\pi(p)$ tale che $\delta_\Omega(z_0)=\epsilon$. Usando la funzione olomorfa $\varphi:\mathbb{D}\longrightarrow\Omega$ data da $\varphi(\zeta)=z_0+\zeta\big(\pi(p)-z_0\big)$, troviamo
     $$k_\Omega(p,q) \le \dfrac{1}{2}\log{\dfrac{\delta_\Omega(p)}{\delta_\Omega(q)}}.$$
 
     Adesso, notiamo che l'insieme $K=\{z\in\Omega\mid\delta_\Omega(z)\ge\epsilon\}$ è compatto. Dato $x_0\in\Omega$, basta allora prendere $\alpha=1/2$ e $C=\frac{1}{2}\log{\epsilon}+D_{k_{\Omega}}(x_0,K)$, dove abbiamo posto $D_{k_\Omega}(x_0,K)=\max\{k_\Omega(x_0,z)\mid z\in K\}$. Segue dunque che $\Omega$ soddisfa la condizione (2) nella Definizione \ref{gold}.

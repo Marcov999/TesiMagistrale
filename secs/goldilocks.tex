@@ -1,5 +1,5 @@
-Il primo esempio di una classe di domini di $\mathbb{C}^n$ con visibilità è quello, introdotto in \cite{BZ1}, dei domini Goldilocks. Prima di darne la definizione, introduciamo per un dominio limitato $\Omega\subseteq\mathbb{C}^n$, un sottoinsieme $U\subseteq\mathbb{C}^n$ e $r>0$ la quantità
-$$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delta_\Omega(x) \le r, \|v\|=1\right\}.$$
+Il primo esempio di una classe di domini di $\mathbb{C}^n$ con visibilità è quello, introdotto in \cite{BZ1}, dei domini Goldilocks. Prima di darne la definizione, introduciamo, dati un dominio limitato $\Omega\subseteq\mathbb{C}^n$, un sottoinsieme $U\subseteq\mathbb{C}^n$ e $r>0$, la seguente quantità:
+$$M_{\Omega,U}(r):=\sup\left\{\frac{1}{K_\Omega(x;v)}\mid x\in\Omega\cap U,\delta_\Omega(x) \le r\text{ e } \|v\|=1\right\}.$$
 
 Poniamo $M_\Omega:=M_{\Omega,\mathbb{C}^n}$. La funzione $M_{\Omega,U}$ è monotona crescente, dunque misurabile secondo Lebesgue; inoltre, segue dal punto (3) della Proposizione \ref{metrica_bilip} che è anche limitata. Perciò ha senso la definizione che stiamo per dare.
 
@@ -12,7 +12,7 @@ Poniamo $M_\Omega:=M_{\Omega,\mathbb{C}^n}$. La funzione $M_{\Omega,U}$ è monot
 \end{defn}
 
 \begin{oss}
-    Il nome particolare, domini Goldilocks (Riccioli d'oro, in italiano), è dovuto al fatto che, come la protagonista della fiaba, tali domini evitano due estremi ``sgradevoli'': il bordo non ha cuspidi rivolte verso l'esterno né punti in cui il bordo stesso è piatto fino a ordine infinito. Il primo caso è escluso dalla condizione (2) nella definizione. La condizione (1) implica che il dominio è pseudoconvesso (\cite[Proposition 2.15]{BZ1}).
+    Il nome particolare, domini Goldilocks (Riccioli d'oro, in italiano), è dovuto al fatto che, come la protagonista della fiaba, tali domini evitano due estremi ``sgradevoli'': il bordo non ha cuspidi rivolte verso l'esterno né punti in cui è piatto fino a ordine infinito. Il primo caso è escluso dalla condizione (2) nella definizione. La condizione (1) implica che il dominio è pseudoconvesso (\cite[Proposition 2.15]{BZ1}).
 \end{oss}
 
 Per vedere che i domini Goldilocks soddisfano la condizione di visibilità, iniziamo mostrando un risultato che ci servirà anche nei prossimi esempi.
@@ -24,7 +24,7 @@ Per vedere che i domini Goldilocks soddisfano la condizione di visibilità, iniz
         \item si ha $S\cap\partial B(p',r)=\emptyset$.
     \end{nlist}
     
-    Inoltre, supponiamo che per ogni $q'\in\partial\Omega\setminus S$ esistono un intorno $U$ di $q'$, uno $z_0\in\Omega$ e una funzione $C^1$ strettamente crescente $f:(0,+\infty)\longrightarrow\mathbb{R}$, con $f(t)\longrightarrow+\infty$ per $t\longrightarrow+\infty$, tali che:
+    Inoltre, supponiamo che per ogni $\xi\in\partial\Omega\setminus S$ esistano un intorno $U$ di $\xi$, uno $z_0\in\Omega$ e una funzione $C^1$ strettamente crescente $f:(0,+\infty)\longrightarrow\mathbb{R}$, con $f(t)\longrightarrow+\infty$ per $t\longrightarrow+\infty$, tali che:
     \begin{enumerate}[label={(\arabic*)}]
         \item si ha $k_\Omega(z_0,z) \le f\big(1/\delta_\Omega(z)\big)$ per ogni $z\in\Omega\cap U$;
         \item si ha $M_{\Omega,U}(r)\longrightarrow 0$ per $r\longrightarrow 0$;
@@ -107,7 +107,7 @@ Per vedere che i domini Goldilocks soddisfano la condizione di visibilità, iniz
         &=\|\xi-\eta\|-\lambda\int_{-\infty}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
         &-\lambda\int_d^{+\infty} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t>0;
     \end{align*}
-    dunque in questo caso $\sigma$ non è costante. Se invece $a<-\infty$ e $b=+\infty$ (il caso $a=-\infty$ e $b<+\infty$ è analogo), ragionando come nel caso 1 estendiamo le $\sigma_n$ a delle $\tilde{\sigma}_n$ che, a meno di sottosuccessioni, convergono uniformemente sui compatti a una curva continua $\tilde{\sigma}:[a,+\infty)\longrightarrow\overline{\Omega}$ che estende $\sigma$. Allora basta ripetere la stima precedente con $\tilde{\sigma}_n, \tilde{\sigma}$ e $\alpha$ al posto di $\sigma_n, \sigma$ e $c$ e scegliendo un $d$ opportuno, trovando così che $\tilde{\sigma}$, e di conseguenza $\sigma$, non è costante. \\
+    dunque in questo caso $\sigma$ non è costante. Se invece $a<-\infty$ e $b=+\infty$ (il caso $a=-\infty$ e $b<+\infty$ è analogo), ragionando come nel caso 1 estendiamo le $\sigma_n$ a delle $\tilde{\sigma}_n$ che, a meno di sottosuccessioni, convergono uniformemente sui compatti a una curva continua $\tilde{\sigma}:[\alpha,+\infty)\longrightarrow\overline{\Omega}$ che estende $\sigma$. Allora basta ripetere la stima precedente con $\tilde{\sigma}_n, \tilde{\sigma}$ e $\alpha$ al posto di $\sigma_n, \sigma$ e $c$ e scegliendo un $d$ opportuno, trovando così che $\tilde{\sigma}$, e di conseguenza $\sigma$, non è costante. \\
 
     Poiché la nostra assunzione porta a una contraddizione, dev'essere falsa, da cui la tesi.
 \end{proof}
@@ -115,7 +115,7 @@ Per vedere che i domini Goldilocks soddisfano la condizione di visibilità, iniz
 Adesso mostriamo che i domini Goldilocks sono visibili per le simil-geodetiche.
 
 \begin{cor} \label{gold_is_vis}
-    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio limitato Goldilocks, e fissiamo $\lambda\ge 1$ e $\kappa\ge 0$. Se $\xi,\eta\in\partial\Omega$ e $V_\xi,V_\eta$ sono intorni di $\xi,\eta$ in $\mathbb{C}^n$ tali che $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, allora esiste un compatto $K\subseteq\Omega$ tale che ogni $(\lambda,\kappa)$-simil-geodetica in $\Omega$ che collega un punto di $V_\xi$ a un punto di $V_\eta$ interseca $K$.
+    Un dominio limitato Goldilocks $\Omega\subseteq\mathbb{C}^n$ è $(\lambda,\kappa)$-visibile per ogni $\lambda\ge 1$ e $\kappa\ge 0$.
 \end{cor}
 
 \begin{proof}
