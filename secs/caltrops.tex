@@ -148,7 +148,7 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
 \end{proof}
 
 \begin{lm} \label{psierre}
-    Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua che sia di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
+    Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
     \begin{itemize}
         \item esiste una costante $C>1$ tale che $x^p/C\le\psi(x)\le Cx^p$ per ogni $x\in[0,A]$;
         \item si ha che $\psi$ è strettamente crescente;
@@ -180,7 +180,7 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
 
     Poiché $x+iy\in\mathcal{R}$ e $\psi$ è strettamente crescente, si ha $0 \le \psi^{-1}(|y|)<x\le B$, per cui $0<\psi^{-1}(|y|)+s<\epsilon/2+\epsilon<A$. Dunque, per mostrare il punto (1), ci resta da dimostrare che $|y+t|<\psi\big(\psi^{-1}(|y|)+s\big)$. Notiamo che $\psi$ soddisfa le ipotesi del Lemma \ref{superadd}, da cui
     $$\psi\big(\psi^{-1}(|y|)+s\big)\ge |y|+\psi(s)\ge |y|+s^p/C,$$
-    dove la prima disuguaglianza è data dal Lemma e la seconda è vera per ipotesi. Allora si ha che
+    dove la prima disuguaglianza è data dal lemma e la seconda è vera per ipotesi. Allora si ha che
     $$|y+t| \le |y|+|t|<|y|+Mh\alpha s^p<|y|+s^p/C \le \psi\big(\psi^{-1}(|y|)+s\big),$$
     come voluto.
 
@@ -197,7 +197,7 @@ I prossimi risultati saranno quelli necessari a immergere affinamente copie di $
 Il prossimo risultato, che è sostanzialmente una versione parametrizzata del precedente, tratta dell'immersione del dominio modello $\mathcal{Q}^{\alpha,a,h}$ in un dominio Caltrop con una punta. Per brevità, scriveremo $(z_1,\dots,z_{n-1},z_n)\in\mathbb{C}^n$ come $(z',z_n)$.
 
 \begin{lm}\label{6punto4}
-    Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua che sia di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
+    Siano $A>0$ e $\psi:[0,A]\longrightarrow[0,+\infty)$ una funzione continua di classe $C^2$ su $(0,A)$, e sia $p\in(1,2)$. Supponiamo inoltre che:
     \begin{itemize}
         \item esiste una costante $C>1$ tale che $x^p/C\le\psi(x)\le Cx^p$ per ogni $x\in[0,A]$;
         \item si ha che $\psi$ è strettamente crescente;
@@ -208,7 +208,7 @@ Il prossimo risultato, che è sostanzialmente una versione parametrizzata del pr
     $$D:=\{z\in\mathbb{C}^n\mid 0<\mathfrak{Re}z_n<A\text{ e }(\mathfrak{Im}z_n)^2+\|z'\|^2<\big(\psi(\mathfrak{Re}z_n)\big)^2\}.$$
 
     Sia $w'\in\mathbb{C}^{n-1}$ e poniamo
-    $$\mathcal{R}_{w'}:=\pi_n\left[\big((w',0)+\{0_{n-1}\}\times\mathbb{C}\big)\cap D\right],$$
+    $$\mathcal{R}_{w'}:=\pi_n\left[\big((w',0)+\{0'\}\times\mathbb{C}\big)\cap D\right],$$
     dove $\pi_n$ è la proiezione sull'ultima coordinata. Sia $\alpha=1/(p-1)$. Allora esistono delle costanti $a,h,B>0$ e un compatto $K\subseteq\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n\le A\}$, che interseca $\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n=A\}$ e tale che $K\setminus\{z\in\mathbb{C}^n\mid\mathfrak{Re}z_n=A\}\subsetneq D$, tali che per ogni $w'\in\mathbb{C}^{n-1}$ con $\|w'\|<\psi(B/2)$ e ogni $\zeta\in\mathcal{R}_{w'}$ con $\mathfrak{Re}\zeta\le B$ si ha che:
     \begin{enumerate}[label={(\arabic*)}]
         \item vale $\Big(\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\Big)+\mathcal{Q}^{\alpha,a,h}\subseteq\mathcal{R}_{w'}$;
@@ -226,13 +226,13 @@ Il prossimo risultato, che è sostanzialmente una versione parametrizzata del pr
         &=\{\zeta\mid0<\mathfrak{Re}\zeta<A\text{ e }(\mathfrak{Im}\zeta)^2+\|w'\|^2<\big(\psi(\mathfrak{Re}\zeta)\big)^2\}\\
         &=\{\zeta\mid \psi^{-1}(\|w'\|)<\mathfrak{Re}\zeta<A\text{ e }(\mathfrak{Im}\zeta)^2+\|w'\|^2<\big(\psi(\mathfrak{Re}\zeta)\big)^2\},
     \end{align*}
-    per cui $\mathcal{R}_{w'}\not=\emptyset$ se e solo se $\|w'\|<\psi(A)$; poiché la costante $B$ sarà scelta in $(0,A)$, nel nostro caso $\mathcal{R}_{w'}$ sarà sempre non vuoto. Notiamo inoltre che l'insieme $\mathcal{R}_{0_{n-1}}$ coincide con l'insieme $\mathcal{R}$ del Lemma \ref{psierre}. Prendiamo dunque $a,h$ e $B$ date da tale Lemma. Scriviamo per semplicità $c=1/C$, e osserviamo che dalla dimostrazione del Lemma \ref{psierre} discendono le seguenti disuguaglianze:
+    per cui $\mathcal{R}_{w'}\not=\emptyset$ se e solo se $\|w'\|<\psi(A)$; poiché la costante $B$ sarà scelta in $(0,A)$, nel nostro caso $\mathcal{R}_{w'}$ sarà sempre non vuoto. Notiamo inoltre che l'insieme $\mathcal{R}_{0'}$ coincide con l'insieme $\mathcal{R}$ del Lemma \ref{psierre}. Prendiamo dunque $a,h$ e $B$ date da tale lemma. Scriviamo per semplicità $c=1/C$, e osserviamo che dalla dimostrazione del Lemma \ref{psierre} discendono le seguenti disuguaglianze:
     \begin{gather}
         B+s<3A/4<A\text{ e }|t|<cs^p\text{ per ogni }s+it\in\mathcal{Q}^{\alpha,a,h};\label{qminoredia}\\
         o>B.\label{obbi}
     \end{gather}
 
-    Supponiamo ora che $w'\not=0_{n-1}$. Sia $\zeta\in\mathcal{R}_{w'}$ tale che $\mathfrak{Re}\zeta\le B$. Un elemento arbitrario dell'insieme $\Big(\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\Big)+\mathcal{Q}^{\alpha,a,h}$ è della forma $\Big(\psi^{-1}\big(S(\zeta,w')\big)+s\Big)+i(\mathfrak{Im}\zeta+t)$ con $s+it\in\mathcal{Q}^{\alpha,a,h}$. Un tale punto appartiene a $\mathcal{R}_{w'}$ se e solo se:
+    Supponiamo ora che $w'\not=0'$. Sia $\zeta\in\mathcal{R}_{w'}$ tale che $\mathfrak{Re}\zeta\le B$. Un elemento arbitrario dell'insieme $\Big(\psi^{-1}\big(S(\zeta,w')\big)+i\mathfrak{Im}\zeta\Big)+\mathcal{Q}^{\alpha,a,h}$ è della forma $\Big(\psi^{-1}\big(S(\zeta,w')\big)+s\Big)+i(\mathfrak{Im}\zeta+t)$ con $s+it\in\mathcal{Q}^{\alpha,a,h}$. Un tale punto appartiene a $\mathcal{R}_{w'}$ se e solo se:
     \begin{nlist}
         \item si ha $\psi^{-1}\big(S(\zeta,w')\big)+s<A$;
         \item si ha $\|w'\|^2+(\mathfrak{Im}w+t)^2<\bigg(\psi\Big(\psi^{-1}\big(S(\zeta,w'\big)+s)\Big)\bigg)^2$.
@@ -257,7 +257,7 @@ Il prossimo risultato, che è sostanzialmente una versione parametrizzata del pr
     $$o\le\psi^{-1}(\|w'\|)+o\le\mathfrak{Re}\eta<\mathfrak{Re}\zeta+o\le B+o<A.$$
 
     Inoltre, si ha che $S(\eta,w')=S(\zeta,w')=\psi(\mathfrak{Re}\eta-o)$; quindi
-    $$\eta\in\pi_n\left[\big((w',0)+\{0_{n-1}\}\times\mathbb{C}\big)\cap K\right],$$
+    $$\eta\in\pi_n\left[\big((w',0)+\{0'\}\times\mathbb{C}\big)\cap K\right],$$
     e questo dimostra il punto (3).
 
     Per il punto (4), se $(w',\zeta)$ è preso come sopra, allora
@@ -293,12 +293,12 @@ Ci serviranno anche i seguenti risultati.
 \end{lm}
 
 \begin{lm}\label{psdcvxcpt}
-    (Conseguenza di \cite[Theorem B]{M}) Sia $\Omega\subseteq\mathbb{C}^n$ con $n\ge 2$ un dominio limitato. Sia $\mathcal{M}_0$ un insieme aperto in $\partial\Omega$ che sia anche un'ipersuperficie di classe $C^2$. Assumiamo che $\mathcal{M}_0$ ammetta una funzione di definizione $\phi$ di classe $C^2$ in un qualche aperto contenente $\mathcal{M}_0$, e tale che esista una costante $\delta>0$ per cui $L_\phi(\xi;v)\ge\sigma\|v\|^2$ per ogni $\xi\in\mathcal{M}_0$ e $v\in\mathbb{C}^n$. Sia $\mathcal{M}_1\subsetneq\mathcal{M}_0$ un sottoinsieme compatto. Allora esistono un intorno di $\mathcal{M}_1$ in $\overline{\Omega}$, sia esso $\mathcal{V}$, e due costanti $C,c>0$ tali che $K_\Omega(z;v)\ge \big(1-C\delta_\Omega(z)^{1/2}\big)\dfrac{c\|v\|}{\delta_\Omega(z)^{1/2}}$ per ogni $z\in\mathcal{V}\cap\Omega$ e $v\in\mathbb{C}^n$.
+    (Conseguenza di \cite[Theorem B]{M}) Sia $\Omega\subseteq\mathbb{C}^n$ con $n\ge 2$ un dominio limitato. Sia $\mathcal{M}_0$ un insieme aperto in $\partial\Omega$ che sia anche un'ipersuperficie di classe $C^2$. Assumiamo che $\mathcal{M}_0$ ammetta una funzione di definizione $\phi$ di classe $C^2$ in un qualche aperto contenente $\mathcal{M}_0$, e tale che esista una costante $\delta>0$ per cui $L_\phi(\xi;v)\ge\delta\|v\|^2$ per ogni $\xi\in\mathcal{M}_0$ e $v\in\mathbb{C}^n$. Sia $\mathcal{M}_1\subsetneq\mathcal{M}_0$ un sottoinsieme compatto. Allora esistono un intorno di $\mathcal{M}_1$ in $\overline{\Omega}$, sia esso $\mathcal{V}$, e due costanti $C,c>0$ tali che $K_\Omega(z;v)\ge \big(1-C\delta_\Omega(z)^{1/2}\big)\dfrac{c\|v\|}{\delta_\Omega(z)^{1/2}}$ per ogni $z\in\mathcal{V}\cap\Omega$ e $v\in\mathbb{C}^n$.
 \end{lm}
 
 Siamo ora pronti a dimostrare quello che volevamo.
 
-\begin{thm}
+\begin{thm} \label{ilprecteo}
     (\cite[Theorem 1.4]{BM}) Sia $\Omega$ un dominio Caltrop; allora $\Omega$ è $(\lambda,\kappa)$-visibile per ogni $\lambda \ge 1$ e $\kappa>0$, ma non è un dominio Goldilocks.
 \end{thm}
 
@@ -307,7 +307,7 @@ Siamo ora pronti a dimostrare quello che volevamo.
 
     Passo 1: una stima dal basso per $K_\Omega(w;\cdot)$ per $w$ contenuto in una punta.
 
-    Siano $\{q_1,\dots,q_N\}\subseteq\partial\Omega$ i punti della Definizione \ref{defcaltrop}, e fissiamo $q_{j^*}$ uno di tali punti. Siano $p_{j^*}\in(1,3/2)$ l'esponente, $\mathbb{U}^{(j^*)}$ la trasformazione unitaria e $\psi_{j^*}:[0,A_{j^*}]\longrightarrow[0,+\infty)$ la funzione associati a $q_{j^*}$ nella Definizione \ref{defcaltrop}. Per la Proposizione \ref{metrdecr} abbiamo che $K_\Omega$ è invariante per biolomorfismi, e $\mathbb{U}_{j^*}$ è un biolomorfismo con differenziale $\mathbb{U}^{(j^*)}$ chee preserva la norma euclidea; allora possiamo assumere senza perdita di generalità $\mathbb{U}_{j^*}=\id$ e $q_{j^*}=0$, per cui, ponendo $A=A_{j^*}$ e $\psi=\psi_{j^*}$, si ha che
+    Siano $\{q_1,\dots,q_N\}\subseteq\partial\Omega$ i punti della Definizione \ref{defcaltrop}, e fissiamo $q_{j^*}$ uno di tali punti. Siano $p_{j^*}\in(1,3/2)$ l'esponente, $\mathbb{U}^{(j^*)}$ la trasformazione unitaria e $\psi_{j^*}:[0,A_{j^*}]\longrightarrow[0,+\infty)$ la funzione associati a $q_{j^*}$ nella Definizione \ref{defcaltrop}. Per la Proposizione \ref{metrdecr} abbiamo che $K_\Omega$ è invariante per biolomorfismi, e $\mathbb{U}_{j^*}$ è un biolomorfismo con differenziale $\mathbb{U}^{(j^*)}$ che preserva la norma euclidea; allora possiamo assumere senza perdita di generalità $\mathbb{U}_{j^*}=\id$ e $q_{j^*}=0$, per cui, ponendo $A=A_{j^*}$ e $\psi=\psi_{j^*}$, si ha che
     $$\Omega\cap V_{j^*}=\left\{z\in\mathbb{C}^n\mid 0<\mathfrak{Re}z_n<A\text{ e }(\mathfrak{Im}z_n)^2+\|z'\|^2<\big(\psi(\mathfrak{Re}z_n)\big)^2\right\}.$$
 
     Poniamo $\rho(z):=(\mathfrak{Im}z_n)^2+\|z'\|^2-\big(\psi(\mathfrak{Re}z_n)\big)^2$ per $z\in\Omega\cap V_{j^*}$. Calcolando le derivate parziali seconde in modo analogo a come fatto nella costruzione dell'esempio a una punta, ricordando le proprietà di $\psi$ e applicando il Lemma \ref{analisibase}, troviamo che esiste una costante $A'\in(0,A]$ tale che
@@ -336,7 +336,7 @@ Siamo ora pronti a dimostrare quello che volevamo.
         &-|\Phi(z)||L_{\chi_1}(z;v)|
     \end{align*}
     per ogni $z\in(U^{(2)}\setminus U^{(1)})\cap\Omega$ e $v\in\mathbb{C}^n$. Specifichiamo adesso la prima condizione di crescita di $\phi$. Sull'intervallo $((A')^2/16,(A')^2/4]$ deve crescere così lentamente che
-    $$L_{\rho+\chi_1\Phi}(z;v)\ge 2\|v'\|^2+|v_n|^2/8$$
+    $$L_{\rho+\chi_1\Phi}(z;v)\ge \|v'\|^2/2+|v_n|^2/8$$
     per ogni $z\in(U^{(2)}\setminus U^{(1)})\cap\Omega$ e $v\in\mathbb{C}^n$.
 
     Sia adesso $\chi_2:\mathbb{C}^n\longrightarrow[0,1]$ una funzione liscia e a supporto compatto tale che $\chi_2\restrict{U^{(3)}}\equiv1$ e $\chi_2\restrict{\mathbb{C}^n\setminus{U^{(4)}}}\equiv 0$, e chiediamo che il supporto di $\chi_2$ intersecato con $\Omega$ sia contenuto in $\{z\in\Omega\mid \|z\|<7A'/8\}$. Abbiamo allora che
@@ -344,7 +344,7 @@ Siamo ora pronti a dimostrare quello che volevamo.
         L_{\chi_2\rho+\Phi}(z;v)&\ge \phi'(\|z\|^2)\|v\|^2+\phi''(\|z\|^2)|\langle z,v\rangle|^2\\
         &-2\sum_{j,k=1}^n|\partial_{z_j}\chi_2(z)\partial_{\bar{z}_k}\rho(z)||v_j||\bar{v}_k|-|\rho(z)||L_{\chi_2}(z;v)|
     \end{align*}
-    per ogni $z\in(U^{(4)}\setminus U^{(3)})\cap\Omega$ e $v\in\mathbb{C}^n$. Specifichiamo adesso la seconda condizione di crescita di $\phi$. Sull'intervallo $[9(A')^2/16,+\infty)$ deve crescere così lentamente che esiste una costante $c>0$ tale che
+    per ogni $z\in(U^{(4)}\setminus U^{(3)})\cap\Omega$ e $v\in\mathbb{C}^n$. Specifichiamo adesso la seconda condizione di crescita di $\phi$. Sull'intervallo $[9(A')^2/16,+\infty)$ deve crescere così rapidamente che esiste una costante $c>0$ tale che
     $$L_{\chi_2\rho+\Phi}(z;v)\ge c\|v\|^2$$
     per ogni $z\in(U^{(4)}\setminus U^{(3)})\cap\Omega$ e $v\in\mathbb{C}^n$.
 
@@ -416,7 +416,7 @@ Siamo ora pronti a dimostrare quello che volevamo.
         \item si ha $\mathfrak{Re}\omega_n\in\Big(\psi_j^{-1}\big(S(\omega)\big),\psi_j^{-1}\big(S(\omega)\big)+o\Big)$.
     \end{nlist}
 
-    Adesso poniamo $K_j:=\mathbb{U}_j^{-1}(K)$ e $z_w:=\Psi_{j,w}(o)$, dove $K$ è il compatto dato dal Lemma \ref{6punto4}. Allora segue, dalla parte (3) del Lemma, che
+    Adesso poniamo $K_j:=\mathbb{U}_j^{-1}(K)$ e $z_w:=\Psi_{j,w}(o)$, dove $K$ è il compatto dato dal Lemma \ref{6punto4}. Allora segue, dalla parte (3) del lemma, che
     \begin{equation}\label{7punto9}
         z_w\in K_j
     \end{equation}
@@ -468,7 +468,7 @@ Siamo ora pronti a dimostrare quello che volevamo.
         k_\Omega(z_0,z)\gtrsim(\mathfrak{Re}z_n)^{-(p-1)}-(A''/2)^{-(p-1)}.
     \end{equation}
 
-    Fissiamo uno $z$ che soddisfa le suddette condizioni. Sia $\gamma:[0,1]\longrightarrow\Omega$ una curva $C^1$ a tratti tale che $\gamma(0)=z_0$, $\gamma(1)=z$ e $\gamma([0,1))\subseteq\Omega\cap V_{j^*}$. Detta $\gamma_n$ l'ultima coordinata di $\gamma$, per continuità di $\mathfrak{Re}\gamma_n$, e con considerazioni elementari, troviamo che esistono $\alpha,\beta\in[0,1]$ tali che $(\mathfrak{Re}\gamma_n)([\alpha,\beta])=[\mathfrak{Re}z_n,A''/2]$. Quindi
+    Fissiamo uno $z$ che soddisfa le suddette condizioni. Sia $\gamma:[0,1]\longrightarrow\Omega$ una curva $C^1$ a tratti tale che $\gamma(0)=z_0$, $\gamma(1)=z$ e $\gamma([0,1])\subseteq\Omega\cap V_{j^*}$. Detta $\gamma_n$ l'ultima coordinata di $\gamma$, per continuità di $\mathfrak{Re}\gamma_n$ troviamo che esistono $\alpha,\beta\in[0,1]$ tali che $(\mathfrak{Re}\gamma_n)([\alpha,\beta])=[\mathfrak{Re}z_n,A''/2]$. Quindi
     $$\int_0^1 K_\Omega\big(\gamma(t);\gamma'(t)\big)\diff t\ge\int_\alpha^\beta K_\Omega\big(\gamma(t);\gamma'(t)\big)\diff t\ge \int_\alpha^\beta \frac{b\|\gamma'(t)\|}{\left|u\big(\gamma(t)\big)\right|^{1/2}}\diff t,$$
     dove la seconda disuguaglianza segue dalla \eqref{7punto6}. Per ogni $w\in\Omega\cap V_{j^*}$ con $0<\mathfrak{Re}w_n<A''$ si ha
     $$|u(w)|=\big(\psi(\mathfrak{Re}w_n)\big)^2-\|w'\|^2-(\mathfrak{Im}w_n)^2 \le \big(\psi(\mathfrak{Re}w_n)\big)^2 \le C^2(\mathfrak{Re}w_n)^{2p},$$
@@ -503,7 +503,7 @@ Vediamo ora che i domini Caltrops sono taut. Ci servirà il seguente risultato.
 \end{thm}
 
 \begin{proof}
-    Adottiamo la notazione della precedente dimostrazione, della quale possiamo usare tutti i risultati intermedi, visto che siamo nelle stesse ipotesi. Fissiamo $z_0\in\Omega$ e $\xi\in\partial\Omega$.
+    Adottiamo la notazione della dimostrazione del Teorema \ref{ilprecteo}, della quale possiamo usare tutti i risultati intermedi, visto che siamo nelle stesse ipotesi. Fissiamo $z_0\in\Omega$ e $\xi\in\partial\Omega$.
     
     Consideriamo prima il caso $\xi\in\partial\Omega\setminus\{q_1,\dots,q_N\}$. Prendiamo un punto $\eta\in\partial\Omega\setminus(\{q_1,\dots,q_N,\xi\})$. Per ipotesi, $\Omega$ è strettamente pseudoconvesso in $\xi$ e $\eta$. Prendiamo due aperti $V_\xi$ e $V_\eta$ di $\mathbb{C}^n$, intorni rispettivamente di $\xi$ e $\eta$, e una costante $C>0$ dati da \cite[Corollary 2.4]{FR}. Sia $b_\eta\in\Omega\cap V_\eta$. Consideriamo una successione $\{w_\nu\}_{\nu\in\mathbb{N}}\subseteq\Omega$ tale che $w_\nu\longrightarrow\xi$ per $\nu\longrightarrow+\infty$; possiamo assumere $w_\nu\in\Omega\cap V_\xi$ per ogni $\nu\in\mathbb{N}$. Allora \cite[Corollary 2.4]{FR} ci dice che
     \begin{align*}
