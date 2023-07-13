@@ -10,12 +10,12 @@ Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini 
     
 \begin{defn} \label{discanal}
     Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e $\xi\in\partial\Omega$. L'insieme dei \textit{dischi analitici} che toccano il bordo di $\Omega$ in $\xi$ e che sono lisci nell'origine è dato da
-    $$\mathcal{D}_{\xi}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=\xi\text{ e }f'(0)\not=0\}.$$
+    $$\mathcal{D}_{\xi}=\{f\in\text{Hol}(\mathbb{D},\mathbb{C}^n)\mid f(0)=\xi\}.$$
 \end{defn}
 
 \begin{defn}
     Siano $\Omega\subseteq\mathbb{C}^n$ un dominio con bordo $C^\infty$ e funzione di definzione $\rho$ e $\xi\in\partial\Omega$. Il \textit{tipo} di $\xi$ è dato da
-    $$\Delta_1(\xi):=\sup_{f\in\mathcal{D}_{\xi}} v_0(\rho\circ f).$$
+    $$\Delta_1(\xi):=\sup_{f\in\mathcal{D}_{\xi}} \frac{v_0(\rho\circ f)}{v_0(f)}.$$
 \end{defn}
 
 \begin{defn}
@@ -25,7 +25,6 @@ Vogliamo ora discutere dei domini di tipo finito, che sono un esempio di domini 
 \begin{oss}
     \begin{enumerate}
         \item Esistono diverse definizioni di dominio di tipo finito, che sono sostanzialmente equivalenti (o quasi) in due variabili o per domini convessi in qualsiasi numero di variabili; negli altri casi, invece, la situazione è più complicata. Noi ci limiteremo al caso di domini di tipo finito nel senso di D'Angelo, poiché è ciò che ci serve per ottenere la stima dal basso sulla metrica di Kobayashi.
-        \item La condizione $f'(0)\not=0$ nella Definizione \ref{discanal}, cioè che il disco analitico sia liscio, è necessaria. Altrimenti, calcolando un disco analitico in $z^k$ con $k>1$ invece che in $z$, otteniamo un altro disco analitico non liscio con ordine di contatto almeno $k$; di conseguenza, tutti i punti e tutti i domini sarebbero di tipo infinito.
         \item È naturale supporre, come faremo a breve, la pseudoconvessità del dominio; infatti, si può mostrare (\cite[Corollary 5.6]{D'A} con $p=p_0$) che in tal caso il tipo del dominio è almeno $2$. Inoltre, i punti strettamente pseudoconvessi hanno tipo esattamente uguale a $2$ (\cite[Corollary 5.8]{D'A}).
     \end{enumerate}
 \end{oss}
