@@ -97,15 +97,15 @@ Per vedere che i domini Goldilocks soddisfano la condizione di visibilità, iniz
     Allora, usando le ultime due disuguaglianze, otteniamo
     \begin{align*}
         \|\sigma(d)-\sigma(c)\|&=\lim_{n\longrightarrow+\infty}\|\sigma_n(d)-\sigma_n(c)\|\\
-        &\ge\limsup_{n\longrightarrow+\infty}(\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\|\sigma_n(\alpha_n)-\sigma_n(c)\|\\
-        &-\|\sigma_n(\beta_n)-\sigma_n(d)\|)\\
-        &\ge\lim_{n\longrightarrow+\infty}\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\limsup_{n\longrightarrow+\infty}\left\|\int_{\alpha_n}^c \sigma_n'(t)\diff t\right\|\\
-        &-\limsup_{n\longrightarrow+\infty}\left\|\int_d^{\beta_n} \sigma_n'(t)\diff t\right\|\\
+        &\ge\begin{aligned}[t]\liminf_{n\longrightarrow+\infty}(&\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\|\sigma_n(\alpha_n)-\sigma_n(c)\|\\
+        &-\|\sigma_n(\beta_n)-\sigma_n(d)\|)\end{aligned}\\
+        &\ge\begin{aligned}[t]&\lim_{n\longrightarrow+\infty}\|\sigma_n(\beta_n)-\sigma_n(\alpha_n)\|-\limsup_{n\longrightarrow+\infty}\left\|\int_{\alpha_n}^c \sigma_n'(t)\diff t\right\|\\
+        &-\limsup_{n\longrightarrow+\infty}\left\|\int_d^{\beta_n} \sigma_n'(t)\diff t\right\|\end{aligned}\\
         &\ge\|\xi-\eta\|-\limsup_{n\longrightarrow+\infty}\int_{\alpha_n}^c \|\sigma_n'(t)\|\diff t-\limsup_{n\longrightarrow+\infty}\int_d^{\beta_n} \|\sigma_n'(t)\|\diff t\\
-        &\ge\|\xi-\eta\|-\limsup_{n\longrightarrow+\infty}\lambda\int_{\alpha_n}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
-        &-\limsup_{n\longrightarrow+\infty}\lambda\int_d^{\beta_n} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
-        &=\|\xi-\eta\|-\lambda\int_{-\infty}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
-        &-\lambda\int_d^{+\infty} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t>0;
+        &\ge\begin{aligned}[t]\|\xi-\eta\|&-\limsup_{n\longrightarrow+\infty}\lambda\int_{\alpha_n}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &-\limsup_{n\longrightarrow+\infty}\lambda\int_d^{\beta_n} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\end{aligned}\\
+        &=\begin{aligned}[t]\|\xi-\eta\|&-\lambda\int_{-\infty}^c M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t\\
+        &-\lambda\int_d^{+\infty} M_{\Omega,U}\left(\frac{1}{f^{-1}\left(\frac{|t|}{2\lambda}-\frac{\kappa}{2}\right)}\right)\diff t>0;\end{aligned}
     \end{align*}
     dunque in questo caso $\sigma$ non è costante. Se invece $a<-\infty$ e $b=+\infty$ (il caso $a=-\infty$ e $b<+\infty$ è analogo), ragionando come nel caso 1 estendiamo le $\sigma_n$ a delle $\tilde{\sigma}_n$ che, a meno di sottosuccessioni, convergono uniformemente sui compatti a una curva continua $\tilde{\sigma}:[\alpha,+\infty)\longrightarrow\overline{\Omega}$ che estende $\sigma$. Allora basta ripetere la stima precedente con $\tilde{\sigma}_n, \tilde{\sigma}$ e $\alpha$ al posto di $\sigma_n, \sigma$ e $c$ e scegliendo un $d$ opportuno, trovando così che $\tilde{\sigma}$, e di conseguenza $\sigma$, non è costante. \\
 

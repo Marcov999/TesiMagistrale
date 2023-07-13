@@ -1,11 +1,11 @@
 Vediamo adesso i risultati del preprint \cite{BZ2} sui domini illimitati; continuando quanto fatto finora, punteremo a generalizzare questi risultati,\marginpar{Forse dovrei chiamare la sezione ``Sottovarietà non relativamente compatte''?} arrivando a un teorema di tipo ``Wolff-Denjoy'' per sottovarietà taut e con visibilità, ma non necessariamente relativamente compatte.
 
-Come si può facilmente vedere pensando all'esempio della mappa $z\longmapsto z+1$ nel semipiano superiore $\mathbb{H}=\{z\in\mathbb{C}\mid\mathfrak{Im}z>0\}$, restringerci ai punti del bordo non sarà sufficiente. In questo caso, grazie a un biolomorfismo con $\mathbb{D}$ ci possiamo ricondurre al Teorema di Wolff-Denjoy originale; troviamo così che il limite è un punto di $\partial\mathbb{D}$ nel quale non possiamo estendere il biolomorfismo. È dunque chiaro che i risultati che vogliamo andare a studiare dipendono da come il dominio o la sottovarietà si immergano nella varietà ambiente, e in generale non possiamo aspettarci di avere sempre un bordo sufficientemente ricco per descrivere la dinamica delle iterate di funzioni olomorfe.
+Come si può facilmente vedere pensando all'esempio della mappa $z\longmapsto z+1$ nel semipiano superiore $\mathbb{H}=\{z\in\mathbb{C}\mid\mathfrak{Im}z>0\}$, restringerci ai punti del bordo non sarà sufficiente. In questo caso, grazie a un biolomorfismo con $\mathbb{D}$ ci possiamo ricondurre al Teorema di Wolff-Denjoy originale; troviamo così che il limite è un punto di $\partial\mathbb{D}$ nel quale non possiamo estendere il biolomorfismo. È dunque chiaro che i risultati che vogliamo andare a studiare dipendono da come il dominio o la sottovarietà si immergono nella varietà ambiente, e in generale non possiamo aspettarci di avere sempre un bordo sufficientemente ricco per descrivere la dinamica delle iterate di funzioni olomorfe.
 
 Dobbiamo dunque estendere la nostra varietà come spazio topologico. Il modo giusto di farlo per ritrovare un teorema di tipo ``Wolff-Denjoy'' è la end compactification. Il concetto fondamentale per definire la end compactification è quello di end, definito da Freudenthal in \cite{F}. Diamo la definizione data in \cite[Chapter 1, Problem 19]{Sp}.
 
 \begin{defn} \label{end}
-    Sia $X$ uno spazio topologico non compatto. Una \textit{end} di $X$ è una funzione $e$ con dominio $\{K\subseteq X\mid K\text{ è comatto}\}$ tale che:
+    Sia $X$ uno spazio topologico non compatto. Una \textit{end} di $X$ è una funzione $e$ con dominio $\{K\subseteq X\mid K\text{ è compatto}\}$ tale che:
     \begin{nlist}
         \item a ogni compatto $K\subseteq X$ associa una componente connessa non vuota di $X\setminus K$;
         \item per ogni coppia di compatti $K_1\subseteq K_2\subseteq X$ si ha $e(K_2)\subseteq e(K_1)$.
@@ -20,7 +20,7 @@ Dobbiamo dunque estendere la nostra varietà come spazio topologico. Il modo giu
 Intuitivamente, una end è un modo di scegliere, andando all'infinito, ``da che parte andare''. Un esempio semplice per capire quest'interpretazione è l'albero binario infinito (lo si può pensare come un sottospazio di $\mathbb{R}^2$), dove a ogni livello ci troviamo in un nodo e abbiamo due possibili strade tra cui scegliere; poiché i livelli sono numerabili, è facile vedere che la cardinalità delle end è quella del continuo.
 
 \begin{oss}
-    Supponiamo che $X$ ammetta un'esaustione in compatti, cioè che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ tale che $K_n\subseteq{\mathop K\limits^ \circ}_{n+1}$ per ogni $n$ e che $\displaystyle\bigcup_{n=1}^{+\infty} K_n=X$; nei casi che studieremo $X$ sarà sempre una varietà connessa, per cui ammetterà un'esaustione in compatti. Allora una end $e$ è univocamente detereminata dalle sue immagini sui $K_n$ (segue facilmente dalle proprietà della end e da quelle dell'esaustione). Quindi, nel seguito, ci basterà fissare un'esaustione in compatti e lavorare con quella.
+    Supponiamo che $X$ ammetta un'esaustione in compatti, cioè che esista una successione $\{K_n\}_{n\in\mathbb{N}}$ tale che $K_n\subseteq{\mathop K\limits^ \circ}_{n+1}$ per ogni $n$ e che $\displaystyle\bigcup_{n=1}^{+\infty} K_n=X$; nei casi che studieremo $X$ sarà sempre una varietà connessa, per cui ammetterà un'esaustione in compatti. Allora una end $e$ è univocamente determinata dalle sue immagini sui $K_n$ (segue facilmente dalle proprietà della end e da quelle dell'esaustione). Quindi, nel seguito, ci basterà fissare un'esaustione in compatti e lavorare con quella.
 \end{oss}
 
 Vogliamo ora mettere una topologia su $X^\mathcal{E}:=X\cup\mathcal{E}(X)$ che lo renda uno spazio compatto. Sebbene le end sono state definite con questo scopo in mente, sono comunque necessarie delle ipotesi. Si tratta di ipotesi che in generale sono soddisfatte da varietà astratte, ma poiché ci interesserà compattificare la chiusura di una sottovarietà dovremo prestare attenzione a un'ipotesi in particolare (si vedano l'Osservazione \ref{servelocconn} e l'Esempio \ref{servelocconnex}).
@@ -318,7 +318,7 @@ Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo co
         &=\frac{1}{2}\cdot\frac{1}{|z-w|-c_1\delta_\Omega(z)}\cdot\frac{c_1\delta_\Omega(z)}{|z-w|}|v|\\
         &\ge \frac{1}{2}\cdot\frac{1}{2\delta_\Omega(z)-c_1\delta_\Omega(z)}\cdot\frac{c_1\delta_\Omega(z)}{2\delta_\Omega(z)}|v|=\frac{c_1}{4(2-c_1)\delta_\Omega(z)}|v|,
     \end{align*}
-    dove la seconda disuguaglianza segue dal lemma di Schwarz Pick e dalla definizione di $K_\mathbb{D}$, e le altre da quanto trovato sopra. Dato che $c_1$ dipende solo da $R$ e non da $z$, abbiamo concluso.
+    dove la seconda disuguaglianza segue dal lemma di Schwarz-Pick e dalla definizione di $K_\mathbb{D}$, e le altre da quanto trovato sopra. Dato che $c_1$ dipende solo da $R$ e non da $z$, abbiamo concluso.
 \end{proof}
 
 \begin{defn}
