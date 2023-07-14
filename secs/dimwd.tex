@@ -1,7 +1,7 @@
 Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di tipo ``Wolff-Denjoy'' per varietà Kobayashi-iperboliche. La dimostrazione riportata ricalca quella data in \cite{CMS}, che a sua volta riprende la strategia e le tecniche impiegate da \cite{BZ1} e \cite{BM}. Ognuno di questi articoli ha generalizzato il risultato ottenuto nel precedente.
 
 \begin{thm} \label{wd_type_strong}
-    Sia $X$ una sottovarietà complessa e tautly embedded di una varietà Kobayashi-iperbolica $Y$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+    Sia $X$ una sottovarietà complessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
     
     Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
@@ -13,14 +13,14 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
 \begin{proof}
     Poiché $X$ è taut, per il Teorema \ref{dicotomia} o l'orbita di $z$ tramite $F$ è relativamente compatta per ogni $z \in X$, oppure la successione delle iterate $\{F^\nu\}_{\nu\in\mathbb{N}}$ è compattamente divergente. Supponiamo che le orbite di $F$ non siano relativamente compatte in $X$; allora la successione delle iterate di $F$ è compattamente divergente.
 
-    Consideriamo una sottosuccessione di $\{F^\nu\}_{\nu\in\mathbb{N}}$ che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow Y$ con $\tilde{F}(X)\subseteq\overline{X}$. Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}(X)\subseteq\partial_YX$. Allora, per il Teorema \ref{lim_is_const}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
+    Consideriamo una sottosuccessione di $\{F^\nu\}_{\nu\in\mathbb{N}}$ che converge uniformemente sui compatti a una funzione olomorfa $\tilde{F}:X \rightarrow Y$ con $\tilde{F}(X)\subseteq\overline{X}$. Poiché le iterate di $F$ sono compattamente divergenti, si deve avere che $\tilde{F}(X)\subseteq\partial_YX$. Allora, usando la Proposizione \ref{estraiunasotto-bis}, troviamo che $\tilde{F}$ è costante. Identifichiamo quindi
     $$\Gamma:=\overline{\{F^\nu\}}_{\nu\in\mathbb{N}}\setminus\{F^\nu\}_{\nu\in\mathbb{N}}$$
     come un insieme di punti di $\partial_YX$, dove la chiusura è intesa rispetto alla topologia compatta-aperta. Supponiamo, per assurdo, che $\Gamma$ contenga almeno due punti. \\
 
     Caso 1: esiste (e quindi per ogni) $o \in X$ tale che
     $$\limsup_{\nu\longrightarrow+\infty} k_X\big(F^\nu(o),o\big)=+\infty.$$
 
-    Possiamo dunque scegliere, in modo simile a quanto fatto all'inizio della dimostrazione della Proposizione \ref{inf_impl_ugu} e applicando la Proposizione \ref{montel}, una sottosuccessione $\{\nu_j\}_{j\in\mathbb{N}}$ tale che:
+    Possiamo dunque scegliere, in modo simile a quanto fatto all'inizio della dimostrazione della Proposizione \ref{inf_impl_ugu} e applicando la Proposizione \ref{estraiunasotto-bis}, una sottosuccessione $\{\nu_j\}_{j\in\mathbb{N}}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
         \item per ogni $j\in\mathbb{N}$ e $k\le\nu_j$ si ha $k_X\big(F^k(o),o\big) \le k_X\big(F^{\nu_j}(o),o\big)$;
         \item si ha $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu_j}(o),o\big)=+\infty$;
@@ -35,7 +35,7 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
         \end{aligned}
     \end{equation}
 
-    Consideriamo ora un $l\in\mathbb{N}$. Poiché la successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$ converge uniformemente sul compatto $\{F^l(o)\}$ a $\eta$, per il Lemma \ref{lemmasottosotto2} converge, uniformemente su tutti i compatti di $X$, a $\eta$.
+    Consideriamo ora un $l\in\mathbb{N}$. Poiché la successione $\{F^{\mu_j-l}\}_{j\in\mathbb{N}}$ converge uniformemente sul compatto $\{F^l(o)\}$ a $\eta$, per il Lemma \ref{unaltrosottosotto-bis} converge, uniformemente su tutti i compatti di $X$, a $\eta$.
 
     Poniamo
     $$M_l:=\limsup_{j\longrightarrow+\infty}k_X\big(F^{\mu_j-l}(o),o\big);$$
@@ -80,7 +80,7 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
     $$d_Y\big(F^{\nu(j)}(q_1),\xi\big)<1/\nu(j)$$
     e
     $$G_{1/\nu(j)}(q_1,q_2) \le k_X\big(F^{\nu(j)}(q_1),q_2\big) \le G_{1/\nu(j)}(q_1,q_2)+1/\nu(j);$$
-    poiché $\{F^{\nu(j)}(q_1)\}_{j\in\mathbb{N}}$ converge a $\xi$, per il Lemma \ref{lemmasottosotto2} la successione $\{F^{\nu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi$. Da come è stata scelta $\nu$, abbiamo anche che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2)$.
+    poiché $\{F^{\nu(j)}(q_1)\}_{j\in\mathbb{N}}$ converge a $\xi$, per il Lemma \ref{unaltrosottosotto-bis} la successione $\{F^{\nu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\xi$. Da come è stata scelta $\nu$, abbiamo anche che $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\nu(j)}(q_1),q_2\big)=G(q_1,q_2)$.
 
     Fissiamo adesso una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ tale che la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge, uniformemente sui compatti di $X$, a $\eta$. Dato un compatto $K\subseteq X$, anche $F^{\mu(j)}(K)$ è compatto, in quanto immagine continua di un compatto; allora, poiché la successione $\{F^{\nu(h)}\}_{h\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$, per ogni $j\in\mathbb{N}$ fissato troviamo che la successione $\{F^{\nu(h)+\mu(j)}\}_{h\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$. Ciò implica, considerando un'esaustione di $X$ in compatti, che esiste una funzione strettamente crescente $\tau:\mathbb{N}\longrightarrow\mathbb{N}$ tale che la successione $\{F^{(\nu\circ\tau)(j)+\mu(j)}\}_{j\in\mathbb{N}}$ converge a $\xi$ uniformemente sui compatti di $X$. Ricordando le proprietà di $\nu$, e a meno di rinominare le funzioni, possiamo dunque dire di avere due funzioni strettamente crescenti $\nu,\mu:\mathbb{N}\longrightarrow\mathbb{N}$ tali che:
     \begin{enumerate}[label={(\arabic*)}]
@@ -116,18 +116,10 @@ Andiamo adesso ad enunciare e dimostrare una versione generale di un teorema di 
     Poiché sia il Caso 1 che il Caso 2 portano a una contraddizione, ne consegue che la supposizione che $\Gamma$ contenga almeno due punti dev'essere sbagliata, da cui segue facilmente la tesi.
 \end{proof}
 
-Vogliamo ora ottenere come conseguenza il teorema di tipo ``Wolff-Denjoy'' dimostrato in \cite{CMS}. Per fare ciò, ci servirà il seguente lemma.
-
-\begin{lm} \label{rcitit}
-    (\cite[Proposition 2.1.5]{A2}) Sia $X$ una sottovarietà complessa e relativamente compatta di una varietà taut $Y$. Allora $X$ è una sottovarietà tautly embedded di $Y$.
-\end{lm}
-
-\begin{proof}
-    Poiché $X$ è relativamente compatta in $Y$, nessuna successione in $\text{Hol}(\mathbb{D},X)$ può essere compattamente divergente in $Y$. Dato che $Y$ è taut, ne consegue che ogni tale successione ammette una sottosuccessione convergente, uniformemente sui compatti, a una funzione in $\text{Hol}(\mathbb{D},Y)$. Ciò implica che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto per successioni in $\text{Hol}(\mathbb{D},Y)$. Quindi è relativamente compatto per il Corollario \ref{ciffcps}, cioè $X$ è una sottovarietà tautly embedded di $Y$, come voluto.
-\end{proof}
+Vogliamo ora ottenere come conseguenza il teorema di tipo ``Wolff-Denjoy'' dimostrato in \cite{CMS}.
 
 \begin{cor} \label{wd_type}
-    (\cite[Theorem 1.15]{CMS}) Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+    (\cite[Theorem 1.15]{CMS}) Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^n$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
     
     Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
@@ -137,7 +129,7 @@ Vogliamo ora ottenere come conseguenza il teorema di tipo ``Wolff-Denjoy'' dimos
 \end{cor}
 
 \begin{proof}
-    Poiché $X$ è limitata, esiste $R>0$ tale che $X$ è una sottovarietà complessa e relativamente compatta della varietà Kobayashi-iperbolica $\mathbb{B}_R^d$. Sia $f$ una funzione nella chiusura di $\text{Hol}(\mathbb{D},\mathbb{B}_R^d)$ in $C^0(\mathbb{D},\mathbb{B}_R^d)$, e consideriamo una successione $\{f_n\}_{n\in\mathbb{N}}\subseteq\text{Hol}(\mathbb{D},\mathbb{B}_R^d)$ che vi converge. Per il teorema di Montel, a meno di sottosuccessioni possiamo supporre che la successione converga a una funzione $\tilde{f}\in\text{Hol}(\mathbb{D},\mathbb{C}^d)$ con $\tilde{f}(\mathbb{D})\subseteq \overline{\mathbb{B}_R^d}$. Supponiamo che esista $z\in\mathbb{D}$ tale che $\tilde{f}(z)\in\partial\mathbb{B}_R^d$. Componendo $\tilde{f}$ con una funzione affine che si annulla in $\tilde{f}(z)$ e ha parte reale negativa nel resto di $\mathbb{B}_R^d$, e applicando il principio del massimo, si ottiene che $\tilde{f}$ è costante; di conseguenza, $f$ è la costante $\infty$. Perciò $\mathbb{B}_R^d$ è taut. Segue dal Lemma \ref{rcitit} che $X$ è una sottovarietà tautly embedded di $\mathbb{B}_R^d$. Essendo anche taut e $(1,\kappa_0)$-visibile, soddisfa le ipotesi del Teorema \ref{wd_type_strong}, da cui la tesi.
+    Poiché $X$ è limitata, esiste $R>0$ tale che $X$ è una sottovarietà complessa e relativamente compatta della varietà Kobayashi-iperbolica $\mathbb{B}_R^n$, per cui anche $X$ è Kobayashi-iperbolica. Essendo anche taut e $(1,\kappa_0)$-visibile, soddisfa le ipotesi del Teorema \ref{wd_type_strong}, da cui la tesi.
 \end{proof}
 
 Adesso la dimostrazione del Teorema \ref{abate_wd} è immediata.

@@ -1,3 +1,30 @@
+In questa sezione dimostreremo alcuni risultati di convergenza di successioni di funzioni olomorfe. Cominciamo con un lemma sulla convergenza puntuale.
+
+\begin{lm} \label{limpt-bis}
+    Sia $X$ una sottovarietà complessa, connessa e relativamente compatta di una varietà complessa $Y$. Supponiamo che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+    
+    Siano $Z$ una varietà Kobayashi-iperbolica e $\{f_n\}_{n\in\mathbb{N}}\subseteq\textnormal{Hol}(Z,X)$ una successione compattamente divergente. Allora esistono $\xi\in\partial_YX$ e una sottosuccessione $\{f_{n_j}\}_{j\in\mathbb{N}}$ tali che $f_{n_j}(z)\longrightarrow\xi$ per ogni $z\in Z$.
+\end{lm}
+
+\begin{proof}
+    Sia $z_0\in Z$. Per relativa compattezza, a meno di sottosuccessioni possiamo supporre che esista $\xi_0\in\partial_YX$ tale che $f_n(z_0)\longrightarrow\xi_0$. Supponiamo per assurdo che esista $z_1\in Z$ tale che la successione $\{f_n(z_1)\}_{n\in\mathbb{N}}$ non converge a $\xi_0$. Considerando una curva continua che collega $z_0$ a $z_1$, si trova facilmente che possiamo eventualmente sostituirli con due punti tali che $k_Z(z_0,z_1)<\kappa_0/2$. Di nuovo a meno di sottosuccessioni, possiamo supporre che esista $\xi_1\in\partial_YX$ tale che $\xi_1\not=\xi_0$ e $f_n(z_1)\longrightarrow\xi_1$.
+
+    Per il Teorema \ref{similgeo_conn} esiste una $(1,\kappa_0/2)$-simil-geodetica $\sigma:[0,T]\longrightarrow Z$ tale che $\sigma(0)=z_0$ e $\sigma(T)=z_1$. Poniamo $\sigma_n:=f_n\circ\sigma$, vogliamo dimostrare che $\sigma_n$ è una $(1,\kappa_0)$-simil-geodetica per ogni $n$. Per la Proposizione \ref{semicontr} e per la definizione di $(1,\kappa_0/2)$-simil-geodetica, abbiamo che
+    $$k_X\big(\sigma_n(s),\sigma_n(t)\big) \le k_Z\big(\sigma(s),\sigma(t)\big) \le |t-s|+\kappa_0/2\le |t-s|+\kappa_0$$
+    per ogni $s,t\in[0,T]$. Inoltre, sempre dalla definizione di di $(1,\kappa_0/2)$-simil-geodetica si ha che
+    \begin{align*}
+        |t-s|-\kappa_0 &\le |0-T|-\kappa_0/2-\kappa_0/2 \le k_Z\big(\sigma(0),\sigma(T)\big)-\kappa_0/2\\
+        &=k_Z(z_0,z_1)-\kappa_0/2<0\le k_X\big(\sigma_n(s),\sigma_n(t)\big)
+    \end{align*}
+    per ogni $s,t\in[0,T]$. Infine, dalla Proposizione \ref{metrdecr} e dalla definizione di $(1,\kappa_0/2)$-simil-geodetica segue che
+    $$K_X\big(\sigma_n(t);\sigma_n'(t)\big)\le K_Z\big(\sigma(t);\sigma'(t)\big) \le 1$$
+    per ogni $t\in[0,T]$. Dunque $\sigma_n$ è una $(1,\kappa_0)$-simil-geodetica per ogni $n$, come volevamo.
+
+    Adesso, poiché $\sigma_n(0)=f_n(z_0)\longrightarrow\xi_0$ e $\sigma_n(T)=f_n(z_1)\longrightarrow\xi_1$ e $X$ è $(1,\kappa_0)$-visibile, esiste un compatto $K\subseteq X$ tale che
+    $$\emptyset\not=K\cap\sigma_n([0,T])=K\cap f_n\big(\sigma([0,T])\big)$$
+    per ogni $n$, in contraddizione con l'ipotesi che la successione $\{f_n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
+\end{proof}
+
 Quello che andremo a dimostrare adesso è uno dei fatti cruciali per ottenere il teorema di tipo ``Wolff-Denjoy''. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le sottosuccessioni di iterate di una funzione olomorfa che ``tendono a infinito'' convergono tutte, puntualmente, a un unico punto del bordo.
 
 \begin{prop} \label{inf_impl_ugu}
@@ -63,45 +90,47 @@ Quello che andremo a dimostrare adesso è uno dei fatti cruciali per ottenere il
      Fissiamo ora uno $z\in X$, e prendiamo $\xi'$ punto limite di $\{F^{\mu(j)}(z)\}_{j\in\mathbb{N}}$. Allora deve esistere una funzione strettamente crescente $\tau:\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\displaystyle \lim_{j\longrightarrow+\infty} F^{(\mu\circ\tau)(j)}(z)=\xi'$; inoltre, poiché $\displaystyle\lim_{j\longrightarrow+\infty}k_X\big(F^{\mu(j)}(z),z\big)=+\infty$, dev'essere $\xi'\in\partial_YX$. Scegliamo una funzione strettamente crescente $\tau':\mathbb{N}\longrightarrow\mathbb{N}$ tale che $\nu\circ\tau' \ge \mu\circ\tau$ e applichiamo l'asserzione dimostrata sopra alle successioni $m_j=(\nu\circ\tau')(j), m'_j=(\mu\circ\tau)(j)$ e ai punti $z_0=x_0,z'_0=z$, per i quali si verificano facilmente le condizioni (1), (2), (3) e (4). Troviamo così $\xi'=\xi$ e si conclude grazie al Lemma \ref{lemmasottosotto1}.
 \end{proof}
 
-Anche il seguente teorema ci aiuterà nella nostra dimostrazione. Esso afferma che, sotto condizioni di visibilità per le simil-geodetiche, le successioni di funzioni olomorfe che convergono uniformemente sui compatti di $X$ devono necessariamente convergere a una costante.
+Anche la prossima proposizione ci aiuterà nella nostra dimostrazione. Essa afferma che, sotto condizioni di visibilità per le simil-geodetiche, vale una sorta di lemma ``sotto-sotto'', cioè da ogni sottosuccessione si può estrarre una sottosottosuccessione convergente (a una costante). Prima ci serviranno un paio di lemmi.
 
-\begin{thm} \label{lim_is_const}
-    Sia $X$ una sottovarietà complessa e connessa di una varietà Kobayashi-iperbolica $Y$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Consideriamo una successione $\{F_\nu\}_{\nu\in\mathbb{N}} \subseteq \textnormal{Hol}(X,X)$ che converge uniformemente sui compatti di $X$ a una $\psi\in\textnormal{Hol}(X,Y)$ con $\psi(X)\subseteq\partial_YX$. Allora $\psi$ è costante.
-\end{thm}
-
-\begin{proof}
-    Supponiamo, per assurdo, che $\psi$ non sia costante. Allora, dati $x \in X$ e $\epsilon>0$, la restrizione di $\psi$ a $B_X(x,\epsilon)$, la palla aperta rispetto alla distanza di Kobayashi di centro $x$ e raggio $\epsilon$, non è costante. Infatti, tale palla è un aperto di $X$, e se $\psi$ fosse costante su di essa lo sarebbe su tutta $X$ per il principio di identità delle funzioni olomorfe, poiché $X$ è connessa. Questa, però, sarebbe una contraddizione alla nostra assunzione.
-
-    Fissiamo $x_0 \in X$ e poniamo $\epsilon_0=\kappa_0/3$. Per quanto detto, deve esistere un $x_1 \in B_X(x_0,\epsilon_0)$ tale che $\{F_\nu(x_0)\}_{\nu\in\mathbb{N}}$ e $\{F_\nu(x_1)\}_{\nu\in\mathbb{N}}$ convergono, rispettivamente, a $\xi$ e $\eta$, con $\xi,\eta \in \partial_YX$ e $\xi\not=\eta$. Consideriamo adesso una $(1,\kappa_0/3)$-simil-geodetica $\gamma:[a,b]\longrightarrow X$ tale che $\gamma(a)=x_0$ e $\gamma(b)=x_1$, che esiste per il Teorema \ref{similgeo_conn}; da \eqref{simil-geo1} nella definizione di simil-geodetica si ha che
-    $$|a-b|-\kappa_0/3 \le k_X(x_0,x_1) \implies |a-b| \le k_X(x_0,x_1)+\kappa_0/3 \le 2\kappa_0/3.$$
-
-    Per ogni $\nu\in\mathbb{N}$, definiamo $\sigma_\nu:[a,b]\longrightarrow X$ come $\sigma_\nu=F_\nu\circ\gamma$. Mostriamo che $\sigma_\nu$ è una $(1,\kappa_0)$-simil-geodetica per ogni $\nu\in\mathbb{N}$. Per ogni $s,t \in [a,b]$ si ha
-    \begin{align*}k_X\big(\sigma_\nu(s),\sigma_\nu(t)\big)&=k_X\Big(F_\nu\big(\gamma(s)\big),F_\nu\big(\gamma(t)\big)\Big)\\
-        &\le k_X\big(\gamma(s),\gamma(t)\big) \le |s-t|+\kappa_0/3 \le |s-t|+\kappa_0,
-    \end{align*}
-    dove abbiamo usato che le funzioni olomorfe sono delle semicontrazioni rispetto alla distanza di Kobayashi e, dato che $\gamma$ è una $(1,\kappa_0/3)$-simil-geodetica, la \eqref{simil-geo1}. Inoltre, si ha che $|s-t|-\kappa_0 \le |a-b|-\kappa_0 \le -\kappa_0/3<0$ per ogni $s,t \in [a,b]$; dunque
-    \begin{equation} \label{snu1}
-        |s-t|-\kappa_0 \le k_X\big(\sigma_\nu(s),\sigma_\nu(t)\big) \le |s-t|+\kappa_0.
-    \end{equation}
-
-    Infine, per ogni $t$ si ha
-    \begin{equation} \label{snu2}
-        \begin{aligned}
-            K_X\big(\sigma_\nu(t);\sigma_\nu'(t)\big)&=K_X\Big(F_\nu\big(\gamma(s)\big);\diff_{\gamma(t)}F_\nu\big(\gamma'(t)\big)\Big) \\
-            &\le K_X\big(\gamma(t);\gamma'(t)\big) \le 1,
-        \end{aligned}
-    \end{equation}
-    dove abbiamo usato la Proposizione \ref{metrdecr} e, visto che $\gamma$ è una $(1,\kappa_0/3)$-simil-geodetica, la \eqref{simil-geo2}. Si ha anche che la curva $\sigma_\nu$ è assolutamente continua rispetto a $d_X$ per ogni $\nu$, poiché composizione di $\gamma$, che è assolutamente continua per definizione di $(1,\kappa_0/3)$-simil-geodetica, e $F_\nu$, che è olomorfa e dunque lipschitziana (sempre rispetto a $d_X$) sul compatto $\gamma([a,b])$. Grazie alla \eqref{snu1} e alla \eqref{snu2}, possiamo concludere che $\sigma_\nu$ è una $(1,\kappa_0)$-simil-geodetica per ogni $\nu$.
+\begin{lm} \label{nonazeroplease-bis}
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Siano $\{x_n\}_{n\in\mathbb{N}}$ e $\{y_n\}_{n\in\mathbb{N}}$ due successioni di punti di $X$ tali che $x_n\longrightarrow\xi$ e $y_n\longrightarrow\xi'$, con $\xi,\xi'\in\partial_YX$ e $\xi\not=\xi'$.
     
-    Adesso, poiché $\{F_\nu\}_{\nu\in\mathbb{N}}$ converge uniformemente sui compatti di $X$ a una funzione olomorfa $\psi$ a valori in $\partial_YX$, ne consegue che per ogni compatto $K\subseteq X$ esiste un $\nu(K)\in\mathbb{N}$ tale che, per ogni $\nu\ge\nu(K)$, si ha $\sigma_\nu([a,b])\cap K=\emptyset$. Ma così troviamo una contraddizione, perché $X$ è $(1,\kappa_0)$-visibile.
-\end{proof}
-
-Concludiamo questa sottosezione con un risultato sulla convergenza uniforme sui compatti.
-
-\begin{lm} \label{lemmasottosotto2}
-    Sia $X$ una sottovarietà complessa, connessa e tautly embedded di una varietà Kobayashi-iperbolica $Y$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Consideriamo una $F\in\textnormal{Hol}(X,X)$ tale che la successione delle iterate di $F$ è compattamente divergente, e supponiamo che esistano un compatto $K$ di $X$, una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $\xi\in\partial_YX$ tali che la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converga alla costante $\xi$ uniformemente su $K$; allora converge alla costante $\xi$ uniformemente su tutti i compatti di $X$.
+    Allora non può essere che $\displaystyle\lim_{n\longrightarrow+\infty}k_X(x_n,y_n)=0$.
 \end{lm}
 
 \begin{proof}
-    Supponiamo per assurdo che non valga la tesi; allora esistono un compatto $H\subseteq X$, un $\epsilon>0$, una successione di numeri naturali $\{j_n\}_{n\in\mathbb{N}}$ e una successione $\{z_n\}_{n\in\mathbb{N}}$ con $z_n\in H$ per ogni $n\in\mathbb{N}$ tali che $d_Y\big(F^{\mu(j_n)}(z_n),\xi\big)\ge\epsilon$ per ogni $n\in\mathbb{N}$. Per la Proposizione \ref{montel} $\text{Hol}(X,X)$ è relativamente compatto in $\text{Hol}(X,Y)$; dalla dimostrazione della suddetta Proposizione segue anche che $C^0(X,Y)$ è metrizzabile, per cui $\text{Hol}(X,X)$ è relativamente compatto per successioni in $\text{Hol}(X,Y)$. Possiamo allora trovare una sottosuccessione $\{j_{n_m}\}_{m\in\mathbb{N}}$ tale che la successione $\{F^{\mu(j_{n_m})}\}_{m\in\mathbb{N}}$ converge uniformemente sui compatti di $X$ a una funzione olomorfa $\tilde{F}:X \rightarrow Y$ con $\tilde{F}(X)\subseteq\overline{X}$. Poiché la successione delle iterate di $F$ è compattamente divergente, dev'essere $\tilde{F}(X)\subseteq\partial_YX$; allora per il Teorema \ref{lim_is_const} $\tilde{F}$ è costante. Siccome su $K$ la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge alla costante $\xi$, la funzione $\tilde{F}$ dev'essere proprio tale costante; ma per costruzione la convergenza non può essere uniforme sul compatto $H$, assurdo.
+    Supponiamo per assurdo che la tesi sia falsa, e prendiamo due successioni che la contraddicono. Per il Teorema \ref{similgeo_conn} possiamo prendere, per ogni $n\in\mathbb{N}$, una $(1,1/n)$-simil-geodetica $\sigma_n:[0,T_n]\longrightarrow X$ tale che $\sigma_n(0)=x_n$ e ${\sigma_n(T_n)=y_n}$. Per $n$ sufficientemente grande sono tutte $(1,\kappa_0)$-simil-geodetiche, per cui esistono un compatto $K\subseteq X$ e $t_n\in[0,T_n]$ tali che $\sigma_n(t_n)\in K$ per ogni $n$. Dato che $X$ è una varietà, possiamo prendere un compatto ${H\subseteq X}$ tale che $K\subseteq{\mathop H\limits^ \circ}$. Allora $\partial^\text{top}H$ e $K$ sono due compatti disgiunti, dove $\partial^\text{top}$ è il bordo topologico in $X$ (chiusura meno parte interna); dunque ${\displaystyle\inf_{\substack{x\in\partial^\text{top}H,\\y\in K}} k_X(x,y)=\epsilon>0}$.
+
+    Poiché $\sigma_n(0)$ e $\sigma_n(T_n)$ convergono a punti del bordo, per $n$ sufficientemente grande appartengono a $X\setminus H$. Ma $\sigma_n(t_n)\in K\subseteq{\mathop H\limits^ \circ}$; quindi deve esistere $t_n'$ tale che $\sigma_n(t_n')\in\partial^\text{top}H$. Segue che
+    \begin{align*}
+        0&<\epsilon\le k_X\big(\sigma_n(t_n),\sigma_n(t_n')\big) \le |t_n-t_n'|+1/n\le |0-T_n|+1/n \\
+        &\le k_X\big(\sigma_n(0),\sigma_n(T_n)\big)+2/n=k_X(x_n,y_n)+2/n\longrightarrow0,
+    \end{align*}
+    contraddizione.
+\end{proof}
+
+\begin{lm} \label{unaltrosottosotto-bis}
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che $X$ sia relativamente compatta e che esista ${\kappa_0>0}$ tale che $X$ sia $(1,\kappa_0)$-visibile. Sia $F\in\textnormal{Hol}(X,X)$ tale che la successione $\{F^n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
+    
+    Supponiamo che esistano un compatto $K\subseteq X$, una funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ e $\xi\in\partial_YX$ tali che la successione $F^{\mu(j)}$ converge alla costante $\xi$ uniformemente su $K$. Allora la successione $\{F^{\mu(j)}\}_{j\in\mathbb{N}}$ converge alla costante $\xi$ uniformemente su tutti i compatti di $X$.
+\end{lm}
+
+\begin{proof}
+    Supponiamo per assurdo che la tesi non sia vera; esistono dunque un compatto $H\subseteq X$ e un intorno $U$ di $\xi$ in $\overline{X}$ tali che ${F^{\mu(j)}(H)\not\subseteq U}$ frequentemente. Allora esistono una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ e una successione $\{z_n\}_{n\in\mathbb{N}}\subseteq H$ tali che $F^{\mu(j_n)}(z_n)\not\in U$ per ogni $n\in\mathbb{N}$.
+    
+    A meno di sottosuccessioni, usando il Lemma \ref{limpt-bis} e la relativa compattezza di $X$, possiamo supporre che $z_n\longrightarrow\tilde{z}\in H$, che ${F^{\mu(j_n)}(z)\longrightarrow\tilde{\xi}\in\overline{X}}$ per ogni $z\in X$ e che $F^{\mu(j_n)}(z_n)\longrightarrow\xi'\in\overline{X}$. Dato che $\{F^n\}_{n\in\mathbb{N}}$ è compattamente divergente, dev'essere $\xi'\in\partial_YX$. Siccome $F^{\mu(j_n)}(z)\longrightarrow\xi$ per ogni $z\in K$, dev'essere $\tilde{\xi}=\xi$. Visto che $F^{\mu(j_n)}(z_n)\not\in U$ per ogni $n\in\mathbb{N}$, dev'essere $\xi\not=\xi'$.
+
+    Adesso notiamo che per la Proposizione \ref{semicontr} si ha
+    $$k_X\big(F^{\mu(j_n)}(z_n),F^{\mu(j_n)}(\tilde{z})\big)\le k_X(z_n,\tilde{z})\longrightarrow0$$
+    per $n\longrightarrow+\infty$. Basta allora applicare il Lemma \ref{nonazeroplease-bis} con $x_n=F^{\mu(j_n)}(z_n)$ e $y_n=F^{\mu(j_n)}(\tilde{z})$ per ottenere una contraddizione.
+\end{proof}
+
+\begin{prop} \label{estraiunasotto-bis}
+    Sia $X$ una sottovarietà Kobayashi-iperbolica di una varietà complessa $Y$. Supponiamo che $X$ sia relativamente compatta e che esista $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile. Sia $F\in\textnormal{Hol}(X,X)$ tale che la successione $\{F^n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
+
+    Per ogni funzione strettamente crescente $\mu:\mathbb{N}\longrightarrow\mathbb{N}$ esistono $\xi\in\partial_YX$ e una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ tale che la successione $\{F^{\mu(j_n)}\}_{n\in\mathbb{N}}$ converge alla costante $\xi$ uniformemente su tutti i compatti di $X$.
+\end{prop}
+
+\begin{proof}
+    Fissiamo $z_0\in X$. Per la relativa compattezza di $X$ e la divergenza dai compatti di $\{F^n\}_{n\in\mathbb{N}}$, esistono $\xi\in\partial_YX$ e una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ tali che $F^{\mu(j_n)}(z_0)\longrightarrow\xi$. Allora la successione $\{F^{\mu(j_n)}\}_{n\in\mathbb{N}}$ converge alla costante $\xi$ uniformemente sul compatto $\{z_0\}$. Si conclude applicando il Lemma \ref{unaltrosottosotto-bis}.
 \end{proof}

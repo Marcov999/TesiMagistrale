@@ -1,7 +1,7 @@
 Elenchiamo ora, senza dimostrarli, alcuni teoremi che legano l'ipotesi di visibilità alle estensioni al bordo di funzioni. Risultati di estensione erano noti da tempo per il caso di mappe tra domini regolari, per esempio strettamente pseudoconvessi o con bordo liscio. Gli enunciati che vedremo hanno ipotesi che permettono una minore regolarità del bordo (abbiamo visto, tra gli altri esempi, domini con visibilità che hanno delle cuspidi), ma tornerà in gioco la Gromov-iperbolicità, che nei teoremi di tipo ``Wolff-Denjoy'' non era presente tra le ipotesi.
 
 \begin{thm}
-    (\cite[Theorem 1.5]{BZ1}) Siano $D$ e $\Omega$ due domini limitati di $\mathbb{C}^d$. Supponiamo che $D$ sia pseudoconvesso con bordo $C^2$, e che $\Omega$ sia un dominio Goldilocks che soddisfa una condizione di cono interno. Allora ogni funzione olomorfa propria $F:D\longrightarrow\Omega$ si estende a una funzione continua su $\overline{D}$.
+    (\cite[Theorem 1.5]{BZ1}) Siano $D$ e $\Omega$ due domini limitati di $\mathbb{C}^n$. Supponiamo che $D$ sia pseudoconvesso con bordo $C^2$, e che $\Omega$ sia un dominio Goldilocks che soddisfa una condizione di cono interno. Allora ogni funzione olomorfa propria $F:D\longrightarrow\Omega$ si estende a una funzione continua su $\overline{D}$.
 \end{thm}
 
 I teoremi di estensione si hanno non solo per le funzioni olomorfe proprie, ma anche per le quasi-isometrie.
@@ -18,21 +18,21 @@ I teoremi di estensione si hanno non solo per le funzioni olomorfe proprie, ma a
 Risultati di estensione sono ben noti per gli embedding quasi-isometrici tra spazi Gromov-iperbolici, si veda \cite[Part III, Chapter H, Theorem 3.9]{BH}.
 
 \begin{thm}
-    (\cite[Theorem 1.7]{BZ1}) Siano $D$ un dominio limitato di $\mathbb{C}^k$ e $\Omega$ un dominio Goldilocks di $\mathbb{C}^d$. Supponiamo che $(D,k_D)$ sia uno spazio metrico proprio e Gromov-iperbolico. Sia $F:D\longrightarrow\Omega$ un embedding quasi-isometrico rispetto alle distanze di Kobayashi e continuo; allora esiste un'estensione continua $\tilde{F}:D\cup\partial^GD\longrightarrow\overline{\Omega}$.
+    (\cite[Theorem 1.7]{BZ1}) Siano $D$ un dominio limitato di $\mathbb{C}^m$ e $\Omega$ un dominio Goldilocks di $\mathbb{C}^n$. Supponiamo che $(D,k_D)$ sia uno spazio metrico proprio e Gromov-iperbolico. Sia $F:D\longrightarrow\Omega$ un embedding quasi-isometrico rispetto alle distanze di Kobayashi e continuo; allora esiste un'estensione continua $\tilde{F}:D\cup\partial^GD\longrightarrow\overline{\Omega}$.
 \end{thm}
 
 Bharali e Zimmer hanno dimostrato teoremi di estensione anche per domini con visibilità non necessariamente limitati.
 
 \begin{defn}
-    Sia $\Omega$ un dominio di $\mathbb{C}^d$. Diciamo che \textit{$\Omega$ ha delle buone geodetiche} se:
+    Sia $\Omega$ un dominio di $\mathbb{C}^n$. Diciamo che \textit{$\Omega$ ha delle buone geodetiche} se:
     \begin{itemize}
         \item è Kobayashi-iperbolico e completo rispetto a $k_\Omega$;
-        \item per ogni coppia di successioni $\{z_n\}_{n\in\mathbb{N}},\{w_n\}_{n\in\mathbb{N}}\subseteq\Omega$ tali per cui si abbia $\displaystyle\lim_{n\longrightarrow+\infty}z_n=\displaystyle\lim_{n\longrightarrow+\infty}w_n=\xi\in\partial^\mathcal{E}\Omega$, e date $\sigma_n$ delle geodetiche congiungenti $z_n$ a $w_n$ per ogni $n\in\mathbb{N}$, si ha che esiste (e quindi per ogni) $o\in\Omega$ tale che $\displaystyle\lim_{n\longrightarrow+\infty}k_\Omega(o,\sigma_n)=+\infty$.
+        \item per ogni coppia di successioni $\{z_j\}_{j\in\mathbb{N}},\{w_j\}_{j\in\mathbb{N}}\subseteq\Omega$ tali per cui si abbia $\displaystyle\lim_{j\longrightarrow+\infty}z_j=\displaystyle\lim_{j\longrightarrow+\infty}w_j=\xi\in\partial^\mathcal{E}\Omega$, e date $\sigma_j$ delle geodetiche congiungenti $z_j$ a $w_j$ per ogni $j\in\mathbb{N}$, si ha che esiste (e quindi per ogni) $o\in\Omega$ tale che $\displaystyle\lim_{j\longrightarrow+\infty}k_\Omega(o,\sigma_j)=+\infty$.
     \end{itemize}
 \end{defn}
 
 \begin{thm}
-    (\cite[Theorem 1.6]{BZ2}) Siano $\Omega_1\subseteq\mathbb{C}^{d_1}$ e $\Omega_2\subseteq\mathbb{C}^{d_2}$ due domini tali che:
+    (\cite[Theorem 1.6]{BZ2}) Siano $\Omega_1\subseteq\mathbb{C}^{n_1}$ e $\Omega_2\subseteq\mathbb{C}^{n_2}$ due domini tali che:
     \begin{enumerate}[label={(\arabic*)}]
         \item il dominio $\Omega_1$ ha delle buone geodetiche;
         \item il dominio $\Omega_2$ è $(\lambda,\kappa)$-visibile per ogni $\lambda\ge 1$ e $\kappa\ge 0$.
@@ -48,7 +48,7 @@ Bharali e Zimmer hanno dimostrato teoremi di estensione anche per domini con vis
 Il prossimo risultato permette di andare in senso opposto: data un estensione al bordo, dedurne la visibilità del dominio.
 
 \begin{thm}
-    (\cite[Theorem 1.10]{BZ2}) Sia $\Omega\subseteq\mathbb{C}^d$ un dominio Kobayashi-iperbolico, e supponiamo che $(\Omega,k_\Omega)$ sia Gromov-iperbolico. Se l'identità $\id_\Omega$ si estende a un omeomorfismo da $\Omega\cup\partial^G\Omega$ in $\overline{\Omega}^\mathcal{E}$ allora:
+    (\cite[Theorem 1.10]{BZ2}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio Kobayashi-iperbolico, e supponiamo che $(\Omega,k_\Omega)$ sia Gromov-iperbolico. Se l'identità $\id_\Omega$ si estende a un omeomorfismo da $\Omega\cup\partial^G\Omega$ in $\overline{\Omega}^\mathcal{E}$ allora:
     \begin{enumerate}[label={(\arabic*)}]
         \item si ha che $\Omega$ è completo rispetto alla distanza di Kobayashi;
         \item si ha che $\Omega$ è $(1,\kappa)$-visibile per ogni $\kappa\ge0$.
@@ -58,7 +58,7 @@ Il prossimo risultato permette di andare in senso opposto: data un estensione al
 Passiamo ora ai teoremi di \cite{CMS}, che trattano il caso di sottovarietà qualsiasi.
 
 \begin{defn}
-    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Un sottoinsieme $S$ di $X$ si dice \textit{sottospazio geodetico} se:
+    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^m$. Un sottoinsieme $S$ di $X$ si dice \textit{sottospazio geodetico} se:
     \begin{itemize}
         \item lo spazio metrico $(S,k_X\restrict{S\times S})$ è completo;
         \item per ogni coppia di punti distinti di $S$, esiste ua geodetica di $(X,k_X)$ che li congiunge e che sia tutta contenuta in $S$.
@@ -66,7 +66,7 @@ Passiamo ora ai teoremi di \cite{CMS}, che trattano il caso di sottovarietà qua
 \end{defn}
 
 \begin{defn}
-    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Un sottospazio geodetico $S$ si dice \textit{sottospazio di visibilità} se per ogni $p,q\in\overline{S}\setminus S$ (la chiusura è presa in $\mathbb{C}^d$) con $p\not=q$ esistono in $\mathbb{C}^d$ due intorni $U$ e $V$, rispettivamente di $p$ e di $q$, e un compatto $K\subseteq S$ tali che $\overline{U}\cap\overline{V}=\emptyset$ e, per ogni geodetica $\sigma:[a,b]\longrightarrow S$ di $(X,k_X)$ che collega un punto di $U\cap S$ a un punto di $V\cap S$, si ha $\sigma([a,b])\cap K\not=\emptyset$.
+    Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^n$. Un sottospazio geodetico $S$ si dice \textit{sottospazio di visibilità} se per ogni $p,q\in\overline{S}\setminus S$ (la chiusura è in $\mathbb{C}^n$) con $p\not=q$ esistono in $\mathbb{C}^n$ due intorni $U$ e $V$, rispettivamente di $p$ e di $q$, e un compatto $K\subseteq S$ tali che $\overline{U}\cap\overline{V}=\emptyset$ e, per ogni geodetica $\sigma:[a,b]\longrightarrow S$ di $(X,k_X)$ che collega un punto di $U\cap S$ a un punto di $V\cap S$, si ha $\sigma([a,b])\cap K\not=\emptyset$.
 \end{defn}
 
 \begin{defn}
@@ -74,7 +74,7 @@ Passiamo ora ai teoremi di \cite{CMS}, che trattano il caso di sottovarietà qua
 \end{defn}
 
 \begin{thm}
-    (\cite[Theorem 1.4]{CMS}) Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^d$. Sia $S\subseteq X$ un sottospazio geodetico di $M$ tale che $(S,k_X\restrict{S\times S})$ sia Gromov-iperbolico. Allora $S$ è sottospazio di visibilità se e solo se l'identità $\id_S$ si estende a una funzione $\tilde{id}_S:S\cup\partial^GS\longrightarrow\overline{S}$ continua e suriettiva.
+    (\cite[Theorem 1.4]{CMS}) Sia $X$ una sottovarietà complessa, connessa e limitata di $\mathbb{C}^n$. Sia $S\subseteq X$ un sottospazio geodetico di $M$ tale che $(S,k_X\restrict{S\times S})$ sia Gromov-iperbolico. Allora $S$ è sottospazio di visibilità se e solo se l'identità $\id_S$ si estende a una funzione $\tilde{id}_S:S\cup\partial^GS\longrightarrow\overline{S}$ continua e suriettiva.
 
     Inoltre, tale estensione è un omeomorfismo se e solo se $S$ non ha loop geodetici in $\overline{S}$.
 \end{thm}

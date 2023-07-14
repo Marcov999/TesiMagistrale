@@ -25,7 +25,7 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     \begin{enumerate}[label={(\arabic*)}]
         \item se $X$ è connessa, è Kobayashi-iperbolica se e solo se per ogni compatto $K\subseteq X$ esiste una costante $c=c(K)>0$ tale che $c\|Z\|_X \le K_X(z;Z)$ per ogni $z \in K$ e $Z \in T_zX$;
         \item per ogni compatto $K\subseteq X$ esiste una costante $C=C(K)>0$ tale che $K_X(z;Z) \le C\|Z\|_X$ per ogni $z \in X$ e $Z \in T_zX$;
-        \item se $X$ è una sottovarietà limitata di $\mathbb{C}^d$ esiste una costante $c>0$ tale che $c\|Z\| \le K_X(z;Z)$ per ogni $z \in X$ e $Z \in T_zX$.
+        \item se $X$ è una sottovarietà limitata di $\mathbb{C}^n$ esiste una costante $c>0$ tale che $c\|Z\| \le K_X(z;Z)$ per ogni $z \in X$ e $Z \in T_zX$.
     \end{enumerate}
 \end{prop}
 
@@ -34,16 +34,16 @@ Cominciamo con delle stime dal basso e dall'alto per la metrica di Kobayashi, ch
     $$k_X(z_0,w_0) \ge c\cdot d_X\big(z_0,\partial_X K)>0,$$
     da cui $k_X$ è una distanza e $X$ è Kobayashi-iperbolica.
 
-    Viceversa, supponiamo che $X$ sia Kobayashi-iperbolica. Prendiamo un punto $z_0\in X$ e fissiamo un intorno $U$ di $X$ contenuto in una carta centrata in $z_0$ e che sia biolomorfo a $\mathbb{B}^n$, dove $n=\dim{X}$. Consideriamo l'aperto $V\subseteq U$ corrispondente a $\mathbb{B}_{1/2}^n$ tramite il biolomorfismo, che è ancora un intorno di $z_0$. Scegliamo inoltre $\epsilon>0$ tale che $B_X(z_0,2\epsilon)\subset\subset V$ (ricordiamo che con $B_X$ si intendono le palle rispetto a $k_X$). In particolare, per la Definizione \ref{poidist}, il punto (i) della Proposizione \ref{k_polidisco} e la Proposizione \ref{semicontr}, per ogni $\varphi\in\text{Hol}(\mathbb{D},X)$ tale che $\varphi(0)\in B_X(z_0,\epsilon)$ si ha $\varphi(\mathbb{D}_{\tanh{\epsilon}})\subseteq B_X(z_0,2\epsilon)$.
+    Viceversa, supponiamo che $X$ sia Kobayashi-iperbolica. Prendiamo un punto $z_0\in X$ e fissiamo un intorno $U$ di $X$ contenuto in una carta centrata in $z_0$ e che sia biolomorfo a $\mathbb{B}^d$, dove $d=\dim{X}$. Consideriamo l'aperto $V\subseteq U$ corrispondente a $\mathbb{B}_{1/2}^d$ tramite il biolomorfismo, che è ancora un intorno di $z_0$. Scegliamo inoltre $\epsilon>0$ tale che $B_X(z_0,2\epsilon)\subset\subset V$ (ricordiamo che con $B_X$ si intendono le palle rispetto a $k_X$). In particolare, per la Definizione \ref{poidist}, il punto (i) della Proposizione \ref{k_polidisco} e la Proposizione \ref{semicontr}, per ogni $\varphi\in\text{Hol}(\mathbb{D},X)$ tale che $\varphi(0)\in B_X(z_0,\epsilon)$ si ha $\varphi(\mathbb{D}_{\tanh{\epsilon}})\subseteq B_X(z_0,2\epsilon)$.
 
     Dati $z\in B_X(z_0,\epsilon)$ e $Z\in T_zX$, siano $\varphi\in\text{Hol}(\mathbb{D},X)$ e $v\in\mathbb{C}$ tali che $\varphi(0)=z$ e $\diff_0\varphi(v)=Z$. Allora, ponendo $\psi(\zeta)=\varphi\big((\tanh{\epsilon})\zeta\big)$, abbiamo che $\psi\in\text{Hol}(\mathbb{D},V)$, $\psi(0)=z$ e $\diff_0\psi(v)=(\tanh{\epsilon})Z$. Dalla definizione della pseudometrica di Kobayashi segue che
     $$(\tanh{\epsilon})K_V(z;Z) \le k_X(z;Z)$$
-    per ogni $z\in B_X(z_0,\epsilon)$ e $Z\in T_zX$. Dal punto (3), che dimostreremo indipendentemente tra poco, segue che la condizione voluta è vera in $\mathbb{B}_{1/2}^n$, e dunque in $V$, senza che la costante dipenda da un compatto, ma rispetto alla metrica euclidea. Tuttavia, considerano il compatto $\overline{\mathbb{B}_{1/2}^n}$ (motivo per cui abbiamo dovuto prendere la palla più piccola) e chiamando $E_j$ i vettori delle base canonica di $T_wX$ identificato, al variare di $w\in\overline{\mathbb{B}_{1/2}^n}$, con $\mathbb{C}^n$, si ha
+    per ogni $z\in B_X(z_0,\epsilon)$ e $Z\in T_zX$. Dal punto (3), che dimostreremo indipendentemente tra poco, segue che la condizione voluta è vera in $\mathbb{B}_{1/2}^d$, e dunque in $V$, senza che la costante dipenda da un compatto, ma rispetto alla metrica euclidea. Tuttavia, considerano il compatto $\overline{\mathbb{B}_{1/2}^d}$ (motivo per cui abbiamo dovuto prendere la palla più piccola) e chiamando $E_j$ i vettori delle base canonica di $T_wX$ identificato, al variare di $w\in\overline{\mathbb{B}_{1/2}^d}$, con $\mathbb{C}^d$, si ha
     \begin{align*}
-        \|Z\|_X \le \sum_{j=1}^n |a_j|\cdot\|E_j\|_X &\le \max_{\substack{w\in\overline{\mathbb{B}_{1/2}^n},\\j=1,\dots,n}}\|E_j\|_X \sum_{j=1}^n |a_j| \\
-        &\le C_1\sqrt{\sum_{j=1}^n |a_j|^2}=C_1\|Z\|
+        \|Z\|_X \le \sum_{j=1}^d |a_j|\cdot\|E_j\|_X &\le \max_{\substack{w\in\overline{\mathbb{B}_{1/2}^d},\\j=1,\dots,d}}\|E_j\|_X \sum_{j=1}^d |a_j| \\
+        &\le C_1\sqrt{\sum_{j=1}^d |a_j|^2}=C_1\|Z\|
     \end{align*}
-    per ogni $w\in\overline{\mathbb{B}_{1/2}^n}$ e $Z\in T_wX$ della forma $Z=\displaystyle\sum_{j=1}^n a_jE_j$, e per una qualche costante $C_1>0$, per cui la condizione vale anche con la metrica $\|\cdot\|_X$. Dato allora un compatto $K$, basta ricoprirlo con un numero finito di intorni della forma $B_X(z_0,\epsilon)$ e prendere la costante più piccola al variare di tali intorni.
+    per ogni $w\in\overline{\mathbb{B}_{1/2}^d}$ e $Z\in T_wX$ della forma $Z=\displaystyle\sum_{j=1}^d a_jE_j$, e per una qualche costante $C_1>0$, per cui la condizione vale anche con la metrica $\|\cdot\|_X$. Dato allora un compatto $K$, basta ricoprirlo con un numero finito di intorni della forma $B_X(z_0,\epsilon)$ e prendere la costante più piccola al variare di tali intorni.
 
     (2) Per ogni $z \in K$, scegliamo un polidisco $U_z$ centrato in $z$ e contenuno in una carta di $X$; sia $U_z'\subseteq U_z$ un altro polidisco, nella stessa carta, centrato in $z$ e relativamente compatto in $U_z$ per ogni $z \in K$. Dato che $K$ è compatto, esistono $z_1,\dots,z_l$ tali che $K\subseteq\displaystyle\bigcup_{j=1}^l U_{z_j}'$. Allora, poiché $\overline{U}_{z_j}'$ è un sottoinsieme compatto di $U_{z_j}$ per $j=1,\dots,l$, per il Lemma \ref{polycpt} abbiamo
     $$K_X(z,Z) \le C_j\|Z\|_X$$

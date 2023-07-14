@@ -59,9 +59,9 @@ Si noti che ogni varietà taut è Kobayashi-iperbolica (\cite[Proposition 2]{Ki1
     \end{enumerate}
 \end{defn*}
 
-Bharali e Maitra hanno anche dimostrato un teorema di tipo ``Wolff-Denjoy'' per domini di tipo topologico finito; inoltre, hanno definito e costruito esempi di una classe di domini, che chiamano domini Caltrops, che sono taut e hanno la condizione di visibilità, ma non sono domini Goldilocks.
+Bharali e Maitra hanno anche dimostrato un teorema di tipo ``Wolff-Denjoy'' per domini di tipo topologico finito; inoltre, hanno definito e costruito esempi di una classe di domini, che chiamano domini Caltrop, che sono taut e hanno la condizione di visibilità, ma non sono domini Goldilocks.
 
-Nel preprint \cite{CMS} del 2021 Chandel, Maitra e Sarkar fanno vedere che non è necessario supporre che la varietà sia un dominio, basta che sia una sottovarietà di $\mathbb{C}^d$; costruiscono inoltre altri esempi di domini che soddisfano la condizione di visibilità.\\
+Nel preprint \cite{CMS} del 2021 Chandel, Maitra e Sarkar fanno vedere che non è necessario supporre che la varietà sia un dominio, basta che sia una sottovarietà di $\mathbb{C}^n$; costruiscono inoltre altri esempi di domini che soddisfano la condizione di visibilità.\\
 
 Negli articoli citati finora, sono stati considerati domini e varietà limitati. Il caso di domini illimitati è stato studiato nel 2022 da Bharali e Zimmer nel preprint \cite{BZ2}; considerando il bordo della \textit{end compactification} al posto del bordo euclideo riescono ad ottenere un teorema di tipo ``Wolff-Denjoy'' anche per il caso illimitato.
 
@@ -74,16 +74,12 @@ In questa tesi ci poniamo l'obiettivo di generalizzare ulteriormente il teorema 
     \item dall'ipotesi di visibilità segue che tale funzione limite dev'essere costante.
 \end{nlist}
 
-Nell'enunciato che vogliamo dimostrare, l'ipotesi che la varietà sia una sottovarietà limitata di $\mathbb{C}^d$ sarà sostituita dall'essere una sottovarietà tautly embedded di una varietà Kobayashi-iperbolica; tale ipotesi può essere interpretata dicendo che per la sottovarietà vale una forma del teorema di Montel.
+Nell'enunciato che vogliamo dimostrare, l'ipotesi che la varietà sia una sottovarietà limitata di $\mathbb{C}^n$ sarà sostituita dall'essere una sottovarietà Kobayashi-iperbolica e relativamente compatta di una varietà complessa astratta; tale ipotesi ci permetterà di dimostrare teoremi di relativa compattezza di funzioni nello spirito del teorema di Montel.
 
-\begin{defn*}
-    Sia $X$ una sottovarietà complessa di una varietà complessa $Y$. Diciamo che $X$ è \textit{tautly embedded} in $Y$ se $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$.
-\end{defn*}
-
-Ecco infine il Teorema che ci proponiamo di dimostrare.
+Ecco il Teorema che ci proponiamo di dimostrare.
 
 \begin{thm*}
-    Sia $X$ una sottovarietà complessa e tautly embedded di una varietà Kobayashi-iperbolica $Y$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
+    Sia $X$ una sottovarietà complessa e relativamente compatta di una varietà Kobayashi-iperbolica $Y$. Supponiamo che $X$ sia taut e che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
     
     Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
     \begin{itemize}
@@ -92,9 +88,9 @@ Ecco infine il Teorema che ci proponiamo di dimostrare.
     \end{itemize}
 \end{thm*}
 
-Nella sezione \ref{Preliminari} daremo le definizioni ed enunceremo i risultati alla base della teoria della dinamica olomorfa in più variabili; alcuni verranno anche dimostrati, tra cui una versione generalizzata del teorema di Montel per varietà tautly embedded e il fatto che per varietà taut vale una dicotomia nella dinamica delle funzioni olomorfe.
+Nella sezione \ref{Preliminari} daremo le definizioni ed enunceremo i risultati alla base della teoria della dinamica olomorfa in più variabili; alcuni verranno anche dimostrati, tra cui una versione generalizzata del teorema di Montel e il fatto che per varietà taut vale una dicotomia nella dinamica delle funzioni olomorfe.
 
-Nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità} studieremo la condizione di visibilità e vedremo una serie di risultati tecnici, tra cui il fatto che con l'ipotesi di visibilità il limite di una successione convergente uniformemente sui compatti a una funzione a valori nel bordo dev'essere costante. A questo punto, i vari risultati ottenuti verranno utilizzati per dare una dimostrazione di un teorema di tipo ``Wolff-Denjoy''; nella dimostrazione rimarrà da verificare che il limite è lo stesso per ogni sottosuccessione delle iterate, da cui poi segue facilmente che dev'essere il limite di tutta la successione. Otterremo come corollari i teoremi di tipo ``Wolff-Denjoy'' dimostrati in \cite{A4} e in \cite{CMS}, e quello per i domini di tipo topologico finito dimostrato in \cite{BM}.
+Nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità} studieremo la condizione di visibilità e vedremo una serie di risultati tecnici, tra cui il fatto che con l'ipotesi di visibilità vale una sorta di teorema di Montel ``al bordo'' per la successione di iterate di una funzione olomorfa, qualora sia compattamente divergente. A questo punto, i vari risultati ottenuti verranno utilizzati per dare una dimostrazione di un teorema di tipo ``Wolff-Denjoy''; nella dimostrazione rimarrà da verificare che il limite è lo stesso per ogni sottosuccessione delle iterate, da cui poi segue facilmente che dev'essere il limite di tutta la successione. Otterremo come corollari i teoremi di tipo ``Wolff-Denjoy'' dimostrati in \cite{A4} e in \cite{CMS}, e quello per i domini di tipo topologico finito dimostrato in \cite{BM}.
 
 Nella sezione \ref{Esempi di domini con visibilità} costruiremo gli esempi citati sopra e vedremo quali ipotesi del teorema soddisfano.
 

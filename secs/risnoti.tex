@@ -12,8 +12,6 @@ Vediamo ora alcuni risultati noti della teoria che ci saranno utili nelle nostre
     (Montel, \cite[Chapter 1, Proposition 6]{N}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sia $\mathcal{F}\subseteq\mathcal{O}(\Omega)$, una famiglia uniformemente limitata sui compatti; allora è relativamente compatta in $\mathcal{O}(\Omega)$.
 \end{thm}
 
-Quella che useremo noi sarà una versione del teorema di Montel per varietà tautly embedded, che vedremo più avanti.
-
 \begin{thm} \label{hartogs_fen}
     (Serre, Ehrenpreis, \cite[Theorem 1.2.6]{Kr}) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio limitato, con $n>1$. Sia $K$ un sottoinsieme compatto di $\Omega$ tale che $\Omega\setminus K$ è connesso. Se $f\in\mathcal{O}(\Omega\setminus K)$, allora esiste $F\in\mathcal{O}(\Omega)$ tale che $F\restrict{\Omega\setminus K}=f$.
 \end{thm}
@@ -158,15 +156,17 @@ La dimostrazione, presa da \cite[Proposition 2.1.4, point (i)]{A2}, ricalca quel
     Dato che $Y$ è una varietà, per \cite[4.16]{Ke} possiamo fissare una distanza $d$ su $Y$ che induce la topologia di varietà. Per definizione, $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, per cui anche in $C^0(\mathbb{D},Y)$ in quanto quest'ultimo è Hausdorff perché lo è $Y$; per Ascoli-Arzelà, segue che $\text{Hol}(\mathbb{D},X)$ è equicontinuo rispetto a $d$. Per il Lemma \ref{equico} si ha che $\text{Hol}(W,X)$ è equicontinuo rispetto a $d$ per ogni varietà complessa $W$; inoltre, poiché $\text{Hol}(W,Y\setminus\overline{X})$ è aperto, la chiusura di $\text{Hol}(W,X)$ in $\text{Hol}(W,Y)$ è contenuta in $C^0(W,\overline{X})$. Dato che $\overline{X}$ è compatto, possiamo applicare Ascoli-Arzelà per ottenere che $\text{Hol}(W,X)$ è relativamente compatto in $C^0(W,Y)$. Per il Corollario \ref{ciffcps}, la chiusura di $\text{Hol}(W,X)$ in $C^0(W,Y)$ coincide con la chiusura per successioni. Per il teorema di Weierstrass, applicato in carte opportune, tale chiusura è contenuta in $\text{Hol}(W,Y)$, da cui la tesi.
 \end{proof}
 
-Ci servirà anche il seguente fatto.
+Vale anche il seguente fatto.
 
-\begin{prop}
+\begin{prop} \label{letnom}
     Sia $X$ una sottovarietà complessa e relativamente compatta di una varietà taut $Y$. Allora $X$ è tautly embedded in $Y$.
 \end{prop}
 
 \begin{proof}
     Poiché $X$ è relativamente compatta in $Y$, nessuna successione in $\text{Hol}(\mathbb{D},X)$ è compattamente divergente; essendo $X$ taut, per definizione segue che $\text{Hol}(\mathbb{D},X)$ è relativamente compatto in $\text{Hol}(\mathbb{D},Y)$, come voluto.
 \end{proof}
+
+Dalla dimostrazione della Proposizone \ref{montel} segue che tautly embedded implica relativamente compatta (e per la Proposizione \ref{letnom} vale anche l'implicazione inversa se la varietà ambiente è taut). Inizialmente la generalizzazione del teorema di tipo ``Wolff-Denjoy'' che avevamo intenzione di dimostrare richiedeva l'ipotesi tautly embedded, ma sfruttando i risultati di \cite{BZ2} è stato possibile generalizzare ulteriormente e richiedere solo la relativa compattezza.\\
 
 Diamo ora delle definizioni che ci serviranno per parlare del comportamento delle iterate di funzioni olomorfe, partendo dalla definizione stessa di iterata.
 

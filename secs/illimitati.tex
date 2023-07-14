@@ -68,22 +68,7 @@ Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà
 \end{lm}
 
 \begin{proof}
-    Sia $z_0\in Z$. Per l'Osservazione \ref{endiscptsucc}, a meno di sottosuccessioni possiamo supporre che esista $\xi_0\in\partial^\mathcal{E}X$ tale che $f_n(z_0)\longrightarrow\xi_0$. Supponiamo per assurdo che esista $z_1\in Z$ tale che la successione $\{f_n(z_1)\}_{n\in\mathbb{N}}$ non converge a $\xi_0$. Considerando una curva continua che collega $z_0$ a $z_1$, si trova facilmente che possiamo eventualmente sostituirli con due punti tali che $k_Z(z_0,z_1)<\kappa_0/2$. Di nuovo a meno di sottosuccessioni, possiamo supporre che esista $\xi_1\in\partial^\mathcal{E}X$ tale che $\xi_1\not=\xi_0$ e $f_n(z_1)\longrightarrow\xi_1$.
-
-    Per il Teorema \ref{similgeo_conn} esiste una $(1,\kappa_0/2)$-simil-geodetica $\sigma:[0,T]\longrightarrow Z$ tale che $\sigma(0)=z_0$ e $\sigma(T)=z_1$. Poniamo $\sigma_n:=f_n\circ\sigma$, vogliamo dimostrare che $\sigma_n$ è una $(1,\kappa_0)$-simil-geodetica per ogni $n$. Per la Proposizione \ref{semicontr} e per la definizione di $(1,\kappa_0/2)$-simil-geodetica, abbiamo che
-    $$k_X\big(\sigma_n(s),\sigma_n(t)\big) \le k_Z\big(\sigma(s),\sigma(t)\big) \le |t-s|+\kappa_0/2\le |t-s|+\kappa_0$$
-    per ogni $s,t\in[0,T]$. Inoltre, sempre dalla definizione di di $(1,\kappa_0/2)$-simil-geodetica si ha che
-    \begin{align*}
-        |t-s|-\kappa_0 &\le |0-T|-\kappa_0/2-\kappa_0/2 \le k_Z\big(\sigma(0),\sigma(T)\big)-\kappa_0/2\\
-        &=k_Z(z_0,z_1)-\kappa_0/2<0\le k_X\big(\sigma_n(s),\sigma_n(t)\big)
-    \end{align*}
-    per ogni $s,t\in[0,T]$. Infine, dalla Proposizione \ref{metrdecr} e dalla definizione di $(1,\kappa_0/2)$-simil-geodetica segue che
-    $$K_X\big(\sigma_n(t);\sigma_n'(t)\big)\le K_Z\big(\sigma(t);\sigma'(t)\big) \le 1$$
-    per ogni $t\in[0,T]$. Dunque $\sigma_n$ è una $(1,\kappa_0)$-simil-geodetica per ogni $n$, come volevamo.
-
-    Adesso, poiché $\sigma_n(0)=f_n(z_0)\longrightarrow\xi_0$ e $\sigma_n(T)=f_n(z_1)\longrightarrow\xi_1$ e $X$ è $(1,\kappa_0)$-ultravisibile, esiste un compatto $K\subseteq X$ tale che
-    $$\emptyset\not=K\cap\sigma_n([0,T])=K\cap f_n\big(\sigma([0,T])\big)$$
-    per ogni $n$, in contraddizione con l'ipotesi che la successione $\{f_n\}_{n\in\mathbb{N}}$ sia compattamente divergente.
+    Si ripete la dimostrazione del Lemma \ref{limpt-bis}. Al posto della relativa compattezza si usa l'Osservazione \ref{endiscptsucc}, sostituendo $\partial^\mathcal{E}X$ a $\partial_YX$. Si usa anche l'ultravisibilità al posto della visibilità.
 \end{proof}
 
 \begin{prop} \label{unaproppp}
@@ -109,14 +94,7 @@ Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà
 \end{lm}
 
 \begin{proof}
-    Supponiamo per assurdo che la tesi sia falsa, e prendiamo due successioni che la contraddicono. Per il Teorema \ref{similgeo_conn} possiamo prendere, per ogni $n\in\mathbb{N}$, una $(1,1/n)$-simil-geodetica $\sigma_n:[0,T_n]\longrightarrow X$ tale che $\sigma_n(0)=x_n$ e ${\sigma_n(T_n)=y_n}$. Per $n$ sufficientemente grande sono tutte $(1,\kappa_0)$-simil-geodetiche, per cui esistono un compatto $K\subseteq X$ e $t_n\in[0,T_n]$ tali che $\sigma_n(t_n)\in K$ per ogni $n$. Dato che $X$ è una varietà, possiamo prendere un compatto ${H\subseteq X}$ tale che $K\subseteq{\mathop H\limits^ \circ}$. Allora $\partial^\text{top}H$ e $K$ sono due compatti disgiunti, dove $\partial^\text{top}$ è il bordo topologico in $X$ (chiusura meno parte interna); dunque ${\displaystyle\inf_{\substack{x\in\partial^\text{top}H,\\y\in K}} k_X(x,y)=\epsilon>0}$.
-
-    Poiché $\sigma_n(0)$ e $\sigma_n(T_n)$ convergono a punti del bordo finale, per $n$ sufficientemente grande appartengono a $X\setminus H$. Ma $\sigma_n(t_n)\in K\subseteq{\mathop H\limits^ \circ}$; quindi deve esistere $t_n'$ tale che $\sigma_n(t_n')\in\partial^\text{top}H$. Segue che
-    \begin{align*}
-        0&<\epsilon\le k_X\big(\sigma_n(t_n),\sigma_n(t_n')\big) \le |t_n-t_n'|+1/n\le |0-T_n|+1/n \\
-        &\le k_X\big(\sigma_n(0),\sigma_n(T_n)\big)+2/n=k_X(x_n,y_n)+2/n\longrightarrow0,
-    \end{align*}
-    contraddizione.
+    L'unica modifica rispetto alla dimostrazione del Lemma \ref{nonazeroplease-bis} è quale bordo viene considerato.
 \end{proof}
 
 \begin{lm} \label{unaltrosottosotto}
@@ -126,13 +104,7 @@ Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà
 \end{lm}
 
 \begin{proof}
-    Supponiamo per assurdo che la tesi non sia vera; esistono dunque un compatto $H\subseteq X$ e un intorno $U$ di $\xi$ in $\overline{X}^\mathcal{E}$ tali che ${F^{\mu(j)}(H)\not\subseteq U}$ frequentemente. Allora esistono una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ e una successione $\{z_n\}_{n\in\mathbb{N}}\subseteq H$ tali che $F^{\mu(j_n)}(z_n)\not\in U$ per ogni $n\in\mathbb{N}$.
-    
-    A meno di sottosuccessioni, usando il Lemma \ref{limpt} e la compattezza per successioni di $\overline{X}^\mathcal{E}$, possiamo supporre che $z_n\longrightarrow\tilde{z}\in H$, che ${F^{\mu(j_n)}(z)\longrightarrow\tilde{\xi}\in\overline{X}^\mathcal{E}}$ per ogni $z\in X$ e che $F^{\mu(j_n)}(z_n)\longrightarrow\xi'\in\overline{X}^\mathcal{E}$. Dato che $\{F^n\}_{n\in\mathbb{N}}$ è compattamente divergente, dev'essere $\xi'\in\partial^\mathcal{E}X$. Siccome $F^{\mu(j_n)}(z)\longrightarrow\xi$ per ogni $z\in K$, dev'essere $\tilde{\xi}=\xi$. Visto che $F^{\mu(j_n)}(z_n)\not\in U$ per ogni $n\in\mathbb{N}$, dev'essere $\xi\not=\xi'$.
-
-    Adesso notiamo che per la Proposizione \ref{semicontr} si ha
-    $$k_X\big(F^{\mu(j_n)}(z_n),F^{\mu(j_n)}(\tilde{z})\big)\le k_X(z_n,\tilde{z})\longrightarrow0$$
-    per $n\longrightarrow+\infty$. Basta allora applicare il Lemma \ref{nonazeroplease} con $x_n=F^{\mu(j_n)}(z_n)$ e $y_n=F^{\mu(j_n)}(\tilde{z})$ per ottenere una contraddizione.
+    Si ripete la dimostrazione del Lemma \ref{unaltrosottosotto-bis} con le opportune sostituzioni, in particolare si usa Lemma \ref{limpt} al posto del Lemma \ref{limpt-bis} e il Lemma \ref{nonazeroplease} al posto del Lemma \ref{nonazeroplease-bis}. Ricordiamo anche per l'Osservazione \ref{endiscptsucc} si ha la compattezza per successioni.
 \end{proof}
 
 \begin{lm} \label{estraiunasotto}
@@ -142,7 +114,7 @@ Adesso vogliamo dimostrare un teorema di tipo ``Wolff-Denjoy'' per sottovarietà
 \end{lm}
 
 \begin{proof}
-    Fissiamo $z_0\in X$. Per la compattezza per successioni di $\overline{X}^\mathcal{E}$ e la divergenza dai compatti di $\{F^n\}_{n\in\mathbb{N}}$, esistono $\xi\in\partial^\mathcal{E}X$ e una sottosuccessione $\{j_n\}_{n\in\mathbb{N}}\subseteq\mathbb{N}$ tali che $F^{\mu(j_n)}(z_0)\longrightarrow\xi$. Allora la successione $\{F^{\mu(j_n)}\}_{n\in\mathbb{N}}$ converge alla costante $\xi$ uniformemente sul compatto $\{z_0\}$. Si conclude applicando il Lemma \ref{unaltrosottosotto}.
+    Come la dimostrazione della Proposizione \ref{estraiunasotto-bis}, usando il Lemma \ref{unaltrosottosotto} al posto del Lemma \ref{unaltrosottosotto-bis}.
 \end{proof}
 
 Siamo ora pronti a dimostrare il teorema di tipo ``Wolff-Denjoy'' nel caso non relativamente compatto.
@@ -162,7 +134,7 @@ Siamo ora pronti a dimostrare il teorema di tipo ``Wolff-Denjoy'' nel caso non r
 
     Dopo aver applicato il Teorema \ref{dicotomia}, si usano il Lemma \ref{limpt} per dire che l'insieme delle funzioni di limite di $F$ in $C^0(X,\overline{X}^\mathcal{E})$ è composto dalle sole costanti, e il Lemma \ref{estraiunasotto} per dire che è non vuoto. Se, come nella dimostrazione del Teorema \ref{wd_type_strong}, facciamo vedere che è composto da un'unica funzione costante, allora con un semplice assurdo otteniamo che tutta la successione $\{F^n\}_{n\in\mathbb{N}}$ converge a tale costante in $C^0(X,\overline{X}^\mathcal{E})$. Ci resta solo da vedere che l'insieme delle funzioni limite non contiene due funzioni.\\
 
-    Caso 1 della dimostrazione del Teorema \ref{wd_type_strong}: si usa la Proposizione \ref{unaproppp} al posto della Proposizione \ref{inf_impl_ugu}; si usa il Lemma \ref{estraiunasotto} al posto della Proposizione \ref{montel}; si usa il Lemma \ref{unaltrosottosotto} al posto del Lemma \ref{lemmasottosotto2}; al posto di scrivere $d_Y\big(F^{\mu_{j_m}-l_m}(o),\eta\big)<1/m$, dobbiamo dire che $F^{\mu_{j_m}-l_m}(o)\longrightarrow \eta$.\\
+    Caso 1 della dimostrazione del Teorema \ref{wd_type_strong}: si usa la Proposizione \ref{unaproppp} al posto della Proposizione \ref{inf_impl_ugu}; si usa il Lemma \ref{estraiunasotto} al posto della Proposizione \ref{estraiunasotto-bis}; si usa il Lemma \ref{unaltrosottosotto} al posto del Lemma \ref{unaltrosottosotto-bis}; al posto di scrivere $d_Y\big(F^{\mu_{j_m}-l_m}(o),\eta\big)<1/m$, dobbiamo dire che $F^{\mu_{j_m}-l_m}(o)\longrightarrow \eta$.\\
 
     Caso 2: per definire $G_\delta$ nel caso in cui $\xi\in\mathcal{E}(\overline{X})$, si considerano gli $m\in\mathbb{N}$ tali che $F^m(x_1)\in\xi\big(K_{\lfloor1/\delta\rfloor}\cap\overline{X}\big)$, dove $\{K_n\}_{n\in\mathbb{N}}$ è un'esaustione in compatti di $Y$ (la dimostrazione che $\displaystyle\sup_{\delta>0,x_1,x_2\in K}G_\delta(x_1,x_2)<+\infty$ si riadatta facilmente).
     
@@ -171,26 +143,12 @@ Siamo ora pronti a dimostrare il teorema di tipo ``Wolff-Denjoy'' nel caso non r
     Il resto della dimostrazione può essere riadattato in modo simile a quanto già detto sopra.
 \end{proof}
 
-\begin{oss}
-    Notiamo che l'ipotesi che $\overline{X}$ fosse localmente connessa è servita solo per dire che $\overline{X}^\mathcal{E}$ è compatta, mentre altrove l'unica conseguenza è stata un complicamento della dimostrazione. Se dunque supponiamo $X$ relativamente compatta in $Y$, possiamo ripetere le dimostrazioni dei risultati che precedono il Teorema \ref{wd_type_ill}, e poi rifare la dimostrazione del Teorema \ref{wd_type_strong} come vista nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità} ma usando i suddetti risultati, al più restringendoci a una componente connessa di $Y$. Si trova così la seguente generalizzazione del Teorema \ref{wd_type_strong}.
-\end{oss}
-
-\begin{thm} \label{wd_type_ultrastrong}
-    Sia $X$ una sottovarietà taut e relativamente compatta di una varietà complessa $Y$. Supponiamo che esista un $\kappa_0>0$ tale che $X$ sia $(1,\kappa_0)$-visibile.
-    
-    Sia $F:X \longrightarrow X$ una funzione olomorfa. Allora vale esattamente una delle seguenti affermazioni:
-    \begin{itemize}
-        \item le orbite dei punti di $X$ tramite $F$ sono relativamente compatte in $X$; oppure,
-        \item esiste un unico punto di $\partial_YX$ tale che la successione delle iterate di $F$ converge, uniformemente sui compatti, a quel punto.
-    \end{itemize}
-\end{thm}
-
 Costruiamo adesso un esempio di dominio $\Omega\subseteq\mathbb{C}^2$ taut, ultravisibile, con chiusura localmente connessa e tale che la cardinalità di $\mathcal{E}(\overline{\Omega})$ sia più che numerabile, riprendendo da \cite[Section 2]{BZ2}; si noti che un tale dominio soddisfa le ipotesi del Teorema \ref{wd_type_ill}.
 
 Partiamo dalla seguente definizione, che generalizza il concetto di dominio Goldilocks.
 
 \begin{defn} \label{localgold}
-    Un dominio $\Omega\subseteq\mathbb{C}^d$ si dice \textit{localmente Goldilocks} se per ogni $\xi\in\partial\Omega$ esiste un intorno $U$ di $\xi$ in $\overline{\Omega}$ tale che:
+    Un dominio $\Omega\subseteq\mathbb{C}^n$ si dice \textit{localmente Goldilocks} se per ogni $\xi\in\partial\Omega$ esiste un intorno $U$ di $\xi$ in $\overline{\Omega}$ tale che:
     \begin{enumerate}[label={(\arabic*)}]
         \item esiste un $\epsilon>0$ tale che $\displaystyle\int_0^\epsilon \frac{1}{r}M_{\Omega,U}(r)\diff r<+\infty$;
         \item per ogni $z_0\in\Omega$ esistono due costanti $C,\alpha>0$ (che dipendono da $z_0$ e da $U$) tali che $k_\Omega(z_0,z)\le C+\alpha\log{\dfrac{1}{\delta_\Omega(z)}}$ per ogni $z\in\Omega\cap U$.
@@ -200,81 +158,81 @@ Partiamo dalla seguente definizione, che generalizza il concetto di dominio Gold
 Dimostriamo che essere localmente Goldilocks è una condizione sufficiente affinché un dominio Kobayashi-iperbolico sia ultravisibile.
 
 \begin{prop}
-    Sia $\Omega\subseteq\mathbb{C}^d$ un dominio Kobayashi-iperbolico e localmente Goldilocks. Allora $\Omega$ è $(\lambda,\kappa)$-ultravisibile per ogni $\lambda\ge1$ e $\kappa>0$.
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio Kobayashi-iperbolico e localmente Goldilocks. Allora $\Omega$ è $(\lambda,\kappa)$-ultravisibile per ogni $\lambda\ge1$ e $\kappa>0$.
     \vspace*{-\baselineskip}
 \end{prop}
 
 \begin{proof}
-    Fissiamo $\lambda\ge1$ e $\kappa\ge0$. Fissiamo anche $\xi,\eta\in\partial^\mathcal{E}\Omega$ e $V_\xi,V_\eta$ come nel punto 2 della Definizione \ref{ultravisibility}; diremo più avanti come sceglierli. Fissiamo un'esaustione in compatti $\{K_n\}_{n\in\mathbb{N}}$ di $\Omega$. Supponiamo per assurdo che, per ogni $n\in\mathbb{N}$, esista una $(\lambda,\kappa)$-simil-geodetica $\sigma_n:[0,T_n]\longrightarrow\Omega$ con $\sigma_n(0)\in V_\xi$, $\sigma_n(T_n)\in V_\eta$ e ${\sigma_n([0,T_n])\cap K_n=\emptyset}$.
+    Fissiamo $\lambda\ge1$ e $\kappa\ge0$. Fissiamo anche $\xi,\eta\in\partial^\mathcal{E}\Omega$ e $V_\xi,V_\eta$ come nel punto 2 della Definizione \ref{ultravisibility}; diremo più avanti come sceglierli. Fissiamo un'esaustione in compatti $\{K_j\}_{j\in\mathbb{N}}$ di $\Omega$. Supponiamo per assurdo che, per ogni $j\in\mathbb{N}$, esista una $(\lambda,\kappa)$-simil-geodetica $\sigma_j:[0,T_j]\longrightarrow\Omega$ con $\sigma_j(0)\in V_\xi$, $\sigma_j(T_j)\in V_\eta$ e ${\sigma_j([0,T_j])\cap K_j=\emptyset}$.
 
     Per ottenere una contraddizione, dobbiamo scegliere $V_\xi$ e $V_\eta$ in modo opportuno. Se $\xi,\eta\in\partial\Omega$, basta che li prendiamo localmente compatti. Se $\xi\in\partial\Omega$ e $\eta\in\mathcal{E}(\overline{\Omega})$ (o viceversa), prendiamo un compatto $K$ di $\overline{\Omega}$ la cui parte interna contiene un intorno compatto di $\xi$; scegliamo come $V_\xi$ la parte interna di tale intorno e $V_\eta=\eta(K)$. Se $\xi,\eta\in\mathcal{E}(\overline{\Omega})$ basta prendere $V_\xi=\xi(K),V_\eta=\eta(K)$, dove $K$ è un compatto sufficientemente grande.
 
-    In tutti i casi sopra, abbiamo scelto gli intorni in modo che esista un compatto $K$ di $\overline{\Omega}$ tale che, per ogni $n\in\mathbb{N}$, deve esistere $t_n\in[0,T_n]$ per cui $\sigma_n(t_n)\in K$. A meno di sottosuccessioni, possiamo supporre $\sigma_n(t_n)\longrightarrow x_0\in\overline{\Omega}$. Poiché $\sigma_n([0,T_n])\cap K_n=\emptyset$ per ogni $n$, dev'essere $x_0\in\partial\Omega$. Sia $U$ l'intorno di $x_0$ dato dal punto (2) della Definizione \ref{localgold}, e osserviamo che lo possiamo prendere limitato. Di nuovo a meno di sottosuccessioni, possiamo trovare un intervallo $[a_n,b_n]\subseteq[0,T_n]$ contenente $t_n$ tale che:
+    In tutti i casi sopra, abbiamo scelto gli intorni in modo che esista un compatto $K$ di $\overline{\Omega}$ tale che, per ogni $j\in\mathbb{N}$, deve esistere $t_j\in[0,T_j]$ per cui $\sigma_j(t_j)\in K$. A meno di sottosuccessioni, possiamo supporre $\sigma_j(t_j)\longrightarrow x_0\in\overline{\Omega}$. Poiché $\sigma_j([0,T_j])\cap K_j=\emptyset$ per ogni $j$, dev'essere $x_0\in\partial\Omega$. Sia $U$ l'intorno di $x_0$ dato dal punto (2) della Definizione \ref{localgold}, e osserviamo che lo possiamo prendere limitato. Di nuovo a meno di sottosuccessioni, possiamo trovare un intervallo $[a_j,b_j]\subseteq[0,T_j]$ contenente $t_j$ tale che:
     \begin{nlist}
-        \item si ha $\sigma_n([a_n,b_n])\subseteq U$ per ogni $n\in\mathbb{N}$;
-        \item si ha $\displaystyle\inf_{n\ge 1}\|\sigma_n(a_n)-\sigma_n(b_n)\|>0$;
+        \item si ha $\sigma_j([a_j,b_j])\subseteq U$ per ogni $j\in\mathbb{N}$;
+        \item si ha $\displaystyle\inf_{j\ge 1}\|\sigma_j(a_j)-\sigma_j(b_j)\|>0$;
     \end{nlist}
     possiamo imporre il punto (ii) perché $\overline{V}_\xi\cap\overline{V}_\eta=\emptyset$, per cui senza perdita di generalità $x_0\not\in\overline{V}_\xi$ e basta chiedere che $U\subseteq\overline{\Omega}\setminus\overline{V}_\xi$.
 
     Adesso, poiché $U$ è limitato esiste $R>0$ tale che
     \begin{equation}\label{boundiamo}
-        \sigma_n([a_n,b_n])\subseteq\mathbb{B}^d_R
+        \sigma_j([a_j,b_j])\subseteq\mathbb{B}^n_R
     \end{equation}
-    per ogni $n\ge 1$. A meno di riparametrizzazioni, possiamo supporre che si abbia $0\in[a_n,b_n]$ e che
-    $$\delta_\Omega\big(\sigma_n(0)\big)=\max\left\{\delta_\Omega\big(\sigma_n(t)\big)\mid t\in[a_n,b_n]\right\}.$$
+    per ogni $j\ge 1$. A meno di riparametrizzazioni, possiamo supporre che si abbia $0\in[a_j,b_j]$ e che
+    $$\delta_\Omega\big(\sigma_j(0)\big)=\max\left\{\delta_\Omega\big(\sigma_j(t)\big)\mid t\in[a_j,b_j]\right\}.$$
 
-    Allora, di nuovo a meno di sottosuccessioni, possiamo supporre che valgano le seguenti convergenze: $a_n\longrightarrow a\in[-\infty,0]$, $b_n\longrightarrow b\in[0,+\infty]$, $\sigma_n(a_n)\longrightarrow\xi'$ e $\sigma_n(b_n)\longrightarrow\eta'$. Per la condizione (ii) sopra, deve esistere $\epsilon>0$ tale che $\|\xi'-\eta'\|\ge\epsilon$.
+    Allora, di nuovo a meno di sottosuccessioni, possiamo supporre che valgano le seguenti convergenze: $a_j\longrightarrow a\in[-\infty,0]$, $b_j\longrightarrow b\in[0,+\infty]$, $\sigma_j(a_j)\longrightarrow\xi'$ e $\sigma_j(b_j)\longrightarrow\eta'$. Per la condizione (ii) sopra, deve esistere $\epsilon>0$ tale che $\|\xi'-\eta'\|\ge\epsilon$.
 
-    Vogliamo ora mostrare che le funzioni $\sigma_n\restrict{[a_n,b_n]}$ sono equilipschitziane rispetto alla distanza euclidea. Per il punto 1 della Definizione \ref{localgold} esiste $\delta>0$ tale che $0<M_{\Omega,U}(r)<1$ per ogni $r\in(0,\delta)$. Allora dalla definizione di $M_{\Omega,U}$ abbiamo che $K_\Omega(z;v)\ge\|v\|$ per ogni $z\in\Omega\cap U$ tale che $\delta_\Omega(z)<\delta$ e per ogni $v\in\mathbb{C}^d$. Inoltre, poiché $U\cap\{z\in\Omega\mid\delta_\Omega(z)\ge\delta\}\subset\subset\Omega$, per il punto (1) della Proposizione \ref{metrica_bilip} esiste una costante $c_0>0$ tale che $K_\Omega(z;v)\ge c_0\|v\|$ per ogni $z\in\Omega\cap U$ tale che $\delta_\Omega(z)\le\delta$ e per ogni $v\in\mathbb{C}^d$. Ponendo $c=\min\{1,c_0\}$ e dati $s,t\in[a_n,b_n]$, si ha dunque che
+    Vogliamo ora mostrare che le funzioni $\sigma_j\restrict{[a_j,b_j]}$ sono equilipschitziane rispetto alla distanza euclidea. Per il punto 1 della Definizione \ref{localgold} esiste $\delta>0$ tale che $0<M_{\Omega,U}(r)<1$ per ogni $r\in(0,\delta)$. Allora dalla definizione di $M_{\Omega,U}$ abbiamo che $K_\Omega(z;v)\ge\|v\|$ per ogni $z\in\Omega\cap U$ tale che $\delta_\Omega(z)<\delta$ e per ogni $v\in\mathbb{C}^n$. Inoltre, poiché $U\cap\{z\in\Omega\mid\delta_\Omega(z)\ge\delta\}\subset\subset\Omega$, per il punto (1) della Proposizione \ref{metrica_bilip} esiste una costante $c_0>0$ tale che $K_\Omega(z;v)\ge c_0\|v\|$ per ogni $z\in\Omega\cap U$ tale che $\delta_\Omega(z)\le\delta$ e per ogni $v\in\mathbb{C}^n$. Ponendo $c=\min\{1,c_0\}$ e dati $s,t\in[a_j,b_j]$, si ha dunque che
     \begin{align*}
-        \|\sigma_n(t)-\sigma_n(s)\|&=\left\|\int_s^t \sigma_n'(r)\diff r\right\| \le \int_s^t \|\sigma_n'(r)\|\diff r\\
-        &\le \int_s^t \frac{1}{c}K_\Omega\big(\sigma_n(r);\sigma_n'(r)\big)\diff r\le \frac{\lambda}{c}|s-t|,
+        \|\sigma_j(t)-\sigma_j(s)\|&=\left\|\int_s^t \sigma_j'(r)\diff r\right\| \le \int_s^t \|\sigma_j'(r)\|\diff r\\
+        &\le \int_s^t \frac{1}{c}K_\Omega\big(\sigma_j(r);\sigma_j'(r)\big)\diff r\le \frac{\lambda}{c}|s-t|,
     \end{align*}
     dove la penultima disuguaglianza segue da quanto trovato sopra e l'ultima dalla definizione di simil-geodetica.
 
-    Dall'equilipschitziane e dall'equilimitatezza data da \eqref{boundiamo}, per il teorema di Ascoli-Arzelà, sempre a meno di sottosuccessioni, abbiamo che $\sigma_n\restrict{(a_n,b_n)}$ converge uniformemente sui compatti di $(a,b)$ a una curva $\sigma:(a,b)\longrightarrow\overline{\Omega}$. Per l'equilipschitzianità (sugli $[a_n,b_n]$) si ha $0<\|\xi'-\eta'\|\le \dfrac{\lambda}{c}|b-a|$, per cui $a\not=b$. Come fatto nella dimostrazione del Teorema \ref{extvis}, si può mostrare che $\sigma$ non è costante.
+    Dall'equilipschitziane e dall'equilimitatezza data da \eqref{boundiamo}, per il teorema di Ascoli-Arzelà, sempre a meno di sottosuccessioni, abbiamo che $\sigma_j\restrict{(a_j,b_j)}$ converge uniformemente sui compatti di $(a,b)$ a una curva $\sigma:(a,b)\longrightarrow\overline{\Omega}$. Per l'equilipschitzianità (sugli $[a_j,b_j]$) si ha $0<\|\xi'-\eta'\|\le \dfrac{\lambda}{c}|b-a|$, per cui $a\not=b$. Come fatto nella dimostrazione del Teorema \ref{extvis}, si può mostrare che $\sigma$ non è costante.
 
-    Adesso ricordiamo che $\delta_\Omega\big(\sigma_n(t)\big)\le\delta_\Omega\big(\sigma_n(0)\big)$ per ogni $t\in[a_n,b_n]$, e che $\sigma_n([a_n,b_n])\subseteq U$. Quindi
-    $$M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big) \le M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(0)\big)\Big),$$
-    allora il membro sinistro di questa disuguaglianza tende a $0$ uniformemente in $t$ per $n\longrightarrow+\infty$. Dati dunque $s,u\in(a,b)$ con $s\le u$, abbiamo che
+    Adesso ricordiamo che $\delta_\Omega\big(\sigma_j(t)\big)\le\delta_\Omega\big(\sigma_j(0)\big)$ per ogni $t\in[a_j,b_j]$, e che $\sigma_j([a_j,b_j])\subseteq U$. Quindi
+    $$M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_j(t)\big)\Big) \le M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_j(0)\big)\Big),$$
+    allora il membro sinistro di questa disuguaglianza tende a $0$ uniformemente in $t$ per $j\longrightarrow+\infty$. Dati dunque $s,u\in(a,b)$ con $s\le u$, abbiamo che
     \begin{align*}
-        \|\sigma(s)-\sigma(u)\|&=\lim_{n\longrightarrow+\infty}\|\sigma_n(s)-\sigma_n(u)\| \le \limsup_{n\longrightarrow+\infty}\int_s^u\|\sigma_n'(t)\|\diff t \\
-        &\le \lambda\limsup_{n\longrightarrow+\infty}\int_s^uM_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)\diff t=0,
+        \|\sigma(s)-\sigma(u)\|&=\lim_{j\longrightarrow+\infty}\|\sigma_j(s)-\sigma_j(u)\| \le \limsup_{j\longrightarrow+\infty}\int_s^u\|\sigma_j'(t)\|\diff t \\
+        &\le \lambda\limsup_{j\longrightarrow+\infty}\int_s^uM_{\Omega,U}\Big(\delta_\Omega\big(\sigma_j(t)\big)\Big)\diff t=0,
     \end{align*}
-    dove l'ultima disuguaglianza si ha perché $\|\sigma_n'(t)\|\le\lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_n(t)\big)\Big)$ per ogni $n\in\mathbb{N}$, dalle definizioni. Dunque $\sigma$ è costante, contraddizione.
+    dove l'ultima disuguaglianza si ha perché $\|\sigma_j'(t)\|\le\lambda M_{\Omega,U}\Big(\delta_\Omega\big(\sigma_j(t)\big)\Big)$ per ogni $j\in\mathbb{N}$, dalle definizioni. Dunque $\sigma$ è costante, contraddizione.
 \end{proof}
 
 Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo costruire un esempio in $\mathbb{C}$.
 
 \begin{defn}
-    Un \textit{cono circolare aperto con apertura $\theta$} è un aperto di $\mathbb{C}^d$ della forma
-    $$\Gamma(v,\theta):=\{z\in\mathbb{C}^d\mid \mathfrak{Re}\langle z,v\rangle>\cos(\theta/2)\|z\|\},$$
-    dove $v$ è un vettore unitario di $\mathbb{C}^d$ e $\theta\in(0,\pi)$. Per ogni punto $p\in\mathbb{C}^d$, l'\textit{asse} del cono traslato $p+\Gamma(v,\theta)$ è l'insieme $\{p+tv\mid t>0\}$.
+    Un \textit{cono circolare aperto con apertura $\theta$} è un aperto di $\mathbb{C}^n$ della forma
+    $$\Gamma(v,\theta):=\{z\in\mathbb{C}^n\mid \mathfrak{Re}\langle z,v\rangle>\cos(\theta/2)\|z\|\},$$
+    dove $v$ è un vettore unitario di $\mathbb{C}^n$ e $\theta\in(0,\pi)$. Per ogni punto $p\in\mathbb{C}^n$, l'\textit{asse} del cono traslato $p+\Gamma(v,\theta)$ è l'insieme $\{p+tv\mid t>0\}$.
 \end{defn}
 
 \begin{defn}
-    Sia $\Omega$ un dominio di $\mathbb{C}^d$. Diciamo che $\Omega$ soddisfa una \textit{condizione di cono interno} se per ogni $R>0$ esistono due costanti $r>0$ e $\theta\in(0,\pi)$, e un compatto $K\subseteq\Omega$, tali che per ogni $x\in(\Omega\setminus K)\cap\mathbb{B}^d_R$ esistono un punto $\xi_x\in\partial\Omega$ e un vettore unitario $v_x$ tali che:
+    Sia $\Omega$ un dominio di $\mathbb{C}^n$. Diciamo che $\Omega$ soddisfa una \textit{condizione di cono interno} se per ogni $R>0$ esistono due costanti $r>0$ e $\theta\in(0,\pi)$, e un compatto $K\subseteq\Omega$, tali che per ogni $x\in(\Omega\setminus K)\cap\mathbb{B}^n_R$ esistono un punto $\xi_x\in\partial\Omega$ e un vettore unitario $v_x$ tali che:
     \begin{itemize}
         \item il punto $x$ appartiene all'asse del cono traslato $\xi_x+\Gamma(v_x,\theta)$;
-        \item si ha $\big(\xi_x+\Gamma(v_x,\theta)\big)\cap (\xi_x+\mathbb{B}^d_r)\subseteq\Omega$.
+        \item si ha $\big(\xi_x+\Gamma(v_x,\theta)\big)\cap (\xi_x+\mathbb{B}^n_r)\subseteq\Omega$.
     \end{itemize}
 \end{defn}
 
 \begin{defn}
-    Sia $\Omega$ un dominio di $\mathbb{C}^d$. Diciamo che $\Omega$ soddisfa una \textit{condizione di cono esterno} se per ogni $R>0$ esistono due costanti $r>0$ e $\theta\in(0,\pi)$, e un compatto $K\subseteq\Omega$, tali che per ogni $\xi\in\partial\Omega\cap\mathbb{B}^d_R$ esiste un vettore unitario $v_\xi$ tale che
-    $$\big(\xi+\Gamma(v_\xi,\theta)\big)\cap (\xi+\mathbb{B}^d_r)\subseteq\mathbb{C}^d\setminus\Omega.$$
+    Sia $\Omega$ un dominio di $\mathbb{C}^n$. Diciamo che $\Omega$ soddisfa una \textit{condizione di cono esterno} se per ogni $R>0$ esistono due costanti $r>0$ e $\theta\in(0,\pi)$, e un compatto $K\subseteq\Omega$, tali che per ogni $\xi\in\partial\Omega\cap\mathbb{B}^n_R$ esiste un vettore unitario $v_\xi$ tale che
+    $$\big(\xi+\Gamma(v_\xi,\theta)\big)\cap (\xi+\mathbb{B}^n_r)\subseteq\mathbb{C}^n\setminus\Omega.$$
 \end{defn}
 
 \begin{lm} \label{conin}
-    Sia $\Omega$ un dominio di $\mathbb{C}^d$ che soddisfa una condizione di cono interno. Allora $\Omega$ soddisfa la condizione (2) nella definizione di dominio localmente Goldilocks.
+    Sia $\Omega$ un dominio di $\mathbb{C}^n$ che soddisfa una condizione di cono interno. Allora $\Omega$ soddisfa la condizione (2) nella definizione di dominio localmente Goldilocks.
 \end{lm}
 
 \begin{proof}
-    Per ogni $\beta>1$ definiamo la funzione olomorfa $\psi_\beta:\mathbb{D}\longrightarrow\mathbb{C}$ come $\psi_\beta(\zeta):=(1+\zeta)^{1/\beta}$ e $\psi_\beta(0):=1$. Dati un vettore unitario $v\in\mathbb{C}^d$ e un numero $l>0$, definiamo la funzione olomorfa $\psi(\cdot;\beta,v,l):\mathbb{D}\longrightarrow\mathbb{C}^d$ come $\Psi(\zeta;\beta,v,l)=l\psi_\beta(\zeta)v$, e indichiamo la sua immagine con $\mathcal{L}(\beta,v,r)$.
+    Per ogni $\beta>1$ definiamo la funzione olomorfa $\psi_\beta:\mathbb{D}\longrightarrow\mathbb{C}$ come $\psi_\beta(\zeta):=(1+\zeta)^{1/\beta}$ e $\psi_\beta(0):=1$. Dati un vettore unitario $v\in\mathbb{C}^n$ e un numero $l>0$, definiamo la funzione olomorfa $\psi(\cdot;\beta,v,l):\mathbb{D}\longrightarrow\mathbb{C}^n$ come $\Psi(\zeta;\beta,v,l)=l\psi_\beta(\zeta)v$, e indichiamo la sua immagine con $\mathcal{L}(\beta,v,r)$.
     
-    Fissiamo ora $\xi\in\partial\Omega$, e prendiamo $R>0$ e un intorno $U$ di $\xi$ tali che $U\subset\subset\mathbb{B}^d_R$; è facile vedere che esistono $R'>0$ e $\alpha>1$ tali che
+    Fissiamo ora $\xi\in\partial\Omega$, e prendiamo $R>0$ e un intorno $U$ di $\xi$ tali che $U\subset\subset\mathbb{B}^n_R$; è facile vedere che esistono $R'>0$ e $\alpha>1$ tali che
     $$R'\psi_\alpha(\mathbb{D})\subseteq \{\zeta\in\mathbb{C}\mid\mathfrak{Re}\zeta>\cos(\theta/2)|\zeta|\text{ e }|\zeta|<r\},$$
-    dove $\theta$ e $r$ sono dati dalla condizione di cono interno, e dipendono da $R$. Sia $K$ il compatto, anch'esso dipendente da $R$, dato sempre dalla condizione di cono interno; allora esiste un compatto $K'$ con $K\subseteq K'\subseteq\Omega$ e tale che, per ogni $x\in(\Omega\setminus K')\cap\mathbb{B}^d_R$, esistono $\xi_x\in\partial\Omega$ e un vettore unitario $v_x$ per cui:
+    dove $\theta$ e $r$ sono dati dalla condizione di cono interno, e dipendono da $R$. Sia $K$ il compatto, anch'esso dipendente da $R$, dato sempre dalla condizione di cono interno; allora esiste un compatto $K'$ con $K\subseteq K'\subseteq\Omega$ e tale che, per ogni $x\in(\Omega\setminus K')\cap\mathbb{B}^n_R$, esistono $\xi_x\in\partial\Omega$ e un vettore unitario $v_x$ per cui:
     \begin{nlist}
         \item si ha $\xi_x+\mathcal{L}(\alpha,v_x,R')\subseteq\Omega$;
         \item il punto $x$ appartiene al segmento che va da $\xi_x$ a $q_x:=\xi_x+\Psi(0;v_x,\alpha,R')$;
@@ -283,14 +241,14 @@ Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo co
 
     Allora, per ogni tale $x$, esiste un unico numero $t(x)>0$ tale che si abbia $\xi_x+t(x)v_x=x$. Chiaramente $\delta_\Omega(x)\le t(x)$. Inoltre, $\Psi(\cdot;\alpha,v_x,R')$ mappa il punto $\big(t(x)/R'\big)^\alpha-1\in(-1,0)$ nel punto $x-\xi_x$.
 
-    Fissiamo $z_0\in\Omega$; è sufficiente verificare la tesi per $z\in (\Omega\setminus K')\cap \mathbb{B}^d_R$. Poniamo $C:=\sup\{k_\Omega(y,z_0)\mid y\in K'\}$. Allora, per quanto trovato sopra, si ha
+    Fissiamo $z_0\in\Omega$; è sufficiente verificare la tesi per $z\in (\Omega\setminus K')\cap \mathbb{B}^n_R$. Poniamo $C:=\sup\{k_\Omega(y,z_0)\mid y\in K'\}$. Allora, per quanto trovato sopra, si ha
     \begin{align*}
         k_\Omega(z_0,z)&\le k_\Omega(z_0,q_z)+k_\Omega(q_z,z) \le C+\omega\Big(0,\big(t(x)/R'\big)^\alpha-1\Big)\\
         &=C+\frac{1}{2}\log\left(\frac{2-\big(t(x)/R'\big)^\alpha}{\big(t(x)/R'\big)^\alpha}\right) \le C+\frac{1}{2}\log\left(\frac{2}{\big(t(x)/R'\big)^\alpha}\right)\\
         &\le \left(C+\frac{1}{2}\log\big(2(R')^\alpha\big)\right)+\frac{\alpha}{2}\log\left(\frac{1}{\delta_\Omega(z)}\right);
     \end{align*}
 
-    poiché $k_\Omega(z_0,z) \le C$ per ogni $z\in K'\cap\mathbb{B}^d_R$, la tesi segue.
+    poiché $k_\Omega(z_0,z) \le C$ per ogni $z\in K'\cap\mathbb{B}^n_R$, la tesi segue.
 \end{proof}
 
 \begin{lm} \label{cones}
@@ -322,7 +280,7 @@ Prima di procedere con la costruzione del dominio in $\mathbb{C}^2$, dobbiamo co
 \end{proof}
 
 \begin{defn}
-    Sia $\Omega\subseteq\mathbb{C}^d$ un dominio. Diciamo che $\Omega$ è un \textit{dominio lipschitziano} (rispettivamente, \textit{dominio $C^0$}) se per ogni $x\in\partial\Omega$ esistono un intorno $U_x$ di $x$, un cambio di coordinate unitarie centrato in $x$ e una funzione lipschitziana (rispettivamente, una funzione continua) $\varphi_x$, definita in un qualche intorno aperto dell'origine in $\mathbb{C}^{d-1}\times\mathbb{R}$, tali che, se $w=(w_1,\dots,w_n)$ sono le suddette coordinate e $W_x$ è l'immagine di $U_x$ tramite esse, allora $U_x\cap\Omega$ in coordinate è dato da
+    Sia $\Omega\subseteq\mathbb{C}^n$ un dominio. Diciamo che $\Omega$ è un \textit{dominio lipschitziano} (rispettivamente, \textit{dominio $C^0$}) se per ogni $x\in\partial\Omega$ esistono un intorno $U_x$ di $x$, un cambio di coordinate unitarie centrato in $x$ e una funzione lipschitziana (rispettivamente, una funzione continua) $\varphi_x$, definita in un qualche intorno aperto dell'origine in $\mathbb{C}^{n-1}\times\mathbb{R}$, tali che, se $w=(w_1,\dots,w_n)$ sono le suddette coordinate e $W_x$ è l'immagine di $U_x$ tramite esse, allora $U_x\cap\Omega$ in coordinate è dato da
     $$\{w\in W_x\mid \mathfrak{Im}w_n>\varphi_x(w_1,\dots,w_{n-1},\mathfrak{Re}w_n)\}.$$
 \end{defn}
 
