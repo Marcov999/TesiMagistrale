@@ -26,10 +26,33 @@ Intuitivamente, una fine è un modo di scegliere, andando all'infinito, ``da che
 Vogliamo ora mettere una topologia su $X^\mathcal{E}:=X\cup\mathcal{E}(X)$ che lo renda uno spazio compatto. Sebbene le fini sono state definite con questo scopo in mente, sono comunque necessarie delle ipotesi. Si tratta di ipotesi che in generale sono soddisfatte da varietà astratte, ma poiché ci interesserà compattificare la chiusura di una sottovarietà dovremo prestare attenzione a un'ipotesi in particolare (si vedano l'Osservazione \ref{servelocconn} e l'Esempio \ref{servelocconnex}).
 
 \begin{prop} \label{endiscpt}
-    (\cite[Chapter 1, Problem 19]{Sp})\marginpar{Di nuovo cito un esercizio... quando avevo cercato la dim., l'unica che avevo trovato era online; può darsi che si trovi in \cite{F}, ma non so il tedesco} Sia $X$ uno spazio topologico connesso, localmente connesso, localmente compatto e di Hausdorff. Mettiamo su $X^\mathcal{E}$ la topologia generata dalla topologia di $X$ e dai seguenti intorni per $e\in\mathcal{E}(X)$ al variare di $K\subseteq X$ compatto:
+    Sia $X$ uno spazio topologico connesso, localmente connesso, localmente compatto, Hausdorff e che ammette un'esaustione in compatti. Mettiamo su $X^\mathcal{E}$ la topologia generata dalla topologia di $X$ e dai seguenti intorni per $e\in\mathcal{E}(X)$ al variare di $K\subseteq X$ compatto:
     $$N_K(e)=e(K)\cup\{f\in\mathcal{E}(X)\mid f(K)=e(K)\};$$
-    allora $X\cup\mathcal{E}(X)$ è uno spazio compatto e di Hausdorff.
+    allora $X^\mathcal{E}$ è uno spazio compatto e di Hausdorff.
 \end{prop}
+
+\begin{proof}
+    Che $X^\mathcal{E}$ è di Hausdorff segue facilmente dalle definizioni.
+    
+    Supponiamo che $\mathcal{E}(X)$, come sottospazio di $X^\mathcal{E}$, sia compatto e mostriamo che in tal caso anche $X^\mathcal{E}$ è compatto. Fissiamo un'esaustione in compatti $\{K_n\}_{n\in\mathbb{N}}$ di $X$. Sia $\{U_i\mid i\in I\}$ un ricoprimento aperto di $X^\mathcal{E}$. Siccome $\mathcal{E}(X)$ è compatto, esiste un sottoinsieme finito $J\subseteq I$ tale che per ogni $e\in\mathcal{E}(X)$ esistono $j\in J$, un compatto $K_{n_j}$ dell'esaustione e $C_j\subseteq U_j$ una componente connessa di $X\setminus K_{n_j}$ non relativamente compatta in $X$ tali che $e(K_{n_j})=C_j$. Ponendo $p=\displaystyle\max_{j\in J}n_j$, abbiamo che $\{U_j\mid j\in J\}$ è un sottoricoprimento finito delle componenti connesse di $X\setminus K_p$ non relativamente compatte in $X$.
+
+    Notiamo che $K_p\subseteq{\mathop K\limits^ \circ}_{p+1}$ implica che $K_p\cap\partial K_{p+1}=\emptyset$, per cui una componente connessa di $X\setminus K_p$ interseca $\partial K_{p+1}$ o è inclusa in $K_{p+1}$ (deve necessariamente intersecare $K_{p+1}$ per connessione di $X$). Dato che $X\setminus K_p$ è un aperto dello spazio localmente connesso $X$, è anch'esso localmente connesso, per cui le sue componenti connesse sono aperte; allora, poiché $\partial K_{p+1}$ è compatto e tali componenti sono disgiunte, solo un numero finito di esse lo interseca. Segue che $K$, l'unione di $K_{p+1}$ con la chiusura delle componenti connesse di $X\setminus K_p$ relativamente compatte in $X$ e che intersecano $\partial K_{p+1}$, è compatto; in particolare, esiste un sottoinsieme finito $J'\subseteq I$ tale che $\{U_j\mid j\in J'\}$ ricopre $K$. Otteniamo che $\{U_j\mid j\in J\cup J'\}$ è un sottoricoprimento finito di $X^\mathcal{E}$; dunque quest'ultimo è compatto, come voluto.\\
+
+    Quindi, per concludere la dimostrazione, è sufficiente mostrare che $\mathcal{E}(X)$ è compatto. Indichiamo con $\pi(K_n)$ l'insieme delle componenti connesse di $X\setminus K_n$ non relativamente compatte in $X$. Usando il fatto che tali componenti devono intersecare $\partial K_{n+1}$ e ragionando come sopra, troviamo che ogni $\pi(K_n)$ è finito; in particolare, se mettiamo su ciascuno di questi insiemi la topologia discreta otteniamo che il prodotto $\displaystyle\prod_{n=1}^{+\infty}\pi(K_n)$ è compatto.
+    
+    Consideriamo adesso la funzione $\phi:\mathcal{E}(X)\longrightarrow \displaystyle\prod_{n=1}^{+\infty}\pi(K_n)$ che manda ogni fine $e$ nell'elemento che ha $e(K_n)$ come $n$-esima coordinata; per ottenere la tesi, è sufficiente mostrare che $\phi$ è un omeomorfismo con l'immagine e che l'immagine è chiusa. Per definizione, $\phi$ è iniettiva. Per mostrare che è continua, dalla definizione di topologia prodotto ci basta verificare che la preimmagine di aperti $U\subseteq \displaystyle\prod_{n=1}^{+\infty}\pi(K_n)$ della forma
+    $$\left\{\prod_{n=1}^{+\infty}A_n\mid A_n=\{C_n\}\text{ per ogni }1\le n\le r, A_n=\pi(K_n)\text{ altrimenti}\right\},$$
+    per qualche $r\in\mathbb{N}$, è aperta. Dato $U$ siffatto, si ha che
+    $$\phi^{-1}(U)=\mathcal{E}(X)\cap\bigcap_{n=1}^r N_{K_n}(e)$$
+    se esiste $e\in\mathcal{E}(X)$ tale che $e(K_n)=C_n$ per ogni $1\le n\le r$, ed è vuota altrimento; in ogni caso, è un aperto di $\mathcal{E}(X)$ come sottospazio di $X^\mathcal{E}$, per cui $\phi$ è continua. Per mostrare che è aperta se restringiamo il codominio all'immagine, non è difficile verificare che basta controllare che siano aperte le immagini di aperti $V$ della forma $\mathcal{E}(X)\cap N_K(e)$ al variare di $K$ compatto; dato un tale $V$, abbiamo che
+    $$\phi(V)=\phi\big(\mathcal{E}(X)\big)\cap \{(C_n)_{n\in\mathbb{N}} \mid C_r \subseteq e(K)\},$$
+    dove $r$ è il minimo naturale tale che $K\subseteq K_r$. Segue che $\phi(V)$ è aperto in $\phi\big(\mathcal{E}(X)\big)$. Ci resta solo da dimostrare che $\phi\big(\mathcal{E}(X)\big)$ è chiuso in $\displaystyle\prod_{n=1}^{+\infty}\pi(K_n)$. Si ha
+    $$\phi\big(\mathcal{E}(X)\big)=\left\{(C_n)_{n\in\mathbb{N}}\in\prod_{n=1}^{+\infty}\pi(K_n)\mid C_j\subseteq C_i\text{ per ogni }i\le j\right\}.$$
+
+    Dati $i\le j$, poniamo $\phi_{ij}:\pi(K_j)\longrightarrow\pi(K_i)$ la funzione che manda ogni componente connessa di $X\setminus K_j$ non relativamente compatta in $X$ nella componente connessa di $X\setminus K_i$ che la contiene. Poiché $C_j\subseteq C_i$ è equivalente a $\phi_{ij}(C_j)=C_i$, segue che
+    $$\phi\big(\mathcal{E}(X)\big)=\bigcap_{i\le j}\left\{C\in\prod_{n=1}^{+\infty}\pi(K_n) \mid (\phi_{ij}\circ p_j)(C)=p_i(C)\right\},$$
+    dove $p_m:\displaystyle\prod_{n=1}^{+\infty}\pi(K_n)\longrightarrow \pi(K_m)$ è la proiezione: $p_m(C)=C_m$ se $C=(C_n)_{n\in\mathbb{N}}$. Poiché $\phi_{ij}, p_i$ e $p_j$ sono continue e $\pi(K_i)$ è Hausdorff per ogni $i\le j$, abbiamo che $\phi\big(\mathcal{E}(X)\big)$ è un'intersezione arbitraria di chiusi; dunque è chiuso, come voluto.
+\end{proof}
 
 \begin{oss} \label{endiscptsucc}
     Se $X$ ammette un'esaustione in compatti $\{K_n\}_{n\in\mathbb{N}}$, ponendo $U_n^e=N_{K_n}(e)$ si ha che $\{U_n^e\}_{n\in\mathbb{N}}$ è un sistema fondamentale di intorni per $e$. Allora, se $X$ soddisfa anche le ipotesi della Proposizione \ref{endiscpt} ed è primo numerabile, si ha che $X^\mathcal{E}$ è compatto e primo numerabile, per cui è compatto per successioni.
