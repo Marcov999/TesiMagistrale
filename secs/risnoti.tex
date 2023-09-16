@@ -282,6 +282,14 @@ Adesso vogliamo mostrare che tutte le varietà $X$ Kobayashi-iperboliche tali ch
 Diamo ora delle definizioni che ci serviranno per enunciare i risultati già noti nel caso dei domini regolari.
 
 \begin{defn}
+    Sia $\Omega \subset \mathbb{C}^n$ un dominio. Un punto $\xi\in\partial\Omega$ è detto \textit{essenziale} se esiste $u \in \mathcal{O}(\Omega)$ tale che per ogni intorno aperto connesso $\Omega_1$ di $\xi$, e per ogni aperto connesso $\Omega_2 \subseteq \Omega \cap \Omega_1$ con $\Omega_2\not=\emptyset,\Omega$, non esiste alcuna funzione $\tilde{u} \in \mathcal{O}(\Omega_1)$ con $\tilde{u}\restrict{\Omega_2}=u\restrict{\Omega_2}$.
+
+    Diremo che $\Omega$ è un \textit{dominio di olomorfia} se ogni $\xi\in \partial\Omega$ è essenziale.
+\end{defn}
+
+I domini di olomorfia hanno una caratterizzazione equivalente, in generale più complicata, ma che può essere semplificata per i domini con bordo sufficientemente regolare.
+
+\begin{defn}
     Una funzione continua $\mu:\mathbb{C}^n \longrightarrow [0,+\infty)$ è detta \textit{funzionale di Minkowski} se
     \begin{nlist}
         \item $\mu(Z)=0$ se e solo se $Z=0$;
@@ -300,10 +308,10 @@ Diamo ora delle definizioni che ci serviranno per enunciare i risultati già not
     Un dominio $\Omega \subseteq \mathbb{C}^n$ si dice \textit{(Hartogs) pseudoconvesso} se esiste un funzionale di Minkowski $\mu$ tale che $-\log\mu_{\Omega}$ è plurisubarmonica in $\Omega$.
 \end{defn}
 
- Il seguente risultato ci servirà per un controesempio.
+ Il seguente risultato, che ci dà l'equivalenza tra i domini di olomorfia e i domini pseudoconvessi, ci servirà per un controesempio.
 
  \begin{thm}
-    (\cite[Theorem 5.1.2]{Kr}) Ogni dominio pseudoconvesso è un dominio di olomorfia.
+    (\cite[Theorem 5.1.3, equivalence between (1) and (3)]{Kr}) Sia $\Omega\subseteq\mathbb{C}^n$ un dominio; allora $\Omega$ è pseudoconvesso se e solo se è un dominio di olomorfia.
  \end{thm}
 
 Nel caso di domini regolari, si può dare una definizione di pseudoconvessità più operativa equivalente.
@@ -464,7 +472,7 @@ Il seguente esempio mostra come l'ipotesi che $X$ sia taut è necessaria per ott
 \begin{ex} \label{servetaut}
     Consideriamo $\Omega=\mathbb{B}^2\setminus\{(0,0)\}$, la palla unitaria in $\mathbb{C}^2$ privata dell'origine. Essendo un dominio limitato è Kobayashi-iperbolico, ma non è taut in quanto non è pseudoconvesso (per il Teorema \ref{hartogs_fen}, non è un dominio di olomorfia), e i domini taut diversi da $\mathbb{C}^n$ sono sempre pseudoconvessi (si veda \cite[Theorem F]{Wu}).
 
-    Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque orbite relativamente compatte coesistono con orbite che tendono al bordo, quindi $\{f^h\}_{h\in\mathbb{N}}$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
+    Prendiamo come $f\in\text{Hol}(\Omega,\Omega)$ la funzione $f(z,w)=(z/2,e^{i\theta}w)$. L'orbita di un qualunque punto del tipo $(0,w)$ con $w\not=0$ è relativamente compatta, mentre l'orbita di un qualunque punto del tipo $(z,0)$ con $z\not=0$ tende al punto del bordo $(0,0)$. Dunque orbite relativamente compatte coesistono con orbite che tendono al bordo, per cui $\{f^h\}_{h\in\mathbb{N}}$ non è né compattamente divergente né ha tutte le orbite relativamente compatte.
     
     In particolare, le funzioni limite di $f$ non sono né costanti né in $\text{Hol}(\Omega,\Omega)$, e questo è un controesempio, senza l'ipotesi taut, per il teorema di tipo ``Wolff-Denjoy'' che vedremo nella sezione \ref{Un teorema di tipo ``Wolff-Denjoy'' per varietà taut con visibilità}.
 \end{ex}
